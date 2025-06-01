@@ -1,0 +1,99 @@
+﻿@model PegboardWebApp.Models.SessionModel
+
+@{
+    ViewBag.Title = "DetailView";
+}
+
+<h2>DetailView</h2>
+
+<div>
+    <h4>BadmintonMeeting</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Session.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Session.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Session.TotalPaymentDue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Session.TotalPaymentDue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Session.TotalPaymentReceived)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Session.TotalPaymentReceived)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Session.UnpaidBalance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Session.UnpaidBalance)
+        </dd>
+
+    </dl>
+    <h4>Player Statistics</h4>
+    <table>
+        <tr>
+            <td><span style="font-size:large">Ranking</span></td>
+            <td><span style="font-size:large">Name</span></td>
+            <td><span style="font-size:large">Status</span></td>
+            <td><span style="font-size:large">Games</span></td>
+            <td><span style="font-size:large">Results</span></td>
+            <td><span style="font-size:large">Win Percent</span></td>
+            <td><span style="font-size:large">Initial Rating</span></td>
+            <td><span style="font-size:large">Final Rating</span></td>
+            <td><span style="font-size:large">Change</span></td>
+            <td><span style="font-size:large">Court time</span></td>
+            <td><span style="font-size:large">Wait time</span></td>
+            <td><span style="font-size:large">Arrived</span></td>
+            <td><span style="font-size:large">Left</span></td>
+        </tr>
+        @foreach(var attendee in Model.PlayerStats)
+        {
+            <tr>
+                <td>@attendee.Ranking</td>
+                <td>@attendee.Name</td>
+                <td>@attendee.Status</td>
+                <td>@attendee.Games</td>
+                <td>
+                    <span style="color: red">L</span>
+                    <span style="color: red">L</span>
+                    <span style="color: green">W</span>
+                    <span style="color: red">L</span>
+                    <span style="color: green">W</span>
+                    <span style="color: green">W</span>
+                    <span style="color: red">L</span>
+                </td>
+                <td align="center">@attendee.WinPercent</td>
+                <td>@attendee.InitialRating</td>
+                <td>@attendee.FinalRating</td>
+                <td>@attendee.Change</td>
+                <td>@attendee.TotalCourtTime</td>
+                <td>@attendee.TotalWaitTime</td>
+                <td>@attendee.Arrived</td>
+                <td>@attendee.Left</td>
+            </tr>
+        }
+    </table>
+    <p></p>
+    <h4>Games</h4>
+    <table>
+
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BadmintonMeetingId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

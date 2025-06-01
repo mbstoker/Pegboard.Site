@@ -1,0 +1,23 @@
+﻿@using Pegboard.Domain.Core;
+@model  IEnumerable<BadmintonMeeting>
+@{
+    ViewBag.Title = "Greylings Sessions";
+}
+
+<h2>Greylings Sessions</h2>
+<table>
+    <tr>
+        <td>Date</td>
+        <td>Players</td>
+        <td>Games</td>
+    </tr>
+    @foreach (BadmintonMeeting meeting in Model)
+    {
+        <tr>
+            <td width="200">@Html.ActionLink(@meeting.Date.ToString(), "Detail", "Sessions", new { area = "", id=meeting.BadmintonMeetingId }, null)</td>
+            <td width="100">@meeting.Attendees.Count()</td>
+            <td>@meeting.AllGames.Count()</td>
+        </tr>
+    }
+</table>
+

@@ -1,0 +1,119 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="wwwroot\Images\attendee_stats.png" />
+    <None Remove="wwwroot\Images\edit_player.png" />
+    <None Remove="wwwroot\Images\epegboard-figure-logo.png" />
+    <None Remove="wwwroot\Images\epegboard-text-logo.png" />
+    <None Remove="wwwroot\Images\home_menu.png" />
+    <None Remove="wwwroot\Images\hot.png" />
+    <None Remove="wwwroot\Images\laptop wide - Copy.jpg" />
+    <None Remove="wwwroot\Images\laptop wide.jpg" />
+    <None Remove="wwwroot\Images\laptop with session.jpg" />
+    <None Remove="wwwroot\Images\logo horizontal.png" />
+    <None Remove="wwwroot\Images\logo.png" />
+    <None Remove="wwwroot\Images\paint-horse-running-in-field.bmp" />
+    <None Remove="wwwroot\Images\partnership_stats.png" />
+    <None Remove="wwwroot\Images\payments.png" />
+    <None Remove="wwwroot\Images\pegboard games.JPG" />
+    <None Remove="wwwroot\Images\pegboards.png" />
+    <None Remove="wwwroot\Images\pick attendee.png" />
+    <None Remove="wwwroot\Images\player_management.png" />
+    <None Remove="wwwroot\Images\player_session_history.png" />
+    <None Remove="wwwroot\Images\profile partners.png" />
+    <None Remove="wwwroot\Images\racket photo.tif" />
+    <None Remove="wwwroot\Images\session game history.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Images\img_mountains_wide.jpg" />
+    <None Include="wwwroot\Images\img_nature_wide.jpg" />
+    <None Include="wwwroot\Images\img_snow_wide.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\Images\attendee_stats.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\edit_player.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\epegboard-figure-logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\epegboard-text-logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\home_menu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\hot.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\img_mountains_wide.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\img_nature_wide.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\img_snow_wide.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\laptop wide - Copy.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\laptop wide.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\laptop with session.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\logo horizontal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\paint-horse-running-in-field.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\partnership_stats.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\payments.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\pegboard games.JPG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\pegboards.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\pick attendee.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\player_management.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\player_session_history.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\profile partners.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\racket photo.tif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Images\session game history.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
