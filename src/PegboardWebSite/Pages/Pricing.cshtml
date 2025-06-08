@@ -1,0 +1,36 @@
+﻿@page
+@model PricingModel
+@{
+    ViewData["Title"] = "Pricing";
+}
+
+<h1 class="display-4 mb-4">💳 Pricing</h1>
+
+<p class="fs-4">£60 / year</p>
+<p class="text-muted">Simple, all-inclusive pricing. No hidden fees.</p>
+
+@if (Model.RequestSent)
+{
+    <div class="alert alert-success">✅ Thanks! We've received your request and will be in touch shortly.</div>
+}
+else
+{
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="PurchaseRequest.Name" class="form-label">Your Name</label>
+            <input asp-for="PurchaseRequest.Name" class="form-control" />
+            <span asp-validation-for="PurchaseRequest.Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="PurchaseRequest.ClubName" class="form-label">Club Name</label>
+            <input asp-for="PurchaseRequest.ClubName" class="form-control" />
+            <span asp-validation-for="PurchaseRequest.ClubName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="PurchaseRequest.Email" class="form-label">Email</label>
+            <input asp-for="PurchaseRequest.Email" type="email" class="form-control" />
+            <span asp-validation-for="PurchaseRequest.Email" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Request Purchase Info</button>
+    </form>
+}

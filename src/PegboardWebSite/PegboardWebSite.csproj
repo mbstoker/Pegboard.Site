@@ -20,7 +20,6 @@
     <None Remove="wwwroot\Images\logo horizontal.png" />
     <None Remove="wwwroot\Images\logo.png" />
     <None Remove="wwwroot\Images\paint-horse-running-in-field.bmp" />
-    <None Remove="wwwroot\Images\partnership_stats.png" />
     <None Remove="wwwroot\Images\payments.png" />
     <None Remove="wwwroot\Images\pegboard games.JPG" />
     <None Remove="wwwroot\Images\pegboards.png" />
@@ -36,6 +35,10 @@
     <None Include="wwwroot\Images\img_mountains_wide.jpg" />
     <None Include="wwwroot\Images\img_nature_wide.jpg" />
     <None Include="wwwroot\Images\img_snow_wide.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="9.3.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -84,7 +87,7 @@
     <Content Update="wwwroot\Images\paint-horse-running-in-field.bmp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="wwwroot\Images\partnership_stats.png">
+    <Content Update="wwwroot\Images\partnership-stats.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\Images\payments.png">

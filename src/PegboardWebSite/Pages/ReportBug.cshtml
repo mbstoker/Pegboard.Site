@@ -1,0 +1,42 @@
+﻿@page
+@model ReportBugModel
+@{
+    ViewData["Title"] = "Report a Bug";
+}
+
+<section class="py-5">
+    <div class="container">
+        <h1 class="mb-4 text-center">Report a Bug</h1>
+        <p class="text-muted text-center">Spotted something that’s not working? Please let us know.</p>
+
+        @if (Model.EmailSent)
+        {
+            <div class="alert alert-success">Thank you! Your report has been submitted.</div>
+        }
+        else
+        {
+            <form method="post">
+                <div class="mb-3">
+                    <label asp-for="BugReport.Name" class="form-label">Your Name</label>
+                    <input asp-for="BugReport.Name" class="form-control" />
+                    <span asp-validation-for="BugReport.Name" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="BugReport.Email" class="form-label">Your Email</label>
+                    <input asp-for="BugReport.Email" class="form-control" />
+                    <span asp-validation-for="BugReport.Email" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="BugReport.Description" class="form-label">Bug Description</label>
+                    <textarea asp-for="BugReport.Description" class="form-control" rows="6"></textarea>
+                    <span asp-validation-for="BugReport.Description" class="text-danger" />
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Bug Report</button>
+            </form>
+        }
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

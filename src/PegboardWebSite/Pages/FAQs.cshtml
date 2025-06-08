@@ -1,0 +1,127 @@
+﻿@page
+@model FAQsModel
+@{
+    ViewData["Title"] = "FAQs";
+}
+
+<section class="py-5">
+    <div class="container">
+        <h1 class="mb-4 text-center">Frequently Asked Questions</h1>
+
+        <h3 class="mt-5">🔹 General Questions</h3>
+
+        <div class="mb-4">
+            <h5>What is ePegboard?</h5>
+            <p>
+                ePegboard is a digital replacement for the traditional manual pegboard system used in club nights. It automatically forms games using an intelligent algorithm that balances skill levels, mixes pairings, and ensures fairness — all while keeping the session flowing smoothly.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <h5>How are games chosen?</h5>
+            <p>
+                When choosing the next game, the system looks at every possible combination of game and assigns them a score.  It then picks chooses the combination with the best score.
+                The score is composed of several components:
+
+                1.	Cross team balance
+                2.	In team balance
+                3.	How long a player has been waiting 
+                4.	Gender balance
+                5.	Mixing up opponents / partners
+
+                Where more than one court is available, the system will optimize the games across all available courts.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <h5>How are player ratings calculated?</h5>
+            <p>
+                The ePegboard rating system works in a similar manner to ELO ratings in chess.  They are adjusted based on the game score compared to what the system would have expected the score to be (the par score).  So if a player loses 21-19 but the par score was 21-17, the players rating will go up even though they lost.  Conversely the ratings of the opponents will go down.  The amount they change is quick for the first few games then slows down as the system hones in on their true rating.
+            </p>
+        </div>
+
+
+        <div class="mb-4">
+            <h5>My club want to stick with the traditional approach where the first plyer in the queue picks from the next N .. do you support that?</h5>
+            <p>
+                Yes, there are configuration settings to ensure the first player in the queue is always choses, and that other players come from the first 7 (configurable).  When preparing the next game, auto-pick can be used to suggest the game and the person at the front of the queue can adjust as they prefer.
+            </p>
+        </div>
+
+        <h3 class="mt-5">🔹 60-day free trial</h3>
+
+        <div class="mb-4">
+            <h5>Do you need my card details?</h5>
+            <p>
+                No card details or payment are required for the free trial.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <h5>How does the free trial work?</h5>
+            <p>
+                Simply download and install the application — it comes with a fully featured 60-day free trial. No registration, payment, or card details are required to get started.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <h5>Do I need to reinstall after buying a license?</h5>
+            <p>
+                No. Once you’ve purchased a license, just enter your license key into the application’s licensing screen. Your data, settings, and player history will remain intact.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <h5>Why do I get a SmartScreen warning when downloading?</h5>
+            <p>
+                Because ePegboard is newly released to the public, SmartScreen may warn users due to low download volume. This is a standard Microsoft safeguard for new software and will fade as downloads increase.
+            </p>
+        </div>
+
+        <h3 class="mt-5">🔹 Licensing & Purchase</h3>
+
+        <div class="mb-4">
+            <h5>Is this a subscription?</h5>
+            <p>
+                No. After the 60-day trial, you can purchase a 12-month license for £60. There is no automatic renewal — you choose when to renew.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <h5>Can I transfer my license to another club?</h5>
+            <p>
+                No. Each license is tied to a specific club and is non-transferable.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <h5>Do you offer discounts for teams or multiple clubs?</h5>
+            <p>
+                Yes — we offer discounts for multi-license purchases. Please contact <a href="mailto:sales@epegboard.com">sales@epegboard.com</a> to discuss your requirements.
+            </p>
+        </div>
+
+        <h3 class="mt-5">🔹 Technical & Usage</h3>
+
+        <div class="mb-4">
+            <h5>What are the minimum system requirements?</h5>
+            <p>
+                ePegboard runs on Windows 11 and is optimized for touchscreen devices with a recommended screen size of 10.1 inches or larger.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <h5>Is there an Android or web version?</h5>
+            <p>
+                Not yet — but a web-based version is on our roadmap for the future.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <h5>Does ePegboard work offline?</h5>
+            <p>
+                Yes! ePegboard is fully offline. Once installed, it runs without needing an internet connection during sessions.
+            </p>
+        </div>
+    </div>
+</section>

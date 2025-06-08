@@ -1,0 +1,42 @@
+﻿@page
+@model RequestFeatureModel
+@{
+    ViewData["Title"] = "Request a Feature";
+}
+
+<section class="py-5">
+    <div class="container">
+        <h1 class="mb-4 text-center">Request a feature</h1>
+        <p class="text-muted text-center">Thought of something missing? Please let use know your idea</p>
+
+        @if (Model.EmailSent)
+        {
+            <div class="alert alert-success">Thank you! Your request has been submitted.</div>
+        }
+        else
+        {
+            <form method="post">
+                <div class="mb-3">
+                    <label asp-for="FeatureRequest.Name" class="form-label">Your Name</label>
+                    <input asp-for="FeatureRequest.Name" class="form-control" />
+                    <span asp-validation-for="FeatureRequest.Name" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="FeatureRequest.Email" class="form-label">Your Email</label>
+                    <input asp-for="FeatureRequest.Email" class="form-control" />
+                    <span asp-validation-for="FeatureRequest.Email" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="FeatureRequest.Description" class="form-label">Feature Description</label>
+                    <textarea asp-for="FeatureRequest.Description" class="form-control" rows="6"></textarea>
+                    <span asp-validation-for="FeatureRequest.Description" class="text-danger" />
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Feature Rquest</button>
+            </form>
+        }
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,193 @@
+﻿@page
+@model FeaturesModel
+@{
+    ViewData["Title"] = "Features";
+}
+
+<section class="features-header bg-light py-5">
+    <div class="container text-center">
+        <h1 class="display-4">Packed With Powerful Features</h1>
+        <p class="lead">Everything you need to run club nights smoothly and manage your players effectively.</p>
+    </div>
+</section>
+
+<section class="feature-section py-5">
+    <div class="container">
+        <div>
+        <h2 class="mb-4 text-center">Club Night Dashboard</h2>
+            <div class="text-center mb-4">
+                <img src="/images/clubnight-dashboard.png" class="img-fluid rounded" style="max-width: 85%; height: auto;" alt="Club Night Dashboard">
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-8">
+                    <div class="mb-4">
+                        <div class="d-flex align-items-start mb-4 fs-5">
+                            <i class="bi bi-layout-text-sidebar me-3 fs-4 text-primary flex-shrink-0"></i>
+                            <span>One screen shows everything: courts, queue, game results, and live stats.</span>
+                        </div>
+                        <div class="d-flex align-items-start mb-4 fs-5">
+                            <i class="bi bi-tablet-landscape me-3 fs-4 text-primary flex-shrink-0"></i>
+                            <span>Designed for fast-paced touchscreen use on tablets or laptops.</span>
+                        </div>
+                        <div class="d-flex align-items-start mb-4 fs-5">
+                            <i class="bi bi-hand-index-thumb me-3 fs-4 text-primary flex-shrink-0"></i>
+                            <span>Intuitive drag and drop user interface makes it easy for non-technical players to use.</span>
+                        </div>
+                        <div class="d-flex align-items-start mb-4 fs-5">
+                            <i class="bi bi-easel3 me-3 fs-4 text-primary flex-shrink-0"></i>
+                            <span>Organised similar to a traditional pegboard for easy familiarity.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <img src="/images/add_player_photos.jpg" class="img-fluid rounded mb-3" alt="Managing Attendees">
+                <h3>Managing Attendees</h3>
+                <ul>
+                    <li>Quickly add new arrivals by typing the start of their name</li>
+                    <li>Photos help newcomers identify partners quickly</li>
+                    <li>Mark players unavailable to avoid being picked mid-break</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="/images/pick-and-start.png" class="img-fluid rounded mb-3" alt="Pick and Start">
+                <h3>Pick and Start</h3>
+                <ul>
+                    <li>Instantly fill a court with a smart, balanced game</li>
+                    <li>Designed for fast-paced clubs where players can jump straight on court</li>
+                    <li>Combines skill, fairness, and variation in real-time</li>
+                    <li>Editable/cancelable game suggestions before play</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <img src="/images/next_game_sample.jpg" class="img-fluid rounded mb-3" alt="Prepare Games Ahead">
+                <h3>Prepare Next Game</h3>
+                <ul>
+                    <li>Choose game before a court is available</li>
+                    <li>Auto-pick, manual pick or pick some and let ePegboard pick the rest</li>
+                    <li>Drag and drop from queue into the prep area</li>
+                    <li>Control and flexibility with AI assistance</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="/images/traditional-picking.png" class="img-fluid rounded mb-3" alt="Traditional Picking">
+                <h3>Support for Traditional Picking</h3>
+                <ul>
+                    <li>Configurable to pick first from queue and fill from next N players</li>
+                    <li>Respect traditional usage while using modern tools</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <img src="/images/balanced-elo.png" class="img-fluid rounded mb-3" alt="Smart Game Picking">
+                <h3>Smart Game Picking</h3>
+                <ul>
+                    <li>ELO-style rating system for balanced games</li>
+                    <li>Expected scores shown for every matchup</li>
+                    <li>Style compatibility, fairness, queue rotation</li>
+                    <li>Rating adjusts instantly when results entered</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="/images/score-entry.png" class="img-fluid rounded mb-3" alt="Game Management">
+                <h3>Fast results capture</h3>
+                <ul>
+                    <li>Enter scores after the game to instantly update ratings and stats</li>
+                    <li>Can start another game before score entry to keep things moving</li>
+                    <li>Just fill in the losing teams score - the winning teams is automatically populated</li>
+                    <li>Large buttons for easy entry</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <img src="/images/audio-announcements.png" class="img-fluid rounded mb-3" alt="Smart Audio Announcements">
+                <h3>Smart Audio Announcements</h3>
+                <ul>
+                    <li>Built-in voice calls for games and courts</li>
+                    <li>Removes need for shouting or manual reminders</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="/images/leaderboard-sample.png" class="img-fluid rounded mb-3" alt="Real-time Stats">
+                <h3>Real-time Stats</h3>
+                <ul>
+                    <li>Track win %, rating changes and history</li>
+                    <li>Live leaderboard with medal awards</li>
+                    <li>Engage players regardless of skill level</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="feature-section bg-light py-5">
+    <div class="container">
+        <h2 class="mb-4 text-center">Management & Analytics</h2>
+
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <img src="/images/payments.png" class="img-fluid rounded mb-3" alt="Payment Tracking">
+                <h3>Payment Tracking</h3>
+                <ul>
+                    <li>Track full or partial session payments</li>
+                    <li>Customise by member type (Guest/Full)</li>
+                    <li>CSV export and historical reporting</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="/images/member-management.png" class="img-fluid rounded mb-3" alt="Member Management">
+                <h3>Member Management</h3>
+                <ul>
+                    <li>Keep contact details, attendance stats</li>
+                    <li>Identify inactive players easily</li>
+                    <li>Export complete club database</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <img src="/images/partnership-stats.png" class="img-fluid rounded mb-3" alt="League Team Selection">
+                <h3>League Team Selection</h3>
+                <ul>
+                    <li>Compare pair ratings vs expected scores</li>
+                    <li>Pick strong combinations with confidence</li>
+                    <li>Great for club captains and coaches</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="/images/session-quality-report.png" class="img-fluid rounded mb-3" alt="Session Analytics">
+                <h3>Session Analytics</h3>
+                <ul>
+                    <li>Drill into past results, payments and standings</li>
+                    <li>Session quality stats show game balance</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/images/player_session_history.png" class="img-fluid rounded mb-3" alt="Per Member Analytics">
+                <h3>Per Member Analytics</h3>
+                <ul>
+                    <li>Track every game and partner history</li>
+                    <li>See your best and worst matchups</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta text-center py-5 bg-primary text-white">
+    <h2>Start your free 60-day trial today</h2>
+    <a href="/Download" class="btn btn-light btn-lg mt-3">Download ePegboard</a>
+</section>
