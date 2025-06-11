@@ -32,12 +32,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\Images\img_mountains_wide.jpg" />
-    <None Include="wwwroot\Images\img_nature_wide.jpg" />
-    <None Include="wwwroot\Images\img_snow_wide.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="MySql.Data" Version="9.3.0" />
   </ItemGroup>
 
