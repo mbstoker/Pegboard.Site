@@ -28,7 +28,7 @@ public class IndexModel : PageModel
         _requestRepository.Insert(new TrackedRequestModel()
         {
             RequestedResource = "Home Page",
-            TrackingId = id,
+            TrackingId = trackingId,
             Timestamp = DateTime.Now,
             SourceIP = RequestHelper.GetClientIp(HttpContext)
         });

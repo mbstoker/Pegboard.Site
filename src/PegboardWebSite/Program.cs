@@ -13,8 +13,14 @@ public class Program
         builder.Services.AddRazorPages();
         builder.Services.AddDistributedMemoryCache();
         builder.Services.AddSession();
+
+        builder.Services.AddControllersWithViews();
+
         var app = builder.Build();
         app.UseSession();
+        app.MapControllerRoute(
+            name: "default",
+            pattern: "{controller=Home}/{action=Index}/{id?}");
 
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
