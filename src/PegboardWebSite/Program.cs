@@ -1,3 +1,5 @@
+using PegboardWebSite.Services;
+
 namespace PegboardWebSite;
 
 public class Program
@@ -7,9 +9,18 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
+        builder.Services.AddTransient<TrackedRequestRepository>();
         builder.Services.AddRazorPages();
+        builder.Services.AddDistributedMemoryCache();
+        builder.Services.AddSession();
+
+        builder.Services.AddControllersWithViews();
 
         var app = builder.Build();
+        app.UseSession();
+        app.MapControllerRoute(
+            name: "default",
+            pattern: "{controller=Home}/{action=Index}/{id?}");
 
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())

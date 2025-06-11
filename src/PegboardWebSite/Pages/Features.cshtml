@@ -1,0 +1,116 @@
+﻿@page
+@model FeaturesModel
+@{
+    ViewData["Title"] = "Features";
+}
+
+@using System.Net.Mime;
+
+<section class="features-header bg-light py-5">
+    <div class="container text-center">
+        <h1 class="display-4">Packed With Powerful Features</h1>
+        <p class="lead">Everything you need to run club nights smoothly and manage your players effectively.</p>
+    </div>
+</section>
+
+<section class="feature-section py-5">
+    <div class="container">
+
+        <!-- Club Night Dashboard (centered) -->
+        <div class="text-center mb-5">
+            <h2 class="mb-4">Club Night Dashboard</h2>
+            <img src="/images/clubnight-dashboard.png" class="img-fluid rounded mb-4" style="max-width: 85%; height: auto;" alt="Club Night Dashboard">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-8">
+                    <div class="mb-4">
+                        <div class="d-flex align-items-start mb-4 fs-5">
+                            <i class="bi bi-layout-text-sidebar me-3 fs-4 text-primary flex-shrink-0"></i>
+                            <span>One screen shows everything: courts, queue, game results, and live stats.</span>
+                        </div>
+                        <div class="d-flex align-items-start mb-4 fs-5">
+                            <i class="bi bi-tablet-landscape me-3 fs-4 text-primary flex-shrink-0"></i>
+                            <span>Designed for fast-paced touchscreen use on tablets or laptops.</span>
+                        </div>
+                        <div class="d-flex align-items-start mb-4 fs-5">
+                            <i class="bi bi-hand-index-thumb me-3 fs-4 text-primary flex-shrink-0"></i>
+                            <span>Intuitive drag and drop user interface makes it easy for non-technical players to use.</span>
+                        </div>
+                        <div class="d-flex align-items-start mb-4 fs-5">
+                            <i class="bi bi-easel3 me-3 fs-4 text-primary flex-shrink-0"></i>
+                            <span>Organised similar to a traditional pegboard for easy familiarity.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zigzag Start -->
+        @{
+            var features = new[]
+            {
+        new { Img="/images/add_player_photos.jpg", Title="Managing Attendees", List = new[]{"Quickly add new arrivals by typing the start of their name", "Photos help newcomers identify partners quickly", "Mark players unavailable to avoid being picked mid-break"}, Clickable = false},
+        new { Img="/images/pick-and-start.png", Title="Pick and Start", List = new[]{"Instantly fill a court with a smart, balanced game", "Designed for fast-paced clubs where players can jump straight on court", "Combines skill, fairness, and variation in real-time", "Editable/cancelable game suggestions before play"}, Clickable = false},
+        new { Img="/images/next_game_sample.jpg", Title="Prepare Next Game", List = new[]{"Choose game before a court is available", "Auto-pick, manual pick or pick some and let ePegboard pick the rest", "Drag and drop from queue into the prep area", "Control and flexibility with AI assistance"}, Clickable = false},
+        new { Img="/images/traditional-picking.png", Title="Support for Traditional Picking", List = new[]{"Configurable to pick first from queue and fill from next N players", "Respect traditional usage while using modern tools"}, Clickable = false},
+        new { Img="/images/balanced-elo.png", Title="Smart Game Picking", List = new[]{"ELO-style rating system for balanced games", "Expected scores shown for every matchup", "Style compatibility, fairness, queue rotation", "Rating adjusts instantly when results entered"}, Clickable = false},
+        new { Img="/images/score-entry.png", Title="Fast results capture", List = new[]{"Enter scores after the game to instantly update ratings and stats", "Can start another game before score entry to keep things moving", "Just fill in the losing teams score - the winning teams is automatically populated", "Large buttons for easy entry"}, Clickable = false},
+        new { Img="/images/audio-announcements.png", Title="Smart Audio Announcements", List = new[]{"Built-in voice calls for games and courts", "Removes need for shouting or manual reminders"}, Clickable = false},
+        new { Img="/images/leaderboard-sample.png", Title="Real-time Stats", List = new[]{"Track win %, rating changes and history", "Live leaderboard with medal awards", "Engage players regardless of skill level"}, Clickable = true},
+        new { Img="/images/payments.png", Title="Payment Tracking", List = new[]{"Track full or partial session payments", "Customise by member type (Guest/Full)", "CSV export and historical reporting"}, Clickable = true},
+        new { Img="/images/member-management.png", Title="Member Management", List = new[]{"Keep contact details, attendance stats", "Identify inactive players easily", "Export complete club database"}, Clickable = true},
+        new { Img="/images/partnership-stats.png", Title="League Team Selection", List = new[]{"Compare pair ratings vs expected scores", "Pick strong combinations with confidence", "Great for club captains and coaches"}, Clickable = true},
+        new { Img="/images/session-quality-report.png", Title="Session Analytics", List = new[]{"Drill into past results, payments and standings", "Session quality stats show game balance"}, Clickable = true},
+        new { Img="/images/player_session_history.png", Title="Per Member Analytics", List = new[]{"Track every game and partner history", "See your best and worst matchups"}, Clickable = true},
+            };
+        }
+
+        @for (int i = 0; i < features.Length; i++)
+        {
+            var feature = features[i];
+            var reverse = i % 2 != 0;
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6 @(reverse ? "order-md-2" : "")">
+                    @if (feature.Clickable)
+                    {
+                        <a href="@feature.Img" target="_blank">
+                            <img src="@feature.Img" class="img-fluid rounded mb-3 feature-img" alt="@feature.Title" />
+                        </a>
+                    }
+                    else
+                    {
+                        <img src="@feature.Img" class="img-fluid rounded mb-3 feature-img" alt="@feature.Title" />
+                    }
+                </div>
+                <div class="col-md-6">
+                    <h3>@feature.Title</h3>
+                    <ul>
+                        @foreach (var item in feature.List)
+                        {
+                            <li>@item</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+<style>
+  .feature-img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @@media only screen and (max-width: 576px) {
+    .feature-img {
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+  }
+</style>
+
+<section class="cta text-center py-5 bg-primary text-white">
+    <h2>Start your free 60-day trial today</h2>
+    <a href="/Download" class="btn btn-light btn-lg mt-3">Download ePegboard</a>
+</section>

@@ -1,0 +1,63 @@
+﻿Site Strategy Overview
+🔑 Primary Goals:
+Explain what ePegboard does — quickly and clearly
+
+Build trust and relevance for badminton club reps
+
+Encourage signups for the 60-day free trial
+
+
+1. 🏠 Homepage / Landing Page
+Purpose: Grab attention, explain value, and push the free trial.
+
+Sections:
+Hero
+
+Headline: “Smarter Club Nights. Fairer Games.”
+
+Subtext: “ePegboard runs on your Windows tablet or laptop to manage player rotations, track attendance, and make club sessions smooth.”
+
+CTA: [Start Free Trial] [Download]
+
+How It Works (3–4 simple steps)
+
+Sign in → Add players → Start session → Let it run
+
+Could use icons or step-by-step visual
+
+Features
+
+Automatic court rotation
+
+Balanced games by level or order
+
+Attendance tracking
+
+Session history
+
+Built for Windows, tablet/laptop friendly
+
+Screenshots / Tablet Mockup
+
+Show the actual UI running on a Surface or laptop
+
+Optional GIF or short video demo
+
+Testimonials / Clubs That Use It
+
+Logo bar (if available)
+
+1–2 brief quotes from organizers
+
+Pricing Summary
+
+Clear: "60-Day Free Trial → Then £X/month"
+
+Emphasize simplicity and low barrier
+
+Final CTA Banner
+
+Repeat the signup message
+
+Simple form or button to start trial
+

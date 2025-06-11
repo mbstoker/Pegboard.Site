@@ -1,0 +1,38 @@
+﻿@page
+@model DownloadModel
+@{
+    ViewData["Title"] = "Download";
+}
+
+<h1 class="mb-4">📥 Get the Download</h1>
+
+<p>Please enter your details to receive a download link via email.</p>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="UserInfo.Name" class="form-label">Your Name</label>
+        <input asp-for="UserInfo.Name" class="form-control" />
+        <span asp-validation-for="UserInfo.Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="UserInfo.ClubName" class="form-label">Club Name</label>
+        <input asp-for="UserInfo.ClubName" class="form-control" />
+        <span asp-validation-for="UserInfo.ClubName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="UserInfo.Email" class="form-label">Email Address</label>
+        <input asp-for="UserInfo.Email" type="email" class="form-control" />
+        <span asp-validation-for="UserInfo.Email" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Send Download Link</button>
+</form>
+
+@if (Model.EmailSent)
+{
+    <div class="alert alert-success mt-4">
+        ✅ Download link sent! Please check your email.
+    </div>
+}

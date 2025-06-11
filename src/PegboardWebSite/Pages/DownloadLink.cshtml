@@ -1,0 +1,35 @@
+﻿@page
+@model DownloadLinkModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Preparing Download</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+</head>
+<body class="container py-5">
+    <h1 class="mb-4">Your download is almost ready...</h1>
+
+    <div class="alert alert-warning">
+        <strong>Heads-up:</strong> Because this file is new or has a low download volume, your browser or Windows SmartScreen may show a warning.
+        <br />
+        This is expected and normal for newly released software.
+    </div>
+
+    <p>
+        If prompted, choose to <strong>"Keep"</strong> or <strong>"Run anyway"</strong>.
+        We're working to build enough reputation for this warning to go away.
+    </p>
+
+    <img src="/images/smartscreen-warnings.png" class="img-fluid rounded" style="max-width: 85%; height: auto;" alt="Smartscreen warning">
+
+    <form method="get" action="/downloadfinal">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <input type="hidden" name="version" value="@Model.VersionToUse" />
+        <button type="submit" class="btn btn-success btn-lg">Download Now</button>
+    </form>
+</body>
+</html>
