@@ -6,6 +6,12 @@ using System.Net.Mail;
 
 public class ReportBugModel : PageModel
 {
+    private readonly EmailService _emailService;
+    public ReportBugModel(EmailService emailService)
+    {
+        _emailService = emailService;
+    }
+
     [BindProperty]
     public BugReportModel BugReport { get; set; }
 
@@ -23,7 +29,7 @@ public class ReportBugModel : PageModel
 
         try
         {
-            new EmailService().SendMailToEPegboard("Bug Report from Website", $"From: {BugReport.Name} ({BugReport.Email})\n\n{BugReport.Description}");
+            _emailService.SendMailToEPegboard("Bug Report from Website", $"From: {BugReport.Name} ({BugReport.Email})\n\n{BugReport.Description}");
 
             EmailSent = true;
             ModelState.Clear();
