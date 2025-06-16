@@ -6,6 +6,11 @@ using System.Net.Mail;
 
 public class RequestFeatureModel : PageModel
 {
+    private readonly EmailService _emailService;
+    public RequestFeatureModel(EmailService emailService)
+    {
+        _emailService = emailService;
+    }
     [BindProperty]
     public FeatureRequestModel FeatureRequest { get; set; }
 
@@ -23,7 +28,7 @@ public class RequestFeatureModel : PageModel
 
         try
         {
-            new EmailService().SendMailToEPegboard("Feature Request from Website", $"From: {FeatureRequest.Name} ({FeatureRequest.Email})\n\n{FeatureRequest.Description}");
+            _emailService.SendMailToEPegboard("Feature Request from Website", $"From: {FeatureRequest.Name} ({FeatureRequest.Email})\n\n{FeatureRequest.Description}");
 
             EmailSent = true;
             ModelState.Clear();

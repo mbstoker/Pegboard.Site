@@ -30,7 +30,7 @@ namespace PegboardWebSite.Services
 
         public List<TrackedRequestModel> GetAll(DateTime? minTime = null)
         {
-            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PegboardDb"].ConnectionString;
+            string connectionString = _config.GetConnectionString("PegboardDb")!;
 
             var connection = new MySqlConnection(connectionString);
             connection.Open();
