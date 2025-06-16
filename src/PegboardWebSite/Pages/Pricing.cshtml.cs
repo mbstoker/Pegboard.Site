@@ -7,6 +7,12 @@ using PegboardWebSite.Services;
 
 public class PricingModel : PageModel
 {
+    private readonly EmailService _emailService;
+    public PricingModel(EmailService emailService)
+    {
+        _emailService = emailService;
+    }
+
     [BindProperty]
     public PurchaseRequestModel PurchaseRequest { get; set; } = new();
 
@@ -25,8 +31,7 @@ Name: {PurchaseRequest.Name}
 Club: {PurchaseRequest.ClubName}
 Email: {PurchaseRequest.Email}
 ";
-            EmailService emailService = new EmailService();
-            emailService.SendMailToEPegboard("New Purchase Request", body);
+            _emailService.SendMailToEPegboard("New Purchase Request", body);
             RequestSent = true;
         }
         catch (Exception ex)

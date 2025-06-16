@@ -2,17 +2,20 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using PegboardWebSite.Services;
-using PegboardWebSite; // Needed for Session extensions
+using PegboardWebSite;
+using System.Runtime.CompilerServices; // Needed for Session extensions
 
 public class DownloadFinalModel : PageModel
 {
     TrackedRequestRepository _requestRepository;
     private readonly IWebHostEnvironment _env;
+    private readonly ILogger _logger;
 
-    public DownloadFinalModel(IWebHostEnvironment env, TrackedRequestRepository requestRepository)
+    public DownloadFinalModel(IWebHostEnvironment env, TrackedRequestRepository requestRepository, ILogger<DownloadFinalModel> logger)
     {
         _env = env;
         _requestRepository = requestRepository;
+        _logger = logger;
     }
 
     public async Task<IActionResult> OnGetAsync(string id, string? v)
@@ -42,14 +45,16 @@ public class DownloadFinalModel : PageModel
         if (!System.IO.File.Exists(filePath))
             return NotFound("Requested version not found.");
 
+        LogFinalDownload(trackingId, version);
+
         var contentType = "application/octet-stream";
         return PhysicalFile(filePath, contentType, fileName);
     }
 
-    private void LogFinalDownload(string id, string version)
+    private void LogFinalDownload(string? trackingId, string version)
     {
-        var log = $"{DateTime.UtcNow:u} | File served | ID: {id} | Version: {version}";
-        System.IO.File.AppendAllText("App_Data/download_log.txt", log + Environment.NewLine);
+        var log = $"{DateTime.UtcNow:u} | File served | ID: {trackingId} | Version: {version}";
+        _logger.LogInformation(log);
     }
 
     private string GetFilePath(string version)

@@ -1,4 +1,5 @@
 using PegboardWebSite.Services;
+using Serilog;
 
 namespace PegboardWebSite;
 
@@ -6,10 +7,19 @@ public class Program
 {
     public static void Main(string[] args)
     {
+        Log.Logger = new LoggerConfiguration()
+            .WriteTo.Console()
+            .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day) // Daily log files
+            .CreateLogger();
+
         var builder = WebApplication.CreateBuilder(args);
+        
+        // Replace built-in logging with Serilog
+        builder.Host.UseSerilog();
 
         // Add services to the container.
         builder.Services.AddTransient<TrackedRequestRepository>();
+        builder.Services.AddTransient<EmailService>();
         builder.Services.AddRazorPages();
         builder.Services.AddDistributedMemoryCache();
         builder.Services.AddSession();
