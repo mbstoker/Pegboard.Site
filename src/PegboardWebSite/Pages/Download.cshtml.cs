@@ -41,15 +41,16 @@ public class DownloadModel : PageModel
 
         try
         {
+            string ip = RequestHelper.GetClientIp(HttpContext);
             if (IsSpam(UserInfo))
             {
-                _logger.LogWarning($"Spam download blocked Name: {UserInfo.Name} Club: {UserInfo.ClubName} Email: {UserInfo.Email}");
-                _emailService.SendMailToEPegboard("Spam download blocked", $"Name: {UserInfo.Name} Club: {UserInfo.ClubName} Email: {UserInfo.Email}");
+                _logger.LogWarning($"Spam download blocked Name: {UserInfo.Name} Club: {UserInfo.ClubName} Email: {UserInfo.Email} Ip: {ip}");
+//                _emailService.SendMailToEPegboard("Spam download blocked", $"Name: {UserInfo.Name} Club: {UserInfo.ClubName} Email: {UserInfo.Email}  IP: {ip}");
             }
             else
             {
                 _emailService.SendDownloadLink(UserInfo.Name, UserInfo.ClubName, UserInfo.Email);
-                _emailService.SendMailToEPegboard("Download link sent", $"Name: {UserInfo.Name} Club: {UserInfo.ClubName} Email: {UserInfo.Email}");
+                _emailService.SendMailToEPegboard("Download link sent", $"Name: {UserInfo.Name} Club: {UserInfo.ClubName} Email: {UserInfo.Email} IP: {ip}");
 
                 var trackingId = HttpContext.Session.GetString("TrackingId");
                 if (!string.IsNullOrEmpty(trackingId))
