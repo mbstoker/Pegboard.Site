@@ -20,7 +20,7 @@ public class DownloadLinkModel : PageModel
     [BindProperty(SupportsGet = true)]
     public string? Version { get; set; }
 
-    public string VersionToUse { get; set; } = "1.6.0";
+    public string VersionToUse { get; set; }
 
     public void OnGet()
     {
