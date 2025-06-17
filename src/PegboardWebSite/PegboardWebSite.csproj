@@ -24,7 +24,6 @@
     <None Remove="wwwroot\Images\pegboard games.JPG" />
     <None Remove="wwwroot\Images\pegboards.png" />
     <None Remove="wwwroot\Images\pick attendee.png" />
-    <None Remove="wwwroot\Images\player_management.png" />
     <None Remove="wwwroot\Images\player_session_history.png" />
     <None Remove="wwwroot\Images\profile partners.png" />
     <None Remove="wwwroot\Images\racket photo.tif" />
@@ -96,9 +95,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\Images\pick attendee.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\Images\player_management.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\Images\player_session_history.png">

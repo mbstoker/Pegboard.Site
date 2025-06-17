@@ -19,7 +19,7 @@ namespace PegboardWebSite.Services
         {
             string connectionString = _config.GetConnectionString("PegboardDb")!;
 
-            var connection = new MySqlConnection(connectionString);
+            using var connection = new MySqlConnection(connectionString);
             connection.Open();
 
             string timestamp = request.Timestamp.ToString("yyyy-MM-dd HH:mm:ss.fff");
@@ -32,7 +32,7 @@ namespace PegboardWebSite.Services
         {
             string connectionString = _config.GetConnectionString("PegboardDb")!;
 
-            var connection = new MySqlConnection(connectionString);
+            using var connection = new MySqlConnection(connectionString);
             connection.Open();
 
 
