@@ -26,8 +26,8 @@ public class EmailService
     public void SendDownloadLink(string name, string clubName, string email)
     {
         Guid trackingId = Guid.NewGuid();
-        string body = $"Hi {name},\n\nThanks for your interest!\n\nClick here to download: {_websiteUrl}/downloadlink?id={trackingId}\n\nBest,\nMike";
-        SendMail("mike.stoker@epegboard.com", email, "Your Download Link", body);
+        string body = $"Hi {name},\n\nThanks for your interest in ePegboard!\n\nClick here to download: {_websiteUrl}/downloadlink?id={trackingId}\n\nBest,\nMike";
+        SendMail("mike.stoker@epegboard.com", email, "ePegboard Download Link", body);
 
         _logger.LogInformation($"Download link sent.  Name: {name}  Club: {clubName} Email: {email}  TrackingID: {trackingId}");
     }
