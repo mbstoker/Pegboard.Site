@@ -7,10 +7,14 @@ using System.Net.Mail;
 public class RequestFeatureModel : PageModel
 {
     private readonly EmailService _emailService;
-    public RequestFeatureModel(EmailService emailService)
+    private readonly ILogger<RequestFeatureModel> _logger;
+
+    public RequestFeatureModel(EmailService emailService, ILogger<RequestFeatureModel> logger)
     {
         _emailService = emailService;
+        _logger = logger;
     }
+
     [BindProperty]
     public FeatureRequestModel FeatureRequest { get; set; }
 
@@ -25,6 +29,13 @@ public class RequestFeatureModel : PageModel
     {
         if (!ModelState.IsValid)
             return Page();
+
+        if (Spam.IsSpamName(FeatureRequest.Name))
+        {
+            _logger.LogWarning($"Spam feature request blocked Name: {FeatureRequest.Name} Email: {FeatureRequest.Email}");
+            EmailSent = true;
+            return Page();
+        }
 
         try
         {

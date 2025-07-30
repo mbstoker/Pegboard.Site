@@ -7,9 +7,12 @@ using System.Net.Mail;
 public class ReportBugModel : PageModel
 {
     private readonly EmailService _emailService;
-    public ReportBugModel(EmailService emailService)
+    private readonly ILogger<ReportBugModel> _logger;
+
+    public ReportBugModel(EmailService emailService, ILogger<ReportBugModel> logger)
     {
         _emailService = emailService;
+        _logger = logger;
     }
 
     [BindProperty]
@@ -26,6 +29,13 @@ public class ReportBugModel : PageModel
     {
         if (!ModelState.IsValid)
             return Page();
+
+        if (Spam.IsSpamName(BugReport.Name))
+        {
+            _logger.LogWarning($"Spam bug report blocked Name: {BugReport.Name} Email: {BugReport.Email}");
+            EmailSent = true;
+            return Page();
+        }
 
         try
         {

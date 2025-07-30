@@ -4,13 +4,18 @@ using System.ComponentModel.DataAnnotations;
 using System.Net.Mail;
 using System.Net;
 using PegboardWebSite.Services;
+using PegboardWebSite;
+using Org.BouncyCastle.Asn1.Ocsp;
 
 public class PricingModel : PageModel
 {
     private readonly EmailService _emailService;
-    public PricingModel(EmailService emailService)
+    private readonly ILogger _logger;
+
+    public PricingModel(EmailService emailService, ILogger<PricingModel> logger)
     {
         _emailService = emailService;
+        _logger = logger;
     }
 
     [BindProperty]
@@ -22,6 +27,14 @@ public class PricingModel : PageModel
     {
         if (!ModelState.IsValid)
             return Page();
+
+        string ip = RequestHelper.GetClientIp(HttpContext);
+        if (Spam.IsSpamName(PurchaseRequest.Name) || Spam.IsSpamName(PurchaseRequest.ClubName))
+        {
+            _logger.LogWarning($"Spam purchase request blocked Name: {PurchaseRequest.Name} Club: {PurchaseRequest.ClubName} Email: {PurchaseRequest.Email} Ip: {ip}");
+            RequestSent = true;
+            return Page();
+        }
 
         try
         {

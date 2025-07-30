@@ -81,20 +81,9 @@ public class DownloadModel : PageModel
 
     private bool IsSpam(UserDownloadInfo userInfo)
     {
-        return IsSpamName(userInfo.Name) || IsSpamName(userInfo.ClubName);
+        return Spam.IsSpamName(userInfo.Name) || Spam.IsSpamName(userInfo.ClubName);
     }
 
-    private bool IsSpamName(string name)
-    {
-        if (name.Length > 50)
-            return true;
-
-        if (name.Any(c => !char.IsLetterOrDigit(c) && c != ' ' && c != '\'' && c != '-' && c != ',' && c != '(' && c != ')'))
-        {
-            return true;
-        }
-        return false;
-    }
 }
 
 public class UserDownloadInfo
