@@ -7,7 +7,7 @@ public static class Spam
         if (name.Length > 50)
             return true;
 
-        if (name.Any(c => !char.IsLetterOrDigit(c) && c != ' ' && c != '\'' && c != '-' && c != ',' && c != '(' && c != ')'))
+        if (name.Any(c => !char.IsLetterOrDigit(c) && c != ' ' && c != '\'' && c != '-' && c != ',' && c != '(' && c != ')' && c != '.') )
         {
             return true;
         }
