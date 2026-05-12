@@ -39,7 +39,8 @@ public class ReportBugModel : PageModel
 
         try
         {
-            _emailService.SendMailToEPegboard("Bug Report from Website", $"From: {BugReport.Name} ({BugReport.Email})\n\n{BugReport.Description}");
+            var versionLine = string.IsNullOrWhiteSpace(BugReport.Version) ? "(not specified)" : BugReport.Version;
+            _emailService.SendMailToEPegboard("Bug Report from Website", $"From: {BugReport.Name} ({BugReport.Email})\nVersion: {versionLine}\n\n{BugReport.Description}");
 
             EmailSent = true;
             ModelState.Clear();
@@ -59,6 +60,8 @@ public class ReportBugModel : PageModel
 
         [Required, EmailAddress]
         public string Email { get; set; }
+
+        public string Version { get; set; } = "";
 
         [Required]
         public string Description { get; set; }

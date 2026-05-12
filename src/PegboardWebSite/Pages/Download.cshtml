@@ -1,10 +1,20 @@
-﻿@page
+@page
 @model DownloadModel
 @{
-    ViewData["Title"] = "Download";
+    ViewData["Title"] = "Desktop app download";
 }
 
-<h1 class="mb-4">📥 Get the Download</h1>
+<div class="alert alert-success">
+    <h5 class="mb-2">Looking for the web app? It's at <a href="https://play.epegboard.com" target="_blank" rel="noopener">play.epegboard.com</a></h5>
+    <p class="mb-1">No download needed - runs in any browser on any device. Free for at least 60 days, no card details required.</p>
+    <p class="mb-0" style="font-size: 0.9rem;">Tablet or laptop-sized screens recommended for the best experience.</p>
+</div>
+
+<h1 class="mb-4">📥 Get the desktop app (Windows)</h1>
+
+<p>
+    The desktop app is for clubs that need fully-offline operation (e.g. venues with unreliable internet). Most clubs use the <a href="https://play.epegboard.com" target="_blank" rel="noopener">web app at play.epegboard.com</a> instead - new features land there first, and there's no install.
+</p>
 
 <p>Please enter your details to receive a download link via email.</p>
 
@@ -27,7 +37,7 @@
         <span asp-validation-for="UserInfo.Email" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-primary">Send Download Link</button>
+    <button type="submit" class="btn btn-primary">Send Desktop Download Link</button>
 </form>
 
 @if (Model.EmailSent)

@@ -7,7 +7,7 @@
 <section class="py-5">
     <div class="container">
         <h1 class="mb-4 text-center">Request a feature</h1>
-        <p class="text-muted text-center">Thought of something missing? Please let use know your idea</p>
+        <p class="text-muted text-center">Thought of something missing? Please let us know your idea.</p>
 
         @if (Model.EmailSent)
         {
@@ -27,11 +27,20 @@
                     <span asp-validation-for="FeatureRequest.Email" class="text-danger" />
                 </div>
                 <div class="mb-3">
+                    <label asp-for="FeatureRequest.Version" class="form-label">Which version is this for?</label>
+                    <select asp-for="FeatureRequest.Version" class="form-select">
+                        <option value="">- please select -</option>
+                        <option value="Web app (play.epegboard.com)">Web app (play.epegboard.com)</option>
+                        <option value="Desktop app (Windows)">Desktop app (Windows)</option>
+                        <option value="Either / both">Either / both</option>
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label asp-for="FeatureRequest.Description" class="form-label">Feature Description</label>
                     <textarea asp-for="FeatureRequest.Description" class="form-control" rows="6"></textarea>
                     <span asp-validation-for="FeatureRequest.Description" class="text-danger" />
                 </div>
-                <button type="submit" class="btn btn-primary">Submit Feature Rquest</button>
+                <button type="submit" class="btn btn-primary">Submit Feature Request</button>
             </form>
         }
     </div>

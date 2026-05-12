@@ -39,7 +39,8 @@ public class RequestFeatureModel : PageModel
 
         try
         {
-            _emailService.SendMailToEPegboard("Feature Request from Website", $"From: {FeatureRequest.Name} ({FeatureRequest.Email})\n\n{FeatureRequest.Description}");
+            var versionLine = string.IsNullOrWhiteSpace(FeatureRequest.Version) ? "(not specified)" : FeatureRequest.Version;
+            _emailService.SendMailToEPegboard("Feature Request from Website", $"From: {FeatureRequest.Name} ({FeatureRequest.Email})\nVersion: {versionLine}\n\n{FeatureRequest.Description}");
 
             EmailSent = true;
             ModelState.Clear();
@@ -59,6 +60,8 @@ public class RequestFeatureModel : PageModel
 
         [Required, EmailAddress]
         public string Email { get; set; }
+
+        public string Version { get; set; } = "";
 
         [Required]
         public string Description { get; set; }

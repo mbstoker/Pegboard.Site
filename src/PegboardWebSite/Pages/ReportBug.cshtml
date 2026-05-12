@@ -27,6 +27,15 @@
                     <span asp-validation-for="BugReport.Email" class="text-danger" />
                 </div>
                 <div class="mb-3">
+                    <label asp-for="BugReport.Version" class="form-label">Which version?</label>
+                    <select asp-for="BugReport.Version" class="form-select">
+                        <option value="">- please select -</option>
+                        <option value="Web app (play.epegboard.com)">Web app (play.epegboard.com)</option>
+                        <option value="Desktop app (Windows)">Desktop app (Windows)</option>
+                        <option value="Other / not sure">Other / not sure</option>
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label asp-for="BugReport.Description" class="form-label">Bug Description</label>
                     <textarea asp-for="BugReport.Description" class="form-control" rows="6"></textarea>
                     <span asp-validation-for="BugReport.Description" class="text-danger" />
