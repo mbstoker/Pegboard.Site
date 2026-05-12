@@ -1,28 +1,58 @@
-﻿@page
+@page
 @{
     ViewData["Title"] = "Product Roadmap";
 }
 
 <h1 class="display-4 mb-4">🛣️ Product Roadmap</h1>
-<p class="lead">Here's a preview of features planned for upcoming releases. These focus on improving match quality, fairness, and scheduling intelligence.</p>
+<p class="lead">What's coming next. We're committed to making this the best session management system on the market.</p>
 
 <hr class="my-4" />
 
-<h3>🔍 1. View Quality Information for Suggested Game</h3>
-<p>Give users insights into why a game was suggested, including criteria like player balance, match fairness, and diversity of opponents. This will increase transparency and user trust.</p>
+<h2 class="mt-5">Recently shipped</h2>
+<p class="text-muted">Live now on the web app at <a href="https://play.epegboard.com" target="_blank" rel="noopener">play.epegboard.com</a>.</p>
 
-<h3>📊 2. Quality Reports for Sessions</h3>
-<p>Enable viewing of a session-wide or historical quality report showing how well games met key quality indicators (e.g., rating balance, court usage, and player variety).</p>
-
-<h3>⏳ 3. Lookahead Scheduling</h3>
-<p>Predict when each game will end based on current scheduling, and use this to suggest matches that leave good options for future picks. This improves long-term court utilization.</p>
-
-<h3>🎯 4. Better Handling for Extreme Ratings</h3>
-<p>Ensure that players with very high or very low ratings get a good session experience, without being sidelined or matched poorly. This includes both fair pairing and equitable court time.</p>
-
-<h3>⚖️ 5. Adjustable Game Scoring Weights</h3>
-<p>Let users or clubs adjust weights in the game quality scoring algorithm. This allows prioritizing fairness, court usage, or diversity based on their specific needs.</p>
+<ul class="fs-5">
+    <li>✅ <strong>Web app</strong> - runs in any browser on any device, no install</li>
+    <li>✅ <strong>Algorithm improvements</strong> - significant ongoing work on the picker; addressing the most common complaint we heard (higher-rated players paired with weak partners)</li>
+    <li>✅ <strong>Pick explanations</strong> - players can see exactly why each game was picked</li>
+    <li>✅ <strong>Fairness statistics</strong> - visible mid-session</li>
+    <li>✅ <strong>Ratings graphs</strong> - per-player rating progression over time</li>
+    <li>✅ <strong>Attendance reports</strong> - built-in, helpful for member retention</li>
+</ul>
 
 <hr class="my-5" />
 
-<p class="text-muted"><em>Note: Features and priorities may evolve based on user feedback and technical constraints.</em></p>
+<h2>Coming next</h2>
+<p class="text-muted">Roughly in priority order. Dates aren't fixed - we ship features as they're ready, and the priority of each item reflects what we've heard from clubs in the field.</p>
+
+<h3 class="mt-4">🎯 1. Picker enhancements</h3>
+<p>The picker is our number-one priority and we're continuing to invest there:</p>
+<ul>
+    <li><strong>"Sticky" partner preferences</strong> - persistent pairing preferences (e.g. league partners) that the picker respects across a session</li>
+    <li><strong>Single-discipline sessions</strong> - mixed-only or straight-only sessions, with the picker constraining game selection accordingly</li>
+    <li><strong>Singles support</strong> - run singles-format sessions, not just doubles</li>
+</ul>
+
+<h3 class="mt-4">📊 2. More reporting</h3>
+<p>Building on attendance reports, more visibility into how a club is running:</p>
+<ul>
+    <li>Head-to-head reports (member vs member win/loss + score history)</li>
+    <li>Partnership reports (member-with-member win rate, frequency)</li>
+    <li>Organiser insights - attendance fluctuations, court utilisation, payment status, picker-fairness trends</li>
+</ul>
+
+<h3 class="mt-4">🏆 3. Tournament support</h3>
+<p>Run internal tournaments at your own club, plus inter-club tournaments between clubs using ePegboard.</p>
+
+<h3 class="mt-4">📱 4. Phone display polish</h3>
+<p>The web app works on phones today, but tablet or laptop-sized screens are the best experience. We're improving the phone display so smaller-screen use feels just as good.</p>
+
+<hr class="my-5" />
+
+<p class="text-muted">
+    <em>Features and priorities may evolve based on user feedback and technical constraints. If something on this list matters to your club specifically, drop us a line at <a href="mailto:support@epegboard.com">support@epegboard.com</a> - it helps us prioritise.</em>
+</p>
+
+<p class="text-muted" style="font-size: 0.9rem;">
+    <em>Note for desktop app users: most new functionality is being added to the web app at play.epegboard.com. The desktop app continues to be supported. Web-app sign-up is free at <a href="https://play.epegboard.com" target="_blank" rel="noopener">play.epegboard.com</a> if you want to give it a try.</em>
+</p>
