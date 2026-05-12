@@ -1,4 +1,4 @@
-﻿@page
+@page
 @model FAQsModel
 @{
     ViewData["Title"] = "FAQs";
@@ -8,43 +8,77 @@
     <div class="container">
         <h1 class="mb-4 text-center">Frequently Asked Questions</h1>
 
-        <h3 class="mt-5">🔹 General Questions</h3>
+        <h3 class="mt-5">🔹 General questions</h3>
 
         <div class="mb-4">
             <h5>What is ePegboard?</h5>
             <p>
-                ePegboard is a digital replacement for the traditional manual pegboard system used in club nights. It automatically forms games using an intelligent algorithm that balances skill levels, mixes pairings, and ensures fairness — all while keeping the session flowing smoothly.
+                ePegboard is a digital replacement for the traditional manual pegboard system used in club nights. It automatically forms games using an intelligent algorithm that balances skill levels, mixes pairings, and ensures fairness - all while keeping the session flowing smoothly. Most clubs use the web app at <a href="https://play.epegboard.com" target="_blank" rel="noopener">play.epegboard.com</a>; a Windows desktop app is also available for clubs that prefer fully-offline operation.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <h5>Web app or desktop app - which should I pick?</h5>
+            <p>
+                For most clubs the web app is the right choice. It runs in any browser on any device (tablet or laptop-sized screens recommended for the best experience), needs no install, and is where new features land first. The desktop app is still supported and is the right choice if you need to run fully-offline at a venue with no reliable internet. Most new functionality will be web-only.
             </p>
         </div>
 
         <div class="mb-4">
             <h5>How are games chosen?</h5>
             <p>
-                When choosing the next game, the system looks at every possible combination of game and assigns them a score.  It then picks chooses the combination with the best score.
-                The score is composed of several components:
-
-                1.	Cross team balance
-                2.	In team balance
-                3.	How long a player has been waiting 
-                4.	Gender balance
-                5.	Mixing up opponents / partners
-
-                Where more than one court is available, the system will optimize the games across all available courts.
+                When choosing the next game, the system looks at every possible combination and assigns each a score, then picks the combination with the best score. The score is composed of several components: cross-team balance, in-team balance, how long a player has been waiting, gender balance, and mixing up partners / opponents. Where more than one court is available, the system optimises games across all courts together. Pick explanations show players exactly why each game was picked - it's not a black box.
             </p>
         </div>
 
         <div class="mb-4">
             <h5>How are player ratings calculated?</h5>
             <p>
-                The ePegboard rating system works in a similar manner to ELO ratings in chess.  They are adjusted based on the game score compared to what the system would have expected the score to be (the par score).  So if a player loses 21-19 but the par score was 21-17, the players rating will go up even though they lost.  Conversely the ratings of the opponents will go down.  The amount they change is quick for the first few games then slows down as the system hones in on their true rating.
+                The ePegboard rating system works similarly to ELO ratings in chess. Ratings are adjusted based on the game score compared to the par score (what the system would have expected). So a player who loses 21-19 when the par score was 21-17 will see their rating go up, even though they lost - and the opponents' ratings go down accordingly. Rating changes happen quickly for the first few games then slow down as the system hones in on the player's true rating.
             </p>
         </div>
 
+        <div class="mb-4">
+            <h5>My club wants to stick with traditional picking - first player in queue picks from next N. Is that supported?</h5>
+            <p>
+                Yes. There are configuration settings to ensure the first player in the queue always picks, with their options drawn from the next 7 names (configurable). Auto-pick can be used to suggest a game and the person at the front of the queue can adjust as they prefer.
+            </p>
+        </div>
+
+        <h3 class="mt-5">🔹 Web app (play.epegboard.com)</h3>
 
         <div class="mb-4">
-            <h5>My club want to stick with the traditional approach where the first plyer in the queue picks from the next N .. do you support that?</h5>
+            <h5>How do I sign up?</h5>
             <p>
-                Yes, there are configuration settings to ensure the first player in the queue is always choses, and that other players come from the first 7 (configurable).  When preparing the next game, auto-pick can be used to suggest the game and the person at the front of the queue can adjust as they prefer.
+                Go to <a href="https://play.epegboard.com" target="_blank" rel="noopener">play.epegboard.com</a> and create an account. No card details required. You can be running your first session within a few minutes.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <h5>What devices does the web app work on?</h5>
+            <p>
+                Any modern browser on any device - Windows, Mac, Chromebook, iPad, Android tablet, iPhone, Android phone. Tablet or laptop-sized screens are recommended for the best experience; phones work but the display is best on larger screens.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <h5>Does the web app need an internet connection?</h5>
+            <p>
+                Yes. The web app needs an internet connection during the session. If your venue has unreliable internet, the desktop app may suit you better - it runs fully offline.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <h5>What data does the web app store, and where?</h5>
+            <p>
+                The web app stores your club data (member details, session history, game results, ratings) on our servers. Access is gated by login and scoped per-club. Photos uploaded for member identification are stored alongside the member record. Paid legal review of our privacy + terms is in progress; see the <a asp-page="/Privacy">Privacy</a> page for interim details.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <h5>I used to run the desktop app - can I switch to the web app?</h5>
+            <p>
+                Yes. Get in touch at <a href="mailto:support@epegboard.com">support@epegboard.com</a> and we'll help migrate your member list and history to the web app.
             </p>
         </div>
 
@@ -53,37 +87,41 @@
         <div class="mb-4">
             <h5>Do you need my card details?</h5>
             <p>
-                No card details or payment are required for the free trial.
+                No card details or payment are required for the free trial - in either the web app or the desktop app.
             </p>
         </div>
 
         <div class="mb-4">
             <h5>How does the free trial work?</h5>
             <p>
-                Simply download and install the application — it comes with a fully featured 60-day free trial. No registration, payment, or card details are required to get started.
+                <strong>Web app:</strong> sign up at <a href="https://play.epegboard.com" target="_blank" rel="noopener">play.epegboard.com</a>. Free for at least 60 days - we'll announce ahead of any post-trial pricing change.
+                <br /><br />
+                <strong>Desktop app:</strong> download and install - it comes with a fully featured 60-day free trial. No registration or card details needed.
             </p>
         </div>
 
         <div class="mb-4">
-            <h5>Do I need to reinstall after buying a license?</h5>
+            <h5>Why do I get a SmartScreen warning when downloading the desktop app?</h5>
             <p>
-                No. Once you’ve purchased a license, just enter your license key into the application’s licensing screen. Your data, settings, and player history will remain intact.
+                Because ePegboard is a relatively new product, SmartScreen may warn users due to low download volume. This is a standard Microsoft safeguard for new software and will fade as downloads increase. The web app at play.epegboard.com avoids this entirely - no download needed.
             </p>
         </div>
+
+        <h3 class="mt-5">🔹 Licensing and purchase</h3>
 
         <div class="mb-4">
-            <h5>Why do I get a SmartScreen warning when downloading?</h5>
+            <h5>What does it cost after the trial?</h5>
             <p>
-                Because ePegboard is newly released to the public, SmartScreen may warn users due to low download volume. This is a standard Microsoft safeguard for new software and will fade as downloads increase.
+                <strong>Web app:</strong> we'll announce post-trial pricing ahead of any change. Free for at least 60 days from sign-up.
+                <br /><br />
+                <strong>Desktop app:</strong> £60 / year per club. No automatic renewal - you choose when to renew.
             </p>
         </div>
-
-        <h3 class="mt-5">🔹 Licensing & Purchase</h3>
 
         <div class="mb-4">
             <h5>Is this a subscription?</h5>
             <p>
-                No. After the 60-day trial, you can purchase a 12-month license for £60. There is no automatic renewal — you choose when to renew.
+                Desktop app: no. After the 60-day trial, you can purchase a 12-month license for £60. There is no automatic renewal. Web app: pricing model is being finalised; no automatic charge during the free trial.
             </p>
         </div>
 
@@ -97,30 +135,30 @@
         <div class="mb-4">
             <h5>Do you offer discounts for teams or multiple clubs?</h5>
             <p>
-                Yes — we offer discounts for multi-license purchases. Please contact <a href="mailto:sales@epegboard.com">sales@epegboard.com</a> to discuss your requirements.
+                Yes - we offer discounts for multi-license purchases. Please contact <a href="mailto:sales@epegboard.com">sales@epegboard.com</a> to discuss your requirements.
             </p>
         </div>
 
-        <h3 class="mt-5">🔹 Technical & Usage</h3>
+        <h3 class="mt-5">🔹 Desktop app (Windows)</h3>
 
         <div class="mb-4">
             <h5>What are the minimum system requirements?</h5>
             <p>
-                ePegboard runs on Windows 11 and is optimized for touchscreen devices with a recommended screen size of 10.1 inches or larger.
+                The desktop app runs on Windows 11 and is optimised for touchscreen devices with a recommended screen size of 10.1 inches or larger.
             </p>
         </div>
 
         <div class="mb-4">
-            <h5>Is there an Android or web version?</h5>
+            <h5>Does the desktop app work offline?</h5>
             <p>
-                Not yet — but a web-based version is on our roadmap for the future.
+                Yes. The desktop app is fully offline. Once installed it runs without needing an internet connection during sessions - which is why it's still the right choice for venues with unreliable internet.
             </p>
         </div>
 
         <div class="mb-4">
-            <h5>Does ePegboard work offline?</h5>
+            <h5>Do I need to reinstall after buying a desktop license?</h5>
             <p>
-                Yes! ePegboard is fully offline. Once installed, it runs without needing an internet connection during sessions.
+                No. Once you've purchased a license, just enter your license key into the application's licensing screen. Your data, settings, and player history remain intact.
             </p>
         </div>
     </div>
