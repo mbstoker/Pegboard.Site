@@ -30,9 +30,6 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Features">Features</a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Download">Download</a>
-                        </li>
-                        <li class="nav-item mx-2">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Pricing">Pricing</a>
                         </li>
                         <li class="nav-item mx-2">
@@ -47,10 +44,17 @@
                                 <li><a class="dropdown-item" asp-area="" asp-page="/RequestFeature">Request Feature</a></li>
                                 <li><a class="dropdown-item text-dark" href="mailto:support@epegboard.com">Email Support</a></li>
                                 <li><a class="dropdown-item text-dark" href="mailto:sales@epegboard.com">Email Sales</a></li>
-                                <li><a class="dropdown-item text-dark" href="/downloads/epegboard user guide.pdf" download>Download User Guide</a></li>
+                                <li><a class="dropdown-item text-dark" href="/downloads/epegboard user guide.pdf" download>Download User Guide (desktop)</a></li>
                                 <li><a class="dropdown-item" asp-area="" asp-page="/ReleaseNotes">Release notes / version history</a></li>
                                 <li><a class="dropdown-item" asp-area="" asp-page="/ProductRoadmap">Product roadmap</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Download">Desktop app download</a></li>
                             </ul>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item mx-2">
+                            <a class="btn btn-success px-3" href="https://play.epegboard.com" target="_blank" rel="noopener">Sign Up Free</a>
                         </li>
                     </ul>
                 </div>
@@ -64,7 +68,7 @@
     </div>
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2025 - MBS Software Limited -
+            &copy; 2026 - MBS Software Limited -
             <a asp-area="" asp-page="/Privacy" class="me-3">Privacy</a>
             <a asp-area="" asp-page="/Contact" class="me-3">Contact Us</a>
             <a asp-area="" asp-page="/License">License Terms</a>
