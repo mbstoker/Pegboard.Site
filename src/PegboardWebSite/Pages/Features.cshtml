@@ -1,4 +1,4 @@
-﻿@page
+@page
 @model FeaturesModel
 @{
     ViewData["Title"] = "Features";
@@ -10,6 +10,7 @@
     <div class="container text-center">
         <h1 class="display-4">Packed With Powerful Features</h1>
         <p class="lead">Everything you need to run club nights smoothly and manage your players effectively.</p>
+        <p class="text-muted" style="font-size: 1rem;">Runs in any browser on any device at <a href="https://play.epegboard.com" target="_blank" rel="noopener">play.epegboard.com</a>. Tablet or laptop-sized screens recommended for the best experience.</p>
     </div>
 </section>
 
@@ -29,15 +30,15 @@
                         </div>
                         <div class="d-flex align-items-start mb-4 fs-5">
                             <i class="bi bi-tablet-landscape me-3 fs-4 text-primary flex-shrink-0"></i>
-                            <span>Designed for fast-paced touchscreen use on tablets or laptops.</span>
+                            <span>Works on any browser, any device - tablet or laptop-sized screens recommended for the best experience.</span>
                         </div>
                         <div class="d-flex align-items-start mb-4 fs-5">
                             <i class="bi bi-hand-index-thumb me-3 fs-4 text-primary flex-shrink-0"></i>
-                            <span>Intuitive drag and drop user interface makes it easy for non-technical players to use.</span>
+                            <span>Drag-and-drop, touch-friendly UI - non-technical players can pick up the operator role quickly.</span>
                         </div>
                         <div class="d-flex align-items-start mb-4 fs-5">
                             <i class="bi bi-easel3 me-3 fs-4 text-primary flex-shrink-0"></i>
-                            <span>Organised similar to a traditional pegboard for easy familiarity.</span>
+                            <span>Organised similarly to a traditional pegboard so the model is familiar to anyone who's used one.</span>
                         </div>
                     </div>
                 </div>
@@ -52,10 +53,13 @@
         new { Img="/images/pick-and-start.png", Title="Pick and Start", List = new[]{"Instantly fill a court with a smart, balanced game", "Designed for fast-paced clubs where players can jump straight on court", "Combines skill, fairness, and variation in real-time", "Editable/cancelable game suggestions before play"}, Clickable = false},
         new { Img="/images/next_game_sample.jpg", Title="Prepare Next Game", List = new[]{"Choose game before a court is available", "Auto-pick, manual pick or pick some and let ePegboard pick the rest", "Drag and drop from queue into the prep area", "Control and flexibility with AI assistance"}, Clickable = false},
         new { Img="/images/traditional-picking.png", Title="Support for Traditional Picking", List = new[]{"Configurable to pick first from queue and fill from next N players", "Respect traditional usage while using modern tools"}, Clickable = false},
-        new { Img="/images/balanced-elo.png", Title="Smart Game Picking", List = new[]{"ELO-style rating system for balanced games", "Expected scores shown for every matchup", "Style compatibility, fairness, queue rotation", "Rating adjusts instantly when results entered"}, Clickable = false},
-        new { Img="/images/score-entry.png", Title="Fast results capture", List = new[]{"Enter scores after the game to instantly update ratings and stats", "Can start another game before score entry to keep things moving", "Just fill in the losing teams score - the winning teams is automatically populated", "Large buttons for easy entry"}, Clickable = false},
+        new { Img="/images/balanced-elo.png", Title="Smart Game Picking", List = new[]{"ELO-style rating system for balanced games", "Expected scores shown for every matchup", "Style compatibility, fairness, queue rotation", "The most common complaint we heard was higher-rated players paired with weak partners - that's been the main driver of the picker work since"}, Clickable = false},
+        new { Img="/images/session-quality-report.png", Title="Pick Explanations", List = new[]{"Players see exactly why each game was picked", "Cuts down on 'the algorithm got it wrong' arguments without evidence", "Per-pick scoring breakdown for the operator if they want to dig in"}, Clickable = true},
+        new { Img="/images/session-quality-report.png", Title="Fairness Statistics", List = new[]{"Visible mid-session - wait-time fairness, partner variety, opponent variety", "Players and operators can see balance in real time", "No more 'I've been sat off ages' arguments without data"}, Clickable = true},
+        new { Img="/images/score-entry.png", Title="Fast results capture", List = new[]{"Enter scores after the game to instantly update ratings and stats", "Can start another game before score entry to keep things moving", "Just fill in the losing team's score - the winning team's is automatically populated", "Large buttons for easy entry"}, Clickable = false},
         new { Img="/images/audio-announcements.png", Title="Smart Audio Announcements", List = new[]{"Built-in voice calls for games and courts", "Removes need for shouting or manual reminders"}, Clickable = false},
-        new { Img="/images/leaderboard-sample.png", Title="Real-time Stats", List = new[]{"Track win %, rating changes and history", "Live leaderboard with medal awards", "Engage players regardless of skill level"}, Clickable = true},
+        new { Img="/images/leaderboard-sample.png", Title="Real-time Stats and Ratings Graphs", List = new[]{"Track win %, rating changes and full match history", "Per-player ratings graph showing progression over time", "Live leaderboard with medal awards", "Engages players regardless of skill level"}, Clickable = true},
+        new { Img="/images/attendee_stats.png", Title="Attendance Reports", List = new[]{"Built-in attendance reports - who's been coming and who's drifted", "Useful for member-retention conversations", "Per-member attendance history visible mid-session and in reports"}, Clickable = true},
         new { Img="/images/payments.png", Title="Payment Tracking", List = new[]{"Track full or partial session payments", "Customise by member type (Guest/Full)", "CSV export and historical reporting"}, Clickable = true},
         new { Img="/images/member-management.png", Title="Member Management", List = new[]{"Keep contact details, attendance stats", "Identify inactive players easily", "Bulk import members for quick setup", "Export complete club database"}, Clickable = true},
         new { Img="/images/partnership-stats.png", Title="League Team Selection", List = new[]{"Compare pair ratings vs expected scores", "Pick strong combinations with confidence", "Great for club captains and coaches"}, Clickable = true},
@@ -110,7 +114,9 @@
   }
 </style>
 
-<section class="cta text-center py-5 bg-primary text-white">
+<section class="cta text-center py-5 bg-success text-white">
     <h2>Start your free 60-day trial today</h2>
-    <a href="/Download" class="btn btn-light btn-lg mt-3">Download ePegboard</a>
+    <p class="lead mb-3">Free for at least 60 days. No card details.</p>
+    <a href="https://play.epegboard.com" target="_blank" rel="noopener" class="btn btn-light btn-lg mt-3">Sign Up at play.epegboard.com</a>
+    <p class="mt-3 mb-0" style="font-size: 0.95rem; opacity: 0.9;">Tablet or laptop-sized screens recommended for the best experience.</p>
 </section>
