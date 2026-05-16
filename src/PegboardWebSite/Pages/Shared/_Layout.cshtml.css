@@ -7,7 +7,7 @@ a.navbar-brand {
   word-break: break-all;
 }
 
-a {
+a:not(.btn) {
   color: #0077cc;
 }
 
