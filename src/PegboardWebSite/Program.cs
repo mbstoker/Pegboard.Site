@@ -47,6 +47,10 @@ public class Program
 
         app.UseAuthorization();
 
+        // Legacy /demo path used in older outreach copy → permanent redirect to instant-demo flow on the app.
+        // ASP.NET routing matches both /demo and /demo/ against this single registration.
+        app.MapGet("/demo", () => Results.Redirect("https://play.epegboard.com/instant-demo", permanent: true));
+
         app.MapRazorPages();
 
         app.Run();
