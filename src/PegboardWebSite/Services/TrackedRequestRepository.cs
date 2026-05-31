@@ -22,9 +22,14 @@ namespace PegboardWebSite.Services
             using var connection = new MySqlConnection(connectionString);
             connection.Open();
 
-            string timestamp = request.Timestamp.ToString("yyyy-MM-dd HH:mm:ss.fff");
-
-            MySqlCommand cmd = new MySqlCommand($"INSERT INTO imagerequests (TrackerId, RequestTime,RequestedResource, SourceIP) values ('{request.TrackingId}', '{timestamp}', '{request.RequestedResource}', '{request.SourceIP}')", connection);
+            using var cmd = new MySqlCommand(
+                "INSERT INTO imagerequests (TrackerId, RequestTime, RequestedResource, SourceIP) " +
+                "VALUES (@trackingId, @timestamp, @requestedResource, @sourceIp)",
+                connection);
+            cmd.Parameters.AddWithValue("@trackingId", (object?)request.TrackingId ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@timestamp", request.Timestamp);
+            cmd.Parameters.AddWithValue("@requestedResource", (object?)request.RequestedResource ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@sourceIp", (object?)request.SourceIP ?? DBNull.Value);
             cmd.ExecuteNonQuery();
         }
 
@@ -36,7 +41,7 @@ namespace PegboardWebSite.Services
             connection.Open();
 
 
-            MySqlCommand cmd = new MySqlCommand($"SELECT * FROM imagerequests", connection);
+            using var cmd = new MySqlCommand("SELECT Id, TrackerId, RequestTime, RequestedResource, SourceIP FROM imagerequests", connection);
             List<TrackedRequestModel> requests = new List<TrackedRequestModel>();
             using (var reader = cmd.ExecuteReader())
             {
