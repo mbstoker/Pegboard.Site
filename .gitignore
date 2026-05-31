@@ -361,3 +361,10 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /Data
+
+# --- Deploy secrets (FTP credentials) - never commit ---
+.env
+.env.*
+!.env.example
+deploy/.env
+deploy/secrets.*
