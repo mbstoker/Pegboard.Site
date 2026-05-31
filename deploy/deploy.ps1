@@ -38,17 +38,26 @@ param(
 $ErrorActionPreference = 'Stop'
 $repoRoot = Split-Path $PSScriptRoot -Parent
 $proj     = Join-Path $repoRoot 'src\PegboardWebSite\PegboardWebSite.csproj'
-$envFile  = Join-Path $PSScriptRoot '.env'
 $curl     = 'curl.exe'
 
 function Fail($m) { Write-Host "ERROR: $m" -ForegroundColor Red; exit 1 }
 function Info($m) { Write-Host $m -ForegroundColor Cyan }
 function Ok($m)   { Write-Host $m -ForegroundColor Green }
 
-# --- 1. Load .env --------------------------------------------------------------
-if (-not (Test-Path $envFile)) {
-    Fail "deploy/.env not found. Copy deploy/.env.example to deploy/.env and fill it in."
+# --- 1. Locate + load .env -----------------------------------------------------
+# Search order: $env:PEGSITE_ENV override -> venture root (..\..\..\.env from
+# this script, i.e. C:\Business\ePegboard\.env) -> deploy\.env fallback.
+$ventureRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..')).Path
+$candidates = @(
+    $env:PEGSITE_ENV,
+    (Join-Path $ventureRoot '.env'),
+    (Join-Path $PSScriptRoot '.env')
+) | Where-Object { $_ }
+$envFile = $candidates | Where-Object { Test-Path $_ } | Select-Object -First 1
+if (-not $envFile) {
+    Fail "No .env found. Looked for: $($candidates -join '; '). Copy deploy/.env.example to one of these and fill it in."
 }
+Info "Using credentials from: $envFile"
 $cfg = @{}
 foreach ($line in Get-Content $envFile) {
     $t = $line.Trim()
