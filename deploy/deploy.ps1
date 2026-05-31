@@ -5,25 +5,26 @@
 .DESCRIPTION
     1. Reads FTP credentials from deploy/.env (gitignored - never committed).
     2. dotnet publish -c Release to a clean temp folder.
-    3. Optionally drops app_offline.htm first (stops the ASP.NET Core app so its
-       DLLs/exe aren't file-locked during upload), uploads every published file
-       via curl over FTPS, then removes app_offline.htm.
+    3. Uploads app_offline.htm first (stops the ASP.NET Core app so its DLLs/exe
+       aren't file-locked during upload), uploads every published file via curl,
+       then removes app_offline.htm.
+
+    PROTOCOL handling (IONOS uses explicit FTPS on port 21):
+      - "ftps"          -> explicit FTPS: curl ftp://host:port/  + --ssl-reqd  (port 21)
+      - "ftps-implicit" -> implicit FTPS: curl ftps://host:port/             (port 990)
+      - "ftp"           -> plain FTP:     curl ftp://host:port/
+      - "sftp"          -> SFTP/SSH:      curl sftp://host:port/
+
     Credentials are passed to curl via a temp config file, never on the command
-    line, so they don't leak into process listings or logs.
+    line, so they don't appear in process listings or logs.
 
-.PARAMETER Target
-    'staging' (default) or 'prod'. Prod = www.epegboard.com.
-
-.PARAMETER DryRun
-    Build + enumerate what WOULD upload, but make no FTP connection.
-
-.PARAMETER NoAppOffline
-    Skip the app_offline.htm stop/start dance (faster, but risks file locks on
-    a running ASP.NET Core site). Default is to use app_offline.htm.
+.PARAMETER Target   'staging' (default) or 'prod'. Prod = www.epegboard.com.
+.PARAMETER DryRun   Build + list what WOULD upload, but make no FTP connection.
+.PARAMETER NoAppOffline  Skip the app_offline.htm stop/start dance.
 
 .EXAMPLE
-    ./deploy/deploy.ps1 -Target staging
     ./deploy/deploy.ps1 -Target staging -DryRun
+    ./deploy/deploy.ps1 -Target staging
     ./deploy/deploy.ps1 -Target prod
 #>
 [CmdletBinding()]
@@ -57,9 +58,11 @@ foreach ($line in Get-Content $envFile) {
     $cfg[$t.Substring(0,$i).Trim()] = $t.Substring($i+1).Trim()
 }
 
-$P = $Target.ToUpper()  # STAGING | PROD
+$P     = $Target.ToUpper()  # STAGING | PROD
 $proto = $cfg["FTP_${P}_PROTOCOL"]; if (-not $proto) { $proto = 'ftps' }
+$proto = $proto.ToLower()
 $host_ = $cfg["FTP_${P}_HOST"]
+$port  = $cfg["FTP_${P}_PORT"]
 $user  = $cfg["FTP_${P}_USER"]
 $pass  = $cfg["FTP_${P}_PASS"]
 $path  = $cfg["FTP_${P}_PATH"]; if (-not $path) { $path = '/' }
@@ -70,10 +73,28 @@ if (-not $host_ -or -not $user -or -not $pass) {
 }
 if (-not $path.StartsWith('/')) { $path = '/' + $path }
 if (-not $path.EndsWith('/'))   { $path = $path + '/' }
-$baseUrl = "${proto}://${host_}${path}"   # e.g. ftps://host/ /site/
+
+# Default ports per protocol if not specified
+if (-not $port) {
+    switch ($proto) {
+        'ftps-implicit' { $port = 990 }
+        'sftp'          { $port = 22 }
+        default         { $port = 21 }
+    }
+}
+
+# curl URL scheme: explicit FTPS still uses the ftp:// scheme (TLS via --ssl-reqd).
+switch ($proto) {
+    'ftps'          { $scheme = 'ftp';  $sslReqd = $true  }   # explicit FTPS (port 21)
+    'ftps-implicit' { $scheme = 'ftps'; $sslReqd = $false }   # implicit FTPS (port 990)
+    'sftp'          { $scheme = 'sftp'; $sslReqd = $false }
+    'ftp'           { $scheme = 'ftp';  $sslReqd = $false }
+    default         { Fail "Unknown protocol '$proto' (use ftps | ftps-implicit | ftp | sftp)" }
+}
+$baseUrl = "${scheme}://${host_}:${port}${path}"
 
 Info "Target:   $Target"
-Info "Endpoint: ${proto}://${host_}${path}  (user $user)"
+Info "Endpoint: $baseUrl  (protocol $proto, user $user)"
 
 # --- 2. Publish ----------------------------------------------------------------
 $pub = Join-Path ([System.IO.Path]::GetTempPath()) "pegsite-pub-$Target"
@@ -101,7 +122,7 @@ $cfgLines = @(
     "--silent"
     "--show-error"
 )
-if ($proto -eq 'ftps') { $cfgLines += "ssl-reqd" }  # require explicit TLS
+if ($sslReqd) { $cfgLines += "ssl-reqd" }   # force AUTH TLS on explicit FTPS
 Set-Content -Path $curlCfg -Value $cfgLines -Encoding ascii
 
 function Upload-One($localFile, $remoteRel) {
