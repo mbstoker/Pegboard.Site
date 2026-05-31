@@ -1,68 +1,84 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using MySql.Data.MySqlClient;
+using Npgsql;
 
 namespace PegboardWebSite.Services
 {
-
+    /// <summary>
+    /// Visit / email-open / download tracking, persisted to PostgreSQL (VPS).
+    /// Table: tracked_requests (see deploy/sql/tracked_requests.sql).
+    /// Inserts are best-effort: a tracking-DB failure must never surface as a 5xx on
+    /// the page the visitor is loading (an unguarded insert against an unreachable DB
+    /// took the marketing site down on 2026-05-31).
+    /// </summary>
     public class TrackedRequestRepository
     {
         private readonly IConfiguration _config;
-        public TrackedRequestRepository(IConfiguration config)
+        private readonly ILogger<TrackedRequestRepository> _logger;
+
+        public TrackedRequestRepository(IConfiguration config, ILogger<TrackedRequestRepository> logger)
         {
             _config = config;
+            _logger = logger;
         }
+
+        private string ConnectionString => _config.GetConnectionString("PegboardDb")!;
 
         public void Insert(TrackedRequestModel request)
         {
-            string connectionString = _config.GetConnectionString("PegboardDb")!;
+            try
+            {
+                using var connection = new NpgsqlConnection(ConnectionString);
+                connection.Open();
 
-            using var connection = new MySqlConnection(connectionString);
-            connection.Open();
-
-            using var cmd = new MySqlCommand(
-                "INSERT INTO imagerequests (TrackerId, RequestTime, RequestedResource, SourceIP) " +
-                "VALUES (@trackingId, @timestamp, @requestedResource, @sourceIp)",
-                connection);
-            cmd.Parameters.AddWithValue("@trackingId", (object?)request.TrackingId ?? DBNull.Value);
-            cmd.Parameters.AddWithValue("@timestamp", request.Timestamp);
-            cmd.Parameters.AddWithValue("@requestedResource", (object?)request.RequestedResource ?? DBNull.Value);
-            cmd.Parameters.AddWithValue("@sourceIp", (object?)request.SourceIP ?? DBNull.Value);
-            cmd.ExecuteNonQuery();
+                using var cmd = new NpgsqlCommand(
+                    "INSERT INTO tracked_requests (tracker_id, request_time, requested_resource, source_ip) " +
+                    "VALUES (@trackingId, @timestamp, @requestedResource, @sourceIp)",
+                    connection);
+                cmd.Parameters.AddWithValue("@trackingId", (object?)request.TrackingId ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@timestamp", request.Timestamp);
+                cmd.Parameters.AddWithValue("@requestedResource", (object?)request.RequestedResource ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@sourceIp", (object?)request.SourceIP ?? DBNull.Value);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                // Swallow: tracking is non-critical. Log and move on so the request still serves.
+                _logger.LogWarning(ex, "TrackedRequest insert failed (resource={Resource}, trackingId={TrackingId})",
+                    request.RequestedResource, request.TrackingId);
+            }
         }
 
         public List<TrackedRequestModel> GetAll(DateTime? minTime = null)
         {
-            string connectionString = _config.GetConnectionString("PegboardDb")!;
-
-            using var connection = new MySqlConnection(connectionString);
-            connection.Open();
-
-
-            using var cmd = new MySqlCommand("SELECT Id, TrackerId, RequestTime, RequestedResource, SourceIP FROM imagerequests", connection);
-            List<TrackedRequestModel> requests = new List<TrackedRequestModel>();
-            using (var reader = cmd.ExecuteReader())
+            var results = new List<TrackedRequestModel>();
+            try
             {
+                using var connection = new NpgsqlConnection(ConnectionString);
+                connection.Open();
+
+                using var cmd = new NpgsqlCommand(
+                    "SELECT id, tracker_id, request_time, requested_resource, source_ip FROM tracked_requests " +
+                    "WHERE (@minTime IS NULL OR request_time >= @minTime) ORDER BY request_time DESC",
+                    connection);
+                cmd.Parameters.AddWithValue("@minTime", (object?)minTime ?? DBNull.Value);
+
+                using var reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    TrackedRequestModel request = new TrackedRequestModel();
-                    request.Id = reader.GetInt32(0);
-                    request.TrackingId = reader.GetString(1);
-                    request.Timestamp = reader.GetDateTime(2);
-                    if (!reader.IsDBNull(3))
+                    results.Add(new TrackedRequestModel
                     {
-                        request.RequestedResource = reader.GetString(3);
-                    }
-                    if (!reader.IsDBNull(4))
-                    {
-                        request.SourceIP = reader.GetString(4);
-                    }
-                    requests.Add(request);
+                        Id = reader.GetInt32(0),
+                        TrackingId = reader.IsDBNull(1) ? null : reader.GetString(1),
+                        Timestamp = reader.GetDateTime(2),
+                        RequestedResource = reader.IsDBNull(3) ? null : reader.GetString(3),
+                        SourceIP = reader.IsDBNull(4) ? null : reader.GetString(4),
+                    });
                 }
             }
-            return requests;
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "TrackedRequest GetAll failed");
+            }
+            return results;
         }
     }
 }
