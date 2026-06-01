@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RatedClubs - Coming Soon</title>
+    <meta name="description" content="RatedClubs is coming soon." />
+    <meta name="robots" content="noindex" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="RatedClubs - Coming Soon" />
+    <meta property="og:description" content="RatedClubs is coming soon." />
+    <meta property="og:url" content="https://www.ratedclubs.com/" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #0f1419;
+            color: #e6edf3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 24px;
+        }
+        .wrap { max-width: 640px; }
+        .bar {
+            width: 120px; height: 6px; margin: 0 auto 40px;
+            background: linear-gradient(90deg, #4cc9f0, #3a86ff);
+            border-radius: 3px;
+        }
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+        h1 .accent { color: #4cc9f0; }
+        .tagline {
+            font-size: clamp(1rem, 3vw, 1.4rem);
+            color: #9aa7b4;
+            font-weight: 400;
+            margin-bottom: 36px;
+        }
+        .soon {
+            display: inline-block;
+            padding: 10px 22px;
+            border: 1px solid #2a3441;
+            border-radius: 999px;
+            color: #cdd9e5;
+            font-size: 0.95rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        footer {
+            position: fixed; bottom: 20px; left: 0; right: 0;
+            color: #5a6672; font-size: 0.8rem;
+        }
+        footer a { color: #5a6672; text-decoration: none; }
+        footer a:hover { color: #9aa7b4; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="bar"></div>
+        <h1>Rated<span class="accent">Clubs</span></h1>
+        <p class="tagline">Something new for racquet clubs.</p>
+        <span class="soon">Coming soon</span>
+    </div>
+    <footer>&copy; <span id="y"></span> MBS Software Limited</footer>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
