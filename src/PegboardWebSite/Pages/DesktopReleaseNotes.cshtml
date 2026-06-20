@@ -1,0 +1,118 @@
+@page
+@{
+    ViewData["Title"] = "Desktop app release notes";
+}
+<p>Version history for the Windows desktop app. The desktop app continues to be supported, but most new functionality is now going into the web app at <a href="https://play.epegboard.com" target="_blank" rel="noopener">play.epegboard.com</a> - see the <a asp-page="/ReleaseNotes">web app release notes</a> for what's new there. Desktop version numbers aren't contiguous, as some releases are internal only.</p>
+
+<h1 class="mt-4">🚀v1.6.4</h1>
+<p class="text-muted"><em>Released: July 4, 2025</em></p>
+<p>Included in this version:</p>
+<ul>
+    <li>Fixes bug which prevented photos being changed once set</li>
+    <li>Optimized score entry for touchscreen by preventing popup keyboard obscuring game results</li>
+    <li>Indicate game is manually set if changes made from the auto-pick</li>
+</ul>
+
+<h1>🚀v1.6.2</h1>
+<p class="text-muted"><em>Released: June 18, 2025</em></p>
+<p>Included in this version:</p>
+<ul>
+    <li>Fixes some minor bugs introduced in 1.6.0</li>
+    <li>provides bulk import of members enabling rapid setup for new users.  Import allows name, gender and initial rating to be specified</li>
+</ul>
+
+<div class="my-4">
+    <img src="/Images/Releases/1.6.2/import-members.png" alt="Next Game feature screenshot" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;" />
+</div>
+
+
+<h1>🚀v1.6.0</h1>
+<p class="text-muted"><em>Released: May 18, 2025</em></p>
+
+<p>This version introduces the highly requested <strong>“Next Game”</strong> feature, designed to streamline game transitions and improve court usage. Here are the key benefits:</p>
+
+<ul>
+    <li><strong>Prepare the next game in advance</strong> - no need to wait for a court to become available.</li>
+    <li><strong>Mix manual and automatic selection</strong> - choose some players yourself, and let auto-pick fill the rest.</li>
+    <li>Replaces and improves the old <strong>“Suggest”</strong> and <strong>“Set”</strong> methods with a unified, smarter workflow.</li>
+</ul>
+
+<div class="my-4">
+    <img src="/Images/Next_game_sample.jpg" alt="Next Game feature screenshot" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;" />
+</div>
+
+<h3 class="mt-5">🌿 How It Works</h3>
+<p>A new <strong>“Next Game”</strong> area now appears to the left of the waiting list.</p>
+
+<ul>
+    <li>Leave all slots empty and click <strong>Auto-pick</strong> to fill them all.</li>
+    <li>Or pre-select one or more players, and Auto-pick will complete the best possible match.</li>
+    <li>
+        Players can be added by:
+        <ul>
+            <li>Selecting them from the list and clicking the arrow next to a slot</li>
+            <li>Or via drag-and-drop for quicker setup.</li>
+        </ul>
+    </li>
+</ul>
+
+<h3 class="mt-5">🧭 Support for Traditional Game Picking</h3>
+<p>
+    For clubs using the traditional format - where the first person in the queue chooses from the next <em>N</em> - this approach is still supported.
+    You can configure these preferences in the <strong>Settings</strong>, and Auto-pick will respect them.
+</p>
+
+<p class="mt-3">⚠️ <strong>Note:</strong> There has been a small change to the configuration settings for this. Please double-check that your club's preferences are still set correctly.</p>
+
+<hr class="my-5" />
+<h1>🚀v1.5.12</h1>
+<p class="text-muted"><em>Released: April 23, 2025</em></p>
+<ul>
+    <li>New setting to determine Gold/Silver/Bronze award order using rating change instead of session ranking</li>
+    <li>Enhanced session settings for more control over the picking algorithm, including:
+        <ul>
+            <li>Option to always include the first player</li>
+            <li>Limit game selection to the first N players in the queue</li>
+            <li>New option to calculate how “due” a player is based on session court time (pro-rated for attendance) instead of time in queue</li>
+        </ul>
+    </li>
+    <li>Checkbox added to the game start dialog (Suggest or Set) to show only current attendees in player dropdowns</li>
+    <li>Export to CSV now available for the partnership report</li>
+</ul>
+
+<hr class="my-5" />
+<h1>🚀v1.5.10</h1>
+<p class="text-muted"><em>Released: May 2, 2024</em></p>
+<ul>
+    <li>Fix issue with adding new players which caused them sometimes to appear twice.  This bug was introduced in 1.5.8.</li>
+</ul>
+
+<hr class="my-5" />
+<h1>🚀v1.5.9</h1>
+<p class="text-muted"><em>Released: April 20, 2025</em></p>
+<ul>
+    <li>Reduced size of backups by a large proportion where members had photos set.</li>
+</ul>
+
+<hr class="my-5" />
+<h1>🚀v1.5.8</h1>
+<p class="text-muted"><em>Released: April 12, 2024</em></p>
+<ul>
+    <li>Resolves bug where clicking on quick rating buttons when adding a new player assigned a value different to that displayed on the button.</li>
+    <li>Resolves issue which caused initial ratings to be lost when a completed game was edited (caused ratings to be recalculated using initial ratings of 1500 for all players).</li>
+    <li>Addition of Maximum score to the settings (defaults to 30).  This is used to correctly fill in the winning teams score with games going to the wire where clubs play to a non-standard score.</li>
+    <li>Allow override of winning score.  Once the losing score is entered the winning score is automatically filled in.  In some cases, this may be incorrect - e.g. if a game finishes early or is played to less points than the session default.  Previously changing the winning score would cause the system to assume it was the losing score and recalculate the other teams score.</li>
+</ul>
+
+<hr class="my-5" />
+<h1>🚀v1.5.7</h1>
+<ul>
+    <li>Fix for scroll bar not being visible when adding a new player and buttons now being visible on form to add multiple players.  This only affected users running on a tablet.</li>
+    <li>Addition of quick rating buttons when adding a new player (or editing an existing player) which give an indication of appropriate initial ratings</li>
+</ul>
+
+<hr class="my-5" />
+<h1>🚀v1.5.0</h1>
+<ul>
+    <li>Added a “New Member” button to the Players page to assist in setting up members prior to starting the first session.</li>
+</ul>
