@@ -61,8 +61,8 @@ Hero → Four pillars → Rating engine (the thread that ties them together) →
 4. Club Nights pillar - DONE (hi-res court display + attendee-stats leaderboard + pick-explanation all captured from Riverside; pick-explanation cropped to the outcome overview - factor weights deliberately excluded per the moat rule, see backlog #532)
 5. Features hub - DONE
 6. Club Management pillar - DONE (built around the Insights/reports suite; member-mgmt screenshot illustrative). Reports gallery reworked 2026-06-23 into 3 role lanes - committee / membership / captains+players - surfacing ALL shipped reports grouped by who they help. ONLY GA reports advertised (the 8 `LiveCard` ones + per-member history / head-to-head); the 5 `SoonCard` reports (Match quality, Playing opportunity, Court utilisation, Most improved, Social mixing) stay off the site until they ship.
-7. Pricing - next (gated on the open pricing-model decision)
-8. FAQ - DONE (pricing answers flagged [placeholder] pending the pricing decision)
+7. Pricing - DONE 2026-06-23 (60-day free-trial model; Free / Club £8/mo / Competitions tiers + desktop + promises band; Competitions price soft; figures provisional per pricing-decision.md)
+8. FAQ - DONE (pricing answers updated 2026-06-23 to the 60-day free-trial model)
 9. About - DONE (founder name / founding year flagged [placeholder] for Mike to confirm)
 
 Insights/reports suite (Manage Your Club): Session summary, Payment summary, Attendance trends, Partnerships, Members table, Per-member history, Head-to-head, Organiser insights - all treated as live by launch (confirmed 2026-06-20).
