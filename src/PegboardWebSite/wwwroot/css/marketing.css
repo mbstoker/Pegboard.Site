@@ -405,4 +405,11 @@ footer{background:var(--navy);color:#9dc0e3;padding:52px 0 30px;font-size:.92rem
   .feat-ico{width:32px;height:32px;margin-bottom:9px}
   .feat-body h4{font-size:.92rem}
   .feat-body p{font-size:.8rem;margin-top:6px}
+  /* Nav: stop the Sign in / Start Free Trial buttons wrapping and left-aligning on phones */
+  .nav-inner{gap:12px;height:60px}
+  .nav-cta{gap:9px}
+  .nav-cta a{white-space:nowrap}
+  .signin{font-size:.88rem}
+  .nav-cta .btn{padding:9px 13px;font-size:.88rem;border-radius:9px}
+  .brand .brand-word{height:23px}
 }
