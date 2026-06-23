@@ -395,3 +395,14 @@ footer{background:var(--navy);color:#9dc0e3;padding:52px 0 30px;font-size:.92rem
   .page-hero h1{font-size:2.1rem}
 }
 @media(max-width:560px){.feat-cards{grid-template-columns:1fr}.trust-strip .row{grid-template-columns:1fr}}
+@media(max-width:640px){
+  /* Phone: drop the repetitive feature thumbnails - the first near-duplicated the hero
+     dashboard shot, and five stacked images made the page feel heavy. Cards become a tidy
+     2x2 grid of icon + text tiles; the hero keeps the one strong screenshot. Desktop unchanged. */
+  .feat-thumb{display:none}
+  .feat-cards{grid-template-columns:1fr 1fr;gap:12px}
+  .feat-body{padding:15px 13px 16px}
+  .feat-ico{width:32px;height:32px;margin-bottom:9px}
+  .feat-body h4{font-size:.92rem}
+  .feat-body p{font-size:.8rem;margin-top:6px}
+}
