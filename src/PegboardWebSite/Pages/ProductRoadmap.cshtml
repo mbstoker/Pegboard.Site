@@ -1,58 +1,76 @@
 @page
 @{
-    ViewData["Title"] = "Product Roadmap";
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "Product roadmap";
+    ViewData["Description"] = "What's live now on ePegboard and what we're building next - smarter picking, deeper reports, more tournament formats and in-app payments.";
 }
 
-<h1 class="display-4 mb-4">🛣️ Product Roadmap</h1>
-<p class="lead">What's coming next. We're committed to making this the best session management system on the market.</p>
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Roadmap</span></div>
+      <span class="eyebrow">Product roadmap</span>
+      <h1 style="margin-top:10px">What we're building next</h1>
+      <p class="lede">We ship features as they are ready, and we prioritise off the back of what clubs tell us. Here is what is live now, and what is coming.</p>
+    </div>
+  </div>
+</section>
 
-<hr class="my-4" />
+<!-- SHIPPED -->
+<section>
+  <div class="wrap">
+    <div class="section-head center"><span class="eyebrow">Live now</span><h2>Already in the web app</h2><p>All of this is running today at <a href="https://play.epegboard.com" target="_blank" rel="noopener">play.epegboard.com</a>.</p></div>
+    <div class="pill-row" style="justify-content:center">
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Runs in any browser, no install</span>
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Smarter, fairer game picking</span>
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Pick explanations</span>
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Live fairness stats</span>
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Player rating graphs</span>
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Attendance reports &amp; trends</span>
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Handicap tournaments</span>
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Group stages &amp; knockouts</span>
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Live competition standings</span>
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Partnership &amp; team insights</span>
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Member management</span>
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Payment tracking</span>
+    </div>
+  </div>
+</section>
 
-<h2 class="mt-5">Recently shipped</h2>
-<p class="text-muted">Live now on the web app at <a href="https://play.epegboard.com" target="_blank" rel="noopener">play.epegboard.com</a>.</p>
+<!-- COMING NEXT -->
+<section class="bg-soft">
+  <div class="wrap">
+    <div class="section-head center"><span class="eyebrow">Coming next</span><h2>Roughly in priority order</h2><p>Dates are not fixed. The order reflects what clubs are asking for most.</p></div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h4>Picker enhancements</h4><p>Persistent partner preferences (for league pairs), single-discipline sessions (mixed-only, men's or ladies'), singles support, and continued fairness work on sit-out streaks and carry-over.</p></div>
+      <div class="step"><div class="n">2</div><h4>Deeper club reports</h4><p>Court utilisation, match quality and competitiveness, and member-engagement reports, brought together in a redesigned insights hub.</p></div>
+      <div class="step"><div class="n">3</div><h4>More tournament formats</h4><p>Singles and team-event tournaments alongside handicap doubles, plus inter-club competitions between clubs running ePegboard.</p></div>
+      <div class="step"><div class="n">4</div><h4>In-app payments</h4><p>Collect session fees and subscriptions inside ePegboard, with a cost-split calculator for the night.</p></div>
+      <div class="step"><div class="n">5</div><h4>Player self-service</h4><p>Let members check themselves in with a short club code or PIN, taking pressure off the desk on a busy night.</p></div>
+      <div class="step"><div class="n">6</div><h4>Phone display polish</h4><p>The web app works on phones today; we are making the smaller-screen experience as good as it is on a tablet or laptop.</p></div>
+    </div>
+  </div>
+</section>
 
-<ul class="fs-5">
-    <li>✅ <strong>Web app</strong> - runs in any browser on any device, no install</li>
-    <li>✅ <strong>Algorithm improvements</strong> - significant ongoing work on the picker; addressing the most common complaint we heard (higher-rated players paired with weak partners)</li>
-    <li>✅ <strong>Pick explanations</strong> - players can see exactly why each game was picked</li>
-    <li>✅ <strong>Fairness statistics</strong> - visible mid-session</li>
-    <li>✅ <strong>Ratings graphs</strong> - per-player rating progression over time</li>
-    <li>✅ <strong>Attendance reports</strong> - built-in, helpful for member retention</li>
-</ul>
+<!-- NOTE -->
+<section>
+  <div class="wrap">
+    <div class="callout" style="max-width:820px;margin:0 auto;align-items:center">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <p>Priorities evolve with feedback and technical constraints. If something here matters to your club, tell us at <a href="mailto:support@epegboard.com">support@epegboard.com</a> - it genuinely helps us prioritise. Desktop-app users: most new work now lands on the web app, and the desktop version stays supported.</p>
+    </div>
+  </div>
+</section>
 
-<hr class="my-5" />
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2>Try what's already there</h2>
+    <p>Free for 60 days, no card details. See the live features on your own club night.</p>
+    <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank">Start Free Trial</a>
+    <p class="fine">Tablet or laptop-sized screens recommended for the best experience.</p>
+  </div>
+</section>
 
-<h2>Coming next</h2>
-<p class="text-muted">Roughly in priority order. Dates aren't fixed - we ship features as they're ready, and the priority of each item reflects what we've heard from clubs in the field.</p>
-
-<h3 class="mt-4">🎯 1. Picker enhancements</h3>
-<p>The picker is our number-one priority and we're continuing to invest there:</p>
-<ul>
-    <li><strong>"Sticky" partner preferences</strong> - persistent pairing preferences (e.g. league partners) that the picker respects across a session</li>
-    <li><strong>Single-discipline sessions</strong> - mixed-only or straight-only sessions, with the picker constraining game selection accordingly</li>
-    <li><strong>Singles support</strong> - run singles-format sessions, not just doubles</li>
-</ul>
-
-<h3 class="mt-4">📊 2. More reporting</h3>
-<p>Building on attendance reports, more visibility into how a club is running:</p>
-<ul>
-    <li>Head-to-head reports (member vs member win/loss + score history)</li>
-    <li>Partnership reports (member-with-member win rate, frequency)</li>
-    <li>Organiser insights - attendance fluctuations, court utilisation, payment status, picker-fairness trends</li>
-</ul>
-
-<h3 class="mt-4">🏆 3. Tournament support</h3>
-<p>Run internal tournaments at your own club, plus inter-club tournaments between clubs using ePegboard.</p>
-
-<h3 class="mt-4">📱 4. Phone display polish</h3>
-<p>The web app works on phones today, but tablet or laptop-sized screens are the best experience. We're improving the phone display so smaller-screen use feels just as good.</p>
-
-<hr class="my-5" />
-
-<p class="text-muted">
-    <em>Features and priorities may evolve based on user feedback and technical constraints. If something on this list matters to your club specifically, drop us a line at <a href="mailto:support@epegboard.com">support@epegboard.com</a> - it helps us prioritise.</em>
-</p>
-
-<p class="text-muted" style="font-size: 0.9rem;">
-    <em>Note for desktop app users: most new functionality is being added to the web app at play.epegboard.com. The desktop app continues to be supported. Web-app sign-up is free at <a href="https://play.epegboard.com/signup" target="_blank" rel="noopener">play.epegboard.com</a> if you want to give it a try.</em>
-</p>
+<!-- FOOTER -->
