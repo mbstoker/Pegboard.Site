@@ -1,0 +1,176 @@
+@page "/features/club-management"
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "Manage your club";
+}
+
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/features">Features</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Manage Your Club</span></div>
+      <span class="eyebrow">Manage Your Club</span>
+      <h1 style="margin-top:10px">The running of your club, handled</h1>
+      <p class="lede">Attendance, payments and members in one place - plus the insights to spot who is drifting and keep your club growing.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="https://play.epegboard.com/signup" target="_blank">Start Free Trial</a>
+        <a class="btn btn-ghost btn-lg" href="#reports">See the reports</a>
+      </div>
+      <div class="pill-row">
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Attendance trends</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Payment tracking</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Member management</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Reports &amp; CSV export</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section>
+  <div class="wrap">
+
+    <!-- Attendance trends (real) -->
+    <div class="showcase" style="margin-bottom:64px">
+      <div class="copy">
+        <div class="step-eyebrow">Attendance trends</div>
+        <h3>See who's drifting before they leave</h3>
+        <p>Every member is sorted into Active, Lapsing, Dormant or New from how recently and how often they play. The "reach out now" list flags regulars who have gone quiet - so you can act before they lapse.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Active / Lapsing / Dormant / New at a glance</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> A drift map of recency vs frequency</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> A prioritised list of who to contact first</li>
+        </ul>
+      </div>
+      <div class="shot">
+        <img src="/img/attendance-trends.png" alt="Attendance trends - Active, Lapsing, Dormant and New members, with a drift map and reach-out list">
+      </div>
+    </div>
+
+    <!-- Payments (real) -->
+    <div class="showcase flip" style="margin-bottom:64px">
+      <div class="copy">
+        <div class="step-eyebrow">Payments</div>
+        <h3>Know what's paid, and what's outstanding</h3>
+        <p>Record session fees as players arrive and see exactly what is expected, collected and still owed - by session or by member. Export it whenever you need it.</p>
+      </div>
+      <div class="shot">
+        <img src="/img/Payments.png" alt="Session payments - membership type, session cost, amount paid and balance due per member">
+      </div>
+    </div>
+
+    <!-- Members -->
+    <div class="showcase">
+      <div class="copy">
+        <div class="step-eyebrow">Members</div>
+        <h3>Your whole membership in one place</h3>
+        <p>Every member with their photo, rating, last-played date, games and win rate - sortable on any column, and one click to export. Newcomers are easy to recognise and welcome.</p>
+      </div>
+      <div class="shot">
+        <img src="/img/ratings.png" alt="The web member directory - photos, ratings, last played and win rate, all in one place">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REPORTS / INSIGHTS GRID -->
+<section class="bg-soft" id="reports">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Insights</span>
+      <h2>Every report you need, one click to CSV</h2>
+      <p>The numbers behind your club, grouped by who they help - ready to open, sort and export. Most come with Pro; the growth analytics (marked <span class="tier-tag" style="margin-left:0">Premium</span>) are on Premium.</p>
+    </div>
+    <!-- Lane: committee / treasurer -->
+    <div class="report-lane">
+      <div class="report-lane-head">
+        <span class="who">For the committee</span>
+        <h3>Run the night &amp; the books <span class="q">- who came, what happened, who's paid?</span></h3>
+      </div>
+      <div class="report-grid">
+        <div class="report-card">
+          <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span> Session summary</h4>
+          <p>Attendance, games played, voids and status across any date range.</p>
+          <span class="csv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg> CSV export</span>
+        </div>
+        <div class="report-card">
+          <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M6 15l4-5 3 3 5-7"/></svg></span> Attendance over time <span class="tier-tag">Premium</span></h4>
+          <p>Monthly trend, the typical season shape, and total attendances per year.</p>
+          <span class="csv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg> CSV export</span>
+        </div>
+        <div class="report-card">
+          <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5h4a1.5 1.5 0 0 1 0 3h-3a1.5 1.5 0 0 0 0 3h4"/></svg></span> Payment summary</h4>
+          <p>Fees expected, collected and outstanding - by session or by member.</p>
+          <span class="csv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg> CSV export</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lane: membership / growth -->
+    <div class="report-lane">
+      <div class="report-lane-head">
+        <span class="who">For membership</span>
+        <h3>Grow and keep your members <span class="q">- who's coming back, and who's slipping away?</span></h3>
+      </div>
+      <div class="report-grid">
+        <div class="report-card">
+          <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 14l4-4 3 3 5-6"/></svg></span> Attendance trends <span class="tier-tag">Premium</span></h4>
+          <p>Active / Lapsing / Dormant / New, and who to reach out to before they lapse.</p>
+          <span class="csv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg> CSV export</span>
+        </div>
+        <div class="report-card">
+          <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V12M10 20V5M16 20v-9M20 20v-4"/></svg></span> Member engagement <span class="tier-tag">Premium</span></h4>
+          <p>Highly active, regular, occasional or rarely - the shape of your members.</p>
+          <span class="csv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg> CSV export</span>
+        </div>
+        <div class="report-card">
+          <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-6.5 7.5V19l-5 2v-8.5z"/></svg></span> New member conversion <span class="tier-tag">Premium</span></h4>
+          <p>Of members who joined recently, how many came back and stuck.</p>
+          <span class="csv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg> CSV export</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lane: captains & players -->
+    <div class="report-lane">
+      <div class="report-lane-head">
+        <span class="who">For captains &amp; players</span>
+        <h3>Players, partnerships &amp; teams <span class="q">- who plays well together, and how's everyone doing?</span></h3>
+      </div>
+      <div class="report-grid">
+        <div class="report-card">
+          <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 14l4-4 3 3 5-6"/></svg></span> Partnerships report</h4>
+          <p>Which pairs actually click - performance vs expectation, with confidence. <a href="/features/league-team-support" style="color:var(--primary);font-weight:700">See league support &rarr;</a></p>
+          <span class="csv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg> CSV export</span>
+        </div>
+        <div class="report-card">
+          <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l-4 5 4 5M17 7l4 5-4 5M14 4l-4 16"/></svg></span> Head-to-head</h4>
+          <p>How often members play with and against each other, and how those match-ups go.</p>
+          <span class="csv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg> CSV export</span>
+        </div>
+        <div class="report-card">
+          <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></span> Members table</h4>
+          <p>Current rating, last played, games and win % - sort on any column.</p>
+          <span class="csv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg> CSV export</span>
+        </div>
+        <div class="report-card">
+          <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span> Per-member history</h4>
+          <p>Each member's sessions and rating trend over time, on their profile.</p>
+          <span class="csv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg> In-app</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2>Run your club on ePegboard</h2>
+    <p>Free for 60 days. No card details. Runs in any browser.</p>
+    <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank">Start Free Trial</a>
+    <p class="fine">Tablet or laptop-sized screens recommended for the best experience.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->

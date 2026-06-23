@@ -1,165 +1,116 @@
-@page
+@page "/faq"
 @model FAQsModel
 @{
-    ViewData["Title"] = "FAQs";
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "Frequently asked questions";
 }
 
-<section class="py-5">
-    <div class="container">
-        <h1 class="mb-4 text-center">Frequently Asked Questions</h1>
-
-        <h3 class="mt-5">🔹 General questions</h3>
-
-        <div class="mb-4">
-            <h5>What is ePegboard?</h5>
-            <p>
-                ePegboard is a digital replacement for the traditional manual pegboard system used in club nights. It automatically forms games using an intelligent algorithm that balances skill levels, mixes pairings, and ensures fairness - all while keeping the session flowing smoothly. Most clubs use the web app at <a href="https://play.epegboard.com" target="_blank" rel="noopener">play.epegboard.com</a>; a Windows desktop app is also available for clubs that prefer fully-offline operation.
-            </p>
-        </div>
-
-        <div class="mb-4">
-            <h5>Web app or desktop app - which should I pick?</h5>
-            <p>
-                For most clubs the web app is the right choice. It runs in any browser on any device (tablet or laptop-sized screens recommended for the best experience), needs no install, and is where new features land first. The desktop app is still supported and is the right choice if you need to run fully-offline at a venue with no reliable internet. Most new functionality will be web-only.
-            </p>
-        </div>
-
-        <div class="mb-4">
-            <h5>How are games chosen?</h5>
-            <p>
-                When choosing the next game, the system looks at every possible combination and assigns each a score, then picks the combination with the best score. The score is composed of several components: cross-team balance, in-team balance, how long a player has been waiting, gender balance, and mixing up partners / opponents. Where more than one court is available, the system optimises games across all courts together. Pick explanations show players exactly why each game was picked - it's not a black box.
-            </p>
-        </div>
-
-        <div class="mb-4">
-            <h5>How are player ratings calculated?</h5>
-            <p>
-                The ePegboard rating system works similarly to ELO ratings in chess. Ratings are adjusted based on the game score compared to the par score (what the system would have expected). So a player who loses 21-19 when the par score was 21-17 will see their rating go up, even though they lost - and the opponents' ratings go down accordingly. Rating changes happen quickly for the first few games then slow down as the system hones in on the player's true rating.
-            </p>
-        </div>
-
-        <div class="mb-4">
-            <h5>My club wants to stick with traditional picking - first player in queue picks from next N. Is that supported?</h5>
-            <p>
-                Yes. There are configuration settings to ensure the first player in the queue always picks, with their options drawn from the next 7 names (configurable). Auto-pick can be used to suggest a game and the person at the front of the queue can adjust as they prefer.
-            </p>
-        </div>
-
-        <h3 class="mt-5">🔹 Web app (play.epegboard.com)</h3>
-
-        <div class="mb-4">
-            <h5>How do I sign up?</h5>
-            <p>
-                Go to <a href="https://play.epegboard.com/signup" target="_blank" rel="noopener">play.epegboard.com</a> and create an account. No card details required. You can be running your first session within a few minutes.
-            </p>
-        </div>
-
-        <div class="mb-4">
-            <h5>What devices does the web app work on?</h5>
-            <p>
-                Any modern browser on any device - Windows, Mac, Chromebook, iPad, Android tablet, iPhone, Android phone. Tablet or laptop-sized screens are recommended for the best experience; phones work but the display is best on larger screens.
-            </p>
-        </div>
-
-        <div class="mb-4">
-            <h5>Does the web app need an internet connection?</h5>
-            <p>
-                Yes. The web app needs an internet connection during the session. If your venue has unreliable internet, the desktop app may suit you better - it runs fully offline.
-            </p>
-        </div>
-
-        <div class="mb-4">
-            <h5>What data does the web app store, and where?</h5>
-            <p>
-                The web app stores your club data (member details, session history, game results, ratings) on our servers. Access is gated by login and scoped per-club. Photos uploaded for member identification are stored alongside the member record. Paid legal review of our privacy + terms is in progress; see the <a asp-page="/Privacy">Privacy</a> page for interim details.
-            </p>
-        </div>
-
-        <div class="mb-4">
-            <h5>I used to run the desktop app - can I switch to the web app?</h5>
-            <p>
-                Yes. Get in touch at <a href="mailto:support@epegboard.com">support@epegboard.com</a> and we'll help migrate your member list and history to the web app.
-            </p>
-        </div>
-
-        <h3 class="mt-5">🔹 60-day free trial</h3>
-
-        <div class="mb-4">
-            <h5>Do you need my card details?</h5>
-            <p>
-                No card details or payment are required for the free trial - in either the web app or the desktop app.
-            </p>
-        </div>
-
-        <div class="mb-4">
-            <h5>How does the free trial work?</h5>
-            <p>
-                <strong>Web app:</strong> sign up at <a href="https://play.epegboard.com/signup" target="_blank" rel="noopener">play.epegboard.com</a>. Free for at least 60 days - we'll announce ahead of any post-trial pricing change.
-                <br /><br />
-                <strong>Desktop app:</strong> download and install - it comes with a fully featured 60-day free trial. No registration or card details needed.
-            </p>
-        </div>
-
-        <div class="mb-4">
-            <h5>Why do I get a SmartScreen warning when downloading the desktop app?</h5>
-            <p>
-                Because ePegboard is a relatively new product, SmartScreen may warn users due to low download volume. This is a standard Microsoft safeguard for new software and will fade as downloads increase. The web app at play.epegboard.com avoids this entirely - no download needed.
-            </p>
-        </div>
-
-        <h3 class="mt-5">🔹 Licensing and purchase</h3>
-
-        <div class="mb-4">
-            <h5>What does it cost after the trial?</h5>
-            <p>
-                <strong>Web app:</strong> we'll announce post-trial pricing ahead of any change. Free for at least 60 days from sign-up.
-                <br /><br />
-                <strong>Desktop app:</strong> £60 / year per club. No automatic renewal - you choose when to renew.
-            </p>
-        </div>
-
-        <div class="mb-4">
-            <h5>Is this a subscription?</h5>
-            <p>
-                Desktop app: no. After the 60-day trial, you can purchase a 12-month license for £60. There is no automatic renewal. Web app: pricing model is being finalised; no automatic charge during the free trial.
-            </p>
-        </div>
-
-        <div class="mb-4">
-            <h5>Can I transfer my license to another club?</h5>
-            <p>
-                No. Each license is tied to a specific club and is non-transferable.
-            </p>
-        </div>
-
-        <div class="mb-4">
-            <h5>Do you offer discounts for teams or multiple clubs?</h5>
-            <p>
-                Yes - we offer discounts for multi-license purchases. Please contact <a href="mailto:sales@epegboard.com">sales@epegboard.com</a> to discuss your requirements.
-            </p>
-        </div>
-
-        <h3 class="mt-5">🔹 Desktop app (Windows)</h3>
-
-        <div class="mb-4">
-            <h5>What are the minimum system requirements?</h5>
-            <p>
-                The desktop app runs on Windows 11 and is optimised for touchscreen devices with a recommended screen size of 10.1 inches or larger.
-            </p>
-        </div>
-
-        <div class="mb-4">
-            <h5>Does the desktop app work offline?</h5>
-            <p>
-                Yes. The desktop app is fully offline. Once installed it runs without needing an internet connection during sessions - which is why it's still the right choice for venues with unreliable internet.
-            </p>
-        </div>
-
-        <div class="mb-4">
-            <h5>Do I need to reinstall after buying a desktop license?</h5>
-            <p>
-                No. Once you've purchased a license, just enter your license key into the application's licensing screen. Your data, settings, and player history remain intact.
-            </p>
-        </div>
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>FAQ</span></div>
+      <span class="eyebrow">Questions &amp; answers</span>
+      <h1 style="margin-top:10px">Frequently asked questions</h1>
+      <p class="lede">The things club organisers ask us most - getting started, what it costs, how the ratings work, and what happens to your data.</p>
     </div>
+  </div>
 </section>
+
+<!-- FAQ -->
+<section style="padding-top:50px">
+  <div class="wrap">
+    <div class="faq-wrap">
+
+      <div class="faq-cat">Getting started</div>
+
+      <details class="faq-item">
+        <summary>Is there really a free trial? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="faq-a"><p>Yes - a 60-day free trial of the full product, with no card needed to start. Run real club nights through the trial; it is the complete app, not a cut-down demo. When the 60 days are up, smaller clubs can stay on the free plan and busier clubs upgrade - nothing is charged automatically, and we always give plenty of notice before anything changes.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do we need to install anything? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="faq-a"><p>No. The web app runs in any modern browser - just sign in at <a href="https://play.epegboard.com" target="_blank">play.epegboard.com</a> and you are away. There is also a Windows desktop app for venues with unreliable internet, but most clubs never need it.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How long does it take to set up? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="faq-a"><p>You can be running your first session in minutes. Sign in, add players as they arrive - regulars, drop-ins and last-minute changes - and let ePegboard build balanced games. There is nothing to configure before your first night.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What devices does it work on? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="faq-a"><p>The session display is designed for a tablet or laptop at the desk - a screen everyone can gather around. Players can check their own profile, rating and match history on their phone. A larger screen for the courts is optional but works well.</p></div>
+      </details>
+
+      <div class="faq-cat">Pricing &amp; plans</div>
+
+      <details class="faq-item">
+        <summary>What happens after the free trial? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="faq-a"><p>Nothing happens automatically, and there is no card on file. When your 60-day trial ends you choose: stay on the free plan - one session a week, up to 12 players, with the full game picker - or move to a paid plan as your club grows, from around &pound;8 a month. Full details are on the <a href="/pricing">Pricing</a> page.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is the difference between the web app and the desktop app? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="faq-a"><p>The web app runs in any browser on any device, needs no install, and is where new features land first. The Windows desktop app runs fully offline - the right choice if your venue has unreliable internet - and costs &pound;60 per year per club after a 60-day free trial.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is the desktop app still supported? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="faq-a"><p>Yes. Clubs that rely on it for offline venues can keep using it. New development focuses on the web app, so that is where the latest picking, competitions and analytics features appear first.</p></div>
+      </details>
+
+      <div class="faq-cat">How it works</div>
+
+      <details class="faq-item">
+        <summary>How does the rating system work? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="faq-a"><p>Every player has a rating that reflects how they perform against expectation - not just who won. A narrow loss to a stronger pair can still move you up; a heavy loss to weaker players costs more. Ratings update after every game, and the same number quietly powers smart picking, handicap tournaments, partnership analytics and league selection.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Will it actually make our games fairer? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="faq-a"><p>That is the whole point. ePegboard balances games on current form, tracks who has been sitting out, and keeps an eye on court-time fairness across the night - so stronger and newer players both get good games, and nobody is stuck waiting. It also shows exactly why each game was picked.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can players see their own stats? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="faq-a"><p>Yes. Each player has a profile - rating, win rate and recent match history - that they can check on their phone. Many clubs find the live ratings become a talking point in their own right.</p></div>
+      </details>
+
+      <div class="faq-cat">Your club &amp; your data</div>
+
+      <details class="faq-item">
+        <summary>Can we get our data out? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="faq-a"><p>Yes. Your club's data is yours. Reports - attendance, payments, members and more - can be exported to CSV whenever you need them, so the numbers are never locked in.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can more than one person run our club? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="faq-a"><p>Yes. Several organisers can help run sessions, so it never depends on one person being in the room. <em>[Placeholder - exact roles and permissions to be confirmed against the live product.]</em></p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>We came from the desktop Pegboard - can we bring our history across? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="faq-a"><p>Yes. Clubs moving from the Windows desktop app can carry their members and playing history into the web app, so your ratings and records continue rather than starting from scratch. Get in touch and we will help with the move.</p></div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- STILL HAVE A QUESTION -->
+<section class="bg-soft" style="padding:48px 0">
+  <div class="wrap">
+    <div class="engine-strip">
+      <div class="es-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <div class="es-txt">
+        <h3>Still have a question?</h3>
+        <p>The fastest way to find out if ePegboard fits your club is to try it on a real session. Or get in touch and we will answer anything that is not covered here.</p>
+      </div>
+      <a class="btn btn-ghost" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank">Start Free Trial</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->

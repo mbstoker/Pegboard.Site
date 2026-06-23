@@ -1,78 +1,131 @@
 @page
 @model PricingModel
 @{
+    Layout = "_LayoutMarketing";
     ViewData["Title"] = "Pricing";
 }
 
-<h1 class="display-4 mb-4">💳 Pricing</h1>
-
-<section class="py-3">
-    <div class="row">
-        <div class="col-md-6 mb-4">
-            <div class="card h-100 border-success">
-                <div class="card-body">
-                    <h3 class="card-title">Web app <span class="badge bg-success ms-2">Recommended</span></h3>
-                    <p class="card-text fs-5"><strong>Free for at least 60 days</strong></p>
-                    <p class="card-text text-muted">
-                        Sign up at <a href="https://play.epegboard.com/signup" target="_blank" rel="noopener">play.epegboard.com</a> - no card details required.
-                    </p>
-                    <p class="card-text">
-                        Post-trial pricing is being finalised. We'll announce ahead of any change so you have plenty of notice.
-                    </p>
-                    <a href="https://play.epegboard.com/signup" target="_blank" rel="noopener" class="btn btn-success btn-lg mt-2">Sign Up Free</a>
-                    <p class="mt-3 mb-0" style="font-size: 0.9rem;">
-                        Tablet or laptop-sized screens recommended for the best experience.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 mb-4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h3 class="card-title">Desktop app</h3>
-                    <p class="card-text fs-5"><strong>£60 / year per club</strong></p>
-                    <p class="card-text text-muted">
-                        After a 60-day free trial. No automatic renewal - you choose when to renew. Windows only; runs fully offline once installed.
-                    </p>
-                    <p class="card-text">
-                        Existing desktop clubs remain supported. Most new functionality will be web-only.
-                    </p>
-                    <a asp-page="/Download" class="btn btn-outline-primary mt-2">Get the desktop app</a>
-                </div>
-            </div>
-        </div>
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner" style="max-width:none">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Pricing</span></div>
+      <span class="eyebrow">Pricing</span>
+      <h1 style="margin-top:10px">Pricing that grows with your club</h1>
+      <p class="lede">Start with <strong>60 days of everything, free</strong> - no card needed. After that, smaller clubs stay free, and busier clubs upgrade as they grow.</p>
     </div>
+  </div>
 </section>
 
-<hr class="my-5" />
+<!-- TIERS -->
+<section style="padding-top:46px">
+  <div class="wrap">
+    <div class="price-grid cols-3">
 
-<h3>Buying a desktop licence</h3>
-<p class="text-muted">
-    To purchase a desktop licence after your trial, drop your details in below and we'll be in touch with payment instructions. (Web-app post-trial sign-up isn't required yet - we'll announce ahead of any change.)
-</p>
+      <!-- Free -->
+      <div class="price">
+        <h3>Free</h3>
+        <div class="amt">&pound;0 <span class="per">/ forever</span></div>
+        <div class="price-for">For smaller and casual clubs</div>
+        <ul class="feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> One session a week, up to 12 players</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> The full smart picker and live ratings</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Scoring, payments and attendance</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> One club tournament a year</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Last 30 days of history</li>
+        </ul>
+      </div>
 
-@if (Model.RequestSent)
-{
-    <div class="alert alert-success">✅ Thanks! We've received your request and will be in touch shortly.</div>
-}
-else
-{
-    <form method="post">
-        <div class="mb-3">
-            <label asp-for="PurchaseRequest.Name" class="form-label">Your Name</label>
-            <input asp-for="PurchaseRequest.Name" class="form-control" />
-            <span asp-validation-for="PurchaseRequest.Name" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="PurchaseRequest.ClubName" class="form-label">Club Name</label>
-            <input asp-for="PurchaseRequest.ClubName" class="form-control" />
-            <span asp-validation-for="PurchaseRequest.ClubName" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="PurchaseRequest.Email" class="form-label">Email</label>
-            <input asp-for="PurchaseRequest.Email" type="email" class="form-control" />
-            <span asp-validation-for="PurchaseRequest.Email" class="text-danger"></span>
-        </div>
-        <button type="submit" class="btn btn-primary">Request Purchase Info</button>
-    </form>
-}
+      <!-- Pro (recommended) -->
+      <div class="price feat">
+        <span class="badge">Most popular</span>
+        <h3>Pro</h3>
+        <div class="amt">&pound;8 <span class="per">/ month</span></div>
+        <div class="price-for">or &pound;80 a year (2 months free) &middot; For established weekly clubs</div>
+        <ul class="feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <strong>Everything in Free</strong>, plus:</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Two sessions a week, up to 30 players</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Three tournaments a year - pairs, groups, knockouts</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> League team tools - partnerships and selection</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Full history, plus session, payment &amp; member reports</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> CSV export, and your club name and logo</li>
+          <li class="muted"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v8M8 12h8"/></svg> Online payment collection (coming soon)</li>
+        </ul>
+      </div>
+
+      <!-- Premium -->
+      <div class="price">
+        <h3>Premium</h3>
+        <div class="amt">&pound;15 <span class="per">/ month</span></div>
+        <div class="price-for">or &pound;150 a year (2 months free) &middot; For larger clubs</div>
+        <ul class="feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <strong>Everything in Pro</strong>, plus:</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Up to 6 sessions a week, up to 60 players</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> 12 tournaments a year</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Growth analytics - who's drifting, who to reach out to</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Member engagement and new-member conversion</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Attendance over time - watch the club grow</li>
+        </ul>
+      </div>
+
+    </div>
+    <div style="max-width:1020px;margin:32px auto 0;background:var(--bg-tint);border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px;text-align:center">
+      <p style="font-weight:700;color:var(--ink);font-size:1.15rem;margin-bottom:4px">Every plan above starts the same way</p>
+      <p style="color:var(--muted-2);font-size:1.02rem;max-width:62ch;margin:0 auto 18px">60 days of full access to everything - free, no card. After that, keep a free plan or move to whichever tier fits how your club plays. Nothing changes without you choosing it.</p>
+      <a class="btn btn-primary btn-lg" href="https://play.epegboard.com/signup" target="_blank">Start your 60-day free trial</a>
+    </div>
+
+    <p style="text-align:center;color:var(--muted);font-size:.92rem;margin-top:22px">Per club, not per player. Billed monthly or annually - annual saves 2 months and covers your whole playing season. Bigger than Premium, or just the odd tournament? <a href="#" style="color:var(--link);font-weight:600">Talk to us</a> about a custom or per-competition plan.</p>
+  </div>
+</section>
+
+<!-- DESKTOP APP -->
+<section style="padding-top:40px">
+  <div class="wrap">
+    <div class="engine-strip" style="background:linear-gradient(135deg,#eef3f8,#e4ecf5);color:var(--ink-2)">
+      <div class="es-ico" style="background:rgba(27,110,194,.12);color:var(--primary)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <div class="es-txt">
+        <h3 style="color:var(--ink)">Prefer to run fully offline?</h3>
+        <p style="color:var(--muted-2)">The Windows desktop app is &pound;60 a year per club, with a 60-day free trial. The right choice if your venue has unreliable internet. New features land on the web app first.</p>
+      </div>
+      <a class="btn btn-ghost" href="#">About the desktop app</a>
+    </div>
+  </div>
+</section>
+
+<!-- OUR PROMISES -->
+<section class="bg-soft">
+  <div class="wrap">
+    <div class="section-head center"><span class="eyebrow">Our promises</span><h2>Fair, and honest about it</h2></div>
+    <div class="report-grid" style="grid-template-columns:repeat(4,1fr);max-width:1020px;margin:0 auto">
+      <div class="report-card">
+        <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span> A free plan, always</h4>
+        <p>There will always be a free plan that runs your club night within fair-use limits. It is not going behind a paywall.</p>
+      </div>
+      <div class="report-card">
+        <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span> 60 days' notice</h4>
+        <p>At least 60 days' written notice before any pricing change takes effect - to the billing contact and in-app.</p>
+      </div>
+      <div class="report-card">
+        <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span> No card to start</h4>
+        <p>Sign up and run real sessions for 60 days without entering any card details. No trial countdown anxiety.</p>
+      </div>
+      <div class="report-card">
+        <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v8a7 7 0 0 0 14 0V3"/><circle cx="12" cy="20" r="1.6" fill="currentColor" stroke="none"/></svg></span> Windows clubs honoured</h4>
+        <p>Already on the Windows Pegboard? You keep full access for the rest of your licence, then move onto a standard plan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2>Try ePegboard free for 60 days</h2>
+    <p>The full product, no card, no install. See it on a real club night.</p>
+    <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank">Start your free trial</a>
+    <p class="fine">Questions about pricing? See the <a href="/faq" style="color:#fff;text-decoration:underline">FAQ</a> or get in touch.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->

@@ -1,0 +1,86 @@
+@inject IConfiguration Configuration
+@{
+    var currentYear = DateTime.Now.Year;
+
+    var pageTitle = ViewData["Title"] as string;
+    var metaDescription = ViewData["Description"] as string
+        ?? "ePegboard runs your badminton club night - fair, balanced games with smart picking, live ratings, attendance and competitions. Free 60-day trial at play.epegboard.com.";
+    var ogTitle = ViewData["OgTitle"] as string
+        ?? (string.IsNullOrEmpty(pageTitle) || pageTitle == "Home" ? "ePegboard" : $"{pageTitle} - ePegboard");
+    var baseUrl = (Configuration.GetConnectionString("WebsiteUrl") ?? $"{Context.Request.Scheme}://{Context.Request.Host}").TrimEnd('/');
+    var canonicalUrl = ViewData["CanonicalUrl"] as string ?? $"{baseUrl}{Context.Request.Path}";
+    var ogImage = ViewData["OgImage"] as string ?? $"{baseUrl}/Images/og-image.png";
+
+    var path = (Context.Request.Path.Value ?? "/").ToLowerInvariant();
+    string Active(string prefix) => (prefix == "/" ? path == "/" : path.StartsWith(prefix)) ? "active" : "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@(string.IsNullOrEmpty(pageTitle) ? "ePegboard - Smarter club nights. Fairer games." : $"{pageTitle} - ePegboard")</title>
+    <meta name="description" content="@metaDescription" />
+    <link rel="canonical" href="@canonicalUrl" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ePegboard" />
+    <meta property="og:title" content="@ogTitle" />
+    <meta property="og:description" content="@metaDescription" />
+    <meta property="og:url" content="@canonicalUrl" />
+    <meta property="og:image" content="@ogImage" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="@ogTitle" />
+    <meta name="twitter:description" content="@metaDescription" />
+    <meta name="twitter:image" content="@ogImage" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/marketing.css" asp-append-version="true" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M5 3v8a7 7 0 0 0 14 0V3"/><circle cx="12" cy="20" r="1.6" fill="#fff" stroke="none"/></svg></span>
+      <span><span class="e">e</span>Pegboard</span>
+    </a>
+    <nav class="nav-links">
+      <a href="/features" class="@Active("/features")">Features</a>
+      <a href="/pricing" class="@Active("/pricing")">Pricing</a>
+      <a href="/faq" class="@Active("/faq")">FAQ</a>
+      <a href="/about" class="@Active("/about")">About</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="signin" href="https://play.epegboard.com" target="_blank" rel="noopener">Sign in</a>
+      <a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Start Free Trial</a>
+    </div>
+  </div>
+</header>
+
+<main>
+    @RenderBody()
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="mark" style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--primary),var(--navy));display:grid;place-items:center"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" style="width:16px;height:16px"><path d="M5 3v8a7 7 0 0 0 14 0V3"/></svg></span> ePegboard</div>
+        <p style="margin-top:14px;max-width:30ch">Smarter club nights and fairer games for badminton clubs.</p>
+      </div>
+      <div><h5>Product</h5><a href="/features">Features</a><a href="/features/competitions">Competitions</a><a href="/features/league-team-support">League teams</a><a href="/pricing">Pricing</a></div>
+      <div><h5>Resources</h5><a href="/faq">FAQ</a><a href="/ReleaseNotes">Release notes</a><a href="/ProductRoadmap">Product roadmap</a><a href="/FeaturesDesktop">Desktop app</a><a href="/ReportBug">Report a bug</a><a href="/RequestFeature">Request a feature</a></div>
+      <div><h5>Company</h5><a href="/about">About</a><a href="/Contact">Contact</a><a href="mailto:sales@epegboard.com">Email sales</a><a href="/Privacy">Privacy</a><a href="/License">License terms</a></div>
+    </div>
+    <div class="foot-bottom"><span>&copy; @currentYear MBS Software Limited</span><span>play.epegboard.com</span></div>
+  </div>
+</footer>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

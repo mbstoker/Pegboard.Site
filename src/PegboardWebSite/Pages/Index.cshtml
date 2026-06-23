@@ -1,211 +1,174 @@
 @page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home";
-    ViewData["Description"] = "ePegboard runs your badminton club night - fair, balanced games with smart picking, attendance reports and member stats. Free for at least 60 days at play.epegboard.com.";
+    Layout = "_LayoutMarketing";
 }
-    <div class="text-center" style="padding-top: 30px;">
-        <div id="heroCarousel" class="carousel slide carousel-fade carousel-dark mx-auto" data-bs-ride="carousel" data-bs-interval="4500" style="max-width: 720px;">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Mid-session dashboard"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Live attendee stats"></button>
+
+<!-- HERO: copy + tablet screenshot, four small feature cards beneath -->
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div class="hero-top">
+      <div class="hero-copy">
+        <span class="eyebrow">All-in-one badminton club software</span>
+        <h1>Smarter club nights. <span class="accent">Fairer games.</span></h1>
+        <p class="lede">Run better club nights, tournaments and league teams - with data that keeps games balanced and helps clubs make better decisions.</p>
+        <ul class="hero-bullets">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Balanced games, every session</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Hours of weekly admin saved</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Fairer nights, happier players</li>
+        </ul>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="https://play.epegboard.com/signup" target="_blank">Start Free Trial</a>
+          <a class="btn btn-ghost btn-lg" href="#showcase">See it in action</a>
+        </div>
+        <p class="trust"><span class="dot">&bull;</span> Free for 60 days &nbsp; <span class="dot">&bull;</span> No card details &nbsp; <span class="dot">&bull;</span> No install</p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="laptop">
+          <div class="screen">
+            <div class="browserbar">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> play.epegboard.com</span>
             </div>
-            <div class="carousel-inner rounded shadow-sm">
-                <div class="carousel-item active">
-                    <img src="~/Images/site-dashboard.png" class="d-block w-100" alt="ePegboard mid-session dashboard - 4 courts running" />
-                </div>
-                <div class="carousel-item">
-                    <img src="~/Images/site-attendee-stats.png" class="d-block w-100" alt="Live attendee stats - per-player ratings, win percentage, and match history during the session" />
-                </div>
-            </div>
+            <img src="/img/site-dashboard.png" alt="ePegboard live session dashboard - four courts running with waiting members">
+          </div>
+        </div>
+        <div class="laptop-base"></div>
+
+        <div class="float float-analytics">
+          <div class="fc-label">League team insights</div>
+          <div class="fc-pair"><span class="av f"></span><span class="av"></span> Priya &amp; Marcus</div>
+          <div class="fc-stat"><span class="up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v6h-6"/></svg> +185</span><small>vs expected</small></div>
         </div>
 
-        <div style="padding: 30px 15px;">
-            <h2 style="color: darkgreen; font-weight: bold;">Smarter Club Nights. Fairer Games.</h2>
-            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
-                ePegboard runs your club night - smart picking, attendance tracking, live stats, and the fairness your players keep asking for. Runs in any browser on any device, with no install.
-            </p>
-            <a class="btn btn-success btn-lg mt-3" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Try Free at play.epegboard.com</a>
-
-            <p style="margin-top: 12px; font-size: 0.95rem; color: #555;">
-                Free for at least 60 days. No card details. Tablet or laptop-sized screens recommended for the best experience.
-            </p>
-
-            <p style="margin-top: 20px; color: #333; font-weight: 500;">
-                Already powering club nights throughout Milton Keynes - and expanding across the UK and Ireland.
-            </p>
+        <div class="phone">
+          <div class="pscreen"><span class="notch"></span><img src="/img/phone-session.png" alt="A live club-night session running on a phone - courts, players and scores"></div>
         </div>
+      </div>
     </div>
 
-    <section style="padding: 30px 20px; background-color: #ffffff; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
-        <div class="container" style="max-width: 900px; margin: 0 auto;">
-            <h4 class="text-center" style="font-weight: bold; margin-bottom: 18px;">Two ways to use ePegboard</h4>
-            <div class="row">
-                <div class="col-md-6 mb-3 mb-md-0">
-                    <div class="p-3 rounded h-100" style="background-color: #f1f8f3; border: 1px solid #cfe9d6;">
-                        <h5 style="color: darkgreen; font-weight: bold; margin-bottom: 8px;">🌐 Web app <span class="badge bg-success ms-1" style="font-weight: 500;">Recommended</span></h5>
-                        <p class="mb-2" style="font-size: 0.95rem;">
-                            Runs in any browser on any device. No install. Free for at least 60 days, no card details. New features land here first.
-                        </p>
-                        <a href="https://play.epegboard.com/signup" target="_blank" rel="noopener" class="btn btn-success btn-sm">Try free at play.epegboard.com</a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="p-3 rounded h-100" style="background-color: #f6f7f9; border: 1px solid #d6dae0;">
-                        <h5 style="font-weight: bold; margin-bottom: 8px;">💻 Desktop app (Windows)</h5>
-                        <p class="mb-2" style="font-size: 0.95rem;">
-                            Fully offline - the right choice if your venue has unreliable internet. £60/year per club after a 60-day free trial.
-                        </p>
-                        <a asp-page="/FeaturesDesktop" class="btn btn-outline-primary btn-sm">See desktop features</a>
-                    </div>
-                </div>
-            </div>
+    <div class="feat-cards">
+      <a class="feat-card" href="/features/club-nights">
+        <div class="feat-thumb"><img src="/img/session-board.png" alt="Live session board preview"></div>
+        <div class="feat-body">
+          <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/><path d="M3 12h18M12 3v18"/></svg></div>
+          <h4>Run Better Club Nights</h4>
+          <p>Smart game selection, fairness tracking and live ratings - courts stay full, games stay balanced.</p>
+          <span class="feat-learn">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
-    </section>
-
-    <section class="text-center" style="padding: 40px 20px; background-color: #f8f9fa;">
-        <div class="container" style="max-width: 850px; margin: 0 auto;">
-            <h3 style="font-weight: bold; color: #1a1a1a;">Your Club Night, Perfectly Run</h3>
-            <p style="font-size: 1.1rem; margin-top: 15px;">
-                ePegboard auto-generates balanced games using player ratings, waiting times, and rotation history - while giving the operator full control when needed. Whoever's running the session just opens the app in their browser and goes.
-            </p>
-            <p style="font-size: 1.1rem;">
-                From smart picking and pick explanations to fairness statistics, ratings graphs, and built-in attendance reports, ePegboard handles the details so you can focus on great sessions. Real clubs use it now; new features ship most weeks.
-            </p>
+      </a>
+      <a class="feat-card" href="/features/club-management">
+        <div class="feat-thumb"><img src="/img/attendance-trends.png" alt="Attendance trends - active, lapsing and dormant members, and who to reach out to" style="object-position:top center"></div>
+        <div class="feat-body">
+          <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg></div>
+          <h4>Manage Your Club</h4>
+          <p>Attendance, payments, members and reports - the admin handled, so you spend less time on the spreadsheet.</p>
+          <span class="feat-learn">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
-    </section>
-
-    <section style="padding: 60px 20px; background-color: #ffffff;">
-        <div class="container text-center" style="max-width: 900px; margin: 0 auto;">
-            <a href="~/Images/pegboard-vs-epegboard2.png" target="_blank">
-            <img src="~/Images/pegboard-vs-epegboard2.png"
-                 alt="Traditional pegboard vs. ePegboard software"
-                 class="img-fluid rounded shadow-sm" />
-            </a>
-
-            <p style="font-size: 1rem; color: #555; margin-top: 15px;">
-                From manual pegboards to intelligent court assignment - all in your browser, no install needed.
-            </p>
+      </a>
+      <a class="feat-card" href="/features/competitions">
+        <div class="feat-thumb"><img src="/img/standings-card.png" alt="Live competition standings - group table with points, games won and point difference" style="object-fit:contain;object-position:center;background:#fff"></div>
+        <div class="feat-body">
+          <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M6 4h12v4a6 6 0 0 1-12 0V4zM6 5H3v2a3 3 0 0 0 3 3M18 5h3v2a3 3 0 0 1-3 3"/></svg></div>
+          <h4>Competitions &amp; Tournaments</h4>
+          <p>Handicap tournaments without spreadsheets - balanced pairs, group stages and live standings, generated for you.</p>
+          <span class="feat-learn">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
-    </section>
-
-    <section style="padding: 60px 20px; background-color: #ffffff;">
-        <div class="container" style="max-width: 1000px; margin: 0 auto;">
-            <h3 class="text-center" style="font-weight: bold; margin-bottom: 40px;">How Club Nights Work with ePegboard</h3>
-
-            <!-- Step 1 -->
-            <div class="row align-items-center mb-5">
-                <div class="col-md-6">
-                    <img src="~/Images/add_player_photos.jpg" alt="Player sign-in screen" class="img-fluid rounded shadow-sm" />
-                </div>
-                <div class="col-md-6">
-                    <h5>1. Add Players</h5>
-                    <p>Register players as they arrive - including drop-ins and last-minute changes. Just start typing their name or click from the photo gallery. Photos help newcomers identify partners quickly.</p>
-                </div>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="row align-items-center mb-5">
-                <div class="col-md-6 order-md-2">
-                    <img src="~/Images/Next_game_sample.jpg" alt="Court assignment screen" class="img-fluid rounded shadow-sm" />
-                </div>
-                <div class="col-md-6 order-md-1">
-                    <h5>2. Let ePegboard Build the Games</h5>
-                    <p>Smart auto-pairing based on rest time, past matchups, and player level - or let the first-in-line picker choose with assistive suggestions from the system. Pick explanations show players exactly why each game was picked.</p>
-                </div>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="row align-items-center mb-5">
-                <div class="col-md-6">
-                    <img src="~/Images/full_court.jpg" alt="Game announcement screen" class="img-fluid rounded shadow-sm" />
-                </div>
-                <div class="col-md-6">
-                    <h5>3. Announce and Play</h5>
-                    <p>Display game assignments clearly on-screen - or announce them via audio if you choose. Everyone knows where to go, and court time stays fully used.</p>
-                </div>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="row align-items-center">
-                <div class="col-md-6 order-md-2">
-                    <a href="~/Images/site-attendee-stats.png" target="_blank">
-                        <img src="~/Images/site-attendee-stats.png" alt="Live attendee stats screenshot" class="img-fluid rounded shadow-sm" />
-                    </a>
-                </div>
-                <div class="col-md-6 order-md-1">
-                    <h5>4. See Your Stats in Real Time</h5>
-                    <p>Players track win percentage, rating changes, and full match history during the session. Fairness statistics are visible mid-session, and the leaderboard keeps everyone engaged - especially in competitive clubs.</p>
-                </div>
-            </div>
+      </a>
+      <a class="feat-card" href="/features/league-team-support">
+        <div class="feat-thumb"><img src="/img/partnerships-card.png" alt="Partnership analytics - pairs and how they perform versus expectation, with verdict and confidence" style="object-fit:contain;object-position:center;background:#fff"></div>
+        <div class="feat-body">
+          <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 14l4-4 3 3 5-6"/></svg></div>
+          <h4>League Team Support</h4>
+          <p>Build stronger teams from real club-night data - find the partnerships that work, then pick on evidence.</p>
+          <span class="feat-learn">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
-    </section>
+      </a>
+    </div>
+  </div>
+</section>
 
-    <section style="padding: 60px 20px; background-color: #ffffff;">
-        <div class="container" style="max-width: 1000px; margin: 0 auto;">
-            <h3 class="text-center" style="font-weight: bold; margin-bottom: 10px;">Designed for Everyone on Court</h3>
-            <p class="text-center" style="font-size: 1.1rem; font-style: italic; margin-bottom: 40px;">
-                Don't just assign courts - run the kind of sessions players come back for.
-            </p>
+<!-- TRUST STRIP -->
+<section class="trust-strip" style="padding:0">
+  <div class="wrap"><div class="row">
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg> Trusted by clubs across the UK &amp; Ireland</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> <span>1,100+ club sessions run</span></div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg> Built for players and organisers</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg> Runs free in any browser</div>
+  </div></div>
+</section>
 
-            <div class="row justify-content-center">
-                <div class="col-md-5 mb-4">
-                    <h5>🎾 For Players</h5>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li>✅ Less waiting</li>
-                        <li>✅ More balanced games</li>
-                        <li>✅ Smarter rotation</li>
-                        <li>✅ Live stats and ratings</li>
-                    </ul>
-                </div>
-                <div class="col-md-5 mb-4">
-                    <h5>📋 For Club Night Organisers</h5>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li>✅ Happy players</li>
-                        <li>✅ More renewals and new members</li>
-                        <li>✅ Fairer sessions, less effort</li>
-                        <li>✅ Attendance reports for retention</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ENGINE -->
+<section class="engine">
+  <div class="wrap engine-grid">
+    <div>
+      <span class="eyebrow">The engine underneath</span>
+      <h2>One rating system. The whole platform.</h2>
+      <p class="sub">Ratings change based on how players perform against expectation - not just who won. That single, trustworthy number quietly powers every part of ePegboard.</p>
+      <ul class="drives">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Smart game picking</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Handicap tournaments</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Partnership analytics</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> League team selection</li>
+      </ul>
+    </div>
+    <div class="rating-demo">
+      <div class="rd-row"><span class="rd-label">Expected result</span><span class="rd-val">Lose by 8</span></div>
+      <div class="rd-row"><span class="rd-label">Actual result</span><span class="rd-val">Lost by 2</span></div>
+      <div class="rd-row"><span class="rd-label">Rating change</span><span class="rd-up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg> Goes up</span></div>
+      <p class="rd-note">A narrow loss to a stronger pair still moves you up. Win-loss alone never tells that story.</p>
+    </div>
+  </div>
+</section>
 
-    <section style="padding: 60px 20px; background-color: #f8f9fa;">
-        <div class="container" style="max-width: 1100px; margin: 0 auto;">
-            <h3 class="text-center" style="font-weight: bold; margin-bottom: 40px;">Powerful Features That Make Club Nights Run Smoothly</h3>
+<!-- HOW IT WORKS -->
+<section>
+  <div class="wrap">
+    <div class="section-head center"><span class="eyebrow">How it works</span><h2>From arrivals to results, in four steps</h2></div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h4>Add players</h4><p>Sign players in as they arrive - regulars, drop-ins and last-minute changes. Start typing or tap a photo.</p></div>
+      <div class="step"><div class="n">2</div><h4>Build the games</h4><p>ePegboard creates balanced games and shows exactly why each was picked.</p></div>
+      <div class="step"><div class="n">3</div><h4>Announce and play</h4><p>Games show clearly on screen, with optional audio call-outs. Courts stay full.</p></div>
+      <div class="step"><div class="n">4</div><h4>See the stats</h4><p>Players watch ratings, win rate and match history update live.</p></div>
+    </div>
+  </div>
+</section>
 
-            <div class="row text-center">
-                <div class="col-md-4 mb-4">
-                    <h5>🎯 Smart Game Picking</h5>
-                    <p>Auto-pairing based on ratings, wait time, and fairness - tuned to address the most common complaint we heard: stronger players paired with weak partners.</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>🔍 Pick Explanations</h5>
-                    <p>Players see exactly why each game was picked - no more "the algorithm got it wrong" arguments without evidence.</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>📊 Player Stats and Ratings Graphs</h5>
-                    <p>Track performance over time, see ratings graphs, and use historic data for league pairings and club decisions.</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>📋 Flexible Game Control</h5>
-                    <p>Admins can manually override matchups when needed - balancing tradition with smart automation.</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>🔊 Automated Announcements</h5>
-                    <p>Connect to a speaker system and use your device's audio to announce upcoming games and players - no more shouting across the courts.</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>📁 Attendance Reports and Exports</h5>
-                    <p>Built-in attendance reports for member retention. Export attendance, match history, and payments in common formats.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="text-center py-5 bg-success text-white">
-        <h2>Try ePegboard Free for at least 60 days</h2>
-        <p class="lead mb-3">No subscription. No card details. Just smarter club nights.</p>
-        <a href="https://play.epegboard.com/signup" target="_blank" rel="noopener" class="btn btn-light btn-lg">Sign Up at play.epegboard.com</a>
-        <p class="mt-3 mb-0" style="font-size: 0.95rem; opacity: 0.9;">Tablet or laptop-sized screens recommended for the best experience.</p>
-    </section>
+<!-- SOCIAL PROOF -->
+<section class="bg-soft">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><div class="num">33,000+</div><div class="lbl">games played</div></div>
+      <div class="stat"><div class="num">1,100+</div><div class="lbl">club sessions run</div></div>
+      <div class="stat"><div class="num">2,000+</div><div class="lbl">players rated</div></div>
+    </div>
+    <div class="quote">
+      <p>&ldquo;Placeholder testimonial - a real club organiser on fairer games, fuller courts and happier players.&rdquo;</p>
+      <div class="who">- Club organiser, [Club name], [Town]</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TEASER -->
+<section>
+  <div class="wrap">
+    <div class="section-head center"><span class="eyebrow">Pricing</span><h2>Start free. Stay if it helps.</h2></div>
+    <div class="price-grid">
+      <div class="price feat"><span class="badge">Recommended</span><h3>Web app</h3><div class="amt">Free <span>for 60 days</span></div><p>The full product, no card to start. After 60 days, stay on a free plan or upgrade from &pound;8/month. New features land here first.</p><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank">Start free trial</a></div>
+      <div class="price"><h3>Desktop app (Windows)</h3><div class="amt">&pound;60 <span>/ year per club</span></div><p>Fully offline - the right choice if your venue has unreliable internet. 60-day free trial.</p><a class="btn btn-ghost" href="/pricing">See full pricing</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2>Try ePegboard free for 60 days</h2>
+    <p>No subscription. No card details. Just smarter club nights.</p>
+    <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank">Sign up at play.epegboard.com</a>
+    <p class="fine">Tablet or laptop-sized screens recommended for the best experience.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
