@@ -43,7 +43,7 @@
 </head>
 <body>
 
-<header class="nav">
+<header class="nav" id="siteNav">
   <div class="wrap nav-inner">
     <a class="brand" href="/" aria-label="ePegboard home">
       <img class="brand-mark" src="~/Images/epegboard-figure-logo.png" alt="" />
@@ -59,7 +59,19 @@
       <a class="signin" href="https://play.epegboard.com" target="_blank" rel="noopener">Sign in</a>
       <a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Start Free Trial</a>
     </div>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <div class="wrap">
+      <a href="/features" class="@Active("/features")">Features</a>
+      <a href="/pricing" class="@Active("/pricing")">Pricing</a>
+      <a href="/faq" class="@Active("/faq")">FAQ</a>
+      <a href="/about" class="@Active("/about")">About</a>
+      <a href="https://play.epegboard.com" target="_blank" rel="noopener">Sign in</a>
+    </div>
+  </nav>
 </header>
 
 <main>
@@ -80,6 +92,25 @@
     <div class="foot-bottom"><span>&copy; @currentYear MBS Software Limited</span><span>play.epegboard.com</span></div>
   </div>
 </footer>
+
+<script>
+  (function () {
+    var nav = document.getElementById('siteNav');
+    var btn = nav && nav.querySelector('.nav-toggle');
+    if (!nav || !btn) return;
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Close the menu after tapping a link.
+    nav.querySelectorAll('.mobile-nav a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
 
 @await RenderSectionAsync("Scripts", required: false)
 </body>

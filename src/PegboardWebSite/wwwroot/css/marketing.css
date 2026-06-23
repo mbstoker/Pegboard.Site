@@ -45,6 +45,16 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);bac
 .nav-links a:hover{background:var(--bg-soft);color:var(--ink)}
 .nav-links a.active{color:var(--primary);background:var(--bg-tint)}
 .nav-cta{margin-left:auto;display:flex;align-items:center;gap:14px}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;margin-left:14px;width:42px;height:42px;padding:0;border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer}
+.nav-toggle span{display:block;width:20px;height:2px;margin:0 auto;background:var(--ink);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+.nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav.open .nav-toggle span:nth-child(2){opacity:0}
+.nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{display:none}
+.mobile-nav .wrap{display:flex;flex-direction:column;padding-top:6px;padding-bottom:14px}
+.mobile-nav a{padding:13px 4px;font-weight:600;font-size:1rem;color:var(--muted-2);border-bottom:1px solid var(--line)}
+.mobile-nav a:last-child{border-bottom:none}
+.mobile-nav a.active{color:var(--primary)}
 .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;border-radius:11px;padding:12px 20px;font-size:.97rem;cursor:pointer;border:1px solid transparent;transition:transform .12s ease,box-shadow .12s ease}
 .btn:hover{transform:translateY(-1px)}
 .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-700));color:#fff;box-shadow:var(--shadow)}
@@ -391,6 +401,8 @@ footer{background:var(--navy);color:#9dc0e3;padding:52px 0 30px;font-size:.92rem
   .price-grid,.price-grid.cols-3{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr 1fr}
   .nav-links{display:none}
+  .nav-toggle{display:flex}
+  .nav.open .mobile-nav{display:block;border-top:1px solid var(--line);background:rgba(255,255,255,.98);backdrop-filter:blur(10px)}
   .hero h1{font-size:2.3rem}
   .page-hero h1{font-size:2.1rem}
 }
@@ -409,6 +421,8 @@ footer{background:var(--navy);color:#9dc0e3;padding:52px 0 30px;font-size:.92rem
   .nav-inner{gap:12px;height:60px}
   .nav-cta{gap:9px}
   .nav-cta a{white-space:nowrap}
+  /* Sign in lives in the hamburger menu on phones - keep the bar to logo + trial CTA + toggle */
+  .nav-cta .signin{display:none}
   .signin{font-size:.88rem}
   .nav-cta .btn{padding:9px 13px;font-size:.88rem;border-radius:9px}
   .brand .brand-word{height:23px}
