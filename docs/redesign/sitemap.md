@@ -71,7 +71,11 @@ Shared design system extracted to `mockups/mockup.css` (all pages link it). Blue
 
 **Real screenshots captured 2026-06-22** from Riverside Badminton Club on `play.test` (synthetic test data - no real PII, so the names-anonymisation blocker below is RESOLVED for these). Replaced the placeholders for: `site-dashboard.png` (live 4-court session board), `standings.png` (competition group tables + matches), `partnerships.png` (partnership analytics, 5694 pairs), `attendance-trends.png` (active/lapsing/dormant + drift map), `ratings.png` (member profiles + ratings/win%), `full_court.png` (in-session board), `phone-session.png` (live session on a phone). Source PNGs + manifest in `Scratch/riverside-shots/`; capture harness in `Scratch/riverside-capture/` (standalone Playwright console, login `claude.shots@demo.pegboard.local`).
 
-**Still pending screenshots:** Competition setup wizard (Select players, Generate pairs, Build groups, Group fixtures); League (Fixed partnerships, Team selection - ship by launch).
+**Competition wizard + payments captured 2026-06-23** from Riverside: `comp-select-players.png`, `comp-generate-pairs.png`, `comp-build-groups.png`, `comp-group-fixtures.png` (wired into the competitions pillar steps 2-5; the "draw is locked" banner hidden since they were shot off the existing in-progress comp), and `Payments.png` refreshed to Riverside synthetic data (cleared the old non-Riverside names / PII).
+
+Competitions step 5 fixtures: now shows a freshly-built comp ("Summer Handicap Cup", Riverside) mid-flight - 3 matches scored + 3 to-play with handicap starts (+5/+3) showing, exactly the mix requested (2026-06-23). Added **step 7 Knockout** (`comp-knockout.png`) - the bracket from the completed "test" comp (semis + final with scores, winner crowned). Competitions workflow now complete end-to-end (7 steps).
+
+**Still pending screenshots:** League pillar (Fixed partnerships, Team selection - ship by launch).
 
 **~~Launch blocker~~ (resolved for captured shots):** the captured Riverside data is synthetic (procedural names), so the payments / partnerships / standings / ratings shots are safe to show. Re-check any FUTURE screenshots taken from a real club.
 
