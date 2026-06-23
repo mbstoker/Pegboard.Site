@@ -157,6 +157,9 @@ section{padding:74px 0}
 .showcase{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:64px}
 .showcase:last-child{margin-bottom:0}
 .showcase.flip .copy{order:2}
+/* Stacked variant: copy centred on top, screenshot full content-width below (used where the shot is wide + text-heavy and needs the room to stay legible). */
+.showcase.stack{grid-template-columns:1fr;gap:26px}
+.showcase.stack .copy{max-width:680px;margin:0 auto;text-align:center}
 .showcase h3{font-size:1.7rem;font-weight:800}
 .showcase .copy p{color:var(--muted-2);font-size:1.06rem;margin-top:14px}
 .showcase .copy ul{list-style:none;padding:0;margin:18px 0 0}
