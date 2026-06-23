@@ -58,19 +58,21 @@ Hero → Four pillars → Rating engine (the thread that ties them together) →
 1. **Home** (design anchor - locks the visual language) - DONE
 2. Competitions pillar - DONE
 3. League Team Support pillar - DONE (Fixed Partnerships + Team Selection ship by launch; screenshots pending)
-4. Club Nights pillar - DONE (pick-explanation screenshot pending; full_court.jpg is low-res)
+4. Club Nights pillar - DONE (hi-res court display + attendee-stats leaderboard + pick-explanation all captured from Riverside; pick-explanation cropped to the outcome overview - factor weights deliberately excluded per the moat rule, see backlog #532)
 5. Features hub - DONE
-6. Club Management pillar - DONE (built around the Insights/reports suite; member-mgmt screenshot illustrative)
-7. Pricing - next
-8. FAQ - next
-9. About - next
+6. Club Management pillar - DONE (built around the Insights/reports suite; member-mgmt screenshot illustrative). Reports gallery reworked 2026-06-23 into 3 role lanes - committee / membership / captains+players - surfacing ALL shipped reports grouped by who they help. ONLY GA reports advertised (the 8 `LiveCard` ones + per-member history / head-to-head); the 5 `SoonCard` reports (Match quality, Playing opportunity, Court utilisation, Most improved, Social mixing) stay off the site until they ship.
+7. Pricing - next (gated on the open pricing-model decision)
+8. FAQ - DONE (pricing answers flagged [placeholder] pending the pricing decision)
+9. About - DONE (founder name / founding year flagged [placeholder] for Mike to confirm)
 
 Insights/reports suite (Manage Your Club): Session summary, Payment summary, Attendance trends, Partnerships, Members table, Per-member history, Head-to-head, Organiser insights - all treated as live by launch (confirmed 2026-06-20).
 
 Shared design system extracted to `mockups/mockup.css` (all pages link it). Blue palette matched to the app (primary #1b6ec2, navy gradient #294f76→#1f3d5b).
 
-**Pending screenshots:** Competitions (Select players, Generate pairs, Build groups, Group fixtures); League (Fixed partnerships, Team selection); Club Nights (Pick explanation, hi-res court display).
+**Real screenshots captured 2026-06-22** from Riverside Badminton Club on `play.test` (synthetic test data - no real PII, so the names-anonymisation blocker below is RESOLVED for these). Replaced the placeholders for: `site-dashboard.png` (live 4-court session board), `standings.png` (competition group tables + matches), `partnerships.png` (partnership analytics, 5694 pairs), `attendance-trends.png` (active/lapsing/dormant + drift map), `ratings.png` (member profiles + ratings/win%), `full_court.png` (in-session board), `phone-session.png` (live session on a phone). Source PNGs + manifest in `Scratch/riverside-shots/`; capture harness in `Scratch/riverside-capture/` (standalone Playwright console, login `claude.shots@demo.pegboard.local`).
 
-**Launch blocker:** real member names appear in payments / partnerships / standings / ratings screenshots - anonymise or use a demo club before going live.
+**Still pending screenshots:** Competition setup wizard (Select players, Generate pairs, Build groups, Group fixtures); League (Fixed partnerships, Team selection - ship by launch).
+
+**~~Launch blocker~~ (resolved for captured shots):** the captured Riverside data is synthetic (procedural names), so the payments / partnerships / standings / ratings shots are safe to show. Re-check any FUTURE screenshots taken from a real club.
 
 Mockups are self-contained clickable HTML in `Docs/redesign/mockups/`. Screenshots and headline numbers are placeholders until real assets/figures are dropped in.
