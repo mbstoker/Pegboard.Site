@@ -2,6 +2,36 @@
 @model IndexModel
 @{
     Layout = "_LayoutMarketing";
+    ViewData["Title"] = "Badminton club management software";
+    ViewData["Description"] = "ePegboard is badminton club management and court scheduling software. Run fair club nights with automatically balanced games, live player ratings, attendance tracking and competitions. Free for 60 days at play.epegboard.com.";
+
+    var swJsonLd = System.Text.Json.JsonSerializer.Serialize(new Dictionary<string, object>
+    {
+        ["@context"] = "https://schema.org",
+        ["@type"] = "SoftwareApplication",
+        ["name"] = "ePegboard",
+        ["applicationCategory"] = "BusinessApplication",
+        ["applicationSubCategory"] = "Badminton club management software",
+        ["operatingSystem"] = "Web browser",
+        ["url"] = "https://www.epegboard.com",
+        ["description"] = "Badminton club management and court scheduling software that runs fair club nights, automatically generates balanced games, tracks player ratings, manages attendance and payments, and runs handicap competitions and league-team selection.",
+        ["offers"] = new Dictionary<string, object>
+        {
+            ["@type"] = "Offer",
+            ["price"] = "0",
+            ["priceCurrency"] = "GBP",
+            ["description"] = "Free for 60 days, then a free plan for smaller clubs or paid plans as clubs grow."
+        },
+        ["publisher"] = new Dictionary<string, object>
+        {
+            ["@type"] = "Organization",
+            ["name"] = "MBS Software Limited"
+        }
+    });
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(swJsonLd)</script>
 }
 
 <!-- HERO: copy + tablet screenshot, four small feature cards beneath -->
@@ -11,7 +41,7 @@
       <div class="hero-copy">
         <span class="eyebrow">All-in-one badminton club software</span>
         <h1>Smarter club nights. <span class="accent">Fairer games.</span></h1>
-        <p class="lede">Run better club nights, tournaments and league teams - with data that keeps games balanced and helps clubs make better decisions.</p>
+        <p class="lede">ePegboard is all-in-one software for badminton clubs - run better club nights, tournaments and league teams, with data that keeps games balanced and helps clubs make better decisions.</p>
         <ul class="hero-bullets">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Balanced games, every session</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Hours of weekly admin saved</li>

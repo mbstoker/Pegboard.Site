@@ -11,6 +11,18 @@
     var canonicalUrl = ViewData["CanonicalUrl"] as string ?? $"{baseUrl}{Context.Request.Path}";
     var ogImage = ViewData["OgImage"] as string ?? $"{baseUrl}/Images/og-image.png";
 
+    // Sitewide Organization entity for search engines / AI crawlers. Per-page JSON-LD
+    // (e.g. SoftwareApplication, FAQPage) is injected via the optional "Head" section.
+    var orgJsonLd = System.Text.Json.JsonSerializer.Serialize(new Dictionary<string, object>
+    {
+        ["@context"] = "https://schema.org",
+        ["@type"] = "Organization",
+        ["name"] = "ePegboard",
+        ["legalName"] = "MBS Software Limited",
+        ["url"] = "https://www.epegboard.com",
+        ["logo"] = "https://www.epegboard.com/Images/epegboard-text-logo.png"
+    });
+
     var path = (Context.Request.Path.Value ?? "/").ToLowerInvariant();
     string Active(string prefix) => (prefix == "/" ? path == "/" : path.StartsWith(prefix)) ? "active" : "";
 }
@@ -35,6 +47,9 @@
     <meta name="twitter:title" content="@ogTitle" />
     <meta name="twitter:description" content="@metaDescription" />
     <meta name="twitter:image" content="@ogImage" />
+
+    <script type="application/ld+json">@Html.Raw(orgJsonLd)</script>
+    @await RenderSectionAsync("Head", required: false)
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -87,7 +102,7 @@
         <div class="foot-brand"><img src="~/Images/epegboard-figure-logo.png" alt="" style="height:30px;width:auto" /> ePegboard</div>
         <p style="margin-top:14px;max-width:30ch">Smarter club nights and fairer games for badminton clubs.</p>
       </div>
-      <div><h5>Product</h5><a href="/features">Features</a><a href="/features/competitions">Competitions</a><a href="/features/league-team-support">League teams</a><a href="/pricing">Pricing</a></div>
+      <div><h5>Product</h5><a href="/features">Features</a><a href="/features/competitions">Competitions</a><a href="/features/league-team-support">League teams</a><a href="/pricing">Pricing</a><a href="/badminton-club-management-software">Badminton club software</a></div>
       <div><h5>Resources</h5><a href="https://docs.epegboard.com" target="_blank" rel="noopener">Docs</a><a href="/faq">FAQ</a><a href="/ReleaseNotes">Release notes</a><a href="/ProductRoadmap">Product roadmap</a><a href="/FeaturesDesktop">Desktop app</a><a href="/ReportBug">Report a bug</a><a href="/RequestFeature">Request a feature</a></div>
       <div><h5>Company</h5><a href="/about">About</a><a href="/Contact">Contact</a><a href="mailto:sales@epegboard.com">Email sales</a><a href="/Privacy">Privacy</a><a href="/License">License terms</a></div>
     </div>

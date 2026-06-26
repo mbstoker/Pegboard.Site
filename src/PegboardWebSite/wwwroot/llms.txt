@@ -1,0 +1,25 @@
+# ePegboard
+
+> ePegboard is badminton club management and court scheduling software. It runs fair club nights with automatically balanced games, tracks player ratings, manages attendance and payments, and runs handicap competitions and league-team selection. It is web-based (runs in any browser, no install) with an optional Windows desktop app for offline venues. Free for 60 days.
+
+## What it is
+- Category: badminton club management software / court scheduling software / club-night rotation system
+- Platform: web app (any modern browser); optional Windows desktop app for venues with unreliable internet
+- Pricing: 60-day free trial (no card), then a free plan for smaller clubs or paid plans from around GBP 8 a month
+- Sign up: https://play.epegboard.com/signup
+- Made by: MBS Software Limited
+
+## How it works
+ePegboard is built on a single player rating system. Ratings reflect how players perform against expectation, not just who won, and update after every game. That rating powers smart game picking, handicap tournaments, partnership analytics and league-team selection. Every game pick is explained on screen, and court-time fairness is tracked across the night.
+
+## Key pages
+- [Home](https://www.epegboard.com/): overview of badminton club management and court scheduling
+- [Badminton club management software](https://www.epegboard.com/badminton-club-management-software): the product by category, mapped to what clubs search for
+- [Features](https://www.epegboard.com/features): all features in one place
+- [Club nights](https://www.epegboard.com/features/club-nights): smart game picking, fairness tracking, live ratings, audio announcements
+- [Club management](https://www.epegboard.com/features/club-management): attendance, payments, members, CSV reports
+- [Competitions](https://www.epegboard.com/features/competitions): handicap doubles tournaments, group stages, knockouts, live standings
+- [League team support](https://www.epegboard.com/features/league-team-support): partnership analytics and team selection on real data
+- [Pricing](https://www.epegboard.com/pricing): plans and what is free
+- [FAQ](https://www.epegboard.com/faq): trial, setup, devices, ratings, data
+- [Docs](https://docs.epegboard.com): full product documentation

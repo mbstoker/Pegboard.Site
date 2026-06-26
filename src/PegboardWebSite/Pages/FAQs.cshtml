@@ -2,7 +2,50 @@
 @model FAQsModel
 @{
     Layout = "_LayoutMarketing";
-    ViewData["Title"] = "Frequently asked questions";
+    ViewData["Title"] = "FAQ - badminton club software";
+    ViewData["Description"] = "Answers to common questions about ePegboard badminton club software: the free trial, setup, devices, how player ratings work, plans, and getting your data out.";
+
+    // FAQPage structured data - mirrors the visible Q&A below (plain-text answers).
+    var faqPairs = new (string Q, string A)[]
+    {
+        ("Is there really a free trial?", "Yes - a 60-day free trial of the full product, with no card needed to start. Run real club nights through the trial; it is the complete app, not a cut-down demo. When the 60 days are up, smaller clubs can stay on the free plan and busier clubs upgrade. Nothing is charged automatically."),
+        ("Do we need to install anything?", "No. The web app runs in any modern browser - just sign in at play.epegboard.com. There is also a Windows desktop app for venues with unreliable internet, but most clubs never need it."),
+        ("How long does it take to set up?", "You can be running your first session in minutes. Sign in, add players as they arrive, and let ePegboard build balanced games. There is nothing to configure before your first night."),
+        ("What devices does it work on?", "The session display is designed for a tablet or laptop at the desk. Players can check their own profile, rating and match history on their phone. A larger screen for the courts is optional but works well."),
+        ("What happens after the free trial?", "Nothing happens automatically, and there is no card on file. When your 60-day trial ends you choose: stay on the free plan - one session a week, up to 12 players, with the full game picker - or move to a paid plan as your club grows, from around GBP 8 a month."),
+        ("What is the difference between the web app and the desktop app?", "The web app runs in any browser on any device, needs no install, and is where new features land first. The Windows desktop app runs fully offline - the right choice if your venue has unreliable internet - and costs GBP 60 per year per club after a 60-day free trial."),
+        ("Is the desktop app still supported?", "Yes. Clubs that rely on it for offline venues can keep using it. New development focuses on the web app, so that is where the latest picking, competitions and analytics features appear first."),
+        ("How does the rating system work?", "Every player has a rating that reflects how they perform against expectation - not just who won. A narrow loss to a stronger pair can still move you up; a heavy loss to weaker players costs more. Ratings update after every game and power smart picking, handicap tournaments, partnership analytics and league selection."),
+        ("Will it actually make our games fairer?", "That is the whole point. ePegboard balances games on current form, tracks who has been sitting out, and keeps an eye on court-time fairness across the night - so stronger and newer players both get good games. It also shows exactly why each game was picked."),
+        ("Can players see their own stats?", "Yes. Each player has a profile - rating, win rate and recent match history - that they can check on their phone. Many clubs find the live ratings become a talking point in their own right."),
+        ("Can we get our data out?", "Yes. Your club data is yours. Reports - attendance, payments, members and more - can be exported to CSV whenever you need them, so the numbers are never locked in."),
+        ("Can more than one person run our club?", "Yes. You can invite other people to help run your club by email and give each one a role - owner, admin or standard. Owners and admins can both start sessions, manage members and change settings. You can change a role or remove access whenever you need to."),
+        ("We came from the desktop Pegboard - can we bring our history across?", "Yes. Clubs moving from the Windows desktop app can carry their members and playing history into the web app, so your ratings and records continue rather than starting from scratch. Get in touch and we will help with the move.")
+    };
+    var faqItems = new List<object>();
+    foreach (var f in faqPairs)
+    {
+        faqItems.Add(new Dictionary<string, object>
+        {
+            ["@type"] = "Question",
+            ["name"] = f.Q,
+            ["acceptedAnswer"] = new Dictionary<string, object>
+            {
+                ["@type"] = "Answer",
+                ["text"] = f.A
+            }
+        });
+    }
+    var faqJsonLd = System.Text.Json.JsonSerializer.Serialize(new Dictionary<string, object>
+    {
+        ["@context"] = "https://schema.org",
+        ["@type"] = "FAQPage",
+        ["mainEntity"] = faqItems
+    });
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
 }
 
 <!-- HERO -->
