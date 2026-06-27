@@ -58,6 +58,29 @@ public class TrackingController : Controller
         return File(System.IO.File.ReadAllBytes(path), "image/png");
     }
 
+    // Campaign SCREENSHOT beacon — a visible club-night screenshot that doubles as the open beacon.
+    // The send engine emits {websiteUrl}/track/s/{trackerId} as a normal <img> in the HTML body; when
+    // the recipient's mail client loads it we Record("open", trackerId) — the SAME resource the
+    // internal tracking-sync maps to EmailOpened — so a real, rendered screenshot replaces the hidden
+    // 1x1 pixel (the screenshot IS the tracker). trackerId maps to the outbound EmailMessage exactly
+    // like /track/o, and the sync joins on Message-Id so this works regardless of a campaign's
+    // TrackingEnabled flag. Image is configurable (Tracking:ScreenshotImage, default the club-night
+    // dashboard shot); served no-store so a repeat open isn't hidden by mail-client image caching.
+    // Best-effort insert; always serves an image so a tracking-DB blip never shows a broken picture.
+    [HttpGet("s/{trackerId}")]
+    public IActionResult Screenshot(string trackerId, [FromServices] IConfiguration config)
+    {
+        Record("open", trackerId);
+        var file = config["Tracking:ScreenshotImage"] ?? "clubnight-dashboard.png";
+        var path = Path.Combine(_env.WebRootPath, "Images", file);
+        if (!System.IO.File.Exists(path)) return File(Array.Empty<byte>(), "image/png");
+        Response.Headers.CacheControl = "no-store, no-cache, must-revalidate";
+        var contentType = file.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase)
+                          || file.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase)
+            ? "image/jpeg" : "image/png";
+        return File(System.IO.File.ReadAllBytes(path), contentType);
+    }
+
     // Campaign click redirect. Records "click" then 302s to the play app. Fixed destination (no
     // arbitrary ?u=) to avoid an open-redirect; override via Tracking:ClickDestination config.
     [HttpGet("c/{trackerId}")]
