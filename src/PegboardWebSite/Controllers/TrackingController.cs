@@ -95,6 +95,27 @@ public class TrackingController : Controller
         return Redirect(dest);
     }
 
+    // Website-link click redirect. Same as /track/c but lands on the MARKETING site (homepage), not the
+    // play app — so a "have a look at epegboard.com" link in outreach can be wrapped behind anchor text
+    // and still record a real per-recipient click (records the SAME "click" resource the tracking-sync
+    // maps to WebsiteVisit -> recipient Clicked, joined on Message-Id, so it works regardless of a
+    // campaign's TrackingEnabled flag). Fixed destination (no arbitrary ?u=) to avoid an open-redirect;
+    // override via Tracking:WebsiteDestination. The redirect target is same-domain as the visible
+    // epegboard.com anchor, so there's no anchor/href domain mismatch for spam filters to flag.
+    //
+    // Deliberately routed OUTSIDE the /track prefix (like the /media beacon) and shaped as an innocuous
+    // short redirect (/r/{guid}): a "/track/..." URL in an outreach email screams tracking — and because
+    // the multipart text/plain fallback renders <a> as "anchor (href)", a /track href would expose the
+    // tell there. /r/{guid} on the same domain reads as an ordinary short link. The "click" discriminator
+    // is internal (tracked_requests only) — never in the URL.
+    [HttpGet("/r/{trackerId}")]
+    public IActionResult Website(string trackerId, [FromServices] IConfiguration config)
+    {
+        Record("click", trackerId);
+        var dest = config["Tracking:WebsiteDestination"] ?? "https://www.epegboard.com";
+        return Redirect(dest);
+    }
+
     // One-click unsubscribe. Records "unsubscribe" with the club token; the internal tracking-sync
     // turns that into a suppression + club opt-out. Also accepts a POST for RFC 8058 one-click.
     [HttpGet("u/{token}")]
