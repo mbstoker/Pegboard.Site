@@ -5,7 +5,11 @@
     ViewData["Title"] = "FAQ - badminton club software";
     ViewData["Description"] = "Answers to common questions about ePegboard badminton club software: the free trial, setup, devices, how player ratings work, plans, and getting your data out.";
 
+    var px = PegboardWebSite.Services.CurrencyResolver.Get(ViewContext.HttpContext);
+
     // FAQPage structured data - mirrors the visible Q&A below (plain-text answers).
+    // Kept canonical in GBP (crawler-facing, mostly-UK search audience); only the
+    // visible HTML answers below switch currency per the visitor's choice.
     var faqPairs = new (string Q, string A)[]
     {
         ("Is there really a free trial?", "Yes - a 60-day free trial of the full product, with no card needed to start. Run real club nights through the trial; it is the complete app, not a cut-down demo. When the 60 days are up, smaller clubs can stay on the free plan and busier clubs upgrade. Nothing is charged automatically."),
@@ -90,12 +94,12 @@
 
       <details class="faq-item">
         <summary>What happens after the free trial? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <div class="faq-a"><p>Nothing happens automatically, and there is no card on file. When your 60-day trial ends you choose: stay on the free plan - one session a week, up to 12 players, with the full game picker - or move to a paid plan as your club grows, from around &pound;8 a month. Full details are on the <a href="/pricing">Pricing</a> page.</p></div>
+        <div class="faq-a"><p>Nothing happens automatically, and there is no card on file. When your 60-day trial ends you choose: stay on the free plan - one session a week, up to 12 players, with the full game picker - or move to a paid plan as your club grows, from around @(px.Symbol)@px.ProMonth a month. Full details are on the <a href="/pricing">Pricing</a> page.</p></div>
       </details>
 
       <details class="faq-item">
         <summary>What is the difference between the web app and the desktop app? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <div class="faq-a"><p>The web app runs in any browser on any device, needs no install, and is where new features land first. The Windows desktop app runs fully offline - the right choice if your venue has unreliable internet - and costs &pound;60 per year per club after a 60-day free trial.</p></div>
+        <div class="faq-a"><p>The web app runs in any browser on any device, needs no install, and is where new features land first. The Windows desktop app runs fully offline - the right choice if your venue has unreliable internet - and costs @(px.Symbol)@px.DesktopYear per year per club after a 60-day free trial.</p></div>
       </details>
 
       <details class="faq-item">

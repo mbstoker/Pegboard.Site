@@ -4,6 +4,17 @@
     Layout = "_LayoutMarketing";
     ViewData["Title"] = "Pricing - badminton club software";
     ViewData["Description"] = "ePegboard pricing: 60 days of everything free, no card needed. Smaller badminton clubs stay free; busier clubs upgrade as they grow, from around £8 a month.";
+
+    var px = PegboardWebSite.Services.CurrencyResolver.Get(ViewContext.HttpContext);
+}
+
+@section Head {
+    <style>
+      .ccy-toggle { display:inline-flex; gap:2px; padding:3px; border:1px solid var(--line); border-radius:999px; background:#fff; margin-left:8px; vertical-align:middle }
+      .ccy-toggle a { padding:5px 14px; border-radius:999px; font-size:.9rem; font-weight:600; color:var(--muted-2); text-decoration:none; line-height:1 }
+      .ccy-toggle a.on { background:var(--primary); color:#fff }
+      .ccy-note { text-align:center; color:var(--muted); font-size:.95rem; margin-top:20px }
+    </style>
 }
 
 <!-- HERO -->
@@ -13,6 +24,13 @@
       <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Pricing</span></div>
       <h1 style="margin-top:10px">Pricing that grows with your club</h1>
       <p class="lede">Start with <strong>60 days of everything, free</strong> - no card needed. After that, smaller clubs stay free, and busier clubs upgrade as they grow.</p>
+      <p class="ccy-note" style="text-align:left;margin-top:14px">
+        Show prices in
+        <span class="ccy-toggle">
+          <a href="?ccy=gbp" class="@(px.Code == "GBP" ? "on" : "")">GBP £</a>
+          <a href="?ccy=aud" class="@(px.Code == "AUD" ? "on" : "")">AUD A$</a>
+        </span>
+      </p>
     </div>
   </div>
 </section>
@@ -25,7 +43,7 @@
       <!-- Free -->
       <div class="price">
         <h3>Free</h3>
-        <div class="amt">&pound;0 <span class="per">/ forever</span></div>
+        <div class="amt">@(px.Symbol)0 <span class="per">/ forever</span></div>
         <div class="price-for">For smaller and casual clubs</div>
         <ul class="feats">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> One session a week, up to 12 players</li>
@@ -40,8 +58,8 @@
       <div class="price feat">
         <span class="badge">Most popular</span>
         <h3>Pro</h3>
-        <div class="amt">&pound;8 <span class="per">/ month</span></div>
-        <div class="price-for">or &pound;80 a year (2 months free) &middot; For established weekly clubs</div>
+        <div class="amt">@(px.Symbol)@px.ProMonth <span class="per">/ month</span></div>
+        <div class="price-for">or @(px.Symbol)@px.ProYear a year (2 months free) &middot; For established weekly clubs</div>
         <ul class="feats">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <strong>Everything in Free</strong>, plus:</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Two sessions a week, up to 30 players</li>
@@ -56,8 +74,8 @@
       <!-- Premium -->
       <div class="price">
         <h3>Premium</h3>
-        <div class="amt">&pound;15 <span class="per">/ month</span></div>
-        <div class="price-for">or &pound;150 a year (2 months free) &middot; For larger clubs</div>
+        <div class="amt">@(px.Symbol)@px.PremiumMonth <span class="per">/ month</span></div>
+        <div class="price-for">or @(px.Symbol)@px.PremiumYear a year (2 months free) &middot; For larger clubs</div>
         <ul class="feats">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> <strong>Everything in Pro</strong>, plus:</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Up to 6 sessions a week, up to 60 players</li>
@@ -76,7 +94,14 @@
     </div>
 
     <p style="text-align:center;color:var(--muted);font-size:.92rem;margin-top:22px">Per club, not per player. Billed monthly or annually - annual saves 2 months and covers your whole playing season. Bigger than Premium, or just the odd tournament? <a href="mailto:sales@epegboard.com?subject=ePegboard%20pricing%20enquiry" style="color:var(--link);font-weight:600">Talk to us</a> about a custom or per-competition plan.</p>
-    <p style="text-align:center;color:var(--muted);font-size:.92rem;margin-top:10px">Outside the UK? Prices are shown in GBP. We set fair local pricing for your region - <a href="mailto:sales@epegboard.com?subject=ePegboard%20pricing%20enquiry" style="color:var(--link);font-weight:600">get in touch</a> and we'll sort it.</p>
+    @if (px.Indicative)
+    {
+        <p style="text-align:center;color:var(--muted);font-size:.92rem;margin-top:10px">Prices in @px.Code are indicative, to give Australian clubs a feel for the cost. There's nothing to pay during your 60-day trial, and we'll confirm fair local pricing before you upgrade. Prefer GBP? <a href="?ccy=gbp" style="color:var(--link);font-weight:600">Switch back</a>.</p>
+    }
+    else
+    {
+        <p style="text-align:center;color:var(--muted);font-size:.92rem;margin-top:10px">Prices are shown in GBP. In Australia? <a href="?ccy=aud" style="color:var(--link);font-weight:600">See indicative AUD pricing</a>, or <a href="mailto:sales@epegboard.com?subject=ePegboard%20pricing%20enquiry" style="color:var(--link);font-weight:600">get in touch</a> about pricing for your region.</p>
+    }
   </div>
 </section>
 
@@ -87,7 +112,7 @@
       <div class="es-ico" style="background:rgba(27,110,194,.12);color:var(--primary)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
       <div class="es-txt">
         <h3 style="color:var(--ink)">Prefer to run fully offline?</h3>
-        <p style="color:var(--muted-2)">The Windows desktop app is &pound;60 a year per club, with a 60-day free trial. The right choice if your venue has unreliable internet. New features land on the web app first.</p>
+        <p style="color:var(--muted-2)">The Windows desktop app is @(px.Symbol)@px.DesktopYear a year per club, with a 60-day free trial. The right choice if your venue has unreliable internet. New features land on the web app first.</p>
       </div>
       <a class="btn btn-ghost" href="#">About the desktop app</a>
     </div>

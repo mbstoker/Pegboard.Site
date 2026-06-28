@@ -45,6 +45,15 @@ public class Program
 
         app.UseRouting();
 
+        // Resolve the visitor's display currency early (before any view renders) so a
+        // ?ccy= choice can be persisted as a cookie before the response starts. See
+        // Services/CurrencyResolver. Cheap, runs only for non-static requests.
+        app.Use(async (ctx, next) =>
+        {
+            Services.CurrencyResolver.Get(ctx);
+            await next();
+        });
+
         app.UseAuthorization();
 
         // Legacy /demo path used in older outreach copy → permanent redirect to instant-demo flow on the app.

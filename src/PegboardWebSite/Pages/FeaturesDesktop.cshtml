@@ -2,6 +2,7 @@
 @model FeaturesDesktopModel
 @{
     ViewData["Title"] = "Features - desktop app";
+    var px = PegboardWebSite.Services.CurrencyResolver.Get(ViewContext.HttpContext);
 }
 
 @using System.Net.Mime;
@@ -122,7 +123,7 @@
 
 <section class="cta text-center py-5 bg-primary text-white">
     <h2>Try the desktop app free for 60 days</h2>
-    <p class="lead mb-3">Windows only, fully offline. £60/year per club after the trial.</p>
+    <p class="lead mb-3">Windows only, fully offline. @(px.Symbol)@px.DesktopYear/year per club after the trial.</p>
     <a asp-page="/Download" class="btn btn-light btn-lg mt-3">Get the desktop app</a>
     <p class="mt-3 mb-0" style="font-size: 0.9rem; opacity: 0.9;">Most new functionality is being added to the <a class="text-white text-decoration-underline" asp-page="/Features">web app</a> at play.epegboard.com - that's the recommended path for new clubs.</p>
 </section>
