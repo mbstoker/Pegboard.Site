@@ -59,7 +59,7 @@ public class TrackingController : Controller
     }
 
     // Campaign SCREENSHOT beacon — a visible club-night screenshot that doubles as the open beacon.
-    // The send engine emits {websiteUrl}/track/s/{trackerId} as a normal <img> in the HTML body; when
+    // The send engine emits {websiteUrl}/media/{trackerId}.png as a normal <img> in the HTML body; when
     // the recipient's mail client loads it we Record("open", trackerId) — the SAME resource the
     // internal tracking-sync maps to EmailOpened — so a real, rendered screenshot replaces the hidden
     // 1x1 pixel (the screenshot IS the tracker). trackerId maps to the outbound EmailMessage exactly
@@ -67,7 +67,11 @@ public class TrackingController : Controller
     // TrackingEnabled flag. Image is configurable (Tracking:ScreenshotImage, default the club-night
     // dashboard shot); served no-store so a repeat open isn't hidden by mail-client image caching.
     // Best-effort insert; always serves an image so a tracking-DB blip never shows a broken picture.
-    [HttpGet("s/{trackerId}")]
+    //
+    // Deliberately routed OUTSIDE the /track prefix and shaped like a hashed image asset
+    // (/media/{guid}.png): a "/track/..." src in an email screams tracking to a sharp recipient and to
+    // spam filters. The "open" discriminator is internal (tracked_requests only) — never in the URL.
+    [HttpGet("/media/{trackerId}.png")]
     public IActionResult Screenshot(string trackerId, [FromServices] IConfiguration config)
     {
         Record("open", trackerId);
