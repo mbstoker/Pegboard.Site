@@ -1,11 +1,11 @@
 # ePegboard
 
-> ePegboard is badminton club management and court scheduling software. It runs fair club nights with automatically balanced games, tracks player ratings, manages attendance and payments, and runs handicap competitions and league-team selection. It is web-based (runs in any browser, no install) with an optional Windows desktop app for offline venues. Free for 60 days.
+> ePegboard is badminton club management and court scheduling software. It runs fair club nights with automatically balanced games, tracks player ratings, manages attendance and payments, and runs handicap competitions and league-team selection. It is web-based (runs in any browser, no install) with an optional Windows desktop app for offline venues. The web app is free for clubs.
 
 ## What it is
 - Category: badminton club management software / court scheduling software / club-night rotation system
 - Platform: web app (any modern browser); optional Windows desktop app for venues with unreliable internet
-- Pricing: 60-day free trial (no card), then a free plan for smaller clubs or paid plans from around GBP 8 a month
+- Pricing: the web app is free for clubs - the full club-night workflow at no cost, no card needed. Optional community-supporter contributions help cover running costs but never gate features. Very large or multi-site clubs, leagues and one-off competitions can get in touch. The Windows desktop app is a separate paid product for offline venues.
 - Sign up: https://play.epegboard.com/signup
 - Made by: MBS Software Limited
 
@@ -21,5 +21,5 @@ ePegboard is built on a single player rating system. Ratings reflect how players
 - [Competitions](https://www.epegboard.com/features/competitions): handicap doubles tournaments, group stages, knockouts, live standings
 - [League team support](https://www.epegboard.com/features/league-team-support): partnership analytics and team selection on real data
 - [Pricing](https://www.epegboard.com/pricing): plans and what is free
-- [FAQ](https://www.epegboard.com/faq): trial, setup, devices, ratings, data
+- [FAQ](https://www.epegboard.com/faq): how it is free, setup, devices, ratings, data
 - [Docs](https://docs.epegboard.com): full product documentation

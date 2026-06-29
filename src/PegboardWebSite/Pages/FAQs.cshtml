@@ -3,7 +3,7 @@
 @{
     Layout = "_LayoutMarketing";
     ViewData["Title"] = "FAQ - badminton club software";
-    ViewData["Description"] = "Answers to common questions about ePegboard badminton club software: the free trial, setup, devices, how player ratings work, plans, and getting your data out.";
+    ViewData["Description"] = "Answers to common questions about ePegboard badminton club software: how it is free, setup, devices, how player ratings work, and getting your data out.";
 
     var px = PegboardWebSite.Services.CurrencyResolver.Get(ViewContext.HttpContext);
 
@@ -12,11 +12,11 @@
     // visible HTML answers below switch currency per the visitor's choice.
     var faqPairs = new (string Q, string A)[]
     {
-        ("Is there really a free trial?", "Yes - a 60-day free trial of the full product, with no card needed to start. Run real club nights through the trial; it is the complete app, not a cut-down demo. When the 60 days are up, smaller clubs can stay on the free plan and busier clubs upgrade. Nothing is charged automatically."),
+        ("Is it really free?", "Yes. The full club-night workflow is free for every club - the smart picker, live ratings, scoring, payments, attendance, tournaments, history and reports. It is the complete app, not a cut-down demo, and there is no card to enter. It suits the vast majority of clubs, and it stays free."),
         ("Do we need to install anything?", "No. The web app runs in any modern browser - just sign in at play.epegboard.com. There is also a Windows desktop app for venues with unreliable internet, but most clubs never need it."),
         ("How long does it take to set up?", "You can be running your first session in minutes. Sign in, add players as they arrive, and let ePegboard build balanced games. There is nothing to configure before your first night."),
         ("What devices does it work on?", "The session display is designed for a tablet or laptop at the desk. Players can check their own profile, rating and match history on their phone. A larger screen for the courts is optional but works well."),
-        ("What happens after the free trial?", "Nothing happens automatically, and there is no card on file. When your 60-day trial ends you choose: stay on the free plan - one session a week, up to 12 players, with the full game picker - or move to a paid plan as your club grows, from around GBP 8 a month."),
+        ("Is there a catch, or a paywall later?", "No. There is no card on file and nothing is charged automatically. The club-night workflow is free for good. If your club values ePegboard you can chip in as a community supporter to help cover running costs, but that is entirely optional and never unlocks anything. For a very large or multi-site club, a league or a one-off competition, get in touch and we will help."),
         ("What is the difference between the web app and the desktop app?", "The web app runs in any browser on any device, needs no install, and is where new features land first. The Windows desktop app runs fully offline - the right choice if your venue has unreliable internet - and costs GBP 60 per year per club after a 60-day free trial."),
         ("Is the desktop app still supported?", "Yes. Clubs that rely on it for offline venues can keep using it. New development focuses on the web app, so that is where the latest picking, competitions and analytics features appear first."),
         ("How does the rating system work?", "Every player has a rating that reflects how they perform against expectation - not just who won. A narrow loss to a stronger pair can still move you up; a heavy loss to weaker players costs more. Ratings update after every game and power smart picking, handicap tournaments, partnership analytics and league selection."),
@@ -71,8 +71,8 @@
       <div class="faq-cat">Getting started</div>
 
       <details class="faq-item">
-        <summary>Is there really a free trial? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <div class="faq-a"><p>Yes - a 60-day free trial of the full product, with no card needed to start. Run real club nights through the trial; it is the complete app, not a cut-down demo. When the 60 days are up, smaller clubs can stay on the free plan and busier clubs upgrade - nothing is charged automatically, and we always give plenty of notice before anything changes.</p></div>
+        <summary>Is it really free? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="faq-a"><p>Yes. The full club-night workflow is free for every club - the smart picker, live ratings, scoring, payments, attendance, tournaments, history and reports. It is the complete app, not a cut-down demo, and there is no card to enter. It suits the vast majority of clubs, and it stays free.</p></div>
       </details>
 
       <details class="faq-item">
@@ -93,8 +93,8 @@
       <div class="faq-cat">Pricing &amp; plans</div>
 
       <details class="faq-item">
-        <summary>What happens after the free trial? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <div class="faq-a"><p>Nothing happens automatically, and there is no card on file. When your 60-day trial ends you choose: stay on the free plan - one session a week, up to 12 players, with the full game picker - or move to a paid plan as your club grows, from around @(px.Symbol)@px.ProMonth a month. Full details are on the <a href="/pricing">Pricing</a> page.</p></div>
+        <summary>Is there a catch, or a paywall later? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="faq-a"><p>No. There is no card on file and nothing is charged automatically. The club-night workflow is free for good. If your club values ePegboard you can chip in as a community supporter to help cover running costs, but that is entirely optional and never unlocks anything. For a very large or multi-site club, a league or a one-off competition, <a href="mailto:sales@epegboard.com?subject=ePegboard%20enquiry">get in touch</a> and we will help. Full details are on the <a href="/pricing">Pricing</a> page.</p></div>
       </details>
 
       <details class="faq-item">
@@ -154,7 +154,7 @@
         <h3>Still have a question?</h3>
         <p>The fastest way to find out if ePegboard fits your club is to try it on a real session. Or get in touch and we will answer anything that is not covered here.</p>
       </div>
-      <a class="btn btn-ghost" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank">Start Free Trial</a>
+      <a class="btn btn-ghost" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank">Get started free</a>
     </div>
   </div>
 </section>
