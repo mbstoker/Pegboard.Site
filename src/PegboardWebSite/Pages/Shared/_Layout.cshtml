@@ -5,7 +5,7 @@
     // SEO / share metadata. Pages override via ViewData; otherwise these site-wide defaults apply.
     var pageTitle = ViewData["Title"] as string;
     var metaDescription = ViewData["Description"] as string
-        ?? "ePegboard runs your badminton club night - fair, balanced games with smart picking, attendance reports and member stats. Free for at least 60 days at play.epegboard.com.";
+        ?? "ePegboard runs your badminton club night - fair, balanced games with smart picking, attendance reports and member stats. Free for clubs at play.epegboard.com.";
     var ogTitle = ViewData["OgTitle"] as string
         ?? (string.IsNullOrEmpty(pageTitle) || pageTitle == "Home" ? "ePegboard" : $"{pageTitle} - ePegboard");
     // Absolute URLs (required by OG/Twitter scrapers). Prefer the configured canonical host over the request host.
