@@ -45,6 +45,8 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);bac
 .nav-links a:hover{background:var(--bg-soft);color:var(--ink)}
 .nav-links a.active{color:var(--primary);background:var(--bg-tint)}
 .nav-cta{margin-left:auto;display:flex;align-items:center;gap:14px}
+/* Separate the returning-user "Sign in" link from the new-visitor choice pair (See it in action + Sign up) */
+.nav-cta .nav-div{width:1px;height:22px;background:var(--line);margin:0 2px}
 .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;margin-left:14px;width:42px;height:42px;padding:0;border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer}
 .nav-toggle span{display:block;width:20px;height:2px;margin:0 auto;background:var(--ink);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
 .nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -122,7 +124,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);bac
 
 /* feature cards (with preview) */
 .feat-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding-bottom:46px}
-.feat-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .14s ease,box-shadow .14s ease,border-color .14s ease}
+.feat-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;scroll-margin-top:84px;transition:transform .14s ease,box-shadow .14s ease,border-color .14s ease}
 .feat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--primary)}
 .feat-thumb{aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid var(--line);background:linear-gradient(135deg,#dbe9f7,#cfe0f2);position:relative}
 .feat-thumb img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;filter:saturate(1.1) contrast(1.07)}
@@ -332,6 +334,10 @@ section{padding:74px 0}
 .cta h2{font-size:2.3rem;font-weight:800;color:#fff}
 .cta p{font-size:1.13rem;color:#d3e4f5;margin-top:14px}
 .cta .btn{margin-top:24px}
+.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.cta-actions .btn{margin-top:0}
+.cta-demo{background:transparent;border-color:rgba(255,255,255,.5);color:#fff}
+.cta-demo:hover{border-color:#fff;background:rgba(255,255,255,.08)}
 .cta .fine{margin-top:16px;font-size:.9rem;color:#bcd2ea}
 
 /* faq */
@@ -424,8 +430,9 @@ footer{background:var(--navy);color:#9dc0e3;padding:52px 0 30px;font-size:.92rem
   .nav-inner{gap:12px;height:60px}
   .nav-cta{gap:9px}
   .nav-cta a{white-space:nowrap}
-  /* Sign in lives in the hamburger menu on phones - keep the bar to logo + trial CTA + toggle */
+  /* Sign in + See it in action live in the hamburger menu on phones - keep the bar to logo + trial CTA + toggle */
   .nav-cta .signin{display:none}
+  .nav-cta .navdemo{display:none}
   .signin{font-size:.88rem}
   .nav-cta .btn{padding:9px 13px;font-size:.88rem;border-radius:9px}
   .brand .brand-word{height:23px}
