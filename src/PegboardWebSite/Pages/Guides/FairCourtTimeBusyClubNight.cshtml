@@ -1,0 +1,124 @@
+@page "/guides/fair-court-time-busy-club-night"
+@using PegboardWebSite.Services
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "How to give everyone fair court time on a busy night";
+    ViewData["Description"] = "Uneven court time is the number-one complaint at busy badminton clubs. Here is what fair court time really means, why it goes wrong, and how to keep everyone's share even across a busy session.";
+    ViewData["OgTitle"] = "Fair court time on a busy club night";
+
+    const string published = "2026-07-01";
+    const string canonical = "https://www.epegboard.com/guides/fair-court-time-busy-club-night";
+
+    var faqPairs = new (string Q, string A)[]
+    {
+        ("What counts as fair court time at a club night?",
+         "Fair court time means everyone gets a similar share of playing time for the time they are present, not necessarily the same number of games. A player there all evening should get more games than someone who arrived in the last half hour, but each should get their fair share of the time they were actually there. Measuring against time present, rather than games played or sign-in order, is the key."),
+        ("Why do some players always seem to sit out more?",
+         "Usually because rotation is tracked by memory or sign-in order rather than by real waiting time. Quieter players do not chase a game, latecomers get treated as if they have been waiting all night, and long games on one court leave that group behind. None of it is deliberate, which is exactly why it keeps happening; the fix is to track who has actually been waiting longest rather than relying on who speaks up."),
+        ("How do you handle latecomers fairly?",
+         "Add them to the queue at the point they arrive, not the front and not forgotten at the back. From then on they should be treated by how long they have actually been waiting, so they are not pushed behind players who have already had several games, but they also do not leapfrog people who have been waiting a while. The aim is their fair share of the time that is left."),
+        ("Should stronger players get less court time to make it fair?",
+         "No. Fair court time is about time present, not ability. Everyone who turns up deserves a similar share regardless of standard. Ability belongs in how you balance the games, pairing and matching so games are close, not in how much anyone plays. Keeping those two things separate is what makes a night feel fair to strong and weak players alike."),
+        ("Can software really keep court time even?",
+         "Yes, and it is one of the things software does far better than a person. It counts exactly how long each player has been waiting, factors that into every game it picks, and never forgets the quiet player in the corner. It can also stop anyone waiting too long by prioritising whoever has been out longest, which is very hard to keep track of by eye on a busy night.")
+    };
+
+    var articleJsonLd = GuideSchema.Article(
+        "How to give everyone fair court time on a busy night",
+        "What fair court time really means at a badminton club, why it goes wrong, and how to keep everyone's share even across a busy session.",
+        canonical, published);
+    var faqJsonLd = GuideSchema.Faq(faqPairs);
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+    <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
+}
+
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Fair court time</span></div>
+      <h1 style="margin-top:10px">How to give everyone fair court time on a busy night</h1>
+      <p class="lede">Ask a club what causes the most grumbling and it is almost never the shuttles or the hall. It is court time. Someone always feels they sat out too long while others played twice. Here is how to make sure the share is genuinely even.</p>
+      <div class="guide-meta">
+        <span class="gm-tag">Guide</span>
+        <span>Fairness</span>
+        <span>8 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:820px">
+    <div class="guide-toc">
+      <h4>In this guide</h4>
+      <a href="#meaning">What fair court time actually means</a>
+      <a href="#wrong">Why it goes wrong</a>
+      <a href="#byhand">Keeping it even by hand</a>
+      <a href="#software">Where software helps most</a>
+      <a href="#faq">Frequently asked questions</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+      <p class="lead">Uneven court time is the single most common complaint at a busy badminton club, and the frustrating thing is that it is almost never anyone's fault. No organiser sets out to leave someone sitting; it happens because keeping track of everyone's playing time in a busy hall is genuinely hard. This guide breaks down what fair court time really means, why it slips, and the practical ways to keep everyone's share even, from a few good habits at the board to letting software count it for you. It sits alongside our broader guide to <a href="/guides/badminton-club-night-rotation">fair player rotation</a>.</p>
+
+      <h2 id="meaning">What fair court time actually means</h2>
+      <p>The most useful definition is simple: everyone should get a similar share of court time for the time they are present. That last phrase does a lot of work. Someone who plays from seven until ten should get more games than someone who rolls in at half nine, and that is fair. What is not fair is two people who were both there all evening walking away having played very different amounts.</p>
+      <p>So the thing to measure is not games played in total, and definitely not who signed in first. It is each player's share relative to how long they have actually been in the hall. A newcomer who arrived late is not owed a full night's worth of games, but they are owed their fair slice of the time that was left. Get that idea straight and most court-time disputes dissolve, because you can point to it.</p>
+
+      <h2 id="wrong">Why it goes wrong</h2>
+      <p>Uneven court time creeps in through a handful of familiar routes:</p>
+      <ul>
+        <li><strong>Tracking by memory.</strong> On a busy night nobody can accurately hold in their head who has played how much. The quiet player who does not chase a game slips down.</li>
+        <li><strong>Sign-in order, not waiting time.</strong> Ordering by who arrived treats a latecomer as if they have been waiting all evening, or buries them at the back forever.</li>
+        <li><strong>Long games on one court.</strong> A single drawn-out three-setter leaves that group of four well behind everyone else, and it is easy to forget to make it up to them.</li>
+        <li><strong>The squeaky wheel.</strong> Confident players ask for a game; reserved ones wait to be picked. Without a system, the confident ones play more.</li>
+      </ul>
+      <p>Notice that none of these is bad intent. They are all just the limits of doing a hard counting job by eye, which is why the same few names end up feeling short-changed week after week.</p>
+
+      <h2 id="byhand">Keeping it even by hand</h2>
+      <p>If you are running a board, these habits make a real difference:</p>
+      <ul>
+        <li>Track who has been sitting out longest and give them the next game, rather than going by who asks or who signed in first.</li>
+        <li>When you add a latecomer, slot them in by arrival time and then treat them by real waiting time from that point.</li>
+        <li>Keep an eye on the slow court and make up the difference to a group who got stuck in a long game.</li>
+        <li>Make a point of pulling in the quiet players; they are the ones a memory-based system loses.</li>
+        <li>Set a rough ceiling in your head for how long anyone should wait, and treat crossing it as a problem to fix immediately.</li>
+      </ul>
+      <p>Done well this keeps things fair, but it is relentless, and it depends entirely on one person concentrating for the whole session. Look away to take a payment or answer a question and the count drifts.</p>
+
+      <h2 id="software">Where software helps most</h2>
+      <p>Court time is the area where software has the clearest advantage over even a very good organiser, because it is fundamentally a counting problem, and counting is what computers are for. <a href="/features/club-nights">ePegboard</a> knows exactly how long every player has been waiting, factors that into every game it suggests, and never loses track of the quiet person in the corner. It keeps each player's share even for the time they are present, prioritises whoever has been waiting longest, and can make sure nobody is left sitting past a reasonable limit.</p>
+      <p>Because the numbers are on screen, fairness stops being a matter of trust and becomes something the whole room can see, which takes the heat out of the conversation entirely. It handles latecomers and drop-ins without distorting anyone's share, and it does all of it while the organiser is free to play. It is free for clubs and runs in any browser.</p>
+
+      <div class="guide-callout">
+        <h4>Let the counting look after itself</h4>
+        <p>ePegboard tracks everyone's waiting time and keeps court time even, automatically, so no one gets left on the bench. Free for clubs.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+      </div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      @foreach (var f in faqPairs)
+      {
+        <h3>@f.Q</h3>
+        <p>@f.A</p>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" style="margin-top:56px">
+  <div class="wrap">
+    <h2>Even court time, every night</h2>
+    <p>No more grumbling about who sat out. ePegboard keeps everyone's share fair. Free for clubs.</p>
+    <div class="cta-actions">
+      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
+      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
+    </div>
+    <p class="fine">More on running a fair night in the <a href="/guides">guides section</a>.</p>
+  </div>
+</section>

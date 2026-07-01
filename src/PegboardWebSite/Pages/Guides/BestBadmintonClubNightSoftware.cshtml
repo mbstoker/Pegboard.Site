@@ -1,0 +1,170 @@
+@page "/guides/best-badminton-club-night-software"
+@using PegboardWebSite.Services
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "Best badminton club-night software: what to look for";
+    ViewData["Description"] = "A practical buyer's guide to badminton club-night and session software: the features that actually matter, what to check before you commit, and how to tell a real fit from a feature list.";
+    ViewData["OgTitle"] = "Best badminton club-night software: what to look for";
+
+    const string published = "2026-07-01";
+    const string canonical = "https://www.epegboard.com/guides/best-badminton-club-night-software";
+
+    var faqPairs = new (string Q, string A)[]
+    {
+        ("Is there free badminton club software?",
+         "Yes. Some session software, including ePegboard, is free for clubs with no card required, covering the full club-night workflow of sign-in, game picking, scoring, ratings, attendance and reports. Others charge per club or per member, sometimes with a limited free tier. Because the running cost of this kind of software is low, a generous free offer is realistic, so treat a paywall on the basics as a reason to look closer rather than a mark of quality."),
+        ("What should I look for in club-night software?",
+         "In rough order: does it run balanced, varied games without a lot of manual fiddling; does it keep court time even across a busy night; does it handle latecomers and drop-ins cleanly; can players see their own stats; can you export your data; and does it run on the devices you already have with no install. A long feature list matters less than whether it does the core job, running a fair night, well."),
+        ("Do we need to install anything?",
+         "The best modern options run in a web browser, so any laptop or tablet works and there is nothing to maintain. A few tools are Windows-only desktop apps, which suit venues with unreliable internet but tie you to one machine. Check whether the tool is web-based, and whether there is an offline fallback if your hall's connection is patchy."),
+        ("Can we get our club's data out?",
+         "You should be able to. Your members, results and history are your club's, and good software lets you export them to CSV whenever you want. If a tool makes it hard to get your data out, that is a warning sign, because it is the main thing that locks a club in."),
+        ("What is the difference between club-night software and club management software?",
+         "Club-night software runs the session itself: sign-in, game picking, rotation, scoring and live stats. Club management software leans towards membership, payments, bookings and admin. The strongest tools do both from one place and on one player rating, so the night you run and the records you keep stay joined up rather than living in separate systems.")
+    };
+
+    var articleJsonLd = GuideSchema.Article(
+        "Best badminton club-night software: what to look for",
+        "The features that actually matter in badminton club-night and session software, what to check before you commit, and how to tell a genuine fit from a long feature list.",
+        canonical, published);
+    var faqJsonLd = GuideSchema.Faq(faqPairs);
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+    <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
+}
+
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Best club-night software</span></div>
+      <h1 style="margin-top:10px">Best badminton club-night software: what to actually look for</h1>
+      <p class="lede">Every tool has a feature list as long as your arm. Far fewer do the one job that matters well: running a fair, full, friendly club night without the organiser chained to a screen. Here is how to tell them apart.</p>
+      <div class="guide-meta">
+        <span class="gm-tag">Buyer's guide</span>
+        <span>Club software</span>
+        <span>9 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:820px">
+    <div class="guide-toc">
+      <h4>In this guide</h4>
+      <a href="#job">Start with the job, not the features</a>
+      <a href="#checklist">The features that actually matter</a>
+      <a href="#redflags">Questions to ask, and red flags</a>
+      <a href="#price">A word on price</a>
+      <a href="#epegboard">How ePegboard measures up</a>
+      <a href="#faq">Frequently asked questions</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+      <p class="lead">If you have searched for the best badminton club-night software, you have probably found a dozen tools that all sound similar. The trick is not comparing feature lists line by line, it is being clear about the job you need doing and checking, honestly, which tools do that job well. This guide walks through the criteria that actually make a difference on the night, and the questions worth asking before you commit your club to anything.</p>
+
+      <h2 id="job">Start with the job, not the features</h2>
+      <p>The core job of club-night software is simple to state and hard to do: keep every court busy with games that are balanced and varied, share court time fairly across everyone who turns up, and do it without a person having to babysit a screen all evening. Almost everything else, payments, competitions, membership admin, is useful but secondary. If a tool nails the core and bolts the rest on, you have something. If it has forty features but still leaves your organiser refereeing arguments about whose turn it is, the feature count did not help.</p>
+      <p>So before you compare anything, write down what a good night looks like for your club. A small social group wants easy mixing and no fuss. A busy competitive club wants close games and even court time. A club running <a href="/guides/how-to-run-handicap-doubles-tournament">handicap competitions</a> or picking <a href="/guides/picking-league-teams-club-data">league teams</a> wants those to run off the same data. Knowing which of these you are lets you weigh the criteria below rather than being dazzled by a list.</p>
+
+      <h2 id="checklist">The features that actually matter</h2>
+      <p>These are the things worth checking, roughly in the order they affect your night.</p>
+      <div class="cmp-wrap">
+        <table class="cmp-table">
+          <thead>
+            <tr><th>What to check</th><th>Why it matters</th><th>Good sign</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Game quality</td>
+              <td>Balanced, varied games are the whole point. This is where cheap tools cut corners.</td>
+              <td>Games are matched on level and on who has played whom, not just pulled off a queue.</td>
+            </tr>
+            <tr>
+              <td>Court-time fairness</td>
+              <td>The most common complaint at any club is uneven court time.</td>
+              <td>It tracks real waiting time and evens out the share of games across the night.</td>
+            </tr>
+            <tr>
+              <td>Latecomers and drop-ins</td>
+              <td>Real club nights are messy; people arrive and leave throughout.</td>
+              <td>Adding or removing a player mid-session is one tap and does not distort fairness.</td>
+            </tr>
+            <tr>
+              <td>Player ratings</td>
+              <td>Balancing, handicaps and team selection are only as good as the rating behind them.</td>
+              <td>Ratings update automatically from results, so nobody has to grade players by hand.</td>
+            </tr>
+            <tr>
+              <td>Player-facing stats</td>
+              <td>Live stats keep members engaged and turn ratings into a talking point.</td>
+              <td>Players can see their rating, win rate and history on their own phone.</td>
+            </tr>
+            <tr>
+              <td>Runs on your kit</td>
+              <td>You should not have to buy hardware or install anything.</td>
+              <td>Works in a browser on a tablet or laptop you already own.</td>
+            </tr>
+            <tr>
+              <td>Data ownership</td>
+              <td>Your members and history are yours; getting locked in is the real cost.</td>
+              <td>One-click CSV export of members, attendance and results.</td>
+            </tr>
+            <tr>
+              <td>Everything in one place</td>
+              <td>Separate tools for nights, competitions and admin drift out of sync.</td>
+              <td>Sessions, competitions and records share one system and one rating.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="redflags">Questions to ask, and red flags</h2>
+      <p>Before you roll anything out to your members, get answers to these:</p>
+      <ul>
+        <li><strong>Can I try it on a real night without paying first?</strong> If you cannot see it run with your own players before committing, that is a red flag.</li>
+        <li><strong>How does it decide games?</strong> You do not need the internal maths, but it should be able to show you why a game was picked. "It just picks" is not reassuring when a member disputes it.</li>
+        <li><strong>What happens to court time when the night gets busy?</strong> Plenty of tools look fine with eight players and fall apart with thirty.</li>
+        <li><strong>How do I get my data out?</strong> If the answer is vague, assume you cannot.</li>
+        <li><strong>What does it cost as we grow?</strong> Watch for per-member pricing that quietly scales into a real bill.</li>
+      </ul>
+      <p>The biggest red flag of all is software that makes the organiser work harder, not less. The point is to hand over the repetitive decisions so the person running the night can actually play. If a demo leaves you doing more tapping than you would with a <a href="/guides/paper-pegboard-to-app">paper pegboard</a>, keep looking.</p>
+
+      <h2 id="price">A word on price</h2>
+      <p>Session software is cheap to run, so free-for-clubs is a genuine and sustainable offer, not a trap or a trial that expires. That said, free should mean the real thing, not a stripped demo that nags you to upgrade. Check that the free version covers the whole night, sign-in, picking, scoring, ratings and reports, and that anything paid is for genuinely bigger needs like a large multi-site club or a one-off event, rather than the basics every club needs. Cheap or free is fine. Cheap-feeling is not.</p>
+
+      <h2 id="epegboard">How ePegboard measures up</h2>
+      <p><a href="/badminton-club-management-software">ePegboard</a> was built around exactly the criteria above. It keeps courts busy with balanced, varied games, tracks court-time fairness across the whole night, handles latecomers and drop-ins in a tap, and shows why each game was picked so disputes end with evidence rather than argument. Players follow their own rating and stats on their phones, everything runs in a browser with nothing to install, and you can export your data whenever you like. Sessions, <a href="/features/competitions">handicap competitions</a> and <a href="/features/league-team-support">league team selection</a> all run off one player rating, so nothing drifts out of sync.</p>
+      <p>It is free for clubs, with no card to enter, and clubs have already run more than 1,100 sessions and over 33,000 games on it. The fastest way to judge any tool, including this one, is to run a real night on it, so the honest recommendation is to try it with your own players and see how the evening feels.</p>
+
+      <div class="guide-callout">
+        <h4>See it on your own club night</h4>
+        <p>Run a real session on ePegboard, free, and judge it the only way that counts. No card, no install, running in minutes.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+      </div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      @foreach (var f in faqPairs)
+      {
+        <h3>@f.Q</h3>
+        <p>@f.A</p>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" style="margin-top:56px">
+  <div class="wrap">
+    <h2>Try the club-night software clubs actually stick with</h2>
+    <p>Balanced games, fair court time, free for your club. Runs in any browser.</p>
+    <div class="cta-actions">
+      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
+      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
+    </div>
+    <p class="fine">More on running your club well in the <a href="/guides">guides section</a>.</p>
+  </div>
+</section>

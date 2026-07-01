@@ -1,0 +1,173 @@
+@page "/guides/how-to-run-handicap-doubles-tournament"
+@using PegboardWebSite.Services
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "How to run a handicap doubles tournament";
+    ViewData["Description"] = "A step-by-step guide to running a badminton handicap doubles tournament: tournament formats, how to set handicaps, seeding the draw, scoring, common mistakes, and running the fixtures without spreadsheets.";
+    ViewData["OgTitle"] = "How to run a handicap doubles tournament";
+
+    const string published = "2026-07-01";
+    const string canonical = "https://www.epegboard.com/guides/how-to-run-handicap-doubles-tournament";
+
+    var faqPairs = new (string Q, string A)[]
+    {
+        ("What is a handicap badminton tournament?",
+         "A handicap tournament gives weaker pairs a head start, or an adjusted target, so that players of different standards can play a genuinely competitive match against each other. Instead of the strongest pair winning every game, the handicap closes the gap so the result depends on how well each pair plays on the day. It is the format that lets a whole club, not just the best players, take part in one event."),
+        ("How do you calculate a badminton handicap?",
+         "The fairest way is to base handicaps on player ratings: the bigger the gap in combined standard between two pairs, the bigger the head start the weaker pair gets. As a rough illustration, if two pairs are close in combined rating the head start might be a point or two in a game to 21, and if one pair is well stronger it might be five or more. The exact mapping varies by system, and doing it from grades by hand is fiddly, so working from a rating that already reflects how players perform makes the handicaps consistent and easy to defend."),
+        ("What format works best for a handicap tournament?",
+         "It depends on how many pairs you have and how long you have the courts. Round robin suits smaller entries of roughly six to eight pairs and guarantees everyone lots of games. Groups feeding a knockout suit larger entries of around twelve to twenty pairs and give a clear champion. Groups feeding graded finals, a cup and a plate, usually give the happiest club night because nobody is knocked out after two matches."),
+        ("How many pairs can you run in one evening?",
+         "As a rough guide, a two to three hour evening on four courts comfortably handles twelve to twenty pairs in a groups-then-finals format, or six to eight pairs in a full round robin. The limits are court count and how long each match takes: shorter games or timed rounds let you fit more in. If in doubt, plan for slightly fewer pairs than the maximum so a couple of long matches do not push you past your court booking."),
+        ("Should handicaps change during the tournament?",
+         "No, as a rule. Set the handicaps from ratings before the event and leave them alone, because changing them mid-tournament feels arbitrary and undermines trust, even when a handicap looks slightly off after a round. The one exception is a clear error, a pair entered at the wrong standard, which is better corrected early and openly than left to distort the whole event. Consistency is what makes players accept the result."),
+        ("How do handicaps keep it fair for stronger players too?",
+         "A good handicap does not punish strong players, it just removes the certainty of the result. The strong pair still has to play well to overcome the head start, and if they do, they win. Done right it makes matches tense and enjoyable at both ends: the weaker pair has a real chance, and the stronger pair has a real contest, which is far more fun than a walkover for either side.")
+    };
+
+    var articleJsonLd = GuideSchema.Article(
+        "How to run a handicap doubles tournament",
+        "A step-by-step guide to running a badminton handicap doubles tournament: formats, setting handicaps, seeding the draw, scoring, common mistakes, and running the fixtures without spreadsheets.",
+        canonical, published);
+    var faqJsonLd = GuideSchema.Faq(faqPairs);
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+    <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
+}
+
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Handicap tournament</span></div>
+      <h1 style="margin-top:10px">How to run a handicap doubles tournament</h1>
+      <p class="lede">A club tournament where only the best four have a chance is a tournament most of your members will sit out. A handicap event flips that: everyone has a genuine shot, every match is tense, and the whole club takes part. Here is how to run one.</p>
+      <div class="guide-meta">
+        <span class="gm-tag">How-to</span>
+        <span>Competitions</span>
+        <span>12 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:820px">
+    <div class="guide-toc">
+      <h4>In this guide</h4>
+      <a href="#why">Why handicap, not scratch</a>
+      <a href="#handicaps">How handicaps work</a>
+      <a href="#format">Choosing a format</a>
+      <a href="#draw">Seeding and drawing the groups</a>
+      <a href="#running">Running it on the night</a>
+      <a href="#mistakes">Common mistakes</a>
+      <a href="#software">Doing it without spreadsheets</a>
+      <a href="#faq">Frequently asked questions</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+      <p class="lead">A handicap doubles tournament is the most inclusive event a club can run. By giving weaker pairs a head start sized to the gap in standard, it lets a mixed-ability club hold one competition that everyone can enter and genuinely contend in, rather than a scratch event the same four players always win. This guide walks through why handicap formats work, how to set the handicaps fairly, which tournament formats suit which clubs, how to seed the draw, what to watch for on the night, the mistakes to avoid, and how to run the fixtures without drowning in spreadsheets. A fair handicap depends on a good <a href="/guides/badminton-club-rating-systems">rating system</a>, so it is worth reading that alongside this.</p>
+
+      <h2 id="why">Why handicap, not scratch</h2>
+      <p>A scratch tournament, where everyone starts level, sounds fair but in practice excludes most of your club. If the result is a foregone conclusion, weaker players do not enter, the early rounds are walkovers, and the event becomes a private competition for your strongest few. A handicap tournament fixes this at a stroke. Because the head start reflects the difference in standard, a developing pair can beat a strong pair by playing well, and the strong pair has to earn it. The effect is more entries, closer matches, and a real buzz around a club competition the whole club feels part of. If you are short of club tournament ideas that actually fill the hall, this is the one that does.</p>
+
+      <h2 id="handicaps">How handicaps work</h2>
+      <p>The idea is simple: the bigger the gap in combined standard between two pairs, the bigger the head start the weaker pair gets. A small gap means a small head start; a large gap means a large one. Get the sizing right and each match is a coin-flip that the better performance on the day decides.</p>
+      <p>A concrete illustration helps. Imagine two pairs whose combined ratings are close, say within a hundred points of each other. The weaker pair might start a game to 21 just a point or two up. Now imagine a much wider gap, a few hundred points of combined rating between them. The weaker pair might start five or more points up, so the stronger pair has to play genuinely well to reel them in. The exact numbers depend on the system you use, and there is no single correct scale, but the principle is always the same: head start grows with the gap.</p>
+      <p>The hard part is setting the numbers fairly and consistently across every match. Doing it from grades or gut feel invites argument, because grades are coarse and opinions differ. The reliable approach is to base handicaps on player ratings that already capture how people actually perform, so the head start follows from the numbers rather than from anyone's judgement. That makes the handicaps consistent across the whole draw and easy to defend when someone questions them.</p>
+
+      <h2 id="format">Choosing a format</h2>
+      <p>Pick your tournament format from two numbers: how many pairs you expect, and how long you have the courts.</p>
+      <div class="cmp-wrap">
+        <table class="cmp-table">
+          <thead>
+            <tr><th>Format</th><th>How it works</th><th>Best for</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Round robin</td><td>Every pair plays every other pair.</td><td>Smaller entries; guarantees everyone lots of games.</td></tr>
+            <tr><td>Groups then knockout</td><td>Round-robin groups feed a knockout between qualifiers.</td><td>Larger entries wanting a clear champion.</td></tr>
+            <tr><td>Groups then finals</td><td>Groups feed graded finals (cup, plate).</td><td>Keeping everyone playing meaningful games to the end.</td></tr>
+            <tr><td>Short round robin</td><td>One group, everyone plays, most points wins.</td><td>A single evening on limited courts.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>To put rough numbers on it:</p>
+      <ul>
+        <li><strong>Round robin</strong> is best with about six to eight pairs, when you want everyone playing all evening and have the courts to let them all meet.</li>
+        <li><strong>Groups then knockout</strong> comes into its own once you reach roughly twelve to twenty pairs, because it guarantees everyone a set of group games without needing every pair to play every other pair.</li>
+        <li><strong>Groups then graded finals</strong> usually gives the happiest club night, because nobody is knocked out after two matches; the pairs who do not make the cup final drop into a plate and still have something to play for.</li>
+      </ul>
+      <p>When in doubt, groups feeding graded finals is the most inclusive choice, which is usually the whole point of running a handicap event in the first place.</p>
+
+      <h2 id="draw">Seeding and drawing the groups</h2>
+      <p>If you are running groups, how you draw them matters. The aim is groups of roughly even overall strength, so no single group is a bloodbath and no other is a stroll. Because you already have ratings for the handicaps, use them to seed: spread your strongest pairs across different groups rather than letting them cluster, then fill the groups so each has a similar spread of standards. This is the same principle as balancing league teams, covered in our guide to <a href="/guides/picking-league-teams-club-data">picking teams from club data</a>.</p>
+      <p>Keep groups to a sensible size. Four or five pairs per group is a good target: enough games to be worth it, few enough to finish on time. Groups of six or more make for a long evening and a lot of waiting. If the numbers do not divide neatly, an uneven group or two is fine as long as the qualification rule is clear from the start.</p>
+
+      <h2 id="running">Running it on the night</h2>
+      <p>This is where a good plan meets reality. A few decisions and habits keep the evening on track:</p>
+      <ul>
+        <li><strong>Decide match length in advance.</strong> A single game to 21 is quick and clear; best of three is a fuller test but takes far longer. If you need matches to finish together so courts free up at once, timed rounds of a fixed number of minutes keep everything synchronised. Pick one and tell everyone before the first serve.</li>
+        <li><strong>Handle courts freeing at different times.</strong> Games rarely end together, so have the next fixture ready to go on each court as it frees, and keep a couple of pairs warmed up and expecting to be called so a free court is never standing idle.</li>
+        <li><strong>Confirm pairs and handicaps before the first match.</strong> Post them so nobody is negotiating their head start mid-event.</li>
+        <li><strong>Plan for no-shows and withdrawals.</strong> Decide in advance what happens if a pair does not turn up or has to drop out: usually a walkover in a knockout, or their remaining group games recorded as conceded. Agree it beforehand so it is not a debate on the night.</li>
+        <li><strong>Decide your line on substitutions.</strong> If you allow a stand-in when someone is injured, note that it changes the pair's standard and therefore its handicap, so either re-rate the pair or keep substitutions to genuine emergencies.</li>
+        <li><strong>Resist re-rating mid-event.</strong> A handicap will occasionally look wrong after round one. Unless it is a clear entry error, leave it; changing handicaps partway through does more damage to trust than the odd off match.</li>
+        <li><strong>Publish standings as you go.</strong> Keep scores and a visible table up to date so everyone can follow the competition, work out what they need from their last group game, and see it is being run straight.</li>
+        <li><strong>Agree tie-breaks in advance.</strong> Level groups are common in a handicap event, so decide up front how you separate pairs, for example head-to-head result then points difference, so a close finish does not turn into an argument.</li>
+        <li><strong>Sort the small stuff.</strong> Have enough shuttles for the standard, a plan for changing them fairly between games, and a clear board or screen showing who is on which court next.</li>
+      </ul>
+
+      <h2 id="mistakes">Common mistakes</h2>
+      <p>The events that go wrong usually trip on the same handful of things. Watch for these:</p>
+      <ul>
+        <li><strong>Handicaps set too aggressively.</strong> Over-generous head starts make it impossible for strong pairs to compete and the tournament feels like a lottery. Size them to the gap, not to force an upset.</li>
+        <li><strong>Groups too large.</strong> Six-plus pairs per group means long waits and a night that overruns. Keep groups to four or five.</li>
+        <li><strong>Knockout too early.</strong> Going straight to knockout, or cutting to it after one round, means half your entries play two games and go home. Give everyone a proper set of group games first.</li>
+        <li><strong>Long gaps between rounds.</strong> Dead time kills the atmosphere. Keep fixtures flowing and courts busy rather than waiting for a whole round to finish before starting the next.</li>
+        <li><strong>Not explaining handicaps beforehand.</strong> If players do not understand how the head starts were set, they assume they are unfair. A one-minute explanation up front saves a lot of grumbling.</li>
+        <li><strong>Changing handicaps during the event.</strong> As above, this reads as making it up as you go. Set them, explain them, leave them.</li>
+        <li><strong>Not publishing standings.</strong> If nobody can see the table, the event feels opaque and people lose track of what is at stake in their last game.</li>
+      </ul>
+
+      <h2 id="software">Doing it without spreadsheets</h2>
+      <p>The admin is where handicap tournaments usually come unstuck: calculating fair head starts, seeding and drawing the groups, tracking scores and keeping standings current, and generating the finals, all at once, on the night. <a href="/features/competitions">ePegboard</a> runs handicap doubles tournaments without any of that. The workflow is straightforward:</p>
+      <ul>
+        <li>Players or pairs are entered.</li>
+        <li>Handicaps are calculated automatically from the same player ratings that power your club nights.</li>
+        <li>Groups are seeded and generated so the draw is balanced.</li>
+        <li>Scores are entered as matches finish.</li>
+        <li>Standings update live for everyone to see.</li>
+        <li>The knockout or graded finals are generated from the qualifiers.</li>
+      </ul>
+      <p>Because it uses the club's existing ratings, the handicaps are consistent with how people really play and simple to defend, and the organiser gets to run the event rather than wrestle a spreadsheet. It is free for clubs and runs in any browser, on the same platform that has already run more than 1,100 club sessions and over 33,000 games.</p>
+
+      <div class="guide-callout">
+        <h4>Run a tournament the whole club can enter</h4>
+        <p>ePegboard sets fair handicaps from your ratings, seeds the draw, tracks standings live and builds the finals. No spreadsheets. Free for clubs.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+      </div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      @foreach (var f in faqPairs)
+      {
+        <h3>@f.Q</h3>
+        <p>@f.A</p>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" style="margin-top:56px">
+  <div class="wrap">
+    <h2>Give every member a real shot at the title</h2>
+    <p>Fair handicaps, a balanced draw, live standings. Free for clubs.</p>
+    <div class="cta-actions">
+      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
+      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
+    </div>
+    <p class="fine">More on competitions and club events in the <a href="/guides">guides section</a>.</p>
+  </div>
+</section>

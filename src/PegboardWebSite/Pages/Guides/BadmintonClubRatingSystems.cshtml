@@ -1,0 +1,141 @@
+@page "/guides/badminton-club-rating-systems"
+@using PegboardWebSite.Services
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "How club rating systems work, and why they beat A/B/C grades";
+    ViewData["Description"] = "A plain-English guide to how badminton player rating systems work, how a dynamic rating differs from A/B/C grades, and why it makes for fairer games, handicaps and team selection.";
+    ViewData["OgTitle"] = "How badminton rating systems work";
+
+    const string published = "2026-07-01";
+    const string canonical = "https://www.epegboard.com/guides/badminton-club-rating-systems";
+
+    var faqPairs = new (string Q, string A)[]
+    {
+        ("How does a badminton rating system work?",
+         "Each player has a number that represents their current standard. Before a game, the ratings predict a likely result. After it, everyone's rating is nudged up or down depending on how the actual result compared with that prediction: beat expectations and you rise, fall short and you dip. Because the adjustment is based on expectation rather than the raw win or loss, the system settles quickly on a number that reflects how you really play, and keeps tracking you as you improve or have an off night."),
+        ("What is Elo, and does it apply to badminton?",
+         "Elo is the rating method made famous by chess, and the same idea works for any head-to-head sport, including badminton. The principle is that beating a stronger opponent is worth more than beating a weaker one, and losing to a weaker opponent costs more than losing to a stronger one. Applied to club badminton, and adapted for doubles and for how close each game was, it gives a fair, self-correcting measure of standard without anyone having to grade players by opinion."),
+        ("Are ratings better than A/B/C grades?",
+         "For running a club, generally yes. A/B/C grades are quick to understand but coarse and static: they lump very different players into the same bucket and rarely get updated. A dynamic rating is finer, so it balances games more precisely, and it updates itself from real results, so it stays current without committee debates. Grades still have their place as a simple label, but the rating underneath is what makes fair games and handicaps possible."),
+        ("Does a rating only go up when you win?",
+         "No, and that is the point. Because ratings work on expectation, a narrow loss to a much stronger pair can still nudge you up, and a heavy loss to weaker players will cost you more than a narrow one. Equally, scraping a win you were expected to win comfortably might barely move you. It rewards playing well against the odds, not just the scoreline, which is what makes it feel fair over time."),
+        ("Can players see their own rating?",
+         "In a good system, yes, and it is worth it. When players can follow their rating, win rate and recent form on their phone, the number becomes a talking point and a bit of friendly motivation rather than something hidden in a spreadsheet. It also builds trust: people are far happier with balanced games and handicaps when they can see the rating those decisions are based on.")
+    };
+
+    var articleJsonLd = GuideSchema.Article(
+        "How club rating systems work, and why they beat A/B/C grades",
+        "A plain-English guide to how badminton rating systems work, how a dynamic rating differs from A/B/C grades, and why it makes for fairer games, handicaps and team selection.",
+        canonical, published);
+    var faqJsonLd = GuideSchema.Faq(faqPairs);
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+    <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
+}
+
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Rating systems</span></div>
+      <h1 style="margin-top:10px">How club rating systems work, and why they beat A/B/C grades</h1>
+      <p class="lede">Most clubs sort players into A, B and C, or into rough mental tiers. It is quick, but it is blunt, and it goes out of date the moment someone improves. A proper rating is finer, fairer and keeps itself current. Here is how it works, without the jargon.</p>
+      <div class="guide-meta">
+        <span class="gm-tag">Explainer</span>
+        <span>Ratings</span>
+        <span>9 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:820px">
+    <div class="guide-toc">
+      <h4>In this guide</h4>
+      <a href="#grades">The trouble with A/B/C grades</a>
+      <a href="#how">How a rating works, in plain English</a>
+      <a href="#expectation">The key idea: performance against expectation</a>
+      <a href="#compare">Grades vs a dynamic rating</a>
+      <a href="#uses">What a good rating unlocks</a>
+      <a href="#faq">Frequently asked questions</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+      <p class="lead">Almost every club has some way of sorting players by standard, most often the familiar A, B and C grades, or an unwritten sense of who is strong and who is developing. It works, up to a point. But grades are coarse, subjective and static, and that shows up in uneven games, awkward handicaps and arguments about selection. A rating system fixes those by being finer and self-updating. This guide explains, in plain English, how ratings work and why they are worth the switch. Unlike the internals of game picking, the maths behind ratings is well understood and worth being open about.</p>
+
+      <h2 id="grades">The trouble with A/B/C grades</h2>
+      <p>Grades are popular because they are instantly understandable, and there is nothing wrong with a simple label. The problems start when you try to run a club off them:</p>
+      <ul>
+        <li><strong>They are coarse.</strong> Your strongest B and your weakest B might be miles apart, but the grade treats them the same, so games built on grades are often lopsided.</li>
+        <li><strong>They are subjective.</strong> Someone decided the grades, usually a while ago, based on opinion. Two committees would grade the same club differently.</li>
+        <li><strong>They go stale.</strong> Players improve, come back from injury or drift off form, but grades rarely get revisited, so they quietly stop being true.</li>
+        <li><strong>They cause friction.</strong> Moving someone between grades is a social event, so it often does not happen, and resentment builds either way.</li>
+      </ul>
+      <p>None of this means grades are useless. It means they are a blunt instrument for the precise jobs of balancing games, setting handicaps and picking teams.</p>
+
+      <h2 id="how">How a rating works, in plain English</h2>
+      <p>A rating replaces the letter with a number, and replaces opinion with results. Every player has a rating that represents their current standard. When two pairs are about to play, their ratings imply a likely outcome: if one side is much stronger, they are expected to win comfortably; if the sides are close, it is expected to be tight. That is the prediction.</p>
+      <p>Then they play, and the system compares what actually happened with what it expected. If you did better than expected, your rating goes up; if you did worse, it goes down; if the result was about what the ratings predicted, barely anything changes. Do that after every game and each player's number steadily converges on their true standard, then keeps tracking them as they improve or dip. Nobody grades anyone. The results do the work.</p>
+
+      <h2 id="expectation">The key idea: performance against expectation</h2>
+      <p>The one idea that makes ratings feel fair is that they reward performance against expectation, not just winning. This has a few consequences that surprise people at first, and all of them are the system being sensible:</p>
+      <ul>
+        <li>Beating a much stronger pair is worth a lot, because you were not expected to.</li>
+        <li>Losing narrowly to a much stronger pair can still nudge you up, because you did better than expected.</li>
+        <li>Losing heavily to weaker players costs more than losing narrowly, because it was further from expectation.</li>
+        <li>Comfortably beating players you were always going to beat barely moves your rating, because it told the system nothing new.</li>
+      </ul>
+      <p>This is why a rating settles on something that genuinely reflects how you play, rather than just how many games you happened to win against whoever you happened to draw. It is also why players trust it once they understand it: it is measuring the right thing.</p>
+
+      <h2 id="compare">Grades vs a dynamic rating</h2>
+      <div class="cmp-wrap">
+        <table class="cmp-table">
+          <thead>
+            <tr><th></th><th>A/B/C grades</th><th>Dynamic rating</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Precision</td><td>Coarse buckets</td><td>Fine, player by player</td></tr>
+            <tr><td>Source</td><td>Opinion, set by someone</td><td>Real results</td></tr>
+            <tr><td>Keeps current</td><td>Rarely updated</td><td>Updates after every game</td></tr>
+            <tr><td>Balancing games</td><td>Often lopsided</td><td>Close, well-matched</td></tr>
+            <tr><td>Handicaps and teams</td><td>Hard to do fairly</td><td>Straightforward from the number</td></tr>
+            <tr><td>Social friction</td><td>Regrading is awkward</td><td>Adjusts quietly on its own</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="uses">What a good rating unlocks</h2>
+      <p>A trustworthy rating is not just a nicer label; it is the engine under the whole club. The same number lets you balance club-night games precisely so they stay close, set fair <a href="/guides/how-to-run-handicap-doubles-tournament">handicaps for competitions</a> so weaker players can still compete, and <a href="/guides/picking-league-teams-club-data">pick league teams on evidence</a> rather than hunches. Because it all runs off one rating, everything stays consistent: the standard that shapes your Tuesday games is the same one behind your tournament handicaps and your team sheet.</p>
+      <p>This is how <a href="/features/club-nights">ePegboard</a> works. Every player has a rating that reflects performance against expectation and updates after every game, players can follow it on their phones, and the same rating powers picking, competitions and team selection across the club. It is open about how the rating behaves because a rating you can trust is one people can see the logic of. It is free for clubs and runs in any browser.</p>
+
+      <div class="guide-callout">
+        <h4>Give your club a rating it can trust</h4>
+        <p>Live ratings that update after every game and power fair games, handicaps and team selection. Free for clubs, nothing to install.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+      </div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      @foreach (var f in faqPairs)
+      {
+        <h3>@f.Q</h3>
+        <p>@f.A</p>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" style="margin-top:56px">
+  <div class="wrap">
+    <h2>Ratings that keep themselves current</h2>
+    <p>No more regrading debates. Fair games, handicaps and teams off one trustworthy number. Free for clubs.</p>
+    <div class="cta-actions">
+      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
+      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
+    </div>
+    <p class="fine">More on the systems behind a good club in the <a href="/guides">guides section</a>.</p>
+  </div>
+</section>

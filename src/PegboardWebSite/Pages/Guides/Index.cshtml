@@ -1,0 +1,64 @@
+@page "/guides"
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "Guides for running a badminton club";
+    ViewData["Description"] = "Practical guides for running a badminton club night: player rotation and queue management, fair court time, game variety, ratings, league team selection and handicap competitions.";
+    ViewData["OgTitle"] = "Guides for running a badminton club";
+
+    // Guide cards - order is deliberate: the broad pillar first, then rotation, then the rest.
+    var guides = new (string Url, string Eyebrow, string Title, string Blurb)[]
+    {
+        ("/guides/how-to-run-a-badminton-club-night", "Checklist", "Running a badminton club night: the complete organiser's checklist", "The full checklist, from booking the hall to locking up: what to sort beforehand, how to run a fair and full session, and what to tidy up after."),
+        ("/guides/badminton-club-night-rotation", "Club nights", "How to run fair player rotation on a club night", "How clubs manage who plays next - the pegboard queue, an organiser making games, or software - and how to keep court time fair as your numbers grow."),
+        ("/guides/managing-club-night-rotation", "Comparison", "Pegboard, organiser or app: how to manage club-night rotation", "The real ways badminton clubs manage who plays next - pegboard queue, organiser-made games, players sorting themselves, or an app - compared, and how to pick one."),
+        ("/guides/fair-court-time-busy-club-night", "Fairness", "How to give everyone fair court time on a busy night", "Uneven court time is the number-one club-night complaint. What fair court time really means, why it slips, and how to keep everyone's share even."),
+        ("/guides/game-variety-stop-same-players", "Variety", "Stop the same four playing together every week", "Why the same players always pair up, why it quietly pushes newcomers away, and how to spread partners and opponents around."),
+        ("/guides/badminton-club-rating-systems", "Ratings", "How club rating systems work, and why they beat A/B/C grades", "A plain-English guide to how player ratings work, how they differ from A/B/C grades, and why they make for fairer games, handicaps and teams."),
+        ("/guides/picking-league-teams-club-data", "League", "Picking balanced league teams from your club-night data", "How to move from selecting teams on gut feel to picking them on real evidence: which pairings work, and how to balance across divisions."),
+        ("/guides/how-to-run-handicap-doubles-tournament", "Competitions", "How to run a handicap doubles tournament", "A step-by-step guide to running a tournament where players of every standard can compete: formats, handicaps, scoring, and doing it without spreadsheets."),
+        ("/guides/best-badminton-club-night-software", "Buyer's guide", "Best badminton club-night software: what to look for", "A practical buyer's guide: the features that actually matter, what to check before you commit, and how to tell a real fit from a feature list."),
+        ("/guides/paper-pegboard-to-app", "Modernising", "From paper pegboard to app: modernising club sessions", "What the traditional pegboard does well, where it struggles, what an app adds, and how to move across without losing your club's history.")
+    };
+}
+
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Guides</span></div>
+      <h1 style="margin-top:10px">Guides for running a badminton club</h1>
+      <p class="lede">Practical, no-nonsense guides on the things clubs actually wrestle with - fair player rotation, even court time, balanced games, ratings and team selection. Written by the people building ePegboard.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDES GRID -->
+<section style="padding-top:44px">
+  <div class="wrap">
+    <div class="hub-grid">
+      @foreach (var g in guides)
+      {
+        <a class="feat-card" href="@g.Url">
+          <div class="feat-body">
+            <div class="step-eyebrow">@g.Eyebrow</div>
+            <h4>@g.Title</h4>
+            <p>@g.Blurb</p>
+            <span class="feat-learn">Read the guide <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" style="margin-top:44px">
+  <div class="wrap">
+    <h2>Run your club on ePegboard, free</h2>
+    <p>Everything in these guides, built in. No subscription. No card details.</p>
+    <div class="cta-actions">
+      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
+      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
+    </div>
+  </div>
+</section>

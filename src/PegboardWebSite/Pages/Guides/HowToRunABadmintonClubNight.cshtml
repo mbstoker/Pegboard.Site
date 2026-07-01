@@ -1,0 +1,131 @@
+@page "/guides/how-to-run-a-badminton-club-night"
+@using PegboardWebSite.Services
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "Running a badminton club night: the complete organiser's checklist";
+    ViewData["Description"] = "A complete, practical checklist for running a badminton club night: what to sort before players arrive, how to run a fair and full session on the night, and what to tidy up afterwards.";
+    ViewData["OgTitle"] = "The complete club-night organiser's checklist";
+
+    const string published = "2026-07-01";
+    const string canonical = "https://www.epegboard.com/guides/how-to-run-a-badminton-club-night";
+
+    var faqPairs = new (string Q, string A)[]
+    {
+        ("How do you organise a badminton club night?",
+         "In three parts. Before: book the courts, sort shuttles and equipment, set up sign-in and a way to collect fees, and have a plan for how you will rotate players. During: welcome people (especially newcomers), keep every court busy with balanced, varied games, share court time fairly, and keep scores if you rate players. After: settle payments, note attendance, and gather a little feedback. Getting the before and during right is what makes a night feel effortless."),
+        ("How many courts do you need per player?",
+         "A rough rule of thumb is four to six players per court for a doubles club night. Fewer than four per court and people rarely sit out, but courts can go idle; more than six and waiting times climb. Around five per court usually gives a good balance of full courts and short waits, though it depends on how long your games run and how you rotate."),
+        ("How do you handle newcomers at a club night?",
+         "Give them a warm welcome, a quick word on how the night runs, and make sure they get into varied, balanced games early rather than being left on the edge. Newcomers decide whether to come back based largely on their first night or two, so a little deliberate effort to include them, in both who they play and how much, pays off more than almost anything else you do."),
+        ("What is the hardest part of running a club night?",
+         "Almost always the rotation: deciding who plays next, with whom, on which court, over and over, while keeping court time fair, games balanced and everyone mixing. Doing that well by hand for a couple of hours is a real skill and a lot of concentration, which is why it is the part most clubs eventually hand over to software so the organiser can play too."),
+        ("Do you need software to run a club night?",
+         "No, plenty of clubs run happily on a paper pegboard or a whiteboard, especially smaller, settled ones. Software earns its place as clubs get busier and more mixed, because it takes over the hard, relentless job of rotating players fairly and keeps records without extra effort. The bigger and more varied your night, the more it helps.")
+    };
+
+    var articleJsonLd = GuideSchema.Article(
+        "Running a badminton club night: the complete organiser's checklist",
+        "A complete, practical checklist for running a badminton club night: what to sort before players arrive, how to run a fair and full session, and what to tidy up afterwards.",
+        canonical, published);
+    var faqJsonLd = GuideSchema.Faq(faqPairs);
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+    <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
+}
+
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Club-night checklist</span></div>
+      <h1 style="margin-top:10px">Running a badminton club night: the complete organiser's checklist</h1>
+      <p class="lede">A good club night looks effortless from the court. Behind it is a person who sorted the right things beforehand and knows what to keep an eye on once play starts. This is the full checklist, from booking the hall to locking up.</p>
+      <div class="guide-meta">
+        <span class="gm-tag">Checklist</span>
+        <span>Club nights</span>
+        <span>10 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:820px">
+    <div class="guide-toc">
+      <h4>In this guide</h4>
+      <a href="#before">Before the night</a>
+      <a href="#during">On the night</a>
+      <a href="#after">After the night</a>
+      <a href="#hard">The part that is genuinely hard</a>
+      <a href="#faq">Frequently asked questions</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+      <p class="lead">Running a club night well is mostly about preparation and a handful of good habits. Sort the right things before anyone arrives, run the session with a light but deliberate hand, and tidy up properly afterwards, and the night feels smooth to everyone playing. This is the complete checklist, split into before, during and after, with links to deeper guides on the trickier bits. Think of it as the hub; the other <a href="/guides">guides</a> go deeper on each piece.</p>
+
+      <h2 id="before">Before the night</h2>
+      <p>Most of what makes a night good is decided before it starts:</p>
+      <ul>
+        <li><strong>Courts and hall.</strong> Book the courts, confirm the times, and know how many courts you actually have to play with.</li>
+        <li><strong>Shuttles and equipment.</strong> Enough shuttles for the standard you play, plus spare nets, posts and a first-aid kit.</li>
+        <li><strong>Sign-in.</strong> A quick way to see who is here, whether that is a sheet, a whiteboard or an app. This is the backbone of fair rotation.</li>
+        <li><strong>Fees.</strong> A simple, reliable way to collect and record session fees, so money is not a scramble at the end.</li>
+        <li><strong>A rotation plan.</strong> Decide how you will pick games before you are under pressure. Our guide to <a href="/guides/badminton-club-night-rotation">fair player rotation</a> covers the options.</li>
+        <li><strong>A welcome for newcomers.</strong> Know who is new and have a plan to fold them in, rather than leaving it to chance.</li>
+      </ul>
+
+      <h2 id="during">On the night</h2>
+      <p>Once play starts, the organiser's job is to keep the night fair, full and friendly:</p>
+      <ul>
+        <li><strong>Welcome everyone, especially newcomers.</strong> A quick hello and a word on how the night runs makes all the difference to whether people come back.</li>
+        <li><strong>Keep courts busy.</strong> Idle courts are wasted time; aim to have the next game ready as each court frees up.</li>
+        <li><strong>Balance the games.</strong> Close games are good games. Match players so nobody is stuck in a walkover, at either end.</li>
+        <li><strong>Share court time fairly.</strong> Track who has been waiting longest and make sure the quiet players are not left out. See our guide to <a href="/guides/fair-court-time-busy-club-night">fair court time</a>.</li>
+        <li><strong>Keep the games varied.</strong> Spread partners and opponents around so the night stays fresh and nobody is stuck in the same four, as covered in our <a href="/guides/game-variety-stop-same-players">game variety</a> guide.</li>
+        <li><strong>Keep score, if you rate players.</strong> Recording results is what lets a <a href="/guides/badminton-club-rating-systems">rating system</a> keep everyone's standard current.</li>
+      </ul>
+
+      <h2 id="after">After the night</h2>
+      <p>A tidy finish saves you trouble later:</p>
+      <ul>
+        <li><strong>Settle up.</strong> Reconcile the fees while it is fresh, so nothing is chased later.</li>
+        <li><strong>Record attendance.</strong> Even a simple count feeds trends over time and helps with planning.</li>
+        <li><strong>Note anything for next time.</strong> A shuttle order needed, a newcomer to follow up, a court that was double-booked.</li>
+        <li><strong>Gather a little feedback.</strong> Especially from newcomers and from anyone who seemed to have a quiet night.</li>
+      </ul>
+      <p>Over a season this record becomes genuinely useful, feeding everything from <a href="/guides/picking-league-teams-club-data">team selection</a> to spotting who has drifted off and might appreciate a nudge.</p>
+
+      <h2 id="hard">The part that is genuinely hard</h2>
+      <p>Look back over the on-the-night list and one job stands out: the rotation. Keeping courts busy, games balanced, court time fair and the mixing fresh, all at once, all evening, is the hard core of running a club night, and it is where a night is won or lost. Everything else on the checklist is preparation and tidying; this is the live, relentless bit that depends on one person's concentration.</p>
+      <p>That is exactly the job <a href="/features/club-nights">ePegboard</a> was built to take over. It keeps every court busy with balanced, varied games, evens out court time across the night, handles latecomers and drop-ins, and shows why each game was picked, all running on a player rating that updates after every game and feeds your competitions and team selection too. It means the organiser can run a great night and actually play in it. It is free for clubs, needs no install, and clubs have already run more than 1,100 sessions and over 33,000 games on it. If you are still weighing it up, our guides on <a href="/guides/best-badminton-club-night-software">choosing club-night software</a> and <a href="/guides/paper-pegboard-to-app">moving on from the paper pegboard</a> are good next reads.</p>
+
+      <div class="guide-callout">
+        <h4>Let the software run the hard part</h4>
+        <p>ePegboard takes over the rotation so you can run a fair, full night and play in it too. Free for clubs, nothing to install.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+      </div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      @foreach (var f in faqPairs)
+      {
+        <h3>@f.Q</h3>
+        <p>@f.A</p>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" style="margin-top:56px">
+  <div class="wrap">
+    <h2>Run your best club night yet</h2>
+    <p>Everything on the checklist, with the hard part handled for you. Free for clubs.</p>
+    <div class="cta-actions">
+      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
+      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
+    </div>
+    <p class="fine">Browse every guide in the <a href="/guides">guides section</a>.</p>
+  </div>
+</section>

@@ -1,0 +1,134 @@
+@page "/guides/paper-pegboard-to-app"
+@using PegboardWebSite.Services
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "From paper pegboard to app: modernising club sessions";
+    ViewData["Description"] = "The wooden pegboard has run badminton club nights for decades. Here is what it does well, where it struggles, what an app adds, and how to move across without losing your club's history.";
+    ViewData["OgTitle"] = "From paper pegboard to app";
+
+    const string published = "2026-07-01";
+    const string canonical = "https://www.epegboard.com/guides/paper-pegboard-to-app";
+
+    var faqPairs = new (string Q, string A)[]
+    {
+        ("What is a badminton pegboard?",
+         "A pegboard is the traditional way of managing a badminton club night: a board with numbered courts and a peg for each player, usually with their name on it. The organiser moves pegs around to show who is playing where and who is waiting. It is simple, visible to everyone, and has run club nights for decades. Its limits are that it cannot balance games by standard, track fair court time, or keep any record of what happened."),
+        ("Is a paper pegboard still good enough?",
+         "For a small, settled club it can be perfectly fine, and it never crashes or needs charging. It starts to struggle as clubs get busier and more mixed, because a board cannot work out balanced games, keep court time even across thirty players, or remember who has played whom. At that point the board becomes a lot of manual effort for a result that still feels uneven, which is when clubs look at an app."),
+        ("What does an app do that a pegboard cannot?",
+         "Three big things. It balances games by player standard so they stay close, it tracks court time and waiting time so everyone gets a fair share, and it keeps a record, ratings, results, attendance, that a board simply cannot. On top of that it can show why each game was picked, let players see their own stats, and run competitions and team selection off the same data. It does the board's job and adds the parts the board never could."),
+        ("Will we lose our club's history if we switch?",
+         "You should not have to. A good move brings your members and playing history across so your ratings and records carry on rather than restarting from scratch. If you are coming from an older desktop version of Pegboard, that history can be carried into the web app. It is worth asking about before you switch, because keeping your history is part of what makes the move worthwhile."),
+        ("It works fine now, so why change?",
+         "If your nights genuinely run smoothly and nobody grumbles, there is no rush. The reasons clubs do change are usually growth and fairness: more players than a board can track fairly, complaints about court time or one-sided games, or wanting ratings, competitions and records without extra admin. If none of that applies, keep your board. If any of it sounds familiar, an app solves exactly those problems, and a free one costs nothing to try.")
+    };
+
+    var articleJsonLd = GuideSchema.Article(
+        "From paper pegboard to app: modernising club sessions",
+        "What the traditional badminton pegboard does well, where it struggles, what an app adds, and how to move across without losing your club's history.",
+        canonical, published);
+    var faqJsonLd = GuideSchema.Faq(faqPairs);
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+    <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
+}
+
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Pegboard to app</span></div>
+      <h1 style="margin-top:10px">From paper pegboard to app: modernising club sessions</h1>
+      <p class="lede">The wooden pegboard, with a named peg for every player, has run club nights for generations. It is simple and it works. But as clubs grow, its limits start to show. Here is an honest look at what it does well, where it falls short, and what moving to an app actually changes.</p>
+      <div class="guide-meta">
+        <span class="gm-tag">Guide</span>
+        <span>Modernising</span>
+        <span>8 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:820px">
+    <div class="guide-toc">
+      <h4>In this guide</h4>
+      <a href="#loved">Why the pegboard has lasted</a>
+      <a href="#limits">Where the board struggles</a>
+      <a href="#adds">What an app adds</a>
+      <a href="#history">Moving across without losing your history</a>
+      <a href="#faq">Frequently asked questions</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+      <p class="lead">Almost every badminton club has used one: a board with numbered courts and a peg for each player, moved around by whoever is running the night. The pegboard is a genuinely good piece of design, which is why it has lasted so long. This guide is not here to rubbish it. It is an honest look at what the board does well, the specific points where it starts to creak as a club grows, and what an app changes, including the thing clubs worry about most, keeping their history. Our name is a nod to that board, so we mean it as a compliment.</p>
+
+      <figure style="margin:8px 0 0">
+        <img src="/img/wooden-pegboard.png" asp-append-version="true" alt="A traditional wooden badminton pegboard with named pegs arranged across numbered courts" style="width:100%;border:1px solid var(--line);border-radius:14px;display:block" />
+        <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">The traditional pegboard: simple, visible, and the inspiration behind ePegboard.</figcaption>
+      </figure>
+
+      <h2 id="loved">Why the pegboard has lasted</h2>
+      <p>The board earns its keep. It is instantly understandable, so anyone can glance at it and see who is on and who is waiting. It is physical and visible, sitting in the middle of the hall where everyone can see it, which makes it feel fair and open. It needs no power, no signal and no login, and it never crashes. For a small club with a settled group of regulars, a pegboard and an experienced person working it is genuinely hard to beat.</p>
+
+      <h2 id="limits">Where the board struggles</h2>
+      <p>The board's limits are not really about the board; they are about what a person can do with it in a busy hall. A pegboard is a display, not a brain, so all the thinking falls on the organiser, and there are three things that thinking cannot keep up with as a club grows:</p>
+      <ul>
+        <li><strong>It cannot balance games by standard.</strong> The board does not know who is strong, so making close games depends entirely on the organiser holding everyone's level in their head.</li>
+        <li><strong>It cannot track fair court time.</strong> With thirty players and long games, no one can accurately remember who has waited longest, so court time drifts uneven.</li>
+        <li><strong>It keeps no record.</strong> When the pegs come off, the night is gone. No ratings, no results, no attendance, nothing to build on.</li>
+      </ul>
+      <p>These are exactly the problems our guides on <a href="/guides/badminton-club-night-rotation">rotation</a>, <a href="/guides/fair-court-time-busy-club-night">court time</a> and <a href="/guides/game-variety-stop-same-players">variety</a> dig into, and they all trace back to the board being a display with no memory.</p>
+
+      <h2 id="adds">What an app adds</h2>
+      <p>An app keeps everything good about the board, the at-a-glance view of who is on and who is waiting, and adds the brain the board never had. It works out balanced, varied games for you, tracks court time and waiting time so everyone gets a fair share, and remembers everything: ratings that update after every game, results, attendance and history. On top of that it can show why each game was picked, let players follow their own stats on their phones, and run competitions and team selection off the same data.</p>
+      <div class="cmp-wrap">
+        <table class="cmp-table">
+          <thead>
+            <tr><th></th><th>Paper pegboard</th><th>App</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>See who is on and waiting</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Balances games by standard</td><td>No</td><td>Yes</td></tr>
+            <tr><td>Tracks fair court time</td><td>By memory</td><td>Automatically</td></tr>
+            <tr><td>Keeps ratings and records</td><td>No</td><td>Yes</td></tr>
+            <tr><td>Runs competitions and teams</td><td>No</td><td>Yes</td></tr>
+            <tr><td>Needs power or signal</td><td>No</td><td>Yes (web, or a desktop app offline)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="history">Moving across without losing your history</h2>
+      <p>The worry that stops most clubs is losing what they have built, and it is a fair one. The answer is that you should not have to start from scratch. <a href="/features/club-nights">ePegboard</a> keeps the board's simple, visible feel and adds everything above, and clubs moving from the older desktop version of Pegboard can carry their members and playing history into the web app, so ratings and records continue rather than resetting. It runs in any browser with nothing to install, and there is a desktop version for halls with unreliable internet. It is free for clubs, and clubs have already run more than 1,100 sessions and over 33,000 games on it.</p>
+      <p>If your board still does the job and nobody is grumbling, there is no need to rush. But if your nights have grown past what one person and a set of pegs can keep fair, this is the move that fixes it, and it costs nothing to try on a single night.</p>
+
+      <div class="guide-callout">
+        <h4>Keep the board's spirit, lose its limits</h4>
+        <p>ePegboard is the pegboard with a brain: balanced games, fair court time, and a memory. Bring your history across. Free for clubs.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+      </div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      @foreach (var f in faqPairs)
+      {
+        <h3>@f.Q</h3>
+        <p>@f.A</p>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" style="margin-top:56px">
+  <div class="wrap">
+    <h2>The pegboard, brought up to date</h2>
+    <p>Everything the board did, plus the things it never could. Bring your history. Free for clubs.</p>
+    <div class="cta-actions">
+      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
+      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
+    </div>
+    <p class="fine">More on running a modern club in the <a href="/guides">guides section</a>.</p>
+  </div>
+</section>

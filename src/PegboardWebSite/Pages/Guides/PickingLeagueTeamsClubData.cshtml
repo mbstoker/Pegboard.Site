@@ -1,0 +1,112 @@
+@page "/guides/picking-league-teams-club-data"
+@using PegboardWebSite.Services
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "Picking balanced league teams from your club-night data";
+    ViewData["Description"] = "How to move from selecting badminton league teams on gut feel to picking them on real club-night evidence: which pairings work, how to balance teams across divisions, and how to keep it fair.";
+    ViewData["OgTitle"] = "Picking league teams from club data";
+
+    const string published = "2026-07-01";
+    const string canonical = "https://www.epegboard.com/guides/picking-league-teams-club-data";
+
+    var faqPairs = new (string Q, string A)[]
+    {
+        ("How do you pick a badminton league team fairly?",
+         "Start from evidence rather than reputation. Use your club-night results to see who is actually in form, which pairings perform well together, and where each player's standard really sits, then balance your teams so each has a fair share of strength for its division. Being able to point to the data also takes the heat out of selection, because decisions are based on what happened on court rather than who shouts loudest."),
+        ("What makes a good doubles pairing?",
+         "Two players whose games complement each other and who perform better together than their individual standards would suggest. That is not always your two strongest players; sometimes a pairing just clicks, and sometimes two strong players do not gel. The only reliable way to know is to look at how pairings have actually done in real games, which is exactly what club-night data captures."),
+        ("Should you pick your strongest players for the top team?",
+         "Roughly, but not blindly. The top team needs your strongest players, but league results turn on pairings and match-ups, not just individual standard, so a slightly weaker player who partners brilliantly with your number one may be worth more than a stronger one who does not. Balancing across teams matters too: stacking one team and leaving the others weak often costs you points overall."),
+        ("How do you balance teams across divisions?",
+         "Work out roughly how much strength each division needs to be competitive, then distribute your players so every team can hold its own rather than piling everyone into the top side. A rating makes this far easier, because you can see each player's standard as a number and share it out sensibly, instead of guessing where the line falls between your teams."),
+        ("Can club-night data really help with selection?",
+         "Yes, and it is some of the most useful data a club has. Every club night is a set of real, competitive results, and over a season that builds into a clear picture of form, standard and which pairings work. Used well it turns selection from an argument about opinions into a conversation about evidence, which is fairer and usually produces better teams.")
+    };
+
+    var articleJsonLd = GuideSchema.Article(
+        "Picking balanced league teams from your club-night data",
+        "How to move from selecting badminton league teams on gut feel to picking them on real club-night evidence: which pairings work, how to balance across divisions, and how to keep it fair.",
+        canonical, published);
+    var faqJsonLd = GuideSchema.Faq(faqPairs);
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+    <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
+}
+
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Picking league teams</span></div>
+      <h1 style="margin-top:10px">Picking balanced league teams from your club-night data</h1>
+      <p class="lede">Team selection is where the friendliest clubs fall out. Pick on gut feel and someone always feels hard done by. But your club nights are quietly generating exactly the evidence you need to pick well and defend it. Here is how to use it.</p>
+      <div class="guide-meta">
+        <span class="gm-tag">Guide</span>
+        <span>League and selection</span>
+        <span>8 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:820px">
+    <div class="guide-toc">
+      <h4>In this guide</h4>
+      <a href="#problem">Why selection on hunches goes wrong</a>
+      <a href="#data">The data you already have</a>
+      <a href="#pairings">Finding pairings that work</a>
+      <a href="#balance">Balancing across teams</a>
+      <a href="#software">Doing it with ePegboard</a>
+      <a href="#faq">Frequently asked questions</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+      <p class="lead">Few things test a club committee like picking league teams. Do it on gut feel and you get accusations of favouritism, players convinced they should be higher, and pairings chosen out of habit. The good news is that if you run your club nights on any kind of system, you are already sitting on the evidence to pick teams well and to show your working. This guide covers how to move from hunches to data: reading form, spotting pairings that click, and balancing teams across divisions so every side can compete. It builds on having a <a href="/guides/badminton-club-rating-systems">rating you can trust</a>.</p>
+
+      <h2 id="problem">Why selection on hunches goes wrong</h2>
+      <p>Picking on memory and reputation feels natural, but it has predictable failure modes. Reputations lag reality, so the player who was strongest two seasons ago keeps their place while an improver is overlooked. Habit locks in pairings that were put together once and never questioned. And because none of it is written down, every selection decision becomes an argument about opinions that nobody can win. The result is teams that are a bit off the best you could field, and a selection process that quietly erodes goodwill.</p>
+
+      <h2 id="data">The data you already have</h2>
+      <p>Every club night is a stack of real, competitive results, and that is genuinely valuable selection data. Across a few weeks it tells you who is in form now rather than who used to be good, how each player's standard actually compares, and, if you track pairings, which combinations perform above or below what you would expect. You do not need spreadsheets or a stats degree to use it; you just need it captured, which any decent session system does as a by-product of running the night.</p>
+
+      <h2 id="pairings">Finding pairings that work</h2>
+      <p>League badminton is a doubles game, and doubles turns on pairings, not just individuals. The mistake is to assume your two strongest players make your strongest pair. Sometimes they do; often a pairing that simply clicks, complementary styles, good understanding, outperforms a stronger pairing that never gels. The only way to know is to look at how pairs have actually done in real games rather than how good they look on paper. A player who consistently lifts whoever they partner is worth a great deal, and that only shows up in the data.</p>
+      <p>So when you look at your club-night history, look past individual results to the pairings: which two players win more than their standard suggests they should, and which highly rated pairs quietly underperform. Those patterns are your selection gold.</p>
+
+      <h2 id="balance">Balancing across teams</h2>
+      <p>Once you know your players' standards and your best pairings, the last job is to share strength out sensibly. Stacking your top team and leaving the lower sides weak feels satisfying but often loses you points across the club, because a hammering in one division and a thrashing-received in another cancel out. Better to work out roughly how much strength each division needs to be competitive and distribute your players so every team can hold its own. A rating makes this much easier, because you can see each player's standard as a number and balance the sheets deliberately rather than by feel.</p>
+
+      <h2 id="software">Doing it with ePegboard</h2>
+      <p><a href="/features/league-team-support">ePegboard</a> turns the club nights you already run into selection evidence. Because every game is rated, it builds a live picture of each player's current standard, and it surfaces the partnerships that actually work from real results rather than reputation. That lets you pick on evidence, balance teams across your divisions, and, when someone questions the sheet, point to what happened on court. It all runs off the same rating that powers your <a href="/guides/badminton-club-night-rotation">club-night games</a> and your competitions, so selection is joined up with everything else rather than a separate spreadsheet exercise. It is free for clubs.</p>
+
+      <div class="guide-callout">
+        <h4>Pick teams on evidence, not opinions</h4>
+        <p>ePegboard finds the pairings that work from your real club-night results and helps you balance teams across divisions. Free for clubs.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+      </div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      @foreach (var f in faqPairs)
+      {
+        <h3>@f.Q</h3>
+        <p>@f.A</p>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" style="margin-top:56px">
+  <div class="wrap">
+    <h2>Better teams, fewer arguments</h2>
+    <p>Turn your club nights into selection evidence. Balanced teams you can defend. Free for clubs.</p>
+    <div class="cta-actions">
+      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
+      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
+    </div>
+    <p class="fine">More on running the competitive side of your club in the <a href="/guides">guides section</a>.</p>
+  </div>
+</section>

@@ -1,0 +1,230 @@
+@page "/guides/badminton-club-night-rotation"
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "How to run fair player rotation on a club night";
+    ViewData["Description"] = "A practical guide to badminton club-night player rotation: how the pegboard queue, an organiser making games, and software compare, what fair court time really means, and when to move from a board to an app.";
+    ViewData["OgTitle"] = "How to run fair player rotation on a club night";
+
+    const string published = "2026-07-01";
+    const string canonical = "https://www.epegboard.com/guides/badminton-club-night-rotation";
+
+    // FAQ pairs - mirrored into FAQPage structured data below (plain-text answers).
+    var faqPairs = new (string Q, string A)[]
+    {
+        ("What is the fairest way to rotate players at a badminton club night?",
+         "There is no single fair rule, because fairness has four parts at once: court time (everyone gets a similar share for the time they are present), balance (games are close rather than one-sided), variety (players are mixed rather than stuck with the same partners and opponents), and rest (nobody is rushed straight back on or left cold for too long). Simple systems optimise one of these and sacrifice the others. The fairest club nights balance all four, which is hard to do by hand once numbers grow and is the main reason clubs move to session software."),
+        ("Do badminton clubs use winner-stays-on?",
+         "Rarely. Winner-stays-on, or king of the court, where the winning pair holds the court, is common in casual drop-in play and other racquet sports, but you almost never see it at an organised badminton club night. Clubs use a pegboard queue or an organiser making balanced games instead, because over a whole evening winner-stays-on concentrates court time on the strongest players and leaves everyone else waiting."),
+        ("How do you handle latecomers and drop-ins in a rotation?",
+         "Add them to the waiting queue at the point they arrive rather than the front, so they do not jump players who have been waiting. Track who has actually been sitting out, not just the order people signed in, so a latecomer is not treated as though they have been waiting all night. Software does this automatically by counting real waiting time; on a paper board you have to remember it, which is where disputes usually start."),
+        ("Is a simple pegboard queue good enough for a club night?",
+         "A self-managed pegboard or queue, where players go back on in the order they came off, is easy to run and feels fair because it is transparent. Its weakness is that it takes no account of game balance or variety, so you get plenty of one-sided or repetitive games. It is a reasonable default for a small, settled club, but busier or more mixed clubs usually want balance and mixing as well, which a plain queue cannot give."),
+        ("How many players and courts before you need rotation software?",
+         "As a rough guide, a single court with eight to twelve regulars is fine on a board. Once you are running three or more courts, thirty-plus players, mixed abilities, and a mix of regulars, latecomers and drop-ins, a person can no longer track court time, balance, variety and rest at the same time. That is the point most clubs move from a paper pegboard to session software."),
+        ("How do you rotate players of different abilities?",
+         "The aim is close games, not segregation. Rather than putting your two strongest players together against two of your weakest, pair a stronger player with a weaker one on each side so the game is even. Mix across levels through the night so beginners get some games with more experienced players, who are usually happy to help, and keep an eye on the score lines: if one court keeps finishing 21-5, your pairing is off. Grouping strictly by grade can be right for focused coaching, but for an open club night, balanced mixed games keep more people happy."),
+        ("Should you let players choose their own games?",
+         "In a small, settled group, letting people sort out their own games is fine and saves you the bother. At a busier session it tends to backfire: the same friends pair up every time, stronger players avoid weaker ones, newcomers are left out, and courts sit idle while people negotiate. A queue or rotation with a little room for the odd requested game usually gives the best of both, structure that keeps things moving and fair, with enough flexibility that nobody feels railroaded."),
+        ("Do you need an app, or is a paper pegboard fine?",
+         "A paper or wooden pegboard is fine for small, stable groups and it never crashes. It cannot balance games on player level, track court time across a busy night, or show why a game was picked, so at larger mixed sessions it leads to idle courts, uneven games and arguments. Session software does the same job as the board plus those things, usually free for clubs, and runs in any browser.")
+    };
+
+    var faqItems = new List<object>();
+    foreach (var f in faqPairs)
+    {
+        faqItems.Add(new Dictionary<string, object>
+        {
+            ["@type"] = "Question",
+            ["name"] = f.Q,
+            ["acceptedAnswer"] = new Dictionary<string, object> { ["@type"] = "Answer", ["text"] = f.A }
+        });
+    }
+    var faqJsonLd = System.Text.Json.JsonSerializer.Serialize(new Dictionary<string, object>
+    {
+        ["@context"] = "https://schema.org",
+        ["@type"] = "FAQPage",
+        ["mainEntity"] = faqItems
+    });
+
+    var articleJsonLd = System.Text.Json.JsonSerializer.Serialize(new Dictionary<string, object>
+    {
+        ["@context"] = "https://schema.org",
+        ["@type"] = "Article",
+        ["headline"] = "How to run fair player rotation on a club night",
+        ["description"] = "How badminton club-night player rotation works, how the common systems compare, what fair court time really means, and when to move from a board to software.",
+        ["datePublished"] = published,
+        ["dateModified"] = published,
+        ["mainEntityOfPage"] = canonical,
+        ["author"] = new Dictionary<string, object> { ["@type"] = "Organization", ["name"] = "ePegboard" },
+        ["publisher"] = new Dictionary<string, object>
+        {
+            ["@type"] = "Organization",
+            ["name"] = "ePegboard",
+            ["logo"] = new Dictionary<string, object> { ["@type"] = "ImageObject", ["url"] = "https://www.epegboard.com/Images/epegboard-text-logo.png" }
+        }
+    });
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+    <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
+}
+
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Club-night rotation</span></div>
+      <h1 style="margin-top:10px">How to run fair player rotation on a club night</h1>
+      <p class="lede">Who plays next, and on which court? Get it right and the courts stay full and the games stay close. Get it wrong and you get idle courts, one-sided games, and players quietly stewing on the bench.</p>
+      <div class="guide-meta">
+        <span class="gm-tag">Guide</span>
+        <span>Club nights</span>
+        <span>10 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:820px">
+    <div class="guide-toc">
+      <h4>In this guide</h4>
+      <a href="#what">What player rotation means</a>
+      <a href="#systems">How clubs manage the rotation</a>
+      <a href="#fair">What "fair" actually means</a>
+      <a href="#clubtype">Different clubs, different priorities</a>
+      <a href="#byhand">Running rotation well by hand</a>
+      <a href="#software">When a board stops coping</a>
+      <a href="#faq">Frequently asked questions</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+      <p class="lead">Every club night comes down to the same question, over and over: who plays next, and who with? At a casual session with eight people it barely matters. At a busy night with thirty-plus players, mixed abilities and a handful of courts, how you rotate players is the single biggest thing that decides whether the evening feels good. This guide covers how club-night rotation works, the systems clubs use, where each one breaks down, and how to keep it fair as your numbers grow.</p>
+
+      <h2 id="what">What player rotation means on a club night</h2>
+      <p>Player rotation is how a club decides which players go on next and who they play with. Whether you call it queue management, a session organiser or just working the board, the job is the same. A good rotation system answers four questions at once:</p>
+      <ul>
+        <li><strong>Who has waited longest?</strong> Court time should feel even across the night.</li>
+        <li><strong>Who makes a balanced game?</strong> Close games are more fun than one-sided ones, for both sides.</li>
+        <li><strong>Who has already played whom?</strong> Variety keeps the night fresh and stops cliques forming.</li>
+        <li><strong>Who needs a rest?</strong> Nobody wants to be rushed straight back on, or left cold for half an hour.</li>
+      </ul>
+      <p>The difficulty is that these four pull against each other. The most even court time is not always the most balanced game. The most balanced game is often the same four players over and over. Every rotation system, whether you think of it as queue management, court allocation or session management, is really a set of trade-offs between them.</p>
+      <p>It is also more work than it looks. A four-court club with 32 players, turning games over roughly every fifteen minutes, gets through well over a hundred rotation decisions in a two-hour session. Every one of them weighs those four questions against each other in real time, usually while the same person is also taking scores, signing in latecomers and answering questions. Doing that consistently for two hours is genuinely hard.</p>
+
+      <h2 id="systems">How clubs manage the rotation</h2>
+      <p>In practice, badminton clubs use one of a few approaches, or a mix of them. Here is how they stack up.</p>
+      <div class="cmp-wrap">
+        <table class="cmp-table">
+          <thead>
+            <tr><th>Approach</th><th>How it works</th><th>Good for</th><th>Where it breaks down</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Self-managed pegboard or queue</td>
+              <td>Players put their peg or name down when they come off and go back on in turn, first-in-first-out.</td>
+              <td>Clubs that want it transparent and hands-off, with players managing themselves.</td>
+              <td>It takes no account of game balance or variety, so you get repetitive and one-sided games.</td>
+            </tr>
+            <tr>
+              <td>Organiser makes the games</td>
+              <td>An experienced person makes up each game by hand, balancing levels and mixing people.</td>
+              <td>Clubs with a good organiser willing to run the board all night.</td>
+              <td>It rests entirely on that one person, and it is hard to keep fair and consistent for hours.</td>
+            </tr>
+            <tr>
+              <td>Players arrange their own games</td>
+              <td>People sort out who plays whom among themselves, with little central control.</td>
+              <td>Small, friendly groups where everyone knows everyone.</td>
+              <td>Cliques form, newcomers get left out, and court time drifts uneven.</td>
+            </tr>
+            <tr>
+              <td>App or software</td>
+              <td>Software makes balanced, varied games and tracks court time automatically.</td>
+              <td>Busy or mixed-ability clubs that want fairness without the manual effort.</td>
+              <td>Needs a tablet or laptop and, for the web app, internet (a desktop version runs offline).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>None of these is wrong. They suit different sizes and styles of club. The trouble starts when a club outgrows its approach without realising, and the same complaints keep coming back week after week.</p>
+
+      <h2 id="fair">What "fair" actually means on a club night</h2>
+      <p>Ask ten players what a fair club night looks like and you will get ten answers. It helps to break fairness into its parts:</p>
+      <ul>
+        <li><strong>Fair court time.</strong> Everyone should get a similar share of court time for the time they are present. Someone who arrives an hour late should not expect as many games as someone there from the start, but they should get their share of the time that is left.</li>
+        <li><strong>Balanced games.</strong> A close game is a good game. This is not about everyone winning, it is about most games being competitive rather than a walkover.</li>
+        <li><strong>Good mixing.</strong> Playing the same three people all night gets stale, and it quietly excludes newcomers. Sound rotation spreads partners and opponents around.</li>
+        <li><strong>Enough rest.</strong> A gap between games is welcome. A thirty-minute gap while others play twice is not.</li>
+      </ul>
+      <p>The key insight is that court time should be measured against time present, not games played, and it is easy to get wrong by eye. A latecomer who signed in last is not "at the back" if three regulars have already played twice. Tracking real waiting time, rather than sign-in order, is what separates a session that feels even-handed from one that does not.</p>
+
+      <h2 id="clubtype">Different clubs, different priorities</h2>
+      <p>Not every club wants the same thing from a night, and the right rotation depends on what your club is for. The four dimensions above still apply, but the weighting shifts:</p>
+      <ul>
+        <li><strong>Social and pay-and-play sessions.</strong> Mixing and inclusion matter most. The goal is that everyone plays plenty, meets new people and leaves wanting to come back, so spread partners around and make sure nobody is stuck watching.</li>
+        <li><strong>Competitive clubs.</strong> Players want a real test, so close, well-matched games take priority. A slightly longer wait for a better game is usually a trade members will accept here.</li>
+        <li><strong>Junior and coaching sessions.</strong> Balanced games and supervision come first, and grouping by level for part of the night can be right so drills and games suit each group.</li>
+        <li><strong>University and drop-in clubs.</strong> High turnover and a very wide range of abilities in one hall. Fast rotation and deliberate mixing stop the strongest players forming a closed shop.</li>
+        <li><strong>League-focused clubs.</strong> Club nights double as a proving ground, so it helps to give likely pairings time on court together and see how they perform before <a href="/features/league-team-support">picking teams</a>.</li>
+      </ul>
+      <p>Being clear about which of these you are running the night around makes every other decision easier. It is worth telling members what you are optimising for, so what happens on court matches what they expect.</p>
+
+      <h2 id="byhand">Running rotation well by hand</h2>
+      <p>If you are working a board, a few habits go a long way. The basics first:</p>
+      <ul>
+        <li>Add latecomers and drop-ins to the queue at the point they arrive, not the front, and track who has genuinely been sitting out longest rather than who signed in last.</li>
+        <li>Split strong pairs regularly so the level on each court is close, rather than always putting your two best players together.</li>
+        <li>Keep a rough note of who has played with whom, and deliberately break up pairings that keep recurring.</li>
+        <li>Watch the clock on long games so one slow court does not leave a group waiting far longer than everyone else.</li>
+      </ul>
+      <p>Then there are the situations that catch every organiser out at some point:</p>
+      <ul>
+        <li><strong>Odd numbers.</strong> When you cannot make up even games, rotate the sit-out around rather than letting the same person miss twice, or run a rotating triples or American-style format on one court so nobody is left off.</li>
+        <li><strong>Mixed abilities.</strong> Aim for even games by putting a stronger player with a weaker one on each side, not strong versus weak. It gives newcomers a proper game and keeps the score respectable.</li>
+        <li><strong>Players who only want to play together.</strong> Allow the odd requested game, but not every round, or one group's preference quietly eats into everyone else's court time and mixing.</li>
+        <li><strong>Singles requests.</strong> Park a singles game on a spare or quieter court between doubles rounds, rather than letting two people tie up a court all night while others wait.</li>
+        <li><strong>Members and visitors.</strong> Give guests and trialists real, competitive games early so they enjoy the night and come back, without pushing your regulars unfairly down the queue.</li>
+        <li><strong>Court prioritisation.</strong> Put your closest, best games on the show court where everyone can see them, and keep one court for quicker-turnover games so the queue keeps moving.</li>
+      </ul>
+      <p>Done well, this is a real skill, and clubs are rightly grateful to whoever does it. The catch is that it all rests on that one person, it is hard to keep up consistently for a couple of hours, and there is rarely any record to settle a disagreement when someone feels hard done by.</p>
+
+      <h2 id="software">When a board stops coping, and what software adds</h2>
+      <p>The signs are familiar: courts sitting idle while people argue over who is next, the same strong four dominating, newcomers drifting off because they only ever get one-sided games, and the organiser stuck at the board all night instead of playing. Most clubs eventually reach a point where working the board takes more attention than it is worth, and they start looking for something to take over the repetitive decisions so the organiser can play too.</p>
+      <p>That is where <a href="/features/club-nights">ePegboard</a> comes in. It does the same job as the board, plus the parts a person cannot do reliably in real time. It keeps every court busy with games matched on player level, rest time and who has played whom, so games stay balanced and varied. It tracks court-time fairness across the whole night, so the share of games stays even for the time each player is present. And it shows exactly why each game was picked, so "the system got it wrong" turns into a conversation with the evidence on screen rather than an argument.</p>
+      <figure style="margin:26px 0 0">
+        <img src="/img/pick-explanation.png" asp-append-version="true" alt="ePegboard showing why a game was picked: who was waiting longest and how the player levels balance" style="width:100%;border:1px solid var(--line);border-radius:14px;display:block" />
+        <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">The reason for each pick is on screen, so it is something the whole room can see rather than a judgement call in the organiser's head.</figcaption>
+      </figure>
+      <p>All of that runs on a player rating that reflects how people actually perform, not just who won: a narrow loss to a stronger pair can still move you up, and a heavy loss to weaker players costs more. The rating updates after every game, which keeps the balancing accurate as the night goes on, and the same rating later feeds <a href="/features/competitions">handicap competitions</a> and <a href="/features/league-team-support">league team selection</a>. You can read <a href="https://docs.epegboard.com/club-nights/the-picker/" target="_blank" rel="noopener">more on how the game picking works</a> in the docs.</p>
+      <p>It is a well-worn approach rather than a new experiment: clubs have run more than 1,100 sessions and over 33,000 games on ePegboard, and it is <a href="/badminton-club-management-software">free for clubs</a>. If your nights have outgrown the board, it is built to pick up the exact load a person struggles to carry.</p>
+
+      <div class="guide-callout">
+        <h4>Try it on your next club night</h4>
+        <p>ePegboard runs fair, balanced club nights in any browser. It is free for clubs, there is no card to enter, and nothing to install. You can be running your first session in minutes.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+      </div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      @foreach (var f in faqPairs)
+      {
+        <h3>@f.Q</h3>
+        <p>@f.A</p>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" style="margin-top:56px">
+  <div class="wrap">
+    <h2>Run your next club night on ePegboard</h2>
+    <p>Fair, balanced games, picked for you. Free for clubs. Runs in any browser.</p>
+    <div class="cta-actions">
+      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
+      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
+    </div>
+    <p class="fine">More guides on running a badminton club are in the <a href="/guides">guides section</a>.</p>
+  </div>
+</section>
