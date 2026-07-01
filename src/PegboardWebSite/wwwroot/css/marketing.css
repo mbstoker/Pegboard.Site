@@ -44,6 +44,20 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);bac
 .nav-links a{padding:9px 13px;border-radius:9px;font-weight:600;font-size:.95rem;color:var(--muted-2)}
 .nav-links a:hover{background:var(--bg-soft);color:var(--ink)}
 .nav-links a.active{color:var(--primary);background:var(--bg-tint)}
+/* Resources dropdown (desktop nav) - CSS hover/focus, no JS */
+.nav-dd{position:relative;display:flex;align-items:center}
+.nav-dd-toggle{display:inline-flex;align-items:center;gap:5px;padding:9px 13px;border:0;background:none;border-radius:9px;font-family:inherit;font-weight:600;font-size:.95rem;color:var(--muted-2);cursor:pointer}
+.nav-dd-toggle svg{width:13px;height:13px;transition:transform .15s ease}
+.nav-dd-toggle:hover,.nav-dd:hover .nav-dd-toggle,.nav-dd:focus-within .nav-dd-toggle{background:var(--bg-soft);color:var(--ink)}
+.nav-dd-toggle.active{color:var(--primary);background:var(--bg-tint)}
+.nav-dd:hover .nav-dd-toggle svg,.nav-dd:focus-within .nav-dd-toggle svg{transform:rotate(180deg)}
+.nav-dd-menu{position:absolute;top:100%;left:0;min-width:184px;display:none;flex-direction:column;gap:2px;padding:6px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow-lg);z-index:60}
+.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu{display:flex}
+.nav-dd-menu a{padding:9px 12px;border-radius:8px;font-weight:600;font-size:.92rem;color:var(--muted-2);white-space:nowrap}
+.nav-dd-menu a:hover{background:var(--bg-soft);color:var(--ink)}
+.nav-dd-menu a.active{color:var(--primary);background:var(--bg-tint)}
+/* Resources group label in the mobile menu */
+.mobile-nav-label{padding:14px 4px 6px;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .nav-cta{margin-left:auto;display:flex;align-items:center;gap:14px}
 /* Separate the returning-user "Sign in" link from the new-visitor choice pair (See it in action + Sign up) */
 .nav-cta .nav-div{width:1px;height:22px;background:var(--line);margin:0 2px}

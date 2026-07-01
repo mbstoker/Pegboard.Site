@@ -71,9 +71,18 @@
     <nav class="nav-links">
       <a href="/features" class="@Active("/features")">Features</a>
       <a href="/pricing" class="@Active("/pricing")">Pricing</a>
-      <a href="/guides" class="@Active("/guides")">Guides</a>
-      <a href="/faq" class="@Active("/faq")">FAQ</a>
-      <a href="https://docs.epegboard.com" target="_blank" rel="noopener">Docs</a>
+      <div class="nav-dd">
+        <button type="button" class="nav-dd-toggle @(Active("/guides"))@(Active("/faq"))" aria-haspopup="true" aria-expanded="false">
+          Resources
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dd-menu">
+          <a href="/guides" class="@Active("/guides")">Guides</a>
+          <a href="https://docs.epegboard.com" target="_blank" rel="noopener">Docs</a>
+          <a href="/faq" class="@Active("/faq")">FAQ</a>
+          <a href="/ReleaseNotes">Release notes</a>
+        </div>
+      </div>
       <a href="/about" class="@Active("/about")">About</a>
     </nav>
     <div class="nav-cta">
@@ -90,9 +99,11 @@
     <div class="wrap">
       <a href="/features" class="@Active("/features")">Features</a>
       <a href="/pricing" class="@Active("/pricing")">Pricing</a>
+      <span class="mobile-nav-label">Resources</span>
       <a href="/guides" class="@Active("/guides")">Guides</a>
-      <a href="/faq" class="@Active("/faq")">FAQ</a>
       <a href="https://docs.epegboard.com" target="_blank" rel="noopener">Docs</a>
+      <a href="/faq" class="@Active("/faq")">FAQ</a>
+      <a href="/ReleaseNotes">Release notes</a>
       <a href="/about" class="@Active("/about")">About</a>
       <a href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
       <a href="https://play.epegboard.com" target="_blank" rel="noopener">Sign in</a>
