@@ -45,9 +45,10 @@ public class RequestFeatureModel : PageModel
             EmailSent = true;
             ModelState.Clear();
         }
-        catch
+        catch (Exception ex)
         {
-            ModelState.AddModelError("", "Sorry, something went wrong while sending your report.");
+            _logger.LogError(ex, "Failed to send feature request email from the website.");
+            ModelState.AddModelError("", "Sorry, something went wrong while sending your request.");
         }
 
         return Page();

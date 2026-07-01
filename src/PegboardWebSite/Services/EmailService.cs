@@ -34,18 +34,40 @@ public class EmailService
 
     public void SendMail(string from, string to, string subject, string body)
     {
-        var message = new MailMessage(from, to);
-        message.Subject = subject;
-        message.Body = body;
-        message.IsBodyHtml = false;
+        // SMTP settings come from configuration (Email:Smtp). The password is supplied
+        // per-environment on the VPS via the Email__Smtp__Password environment variable and
+        // is deliberately not held in source control. Non-secret defaults are kept as a fallback.
+        var smtpConfig = _configuration.GetSection("Email:Smtp");
+        var host = smtpConfig["Host"] ?? "smtp.ionos.co.uk";
+        var port = int.TryParse(smtpConfig["Port"], out var parsedPort) ? parsedPort : 587;
+        var enableSsl = !bool.TryParse(smtpConfig["EnableSsl"], out var parsedSsl) || parsedSsl;
+        // On the VPS the credentials come from the existing EPEGBOARD_SMTP_* machine
+        // environment variables; fall back to Email:Smtp config (used locally / for overrides).
+        var username = Environment.GetEnvironmentVariable("EPEGBOARD_SMTP_USERNAME");
+        if (string.IsNullOrEmpty(username)) username = smtpConfig["Username"];
 
-        using (var smtp = new SmtpClient("smtp.ionos.co.uk", 587))
+        var password = Environment.GetEnvironmentVariable("EPEGBOARD_SMTP_PASSWORD");
+        if (string.IsNullOrEmpty(password)) password = smtpConfig["Password"];
+
+        if (string.IsNullOrEmpty(password))
         {
-            smtp.Credentials = new System.Net.NetworkCredential("mike.stoker@epegboard.com", "Cr1cc13th!");
-            smtp.EnableSsl = true;
+            _logger.LogWarning("SMTP password is not configured - set the EPEGBOARD_SMTP_PASSWORD environment variable on the host. Outbound email will fail to authenticate.");
+        }
+
+        var message = new MailMessage(from, to)
+        {
+            Subject = subject,
+            Body = body,
+            IsBodyHtml = false
+        };
+
+        using (var smtp = new SmtpClient(host, port))
+        {
+            smtp.Credentials = new NetworkCredential(username, password);
+            smtp.EnableSsl = enableSsl;
             smtp.Send(message);
         }
 
-        _logger.LogInformation($"Email sent. From: {from}  To: {to}  Subject: {subject}  Body: {body}");
+        _logger.LogInformation($"Email sent. From: {from}  To: {to}  Subject: {subject}");
     }
 }

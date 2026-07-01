@@ -48,7 +48,8 @@ Email: {PurchaseRequest.Email}
         }
         catch (Exception ex)
         {
-            ModelState.AddModelError("", "Could not send the request: " + ex.Message);
+            _logger.LogError(ex, "Failed to send purchase request email from the website.");
+            ModelState.AddModelError("", "Sorry, we could not send your request. Please email sales@epegboard.com.");
         }
 
         return Page();

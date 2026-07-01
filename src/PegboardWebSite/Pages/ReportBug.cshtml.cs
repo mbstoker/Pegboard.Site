@@ -45,8 +45,9 @@ public class ReportBugModel : PageModel
             EmailSent = true;
             ModelState.Clear();
         }
-        catch
+        catch (Exception ex)
         {
+            _logger.LogError(ex, "Failed to send bug report email from the website.");
             ModelState.AddModelError("", "Sorry, something went wrong while sending your report.");
         }
 
