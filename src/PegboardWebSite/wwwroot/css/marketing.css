@@ -432,6 +432,10 @@ footer{background:var(--navy);color:#9dc0e3;padding:52px 0 30px;font-size:.92rem
 .foot-grid a{display:block;padding:5px 0;color:#9dc0e3}
 .foot-grid a:hover{color:#fff}
 .foot-brand{font-weight:800;color:#fff;font-size:1.2rem;display:flex;align-items:center;gap:10px}
+.foot-social{display:flex;gap:14px;margin-top:16px}
+.foot-social a{display:inline-flex;padding:0;color:#9dc0e3}
+.foot-social a:hover{color:#fff}
+.foot-social svg{width:20px;height:20px}
 .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
 @media(max-width:980px){

@@ -20,7 +20,15 @@
         ["name"] = "ePegboard",
         ["legalName"] = "MBS Software Limited",
         ["url"] = "https://www.epegboard.com",
-        ["logo"] = "https://www.epegboard.com/Images/epegboard-text-logo.png"
+        ["logo"] = "https://www.epegboard.com/Images/epegboard-text-logo.png",
+        // Facebook is the raw profile-id URL because FB withholds the vanity username
+        // until page maturity; swap to https://www.facebook.com/epegboard if/when the
+        // vanity name is claimed (also update the footer link below).
+        ["sameAs"] = new[]
+        {
+            "https://www.facebook.com/profile.php?id=61591584782205",
+            "https://www.instagram.com/epegboard/"
+        }
     });
 
     var path = (Context.Request.Path.Value ?? "/").ToLowerInvariant();
@@ -121,6 +129,15 @@
       <div>
         <div class="foot-brand"><img src="~/Images/epegboard-figure-logo.png" alt="" style="height:30px;width:auto" /> ePegboard</div>
         <p style="margin-top:14px;max-width:30ch">Smarter club nights and fairer games for badminton clubs.</p>
+        <div class="foot-social">
+          @* Facebook: raw profile-id URL until the vanity name (facebook.com/epegboard) is claimed - see the sameAs note above. *@
+          <a href="https://www.facebook.com/profile.php?id=61591584782205" target="_blank" rel="noopener" aria-label="ePegboard on Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.4 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.54-1.5h1.66V4.62A22 22 0 0 0 14.17 4.5c-2.4 0-4.04 1.46-4.04 4.15V10.9H7.4V14h2.73v8h3.27z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/epegboard/" target="_blank" rel="noopener" aria-label="ePegboard on Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".75" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
       </div>
       <div><h5>Product</h5><a href="/features">Features</a><a href="/features/competitions">Competitions</a><a href="/features/league-team-support">League teams</a><a href="/pricing">Pricing</a><a href="/badminton-club-management-software">Badminton club software</a></div>
       <div><h5>Resources</h5><a href="/guides">Guides</a><a href="https://docs.epegboard.com" target="_blank" rel="noopener">Docs</a><a href="/faq">FAQ</a><a href="/ReleaseNotes">Release notes</a><a href="/ProductRoadmap">Product roadmap</a><a href="/FeaturesDesktop">Desktop app</a><a href="/ReportBug">Report a bug</a><a href="/RequestFeature">Request a feature</a></div>
