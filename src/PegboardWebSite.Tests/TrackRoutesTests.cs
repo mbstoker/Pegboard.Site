@@ -53,25 +53,42 @@ public sealed class TrackRoutesTests : IClassFixture<TrackApiFactory>
         Assert.Equal("https://play.epegboard.com/", res.Headers.Location?.ToString());
     }
 
-    // --- /track/u/{token} : one-click UNSUBSCRIBE. RFC 8058 accepts BOTH GET and POST.
+    // --- /track/u/{token} : two-step UNSUBSCRIBE (changed by #712 to defeat mail-scanner auto-clicks).
+    //   GET  = human confirm PROMPT ONLY. Records/suppresses NOTHING (corporate AV/link scanners
+    //          auto-fetch GET links and were silently opting live prospects out). Shows a one-button
+    //          form that POSTs back to the SAME /track/u/{token}.
+    //   POST = the actual unsubscribe (records "unsubscribe"). This is the RFC 8058 one-click target
+    //          (mailbox providers POST directly; scanners do not) AND the confirm-page button target.
 
     [Fact]
-    public async Task Unsubscribe_get_returns_200_html_confirmation()
+    public async Task Unsubscribe_get_shows_confirm_prompt_and_does_not_complete()
     {
-        var res = await NoRedirectClient().GetAsync("/track/u/club-token-xyz");
+        var token = "club-token-xyz";
+        var res = await NoRedirectClient().GetAsync($"/track/u/{token}");
         Assert.Equal(HttpStatusCode.OK, res.StatusCode);
         Assert.Equal("text/html", res.Content.Headers.ContentType?.MediaType);
         var body = await res.Content.ReadAsStringAsync();
-        Assert.Contains("unsubscribed", body, StringComparison.OrdinalIgnoreCase);
+
+        // It's the CONFIRM prompt: a POST-back form to the same token URL with an Unsubscribe button.
+        Assert.Contains("Unsubscribe from ePegboard emails?", body);
+        Assert.Contains("method=\"post\"", body, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains($"/track/u/{token}", body);
+
+        // Crucially NOT the completion page: GET must not report the unsubscribe as done, or a scanner's
+        // auto-GET would have (silently) unsubscribed the recipient. This is the anti-bot guard #712 adds.
+        Assert.DoesNotContain("You're unsubscribed", body);
     }
 
     [Fact]
-    public async Task Unsubscribe_post_one_click_returns_200()
+    public async Task Unsubscribe_post_confirm_completes_the_unsubscribe()
     {
-        // RFC 8058: List-Unsubscribe-Post=One-Click issues a POST to the same URL.
+        // The confirm action: RFC 8058 List-Unsubscribe-Post=One-Click (and the confirm-page button)
+        // both POST to this URL. Only the POST records the unsubscribe + returns the success page.
         var res = await NoRedirectClient().PostAsync("/track/u/club-token-xyz", new StringContent(""));
         Assert.Equal(HttpStatusCode.OK, res.StatusCode);
+        Assert.Equal("text/html", res.Content.Headers.ContentType?.MediaType);
         var body = await res.Content.ReadAsStringAsync();
+        Assert.Contains("You're unsubscribed", body);
         Assert.Contains("unsubscribed", body, StringComparison.OrdinalIgnoreCase);
     }
 
