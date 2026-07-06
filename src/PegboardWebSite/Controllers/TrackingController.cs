@@ -116,9 +116,35 @@ public class TrackingController : Controller
         return Redirect(dest);
     }
 
-    // One-click unsubscribe. Records "unsubscribe" with the club token; the internal tracking-sync
-    // turns that into a suppression + club opt-out. Also accepts a POST for RFC 8058 one-click.
+    // Unsubscribe CONFIRM step (human GET). Does NOT record or suppress — corporate mail scanners
+    // auto-fetch GET links in inbound mail, so an immediate GET unsubscribe falsely opts out live
+    // prospects. Instead we show a one-button confirm page that POSTs back to the SAME /track/u/{token}
+    // URL; the unsubscribe is recorded only on that POST (see the POST handler below). The URL shape and
+    // the "unsubscribe" resource discriminator are unchanged — only the GET's behaviour (defer to POST)
+    // changes.
     [HttpGet("u/{token}")]
+    public IActionResult UnsubscribeConfirm(string token)
+    {
+        var action = Url.Action(nameof(Unsubscribe), "Tracking", new { token })
+            ?? $"/track/u/{Uri.EscapeDataString(token)}";
+        // HTML-encode before interpolating into the form action attribute (defence-in-depth against a
+        // reflected-XSS sink if the token ever carries HTML-significant characters).
+        action = System.Text.Encodings.Web.HtmlEncoder.Default.Encode(action);
+        string html = "<!doctype html><html><head><meta charset=\"utf-8\"><title>Unsubscribe</title>" +
+            "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"></head>" +
+            "<body style=\"font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:560px;margin:60px auto;padding:0 20px;color:#1f2d3d\">" +
+            "<h2>Unsubscribe from ePegboard emails?</h2>" +
+            "<p>Click the button below to stop receiving ePegboard emails.</p>" +
+            "<form method=\"post\" action=\"" + action + "\">" +
+            "<button type=\"submit\" style=\"font:inherit;font-size:16px;padding:12px 24px;background:#1f6feb;color:#fff;border:none;border-radius:6px;cursor:pointer\">Unsubscribe</button>" +
+            "</form></body></html>";
+        return Content(html, "text/html");
+    }
+
+    // One-click unsubscribe (POST). Records "unsubscribe" with the club token; the internal tracking-sync
+    // turns that into a suppression + club opt-out. This is the RFC 8058 one-click target (mailbox
+    // providers POST directly, scanners do not) AND the target of the confirm-page button above. Only a
+    // POST records the unsubscribe.
     [HttpPost("u/{token}")]
     public IActionResult Unsubscribe(string token)
     {
