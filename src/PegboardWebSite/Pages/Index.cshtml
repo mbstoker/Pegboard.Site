@@ -1,5 +1,6 @@
 @page
 @model IndexModel
+@using PegboardWebSite.Services
 @{
     Layout = "_LayoutMarketing";
     ViewData["Title"] = "Badminton club management software";
@@ -123,7 +124,7 @@
 <section class="trust-strip" style="padding:0">
   <div class="wrap"><div class="row">
     <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg> Trusted by clubs across the UK &amp; Ireland</div>
-    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> <span>1,100+ club sessions run</span></div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> <span>@StatsFormatter.HonestRound(Model.Stats.SessionsRun) club sessions run</span></div>
     <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg> Built for players and organisers</div>
     <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg> Runs free in any browser</div>
   </div></div>
@@ -194,9 +195,9 @@
 <section class="bg-soft">
   <div class="wrap">
     <div class="stats">
-      <div class="stat"><div class="num">33,000+</div><div class="lbl">games played</div></div>
-      <div class="stat"><div class="num">1,100+</div><div class="lbl">club sessions run</div></div>
-      <div class="stat"><div class="num">2,000+</div><div class="lbl">players rated</div></div>
+      <div class="stat"><div class="num">@StatsFormatter.HonestRound(Model.Stats.GamesPlayed)</div><div class="lbl">games played</div></div>
+      <div class="stat"><div class="num">@StatsFormatter.HonestRound(Model.Stats.SessionsRun)</div><div class="lbl">club sessions run</div></div>
+      <div class="stat"><div class="num">@StatsFormatter.HonestRound(Model.Stats.PlayersRated)</div><div class="lbl">players rated</div></div>
     </div>
     <div class="quote">
       <p>&ldquo;I was finding that everyone turned to me to get games on, taking into account all the things that your software did - who had been benched for a while, who pairs up well and who has an equal amount of games. I honestly cannot sing your praises enough, because it did almost everything we needed it to.&rdquo;</p>

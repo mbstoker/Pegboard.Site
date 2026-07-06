@@ -20,6 +20,14 @@ public class Program
         // Add services to the container.
         builder.Services.AddTransient<TrackedRequestRepository>();
         builder.Services.AddTransient<EmailService>();
+
+        // Homepage social-proof stats: weekly bake into a Postgres store, rendered from the
+        // store (never a per-request call to the app). See Services/StatsRefreshService.
+        builder.Services.AddTransient<HomeStatsRepository>();
+        builder.Services.AddTransient<HomeStatsFetcher>();
+        builder.Services.AddHttpClient();
+        builder.Services.AddHostedService<StatsRefreshService>();
+
         builder.Services.AddRazorPages();
         builder.Services.AddDistributedMemoryCache();
         builder.Services.AddSession();
