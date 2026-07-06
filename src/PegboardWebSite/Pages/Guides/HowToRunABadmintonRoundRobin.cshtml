@@ -1,0 +1,153 @@
+@page "/guides/how-to-run-a-badminton-round-robin"
+@using PegboardWebSite.Services
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "How to run a badminton round robin (club night or small tournament)";
+    ViewData["Description"] = "A practical guide to running a badminton round robin: how to draw a fair fixture where everyone plays everyone, handle sit-outs and odd numbers, keep pairings varied, and sustain it week to week.";
+    ViewData["OgTitle"] = "How to run a badminton round robin";
+
+    const string published = "2026-07-05";
+    const string canonical = "https://www.epegboard.com/guides/how-to-run-a-badminton-round-robin";
+
+    var faqPairs = new (string Q, string A)[]
+    {
+        ("How do you organise a badminton round robin?",
+         "Decide the format first: singles, fixed doubles pairs, or rotating doubles where partners change each round. For a one-off, draw a fixture so everyone plays everyone using a rotation method such as the circle (Berger) system, which fixes one player and rotates the rest each round. Number your courts, schedule the rounds, keep results on a grid, and rank players or pairs at the end on games won, then points difference. For a club night, the aim is the same fairness, but sustained over the season rather than a single closed draw."),
+        ("What is the circle method for a round robin?",
+         "The circle, or Berger, method is the standard way to draw a round robin by hand. List the players or pairs in two rows facing each other, keep one fixed in the corner, and rotate everyone else one place each round. Each row-versus-row line is a match, and after a full set of rounds everyone has played everyone exactly once. If you have an odd number, add a bye that rotates so a different player sits out each round."),
+        ("How do you handle odd numbers in a round robin?",
+         "Add a bye. Treat the bye as an extra place in the draw so, each round, whoever lines up against it sits out. Because the bye rotates, a different player rests each round and nobody is repeatedly left off. In doubles this is a little more involved because you are rotating pairs, but the principle holds: build the sit-out into the rotation rather than picking who misses each round on the spot."),
+        ("How long does a badminton round robin take?",
+         "It depends on the number of entries, courts and games per match. As a rough guide, work out the total matches (for singles, entries times entries-minus-one, divided by two), divide by the number of courts to get the number of rounds, and multiply by how long a match takes. Eight players on two courts with short games is an evening; a large field on a few courts can run all day, which is why big fields are usually split into round-robin groups with a knockout stage after."),
+        ("What is the difference between a round robin and a knockout?",
+         "In a round robin everyone plays everyone, so a player is guaranteed a full set of games and a single bad match does not end their day. In a knockout, losers are eliminated, so it is quicker for a large field but half the entrants are done after one match. Round robins are fairer and better for a social or development event; knockouts suit crowning a single winner from a big field quickly. Many tournaments use round-robin groups first, then a knockout between group winners."),
+        ("Can you run a round robin every week at a club night?",
+         "In spirit, yes, though not as a fixed closed draw. A one-off round robin is a self-contained fixture that resets each time, so week to week you either repeat the same pairings or redraw from scratch, which by hand quickly becomes unmanageable and tends to drift unfair. A recurring social night keeps the same idea, everyone plays a fair, varied mix, but carries the fairness across sessions rather than starting cold each week, which is where session software earns its place.")
+    };
+
+    var articleJsonLd = GuideSchema.Article(
+        "How to run a badminton round robin (club night or small tournament)",
+        "How to run a badminton round robin: drawing a fair fixture where everyone plays everyone, handling sit-outs and odd numbers, keeping pairings varied, and sustaining it week to week.",
+        canonical, published);
+    var faqJsonLd = GuideSchema.Faq(faqPairs);
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+    <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
+}
+
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Round robin</span></div>
+      <h1 style="margin-top:10px">How to run a badminton round robin</h1>
+      <p class="lede">Everyone plays everyone, fairly, with varied pairings and even sit-outs. A round robin is the fairest format there is for a club night or a small in-house tournament. This is how to draw one, run it, and keep it fair.</p>
+      <div class="guide-meta">
+        <span class="gm-tag">Guide</span>
+        <span>Formats</span>
+        <span>10 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:820px">
+    <div class="guide-toc">
+      <h4>In this guide</h4>
+      <a href="#what">What a round robin is</a>
+      <a href="#formats">Singles, fixed pairs or rotating doubles</a>
+      <a href="#draw">Drawing the fixture: the circle method</a>
+      <a href="#oddnumbers">Odd numbers and sit-outs</a>
+      <a href="#running">Running it on the day</a>
+      <a href="#scoring">Scoring and ranking</a>
+      <a href="#weekly">The weekly problem: a one-off draw cannot last</a>
+      <a href="#faq">Frequently asked questions</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+      <p class="lead">A round robin is the fairest way to run competitive badminton for a group: everyone plays everyone, so a single off match does not end your day and the final table reflects how you actually did across the board. It works beautifully for a one-off in-house tournament, and its spirit, everyone gets a fair, varied set of games, is exactly what a good club night is after too. This guide covers how to draw and run a round robin, and where the one-off approach runs out of road if you try to repeat it every week.</p>
+
+      <h2 id="what">What a round robin is</h2>
+      <p>In a round robin, every entrant plays every other entrant. There is no elimination, so everyone is guaranteed a full set of games rather than being knocked out after one bad match. At the end, you rank players or pairs on their results, and the top of the table is the winner. It is the format leagues use, and for good reason: over enough games it is the truest test of who played best, and the fairest for everyone taking part.</p>
+      <p>The trade-off is time. Because everyone plays everyone, the number of matches grows quickly with the field, so pure round robins suit smaller groups. Large fields are usually split into round-robin groups, with a knockout stage between the group winners to keep the total number of matches manageable.</p>
+
+      <h2 id="formats">Singles, fixed pairs or rotating doubles</h2>
+      <p>Decide the format before you draw anything, because it changes how the fixture works:</p>
+      <ul>
+        <li><strong>Singles round robin.</strong> The cleanest form. Each player plays every other player once. Easy to draw and to rank.</li>
+        <li><strong>Fixed-pairs doubles.</strong> Players enter as a set pair, and each pair plays every other pair. Draw and ranking work exactly like singles, just with pairs as the entrants.</li>
+        <li><strong>Rotating doubles (individual round robin).</strong> Players enter individually and partners change each round, so you play with a different person every time. This is closest to a social club night and the fairest for mixing, but the draw is more involved because you are rotating both who partners whom and who plays whom.</li>
+      </ul>
+      <p>For an in-house tournament, singles or fixed pairs are simplest. For a social night feel, rotating doubles is the one people enjoy most, and also the hardest to organise by hand.</p>
+
+      <h2 id="draw">Drawing the fixture: the circle method</h2>
+      <p>The standard way to draw a round robin by hand is the circle, or Berger, method. It guarantees everyone plays everyone with no repeats:</p>
+      <ol>
+        <li>List your entrants in two rows, facing each other. The player at the top of the left column plays the player at the top of the right column, and so on down.</li>
+        <li>Fix one entrant in place, usually the top-left position.</li>
+        <li>Each round, rotate everyone else one position, clockwise around the fixed entrant.</li>
+        <li>Read off each round's matches from the new row-versus-row line-up.</li>
+        <li>Repeat until everyone has played everyone once. For N entrants that takes N-1 rounds (or N rounds with a bye if N is odd).</li>
+      </ol>
+      <p>The result is a clean, repeat-free schedule you can print and pin up. It is a small amount of setup for a one-off event, and it works well. The catch, which we come back to below, is that it produces one fixed fixture: it does not adapt, and it does not carry from one week to the next.</p>
+
+      <h2 id="oddnumbers">Odd numbers and sit-outs</h2>
+      <p>With an odd number of entrants, someone has to sit out each round. Handle it by adding a bye as an extra place in the draw. Whoever lines up against the bye in a given round sits that round out. Because the bye rotates with everyone else, a different entrant rests each round and the sit-outs are shared evenly, which is exactly what fairness demands. The mistake to avoid is picking who sits out on the spot each round, because by eye it always drifts unfair and the same one or two people end up missing more than their share.</p>
+
+      <h2 id="running">Running it on the day</h2>
+      <p>With the fixture drawn, the running is mostly logistics:</p>
+      <ul>
+        <li><strong>Number your courts</strong> and assign each round's matches to courts, so people know where to go without asking.</li>
+        <li><strong>Set a match length</strong> that fits your time. A single game to 21, or a shorter first-to-15, keeps a big schedule moving.</li>
+        <li><strong>Call rounds clearly.</strong> Post the schedule where everyone can see it, and call the next round promptly so courts do not sit idle.</li>
+        <li><strong>Keep a results grid</strong> up to date as scores come in, so the standings are visible and disputes are easy to settle.</li>
+        <li><strong>Watch the clock.</strong> If one court runs long, it can hold up the whole round, so keep an eye on slow games.</li>
+      </ul>
+
+      <h2 id="scoring">Scoring and ranking</h2>
+      <p>Rank on games or matches won first. When entrants are level on wins, break the tie in this order:</p>
+      <ol>
+        <li><strong>Head-to-head</strong> result between the tied entrants, if only two are level.</li>
+        <li><strong>Points difference</strong> across all their matches (points scored minus points conceded).</li>
+        <li><strong>Points scored</strong>, if still level.</li>
+      </ol>
+      <p>Decide and announce your tie-break rules before you start, so there is no argument at the end. A simple grid with wins and points difference is all you need to produce a final table.</p>
+
+      <h2 id="weekly">The weekly problem: a one-off draw cannot last</h2>
+      <p>A round robin is a self-contained event. You draw it, run it, and it resets. That is perfect for a tournament. It is where things get hard if you want that everyone-plays-everyone fairness at a club night, week after week.</p>
+      <p>Try it by hand and you hit the wall quickly. A fixed draw gives you the same pairings every week, which gets stale fast. Redrawing from scratch each week ignores what happened last week, so over a season court time and pairings drift unfair even though each single night looked balanced. And a real club night is not a closed field anyway: people arrive late, leave early, drop in once, or turn up for the first time, none of which a pre-drawn fixture can cope with. A Berger table assumes a fixed set of entrants for a fixed set of rounds, and a club night is neither.</p>
+      <p>This is where a recurring social night differs from a one-off generator. The goal is the same, everyone gets a fair, varied mix of games with even sit-outs, but it has to be sustained across sessions and adapt to who is actually in the hall tonight. <a href="/features/club-nights">ePegboard</a> is built for exactly that. It gives each player a fair, varied set of games every night, spreading partners and opponents around and keeping court time even, and it carries that fairness across sessions rather than starting cold each week. It handles latecomers, drop-ins and early leavers without breaking the fixture, because there is no fixed fixture to break. It is the round-robin ideal, everyone plays a fair, mixed set of games, made to run week after week rather than once.</p>
+
+      <div class="guide-callout">
+        <h4>Round-robin fairness, every week</h4>
+        <p>ePegboard gives everyone a fair, varied set of games with even sit-outs, and sustains it session after session. Free for clubs, runs in any browser, nothing to install.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+      </div>
+
+      <p>For a competitive event rather than a social night, our guide to <a href="/guides/how-to-run-handicap-doubles-tournament">running a handicap doubles tournament</a> covers a format where players of every standard can compete, and the <a href="/guides/badminton-club-night-formats-compared">formats compared</a> guide sets the round robin against the alternatives.</p>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      @foreach (var f in faqPairs)
+      {
+        <h3>@f.Q</h3>
+        <p>@f.A</p>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" style="margin-top:56px">
+  <div class="wrap">
+    <h2>Everyone plays everyone, week after week</h2>
+    <p>Fair, varied games with even sit-outs, sustained across the season. Free for clubs.</p>
+    <div class="cta-actions">
+      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
+      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
+    </div>
+    <p class="fine">More guides on running a badminton club are in the <a href="/guides">guides section</a>.</p>
+  </div>
+</section>
