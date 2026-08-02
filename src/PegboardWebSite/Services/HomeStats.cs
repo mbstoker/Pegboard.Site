@@ -20,18 +20,23 @@ public class HomeStats
 }
 
 /// <summary>
-/// Seed / ultimate-fallback values. These mirror the figures the homepage displayed
-/// before the weekly-bake feature (honest, current as of 2026-07). Used to (a) seed the
-/// store on first run and (b) render the page if the store is unreachable, so the stats
-/// never flicker to zero or blank.
+/// Seed / ultimate-fallback values. Used to (a) seed the store on first run and (b) render
+/// the page if the store is unreachable, so the stats never flicker to zero or blank.
+///
+/// Refreshed 2026-07-31 from prod (pegboard.prod) on the "Option A" definition Mike chose:
+/// real clubs only (demo + template clubs EXCLUDED) across all-time, INCLUDING the migrated
+/// legacy history — i.e. all badminton run through Pegboard's lineage. (The previous 33k/1.1k/2k
+/// were the frozen day-one seed; the weekly bake never ran because the /api/stats endpoint it
+/// fetches from was never built — see HomeStatsFetcher.) Raw totals; StatsFormatter rounds DOWN,
+/// so these render 36,000+ / 1,200+ / 2,600+.
 /// </summary>
 public static class HomeStatsDefaults
 {
     public static HomeStats Seed() => new()
     {
-        GamesPlayed = 33000,
-        SessionsRun = 1100,
-        PlayersRated = 2000,
+        GamesPlayed = 36440,
+        SessionsRun = 1276,
+        PlayersRated = 2600,
         Source = "seed",
         FetchedAtUtc = null
     };

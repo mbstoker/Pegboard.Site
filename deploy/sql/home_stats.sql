@@ -21,6 +21,8 @@ CREATE TABLE IF NOT EXISTS home_stats (
 
 -- Seed the current honest figures. ON CONFLICT DO NOTHING so re-running never
 -- clobbers a value the weekly bake has since updated.
+-- Values refreshed 2026-07-31 (Option A: real clubs only, demo+template excluded,
+-- migrated legacy history included). Raw totals; the site rounds DOWN for display.
 INSERT INTO home_stats (id, games_played, sessions_run, players_rated, source, updated_at_utc)
-VALUES (1, 33000, 1100, 2000, 'seed', now())
+VALUES (1, 36440, 1276, 2600, 'seed', now())
 ON CONFLICT (id) DO NOTHING;

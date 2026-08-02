@@ -10,14 +10,21 @@ namespace PegboardWebSite.Services;
 ///
 /// PARKED (2026-07): the diagnostics API does NOT yet expose an aggregate endpoint. Its
 /// current key-gated surface (/api/clubs, /api/sessions?clubId=) is per-club / per-session
-/// only and does NOT exclude demo clubs or legacy-imported sessions at the API boundary
-/// (only IsTemplate is filtered). This fetcher therefore targets a *proposed* Platform-owned
-/// endpoint (Diagnostics:StatsUrl, default {Diagnostics:BaseUrl}/api/stats) that must return
-/// demo/template/legacy-EXCLUDED totals. Until that endpoint ships, StatsUrl is left blank
-/// / the endpoint 404s, every fetch fails gracefully, and the last-known (seed) values are
+/// only. This fetcher therefore targets a *proposed* Platform-owned endpoint
+/// (Diagnostics:StatsUrl, default {Diagnostics:BaseUrl}/api/stats) that must return the
+/// canonical headline totals. Until that endpoint ships, StatsUrl is left blank / the
+/// endpoint 404s, every fetch fails gracefully, and the last-known (seed) values are
 /// preserved. See the Platform dependency note in the PR / feature report.
 ///
-/// Expected response contract (Platform to implement, canonical exclusions applied server-side):
+/// Canonical definition (Mike's ruling 2026-07-31, "Option A"): count REAL clubs only —
+/// demo clubs (is_demo) and template clubs (is_template) EXCLUDED — across all-time, and
+/// INCLUDE the migrated legacy history (all badminton run through Pegboard's lineage).
+/// Do NOT exclude legacy-imported sessions: that would shrink the headline to ~a quarter and
+/// misrepresent the real footprint. Metrics: gamesPlayed = ScoreRecorded events in real clubs;
+/// sessionsRun = ClubSessionStarted in real clubs; playersRated = distinct members with a
+/// MemberRatingInitialized in real clubs.
+///
+/// Expected response contract (Platform to implement, exclusions applied server-side):
 ///   { "gamesPlayed": &lt;long&gt;, "sessionsRun": &lt;long&gt;, "playersRated": &lt;long&gt; }
 /// </summary>
 public class HomeStatsFetcher
