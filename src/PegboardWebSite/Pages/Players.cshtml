@@ -1,0 +1,146 @@
+@page "/for-players"
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "ePegboard for players";
+    ViewData["Description"] = "The player side of ePegboard: claim your spot, follow your night live, and keep your rating, rank and match history across every club you play at - free, on any phone.";
+}
+
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>For players</span></div>
+      <h1 style="margin-top:10px">Your games, your rating, your night</h1>
+      <p class="lede">ePegboard is not just for the organiser. Claim your spot, follow the night live from your phone, and keep your rating, rank and stats across every club you play at.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="https://play.epegboard.com/live" target="_blank" rel="noopener">Follow tonight's session</a>
+        <a class="btn btn-ghost btn-lg" href="#what-you-get">What you get</a>
+      </div>
+      <div class="pill-row">
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Your rating and rank</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Your night, live</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Your stats</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Session recaps</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> One account, every club</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="what-you-get" style="padding-top:54px">
+  <div class="wrap">
+
+    <!-- Follow the night live -->
+    <div class="showcase" style="margin-bottom:64px">
+      <div class="copy">
+        <div class="step-eyebrow">Your night, live</div>
+        <h3>Follow the night from your phone</h3>
+        <p>Type the code on the club's screen and you are in - no app to install. See who is playing, who is up next, and how the night is going. When you are checked in you get your own view: your running total for the night and your games updating as they finish.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Enter the club's code at play.epegboard.com/live</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> See the board, the queue and who is up next</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Your own running total once you are checked in</li>
+        </ul>
+      </div>
+      <div class="shot" style="max-width:300px;margin:0 auto">
+        <img src="/img/player-participate.png" asp-append-version="true" alt="A player's live session view on their phone - queue position, rating change tonight, and a feed of their games as they finish">
+      </div>
+    </div>
+
+    <!-- Your rating and rank -->
+    <div class="showcase flip" style="margin-bottom:64px">
+      <div class="copy">
+        <div class="step-eyebrow">Your rating and rank</div>
+        <h3>A rating that reflects how you actually play</h3>
+        <p>Every game you play moves your rating - stronger opponents are worth more, narrow defeats hurt less. You get a rating at each club you play at, and you can see where you sit: "you're 4th of 22 here". Nothing is hidden - the full formula is on the help site. <a href="https://docs.epegboard.com/ratings/overview/" target="_blank" rel="noopener">How ratings work</a>.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Your rating and season rank at each club</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Games played and win rate</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> How each game moved your number</li>
+        </ul>
+      </div>
+      <div class="shot" style="max-width:300px;margin:0 auto">
+        <img src="/img/player-me.png" asp-append-version="true" alt="A player's Me home on their phone - their rating at a club and their season rank for the season">
+      </div>
+    </div>
+
+    <!-- Claim your spot -->
+    <div class="showcase stack" style="margin-bottom:64px">
+      <div class="copy">
+        <div class="step-eyebrow">Claim your spot</div>
+        <h3>Make the night yours</h3>
+        <p>When you play at a club running ePegboard, your games are already recorded against your name on the board. Claim your spot and it becomes yours: your account, your rating, your history - kept for you. Claiming is the sign-up, so there is nothing to fill in twice. Coming back another week? Sign in with a password, or just have a one-time code emailed to you.</p>
+      </div>
+    </div>
+
+    <!-- Your history and recaps -->
+    <div class="showcase" style="margin-bottom:64px">
+      <div class="copy">
+        <div class="step-eyebrow">History and recaps</div>
+        <h3>Every night, kept</h3>
+        <p>After a session you get a recap of your night - who you played, how it went, and how your rating moved. Each night is written up as a recap you can go back to, and every club night has a public recap you can share with the people you played with.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Your personal recap after every session</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> A shareable recap of the whole club night</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> A rating and rank that carry across the season</li>
+        </ul>
+      </div>
+      <div class="shot" style="max-width:300px;margin:0 auto">
+        <img src="/img/player-recap.png" asp-append-version="true" alt="A player's personal recap of their night - rating change, a game-by-game breakdown, and a share button">
+      </div>
+    </div>
+
+    <!-- One account, every club -->
+    <div class="showcase flip">
+      <div class="copy">
+        <div class="step-eyebrow">One account, every club</div>
+        <h3>Play at more than one club? One account covers them all</h3>
+        <p>If you play at a few different clubs, you do not need a login for each. One ePegboard account carries all the clubs you play at - each with its own rating and history - and your "Me" home pulls tonight's session, your clubs and your latest night into one place. Set a home club, or jump between them.</p>
+      </div>
+      <div class="shot" style="max-width:300px;margin:0 auto">
+        <img src="/img/player-clubs.png" asp-append-version="true" alt="The player's clubs list on their phone - a club card showing their role and a live-now indicator">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGINE THREAD (ratings) -->
+<section class="bg-soft" style="padding:48px 0">
+  <div class="wrap">
+    <div class="engine-strip">
+      <div class="es-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v6h-6"/></svg></div>
+      <div class="es-txt">
+        <h3>How your rating works - nothing hidden</h3>
+        <p>Your rating updates after every game from how you actually did, not from anyone's opinion. Beat someone stronger and it moves more; a close loss barely moves it. The full formula is on the help site.</p>
+      </div>
+      <a class="btn btn-ghost" style="background:#fff" href="https://docs.epegboard.com/ratings/overview/" target="_blank" rel="noopener">How ratings work</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOR ORGANISERS CROSS-LINK -->
+<section style="padding:44px 0">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Run a club?</span>
+      <h2 style="font-size:1.7rem">You are in the right place too</h2>
+      <p style="max-width:56ch;margin:10px auto 0">ePegboard runs the whole club night for organisers - smart game picking, fairness, competitions and reports - and it is free for clubs. <a href="/features">See what it does for clubs</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2>Following a night tonight?</h2>
+    <p>Enter the code on your club's screen. No app, no card details, works in any browser.</p>
+    <div class="cta-actions">
+      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/live" target="_blank" rel="noopener">Follow tonight's session</a>
+      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
+    </div>
+    <p class="fine">Your club needs to be running ePegboard for you to follow the live night.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
