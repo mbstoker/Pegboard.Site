@@ -20,7 +20,13 @@
         ("Why should I explain the switch before anyone sees the app?",
          "Because a change that answers a complaint people already have is welcomed, and a change that appears out of nowhere is resisted. If members have grumbled that games do not rotate, or that court time feels uneven, name that problem when you announce the switch and say this is what fixes it. You are not selling an app; you are solving something the club already feels. That framing is what turns a new tablet on the table from an intrusion into something people are curious to try."),
         ("How quickly will players start engaging?",
-         "Faster than most organisers expect, if you run the loop consistently. One club that ran this loop consistently had more than twenty players on their own accounts after just two sessions, where most clubs see a handful trickle in over weeks. The difference was not the club being unusually keen; it was the method: explain the why beforehand, keep the tablet accessible, and after the night share the recap leading with the personal stats. Do that every session and it compounds.")
+         "Faster than most organisers expect, if you run the loop consistently. One club that ran this loop consistently had more than twenty players on their own accounts after just two sessions, where most clubs see a handful trickle in over weeks. The difference was not the club being unusually keen; it was the method: explain the why beforehand, keep the tablet accessible, and after the night share the recap leading with the personal stats. Do that every session and it compounds."),
+        ("Do we have to let ePegboard pick every game?",
+         "No - you choose how hands-on to be. You can let it build every game and just tap start, review and tweak each suggestion before starting, or run it pegboard-style: turn on 'Force include first queue player' and 'Limit to first N players in queue', then hand the tablet to the player at the front of the queue to pick their own game from the next few waiting and swap it around if they want. Plenty of clubs coming from a pegboard start in that traditional style - players enjoy the sense of control - and move toward fully automated over a few weeks as they see the balanced games it makes. Running the shared tablet in kiosk mode lets you pass it safely between players while admin controls stay behind your organiser PIN."),
+        ("How should we set players' starting ratings when we begin?",
+         "You can leave everyone on the default and let the system learn them, but games in the first few sessions will be more hit-and-miss. Better is to give each member an approximate rating when you add them - a rough tier is plenty - which you can set on import or on the member form. Even loose guesses make the opening games noticeably closer from the very first night."),
+        ("The games look a bit unbalanced in our first few weeks - is something wrong?",
+         "No, that is normal while ratings settle. A new player's rating swings around for their first couple of dozen games before it settles down. Keep an eye on the suggestions during that period and override any that look lopsided - swap a player, or build the game by hand. It does not slow the system down: ratings are learned from the game results, not from who picked the game, so they still hone in on the right numbers underneath.")
     };
 
     var articleJsonLd = GuideSchema.Article(
@@ -45,7 +51,7 @@
       <div class="guide-meta">
         <span class="gm-tag">Guide</span>
         <span>Adoption</span>
-        <span>8 min read</span>
+        <span>10 min read</span>
       </div>
     </div>
   </div>
@@ -61,7 +67,10 @@
       <a href="#night">On the night: put the tablet where people gather</a>
       <a href="#after">After the session: share the recap, lead with the stats</a>
       <a href="#repeat">Repeat it, identically</a>
+      <a href="#pace">Ease in at your own pace: how much you let the app decide</a>
+      <a href="#ratings">Give the ratings a good start</a>
       <a href="#questions">Answer the questions your members will ask</a>
+      <a href="#help">If you get stuck, we are one email away</a>
       <a href="#faq">Frequently asked questions</a>
     </div>
 
@@ -122,6 +131,24 @@
       <h2 id="repeat">Repeat it, identically</h2>
       <p>None of the above is a one-off launch. The club in this example ran the same loop for their second session and every session after: a message before to say how they were using it, the tablet accessible on the night, the recap shared afterwards leading with the stats. Consistency is what compounds. Each session a few more players claim their profile, the recaps get more familiar, and within a handful of weeks it is simply how the club night runs. Treat it as a habit, not a launch event.</p>
 
+      <h2 id="pace">Ease in at your own pace: how much you let the app decide</h2>
+      <p>You do not have to hand the whole night over to the app on day one. It runs in three broad styles, and a club used to a pegboard can start at the gentle end and move along the scale as trust builds.</p>
+      <ul>
+        <li><strong>Fully automated.</strong> The picker builds each game and you just tap Start. Best once the club trusts it - and for this you want to leave the picking constraints off, so the picker has the freedom to make the fairest, most varied games.</li>
+        <li><strong>Organiser-led.</strong> The picker suggests each game and you review it - swap a player, lock someone in, change the format - before you start it. The hands-on middle ground, and where most organisers begin.</li>
+        <li><strong>Traditional, pegboard-style.</strong> The closest thing to the board people already know. In the session settings, turn on <strong>Force include first queue player</strong> and <strong>Limit to first N players in queue</strong>, then hand the tablet to the player at the front of the queue and let them pick their own game from the next few waiting - and swap the suggestion around if they fancy different players. It is assisted picking: just like taking the top peg and choosing your four, except the app keeps it fair and keeps the record.</li>
+      </ul>
+      <p>That last style is worth calling out on its own. Clubs that let the front player pick their game and swap the suggestions around have found it genuinely popular - it gives players a sense of control and makes the wait part of the fun, rather than something the organiser does to them. Plenty of pegboard clubs start here and drift toward automated over a few weeks, once people have seen the balanced games it makes.</p>
+      <p>A device split that works nicely: run the shared tablet in <a href="https://docs.epegboard.com/club-nights/kiosk-mode/" target="_blank" rel="noopener">kiosk mode</a> so it can be passed safely between players - they can check people in, run the games and enter scores, while the admin controls stay locked behind your organiser PIN. Keep the jobs that need sign-off - manual overrides, voiding a game, changing settings - on your own phone, which steps into admin mode with the same PIN. The tablet lives with the players; you keep the few controls that need a grown-up, without hovering over the desk.</p>
+      <p>And players do not have to crowd the tablet at all. Anyone can follow the night live from their own phone by typing the code shown on the club's screen - the live board, who is on, who is up next - and once they are checked in they get their own running total for the evening, updating as each game finishes. No account is needed to follow along; claiming a profile is what turns that into a rating and history they keep. It is a good thing to mention in your after-the-session post - see <a href="/for-players">the player side</a>.</p>
+
+      <h2 id="ratings">Give the ratings a good start</h2>
+      <p>ePegboard builds its balanced games from player ratings, so the better your starting ratings, the better the games from the very first night.</p>
+      <p>You can leave everyone on the default - new players start at a middle rating - and let the system work each person out. It will. But the games in your first few sessions will be more hit-and-miss while it does, because it is starting with no idea who is who.</p>
+      <p>Better is to give each member an approximate rating when you add them - a rough tier is plenty (a beginner, an improver, a solid club player, a strong county-level player). You can set it on import or on the member form. Even loose guesses make the opening games noticeably closer and save the system a lot of guessing.</p>
+      <p>Either way, expect movement early. A new player's rating swings around a fair bit for their first couple of dozen games while the system learns where they sit, then it settles down. During that settling-in period, keep half an eye on the suggestions: if one comes out lopsided, override it - swap a player, or build the game by hand.</p>
+      <p>Here is the reassuring part. Doing that does not slow the system down or throw it off. It learns each player's level from the game <em>results</em>, not from who chose the game - so overriding a pick while ratings are still settling simply smooths the games on the night; underneath, the ratings still hone in on the right numbers. You are helping the night along, not fighting the system. For the detail, see <a href="https://docs.epegboard.com/ratings/overview/" target="_blank" rel="noopener">how ratings work</a>.</p>
+
       <h2 id="questions">Answer the questions your members will ask</h2>
       <p>A few questions come up almost every time, and having answers ready keeps momentum. Members tend to ask how it works, why it is free, and whether it will keep being improved. The easiest move is to do a little homework and point people at the material that already answers them, rather than fielding each one yourself:</p>
       <ul>
@@ -129,6 +156,9 @@
         <li><strong>Why is it free?</strong> ePegboard is free for clubs and intends to stay that way - the club night is not behind a paywall. Point members at the site if they want the fuller answer.</li>
         <li><strong>Will it keep being updated?</strong> Yes. A lot of what ships comes straight from what clubs ask for, so if something about your setup is clunky, telling us is the fastest route to changing it.</li>
       </ul>
+
+      <h2 id="help">If you get stuck, we are one email away</h2>
+      <p>You will not be on your own with this. If a member asks something you cannot answer, or something in the app looks wrong or is missing, email <a href="mailto:support@epegboard.com">support@epegboard.com</a> - we normally reply within 24 hours. And because a lot of what we build comes straight from these messages, flagging a rough edge is also the fastest way to get it fixed or added.</p>
 
       <div class="guide-callout">
         <h4>The short version</h4>
