@@ -8,7 +8,9 @@
     var ogTitle = ViewData["OgTitle"] as string
         ?? (string.IsNullOrEmpty(pageTitle) || pageTitle == "Home" ? "ePegboard" : $"{pageTitle} - ePegboard");
     var baseUrl = (Configuration.GetConnectionString("WebsiteUrl") ?? $"{Context.Request.Scheme}://{Context.Request.Host}").TrimEnd('/');
-    var canonicalUrl = ViewData["CanonicalUrl"] as string ?? $"{baseUrl}{Context.Request.Path}";
+    // Lowercase the path so casing variants (/Download vs /download) share one canonical —
+    // otherwise each self-canonicalises to its own casing and Google clusters them as duplicates.
+    var canonicalUrl = ViewData["CanonicalUrl"] as string ?? $"{baseUrl}{(Context.Request.Path.Value ?? "/").ToLowerInvariant()}";
     var ogImage = ViewData["OgImage"] as string ?? $"{baseUrl}/Images/og-image.png";
 
     // Sitewide Organization entity for search engines / AI crawlers. Per-page JSON-LD
@@ -89,7 +91,7 @@
           <a href="/guides" class="@Active("/guides")">Guides</a>
           <a href="https://docs.epegboard.com" target="_blank" rel="noopener">Docs</a>
           <a href="/faq" class="@Active("/faq")">FAQ</a>
-          <a href="/ReleaseNotes">Release notes</a>
+          <a href="/releasenotes">Release notes</a>
         </div>
       </div>
       <a href="/about" class="@Active("/about")">About</a>
@@ -113,7 +115,7 @@
       <a href="/guides" class="@Active("/guides")">Guides</a>
       <a href="https://docs.epegboard.com" target="_blank" rel="noopener">Docs</a>
       <a href="/faq" class="@Active("/faq")">FAQ</a>
-      <a href="/ReleaseNotes">Release notes</a>
+      <a href="/releasenotes">Release notes</a>
       <a href="/about" class="@Active("/about")">About</a>
       <a href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
       <a href="https://play.epegboard.com" target="_blank" rel="noopener">Sign in</a>
@@ -142,8 +144,8 @@
         </div>
       </div>
       <div><h5>Product</h5><a href="/features">Features</a><a href="/for-players">For players</a><a href="/features/competitions">Competitions</a><a href="/features/league-team-support">League teams</a><a href="/pricing">Pricing</a><a href="/badminton-club-management-software">Badminton club software</a></div>
-      <div><h5>Resources</h5><a href="/guides">Guides</a><a href="https://docs.epegboard.com" target="_blank" rel="noopener">Docs</a><a href="/faq">FAQ</a><a href="/ReleaseNotes">Release notes</a><a href="/ProductRoadmap">Product roadmap</a><a href="/FeaturesDesktop">Desktop app</a><a href="/ReportBug">Report a bug</a><a href="/RequestFeature">Request a feature</a></div>
-      <div><h5>Company</h5><a href="/about">About</a><a href="/Contact">Contact</a><a href="mailto:sales@epegboard.com">Email sales</a><a href="/Privacy">Privacy</a><a href="/License">License terms</a></div>
+      <div><h5>Resources</h5><a href="/guides">Guides</a><a href="https://docs.epegboard.com" target="_blank" rel="noopener">Docs</a><a href="/faq">FAQ</a><a href="/releasenotes">Release notes</a><a href="/productroadmap">Product roadmap</a><a href="/featuresdesktop">Desktop app</a><a href="/reportbug">Report a bug</a><a href="/requestfeature">Request a feature</a></div>
+      <div><h5>Company</h5><a href="/about">About</a><a href="/contact">Contact</a><a href="mailto:sales@epegboard.com">Email sales</a><a href="/privacy">Privacy</a><a href="/license">License terms</a></div>
     </div>
     <div class="foot-bottom"><span>&copy; @currentYear MBS Software Limited</span><span>play.epegboard.com</span></div>
   </div>

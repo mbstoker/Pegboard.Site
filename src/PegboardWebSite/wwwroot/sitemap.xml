@@ -136,33 +136,33 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.epegboard.com/FeaturesDesktop</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.epegboard.com/featuresdesktop</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.epegboard.com/ProductRoadmap</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.epegboard.com/productroadmap</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://www.epegboard.com/ReleaseNotes</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.epegboard.com/releasenotes</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://www.epegboard.com/Contact</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.epegboard.com/contact</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://www.epegboard.com/Privacy</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.epegboard.com/privacy</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://www.epegboard.com/License</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.epegboard.com/license</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.2</priority>
   </url>
 </urlset>

@@ -29,6 +29,12 @@ public class Program
         builder.Services.AddHostedService<StatsRefreshService>();
 
         builder.Services.AddRazorPages();
+
+        // Emit lowercase URLs from tag-helper link generation (asp-page/asp-route) so internal
+        // links match the lowercase canonical. Routes match case-insensitively, so this only
+        // normalises casing — it never changes which page a link resolves to. See the canonical
+        // logic in _Layout/_LayoutMarketing (SEO: avoids duplicate-canonical clustering by Google).
+        builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
         builder.Services.AddDistributedMemoryCache();
         builder.Services.AddSession();
 
@@ -67,6 +73,11 @@ public class Program
         // Legacy /demo path used in older outreach copy → permanent redirect to instant-demo flow on the app.
         // ASP.NET routing matches both /demo and /demo/ against this single registration.
         app.MapGet("/demo", () => Results.Redirect("https://play.epegboard.com/instant-demo", permanent: true));
+
+        // Legacy MVC download URL from the previous site (HomeController.Download). Google still holds
+        // /Home/Download (all http/www/case variants) and it now 404s → 301 to the Razor download page.
+        // Route matching is case-insensitive, so this single registration catches every variant.
+        app.MapGet("/home/download", () => Results.Redirect("/download", permanent: true));
 
         app.MapRazorPages();
 

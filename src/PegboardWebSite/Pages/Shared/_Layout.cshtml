@@ -10,7 +10,9 @@
         ?? (string.IsNullOrEmpty(pageTitle) || pageTitle == "Home" ? "ePegboard" : $"{pageTitle} - ePegboard");
     // Absolute URLs (required by OG/Twitter scrapers). Prefer the configured canonical host over the request host.
     var baseUrl = (Configuration.GetConnectionString("WebsiteUrl") ?? $"{Context.Request.Scheme}://{Context.Request.Host}").TrimEnd('/');
-    var canonicalUrl = ViewData["CanonicalUrl"] as string ?? $"{baseUrl}{Context.Request.Path}";
+    // Lowercase the path so casing variants (/Download vs /download) share one canonical —
+    // otherwise each self-canonicalises to its own casing and Google clusters them as duplicates.
+    var canonicalUrl = ViewData["CanonicalUrl"] as string ?? $"{baseUrl}{(Context.Request.Path.Value ?? "/").ToLowerInvariant()}";
     var ogImage = ViewData["OgImage"] as string ?? $"{baseUrl}/Images/og-image.png";
 }
 <!DOCTYPE html>
