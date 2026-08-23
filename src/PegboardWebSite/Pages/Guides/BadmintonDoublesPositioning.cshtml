@@ -14,17 +14,24 @@
     //  1 Two formations, not four
     //  2 Where do the Laws say you must stand?
     //  3 How do you tell which shape you should be in?
-    //  4 Forced to defend - which side do you take?
-    //  5 Defending is not a straight line
-    //  6 Who takes the shuttle down the middle?
-    //  7 Where do you stand for the serve and the return?
-    //  8 What if your partner does not move at all?
-    //  9 Does any of this matter on a social club night?
+    //  4 Where do you stand for the serve and the return?
+    //  5 Attacking - where does each of you go?
+    //  6 When does the rear player come forward?
+    //  7 Forced to defend - which side do you take?
+    //  8 Defending is not a straight line
+    //  9 How do you turn defence back into attack?
+    // 10 Flat exchanges - when not to commit
+    // 11 Who takes the shuttle down the middle?
+    // 12 Does "follow your shot" work?
+    // 13 What if your partner does not move at all?
+    // 14 Does any of this matter on a social club night?
 
     var faqPairs = new (string Q, string A)[]
     {
         ("Does any of this apply to mixed doubles?",
          "Partly. Mixed doubles has its own conventions and this guide does not cover them: the pair holds front-and-back for longer, and who covers which part of the court works differently. If you play mixed regularly, treat what follows as the level-doubles baseline rather than the finished answer."),
+        ("Does an opponent's lift mean we have to defend?",
+         "No, the opposite. Their lift gives you the chance to get behind the shuttle and hit down, so it hands you the attack. Your own lift is the one that matters defensively, because it gives them that chance instead. Club pairs often brace when any shuttle goes up, whoever put it there."),
         ("What about left-handed pairs?",
          "Every source we could find assumes two right-handers, including the coaching manuals. Nobody appears to have published guidance on how a left-and-right pair should adjust their defensive sides or who should take the middle. The principles here still apply, but the specific which-side advice may not, and we would rather say so than invent an answer."),
         ("Am I allowed to shout \"mine\" to my partner?",
@@ -48,7 +55,6 @@
 @section Head {
     <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
 }
-
 <!-- HERO -->
 <section class="page-hero" style="padding:0">
   <div class="wrap">
@@ -58,7 +64,7 @@
       <div class="guide-meta">
         <span class="gm-tag">Guide</span>
         <span>Playing</span>
-        <span>8 min read</span>
+        <span>11 min read</span>
       </div>
     </div>
   </div>
@@ -76,25 +82,31 @@
     <div class="guide-callout" style="margin-top:30px">
       <h4>The short version</h4>
       <ul style="margin:10px 0 0">
-        <li><strong>Two formations.</strong> Front-and-back attacking, side-by-side defending. Coaching sources that inflate this to four or five are counting something else, or citing nothing.</li>
+        <li><strong>Two formations.</strong> Front-and-back attacking, side-by-side defending. Sources that inflate this to four or five are counting something else.</li>
         <li><strong>Shuttle down, you attack. Shuttle up, you defend.</strong> At club level that rule has an exception worth knowing about.</li>
         <li><strong>Forced to defend?</strong> Front player picks a side, back player takes the other. It needs no agreement, so it works with a stranger.</li>
-        <li><strong>Defending side-by-side is not a straight line.</strong> Slide across towards the shuttle together, and the cross-court player should stand further forward.</li>
+        <li><strong>Rotating is not taking turns.</strong> Whoever moves into a role claims it; the partner fills the space behind them.</li>
+        <li><strong>Defending side-by-side is not a straight line.</strong> Slide across towards the shuttle together, and the cross-court player stands further forward.</li>
         <li><strong>Nobody agrees who takes the middle.</strong> Settle it between you in ten seconds before you start.</li>
       </ul>
     </div>
 
-    <p style="margin-top:22px;color:var(--muted-2);font-size:.95rem">Written for UK club-level doubles with two right-handers of roughly similar standard. Law references are to the Laws of Badminton as at August 2026.</p>
+    <p style="margin-top:22px;color:var(--muted-2);font-size:.95rem">Written for UK club-level doubles with two right-handers of roughly similar standard. This is about positioning during the rally, not the doubles service order. Law references are to the Laws of Badminton as at August 2026.</p>
 
     <div class="guide-toc" style="margin-top:26px">
       <h4>In this guide</h4>
       <a href="#how-many">Two formations, not four</a>
       <a href="#laws">Where do the Laws say you must stand?</a>
       <a href="#which-shape">How do you tell which shape you should be in?</a>
+      <a href="#serve">Where do you stand for the serve and the return?</a>
+      <a href="#attacking">Attacking: where does each of you go?</a>
+      <a href="#rotate">When does the rear player come forward?</a>
       <a href="#which-side">Forced to defend: which side do you take?</a>
       <a href="#not-a-line">Defending is not a straight line</a>
+      <a href="#counter">How do you turn defence back into attack?</a>
+      <a href="#flat">Flat exchanges: when not to commit</a>
       <a href="#middle">Who takes the shuttle down the middle?</a>
-      <a href="#serve">Where do you stand for the serve and the return?</a>
+      <a href="#follow">Does "follow your shot" work?</a>
       <a href="#partner">What if your partner does not move at all?</a>
       <a href="#does-it-matter">Does any of this matter on a social club night?</a>
       <a href="#faq">Frequently asked questions</a>
@@ -106,7 +118,18 @@
       <p>Two. Front-and-back when you are attacking, side-by-side when you are defending, and there is no third. This is not a house opinion: BWF's Level 2 criteria ask a player to <em>"describe 2 doubles formations"</em>, the Level 1 manual names that same pair, and Badminton Bible, TeachPE and every club and academy document we checked use them too.</p>
       <p>You will still see articles promising four formations, or five. Both are counting something other than formations: <strong>four</strong> usually means the two shapes with a left-hand and a right-hand variant each, or the four match-ups you get from two shapes on two sides of the net. Those are useful things to think about; they are not four formations. <strong>Five</strong> generally means an article with no sources at all: one such piece, inventing formations named "diagonal", "hybrid" and "situational", appears word for word across several unrelated domains, and those three names turn up in no coaching material we could find.</p>
       <p>The same applies to the confident percentages that circulate on this subject, whether about rally win rates or collisions avoided. As far as we can tell they trace back to one company's unpublished figures from its own customers, with no method stated and nothing to check. We have no numbers of our own to offer you here, and we would rather say that than borrow someone else's.</p>
-      <p>The frame that fits the sources is <strong>two formations and three situations</strong>. The formations are the two shapes. The situations are attacking, defending, and neutral: the flat midcourt exchange where nobody has the attack yet and both pairs are fighting to get it. Neutral is a situation you handle by choosing one of the two shapes, not a third shape of its own.</p>
+      <p>The frame that fits is <strong>two formations and three situations</strong>. The formations are the two shapes. The situations are attacking, defending, and the flat midcourt exchange where nobody has the attack yet and both pairs are fighting to get it.</p>
+
+      <div class="tablewrap" style="overflow-x:auto">
+      <table>
+        <thead><tr><th>Rally situation</th><th>Your shape</th><th>What you are trying to do</th></tr></thead>
+        <tbody>
+          <tr><td><strong>You have the attack</strong></td><td>Front-and-back</td><td>Keep hitting down; the front player finishes the weak reply</td></tr>
+          <tr><td><strong>They have the attack</strong></td><td>Side-by-side</td><td>Cover the width and find a reply that wins the attack back</td></tr>
+          <tr><td><strong>Nobody has it yet</strong></td><td>Roughly level</td><td>Win the next attacking opportunity before committing</td></tr>
+        </tbody>
+      </table>
+      </div>
 
       <figure style="margin:26px 0 0">
         <img src="/img/diagrams/doubles-attack-defence.svg" alt="A badminton court from above. The attacking pair stand in a line down the middle of their half, one at the net and one at the back. The pair being smashed at stand side by side but not level: both have slid towards the side the shuttle is on, and the one furthest from it stands further forward." style="width:100%;height:auto;border-radius:12px" />
@@ -121,7 +144,22 @@
       <h2 id="which-shape">How do you tell which shape you should be in?</h2>
       <p>Look at which way the shuttle is travelling. Hitting it down means you are attacking, so get into front-and-back. Having to hit it up means you are defending, so get side-by-side. Nobody chooses this; the rally decides it, and your job is to notice quickly.</p>
       <p>That rule fails in one situation, and it is a club-level situation. A slow, floaty drop shot travels downwards and still hands the attack over, because it arrives so gently that the other pair can hit down off it anyway. So the test is not the direction of your shot, it is whether your opponents can hit down next. If they can, you are defending, whatever you just did.</p>
-      <p><strong>Who goes to the front?</strong> Whoever played the shot that made the attack. If you have just dropped or smashed, follow it in and take the net; your partner covers behind you. That way the person already moving forwards keeps moving, rather than the two of you swapping places while the shuttle is in the air.</p>
+      <p>One more thing the simple version gets wrong: <strong>their</strong> lift does not put you under pressure, it hands you the attack. Your own lift is the trigger that matters.</p>
+
+      <h2 id="serve">Where do you stand for the serve and the return?</h2>
+      <p>Serving side: the server serves low and short from close to the short service line, and stays forward after serving, ready for a reply into the net. Their partner covers the back. You are already in the attacking shape before the rally starts, which is the point of a low serve.</p>
+      <p>Receiving side: the receiver stands ready to take the serve early, at the highest point they can reach, and their partner covers the back. The error that costs most here belongs to the partner rather than the receiver. If the serve goes high instead, the receiver will attack it, which means the partner has to get to the front of the court immediately. They usually do not, and a large area opens up on the very next shot.</p>
+      <p>If you take one habit from this section, make it that one. When your partner receives, watch what the serve does and move accordingly, rather than watching your partner play the shot.</p>
+
+      <h2 id="attacking">Attacking: where does each of you go?</h2>
+      <p>The rear player pressures from behind; the front player hunts the reply. The front player is not parked on the centre line. If the attack comes from the right, shade right with it; if it moves left, move left. That closes the straight reply and the one down the middle, which are the two the defenders choose most often, and it leaves the rear player free to cover another lift.</p>
+      <p>The club habit worth breaking is smashing and immediately charging the net. That puts both of you in the same half of the court with nobody behind, and the next lift goes over your heads. <strong>A smash does not mean swap. It usually means keep attacking from where you are.</strong></p>
+
+      <h2 id="rotate">When does the rear player come forward?</h2>
+      <p>When their own movement has already taken them there. If a short lift or a loose push pulls you forward from the back and you play it downwards, you have become the front player. Stopping, turning and running back wastes the movement you have already made, so carry on in. Your partner does the opposite and drops behind you.</p>
+      <p>That is the whole rotation mechanic, and it is worth stating as a rule, because most explanations make it sound like a dance step:</p>
+      <p><strong>Whoever moves into a role claims it. The partner fills the space they left.</strong></p>
+      <p>Nobody swaps because it is their turn, and there is no clockwise circuit to memorise. You swap because one of you is already standing where the front player should be, and the only sensible response is for the other to cover the back.</p>
 
       <h2 id="which-side">Forced to defend: which side do you take?</h2>
       <p><strong>If you already have a sense of which side your partner is on, take the other one.</strong> Often you do, and no rule is needed.</p>
@@ -144,8 +182,19 @@
         <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">The faded circles are where most club pairs stand. Sliding across together, with the cross-court player further forward, covers the two replies the attacker is most likely to choose.</figcaption>
       </figure>
 
+      <h2 id="counter">How do you turn defence back into attack?</h2>
+      <p>By playing a reply that lets one of you move forward while the other covers behind. Lifting keeps you defending, because they can hit down again. A block, a push or a drive can change it.</p>
+      <p>Block the smash tight to the net and follow it in. If they are forced to lift, you are already at the front and your partner takes the back: you are attacking, and neither of you had to think about it. If they reach the block early and hit down again, you recover and stay under pressure, which is the honest other half of it.</p>
+      <p>So defending is not "get the shuttle back". Blocks, pushes and drives are the shots that contest the attack. A lift is what you play when you have run out of better options, and it hands the rally back.</p>
+
+      <h2 id="flat">Flat exchanges: when not to commit</h2>
+      <p>Stay roughly level and wait. This is the case that the simple attack-means-front-and-back rule handles worst, and flat rallies are a large share of club badminton.</p>
+      <p>In a fast drive exchange nobody has the attack yet, and a reply can arrive before you have finished moving. If one of you charges forward because they hit a good drive, the next shuttle goes past them, and the pair is worse off than if nobody had moved.</p>
+      <p>The shape should change gradually as one of you starts winning the exchange: <strong>level, then staggered, then front-and-back.</strong> Not level, then both of you somewhere else at once.</p>
+
       <h2 id="middle">Who takes the shuttle down the middle?</h2>
       <p>There is no agreed rule, and you should know that rather than hunt for one. Three positions circulate and they contradict each other.</p>
+      <div class="tablewrap" style="overflow-x:auto">
       <table>
         <thead>
           <tr><th>Position</th><th>The argument</th><th>How well supported</th></tr>
@@ -168,19 +217,18 @@
           </tr>
         </tbody>
       </table>
-      <p>Our view: take the third one, because it is the only one that survives being paired with a stranger. Ten seconds before you start, say "I'll take the middle" and let your partner disagree if they would rather. Any agreement beats both of you assuming the other has it, which is how the shuttle ends up landing between you untouched.</p>
-
-      <h2 id="serve">Where do you stand for the serve and the return?</h2>
-      <p>Serving side: the server serves low and short from close to the short service line, and stays forward after serving, ready for a reply into the net. Their partner covers the back. You are already in the attacking shape before the rally starts, which is the point of a low serve.</p>
-      <p>Receiving side: the receiver stands ready to take the serve early, at the highest point they can reach, and their partner covers the back. The error that costs most here belongs to the partner rather than the receiver. If the serve goes high instead, the receiver will attack it, which means the partner has to get to the front of the court immediately. They usually do not, and a large area opens up on the very next shot.</p>
-      <p>If you take one habit from this section, make it that one. When your partner receives, watch what the serve does and move accordingly, rather than watching your partner play the shot.</p>
-
-      <div class="guide-callout" style="margin-top:24px">
-        <h4>Worked example: one rally, three changes of shape</h4>
-        <p style="margin-top:8px">You serve low, stay forward, and your partner covers the back: <strong>front-and-back</strong>. They push it flat to your midcourt and nobody can hit down: this is the <strong>neutral</strong> situation, and you hold the attacking shape while you have a chance of getting the attack back.</p>
-        <p style="margin-top:10px">Your partner has to lift. You are <strong>defending</strong> now, so you pick a side, your partner takes the other, and you both slide towards whichever side the lift went. They smash straight and you block it to the net. Now they have to lift, so you are <strong>attacking</strong> again: you played the block, so you take the net and your partner drops back.</p>
-        <p style="margin-top:10px">Three changes of shape in one rally, decided by who could hit down, and not one of them needed a conversation.</p>
       </div>
+      <p>Our view: take the third one, because it is the only one that survives being paired with a stranger. Ten seconds before you start, say "I'll take the middle" and let your partner disagree if they would rather. Any agreement beats both of you assuming the other has it, which is how the shuttle ends up landing between you untouched.</p>
+      <p>In front-and-back it is easier. Anything low enough to intercept in front belongs to the front player; anything passing safely over their head belongs to the back. If the front player is turning to chase a high shuttle, the back player should have taken it.</p>
+
+      <h2 id="follow">Does "follow your shot" work?</h2>
+      <p>Sometimes, and it is worth knowing which times, because it is the most repeated piece of doubles advice there is and it is wrong about as often as it is right.</p>
+      <ul>
+        <li><strong>Follow it</strong> when the shot has already carried you forward. You reached a midcourt shuttle, played it down, and you are arriving at the net anyway. Keep going; your partner drops behind.</li>
+        <li><strong>Do not follow it</strong> when you smashed from the back and your partner already has the front. Run in as well and nobody covers the lift.</li>
+        <li><strong>Wait</strong> when the rally is flat. You hit a fast drive from midcourt and the reply may come straight back at you. Hold your base and read it.</li>
+      </ul>
+      <p>A better version of the rule: <strong>follow the advantage your shot created, not the shuttle.</strong></p>
 
       <h2 id="partner">What if your partner does not move at all?</h2>
       <p>Then you use the front-player-picks rule anyway, because it is one-sided by design. You do not need your partner's cooperation to make the right move yourself, and if they stay where they are, you have still covered a different part of the court from them, which is most of the benefit.</p>
@@ -189,12 +237,24 @@
 
       <h2 id="does-it-matter">Does any of this matter on a social club night?</h2>
       <p>Less than the internet implies. Badminton England's No Strings programme runs several hundred drop-in sessions a week, explicitly for players of all abilities and built around fun rather than competition, and that is the format most people reading this are actually in. If you play once a week for enjoyment, the two shapes and the front-player-picks rule are the whole of what you need. The rest of this guide is detail for people who want to compete.</p>
-      <p>It is worth noting that the club whose protocol we quoted above deliberately does not teach the professional method. Their document says so, with some cheerfulness: <em>"professional players have a different system, involving anticlockwise rotation, but we aren't that good."</em> A functioning club decided that a simpler rule its members could actually use beat a better rule they could not. That is a sound judgement, not a compromise, and it applies to most club nights.</p>
+      <p>It is worth noting that the club whose protocol we use above deliberately does not teach the professional method. Their notes say so, with some cheerfulness: <em>"professional players have a different system, involving anticlockwise rotation, but we aren't that good."</em> A functioning club decided that a simpler rule its members could actually use beat a better rule they could not. That is a sound judgement, not a compromise, and it applies to most club nights.</p>
       <p>Nobody is going to run a drill on a social club night, and you do not need one. Read this once, notice it occasionally, and that is the whole return. Coaches do drill these transitions, and if you join a coached session you will meet them properly, but that is a different evening from the one this guide is about.</p>
 
       <div class="guide-callout" style="margin-top:26px">
+        <h4>Agree these five things before your next game</h4>
+        <p style="margin-top:8px">Ten seconds, before the first serve. Copy it, send it to whoever you are playing with.</p>
+        <ol style="margin:12px 0 0">
+          <li>If we lift, we split side-by-side.</li>
+          <li>If they lift, we take the front-and-back attack.</li>
+          <li>If one of us gets pulled forward, they stay forward and the other covers behind.</li>
+          <li>In a flat exchange we stay level until one of us is clearly on top.</li>
+          <li>[name] takes the ambiguous shuttle down the middle.</li>
+        </ol>
+      </div>
+
+      <div class="guide-callout" style="margin-top:24px">
         <h4>If you only do one thing</h4>
-        <p style="margin-top:8px">When you are forced to defend, the player who was at the front picks a side and the player who was at the back takes the other. You never have to agree it, discuss it, or know your partner.</p>
+        <p style="margin-top:8px">Do not move because of where the last shot came from. Move because of who can hit down next.</p>
       </div>
 
       <div class="guide-callout" style="margin-top:24px">
@@ -211,12 +271,12 @@
       }
 
       <h2 id="related">Where to go next</h2>
-      <p>"Rotation" means two different things in badminton, and this guide covered only one of them. If you arrived looking for how clubs decide <em>whose turn it is to play next</em> rather than where to stand on court, that is a separate subject: start with <a href="/guides/badminton-club-night-rotation">fair player rotation on a club night</a>, or <a href="/guides/managing-club-night-rotation">the four ways clubs manage the queue</a>.</p>
+      <p>"Rotation" means two different things in badminton, and this guide covered only one of them. If you arrived looking for how clubs decide <em>whose turn it is to play next</em> rather than where to be on court, that is a separate subject: start with <a href="/guides/badminton-club-night-rotation">fair player rotation on a club night</a>, or <a href="/guides/managing-club-night-rotation">the four ways clubs manage the queue</a>.</p>
       <p>If your games are one-sided rather than badly positioned, no amount of formation work will fix that. <a href="/guides/mixed-ability-badminton-club-night">Running a mixed-ability club night</a> deals with the pairing problem instead, and <a href="/guides/game-variety-stop-same-players">stopping the same four playing together every week</a> covers the variety side of it.</p>
 
       <div style="margin-top:34px;padding-top:22px;border-top:1px solid var(--line)">
         <h4 style="margin:0 0 8px">How this guide was put together</h4>
-        <p style="color:var(--muted-2);font-size:.95rem;margin:0">ePegboard builds club-night software. We are not coaches and we have not tested any of this in a lab. This guide is compiled from the BWF Coaches' Manual (Levels 1 and 2), the Laws of Badminton, and published teaching material from coaches and clubs, with the sources named in the text so you can check them. Where the published sources disagree, or where we could not find one at all, we have said so rather than picking an answer.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:0">ePegboard builds club-night software. We are not coaches and we have not tested any of this in a lab. This guide is compiled from the BWF Coaches' Manual (Levels 1 and 2), the Laws of Badminton, and published teaching material from coaches and clubs. Where the published sources disagree, or where we could not find one at all, we have said so rather than picking an answer.</p>
         <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0"><strong>Sources:</strong> <a href="https://www.worldbadminton.com/rules/" target="_blank" rel="noopener">Laws of Badminton</a> &middot; <a href="https://development.bwfbadminton.com/coaches/level-1" target="_blank" rel="noopener">BWF Coach Education</a> &middot; <a href="https://www.robinson.cam.ac.uk/iar1/badminton/Graduates_Badminton_Club_Doubles_Court_Positioning.pdf" target="_blank" rel="noopener">Ian Rudy, "Court Positioning in Badminton Doubles", Graduates' Badminton Club, Cambridge</a> &middot; <a href="https://www.badmintonbible.com/tactics/doubles/positions" target="_blank" rel="noopener">Badminton Bible on doubles positions</a> &middot; <a href="https://nostringsbadminton.co.uk/" target="_blank" rel="noopener">No Strings Badminton</a></p>
         <p style="color:var(--muted-2);font-size:.9rem;margin:12px 0 0">Published 23 August 2026 by ePegboard.</p>
       </div>
