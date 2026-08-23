@@ -96,13 +96,6 @@
   <circle cx="524" cy="300" r="13" fill="#0f766e"/>
   <text x="548" y="306" font-family="system-ui,sans-serif" font-size="21" fill="#0f766e" font-weight="600">the balance point</text>
 
-  <!-- 1 cm callout on the even band -->
-  <line x1="516" y1="486" x2="532" y2="486" stroke="#0f766e" stroke-width="2.5"/>
-  <line x1="516" y1="481" x2="516" y2="491" stroke="#0f766e" stroke-width="2.5"/>
-  <line x1="532" y1="481" x2="532" y2="491" stroke="#0f766e" stroke-width="2.5"/>
-  <text x="596" y="478" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" fill="#0f766e" font-weight="600">1 cm</text>
-  <line x1="540" y1="484" x2="570" y2="476" stroke="#0f766e" stroke-width="1.5"/>
-
   <g font-family="system-ui,sans-serif" font-size="19" fill="#475569">
     <text x="150" y="638">head-light</text>
     <text x="150" y="660" font-size="16" fill="#94a3b8">under 285 mm</text>
