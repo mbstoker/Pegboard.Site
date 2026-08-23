@@ -121,6 +121,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.epegboard.com/guides/badminton-doubles-positioning</loc>
+    <lastmod>2026-08-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.epegboard.com/guides/rolling-out-epegboard-to-your-club</loc>
     <lastmod>2026-08-02</lastmod>
     <priority>0.8</priority>

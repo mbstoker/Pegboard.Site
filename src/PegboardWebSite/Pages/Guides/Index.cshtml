@@ -1,29 +1,40 @@
 @page "/guides"
+@using System.Linq
 @{
     Layout = "_LayoutMarketing";
-    ViewData["Title"] = "Guides for running a badminton club";
-    ViewData["Description"] = "Practical guides for running a badminton club night: player rotation and queue management, fair court time, game variety, ratings, league team selection and handicap competitions.";
-    ViewData["OgTitle"] = "Guides for running a badminton club";
+    ViewData["Title"] = "Guides for running a badminton club, and playing in one";
+    ViewData["Description"] = "Practical guides for badminton clubs: running the session, keeping court time fair, ratings and team selection, competitions and leagues, and playing better doubles.";
+    ViewData["OgTitle"] = "Guides for running a badminton club, and playing in one";
 
     // Guide cards - order is deliberate: the broad pillar first, then rotation, then the rest.
-    var guides = new (string Url, string Eyebrow, string Title, string Blurb)[]
+    var guides = new (string Group, string Url, string Eyebrow, string Title, string Blurb)[]
     {
-        ("/guides/how-to-run-a-badminton-club-night", "Checklist", "Running a badminton club night: the complete organiser's checklist", "The full checklist, from booking the hall to locking up: what to sort beforehand, how to run a fair and full session, and what to tidy up after."),
-        ("/guides/rolling-out-epegboard-to-your-club", "Adoption", "How to roll out ePegboard to your club", "The before / on-the-night / after playbook one club used to switch over and get more than twenty players onto their own accounts in two sessions."),
-        ("/guides/badminton-club-night-rotation", "Club nights", "How to run fair player rotation on a club night", "How clubs manage who plays next - the pegboard queue, an organiser making games, or software - and how to keep court time fair as your numbers grow."),
-        ("/guides/managing-club-night-rotation", "Comparison", "Pegboard, organiser or app: how to manage club-night rotation", "The real ways badminton clubs manage who plays next - pegboard queue, organiser-made games, players sorting themselves, or an app - compared, and how to pick one."),
-        ("/guides/fair-court-time-busy-club-night", "Fairness", "How to give everyone fair court time on a busy night", "Uneven court time is the number-one club-night complaint. What fair court time really means, why it slips, and how to keep everyone's share even."),
-        ("/guides/game-variety-stop-same-players", "Variety", "Stop the same four playing together every week", "Why the same players always pair up, why it quietly pushes newcomers away, and how to spread partners and opponents around."),
-        ("/guides/badminton-club-rating-systems", "Ratings", "How club rating systems work, and why they beat A/B/C grades", "A plain-English guide to how player ratings work, how they differ from A/B/C grades, and why they make for fairer games, handicaps and teams."),
-        ("/guides/picking-league-teams-club-data", "League", "Picking balanced league teams from your club-night data", "How to move from selecting teams on gut feel to picking them on real evidence: which pairings work, and how to balance across divisions."),
-        ("/guides/how-to-run-handicap-doubles-tournament", "Competitions", "How to run a handicap doubles tournament", "A step-by-step guide to running a tournament where players of every standard can compete: formats, handicaps, scoring, and doing it without spreadsheets."),
-        ("/guides/best-badminton-club-night-software", "Buyer's guide", "Best badminton club-night software: what to look for", "A practical buyer's guide: the features that actually matter, what to check before you commit, and how to tell a real fit from a feature list."),
-        ("/guides/paper-pegboard-to-app", "Modernising", "From paper pegboard to app: modernising club sessions", "What the traditional pegboard does well, where it struggles, what an app adds, and how to move across without losing your club's history."),
-        ("/guides/mixed-ability-badminton-club-night", "Mixed ability", "Keeping beginners and advanced players both happy", "How to give everyone balanced, competitive games across a wide ability spread, without sorting players onto level-based courts."),
-        ("/guides/how-to-run-a-badminton-round-robin", "Round robin", "How to run a badminton round robin", "Everyone plays everyone, fairly: drawing the fixture, handling odd numbers and sit-outs, and sustaining that fairness week to week."),
-        ("/guides/how-to-start-a-badminton-club", "Getting started", "How to start a badminton club", "The practical operator's guide: venue, players, kit and fees, your first sessions, and running the night fairly from day one."),
-        ("/guides/badminton-club-night-formats-compared", "Comparison", "Club night formats compared: winner-stays-on vs round-robin vs fair rotation", "An honest comparison of the three main formats, when to use each, and where automated fair rotation beats winner-stays-on."),
-        ("/guides/how-to-run-a-local-badminton-league", "Leagues", "How to run a local inter-club badminton league", "The league secretary's how-to: divisions, fixtures, results and promotion and relegation, plus using play-based data to seed divisions and pick teams.")
+        ("night", "/guides/how-to-run-a-badminton-club-night", "Checklist", "Running a badminton club night: the complete organiser's checklist", "The full checklist, from booking the hall to locking up: what to sort beforehand, how to run a fair and full session, and what to tidy up after."),
+        ("night", "/guides/rolling-out-epegboard-to-your-club", "Adoption", "How to roll out ePegboard to your club", "The before / on-the-night / after playbook one club used to switch over and get more than twenty players onto their own accounts in two sessions."),
+        ("night", "/guides/badminton-club-night-rotation", "Club nights", "How to run fair player rotation on a club night", "How clubs manage who plays next - the pegboard queue, an organiser making games, or software - and how to keep court time fair as your numbers grow."),
+        ("night", "/guides/managing-club-night-rotation", "Comparison", "Pegboard, organiser or app: how to manage club-night rotation", "The real ways badminton clubs manage who plays next - pegboard queue, organiser-made games, players sorting themselves, or an app - compared, and how to pick one."),
+        ("night", "/guides/fair-court-time-busy-club-night", "Fairness", "How to give everyone fair court time on a busy night", "Uneven court time is the number-one club-night complaint. What fair court time really means, why it slips, and how to keep everyone's share even."),
+        ("night", "/guides/game-variety-stop-same-players", "Variety", "Stop the same four playing together every week", "Why the same players always pair up, why it quietly pushes newcomers away, and how to spread partners and opponents around."),
+        ("compete", "/guides/badminton-club-rating-systems", "Ratings", "How club rating systems work, and why they beat A/B/C grades", "A plain-English guide to how player ratings work, how they differ from A/B/C grades, and why they make for fairer games, handicaps and teams."),
+        ("compete", "/guides/picking-league-teams-club-data", "League", "Picking balanced league teams from your club-night data", "How to move from selecting teams on gut feel to picking them on real evidence: which pairings work, and how to balance across divisions."),
+        ("compete", "/guides/how-to-run-handicap-doubles-tournament", "Competitions", "How to run a handicap doubles tournament", "A step-by-step guide to running a tournament where players of every standard can compete: formats, handicaps, scoring, and doing it without spreadsheets."),
+        ("night", "/guides/best-badminton-club-night-software", "Buyer's guide", "Best badminton club-night software: what to look for", "A practical buyer's guide: the features that actually matter, what to check before you commit, and how to tell a real fit from a feature list."),
+        ("night", "/guides/paper-pegboard-to-app", "Modernising", "From paper pegboard to app: modernising club sessions", "What the traditional pegboard does well, where it struggles, what an app adds, and how to move across without losing your club's history."),
+        ("night", "/guides/mixed-ability-badminton-club-night", "Mixed ability", "Keeping beginners and advanced players both happy", "How to give everyone balanced, competitive games across a wide ability spread, without sorting players onto level-based courts."),
+        ("compete", "/guides/how-to-run-a-badminton-round-robin", "Round robin", "How to run a badminton round robin", "Everyone plays everyone, fairly: drawing the fixture, handling odd numbers and sit-outs, and sustaining that fairness week to week."),
+        ("night", "/guides/how-to-start-a-badminton-club", "Getting started", "How to start a badminton club", "The practical operator's guide: venue, players, kit and fees, your first sessions, and running the night fairly from day one."),
+        ("night", "/guides/badminton-club-night-formats-compared", "Comparison", "Club night formats compared: winner-stays-on vs round-robin vs fair rotation", "An honest comparison of the three main formats, when to use each, and where automated fair rotation beats winner-stays-on."),
+        ("compete", "/guides/how-to-run-a-local-badminton-league", "Leagues", "How to run a local inter-club badminton league", "The league secretary's how-to: divisions, fixtures, results and promotion and relegation, plus using play-based data to seed divisions and pick teams."),
+        ("play", "/guides/badminton-doubles-positioning", "Doubles", "Badminton doubles positioning: where to stand, and when to move", "Two shapes, decided by who can hit down next. How to switch between them, which side to take when you are suddenly forced to defend, and why defending is not a straight line.")
+    };
+
+    // Groups are the domains of club life the estate covers. They grow as it does;
+    // a thin group is an honest signal of where we are, not a gap to hide.
+    var groups = new (string Key, string Heading, string Intro)[]
+    {
+        ("night", "Running your club night", "The session itself: who plays next, keeping court time even, and giving a wide range of standards a good game."),
+        ("compete", "Competitions and teams", "Leagues, tournaments and selection, and the ratings that make all three fairer."),
+        ("play", "Playing better", "For the people on court rather than the person running the night. This is where the estate is growing next.")
     };
 }
 
@@ -32,8 +43,8 @@
   <div class="wrap">
     <div class="inner">
       <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Guides</span></div>
-      <h1 style="margin-top:10px">Guides for running a badminton club</h1>
-      <p class="lede">Practical, no-nonsense guides on the things clubs actually wrestle with - fair player rotation, even court time, balanced games, ratings and team selection. Written by the people building ePegboard.</p>
+      <h1 style="margin-top:10px">Guides for running a badminton club, and playing in one</h1>
+      <p class="lede">Practical, no-nonsense guides on the things clubs actually wrestle with, and on the things that decide whether you get a good game when you get there. Written by the people building ePegboard.</p>
     </div>
   </div>
 </section>
@@ -41,19 +52,25 @@
 <!-- GUIDES GRID -->
 <section style="padding-top:44px">
   <div class="wrap">
-    <div class="hub-grid">
-      @foreach (var g in guides)
-      {
-        <a class="feat-card" href="@g.Url">
-          <div class="feat-body">
-            <div class="step-eyebrow">@g.Eyebrow</div>
-            <h4>@g.Title</h4>
-            <p>@g.Blurb</p>
-            <span class="feat-learn">Read the guide <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
-        </a>
-      }
-    </div>
+    @foreach (var grp in groups)
+    {
+      var inGroup = guides.Where(x => x.Group == grp.Key).ToArray();
+      <h2 id="@grp.Key" style="margin:0 0 6px;font-size:1.45rem">@grp.Heading</h2>
+      <p style="color:var(--muted-2);max-width:60ch;margin:0 0 24px">@grp.Intro</p>
+      <div class="hub-grid" style="margin-bottom:54px">
+        @foreach (var g in inGroup)
+        {
+          <a class="feat-card" href="@g.Url">
+            <div class="feat-body">
+              <div class="step-eyebrow">@g.Eyebrow</div>
+              <h4>@g.Title</h4>
+              <p>@g.Blurb</p>
+              <span class="feat-learn">Read the guide <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+        }
+      </div>
+    }
   </div>
 </section>
 
