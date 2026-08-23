@@ -50,8 +50,8 @@
 
   <!-- movement -->
   <g stroke="#0f766e" stroke-width="3" marker-end="url(#move)">
-    <path d="M 486 316 Q 430 250 392 222" fill="none"/>
-    <path d="M 254 362 Q 320 430 356 452" fill="none"/>
+    <path d="M 486 316 Q 428 254 386 232" fill="none"/>
+    <path d="M 254 362 Q 318 424 350 442" fill="none"/>
   </g>
 
   <!-- FINAL: side by side -->

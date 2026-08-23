@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img"
-     aria-label="A badminton court seen from above. The attacking pair stand front and back in a line down the middle of their half. The defending pair stand side by side, one covering each side of their half, ready to take a smash.">
-  <title>Attacking pairs stand front and back; defending pairs stand side by side</title>
+     aria-label="A badminton court seen from above. The attacking pair stand front and back in a line down the middle of their half, one at the net and one at the back. The pair being smashed at stand side by side, but not level: both have slid across towards the side the shuttle is on, and the player furthest from it stands a step further forward.">
+  <title>Attacking pairs stand front and back; defending pairs stand side by side, but not level</title>
 
   <!--
     ePegboard diagram primitive: full doubles court, viewed from above, net vertical at centre.
@@ -61,22 +61,26 @@
   <text x="352" y="608" text-anchor="middle" font-family="system-ui,sans-serif" font-size="25" fill="#1e3a8a" font-weight="600">Attacking: front and back</text>
   <text x="352" y="638" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#475569">Hitting down, so cover the straight reply</text>
 
-  <!-- DEFENDING PAIR: side by side, level -->
+  <!-- the smash, from the REARCOURT player, that forces the defending shape -->
+  <line x1="272" y1="328" x2="852" y2="232" stroke="#b45309" stroke-width="3.5" marker-end="url(#arrow)"/>
+
+  <!-- DEFENDING PAIR: side by side, both slid towards the shuttle,
+       cross-court player further forward. Positions per BWF Coaches' Manual
+       Level 1, Module 8. Deliberately NOT level: see doubles-defence-asymmetric.svg. -->
   <g fill="#b45309">
-    <circle cx="880" cy="215" r="26"/>
-    <circle cx="880" cy="461" r="26"/>
+    <circle cx="900" cy="230" r="26"/>
+    <circle cx="830" cy="430" r="26"/>
   </g>
   <g font-family="system-ui,sans-serif" font-size="19" fill="#ffffff" text-anchor="middle" font-weight="600">
-    <text x="880" y="222">3</text>
-    <text x="880" y="468">4</text>
+    <text x="900" y="237">3</text>
+    <text x="830" y="437">4</text>
   </g>
-  <line x1="880" y1="241" x2="880" y2="435" stroke="#b45309" stroke-width="2" stroke-dasharray="5 5"/>
-  
-  <text x="880" y="608" text-anchor="middle" font-family="system-ui,sans-serif" font-size="25" fill="#92400e" font-weight="600">Defending: side by side</text>
-  <text x="880" y="638" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#475569">Being hit at, so cover the width between you</text>
+  <line x1="894" y1="255" x2="836" y2="405" stroke="#b45309" stroke-width="2" stroke-dasharray="5 5"/>
+  <text x="948" y="212" font-family="system-ui,sans-serif" font-size="19" fill="#475569">on the smash</text>
+  <text x="876" y="470" font-family="system-ui,sans-serif" font-size="19" fill="#475569">further forward</text>
 
-  <!-- the smash that forces the shape -->
-  <line x1="530" y1="322" x2="846" y2="228" stroke="#b45309" stroke-width="3" marker-end="url(#arrow)" opacity="0.75"/>
+  <text x="880" y="608" text-anchor="middle" font-family="system-ui,sans-serif" font-size="25" fill="#92400e" font-weight="600">Defending: side by side</text>
+  <text x="880" y="638" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#475569">Both slide towards the shuttle. They do not stand level.</text>
 
   <text x="1136" y="662" text-anchor="end" font-family="system-ui,sans-serif" font-size="17" fill="#94a3b8">epegboard.com</text>
 </svg>

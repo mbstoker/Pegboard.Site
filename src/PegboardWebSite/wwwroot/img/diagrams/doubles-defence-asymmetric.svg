@@ -51,31 +51,33 @@
   <text x="1092" y="500" text-anchor="end" font-family="system-ui,sans-serif" font-size="19" fill="#64748b">where most club pairs stand:</text>
   <text x="1092" y="524" text-anchor="end" font-family="system-ui,sans-serif" font-size="19" fill="#64748b">level, half the court each</text>
 
-  <!-- shift arrows: both move towards the shuttle -->
-  <g stroke="#0f766e" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#shift)" opacity="0.85">
-    <line x1="878" y1="192" x2="892" y2="152"/>
-    <line x1="872" y1="438" x2="836" y2="402"/>
+  <!-- shift arrows: both move towards the shuttle. Drawn BEFORE the circles would
+       hide their heads, so they stop short of each destination. -->
+  <g stroke="#0f766e" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#shift)" opacity="0.9">
+    <line x1="878" y1="186" x2="892" y2="150"/>
+    <line x1="874" y1="432" x2="838" y2="398"/>
   </g>
 
-  <!-- ACTUAL: both slid towards the shuttle; cross-court player further forward -->
+  <!-- ACTUAL: both slid towards the shuttle; cross-court player further forward.
+       Straight defender sits ON the smash line (y=187 where the smash crosses x=898). -->
   <g fill="#b45309">
-    <circle cx="898" cy="138" r="26"/>
+    <circle cx="898" cy="187" r="26"/>
     <circle cx="822" cy="382" r="26"/>
   </g>
   <g font-family="system-ui,sans-serif" font-size="19" fill="#ffffff" text-anchor="middle" font-weight="600">
-    <text x="898" y="145">3</text>
+    <text x="898" y="194">3</text>
     <text x="822" y="389">4</text>
   </g>
 
-  <text x="944" y="112" font-family="system-ui,sans-serif" font-size="20" fill="#92400e" font-weight="600">straight defender</text>
-  <text x="944" y="136" font-family="system-ui,sans-serif" font-size="19" fill="#475569">wide, near the tramline</text>
+  <text x="944" y="162" font-family="system-ui,sans-serif" font-size="20" fill="#92400e" font-weight="600">straight defender</text>
+  <text x="944" y="186" font-family="system-ui,sans-serif" font-size="19" fill="#475569">in the line of the smash</text>
 
   <text x="868" y="358" font-family="system-ui,sans-serif" font-size="20" fill="#92400e" font-weight="600">cross-court defender</text>
   <text x="868" y="382" font-family="system-ui,sans-serif" font-size="19" fill="#475569">nearer the middle, and</text>
-  <text x="868" y="404" font-family="system-ui,sans-serif" font-size="19" fill="#475569">a step further forward</text>
+  <text x="868" y="404" font-family="system-ui,sans-serif" font-size="19" fill="#475569">about a metre further forward</text>
 
   <text x="600" y="622" text-anchor="middle" font-family="system-ui,sans-serif" font-size="25" fill="#0f766e" font-weight="600">Both defenders slide towards the shuttle. They do not stay level.</text>
-  <text x="600" y="650" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#475569">The cross-court player has longer to react, so she can afford to stand further up</text>
+  <text x="600" y="650" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#475569">The cross-court player has longer to react, so they can afford to stand further up</text>
 
   <text x="1136" y="672" text-anchor="end" font-family="system-ui,sans-serif" font-size="17" fill="#94a3b8">epegboard.com</text>
 </svg>
