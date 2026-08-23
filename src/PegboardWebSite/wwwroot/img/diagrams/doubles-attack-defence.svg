@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img"
+     aria-label="A badminton court seen from above. The attacking pair stand front and back in a line down the middle of their half. The defending pair stand side by side, one covering each side of their half, ready to take a smash.">
+  <title>Attacking pairs stand front and back; defending pairs stand side by side</title>
+
+  <!--
+    ePegboard diagram primitive: full doubles court, viewed from above, net vertical at centre.
+    Scale: 1 metre = 80 units. Court 13.4 m x 6.1 m = 1072 x 488 units.
+    Dimensions per BWF Laws of Badminton, Law 1 (Court and Court Equipment):
+      length 13.40 m - doubles width 6.10 m - singles width 5.18 m (0.46 m side tramline)
+      short service line 1.98 m from net - doubles long service line 0.76 m inside back boundary
+    REUSE THIS BLOCK. Do not redraw a court by eye; the proportions are load-bearing.
+  -->
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="675" fill="#ffffff"/>
+
+  <!-- court surface -->
+  <rect x="64" y="94" width="1072" height="488" fill="#f1f5f9"/>
+
+  <g stroke="#64748b" stroke-width="3" fill="none">
+    <!-- outer boundary (doubles) -->
+    <rect x="64" y="94" width="1072" height="488"/>
+    <!-- singles sidelines, 0.46 m in -->
+    <line x1="64" y1="130.8" x2="1136" y2="130.8"/>
+    <line x1="64" y1="545.2" x2="1136" y2="545.2"/>
+    <!-- short service lines, 1.98 m from net -->
+    <line x1="441.6" y1="94" x2="441.6" y2="582"/>
+    <line x1="758.4" y1="94" x2="758.4" y2="582"/>
+    <!-- doubles long service lines, 0.76 m in from back -->
+    <line x1="124.8" y1="94" x2="124.8" y2="582"/>
+    <line x1="1075.2" y1="94" x2="1075.2" y2="582"/>
+    <!-- centre lines, service courts only -->
+    <line x1="64" y1="338" x2="441.6" y2="338"/>
+    <line x1="758.4" y1="338" x2="1136" y2="338"/>
+  </g>
+
+  <!-- net -->
+  <line x1="600" y1="78" x2="600" y2="598" stroke="#0f172a" stroke-width="5"/>
+  <line x1="600" y1="78" x2="600" y2="598" stroke="#ffffff" stroke-width="5" stroke-dasharray="6 6"/>
+  <text x="600" y="64" text-anchor="middle" font-family="system-ui,sans-serif" font-size="21" fill="#0f172a">Net</text>
+
+  <!-- ATTACKING PAIR: front and back, stacked down the centre -->
+  <g fill="#1d4ed8">
+    <circle cx="500" cy="338" r="26"/>
+    <circle cx="240" cy="338" r="26"/>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="19" fill="#ffffff" text-anchor="middle" font-weight="600">
+    <text x="500" y="345">1</text>
+    <text x="240" y="345">2</text>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="20" fill="#1e3a8a" text-anchor="middle">
+    <text x="500" y="296">front</text>
+    <text x="240" y="296">back</text>
+  </g>
+  <line x1="266" y1="338" x2="474" y2="338" stroke="#1d4ed8" stroke-width="2" stroke-dasharray="5 5"/>
+  <text x="352" y="608" text-anchor="middle" font-family="system-ui,sans-serif" font-size="25" fill="#1e3a8a" font-weight="600">Attacking: front and back</text>
+  <text x="352" y="638" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#475569">Hitting down, so cover the straight reply</text>
+
+  <!-- DEFENDING PAIR: side by side, level -->
+  <g fill="#b45309">
+    <circle cx="880" cy="215" r="26"/>
+    <circle cx="880" cy="461" r="26"/>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="19" fill="#ffffff" text-anchor="middle" font-weight="600">
+    <text x="880" y="222">3</text>
+    <text x="880" y="468">4</text>
+  </g>
+  <line x1="880" y1="241" x2="880" y2="435" stroke="#b45309" stroke-width="2" stroke-dasharray="5 5"/>
+  
+  <text x="880" y="608" text-anchor="middle" font-family="system-ui,sans-serif" font-size="25" fill="#92400e" font-weight="600">Defending: side by side</text>
+  <text x="880" y="638" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#475569">Being hit at, so cover the width between you</text>
+
+  <!-- the smash that forces the shape -->
+  <line x1="530" y1="322" x2="846" y2="228" stroke="#b45309" stroke-width="3" marker-end="url(#arrow)" opacity="0.75"/>
+
+  <text x="1136" y="662" text-anchor="end" font-family="system-ui,sans-serif" font-size="17" fill="#94a3b8">epegboard.com</text>
+</svg>

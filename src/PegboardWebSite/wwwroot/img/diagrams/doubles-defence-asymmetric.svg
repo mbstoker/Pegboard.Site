@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img"
+     aria-label="A badminton court from above. The shuttle has been lifted to one side and is being smashed straight down that side. The defending pair have both slid across towards the shuttle rather than staying level: the defender on the shuttle's side stands wide and deep near the tramline, and the cross-court defender stands nearer the centre line and a step further forward. Faded circles show the level, evenly-split positions most club pairs take instead.">
+  <title>Defending pairs slide across together, and the cross-court player stands further forward</title>
+
+  <!--
+    Court block reused from doubles-attack-defence.svg. Scale 1 m = 80 units.
+    BWF Laws of Badminton, Law 1: 13.40 m x 6.10 m, singles sideline 0.46 m in,
+    short service line 1.98 m from net, doubles long service line 0.76 m in.
+    Positions per BWF Coaches' Manual Level 1, Module 8 (Tactics).
+  -->
+
+  <defs>
+    <marker id="smash" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+    <marker id="shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0f766e"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="675" fill="#ffffff"/>
+  <rect x="64" y="94" width="1072" height="488" fill="#f1f5f9"/>
+
+  <g stroke="#64748b" stroke-width="3" fill="none">
+    <rect x="64" y="94" width="1072" height="488"/>
+    <line x1="64" y1="130.8" x2="1136" y2="130.8"/>
+    <line x1="64" y1="545.2" x2="1136" y2="545.2"/>
+    <line x1="441.6" y1="94" x2="441.6" y2="582"/>
+    <line x1="758.4" y1="94" x2="758.4" y2="582"/>
+    <line x1="124.8" y1="94" x2="124.8" y2="582"/>
+    <line x1="1075.2" y1="94" x2="1075.2" y2="582"/>
+    <line x1="64" y1="338" x2="441.6" y2="338"/>
+    <line x1="758.4" y1="338" x2="1136" y2="338"/>
+  </g>
+
+  <line x1="600" y1="78" x2="600" y2="598" stroke="#0f172a" stroke-width="5"/>
+  <line x1="600" y1="78" x2="600" y2="598" stroke="#ffffff" stroke-width="5" stroke-dasharray="6 6"/>
+  <text x="600" y="64" text-anchor="middle" font-family="system-ui,sans-serif" font-size="21" fill="#0f172a">Net</text>
+
+  <!-- attacker smashing from the rearcourt, on the shuttle's side -->
+  <circle cx="250" cy="200" r="24" fill="#1d4ed8"/>
+  <text x="250" y="253" text-anchor="middle" font-family="system-ui,sans-serif" font-size="19" fill="#1e3a8a">smashing</text>
+  <line x1="284" y1="203" x2="852" y2="188" stroke="#b45309" stroke-width="3.5" marker-end="url(#smash)"/>
+
+  <!-- GHOSTS: the level, evenly-split positions most pairs take -->
+  <g fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="6 5">
+    <circle cx="880" cy="215" r="26"/>
+    <circle cx="880" cy="461" r="26"/>
+    <line x1="880" y1="241" x2="880" y2="435"/>
+  </g>
+  <text x="1092" y="500" text-anchor="end" font-family="system-ui,sans-serif" font-size="19" fill="#64748b">where most club pairs stand:</text>
+  <text x="1092" y="524" text-anchor="end" font-family="system-ui,sans-serif" font-size="19" fill="#64748b">level, half the court each</text>
+
+  <!-- shift arrows: both move towards the shuttle -->
+  <g stroke="#0f766e" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#shift)" opacity="0.85">
+    <line x1="878" y1="192" x2="892" y2="152"/>
+    <line x1="872" y1="438" x2="836" y2="402"/>
+  </g>
+
+  <!-- ACTUAL: both slid towards the shuttle; cross-court player further forward -->
+  <g fill="#b45309">
+    <circle cx="898" cy="138" r="26"/>
+    <circle cx="822" cy="382" r="26"/>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="19" fill="#ffffff" text-anchor="middle" font-weight="600">
+    <text x="898" y="145">3</text>
+    <text x="822" y="389">4</text>
+  </g>
+
+  <text x="944" y="112" font-family="system-ui,sans-serif" font-size="20" fill="#92400e" font-weight="600">straight defender</text>
+  <text x="944" y="136" font-family="system-ui,sans-serif" font-size="19" fill="#475569">wide, near the tramline</text>
+
+  <text x="868" y="358" font-family="system-ui,sans-serif" font-size="20" fill="#92400e" font-weight="600">cross-court defender</text>
+  <text x="868" y="382" font-family="system-ui,sans-serif" font-size="19" fill="#475569">nearer the middle, and</text>
+  <text x="868" y="404" font-family="system-ui,sans-serif" font-size="19" fill="#475569">a step further forward</text>
+
+  <text x="600" y="622" text-anchor="middle" font-family="system-ui,sans-serif" font-size="25" fill="#0f766e" font-weight="600">Both defenders slide towards the shuttle. They do not stay level.</text>
+  <text x="600" y="650" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#475569">The cross-court player has longer to react, so she can afford to stand further up</text>
+
+  <text x="1136" y="672" text-anchor="end" font-family="system-ui,sans-serif" font-size="17" fill="#94a3b8">epegboard.com</text>
+</svg>
