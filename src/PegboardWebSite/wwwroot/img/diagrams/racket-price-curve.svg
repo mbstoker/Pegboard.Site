@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img"
+     aria-label="Two charts of 234 adult badminton rackets from two UK retailers by price band. The left chart counts rackets matching the full club specification of 4U or 5U weight, even balance, medium or flexible shaft and strings included: one under thirty pounds, five at thirty to forty-nine, seven at fifty to seventy-nine, one at eighty to a hundred and nineteen, two at a hundred and twenty to a hundred and seventy-nine, and none above a hundred and eighty. The right chart shows the share of rackets sold as a frame only with no strings, rising steadily from zero per cent below sixty pounds to nineteen per cent at eighty to ninety-nine, sixty per cent at a hundred and twenty to a hundred and thirty-nine, and one hundred per cent above a hundred and eighty.">
+  <title>The club specification is concentrated under eighty pounds, and the strings come out of the box as the price climbs</title>
+
+  <!--
+    Data: Marketing/GEO/racket-price-survey-2026-08-23/ - 234 adult rackets,
+    Badminton HQ and Central Sports public product feeds, collected 2026-08-23.
+    Retailer marketing tags, not measured specifications. Nothing was weighed or tested.
+    Re-run analyze.mjs and analyze2.mjs in that folder to reproduce.
+  -->
+
+  <rect width="1200" height="675" fill="#ffffff"/>
+
+  <text x="600" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="23" fill="#0f172a" font-weight="600">234 adult rackets, two UK retailers, 23 August 2026</text>
+
+  <!-- ============ LEFT: club-spec matches ============ -->
+  <text x="70" y="94" font-family="system-ui,sans-serif" font-size="20" fill="#0f172a" font-weight="600">Rackets matching the whole club specification</text>
+  <text x="70" y="118" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">4U or 5U · even balance · medium or flexible shaft · strings included</text>
+
+  <!-- axis -->
+  <line x1="70" y1="470" x2="560" y2="470" stroke="#0f172a" stroke-width="2"/>
+  <g stroke="#e2e8f0" stroke-width="1">
+    <line x1="70" y1="410" x2="560" y2="410"/><line x1="70" y1="350" x2="560" y2="350"/>
+    <line x1="70" y1="290" x2="560" y2="290"/><line x1="70" y1="230" x2="560" y2="230"/>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="end">
+    <text x="62" y="475">0</text><text x="62" y="415">2</text><text x="62" y="355">4</text>
+    <text x="62" y="295">6</text><text x="62" y="235">8</text>
+  </g>
+
+  <!-- bars: 1, 5, 7, 1, 2, 0  (30 units per racket) -->
+  <g>
+    <rect x="86"  y="440" width="62" height="30"  fill="#94a3b8"/>
+    <rect x="164" y="320" width="62" height="150" fill="#0f766e"/>
+    <rect x="242" y="260" width="62" height="210" fill="#0f766e"/>
+    <rect x="320" y="440" width="62" height="30"  fill="#b45309"/>
+    <rect x="398" y="410" width="62" height="60"  fill="#b45309"/>
+    <rect x="476" y="466" width="62" height="4"   fill="#b45309"/>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="19" fill="#0f172a" text-anchor="middle" font-weight="600">
+    <text x="117" y="430">1</text><text x="195" y="310">5</text><text x="273" y="250">7</text>
+    <text x="351" y="430">1</text><text x="429" y="400">2</text><text x="507" y="456">0</text>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#64748b" text-anchor="middle">
+    <text x="117" y="492">&lt;£30</text><text x="195" y="492">£30-49</text><text x="273" y="492">£50-79</text>
+    <text x="351" y="492">£80-119</text><text x="429" y="492">£120-179</text><text x="507" y="492">£180+</text>
+  </g>
+
+  <rect x="164" y="196" width="140" height="26" fill="#0f766e" opacity="0.12"/>
+  <text x="234" y="214" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#0f766e" font-weight="600">13 of 16 are here</text>
+
+  <!-- ============ RIGHT: frame-only share ============ -->
+  <text x="650" y="94" font-family="system-ui,sans-serif" font-size="20" fill="#0f172a" font-weight="600">Sold as a frame only, with no strings</text>
+  <text x="650" y="118" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">A restring is a further £12 to £25</text>
+
+  <line x1="650" y1="470" x2="1140" y2="470" stroke="#0f172a" stroke-width="2"/>
+  <g stroke="#e2e8f0" stroke-width="1">
+    <line x1="650" y1="410" x2="1140" y2="410"/><line x1="650" y1="350" x2="1140" y2="350"/>
+    <line x1="650" y1="290" x2="1140" y2="290"/><line x1="650" y1="230" x2="1140" y2="230"/>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="end">
+    <text x="642" y="475">0%</text><text x="642" y="415">25</text><text x="642" y="355">50</text>
+    <text x="642" y="295">75</text><text x="642" y="235">100</text>
+  </g>
+
+  <!-- line: 0, 6, 19, 39, 60, 81, 95, 100 across 8 x £20 steps; 2.4 units per % -->
+  <polyline points="682,470 740,455 798,424 856,376 914,326 972,275 1030,242 1088,230"
+            fill="none" stroke="#b45309" stroke-width="3.5"/>
+  <g fill="#b45309">
+    <circle cx="682" cy="470" r="6"/><circle cx="740" cy="455" r="6"/><circle cx="798" cy="424" r="6"/>
+    <circle cx="856" cy="376" r="6"/><circle cx="914" cy="326" r="6"/><circle cx="972" cy="275" r="6"/>
+    <circle cx="1030" cy="242" r="6"/><circle cx="1088" cy="230" r="6"/>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#64748b" text-anchor="middle">
+    <text x="682" y="492">&lt;60</text><text x="740" y="492">60-79</text><text x="798" y="492">80-99</text>
+    <text x="856" y="492">100-119</text><text x="914" y="492">120-139</text><text x="972" y="492">140-159</text>
+    <text x="1030" y="492">160-179</text><text x="1088" y="492">180+</text>
+  </g>
+  <text x="895" y="512" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">price band, £</text>
+
+  <!-- halfway crossover -->
+  <line x1="650" y1="350" x2="1140" y2="350" stroke="#0f172a" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.5"/>
+  <text x="1136" y="342" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#64748b">half of rackets</text>
+  <line x1="900" y1="326" x2="900" y2="470" stroke="#b45309" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.55"/>
+  <text x="906" y="452" font-family="system-ui,sans-serif" font-size="16" fill="#92400e" font-weight="600">crosses at £120-140</text>
+
+  <!-- footer -->
+  <text x="70" y="560" font-family="system-ui,sans-serif" font-size="19" fill="#0f172a" font-weight="600">The club specification is concentrated under £80. Above it the strings come out of the box.</text>
+  <text x="70" y="590" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">Retailer product tags describing how each racket is marketed, not measurements we took. One-day snapshot of two catalogues.</text>
+  <text x="70" y="614" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">We did not weigh, string or hit any racket.</text>
+
+  <text x="1140" y="656" text-anchor="end" font-family="system-ui,sans-serif" font-size="17" fill="#94a3b8">epegboard.com</text>
+</svg>

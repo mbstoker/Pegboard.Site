@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img"
+     aria-label="A badminton racket seen from above with its parts labelled: grip, shaft, throat and stringed head. A scale along the bottom runs from zero at the butt of the handle to 675 millimetres at the tip. The balance point is a single measured distance along that scale, and the head-light, even and head-heavy bands sit close together between about 275 and 315 millimetres, roughly four centimetres apart in total.">
+  <title>Balance is one measured distance from the butt, and the whole range spans about four centimetres</title>
+
+  <!--
+    ePegboard diagram primitive: badminton racket, side-on, butt at left.
+    Scale: 1 mm = 1.6 units. Overall length drawn at 675 mm = 1080 units.
+    BWF Laws of Badminton, Law 4: frame max 680 mm long and 230 mm wide;
+    stringed area max 280 mm long and 220 mm wide. Head here is drawn at the
+    legal maximum, which is what nearly every adult racket uses.
+    REUSE THIS BLOCK for any racket diagram. Do not redraw by eye.
+  -->
+
+  <defs>
+    <marker id="tick" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0f766e"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="675" fill="#ffffff"/>
+
+  <!-- HEAD: stringed area, 280 x 220 mm = 448 x 352 units -->
+  <ellipse cx="916" cy="300" rx="224" ry="176" fill="#f1f5f9" stroke="#64748b" stroke-width="4"/>
+  <g stroke="#cbd5e1" stroke-width="1.5">
+    <line x1="760" y1="180" x2="760" y2="420"/><line x1="808" y1="150" x2="808" y2="450"/>
+    <line x1="856" y1="134" x2="856" y2="466"/><line x1="904" y1="126" x2="904" y2="474"/>
+    <line x1="952" y1="126" x2="952" y2="474"/><line x1="1000" y1="134" x2="1000" y2="466"/>
+    <line x1="1048" y1="150" x2="1048" y2="450"/><line x1="1096" y1="182" x2="1096" y2="418"/>
+    <line x1="704" y1="230" x2="1128" y2="230"/><line x1="700" y1="265" x2="1132" y2="265"/>
+    <line x1="698" y1="300" x2="1134" y2="300"/><line x1="700" y1="335" x2="1132" y2="335"/>
+    <line x1="704" y1="370" x2="1128" y2="370"/>
+  </g>
+
+  <!-- THROAT + SHAFT -->
+  <path d="M 692 276 L 470 292 L 470 308 L 692 324 Z" fill="#e2e8f0" stroke="#64748b" stroke-width="3"/>
+  <rect x="380" y="292" width="92" height="16" fill="#e2e8f0" stroke="#64748b" stroke-width="3"/>
+
+  <!-- GRIP: 200 mm = 320 units -->
+  <rect x="60" y="278" width="320" height="44" rx="12" fill="#334155" stroke="#0f172a" stroke-width="3"/>
+  <g stroke="#64748b" stroke-width="1.5" opacity="0.6">
+    <line x1="100" y1="278" x2="80" y2="322"/><line x1="140" y1="278" x2="120" y2="322"/>
+    <line x1="180" y1="278" x2="160" y2="322"/><line x1="220" y1="278" x2="200" y2="322"/>
+    <line x1="260" y1="278" x2="240" y2="322"/><line x1="300" y1="278" x2="280" y2="322"/>
+    <line x1="340" y1="278" x2="320" y2="322"/>
+  </g>
+
+  <!-- part labels -->
+  <g font-family="system-ui,sans-serif" font-size="20" fill="#475569" text-anchor="middle">
+    <text x="220" y="258">grip</text>
+    <text x="426" y="258">shaft</text>
+    <text x="580" y="258">throat</text>
+    <text x="916" y="104">stringed head</text>
+  </g>
+  <g stroke="#94a3b8" stroke-width="1.5">
+    <line x1="220" y1="266" x2="220" y2="276"/>
+    <line x1="426" y1="266" x2="426" y2="288"/>
+    <line x1="580" y1="266" x2="580" y2="292"/>
+    <line x1="916" y1="112" x2="916" y2="122"/>
+  </g>
+
+  <!-- measuring scale along the bottom -->
+  <line x1="60" y1="530" x2="1140" y2="530" stroke="#0f172a" stroke-width="2.5"/>
+  <g stroke="#0f172a" stroke-width="2">
+    <line x1="60" y1="522" x2="60" y2="544"/>
+    <line x1="220" y1="524" x2="220" y2="538"/>
+    <line x1="380" y1="524" x2="380" y2="538"/>
+    <line x1="540" y1="524" x2="540" y2="538"/>
+    <line x1="700" y1="524" x2="700" y2="538"/>
+    <line x1="860" y1="524" x2="860" y2="538"/>
+    <line x1="1020" y1="524" x2="1020" y2="538"/>
+    <line x1="1140" y1="522" x2="1140" y2="544"/>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="16" fill="#64748b" text-anchor="middle">
+    <text x="60" y="566">0</text>
+    <text x="220" y="566">100</text>
+    <text x="380" y="566">200</text>
+    <text x="540" y="566">300</text>
+    <text x="700" y="566">400</text>
+    <text x="860" y="566">500</text>
+    <text x="1020" y="566">600</text>
+    <text x="1140" y="566">675 mm</text>
+  </g>
+  <text x="60" y="592" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8">measured from the butt of the handle</text>
+
+  <!-- the balance band: 275 to 315 mm -->
+  <rect x="500" y="498" width="64" height="64" fill="#0f766e" opacity="0.13"/>
+  <line x1="500" y1="498" x2="500" y2="562" stroke="#0f766e" stroke-width="2" stroke-dasharray="4 4"/>
+  <line x1="564" y1="498" x2="564" y2="562" stroke="#0f766e" stroke-width="2" stroke-dasharray="4 4"/>
+
+  <!-- callout: the whole commercial range -->
+  <line x1="532" y1="330" x2="532" y2="498" stroke="#0f766e" stroke-width="2.5"/>
+  <circle cx="532" cy="300" r="13" fill="#0f766e"/>
+  <text x="556" y="306" font-family="system-ui,sans-serif" font-size="21" fill="#0f766e" font-weight="600">the balance point</text>
+
+  <g font-family="system-ui,sans-serif" font-size="19" fill="#475569">
+    <text x="150" y="638">head-light</text>
+    <text x="150" y="660" font-size="16" fill="#94a3b8">under ~275 mm</text>
+    <text x="500" y="638" text-anchor="middle" fill="#0f766e" font-weight="600">even</text>
+    <text x="532" y="660" text-anchor="middle" font-size="16" fill="#94a3b8">~275-315 mm</text>
+    <text x="980" y="638">head-heavy</text>
+    <text x="980" y="660" font-size="16" fill="#94a3b8">over ~315 mm</text>
+  </g>
+  <line x1="120" y1="620" x2="470" y2="620" stroke="#cbd5e1" stroke-width="2"/>
+  <line x1="594" y1="620" x2="1000" y2="620" stroke="#cbd5e1" stroke-width="2"/>
+
+  <text x="600" y="34" text-anchor="middle" font-family="system-ui,sans-serif" font-size="23" fill="#0f172a" font-weight="600">Head-light to head-heavy is about four centimetres of balance point</text>
+
+  <text x="1140" y="656" text-anchor="end" font-family="system-ui,sans-serif" font-size="17" fill="#94a3b8">epegboard.com</text>
+</svg>
