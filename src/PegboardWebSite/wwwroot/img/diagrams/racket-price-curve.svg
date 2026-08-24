@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img"
-     aria-label="Two charts of 228 adult badminton rackets from Badminton HQ's catalogue by price band. The left chart counts rackets matching the full club specification of 4U or 5U weight, even balance, medium or flexible shaft and strings included: one under thirty pounds, five at thirty to forty-nine, seven at fifty to seventy-nine, one at eighty to a hundred and nineteen, two at a hundred and twenty to a hundred and seventy-nine, and none at all above a hundred and eighty. Thirteen of the sixteen matches cost under eighty pounds. The right chart shows the share of rackets sold as a frame only with no strings, rising steadily from zero per cent below sixty pounds to nineteen per cent at eighty to ninety-nine, sixty per cent at a hundred and twenty to a hundred and thirty-nine, and one hundred per cent for all twenty-two rackets above a hundred and eighty.">
+     aria-label="Two charts of 228 adult badminton rackets from Badminton HQ's catalogue by price band. The left chart counts rackets matching the full club specification of 4U or 5U weight, even balance, medium or flexible shaft and strings included: one under thirty pounds, five at thirty to forty-nine, seven at fifty to seventy-nine, one at eighty to a hundred and nineteen, two at a hundred and twenty to a hundred and seventy-nine, and none at all above a hundred and eighty. Thirteen of the sixteen matches cost under eighty pounds. The right chart shows the share of rackets sold as a frame only with no strings, rising steadily from one per cent below sixty pounds to nineteen per cent at eighty to ninety-nine, sixty per cent at a hundred and twenty to a hundred and thirty-nine, and one hundred per cent for all twenty-two rackets above a hundred and eighty.">
   <title>The club specification is concentrated under eighty pounds, and the strings come out of the box as the price climbs</title>
 
   <!--
@@ -53,7 +53,7 @@
 
   <!-- ============ RIGHT: frame-only share ============ -->
   <text x="650" y="94" font-family="system-ui,sans-serif" font-size="20" fill="#0f172a" font-weight="600">Sold as a frame only, with no strings</text>
-  <text x="650" y="118" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">A restring is a further £18 to £30</text>
+  <text x="650" y="118" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">A restring is a further £15 to £30</text>
 
   <line x1="650" y1="470" x2="1140" y2="470" stroke="#0f172a" stroke-width="2"/>
   <g stroke="#e2e8f0" stroke-width="1">
@@ -65,14 +65,14 @@
     <text x="642" y="295">75</text><text x="642" y="235">100</text>
   </g>
 
-  <!-- line: 0, 6, 19, 39, 60, 81, 95, 100 across 8 x £20 steps; 2.4 units per %, baseline y=470.
+  <!-- line: 1, 6, 19, 39, 60, 81, 95, 100 across 8 x £20 steps; 2.4 units per %, baseline y=470.
        Denominator is rackets that STATE a supply state (220 of 228), per table.mjs - counting an
        unstated racket as strung would assert something the listing does not say.
        The final point covers all of £180+ (22 rackets), and is 100% in every £20 step within it. -->
-  <polyline points="682,470 740,455.6 798,424.4 856,376.4 914,326 972,275.6 1030,242 1088,230"
+  <polyline points="682,467.6 740,455.6 798,424.4 856,376.4 914,326 972,275.6 1030,242 1088,230"
             fill="none" stroke="#b45309" stroke-width="3.5"/>
   <g fill="#b45309">
-    <circle cx="682" cy="470" r="6"/><circle cx="740" cy="455.6" r="6"/><circle cx="798" cy="424.4" r="6"/>
+    <circle cx="682" cy="467.6" r="6"/><circle cx="740" cy="455.6" r="6"/><circle cx="798" cy="424.4" r="6"/>
     <circle cx="856" cy="376.4" r="6"/><circle cx="914" cy="326" r="6"/><circle cx="972" cy="275.6" r="6"/>
     <circle cx="1030" cy="242" r="6"/><circle cx="1088" cy="230" r="6"/>
   </g>
@@ -87,7 +87,7 @@
   <line x1="650" y1="350" x2="1140" y2="350" stroke="#0f172a" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.5"/>
   <text x="1136" y="342" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#64748b">half of rackets</text>
   <line x1="886" y1="326" x2="886" y2="470" stroke="#b45309" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.55"/>
-  <text x="892" y="452" font-family="system-ui,sans-serif" font-size="16" fill="#92400e" font-weight="600">crosses at £120-140</text>
+  <text x="892" y="452" font-family="system-ui,sans-serif" font-size="16" fill="#92400e" font-weight="600">crosses at £120-139</text>
 
   <!-- footer -->
   <text x="70" y="560" font-family="system-ui,sans-serif" font-size="19" fill="#0f172a" font-weight="600">The club specification is concentrated under £80. Above it the strings come out of the box.</text>

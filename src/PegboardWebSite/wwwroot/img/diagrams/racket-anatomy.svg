@@ -1,17 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img"
-     aria-label="A badminton racket shown face-on with its parts labelled: grip, shaft, throat and stringed head. A scale along the bottom runs from zero at the butt of the handle to 675 millimetres at the tip. Balance is a single measured distance along that scale. A racket balancing under 285 millimetres is called head-light, 285 to 295 millimetres is even, and over 295 millimetres is head-heavy, so the entire distinction is one centimetre of the racket's length.">
-  <title>Balance is one measured distance from the butt, and the whole distinction is about one centimetre</title>
+     aria-label="A badminton racket shown face-on with its parts labelled: grip, shaft, throat and stringed head. A scale along the bottom runs from zero at the butt of the handle to 675 millimetres at the tip. Balance is a single measured distance along that scale. By the most common retailer convention a racket balancing under 285 millimetres is head-light, 285 to 295 is even, and over 295 is head-heavy, so the entire distinction is one centimetre of a 675 millimetre racket. The bands are convention rather than standard and sellers disagree about where they sit.">
+  <title>Balance is one measured distance from the butt, and head-light to head-heavy spans about a centimetre of it</title>
 
   <!--
     ePegboard diagram primitive: badminton racket, face-on, butt at left.
     Scale: 1 mm = 1.6 units. Overall length drawn at 675 mm = 1080 units.
     BWF Laws of Badminton, Law 4: frame max 680 mm long and 230 mm wide;
-    stringed area max 280 mm long and 220 mm wide. Law 4.1.4 additionally allows
+    stringed area max 280 mm long and 220 mm wide. Law 4.2.2 additionally allows
     the strings to run into the throat, taking the stringed area to 330 mm overall
     where that extension is no wider than 35 mm - so the 280 mm drawn here is the
-    base limit, not the absolute maximum.
-    Balance bands (285 / 295 mm) are the convention used across UK retailers and
-    coaching sites, not a BWF standard - there is no governing-body balance rule.
+    base limit, not the absolute maximum. (Law 4.1.4 is the shaft definition; an
+    earlier version of this comment cited it by mistake.)
+    Balance bands (285 / 295 mm) are the MOST COMMON retailer convention, not a
+    standard: there is no BWF balance rule, Yonex publishes no mm figure at all,
+    Apacs' own spec sheets call 290 mm slightly head-heavy, and at least one UK
+    coaching guide puts head-heavy where this drawing puts even. Do not present
+    these bands as settled.
     REUSE THIS BLOCK for any racket diagram. Do not redraw by eye.
   -->
 
@@ -88,16 +92,20 @@
     <text x="1140" y="566">675 mm</text>
   </g>
   <text x="60" y="592" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8">measured from the butt of the handle</text>
+  <text x="1140" y="592" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">Bands are the commonest retailer convention, not a standard. Sellers disagree.</text>
 
   <!-- the even band: 285 to 295 mm  ->  x = 60 + mm * 1.6  ->  516 to 532, i.e. 16 units = 10 mm -->
   <rect x="516" y="498" width="16" height="64" fill="#0f766e" opacity="0.22"/>
   <line x1="516" y1="498" x2="516" y2="562" stroke="#0f766e" stroke-width="2" stroke-dasharray="4 4"/>
   <line x1="532" y1="498" x2="532" y2="562" stroke="#0f766e" stroke-width="2" stroke-dasharray="4 4"/>
 
-  <!-- callout: the balance point itself, drawn mid-band at 290 mm = x 524 -->
-  <line x1="524" y1="330" x2="524" y2="498" stroke="#0f766e" stroke-width="2.5"/>
+  <!-- callout: the balance point itself, drawn mid-band at 290 mm = x 524.
+       Label sits below the frame and left of the callout line, in clear space:
+       the racket body ends at y=324 and the scale begins at y=522. Earlier
+       placements ran it over the throat and then under the shaft label. -->
+  <line x1="524" y1="312" x2="524" y2="498" stroke="#0f766e" stroke-width="2.5"/>
   <circle cx="524" cy="300" r="13" fill="#0f766e"/>
-  <text x="548" y="306" font-family="system-ui,sans-serif" font-size="21" fill="#0f766e" font-weight="600">the balance point</text>
+  <text x="508" y="406" text-anchor="end" font-family="system-ui,sans-serif" font-size="21" fill="#0f766e" font-weight="600">the balance point</text>
 
   <g font-family="system-ui,sans-serif" font-size="19" fill="#475569">
     <text x="150" y="638">head-light</text>
