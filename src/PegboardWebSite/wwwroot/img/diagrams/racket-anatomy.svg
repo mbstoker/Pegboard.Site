@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img"
-     aria-label="A badminton racket shown face-on with its parts labelled: grip, shaft, throat and stringed head. A scale along the bottom runs from zero at the butt of the handle to 675 millimetres at the tip. Balance is a single measured distance along that scale. By the most common retailer convention a racket balancing under 285 millimetres is head-light, 285 to 295 is even, and over 295 is head-heavy, so the entire distinction is one centimetre of a 675 millimetre racket. The bands are convention rather than standard and sellers disagree about where they sit.">
-  <title>Balance is one measured distance from the butt, and head-light to head-heavy spans about a centimetre of it</title>
+     aria-label="A badminton racket shown face-on with its parts labelled: grip, shaft, throat and stringed head. A scale along the bottom runs from zero at the butt of the handle to 675 millimetres at the tip. Balance is a single measured distance along that scale. By the most common retailer convention a racket balancing under 285 millimetres is head-light, 285 to 295 is even, and over 295 is head-heavy. The even band is ten millimetres wide on a 675 millimetre racket, and nothing limits how far a racket may sit either side of it. The bands are convention rather than standard and sellers disagree about where they sit.">
+  <title>Balance is one measured distance from the butt, and the labels turn on thresholds ten millimetres apart</title>
 
   <!--
     ePegboard diagram primitive: badminton racket, face-on, butt at left.
@@ -118,7 +118,7 @@
   <line x1="120" y1="620" x2="480" y2="620" stroke="#cbd5e1" stroke-width="2"/>
   <line x1="570" y1="620" x2="1000" y2="620" stroke="#cbd5e1" stroke-width="2"/>
 
-  <text x="600" y="34" text-anchor="middle" font-family="system-ui,sans-serif" font-size="23" fill="#0f172a" font-weight="600">Head-light to head-heavy is one centimetre of balance point</text>
+  <text x="600" y="34" text-anchor="middle" font-family="system-ui,sans-serif" font-size="23" fill="#0f172a" font-weight="600">The even-balance band is ten millimetres of a 675 mm racket</text>
 
   <text x="1140" y="656" text-anchor="end" font-family="system-ui,sans-serif" font-size="17" fill="#94a3b8">epegboard.com</text>
 </svg>
