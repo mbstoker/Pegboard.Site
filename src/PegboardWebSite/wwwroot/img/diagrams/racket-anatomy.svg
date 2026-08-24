@@ -35,9 +35,12 @@
     <line x1="704" y1="370" x2="1128" y2="370"/>
   </g>
 
-  <!-- THROAT + SHAFT -->
-  <path d="M 692 276 L 470 292 L 470 308 L 692 324 Z" fill="#e2e8f0" stroke="#64748b" stroke-width="3"/>
-  <rect x="380" y="292" width="92" height="16" fill="#e2e8f0" stroke="#64748b" stroke-width="3"/>
+  <!-- SHAFT: 200 to 355 mm  ->  x 380 to 628. The long flexible member; this is
+       what §flex is about, so it must not be drawn as a stub.
+       THROAT: 355 to 395 mm  ->  x 628 to 692. The short piece that widens into
+       the head, ending exactly where the 280 mm stringed area begins. -->
+  <rect x="380" y="292" width="248" height="16" fill="#e2e8f0" stroke="#64748b" stroke-width="3"/>
+  <path d="M 692 276 L 628 292 L 628 308 L 692 324 Z" fill="#e2e8f0" stroke="#64748b" stroke-width="3"/>
 
   <!-- GRIP: 200 mm = 320 units -->
   <rect x="60" y="278" width="320" height="44" rx="12" fill="#334155" stroke="#0f172a" stroke-width="3"/>
@@ -51,14 +54,14 @@
   <!-- part labels -->
   <g font-family="system-ui,sans-serif" font-size="20" fill="#475569" text-anchor="middle">
     <text x="220" y="258">grip</text>
-    <text x="426" y="258">shaft</text>
-    <text x="580" y="258">throat</text>
+    <text x="452" y="258">shaft</text>
+    <text x="662" y="238">throat</text>
     <text x="916" y="104">stringed head</text>
   </g>
   <g stroke="#94a3b8" stroke-width="1.5">
     <line x1="220" y1="266" x2="220" y2="276"/>
-    <line x1="426" y1="266" x2="426" y2="288"/>
-    <line x1="580" y1="266" x2="580" y2="292"/>
+    <line x1="452" y1="266" x2="452" y2="288"/>
+    <line x1="662" y1="246" x2="662" y2="286"/>
     <line x1="916" y1="112" x2="916" y2="122"/>
   </g>
 
