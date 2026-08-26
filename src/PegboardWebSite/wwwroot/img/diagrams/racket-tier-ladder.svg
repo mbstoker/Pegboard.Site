@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" width="1200" height="660" role="img"
+     aria-label="A price ladder of Yonex racket tiers from forty to two hundred and thirty pounds, with the forty to one hundred pound band shaded. The Play tier spans forty four to eighty pounds with a median of sixty four pounds, none of its nine rackets has a stiff shaft and none arrives as a frame only. The Game tier spans one hundred to one hundred and thirty five pounds, median one hundred and eight, again none stiff and none frame only. The Tour tier spans one hundred and sixteen to two hundred and seven pounds, median one hundred and forty eight, with seven of its ten stiff and six of ten frame only. The Pro tier spans one hundred and seventy six to two hundred and twenty four pounds, median two hundred and eight, with nine of thirteen stiff and all thirteen arriving as a frame only. Four dots trace one racket family, the Astrox ninety nine, across the tiers at seventy two, one hundred and twenty four, one hundred and sixty four and two hundred and twenty four pounds, the first two strung and the last two frame only. The shaded band sits almost entirely inside the Play tier.">
+  <title>The same racket name costs £72 and £224. The suffix is the spec, not the name.</title>
+
+  <!--
+    Source: Badminton HQ public Shopify feed, captured 2026-08-23, 228 adult single
+    rackets. Yonex listings only (n=68). Every figure below re-derives by running
+      node band.mjs
+    in Marketing/GEO/racket-price-survey-2026-08-23/. Sample defined once in sample.mjs.
+
+      Play  n= 9  £43.99-80        median £63.99   stiff 0/9    frame-only  0/9
+      Game  n= 8  £99.99-134.99    median £107.99  stiff 0/8    frame-only  0/8
+      Tour  n=10  £115.99-206.99   median £147.99  stiff 7/10   frame-only  6/10
+      Pro   n=13  £175.99-223.99   median £207.99  stiff 9/13   frame-only 13/13
+
+      Astrox 99 family: Play £71.99 strung, Game £123.99 strung,
+                        Tour £163.99 frame-only, Pro £223.99 frame-only
+
+    SPECS ARE RETAILER MARKETING TAGS, NOT MEASUREMENTS. No independent source publishes
+    measured balance point or swingweight for retail badminton rackets - the category is
+    unmeasured. Do not let this diagram imply otherwise.
+  -->
+
+  <rect width="1200" height="660" fill="#ffffff"/>
+
+  <text x="600" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#0f172a" font-weight="600">One name, four rackets</text>
+  <text x="600" y="64" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">Yonex tiers at one UK retailer, 23 August 2026. The word after the model name is the spec.</text>
+
+  <!-- the £40-100 band, shaded: x 100 to 422.1 -->
+  <rect x="100" y="96" width="322.1" height="330" fill="#fef3c7" opacity="0.6"/>
+  <text x="261" y="116" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#b45309" font-weight="600">the £40-100 band</text>
+
+  <!-- price axis -->
+  <line x1="100" y1="426" x2="1120" y2="426" stroke="#0f172a" stroke-width="2"/>
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">
+    <text x="100" y="448">£40</text>
+    <text x="368.4" y="448">£90</text>
+    <text x="636.8" y="448">£140</text>
+    <text x="905.2" y="448">£190</text>
+    <text x="1120" y="448">£230</text>
+  </g>
+
+  <!-- tier bars -->
+  <g>
+    <!-- Play -->
+    <rect x="123.4" y="148" width="191.3" height="26" rx="4" fill="#0f766e"/>
+    <circle cx="228.7" cy="161" r="5" fill="#ffffff"/>
+    <text x="60" y="167" text-anchor="end" font-family="system-ui,sans-serif" font-size="18" fill="#0f172a" font-weight="600">Play</text>
+    <text x="70" y="167" text-anchor="end" font-family="system-ui,sans-serif" font-size="18" fill="#0f172a" font-weight="600"></text>
+    <text x="326" y="167" font-family="system-ui,sans-serif" font-size="14" fill="#0f766e">n=9 &#183; median £64</text>
+
+    <!-- Game -->
+    <rect x="421.7" y="212" width="187.9" height="26" rx="4" fill="#0f766e"/>
+    <circle cx="465.0" cy="225" r="5" fill="#ffffff"/>
+    <text x="60" y="231" text-anchor="end" font-family="system-ui,sans-serif" font-size="18" fill="#0f172a" font-weight="600">Game</text>
+    <text x="621" y="231" font-family="system-ui,sans-serif" font-size="14" fill="#0f766e">n=8 &#183; median £108</text>
+
+    <!-- Tour -->
+    <rect x="507.6" y="276" width="488.5" height="26" rx="4" fill="#b45309"/>
+    <circle cx="679.6" cy="289" r="5" fill="#ffffff"/>
+    <text x="60" y="295" text-anchor="end" font-family="system-ui,sans-serif" font-size="18" fill="#0f172a" font-weight="600">Tour</text>
+    <text x="1008" y="295" font-family="system-ui,sans-serif" font-size="14" fill="#b45309">n=10</text>
+
+    <!-- Pro -->
+    <rect x="829.7" y="340" width="257.7" height="26" rx="4" fill="#b45309"/>
+    <circle cx="1002.5" cy="353" r="5" fill="#ffffff"/>
+    <text x="60" y="359" text-anchor="end" font-family="system-ui,sans-serif" font-size="18" fill="#0f172a" font-weight="600">Pro</text>
+    <text x="1099" y="359" font-family="system-ui,sans-serif" font-size="14" fill="#b45309">n=13</text>
+  </g>
+
+  <!-- the one family, traced across -->
+  <line x1="271.6" y1="392" x2="1087.4" y2="392" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <g>
+    <circle cx="271.6" cy="392" r="7" fill="#0f172a"/>
+    <circle cx="550.6" cy="392" r="7" fill="#0f172a"/>
+    <circle cx="765.5" cy="392" r="7" fill="#ffffff" stroke="#0f172a" stroke-width="2.5"/>
+    <circle cx="1087.4" cy="392" r="7" fill="#ffffff" stroke="#0f172a" stroke-width="2.5"/>
+  </g>
+  <text x="60" y="397" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#0f172a">Astrox 99</text>
+  <g font-family="system-ui,sans-serif" font-size="13" fill="#64748b" text-anchor="middle">
+    <text x="271.6" y="380">£72</text>
+    <text x="550.6" y="380">£124</text>
+    <text x="765.5" y="380">£164</text>
+    <text x="1087.4" y="380">£224</text>
+  </g>
+  <text x="1120" y="412" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">filled = arrives strung &#183; hollow = frame only</text>
+
+  <!-- what flips, and where -->
+  <line x1="60" y1="482" x2="1140" y2="482" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="60" y="510" font-family="system-ui,sans-serif" font-size="18" fill="#0f172a" font-weight="600">What the suffix actually changes</text>
+
+  <g font-family="system-ui,sans-serif" font-size="15">
+    <text x="60" y="546" fill="#0f172a">Stiff shaft</text>
+    <text x="330" y="546" fill="#0f766e">Play 0 of 9</text>
+    <text x="500" y="546" fill="#0f766e">Game 0 of 8</text>
+    <text x="690" y="546" fill="#b45309" font-weight="600">Tour 7 of 10</text>
+    <text x="900" y="546" fill="#b45309" font-weight="600">Pro 9 of 13</text>
+
+    <text x="60" y="580" fill="#0f172a">Arrives as a frame only</text>
+    <text x="330" y="580" fill="#0f766e">Play 0 of 9</text>
+    <text x="500" y="580" fill="#0f766e">Game 0 of 8</text>
+    <text x="690" y="580" fill="#b45309" font-weight="600">Tour 6 of 10</text>
+    <text x="900" y="580" fill="#b45309" font-weight="700">Pro 13 of 13</text>
+  </g>
+
+  <text x="60" y="620" font-family="system-ui,sans-serif" font-size="16" fill="#0f172a" font-weight="600">Your band is almost exactly the Play tier. That is a fact about naming, not about quality.</text>
+  <text x="60" y="642" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">Specs are the retailer's own marketing tags, not measurements. Nobody publishes measured balance or swingweight for retail badminton rackets.</text>
+  <text x="1140" y="642" text-anchor="end" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">epegboard.com</text>
+</svg>

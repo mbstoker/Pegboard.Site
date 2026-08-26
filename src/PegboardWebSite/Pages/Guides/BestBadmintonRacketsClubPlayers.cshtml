@@ -1,0 +1,233 @@
+@page "/guides/best-badminton-rackets-club-players"
+@using PegboardWebSite.Services
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "Best badminton rackets for club players: what £40 to £100 actually buys";
+    ViewData["Description"] = "We counted 228 rackets at a UK specialist. The £40-100 band is two markets with a seam at £80, the tier suffix carries the spec rather than the model name, and no link on this page earns us a commission.";
+    ViewData["OgTitle"] = "Best badminton rackets for club players, £40 to £100";
+
+    const string published = "2026-08-26";
+    const string canonical = "https://www.epegboard.com/guides/best-badminton-rackets-club-players";
+
+    // QUESTION SET (production step 1) - each is an H2 below:
+    //  1 Does the price include strings?
+    //  2 Why is the same racket £72 and £224?
+    //  3 Am I "intermediate", and does the word mean anything?
+    //  4 What does £90 buy that £45 does not?
+    //  5 The cheap version of a pro racket, or the good version of a cheap one?
+    //  6 Which rackets in the band actually match the specs?
+    //  7 Can I trust the shop's own buying guide?
+    //  8 Should I just restring the one I have?
+    //  9 Second-hand at this price?
+    // 10 Is it cheaper direct from the manufacturer?
+
+    var faqPairs = new (string Q, string A)[]
+    {
+        ("Is a more expensive racket easier to play with?",
+         "Usually the opposite in this range. Stiffer shafts and heavier heads ask more of your technique, which is why the specs that suit a club player cluster at the bottom of the price ladder rather than the top."),
+        ("How often should I replace a racket?",
+         "When it breaks, when the grip and strings no longer fix how it feels, or when your game has changed enough that the specs no longer suit you. Age alone is not a reason; a fifteen-year-old frame in one piece plays much as it did."),
+        ("Does the colour or the paint job affect anything?",
+         "No, and it is worth saying because the same frame in a different colourway sometimes carries a different price. If two listings differ only in finish, buy the cheaper one."),
+        ("What about buying from a marketplace rather than a specialist?",
+         "Counterfeits are a known problem in badminton rackets, particularly for the popular Japanese models, and a specialist retailer is the simplest protection. If the price is well below everyone else's for a current model, that is the reason."),
+        ("Should I get the racket strung by the shop or take it elsewhere?",
+         "Whoever you trust to do it consistently. What matters more is knowing whether the price you paid included it at all, which in this band it usually does and above it usually does not."),
+        ("Do I need a different racket for singles and doubles?",
+         "Not at club level. Players who want a faster racket for doubles defence and a heavier one for singles are solving a problem most club players do not have, and the second racket is better spent on shuttles.")
+    };
+
+    var articleJsonLd = GuideSchema.Article(
+        "Best badminton rackets for club players: what £40 to £100 actually buys",
+        "We counted 228 rackets at a UK specialist. The band is two markets with a seam at £80, and the tier suffix carries the spec.",
+        canonical, published);
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+}
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Rackets, £40 to £100</span></div>
+      <h1 style="margin-top:10px">Best badminton rackets for club players: what £40 to £100 actually buys</h1>
+      <div class="guide-meta">
+        <span class="gm-tag">Guide</span>
+        <span>Equipment</span>
+        <span>15 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:820px">
+
+    <div class="prose">
+      <p class="lead"><strong>£40 to £100 is not one market. It is two, and the seam is at £80.</strong> Below it, 39 per cent of what a UK specialist stocks is marketed to beginners and almost everything arrives strung. Above it, nothing at all is marketed to beginners, half is marketed to advanced and professional players, and one in five arrives as a bare frame. We counted, because nobody else has.</p>
+
+      <p>And the more useful thing we found while counting: in this band the model name tells you almost nothing, and the word after it tells you almost everything.</p>
+    </div>
+
+    <div class="guide-callout" style="margin-top:30px">
+      <h4>The short version</h4>
+      <ul style="margin:10px 0 0">
+        <li><strong>The suffix is the spec.</strong> Astrox 99 costs £72, £124, £164 or £224 depending on one word after the name.</li>
+        <li><strong>The dearest beginner-marketed racket in 228 was £76.99.</strong> Above roughly £77 the market stops offering a club player anything aimed at them.</li>
+        <li><strong>Check whether it comes strung.</strong> In this band the risk is brand-shaped, not price-shaped, and a restring is £24 to £28.</li>
+        <li><strong>"Intermediate" means nothing.</strong> Yonex calls its £80 racket a racket for advanced players and its £280 flagship a racket for intermediates.</li>
+        <li><strong>Two retailer buying guides describe rackets in ways their own catalogues contradict.</strong> We checked both.</li>
+        <li><strong>No link on this page earns us a commission</strong>, from anybody.</li>
+      </ul>
+    </div>
+
+    <p style="margin-top:22px;color:var(--muted-2);font-size:.95rem">Written for a UK club player buying their second or third racket. The counts come from a UK specialist's own public catalogue, read on 23 August 2026, and the manufacturer figures from Yonex UK's own catalogue read on 26 August 2026. Both dates matter and we have kept them separate throughout.</p>
+
+    <div class="guide-toc" style="margin-top:26px">
+      <h4>In this guide</h4>
+      <a href="#strung">Does the price include strings?</a>
+      <a href="#suffix">Why is the same racket £72 and £224?</a>
+      <a href="#intermediate">Am I "intermediate", and does the word mean anything?</a>
+      <a href="#what-90-buys">What does £90 buy that £45 does not?</a>
+      <a href="#which-way">The cheap version of a pro racket, or the good version of a cheap one?</a>
+      <a href="#which">Which rackets in the band actually match the specs?</a>
+      <a href="#guides">Can I trust the shop's own buying guide?</a>
+      <a href="#restring">Should I just restring the one I have?</a>
+      <a href="#secondhand">Second-hand at this price?</a>
+      <a href="#direct">Is it cheaper direct from the manufacturer?</a>
+      <a href="#faq">Frequently asked questions</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+
+      <h2 id="strung">Does the price include strings?</h2>
+      <p>In this band, usually yes, and the exceptions cluster in a way that is worth knowing.</p>
+      <p>Of the 70 rackets we counted between £40 and £99.99, <strong>61 arrive strung, 5 arrive as a bare frame and 4 do not say</strong>. So the odds are good. But the five are not scattered: <strong>four of them are Li-Ning</strong>, and all five sit at £79.95 or above.</p>
+      <p>Which means the trap in this band is brand-shaped rather than price-shaped, and the specific failure is easy to picture: a reader takes a recommendation for a Li-Ning frame at £89, pays it, and a bare frame arrives that needs £24 to £28 spending on it before it can be used. That is a £115 racket bought as an £89 one.</p>
+      <p><strong>The manufacturers' own labelling makes this worse, not better.</strong> On Yonex UK's own catalogue, 8 of 35 listings say "(STRUNG)" in the title and <em>not one</em> says frame only. The other 27 are silent. Every listing that advertises being strung is Play or Game tier; <strong>every Tour and every Pro listing says nothing at all</strong>, and those are the ones most likely to arrive as a frame. Strung is sold as a feature at the bottom of the range and passed over in silence at the top.</p>
+
+      <h2 id="suffix">Why is the same racket £72 and £224?</h2>
+      <p>Because the model name is a family, and the word after it is the actual product.</p>
+      <p>The Astrox 99 at one UK specialist, on one day:</p>
+      <div style="overflow-x:auto;margin-top:14px">
+        <table style="width:100%;border-collapse:collapse;font-size:.95rem">
+          <thead><tr style="text-align:left;border-bottom:2px solid var(--line)"><th style="padding:8px 10px">Racket</th><th style="padding:8px 10px">Price</th><th style="padding:8px 10px">Arrives</th></tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Astrox 99 <strong>Play</strong></td><td style="padding:8px 10px">£71.99</td><td style="padding:8px 10px">strung</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Astrox 99 <strong>Game</strong></td><td style="padding:8px 10px">£123.99</td><td style="padding:8px 10px">strung</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Astrox 99 <strong>Tour</strong></td><td style="padding:8px 10px">£163.99</td><td style="padding:8px 10px">frame only</td></tr>
+            <tr><td style="padding:8px 10px">Astrox 99 <strong>Pro</strong></td><td style="padding:8px 10px">£223.99</td><td style="padding:8px 10px">frame only</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:18px">Across all 68 Yonex listings we counted, the tiers separate cleanly, and they separate on exactly the things a club player should care about.</p>
+
+      <figure style="margin:26px 0 0">
+        <img src="/img/diagrams/racket-tier-ladder.svg" alt="A price ladder of Yonex tiers from forty to two hundred and thirty pounds with the forty to one hundred pound band shaded. Play spans forty four to eighty pounds, median sixty four, none of nine stiff, none frame only. Game spans one hundred to one hundred and thirty five, median one hundred and eight, none stiff, none frame only. Tour spans one hundred and sixteen to two hundred and seven, median one hundred and forty eight, seven of ten stiff and six of ten frame only. Pro spans one hundred and seventy six to two hundred and twenty four, median two hundred and eight, nine of thirteen stiff and all thirteen frame only. Four dots trace the Astrox ninety nine across the tiers at seventy two, one hundred and twenty four, one hundred and sixty four and two hundred and twenty four pounds, the first two strung and the last two frame only." style="width:100%;height:auto;border-radius:12px" />
+        <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">Your band is almost exactly the Play tier. That is a fact about how the range is named, not a judgement about quality.</figcaption>
+      </figure>
+
+      <p style="margin-top:22px">Every "best rackets" list you will find names <em>families</em>. Nanoflare, Astrox, Thruster, Auraspeed. A family is not a product. If a list tells you the Astrox 99 is a great racket for club players, it has told you something that is true of one version and false of another, at three times the price.</p>
+
+      <h2 id="intermediate">Am I "intermediate", and does the word mean anything?</h2>
+      <p>No, and the manufacturer proves it better than we could.</p>
+      <p>Yonex describes the <strong>Astrox 88 Play, at £80 on its own site</strong>, as a racket "for advanced players looking for immediate access to power to maintain a relentless attack". It describes the <strong>Astrox 99 Pro, at £280</strong>, as "designed for intermediate to advanced players".</p>
+      <p>So the £80 entry racket is sold to advanced players and the £280 flagship is sold to intermediates. Meanwhile the retailer tags that same £80 racket as a beginner's racket.</p>
+      <p><strong>These labels are marketing, not classification.</strong> Which is a relief, because it means you can stop trying to work out which one you are. Nobody who wrote those words knows either.</p>
+
+      <h2 id="what-90-buys">What does £90 buy that £45 does not?</h2>
+      <p>Mostly a racket aimed at somebody else.</p>
+      <p>Split the band at £80 and it stops behaving like one range:</p>
+      <div style="overflow-x:auto;margin-top:14px">
+        <table style="width:100%;border-collapse:collapse;font-size:.95rem">
+          <caption style="caption-side:top;text-align:left;padding-bottom:8px;color:var(--muted-2);font-size:.92rem">228 adult single rackets at one UK specialist, 23 August 2026. Specs are the retailer's own tags.</caption>
+          <thead><tr style="text-align:left;border-bottom:2px solid var(--line)"><th style="padding:8px 10px">Band</th><th style="padding:8px 10px">Rackets</th><th style="padding:8px 10px">Marketed to beginners</th><th style="padding:8px 10px">Marketed advanced or pro</th><th style="padding:8px 10px">Frame only</th></tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">£40&#8211;79.99</td><td style="padding:8px 10px">49</td><td style="padding:8px 10px"><strong>39%</strong></td><td style="padding:8px 10px">4%</td><td style="padding:8px 10px">2%</td></tr>
+            <tr><td style="padding:8px 10px">£80&#8211;99.99</td><td style="padding:8px 10px">21</td><td style="padding:8px 10px"><strong>0%</strong></td><td style="padding:8px 10px">48%</td><td style="padding:8px 10px">19%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:18px"><strong>The dearest racket marketed to a beginner anywhere in the 228 was £76.99.</strong> Above roughly £77, the market stops offering a developing club player anything aimed at them and starts offering them equipment designed for somebody with a faster, more repeatable swing.</p>
+      <p>That is not a reason to spend £45 rather than £90. It is a reason to know what the extra £45 is buying, which is a stiffer shaft, a heavier head and, one time in five, no strings.</p>
+
+      <h2 id="which-way">The cheap version of a pro racket, or the good version of a cheap one?</h2>
+      <p>The good version of a cheap one, on the evidence here.</p>
+      <p>The appeal of the first option is obvious: an Astrox 99 Play is an Astrox 99, and it is £72. But the tier data says the Play version shares the name and not the specification. It is not a discounted Pro. It is a different racket with a related paint job, and its specs are the ones that suit a club player precisely <em>because</em> they are not the Pro's.</p>
+      <p>Which turns out to be good news. You are not buying a compromised version of the real thing. You are buying the version built for the swing you actually have, and the expensive one would make your game worse.</p>
+
+      <h2 id="which">Which rackets in the band actually match the specs?</h2>
+      <p>Ten of the seventy, and we are going to be careful about what that list is.</p>
+      <p>Applied against the four things worth checking on a listing, which we set out in <a href="/guides/how-to-choose-a-badminton-racket">how to choose a badminton racket</a>, ten rackets in the band are tagged light (4U or 5U), even-balanced, not stiff, and strung:</p>
+      <ul>
+        <li>£40.49 Carlton Velocitex G2.2, 4U</li>
+        <li>£43.99 Yonex Arcsaber 7 Play, 4U</li>
+        <li>£47.99 Yonex Arcsaber 11 Play, 4U</li>
+        <li>£50.00 Babolat Satelite Rise, 4U</li>
+        <li>£59.50 Victor Auraspeed 9A</li>
+        <li>£63.99 Yonex Arcsaber 2 Clear, 4U</li>
+        <li>£70.00 Ashaway Striker Force 2000, 4U</li>
+        <li>£72.25 Carlton 3.7 Team II, 5U</li>
+        <li>£76.99 Victor Auraspeed 9 R, 4U</li>
+        <li>£79.99 Victor DriveX 7SP AJ, 4U</li>
+      </ul>
+      <p><strong>That is not a ranking and it is not a recommendation, and the difference matters.</strong> We have not hit a shuttle with any of them. Those specs are the retailer's own marketing tags, not measurements, and nobody in badminton publishes measurements. It is a list of what was on the shelf on one day that matched a filter you could apply yourself.</p>
+      <p>Notice what is missing from it: every one of them is at or under £80. When you filter the band for what suits a club player, the top fifth of the band empties out.</p>
+
+      <h2 id="guides">Can I trust the shop's own buying guide?</h2>
+      <p>Check it against the shop's own product pages, because we did and they do not always agree.</p>
+      <p>One UK retailer's buying guide lists a racket as even-balanced with a medium shaft at £80 to £100. <strong>The same retailer's own product listing for that racket tags it head-heavy, and prices it at £64.</strong> A second racket its beginner guide describes as even-balanced is tagged head-light in its own catalogue, on two separate listings.</p>
+      <p>The same guide recommends two rackets to intermediate players that its catalogue tags stiff-shafted and frame-only, at £131.99 and £139.95. Those are the two specs a developing player is least well served by, plus an unadvertised stringing bill.</p>
+      <p>We are not suggesting anyone is being dishonest. A buying guide is written once and the catalogue changes underneath it, and nobody proofreads a two-year-old blog post against a live product feed. But it does mean the guide is the weaker of the two documents on the same website, and <strong>the product page is the one to believe</strong>.</p>
+      <p>One more thing worth knowing about the field: at least one widely-shared "best rackets" list is built mostly on brands that <strong>are not sold in the UK at all</strong>, or are sold here only as bare frames. A list is not much use if you cannot buy from it.</p>
+
+      <h2 id="restring">Should I just restring the one I have?</h2>
+      <p>Very possibly, and this is the section that costs us the click.</p>
+      <p>A restring is <strong>£24 to £28 including string</strong> at the two UK stringers we priced on 26 August 2026, or around £20 for labour if you supply your own. If your current racket is the right weight and balance for you and simply feels dead, that is what dead strings feel like, and £26 is a fifth of what this article is otherwise inviting you to spend.</p>
+      <p>The honest test: if you can say what is wrong with your current racket in terms of weight, balance or stiffness, a new one may fix it. If all you can say is that it does not feel like it used to, restring it first and see.</p>
+
+      <h2 id="secondhand">Second-hand at this price?</h2>
+      <p>Rarely worth it in this band, for a specific reason.</p>
+      <p>New rackets here start at around £40 and routinely sell at a discount to their list price, so the saving on a used one is small in absolute terms. Against that you are buying a frame whose history you cannot see, from a category with a well-known counterfeit problem, usually without strings you would want to keep.</p>
+      <p>Second-hand makes much more sense higher up the ladder, where a used Tour or Pro frame at £70 is a real saving on £164. That is a different purchase from the one this guide is about, and it is one for a player who already knows what specs they want.</p>
+
+      <h2 id="direct">Is it cheaper direct from the manufacturer?</h2>
+      <p>No, and the gap is largest exactly where you are shopping.</p>
+      <p>Comparing the manufacturer's own catalogue against a specialist retailer's, the specialist was consistently cheaper, and <strong>at the bottom of the range the discount was both large and remarkably consistent</strong> across the models we could match. Higher up it was thinner and more variable.</p>
+      <p><strong>Two caveats we are not going to bury.</strong> Those are two captures three days apart, and one brand. So take the direction and not the decimal: in this band, the manufacturer's own price is the one to beat, not the one to pay.</p>
+
+      <div class="guide-callout" style="margin-top:26px">
+        <h4>If you only do one thing</h4>
+        <p style="margin-top:8px">Before you pay, read the listing for the word after the model name and check whether it says strung. Those two things separate a £72 racket from a £164 one, and a £89 racket from a £115 one.</p>
+      </div>
+
+      <div class="guide-callout" style="margin-top:24px">
+        <h4>Fair games, without the admin</h4>
+        <p>We sell no rackets and take no commission from anyone who does. What we make is the software that runs your club night: balanced games, even court time, no spreadsheet. Free for clubs.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+      </div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      @foreach (var f in faqPairs)
+      {
+        <h3>@f.Q</h3>
+        <p>@f.A</p>
+      }
+
+      <h2 id="related">Where to go next</h2>
+      <p>This guide assumes you already know which specs you want. If you do not, <a href="/guides/how-to-choose-a-badminton-racket">how to choose a badminton racket</a> is the one to read first: it sets out the four things worth checking and where the price and benefit curve flattens.</p>
+      <p>If you were hoping a racket would add power to your smash, we checked that and the answer is no: <a href="/guides/how-to-smash-harder">how to smash harder</a> covers what the measurements actually show.</p>
+      <p>And the recurring cost that dwarfs the racket is shuttles. <a href="/guides/feather-vs-nylon-shuttlecocks">Feather versus nylon</a> works out what your club should be buying.</p>
+
+      <div style="margin-top:34px;padding-top:22px;border-top:1px solid var(--line)">
+        <h4 style="margin:0 0 8px">How this guide was put together</h4>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:0">ePegboard builds club-night software. We are not coaches, we do not sell rackets, and we have not tested one. We have no commercial relationship with any racket manufacturer or retailer, including the ones whose catalogues we counted, and <strong>no link on this page earns us a commission</strong>.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0">The counts come from a UK specialist's public product catalogue, captured 23 August 2026: 228 adult single rackets, after excluding 9 junior rackets and 6 multi-racket sets. Price is the lowest listed variant on the day, sale prices included, so the bands read optimistically against list price. The manufacturer figures are from Yonex UK's own public catalogue, captured 26 August 2026, 35 listings. <strong>The two captures are three days apart and we have kept their dates separate throughout</strong>, which is why the section above gives a direction rather than a percentage.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0">Three limits worth stating. <strong>Every spec here is a retailer's or manufacturer's own marketing tag, not a measurement</strong> - and that is not our shortcut, it is the state of the category. No independent source publishes measured balance point, swingweight or shaft stiffness for retail badminton rackets, which is a striking absence next to tennis, where an equivalent public database has existed for years. <strong>The tier analysis is one brand at one retailer on one day.</strong> And the restring prices are two stringers, not a survey.</p>
+        <p style="color:var(--muted-2);font-size:.9rem;margin:12px 0 0">Published 26 August 2026 by ePegboard. Catalogues captured 23 and 26 August 2026; restring prices and retailer guides read 26 August 2026.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
