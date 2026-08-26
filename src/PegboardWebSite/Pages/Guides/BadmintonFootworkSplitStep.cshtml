@@ -1,0 +1,254 @@
+@page "/guides/badminton-footwork-split-step"
+@using PegboardWebSite.Services
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "Badminton footwork: the split step and the six corners";
+    ViewData["Description"] = "The split step is the one habit that changes how much court you cover, and the six corners are the map you use it on. What the coaching syllabus actually says, what the evidence supports, and what nobody has measured.";
+    ViewData["OgTitle"] = "Badminton footwork: the split step and six corners";
+
+    const string published = "2026-08-26";
+    const string canonical = "https://www.epegboard.com/guides/badminton-footwork-split-step";
+
+    // QUESTION SET (production step 1) - each is an H2 below:
+    //  1 Why am I always arriving late?
+    //  2 What is a split step, and when exactly?
+    //  3 Does it actually work?
+    //  4 What are the six corners, and where is base?
+    //  5 Getting to the two front corners
+    //  6 Getting to the back two
+    //  7 The middle two
+    //  8 Which foot leads?
+    //  9 Landing a lunge without wrecking your knee
+    // 10 Where do you go after you hit?
+    // 11 Do you split step on every shot?
+    // 12 Do you have to get fitter?
+    // 13 How do you practise this at a club night?
+    // 14 How long before it feels natural?
+
+    var faqPairs = new (string Q, string A)[]
+    {
+        ("I am left-handed. Does the naming still work?",
+         "Yes, because the corners here are named forehand and backhand rather than left and right. A good deal of the coaching web names them left and right without saying which hand it assumes, which is why a left-hander reading those pages ends up mirroring everything mentally."),
+        ("Is any of this different in doubles?",
+         "Some of it. The movement patterns and the split step are the same, but a doubles player shares the court, so where you start from depends on what your pair is doing and you use the rear corners less than a singles player does. Treat what follows as the foundation and expect to adapt it."),
+        ("Should I be doing footwork drills at home?",
+         "Shadow work without a shuttle is what every coaching source recommends and it costs nothing to try. We should be honest that we could not find a study evaluating it, so treat it as established coaching practice rather than something with evidence behind it."),
+        ("Is it worth having a lesson instead of reading this?",
+         "For footwork specifically, probably yes. A coach watching you move for twenty minutes sees things no article can, and these movements are taught better in person or on video than in text. What text does better is telling you which parts are worth your attention and where the published sources disagree."),
+        ("Does better footwork help if I am not very fit?",
+         "That is most of the point. Moving earlier and in fewer steps means covering the same court with less running, which is a positional gain rather than an aerobic one. It will not make a long rally feel shorter, but it will get you to more shuttles at the fitness you already have."),
+        ("Why do some coaches teach four corners rather than six?",
+         "Because they are counting movement patterns rather than destinations. The BWF Level 1 syllabus publishes four patterns - forehand and backhand at the front, forehand and backhand at the back - and treats the midcourt as somewhere you play from rather than travel to. Both models describe the same court.")
+    };
+
+    var articleJsonLd = GuideSchema.Article(
+        "Badminton footwork: the split step and the six corners",
+        "The split step is the one habit that changes how much court you cover, and the six corners are the map you use it on.",
+        canonical, published);
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+}
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Footwork</span></div>
+      <h1 style="margin-top:10px">Badminton footwork: the split step and the six corners</h1>
+      <div class="guide-meta">
+        <span class="gm-tag">Guide</span>
+        <span>Playing</span>
+        <span>14 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:820px">
+
+    <div class="prose">
+      <p class="lead"><strong>Drop onto both feet just before your opponent hits the shuttle, and land as or just after they do.</strong> That is the split step, and it is the single habit that changes how much court a club player covers. Everything else is a map: six corners you move to, four ways of travelling between them, and one lunge that needs your knee tracking over your foot. Start moving when the shuttle leaves their racket and you are already about a quarter of a second behind, whatever your fitness.</p>
+
+      <p>You see the smash coming, you have time to think about it, and your feet are still flat on the floor when it goes past you.</p>
+    </div>
+
+    <div class="guide-callout" style="margin-top:30px">
+      <h4>The short version</h4>
+      <ul style="margin:10px 0 0">
+        <li><strong>Take off before they hit it, land as or after they do.</strong> The split step straddles their contact. If you are still rising as the shuttle leaves, you are late.</li>
+        <li><strong>It is a shallow drop, not a jump.</strong> Badminton Insight puts the ceiling at about the width of a racket grip.</li>
+        <li><strong>The foot that lands first decides where you go.</strong> Left first to move right, right first to move left, front first to move back.</li>
+        <li><strong>There is no all-purpose split step.</strong> BWF says so directly: you land in a way that covers the replies you think are coming.</li>
+        <li><strong>Chassé is for short distances only.</strong> The syllabus says using it across the diagonals is slow and should be discouraged.</li>
+        <li><strong>The lunge is where the injuries are.</strong> Lead foot, lead knee and the direction you are hitting all face the same way.</li>
+      </ul>
+    </div>
+
+    <p style="margin-top:22px;color:var(--muted-2);font-size:.95rem">Written for UK club-level players who have never had formal coaching. Technique here is attributed to the BWF coaching syllabus and to named coaches; we do not teach it in our own voice. Where published evidence is thinner than the confidence around it, we say so.</p>
+
+    <div class="guide-toc" style="margin-top:26px">
+      <h4>In this guide</h4>
+      <a href="#late">Why am I always arriving late?</a>
+      <a href="#what">What is a split step, and when exactly?</a>
+      <a href="#does-it-work">Does it actually work?</a>
+      <a href="#six">What are the six corners, and where is base?</a>
+      <a href="#front">Getting to the two front corners</a>
+      <a href="#back">Getting to the back two</a>
+      <a href="#middle">The middle two</a>
+      <a href="#foot">Which foot leads?</a>
+      <a href="#knee">Landing a lunge without wrecking your knee</a>
+      <a href="#after">Where do you go after you hit?</a>
+      <a href="#every-shot">Do you split step on every shot?</a>
+      <a href="#fitter">Do you have to get fitter?</a>
+      <a href="#practise">How do you practise this at a club night?</a>
+      <a href="#natural">How long before it feels natural?</a>
+      <a href="#faq">Frequently asked questions</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+
+      <h2 id="late">Why am I always arriving late?</h2>
+      <p>You are starting to move when the shuttle leaves their racket, and by then you are already about a quarter of a second behind.</p>
+      <p>Watching the shuttle and then reacting feels like the right thing to do, and it is what everyone does before somebody tells them otherwise. The problem is that the information you need arrives before contact rather than after it, and a player standing flat-footed has to overcome inertia before they can use it.</p>
+      <p>What good players do instead is arrive at a state of readiness a fraction before their opponent hits, so that the first movement is a redirection rather than a start. Everything else in this guide is detail on that one idea.</p>
+
+      <h2 id="what">What is a split step, and when exactly?</h2>
+      <p>A split step is a shallow drop onto both feet, taken off just before your opponent strikes the shuttle and landing as or just after they do.</p>
+      <p>BWF's Level 1 coaching manual describes it as a shallow jump off the ground just before the opponent strikes, with the landing occurring with or after the opponent hitting the shuttle. Badminton Insight, run by former England internationals Greg and Jenny Mairs, gives the same window in club-player language: initiate just before they hit, push off just after contact once the direction is known.</p>
+      <p><strong>The timing straddles their contact.</strong> That is the part club players get wrong, and it is why a diagram helps more than a sentence.</p>
+
+      <figure style="margin:26px 0 0">
+        <img src="/img/diagrams/split-step-timing.svg" alt="A timeline strip showing the opponent's swing above and your feet below. Reading left to right: the opponent begins their backswing, then their forward swing; you take off into a shallow drop before their racket reaches the shuttle; their racket contacts the shuttle; you land at or just after that contact, with both feet down and knees soft; and only then do you push off in the direction the shuttle is going. Below, a second strip shows the common club mistake, where the player is still standing flat at contact and only begins to move after the shuttle has left the racket, arriving late by roughly the time it takes to overcome standing inertia." style="width:100%;height:auto;border-radius:12px" />
+        <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">Take-off before contact, landing at or after it. If you are still rising as the shuttle leaves the racket, the split step has cost you time rather than saved it.</figcaption>
+      </figure>
+
+      <p style="margin-top:22px"><strong>It is not a jump.</strong> Badminton Insight puts the ceiling plainly: hopping any higher than the width of a racket grip is inefficient, and BWF calls it a shallow jump. The commonest club error, once someone has been told about split steps at all, is a visible hop that leaves them in the air when they need to be pushing off the floor.</p>
+      <p>One more thing BWF says directly, and it is worth knowing early: there is no split step that will let you move off equally in all directions. With experience, players learn to land in a way that covers the replies they think are most likely.</p>
+
+      <h2 id="does-it-work">Does it actually work?</h2>
+      <p>The timing rule is well-attested coaching doctrine, the mechanism is a reasonable inference, and a measured speed benefit in badminton has not been demonstrated - and we would rather tell you that than pretend otherwise.</p>
+      <p>The instruction itself is solid. It comes from the world governing body's coaching syllabus and is taught identically by credentialed coaches, which is about as good as coaching guidance gets.</p>
+      <p>The usual explanation is that dropping into a slight crouch pre-stretches the leg muscles so they produce force more quickly. That is real physiology, and BWF does invoke pre-stretch in its manual - but it does so in the section on <em>jumping</em>, not in its description of the split step. Calling it the reason the split step works is an inference, and we are marking it as one.</p>
+      <p><strong>The one badminton-specific study we could find does not show what a coaching article would want it to show.</strong> It measured joint angles and how the landing loads the leg, and reported that the split step changed the loading characteristics of the lunge that followed. It reported no measure of players reaching the shuttle sooner, and a higher loading rate is usually discussed in terms of injury risk rather than performance.</p>
+      <p>The precise timing figures that circulate come from tennis, where the equivalent has been studied more. That work is consistent with the badminton coaching window, but a different sport's finding is not evidence for this one. If you have seen a specific percentage quoted for how much a split step improves reaction, we could not trace it to any study.</p>
+
+      <h2 id="six">What are the six corners, and where is base?</h2>
+      <p>The six corners are two at the front, two across the middle and two at the back, and base is the position between them that you split from.</p>
+      <p>The corners are a coaching map rather than official terminology. BWF's Level 1 syllabus publishes four movement <em>patterns</em> - forehand and backhand at the front, forehand and backhand at the back - and treats the midcourt as somewhere you play from rather than travel to. The popular six-corner model adds the two middle positions. Both describe the same court, and the six-corner version is the one you will meet most often.</p>
+
+      <figure style="margin:26px 0 0">
+        <img src="/img/diagrams/six-corners.svg" alt="One half of a badminton court seen from above with the net at the right, showing six corner positions. Two front corners sit just behind the net on the forehand and backhand sides, two middle corners sit level with each other across the midcourt, and two rear corners sit near the back boundary. A base marker sits centrally between them, slightly behind the short service line, with dashed arrows radiating from it to each of the six corners. The corners are numbered one to six and labelled by forehand and backhand rather than left and right." style="width:100%;height:auto;border-radius:12px" />
+        <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">Named by forehand and backhand rather than left and right, so the map does not flip for a left-handed player. A great deal of the coaching web publishes left and right without saying which hand it assumes.</figcaption>
+      </figure>
+
+      <p style="margin-top:22px"><strong>Base needs one correction, because the popular pages overstate it.</strong> They describe base as a spot slightly behind the service line and tell you to recover to it after every shot. BWF defines it differently: the court position from which you are best able to deal with your opponent's probable replies, and it says explicitly that base is a fluid position rather than a set point on the court.</p>
+      <p>So treat the marker on the diagram as a sensible default rather than a place you must return to. Where you split from depends on what you have just made your opponent do.</p>
+
+      <h2 id="front">Getting to the two front corners</h2>
+      <p>Split, chassé, lunge, and chassé back - and keep the chassé short, because it is a slow way to cover distance.</p>
+      <p>BWF's published pattern for the forehand forecourt is exactly that sequence, and its notes on the chassé are specific: one foot chases the other but never quite catches it, and players should keep ground contact times short, as though the floor is hot.</p>
+      <p>The manual also warns that using the chassé for long distances, such as the diagonals of the court, is slow and should be discouraged. So the chassé is a short-range adjustment rather than a way of travelling. If you are chasséing a long way, you should be running.</p>
+
+      <h2 id="back">Getting to the back two</h2>
+      <p>Split, then pivot or hop around your non-racket leg, then jump and turn to hit while off the ground - or run backwards on a curved path if you have time.</p>
+      <p>BWF gives both. For the backhand rearcourt the pattern is the split step, a pivot or hop around the non-racket leg, then a jump and turn in the air striking the shuttle while off the ground, with the note that the pivot should cover some distance so it helps carry you into the corner.</p>
+      <p>The alternative is a split step followed by backwards running steps, and the manual specifies that those steps should follow a slightly curved path, which helps you get side-on to the shuttle. The instinct is to run straight back, and straight back leaves you square to the net with no shot.</p>
+      <p>For the forehand rearcourt, BWF gives a split step, a cross-behind and a lunge, noting that this tends to be a straight-line movement into the corner. It also observes that it is very rare for more than one cross-behind to be performed at a time, which is a useful check on anyone taught to shuffle backwards repeatedly.</p>
+
+      <h2 id="middle">The middle two</h2>
+      <p>Push sideways from a wider, lower base rather than lunging forward, because covering the midcourt is a lateral action and not a reaching one.</p>
+      <p>These are the two corners the four-pattern model leaves out, and they are where you spend most of a defensive rally. You are standing in the midcourt with your weight low and your base wider than it would be anywhere else on court, covering a shot that will arrive faster than you can plan for.</p>
+      <p>The movement is a lateral push off the outside foot, keeping the racket up and in front. It is not a lunge, and treating it as one is what leaves club players stretching at full extension for a shuttle they could have taken comfortably by moving their feet twenty centimetres.</p>
+
+      <h2 id="foot">Which foot leads?</h2>
+      <p>On the split step the foot that lands first determines the direction you move; in the lunge it is almost always your racket leg.</p>
+      <p>These are two different rules and they get conflated constantly. The split-step rule is the one almost nobody publishes, and BWF states it directly: coaching it as a two-footed landing is reasonable, but in reality one foot nearly always lands before the other, and the foot that lands first governs which direction you move off.</p>
+      <div style="overflow-x:auto;margin-top:16px">
+        <table style="width:100%;border-collapse:collapse;font-size:.95rem">
+          <thead>
+            <tr style="text-align:left;border-bottom:2px solid var(--line)">
+              <th style="padding:8px 10px">Foot that lands first</th><th style="padding:8px 10px">Direction you move</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Left</td><td style="padding:8px 10px">To the right</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Right</td><td style="padding:8px 10px">To the left</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Front</td><td style="padding:8px 10px">Backwards</td></tr>
+            <tr><td style="padding:8px 10px">Back</td><td style="padding:8px 10px">Forwards</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:18px">The lunge rule is simpler. Badminton Insight teaches lunging on your racket leg - right leg for a right-hander, left for a left-hander - and BWF agrees with a qualifier, noting that most lunging is done on the racket leg but some non-racket-leg lunging does happen.</p>
+
+      <h2 id="knee">Landing a lunge without wrecking your knee</h2>
+      <p>Point your lead foot, knee and contact direction the same way, turn out the rear foot, and bend the rear knee - and those coaching points exist to protect the joint rather than to look tidy.</p>
+      <p>BWF's lunge coaching points are unusually explicit about why they exist. The lead foot points towards the shuttle; the lead leg, knee and point of contact face the same direction to protect the knee and ankle joints; the rear foot is turned out to help with balance and range of movement; the rear knee bends to reduce strain; and the rear arm extends for balance.</p>
+      <p>The knee and ankle are the two most commonly injured joints in badminton, and the lunge is where the loading happens. This is the one part of the guide we would ask you to read twice, because adult club players who take up footwork drills without it tend to lunge deeper than they used to, on a knee that is not tracking over the foot.</p>
+
+      <figure style="margin:26px 0 0">
+        <img src="/img/diagrams/lunge-knee-tracking.svg" alt="Two front-on views of a player landing a lunge. On the left, marked as safe: the lead foot points towards the shuttle, and a vertical line shows the lead knee tracking directly over that foot in the same direction; the rear foot is turned out and the rear knee is bent, with the rear arm extended for balance. On the right, marked as the pattern to avoid: the lead foot points one way while the knee collapses inward across it, so the knee and foot no longer face the same direction, and the rear leg is straight with the foot square rather than turned out." style="width:100%;height:auto;border-radius:12px" />
+        <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">Lead foot, lead knee and the direction you are hitting all face the same way. BWF's coaching points for the lunge are framed as joint protection, and this is the one they mean.</figcaption>
+      </figure>
+
+      <h2 id="after">Where do you go after you hit?</h2>
+      <p>Go to wherever covers the reply you have just invited, which is often not the middle.</p>
+      <p>"Recover to base after every shot" is the standard instruction on the popular six-corner pages, and it sits awkwardly against BWF calling base a fluid position rather than a set point. Badminton Insight goes further and lists unnecessary returns to base among the common split-step mistakes.</p>
+      <p>The sources disagree here and no authority settles it. What we would take from it: move to cover the reply you have just invited, rather than to a location. If you have played a tight net shot, the lift is coming and you should be ready for it; travelling back to the middle first wastes the half-second you just bought yourself.</p>
+
+      <h2 id="every-shot">Do you split step on every shot?</h2>
+      <p>Nearly always yes, and the honest exception is a shot coming straight at your body, where coaches disagree about whether there is time.</p>
+      <p>The argument for skipping it is that when the shuttle is already travelling at you there is nothing to redirect towards, so a split step spends time you do not have. The argument against is that the split step is what gets your weight off your heels, which is exactly what body defence needs.</p>
+      <p>We could not find an authority that settles this. If you want a working rule: keep the split step, make it smaller and earlier when you expect a smash, and land wider than usual.</p>
+
+      <h2 id="fitter">Do you have to get fitter?</h2>
+      <p>No, and that is most of the appeal - footwork is a positional gain rather than an aerobic one.</p>
+      <p>Moving earlier and in fewer steps means you cover the same court with less running. It will not make a long rally feel easier, and anyone telling you that better footwork substitutes for fitness is overselling it. What it does is get you to more shuttles at the fitness you already have.</p>
+
+      <h2 id="practise">How do you practise this at a club night?</h2>
+      <p>Shadow the movements without a shuttle, and use the hall's own lines to time your split steps.</p>
+      <p>BWF's manual gives a split-step drill that needs no partner and no shuttle: run down the sports hall performing a split step at given intervals, using the lines to guide them. That is a thing you can do in the ten minutes before anyone else arrives.</p>
+      <p>Its teaching sequence is also usable on yourself. The manual describes a whole-part-whole method with footwork as its worked example: try the whole movement into the forehand forecourt, isolate the chassé and practise that alone, then put the whole movement back together.</p>
+      <p><strong>An honest note on the evidence.</strong> Shadow footwork is recommended universally by coaching sources, and we could find no study evaluating whether it works or how much of it is useful. The one peer-reviewed review of badminton footwork training we located does not cover it, give durations, or evaluate any traditional method. Treat it as established practice rather than as something measured.</p>
+
+      <h2 id="natural">How long before it feels natural?</h2>
+      <p>Nobody has measured this, and we are not going to invent a number for it.</p>
+      <p>We looked for a figure and there is not one: no study, no coaching consensus, not even a commonly repeated rule of thumb. That is a genuine gap in what is published about a topic that is otherwise well covered.</p>
+      <p>What we can say is what the coaching sources describe: the split step becomes automatic soonest because it repeats every rally, and the movement patterns to specific corners take longer because they come up less often.</p>
+      <p><strong>And the concession this guide owes you.</strong> Footwork is probably not the best use of your next hour. If your games are one-sided, or you spend the evening waiting for a court, those cost you far more than your movement does and they are quicker to fix. Come back to this when the rest is working.</p>
+
+      <div class="guide-callout" style="margin-top:26px">
+        <h4>If you only do one thing</h4>
+        <p style="margin-top:8px">Drop onto both feet just before your opponent hits the shuttle, every rally, wherever you happen to be standing. Nothing else here works without it.</p>
+      </div>
+
+      <div class="guide-callout" style="margin-top:24px">
+        <h4>Fair games, without the admin</h4>
+        <p>ePegboard does not coach anybody. What it does is pick the games: balanced pairings on a club night and court time spread evenly, so you get a run of games against people who make you move rather than four easy ones and a hard one. Free for clubs.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+      </div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      @foreach (var f in faqPairs)
+      {
+        <h3>@f.Q</h3>
+        <p>@f.A</p>
+      }
+
+      <h2 id="related">Where to go next</h2>
+      <p>This guide covers how one player moves. Where two players stand as a pair, and when that changes, is a different subject: <a href="/guides/badminton-doubles-positioning">badminton doubles positioning</a> covers the two shapes, how to switch between them, and who takes the shuttle down the middle.</p>
+      <p>If you are wondering whether your racket is holding your movement back, it almost certainly is not, but <a href="/guides/how-to-choose-a-badminton-racket">how to choose a badminton racket</a> explains why head-heavy will not speed up your smash either.</p>
+      <p>And if the games themselves are the problem rather than your feet, <a href="/guides/mixed-ability-badminton-club-night">running a mixed-ability club night</a> deals with the pairing side of it.</p>
+
+      <div style="margin-top:34px;padding-top:22px;border-top:1px solid var(--line)">
+        <h4 style="margin:0 0 8px">How this guide was put together</h4>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:0">ePegboard builds club-night software. We are not coaches, we have not tested any of this, and nothing here is taught in our own voice. It is compiled from the BWF Coaches' Manual Level 1, from published coaching material by Greg and Jenny Mairs of Badminton Insight, both former England internationals and English National Champions, and from published sports-science work on the split step and the badminton lunge.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0">Where the sources disagree we have said so rather than picking a side, and where the evidence is thinner than the confidence around it we have said that too: the split step's timing rule is coaching doctrine rather than a measured result, the usual physiological explanation for it is an inference, and the precise timing figures in circulation come from tennis. How long any of it takes to learn is not published anywhere we could find.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0"><strong>Sources:</strong> <a href="https://development.bwfbadminton.com/coaches/level-1" target="_blank" rel="noopener">BWF Coach Education, Level 1</a> &middot; <a href="https://badminton-insight.com/the-split-step/" target="_blank" rel="noopener">Badminton Insight on the split step</a> &middot; <a href="https://badminton-insight.com/4-corner-footwork/" target="_blank" rel="noopener">Badminton Insight on corner footwork</a> &middot; <a href="https://peerj.com/articles/10300/" target="_blank" rel="noopener">Biomechanics of the lower limb in the badminton lunge (PeerJ, 2020)</a></p>
+        <p style="color:var(--muted-2);font-size:.9rem;margin:12px 0 0">Published 26 August 2026 by ePegboard.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
