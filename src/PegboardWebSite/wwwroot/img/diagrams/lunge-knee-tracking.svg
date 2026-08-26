@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" role="img"
+     aria-label="Two front-on views of a player landing a lunge. On the left, marked safe: the lead foot points forward towards the shuttle, and a vertical guide line shows the lead knee sitting directly above the middle of that foot, so knee and foot face the same direction; the rear foot is turned outward and the rear knee is bent, and the rear arm is extended for balance. On the right, marked as the pattern to avoid: the lead foot still points forward but the knee has collapsed inward across it, so the guide line through the foot passes outside the knee and the shin angles across the foot; the rear leg is straight and the rear foot is square rather than turned out.">
+  <title>Lead foot, lead knee and the direction you are hitting all face the same way</title>
+
+  <!--
+    Coaching points verbatim from the BWF Coaches' Manual Level 1, Module 6 section 05 (p61):
+      "The lead foot points towards the shuttle. Lead leg, knee and foot point of contact in the
+       same direction to protect knee/ankle joints. Turn out rear foot to help with balance and
+       range of movement. Bend rear knee to reduce strain on knee. Extend rear arm for balance."
+    BWF frames these explicitly as joint protection, which is why this diagram exists.
+    The knee and ankle are the two most commonly injured joints in badminton.
+
+    SCHEMATIC front-on view. No joint angles or force figures are asserted - the published
+    ground-reaction-force numbers were reachable only at abstract level and are not used.
+  -->
+
+  <rect width="1200" height="620" fill="#ffffff"/>
+
+  <text x="600" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#0f172a" font-weight="600">Landing a lunge: where the knee goes</text>
+  <text x="600" y="66" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">Seen from in front. The guide line runs up through the middle of the lead foot.</text>
+
+  <!-- ================= LEFT: SAFE ================= -->
+  <text x="310" y="112" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#0f766e" font-weight="600">Safe</text>
+
+  <!-- floor -->
+  <line x1="90" y1="500" x2="530" y2="500" stroke="#0f172a" stroke-width="3"/>
+  <!-- guide line through lead foot -->
+  <line x1="360" y1="180" x2="360" y2="500" stroke="#0f766e" stroke-width="2.5" stroke-dasharray="7 5"/>
+
+  <!-- torso + head -->
+  <circle cx="290" cy="180" r="28" fill="#334155"/>
+  <path d="M268 212 L318 212 L332 300 L262 300 Z" fill="#334155"/>
+  <!-- rear arm extended for balance -->
+  <line x1="272" y1="230" x2="150" y2="196" stroke="#334155" stroke-width="11" stroke-linecap="round"/>
+  <!-- racket arm -->
+  <line x1="318" y1="230" x2="404" y2="256" stroke="#334155" stroke-width="11" stroke-linecap="round"/>
+
+  <!-- LEAD leg: thigh hip->knee, shin knee->ankle, all in the vertical plane -->
+  <line x1="316" y1="300" x2="360" y2="392" stroke="#0f766e" stroke-width="16" stroke-linecap="round"/>
+  <line x1="360" y1="392" x2="360" y2="482" stroke="#0f766e" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="360" cy="392" r="19" fill="#ffffff" stroke="#0f766e" stroke-width="6"/>
+  <!-- lead foot, pointing forward (drawn as a forward-facing shape) -->
+  <ellipse cx="360" cy="490" rx="40" ry="15" fill="#0f766e"/>
+  <text x="410" y="400" font-family="system-ui,sans-serif" font-size="16" fill="#0f766e" font-weight="600">knee over the foot</text>
+
+  <!-- REAR leg: bent knee, foot turned out -->
+  <line x1="276" y1="300" x2="212" y2="386" stroke="#475569" stroke-width="14" stroke-linecap="round"/>
+  <line x1="212" y1="386" x2="176" y2="480" stroke="#475569" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="212" cy="386" r="15" fill="#ffffff" stroke="#475569" stroke-width="5"/>
+  <ellipse cx="164" cy="490" rx="42" ry="14" fill="#475569" transform="rotate(-24 164 490)"/>
+  <text x="60" y="420" font-family="system-ui,sans-serif" font-size="15" fill="#475569">rear knee bent,</text>
+  <text x="60" y="440" font-family="system-ui,sans-serif" font-size="15" fill="#475569">rear foot turned out</text>
+
+  <text x="310" y="546" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#0f766e">Foot, knee and the direction you are hitting</text>
+  <text x="310" y="568" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#0f766e">all face the same way.</text>
+
+  <!-- divider -->
+  <line x1="600" y1="100" x2="600" y2="580" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- ================= RIGHT: AVOID ================= -->
+  <text x="890" y="112" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#b91c1c" font-weight="600">Avoid</text>
+
+  <line x1="670" y1="500" x2="1110" y2="500" stroke="#0f172a" stroke-width="3"/>
+  <line x1="940" y1="180" x2="940" y2="500" stroke="#b91c1c" stroke-width="2.5" stroke-dasharray="7 5"/>
+
+  <circle cx="870" cy="180" r="28" fill="#334155"/>
+  <path d="M848 212 L898 212 L912 300 L842 300 Z" fill="#334155"/>
+  <line x1="852" y1="230" x2="778" y2="248" stroke="#334155" stroke-width="11" stroke-linecap="round"/>
+  <line x1="898" y1="230" x2="984" y2="256" stroke="#334155" stroke-width="11" stroke-linecap="round"/>
+
+  <!-- LEAD leg with the knee collapsed INWARD, off the guide line -->
+  <line x1="896" y1="300" x2="892" y2="392" stroke="#b91c1c" stroke-width="16" stroke-linecap="round"/>
+  <line x1="892" y1="392" x2="940" y2="482" stroke="#b91c1c" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="892" cy="392" r="19" fill="#ffffff" stroke="#b91c1c" stroke-width="6"/>
+  <ellipse cx="940" cy="490" rx="40" ry="15" fill="#b91c1c"/>
+  <!-- the gap that is the whole point -->
+  <line x1="892" y1="424" x2="940" y2="424" stroke="#b91c1c" stroke-width="2.5"/>
+  <line x1="892" y1="416" x2="892" y2="432" stroke="#b91c1c" stroke-width="2.5"/>
+  <line x1="940" y1="416" x2="940" y2="432" stroke="#b91c1c" stroke-width="2.5"/>
+  <text x="960" y="400" font-family="system-ui,sans-serif" font-size="16" fill="#b91c1c" font-weight="600">knee inside the foot</text>
+
+  <!-- REAR leg straight, foot square -->
+  <line x1="856" y1="300" x2="800" y2="482" stroke="#475569" stroke-width="14" stroke-linecap="round"/>
+  <ellipse cx="796" cy="490" rx="40" ry="14" fill="#475569"/>
+  <text x="668" y="420" font-family="system-ui,sans-serif" font-size="15" fill="#475569">rear leg straight,</text>
+  <text x="668" y="440" font-family="system-ui,sans-serif" font-size="15" fill="#475569">foot square</text>
+
+  <text x="890" y="546" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#b91c1c">The knee has collapsed across the foot.</text>
+  <text x="890" y="568" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#b91c1c">This is the one BWF's coaching points are about.</text>
+
+  <text x="1170" y="604" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">epegboard.com</text>
+</svg>

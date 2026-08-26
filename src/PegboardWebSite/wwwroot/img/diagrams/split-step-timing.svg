@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img"
+     aria-label="Two timelines comparing correct and incorrect split-step timing, both marked with a vertical line at the moment the opponent's racket contacts the shuttle. In the upper timeline, labelled what good movement looks like, the opponent completes a backswing and then a forward swing; before their racket reaches the shuttle the player takes off into a shallow drop, is briefly off the floor across the moment of contact, and lands with both feet down at or just after contact, only then pushing off in the direction the shuttle has gone. In the lower timeline, labelled the common mistake, the player is still standing flat-footed at the moment of contact and only begins to move after the shuttle has left the racket, so the take-off happens entirely after contact and the player starts from a standstill.">
+  <title>The split step straddles their contact. If you are still standing when they hit it, you are already late.</title>
+
+  <!--
+    Timing per BWF Coaches' Manual Level 1, Module 6 section 03 (p53): the split step is
+    "a shallow jump off the ground just before your opponent strikes the shuttle" and
+    "the landing occurs with or after the opponent hitting of the shuttle".
+    Corroborated in club-player language by Badminton Insight (Greg and Jenny Mairs):
+    initiate just before contact, push off just after it once the direction is known.
+
+    NO MILLISECOND FIGURES ARE SHOWN, deliberately. No badminton source quantifies the
+    interval; the only numeric split-step timing work is in tennis and does not transfer.
+    The horizontal axis is ORDER, not measured duration.
+  -->
+
+  <rect width="1200" height="675" fill="#ffffff"/>
+
+  <text x="600" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#0f172a" font-weight="600">When the split step happens</text>
+  <text x="600" y="66" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">Left to right is order of events, not measured time</text>
+
+  <!-- ============ TOP: correct ============ -->
+  <text x="60" y="108" font-family="system-ui,sans-serif" font-size="19" fill="#0f766e" font-weight="600">What good movement looks like</text>
+
+  <!-- contact line -->
+  <line x1="600" y1="120" x2="600" y2="300" stroke="#b45309" stroke-width="3" stroke-dasharray="7 5"/>
+  <text x="600" y="316" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#b45309" font-weight="600">their racket hits the shuttle</text>
+
+  <!-- opponent track -->
+  <text x="60" y="152" font-family="system-ui,sans-serif" font-size="15" fill="#475569">Them</text>
+  <line x1="150" y1="146" x2="1050" y2="146" stroke="#cbd5e1" stroke-width="4"/>
+  <g fill="#64748b">
+    <circle cx="250" cy="146" r="9"/><circle cx="430" cy="146" r="9"/><circle cx="760" cy="146" r="9"/>
+  </g>
+  <circle cx="600" cy="146" r="13" fill="#b45309"/>
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#64748b" text-anchor="middle">
+    <text x="250" y="130">backswing</text>
+    <text x="430" y="130">forward swing</text>
+    <text x="760" y="130">follow through</text>
+  </g>
+
+  <!-- your feet track -->
+  <text x="60" y="248" font-family="system-ui,sans-serif" font-size="15" fill="#475569">You</text>
+  <line x1="150" y1="242" x2="1050" y2="242" stroke="#cbd5e1" stroke-width="4"/>
+  <!-- airborne arc, straddling contact -->
+  <path d="M500 242 Q575 190 650 242" fill="none" stroke="#0f766e" stroke-width="4"/>
+  <g fill="#0f766e">
+    <rect x="492" y="234" width="16" height="16" rx="3"/>
+    <rect x="642" y="234" width="16" height="16" rx="3"/>
+    <circle cx="730" cy="242" r="9"/>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#0f766e" text-anchor="middle">
+    <text x="500" y="278">take off</text>
+    <text x="575" y="180">off the floor</text>
+    <text x="650" y="278">land, both feet</text>
+    <text x="748" y="278">push off</text>
+  </g>
+  <text x="150" y="278" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">ready, weight forward</text>
+
+  <!-- ============ divider ============ -->
+  <line x1="60" y1="358" x2="1140" y2="358" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- ============ BOTTOM: the mistake ============ -->
+  <text x="60" y="400" font-family="system-ui,sans-serif" font-size="19" fill="#b91c1c" font-weight="600">The common mistake</text>
+
+  <line x1="600" y1="412" x2="600" y2="592" stroke="#b45309" stroke-width="3" stroke-dasharray="7 5"/>
+  <text x="600" y="608" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#b45309" font-weight="600">their racket hits the shuttle</text>
+
+  <text x="60" y="444" font-family="system-ui,sans-serif" font-size="15" fill="#475569">Them</text>
+  <line x1="150" y1="438" x2="1050" y2="438" stroke="#cbd5e1" stroke-width="4"/>
+  <g fill="#64748b">
+    <circle cx="250" cy="438" r="9"/><circle cx="430" cy="438" r="9"/><circle cx="760" cy="438" r="9"/>
+  </g>
+  <circle cx="600" cy="438" r="13" fill="#b45309"/>
+
+  <text x="60" y="540" font-family="system-ui,sans-serif" font-size="15" fill="#475569">You</text>
+  <line x1="150" y1="534" x2="1050" y2="534" stroke="#cbd5e1" stroke-width="4"/>
+  <line x1="150" y1="534" x2="700" y2="534" stroke="#b91c1c" stroke-width="6"/>
+  <path d="M700 534 Q775 482 850 534" fill="none" stroke="#b91c1c" stroke-width="4"/>
+  <g fill="#b91c1c">
+    <rect x="692" y="526" width="16" height="16" rx="3"/>
+    <rect x="842" y="526" width="16" height="16" rx="3"/>
+  </g>
+  <text x="420" y="570" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#b91c1c">standing flat, watching the shuttle</text>
+  <text x="700" y="570" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#b91c1c">take off, too late</text>
+  <text x="880" y="510" font-family="system-ui,sans-serif" font-size="15" fill="#b91c1c" font-weight="600">now starting</text>
+  <text x="880" y="530" font-family="system-ui,sans-serif" font-size="15" fill="#b91c1c" font-weight="600">from a standstill</text>
+
+  <text x="1160" y="655" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">epegboard.com</text>
+</svg>

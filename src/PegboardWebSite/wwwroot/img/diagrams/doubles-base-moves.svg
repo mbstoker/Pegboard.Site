@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img"
+     aria-label="Three badminton courts side by side, each showing where one player splits from in a different situation, with the six corners of their half marked identically in all three. In the first, the pair is attacking front and back, and the player's base is well forward near the short service line. In the second, the pair is defending side by side, and the base is wider and further back in the midcourt. In the third, a flat exchange, the base sits between the two, mid-court and closer to the centre. The six corner markers occupy exactly the same positions in all three courts; only the base marker moves.">
+  <title>The corners never move. Your base does, because your pair's shape sets it.</title>
+
+  <!--
+    Base per BWF Coaches' Manual Level 1, Module 8 section 06 (p135): "the court position from
+    which you are best able to deal with your opponent's probable replies", and "the base is a
+    fluid position, not a set point on the court; the base position is where the player will
+    perform a split step, timed with the opponent striking the shuttle."
+    That definition is opponent-referenced rather than court-referenced, so it needs no doubles
+    adaptation - which is the whole point of this diagram.
+
+    COURT GEOMETRY: reuses the ePegboard court primitive in <defs> and places it with <use> plus a
+    uniform scale, so proportions cannot drift. 1 m = 80 units, BWF Law 1: 13.40 x 6.10 m =
+    1072 x 488 units; singles sideline 0.46 m in; short service line 1.98 m from the net;
+    doubles long service line 0.76 m in from the back. NEVER redraw the court by eye.
+
+    The three base positions are ILLUSTRATIVE of the shapes described in the text, not measured.
+  -->
+
+  <defs>
+    <g id="court">
+      <rect x="0" y="0" width="1072" height="488" fill="#f1f5f9"/>
+      <g stroke="#64748b" stroke-width="7" fill="none">
+        <rect x="0" y="0" width="1072" height="488"/>
+        <line x1="0" y1="36.8"  x2="1072" y2="36.8"/>
+        <line x1="0" y1="451.2" x2="1072" y2="451.2"/>
+        <line x1="377.6" y1="0" x2="377.6" y2="488"/>
+        <line x1="694.4" y1="0" x2="694.4" y2="488"/>
+        <line x1="60.8"  y1="0" x2="60.8"  y2="488"/>
+        <line x1="1011.2" y1="0" x2="1011.2" y2="488"/>
+        <line x1="0" y1="244" x2="377.6" y2="244"/>
+        <line x1="694.4" y1="244" x2="1072" y2="244"/>
+      </g>
+      <line x1="536" y1="-18" x2="536" y2="506" stroke="#0f172a" stroke-width="9"/>
+    </g>
+    <g id="corners">
+      <!-- six corners of the LEFT half, native court coords -->
+      <circle cx="430" cy="130" r="17" fill="#94a3b8"/>
+      <circle cx="430" cy="358" r="17" fill="#94a3b8"/>
+      <circle cx="270" cy="130" r="17" fill="#94a3b8"/>
+      <circle cx="270" cy="358" r="17" fill="#94a3b8"/>
+      <circle cx="90"  cy="130" r="17" fill="#94a3b8"/>
+      <circle cx="90"  cy="358" r="17" fill="#94a3b8"/>
+    </g>
+  </defs>
+
+  <rect width="1200" height="560" fill="#ffffff"/>
+
+  <text x="600" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="23" fill="#0f172a" font-weight="600">Base is not a spot on the court</text>
+  <text x="600" y="64" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">Grey markers are the six corners. They are identical in all three. The blue marker is where you split from.</text>
+
+  <!-- PANEL 1: attacking -->
+  <use href="#court" transform="translate(30,180) scale(0.33)"/>
+  <use href="#corners" transform="translate(30,180) scale(0.33)"/>
+  <text x="207" y="152" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#0f172a" font-weight="600">Your pair is attacking</text>
+  <circle cx="171.9" cy="260.5" r="15" fill="#1d4ed8"/>
+  <circle cx="171.9" cy="260.5" r="24" fill="none" stroke="#1d4ed8" stroke-width="2.5" stroke-dasharray="5 4"/>
+  <text x="207" y="372" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#475569">Front and back. As the front player</text>
+  <text x="207" y="392" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#475569">your base is well forward.</text>
+
+  <!-- PANEL 2: defending -->
+  <use href="#court" transform="translate(423,180) scale(0.33)"/>
+  <use href="#corners" transform="translate(423,180) scale(0.33)"/>
+  <text x="600" y="152" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#0f172a" font-weight="600">Your pair is defending</text>
+  <circle cx="522" cy="229.5" r="15" fill="#1d4ed8"/>
+  <circle cx="522" cy="229.5" r="24" fill="none" stroke="#1d4ed8" stroke-width="2.5" stroke-dasharray="5 4"/>
+  <text x="600" y="372" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#475569">Side by side. Wider, deeper, lower,</text>
+  <text x="600" y="392" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#475569">covering half the court each.</text>
+
+  <!-- PANEL 3: flat -->
+  <use href="#court" transform="translate(816,180) scale(0.33)"/>
+  <use href="#corners" transform="translate(816,180) scale(0.33)"/>
+  <text x="993" y="152" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#0f172a" font-weight="600">A flat exchange</text>
+  <circle cx="931.5" cy="260.5" r="15" fill="#1d4ed8"/>
+  <circle cx="931.5" cy="260.5" r="24" fill="none" stroke="#1d4ed8" stroke-width="2.5" stroke-dasharray="5 4"/>
+  <text x="993" y="372" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#475569">Nobody has the attack yet, so</text>
+  <text x="993" y="392" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#475569">neither of you commits.</text>
+
+  <text x="600" y="452" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" fill="#0f172a">"The base is a fluid position, not a set point on the court"</text>
+  <text x="600" y="476" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#64748b">BWF Coaches' Manual, Level 1</text>
+
+  <text x="600" y="516" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#b45309" font-weight="600">Recovering to the middle after every shot is advice from a format you are not playing</text>
+
+  <text x="1170" y="540" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">epegboard.com</text>
+</svg>
