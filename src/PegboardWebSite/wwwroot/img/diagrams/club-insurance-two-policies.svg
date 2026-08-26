@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" role="img"
+     aria-label="A matrix of eight risks against the two Badminton England insurance policies, club affiliation and individual membership. Club affiliation covers: the committee being sued over the club's activities, employers' liability at ten million pounds, professional indemnity at five million pounds, and abuse claims at two point five million pounds. It does not cover a player injuring someone, a player's own injury, a player's own equipment, or the club's own posts, nets and kit. Individual membership covers the opposite set: a player injuring someone, a player's own injury through personal accident cover, and a player's own equipment to two hundred pounds with a fifty pound excess at Compete or Coach level only. It does not cover the committee, employers' liability or professional indemnity, and abuse is a principal exclusion of the member policy while it is a benefit of the club policy. The final row is covered by neither: the club's own posts, nets and stored kit have no cover under either policy. A caption records that the two policies cover almost disjoint sets of risks, so holding one is not a substitute for the other.">
+  <title>The two policies cover almost opposite things. One row is covered by neither.</title>
+
+  <!--
+    Source: Badminton England 2025/26 policy schedules, read 2026-08-26.
+    Policy period 01/11/2025 to 31/10/2026. Broker Howden, main insurer Hiscox.
+      Clubs schedule: Combined Liability + Excess Liability ONLY. PL 10m, EL 10m,
+        PI 5m (NOT 10m - the affiliation page's "up to 10m" phrase groups all three
+        and misleads). Abuse 2.5m. Policy Beneficiaries: "Affiliated County
+        Associations, Affiliated Clubs, Affiliated Leagues" - players absent.
+      Member schedule: third-party liability, personal accident. Abuse is a
+        PRINCIPAL EXCLUSION. Personal equipment 200 with 50 excess, Compete/Coach
+        level only (not Community).
+    The "neither" row is the finding: no property/equipment cover exists anywhere in
+    club affiliation. Do not add a tick to it.
+    Full policy wordings sit behind a member login and were NOT obtained; every cell
+    here is from a schedule, not a wording.
+  -->
+
+  <rect width="1200" height="700" fill="#ffffff"/>
+
+  <text x="600" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#0f172a" font-weight="600">Two policies, almost opposite cover</text>
+  <text x="600" y="66" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">Badminton England 2025/26 schedules. Holding one is not a substitute for the other.</text>
+
+  <!-- column headers -->
+  <text x="790" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#0f172a" font-weight="600">Club affiliation</text>
+  <text x="790" y="143" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">the club pays, once a year</text>
+  <text x="1030" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#0f172a" font-weight="600">Individual membership</text>
+  <text x="1030" y="143" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">each player pays, separately</text>
+
+  <!-- the neither row, highlighted -->
+  <rect x="50" y="592" width="1110" height="52" fill="#fef3c7" opacity="0.55"/>
+
+  <g stroke="#e2e8f0" stroke-width="1">
+    <line x1="50" y1="158" x2="1160" y2="158"/>
+    <line x1="50" y1="212" x2="1160" y2="212"/>
+    <line x1="50" y1="266" x2="1160" y2="266"/>
+    <line x1="50" y1="320" x2="1160" y2="320"/>
+    <line x1="50" y1="374" x2="1160" y2="374"/>
+    <line x1="50" y1="430" x2="1160" y2="430"/>
+    <line x1="50" y1="484" x2="1160" y2="484"/>
+    <line x1="50" y1="538" x2="1160" y2="538"/>
+    <line x1="50" y1="592" x2="1160" y2="592"/>
+    <line x1="50" y1="644" x2="1160" y2="644"/>
+  </g>
+
+  <g font-family="system-ui,sans-serif" font-size="17" fill="#0f172a">
+    <text x="50" y="192">The committee is sued over the club's activities</text>
+    <text x="50" y="246">Employers' liability</text>
+    <text x="50" y="300">Professional indemnity</text>
+    <text x="50" y="354">An abuse claim</text>
+    <text x="50" y="410">A player injures somebody</text>
+    <text x="50" y="464">A player is injured themselves</text>
+    <text x="50" y="518">A player's own racket or kit</text>
+    <text x="50" y="572">Court hire the club has committed to</text>
+    <text x="50" y="626" font-weight="600">The club's own posts, nets and stored kit</text>
+  </g>
+
+  <!-- CLUB AFFILIATION column -->
+  <g text-anchor="middle" font-family="system-ui,sans-serif">
+    <text x="790" y="192" font-size="24" fill="#0f766e" font-weight="700">&#10003;</text>
+    <text x="790" y="246" font-size="17" fill="#0f766e" font-weight="600">&#10003; &#163;10m</text>
+    <text x="790" y="300" font-size="17" fill="#0f766e" font-weight="600">&#10003; &#163;5m</text>
+    <text x="790" y="354" font-size="17" fill="#0f766e" font-weight="600">&#10003; &#163;2.5m</text>
+    <text x="790" y="410" font-size="24" fill="#cbd5e1" font-weight="700">&#10007;</text>
+    <text x="790" y="464" font-size="24" fill="#cbd5e1" font-weight="700">&#10007;</text>
+    <text x="790" y="518" font-size="24" fill="#cbd5e1" font-weight="700">&#10007;</text>
+    <text x="790" y="572" font-size="24" fill="#cbd5e1" font-weight="700">&#10007;</text>
+    <text x="790" y="626" font-size="24" fill="#b45309" font-weight="700">&#10007;</text>
+  </g>
+
+  <!-- INDIVIDUAL MEMBERSHIP column -->
+  <g text-anchor="middle" font-family="system-ui,sans-serif">
+    <text x="1030" y="192" font-size="24" fill="#cbd5e1" font-weight="700">&#10007;</text>
+    <text x="1030" y="246" font-size="24" fill="#cbd5e1" font-weight="700">&#10007;</text>
+    <text x="1030" y="300" font-size="24" fill="#cbd5e1" font-weight="700">&#10007;</text>
+    <text x="1030" y="348" font-size="17" fill="#b45309" font-weight="600">&#10007; excluded</text>
+    <text x="1030" y="410" font-size="24" fill="#0f766e" font-weight="700">&#10003;</text>
+    <text x="1030" y="464" font-size="24" fill="#0f766e" font-weight="700">&#10003;</text>
+    <text x="1030" y="512" font-size="17" fill="#0f766e" font-weight="600">&#10003; &#163;200</text>
+    <text x="1030" y="572" font-size="24" fill="#cbd5e1" font-weight="700">&#10007;</text>
+    <text x="1030" y="626" font-size="24" fill="#b45309" font-weight="700">&#10007;</text>
+  </g>
+
+  <!-- inline qualifiers -->
+  <text x="1030" y="366" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#b45309">a principal exclusion</text>
+  <text x="1030" y="530" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">&#163;50 excess, Compete/Coach only</text>
+  <text x="790" y="588" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#94a3b8">liability cover, not a financial guarantee</text>
+  <text x="910" y="640" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#b45309" font-weight="600">neither policy covers this</text>
+
+  <text x="50" y="676" font-family="system-ui,sans-serif" font-size="15" fill="#64748b">Sums are the 2025/26 schedules, read 26 August 2026. Full policy wordings sit behind a member login and were not obtained: confirm against yours.</text>
+  <text x="1160" y="676" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">epegboard.com</text>
+</svg>

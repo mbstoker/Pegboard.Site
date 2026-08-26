@@ -1,0 +1,209 @@
+@page "/guides/badminton-club-insurance"
+@using PegboardWebSite.Services
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "Badminton club insurance: what affiliation covers, and what it does not";
+    ViewData["Description"] = "Affiliating your club insures the committee. Insuring the players is a separate purchase - and Badminton England's own website says both. Here is what the 2025/26 policy schedules actually contain.";
+    ViewData["OgTitle"] = "Badminton club insurance: what affiliation actually covers";
+
+    const string published = "2026-08-26";
+    const string canonical = "https://www.epegboard.com/guides/badminton-club-insurance";
+
+    // QUESTION SET (production step 1) - each is an H2 below:
+    //  1 Are we actually covered?
+    //  2 What does club affiliation give us?
+    //  3 If it does not cover players, who does?
+    //  4 What about guests and people on a trial?
+    //  5 What is not covered at all?
+    //  6 Does the leisure centre's insurance cover us?
+    //  7 What about our equipment?
+    //  8 Who is personally at risk?
+    //  9 What quietly voids the cover?
+    // 10 What does the whole thing cost?
+
+    var faqPairs = new (string Q, string A)[]
+    {
+        ("Do we need insurance to hire a court?",
+         "Most leisure centres and schools ask a regular hirer for evidence of public liability cover, and some name a figure. An affiliated club can produce a certificate for this, which is one of the more practical reasons to affiliate."),
+        ("Is a member covered when playing at another club?",
+         "We could not establish this from the published documents, and it is a fair question for a member who plays in two places. The member policy is written around the individual rather than the venue, but whether that extends to a session run by a non-affiliated club is not stated. Ask the governing body rather than assuming either answer."),
+        ("What about a club tournament or a social event?",
+         "Ordinary club activity sits inside the club policy. An event that is materially different from playing badminton - a fundraiser with an inflatable, a bar, a public audience - is worth a call before you run it, because that is where the standard wording stops describing what you are doing."),
+        ("Are coaches covered by the club's affiliation?",
+         "A coach's own cover comes with their coaching membership, not with your affiliation, and it depends on the licence being current. A coach whose licence has lapsed to Inactive is not insured to coach, whatever your club policy says."),
+        ("Do junior members need their own membership?",
+         "If you want them insured as players, yes, on the same basis as adults. The club policy's beneficiaries are clubs, counties and leagues, and that does not change with the player's age."),
+        ("Who do we ask when the answer is not on the website?",
+         "The governing body's membership team, and put the question in writing. Given that two of their own pages currently disagree about whether players are covered, a written answer is worth more than a page you screenshot.")
+    };
+
+    var articleJsonLd = GuideSchema.Article(
+        "Badminton club insurance: what affiliation covers, and what it does not",
+        "Affiliating the club insures the committee. Insuring the players is a separate purchase, and Badminton England's own website disagrees with itself about it.",
+        canonical, published);
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+}
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Club insurance</span></div>
+      <h1 style="margin-top:10px">Badminton club insurance: what affiliation covers, and what it does not</h1>
+      <div class="guide-meta">
+        <span class="gm-tag">Guide</span>
+        <span>Running a club</span>
+        <span>15 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:820px">
+
+    <div class="prose">
+      <p class="lead"><strong>Affiliating your club insures the club. It does not insure the people playing.</strong> Those are two separate purchases, and a large number of committees believe they have made both when they have made one. The confusion is not the clubs' fault: Badminton England publishes the same benefits table on two pages, and the two versions give opposite answers to exactly this question.</p>
+
+      <p>So this guide works from the policy schedules rather than the web copy, and says where the two disagree.</p>
+    </div>
+
+    <div class="guide-callout" style="margin-top:30px">
+      <h4>The short version</h4>
+      <ul style="margin:10px 0 0">
+        <li><strong>Club affiliation covers the club</strong> - public liability, employers' liability, professional indemnity, and abuse claims.</li>
+        <li><strong>It does not cover players.</strong> The policy schedule names its beneficiaries as clubs, counties and leagues. Players are absent from the list.</li>
+        <li><strong>Player cover comes from individual membership</strong>, bought by each player.</li>
+        <li><strong>Neither policy covers your posts, nets or stored kit.</strong> There is no property cover in club affiliation at all.</li>
+        <li><strong>Abuse cover runs the other way</strong> - it is a benefit of the club policy and a principal exclusion of the member policy.</li>
+        <li><strong>Guests on a taster get liability cover for a handful of visits</strong>, conditional on the club keeping attendance records. The rule is on the website and in no policy document we could find.</li>
+      </ul>
+    </div>
+
+    <p style="margin-top:22px;color:var(--muted-2);font-size:.95rem">Written for a UK club officer. Figures are from the Badminton England 2025/26 policy schedules and website, read on 26 August 2026. We hold schedules and certificates, not the full policy wordings, which sit behind a member login. Treat every position below as a prompt to check your own documents. Not insurance advice.</p>
+
+    <div class="guide-toc" style="margin-top:26px">
+      <h4>In this guide</h4>
+      <a href="#covered">Are we actually covered?</a>
+      <a href="#affiliation">What does club affiliation give us?</a>
+      <a href="#players">If it does not cover players, who does?</a>
+      <a href="#guests">What about guests and people on a trial?</a>
+      <a href="#not-covered">What is not covered at all?</a>
+      <a href="#venue">Does the leisure centre's insurance cover us?</a>
+      <a href="#equipment">What about our equipment?</a>
+      <a href="#personal">Who is personally at risk?</a>
+      <a href="#voids">What quietly voids the cover?</a>
+      <a href="#cost">What does the whole thing cost?</a>
+      <a href="#faq">Frequently asked questions</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+
+      <h2 id="covered">Are we actually covered?</h2>
+      <p>Partly, and the part you are missing is probably the players.</p>
+      <p>Here is the disagreement, because it explains why so many committees have this wrong. Badminton England publishes a benefits matrix showing which membership types get which cover. It appears on two pages. The row labelled Players, under the Club affiliation column, is marked <strong>not covered</strong> on the general membership page and <strong>covered</strong> on the page specifically about insurance. Same table, same row, opposite value. Both were read on 26 August 2026.</p>
+      <p><strong>Four other sources agree with the first version.</strong> The affiliation page's own prose says players must hold a Community, Compete or Coach membership to be covered. The membership FAQ says affiliation does not cover the individual players in the club. And the policy schedule itself lists its beneficiaries as affiliated county associations, affiliated clubs and affiliated leagues, with no mention of players.</p>
+      <p>So the weight of evidence is clear, and we would work on the basis that affiliation does not insure your players. But if a page on the governing body's own site says otherwise, get their answer in writing before you rely on either.</p>
+
+      <h2 id="affiliation">What does club affiliation give us?</h2>
+      <p>Liability cover for the club as an organisation, which mostly means cover for the committee doing committee things.</p>
+      <p>The 2025/26 clubs schedule contains combined liability and excess liability, and the headline sums are public liability £10m, employers' liability £10m, and professional indemnity <strong>£5m</strong>.</p>
+      <p>That last figure is worth stating on its own, because the affiliation page groups all three into a phrase about cover "up to £10m", which reads as though everything is at £10m. Professional indemnity is half that.</p>
+      <p>The one that surprises people is <strong>abuse cover at £2.5m</strong>, which is a real benefit and one the governing body undersells. It sits on the club policy. On the individual member policy, abuse is a principal exclusion. So the cover for the single most serious category of claim a club can face exists only through affiliation.</p>
+
+      <figure style="margin:26px 0 0">
+        <img src="/img/diagrams/club-insurance-two-policies.svg" alt="A matrix of eight risks against the two Badminton England policies. Club affiliation covers the committee being sued, employers' liability at ten million pounds, professional indemnity at five million pounds, and abuse claims at two and a half million pounds, but not players. Individual membership covers a player injuring someone, a player's own injury, and a player's own equipment to two hundred pounds with a fifty pound excess at Compete or Coach level, but not the committee, and abuse is a principal exclusion of it. The last row, the club's own posts, nets and stored kit, is marked as covered by neither policy." style="width:100%;height:auto;border-radius:12px" />
+        <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">The two policies cover almost opposite sets of risks. The highlighted row at the bottom is covered by neither.</figcaption>
+      </figure>
+
+      <h2 id="players">If it does not cover players, who does?</h2>
+      <p>The players, individually, through their own membership.</p>
+      <p>There are three tiers. <strong>Community</strong> is the entry level and is what a recreational club member needs. <strong>Compete</strong> adds what a player entering sanctioned competition requires, and includes personal equipment cover. <strong>Coach</strong> carries the coaching insurance and is tied to a licence.</p>
+      <p>What each gives a player is third-party liability, so that if they injure somebody or damage something while playing, there is a policy behind them, plus personal accident cover for their own injury.</p>
+      <p><strong>One trap in the tiers.</strong> Helper, Volunteer and Official membership does not provide playing or coaching insurance at all. It is designed for people who help rather than play. If someone on your committee holds it and also turns out on a Tuesday, they are not covered as a player.</p>
+
+      <h2 id="guests">What about guests and people on a trial?</h2>
+      <p>Covered for a small number of visits, and only if you write their names down.</p>
+      <p>Badminton England's guidance says prospective members have access to third-party liability cover for a handful of initial taster sessions. It says so twice on the same page, in two forms that do not match: once as cover for their first six visits, and once as a maximum of six taster sessions with the person required to be a member from their sixth visit, which is five free visits rather than six.</p>
+      <p><strong>Treat the fifth visit as the cut-off.</strong> That is the conservative reading of the two, and the difference only matters in the exact situation where it will matter most.</p>
+      <p><strong>Two things worth knowing about this rule.</strong> First, the condition attached to it is real and easy to fail: the club must record the name, address and dates of attendance of anyone playing under it, and retain those records, or the guidance warns the policy will be invalidated in the event of a claim. Second, we could not find the rule in any policy document. We searched all five current 2025/26 schedules for taster, guest, prospective, visit, non-member and pay-and-play, and found nothing. It exists as website guidance.</p>
+      <p>So attribute it to the guidance rather than to the policy, keep the register, and if your club runs an open pay-and-play night rather than a trial route into membership, that is a different arrangement and worth asking about directly.</p>
+
+      <h2 id="not-covered">What is not covered at all?</h2>
+      <p>Three things that clubs assume are in there.</p>
+      <ul>
+        <li><strong>Property and equipment of any kind, under club affiliation.</strong> The clubs schedule contains liability cover and nothing else.</li>
+        <li><strong>Abuse claims at player level.</strong> Excluded from the member policy, as above.</li>
+        <li><strong>Anything in a United States or Canadian court.</strong> A standard exclusion, and irrelevant to almost every club, but it is there.</li>
+      </ul>
+      <p>And a category that is not so much excluded as misunderstood: liability insurance responds when somebody claims the club caused them loss or injury. It does not respond when the club simply cannot pay for something it committed to. A hall booking you are contractually stuck with is a financial problem, not an insurance one.</p>
+
+      <h2 id="venue">Does the leisure centre's insurance cover us?</h2>
+      <p>Assume not, and read your hire agreement.</p>
+      <p>Venues do often carry hirers' liability cover, and it does sometimes extend to the people using the space. But the way that cover is described by brokers who sell it, it is designed for informal and one-off users, and an organisation with a formal membership or a written constitution is expected to hold its own. A badminton club is squarely in the second category.</p>
+      <p>We want to be honest that this section rests on how such policies are described rather than on an actual leisure-centre hire agreement, which we did not obtain. The practical answer does not change: your hire agreement will state what you are required to hold, and most centres asking a regular hirer for evidence of public liability are not going to accept "we assumed you covered us".</p>
+
+      <h2 id="equipment">What about our equipment?</h2>
+      <p>Nothing covers it under affiliation. If you want your posts, nets and stored kit insured, that is a separate policy.</p>
+      <p>For most clubs the honest answer is that it is not worth buying one. A set of posts and a bag of shuttles is a replaceable amount of money, and a standalone contents policy for a club that stores its kit in somebody's garage is more trouble than the risk. Clubs with their own hall, or with a serious amount of stored equipment, are in a different position and should treat it as a real gap.</p>
+      <p>At player level, personal equipment cover does exist, at Compete and Coach membership only. It is <strong>£200 with a £50 excess</strong>, which is a contribution towards a decent racket rather than a replacement for one.</p>
+
+      <h2 id="personal">Who is personally at risk?</h2>
+      <p>The members, and that includes you, because most badminton clubs are unincorporated associations.</p>
+      <p>An unincorporated association has no separate legal existence, so its obligations rest on its members. That is why the liability cover matters: it is standing between the committee and a claim, and it is the reason to check your affiliation is current rather than assume it renewed.</p>
+      <p>The constitution does not change this. It organises how the club runs, and several published badminton templates say plainly that members are jointly and severally responsible for the club's financial liabilities. Insurance addresses the risk; the constitution does not.</p>
+
+      <h2 id="voids">What quietly voids the cover?</h2>
+      <p>The most useful section in this guide, and the one nobody asks about.</p>
+      <ul>
+        <li><strong>A lapsed membership leaves a permanent hole, not a pause.</strong> The member wording excludes incidents falling outside the last period of continuous membership. Someone who let their membership lapse for four months and rejoined has an uncovered gap that rejoining does not close.</li>
+        <li><strong>A coach whose licence has gone Inactive is not insured to coach.</strong> Licence status and membership are separate things and only one of them is visible to you.</li>
+        <li><strong>Helper, Volunteer and Official membership is not playing cover</strong>, as above.</li>
+        <li><strong>Professional indemnity is claims-made.</strong> It responds to claims made while the policy is live, not to things that happened while it was live. A club that stops affiliating loses that protection for past activity.</li>
+        <li><strong>Not keeping the taster register.</strong> The one condition on the guest rule, and the one most likely to be forgotten.</li>
+      </ul>
+      <p>Four of those five are about somebody's status having changed without the club noticing, which is the general shape of the problem. Cover fails because a renewal was missed, not because anybody did anything wrong.</p>
+
+      <h2 id="cost">What does the whole thing cost?</h2>
+      <p>Club affiliation in England is banded by size: <strong>£90 for 1 to 20 members, £125 for 21 to 49, and £150 for 50 or more</strong>. Individual membership is bought separately by each player and varies by tier.</p>
+      <p>For a 30-member club, that is £125 from club funds plus whatever the members pay for their own Community memberships. Whether you charge the affiliation fee through to subs or absorb it is a decision about how your subs work rather than an insurance question.</p>
+      <p><strong>And the concession this guide owes you.</strong> If your club is affiliated, your members hold their own individual memberships, and you keep a register of anyone playing on a taster, you are in good shape and there is nothing further to buy. That is the common case, and this guide is not trying to sell you a policy.</p>
+      <p>One boundary: everything above is England. Scotland and Wales run the same shape with different numbers and, in Wales, an entirely different insurer. If your club is outside England, the structure of this guide holds and the figures do not.</p>
+
+      <div class="guide-callout" style="margin-top:26px">
+        <h4>If you only do one thing</h4>
+        <p style="margin-top:8px">Check that every regular player holds their own individual membership. That is the gap most clubs have, and affiliation does not close it.</p>
+      </div>
+
+      <div class="guide-callout" style="margin-top:24px">
+        <h4>Fair games, without the admin</h4>
+        <p>ePegboard will not insure your club. What it does is take the running of the night off the committee: balanced games, even court time, and a record of who actually played. Free for clubs.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+      </div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      @foreach (var f in faqPairs)
+      {
+        <h3>@f.Q</h3>
+        <p>@f.A</p>
+      }
+
+      <h2 id="related">Where to go next</h2>
+      <p>Affiliation is also what makes a welfare officer compulsory, which changes what your committee has to look like: <a href="/guides/badminton-club-committee-roles">which committee roles does a badminton club have to fill</a>.</p>
+      <p>The personal-liability point above is the reason clubs ask whether their constitution protects them. It does not, and <a href="/guides/badminton-club-constitution">writing a badminton club constitution</a> covers what it does instead.</p>
+      <p>If the affiliation fee is going to come out of subs, <a href="/guides/setting-club-subs">setting club subs</a> covers where it fits.</p>
+
+      <div style="margin-top:34px;padding-top:22px;border-top:1px solid var(--line)">
+        <h4 style="margin:0 0 8px">How this guide was put together</h4>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:0">ePegboard builds club-night software. We do not sell insurance, which is why this guide can open by telling you that affiliation already gives your club £10m of public liability. A broker cannot say that, because it argues the reader out of the sale, and not one of the broker pages we compared against mentions Badminton England at all. It is compiled from Badminton England's published 2025/26 policy schedules and certificates, their membership and affiliation pages, and their published FAQ, all read on 26 August 2026.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0">Three limits worth stating. We hold schedules and certificates, not the full policy wordings, which sit behind a member login: every position here should be confirmed against your own documents. The taster-visit rule appears in no policy document we could find and is attributed to the website guidance throughout. And the venue section rests on how hirers' liability policies are described by brokers, not on a leisure-centre hire agreement.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0">The 2025/26 policy period runs 1 November 2025 to 31 October 2026, brokered by Howden. Badminton England's FAQ still names a previous broker, which is one more reason to read the schedule rather than the web copy.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0"><strong>Sources:</strong> <a href="https://www.badmintonengland.co.uk/membership/membership-insurance" target="_blank" rel="noopener">Badminton England membership insurance</a> &middot; <a href="https://www.badmintonengland.co.uk/membership/club-affiliation" target="_blank" rel="noopener">Badminton England club affiliation</a> &middot; <a href="https://www.badmintonengland.co.uk/membership" target="_blank" rel="noopener">Badminton England membership benefits</a> &middot; <a href="https://www.gov.uk/unincorporated-associations" target="_blank" rel="noopener">gov.uk on unincorporated associations</a></p>
+        <p style="color:var(--muted-2);font-size:.9rem;margin:12px 0 0">Published 26 August 2026 by ePegboard. Schedules and pages read 26 August 2026.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
