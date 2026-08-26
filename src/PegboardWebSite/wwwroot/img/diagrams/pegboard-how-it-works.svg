@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img"
+     aria-label="A club pegboard explained in four steps. Step one: you arrive and your peg goes on the bottom of a vertical queue of pegs, behind everyone already waiting. Step two: when a court comes free, the peg at the top of the queue takes the next three pegs below it, and those four people play together, with the person at the top choosing the pairings. Step three: when that game ends, all four pegs return to the bottom of the queue, with the two winners placed below the two losers so that the losing pair reaches the front and gets back on court sooner. Step four: to sit out, you lift your own peg off the queue and put it in the parking area at the top of the board, which takes you out of selection without you having to decline anybody.">
+  <title>How a club pegboard works, including the bit where you take yourself out without saying anything</title>
+
+  <!--
+    Mechanism as documented on UK club websites read 2026-08-26: Kites BC (queue, picking from the
+    front, winners' pegs returning first, parking area for sitting out), Lewes BC (visitors should
+    not be expected to pick their own games and should not be bypassed at the head of the queue),
+    Balsall Common BC and Otley BC (a newcomer is helped into selection).
+
+    Boards differ in detail between clubs - some use names, tags or magnets rather than pegs, and
+    some order returning pegs differently. The queue, the picking from the front and the parking
+    area are the near-universal parts. ILLUSTRATIVE of the common pattern, not one club's board.
+  -->
+
+  <defs>
+    <g id="board">
+      <rect x="0" y="0" width="210" height="430" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/>
+      <rect x="12" y="12" width="186" height="58" rx="7" fill="#eef2f7" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 4"/>
+      <line x1="12" y1="82" x2="198" y2="82" stroke="#cbd5e1" stroke-width="2"/>
+    </g>
+  </defs>
+
+  <rect width="1200" height="675" fill="#ffffff"/>
+
+  <text x="600" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#0f172a" font-weight="600">How the pegboard works</text>
+  <text x="600" y="66" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">Nobody asks anybody for a game. The board does it.</text>
+
+  <!-- ================= PANEL 1 ================= -->
+  <use href="#board" transform="translate(60,140)"/>
+  <text x="165" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#0f172a" font-weight="600">1. You arrive</text>
+  <text x="165" y="180" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#94a3b8">sitting out</text>
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#334155" text-anchor="middle">
+    <rect x="90" y="236" width="150" height="24" rx="5" fill="#e2e8f0"/><text x="165" y="253">waiting</text>
+    <rect x="90" y="266" width="150" height="24" rx="5" fill="#e2e8f0"/><text x="165" y="283">waiting</text>
+    <rect x="90" y="296" width="150" height="24" rx="5" fill="#e2e8f0"/><text x="165" y="313">waiting</text>
+    <rect x="90" y="326" width="150" height="24" rx="5" fill="#e2e8f0"/><text x="165" y="343">waiting</text>
+    <rect x="90" y="356" width="150" height="24" rx="5" fill="#e2e8f0"/><text x="165" y="373">waiting</text>
+    <rect x="90" y="386" width="150" height="24" rx="5" fill="#e2e8f0"/><text x="165" y="403">waiting</text>
+  </g>
+  <rect x="90" y="416" width="150" height="24" rx="5" fill="#1d4ed8"/>
+  <text x="165" y="433" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#ffffff" font-weight="600">YOU</text>
+  <text x="165" y="470" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">front of the queue is the top</text>
+  <text x="165" y="524" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#475569">Your peg goes on the</text>
+  <text x="165" y="544" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#475569">bottom, behind everyone</text>
+  <text x="165" y="564" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#475569">already waiting.</text>
+
+  <!-- ================= PANEL 2 ================= -->
+  <use href="#board" transform="translate(350,140)"/>
+  <text x="455" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#0f172a" font-weight="600">2. A court frees up</text>
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">
+    <rect x="380" y="236" width="150" height="24" rx="5" fill="#0f766e"/><text x="455" y="253">picks</text>
+    <rect x="380" y="266" width="150" height="24" rx="5" fill="#0f766e"/><text x="455" y="283">plays</text>
+    <rect x="380" y="296" width="150" height="24" rx="5" fill="#0f766e"/><text x="455" y="313">plays</text>
+    <rect x="380" y="326" width="150" height="24" rx="5" fill="#0f766e"/><text x="455" y="343">plays</text>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#334155" text-anchor="middle">
+    <rect x="380" y="356" width="150" height="24" rx="5" fill="#e2e8f0"/><text x="455" y="373">waiting</text>
+    <rect x="380" y="386" width="150" height="24" rx="5" fill="#e2e8f0"/><text x="455" y="403">waiting</text>
+  </g>
+  <rect x="380" y="416" width="150" height="24" rx="5" fill="#1d4ed8"/>
+  <text x="455" y="433" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#ffffff" font-weight="600">YOU</text>
+  <path d="M545 250 L575 250 L575 340 L545 340" fill="none" stroke="#0f766e" stroke-width="2.5"/>
+  <text x="583" y="299" font-family="system-ui,sans-serif" font-size="14" fill="#0f766e">these four</text>
+  <text x="455" y="524" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#475569">The peg at the top takes</text>
+  <text x="455" y="544" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#475569">the next three and picks</text>
+  <text x="455" y="564" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#475569">the pairings.</text>
+
+  <!-- ================= PANEL 3 ================= -->
+  <use href="#board" transform="translate(640,140)"/>
+  <text x="745" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#0f172a" font-weight="600">3. The game ends</text>
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#334155" text-anchor="middle">
+    <rect x="670" y="236" width="150" height="24" rx="5" fill="#e2e8f0"/><text x="745" y="253">waiting</text>
+    <rect x="670" y="266" width="150" height="24" rx="5" fill="#e2e8f0"/><text x="745" y="283">waiting</text>
+  </g>
+  <rect x="670" y="296" width="150" height="24" rx="5" fill="#1d4ed8"/>
+  <text x="745" y="313" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#ffffff" font-weight="600">YOU</text>
+  <g font-family="system-ui,sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">
+    <rect x="670" y="326" width="150" height="24" rx="5" fill="#b45309"/><text x="745" y="343">lost, back on sooner</text>
+    <rect x="670" y="356" width="150" height="24" rx="5" fill="#b45309"/><text x="745" y="373">lost</text>
+    <rect x="670" y="386" width="150" height="24" rx="5" fill="#94a3b8"/><text x="745" y="403">won</text>
+    <rect x="670" y="416" width="150" height="24" rx="5" fill="#94a3b8"/><text x="745" y="433">won</text>
+  </g>
+  <text x="745" y="524" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#475569">All four pegs go to the</text>
+  <text x="745" y="544" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#475569">bottom. You have moved</text>
+  <text x="745" y="564" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#475569">up without doing anything.</text>
+
+  <!-- ================= PANEL 4 ================= -->
+  <use href="#board" transform="translate(930,140)"/>
+  <text x="1035" y="122" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#0f172a" font-weight="600">4. Need a rest?</text>
+  <rect x="962" y="158" width="146" height="26" rx="5" fill="#1d4ed8"/>
+  <text x="1035" y="176" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#ffffff" font-weight="600">YOU</text>
+  <text x="1035" y="204" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#1d4ed8">parked, not in the queue</text>
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#334155" text-anchor="middle">
+    <rect x="960" y="236" width="150" height="24" rx="5" fill="#e2e8f0"/><text x="1035" y="253">waiting</text>
+    <rect x="960" y="266" width="150" height="24" rx="5" fill="#e2e8f0"/><text x="1035" y="283">waiting</text>
+    <rect x="960" y="296" width="150" height="24" rx="5" fill="#e2e8f0"/><text x="1035" y="313">waiting</text>
+    <rect x="960" y="326" width="150" height="24" rx="5" fill="#e2e8f0"/><text x="1035" y="343">waiting</text>
+    <rect x="960" y="356" width="150" height="24" rx="5" fill="#e2e8f0"/><text x="1035" y="373">waiting</text>
+  </g>
+  <path d="M1120 300 Q1150 240 1120 180" fill="none" stroke="#1d4ed8" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <text x="1035" y="524" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#475569">Lift your peg out of the</text>
+  <text x="1035" y="544" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#475569">queue. Nobody has been</text>
+  <text x="1035" y="564" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#475569">turned down.</text>
+
+  <text x="600" y="620" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" fill="#0f172a">You never ask anyone for a game, and you never have to decline one</text>
+  <text x="1160" y="655" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">epegboard.com</text>
+</svg>

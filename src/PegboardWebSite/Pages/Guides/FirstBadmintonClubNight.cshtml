@@ -1,0 +1,222 @@
+@page "/guides/first-badminton-club-night"
+@using PegboardWebSite.Services
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "Your first badminton club night: what to expect";
+    ViewData["Description"] = "Check the club will take you before you go - a lot of adult clubs will not take a beginner and say so in writing. Once you are in the right room, you will not have to ask anyone for a game.";
+    ViewData["OgTitle"] = "Your first badminton club night";
+
+    const string published = "2026-08-26";
+    const string canonical = "https://www.epegboard.com/guides/first-badminton-club-night";
+
+    // QUESTION SET (production step 1) - ordered by documented anxiety, not logical sequence:
+    //  1 Am I even at the right kind of session?
+    //  2 Will I be good enough?
+    //  3 Do I have to tell them I am coming?
+    //  4 What happens in the first five minutes?
+    //  5 How do games get made up?
+    //  6 Will anyone talk to me?
+    //  7 What if I ruin the game for the other three?
+    //  8 How much will I actually be playing?
+    //  9 What do I need to bring?
+    // 10 The unwritten rules nobody tells you
+    // 11 What if I hate it?
+
+    var faqPairs = new (string Q, string A)[]
+    {
+        ("Can I bring a friend so I am not on my own?",
+         "Usually yes, and it is a good idea, but check first because some clubs cap visitor numbers and a few are full. Be prepared to be split up: at most clubs the games are picked for you, so you will not necessarily be playing together."),
+        ("Do I need to be a member of anything?",
+         "Not to visit. Most clubs let you come a few times as a paying visitor before you have to decide, and joining usually brings national affiliation with it. If a club asks you to join before your first game, that is unusual enough to ask about."),
+        ("What if I am much older or much younger than everyone there?",
+         "Adult club nights skew wider than people expect, and a lot of clubs run separate sessions for different groups. If age is what is worrying you, the club's own photographs and its session list will tell you more than any general answer we can give."),
+        ("Is it worth having a lesson first?",
+         "If you have never played at all, a few coached sessions will make your first club night much more enjoyable, and some clubs run beginner courses themselves. If you played at school and stopped, you almost certainly do not need one."),
+        ("What happens if I break a shuttle?",
+         "Nothing. Feather shuttles break constantly and nobody counts. Put the broken one to one side rather than back in the tube, and take a new one - at a club night they are almost always the club's rather than an individual's."),
+        ("How do I find a club in the first place?",
+         "Badminton England's club finder and your county association's list are the usual routes, and a search for your town plus badminton club will find most of the rest. Read the club's own page before you contact them, because that is where the standard is usually stated.")
+    };
+
+    var articleJsonLd = GuideSchema.Article(
+        "Your first badminton club night: what to expect",
+        "Check the club will take you before you go. Once you are in the right room, you will not have to ask anyone for a game.",
+        canonical, published);
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+}
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Your first club night</span></div>
+      <h1 style="margin-top:10px">Your first badminton club night: what to expect</h1>
+      <div class="guide-meta">
+        <span class="gm-tag">Guide</span>
+        <span>Playing</span>
+        <span>13 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:820px">
+
+    <div class="prose">
+      <p class="lead"><strong>Read the club's own website before you go, because a lot of adult clubs will not take a beginner and most of them say so in writing.</strong> Of fourteen we looked at, six said it outright. Once you are at the right kind of session it is easier than you are expecting: you get a peg, you will not have to ask anyone for a game, and at most clubs somebody makes sure you get picked. Bring a racket and non-marking shoes. Expect to pay somewhere between five and fourteen pounds.</p>
+
+      <p>The bad version of this evening is standing against the wall for twenty minutes holding a racket, watching everybody else know exactly what to do.</p>
+    </div>
+
+    <div class="guide-callout" style="margin-top:30px">
+      <h4>The short version</h4>
+      <ul style="margin:10px 0 0">
+        <li><strong>Check the club takes beginners.</strong> Many do not, and they say so on their own website. Being turned away is about their format, not about you.</li>
+        <li><strong>Message them first.</strong> Several clubs require it and a few have waiting lists. Just turning up is not always safe.</li>
+        <li><strong>You will not have to ask anyone for a game.</strong> Most clubs run a pegboard, and their own rules say a visitor should not be expected to pick.</li>
+        <li><strong>Shoes are the only thing that will get you turned away.</strong> Non-marking soles, nothing with black rubber that leaves lines on the floor.</li>
+        <li><strong>Bring your own racket.</strong> Loan rackets were reliably available at one club of the fourteen we looked at.</li>
+        <li><strong>Do not bring shuttles.</strong> Almost every club supplies them, and turning up with your own reads oddly.</li>
+      </ul>
+    </div>
+
+    <p style="margin-top:22px;color:var(--muted-2);font-size:.95rem">Written for an adult going to a UK club night for the first time. The club figures here come from reading fourteen clubs' own websites on 26 August 2026 - a small sample found through search rather than a representative one, so treat it as a warning to check rather than as a national picture.</p>
+
+    <div class="guide-toc" style="margin-top:26px">
+      <h4>In this guide</h4>
+      <a href="#right-session">Am I even at the right kind of session?</a>
+      <a href="#good-enough">Will I be good enough?</a>
+      <a href="#turn-up">Do I have to tell them I am coming?</a>
+      <a href="#five-minutes">What happens in the first five minutes?</a>
+      <a href="#games">How do games get made up?</a>
+      <a href="#talk">Will anyone talk to me?</a>
+      <a href="#ruin">What if I ruin the game for the other three?</a>
+      <a href="#playing">How much will I actually be playing?</a>
+      <a href="#bring">What do I need to bring?</a>
+      <a href="#unwritten">The unwritten rules nobody tells you</a>
+      <a href="#hate-it">What if I hate it?</a>
+      <a href="#faq">Frequently asked questions</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+
+      <h2 id="right-session">Am I even at the right kind of session?</h2>
+      <p>A large minority of adult badminton clubs do not accept beginners, and the ones that do not usually say so on their own website in plain language.</p>
+      <p>This is the thing nobody tells you, and it is the difference between a good evening and a humiliating one. We read fourteen UK club websites and six of them excluded or discouraged beginners in writing. Not gently, either: <em>"we are not a beginners club"</em>, <em>"we are unable to accept beginners"</em>, <em>"Strictly Intermediate to Advanced"</em>, <em>"we don't have facilities for adult beginners"</em>.</p>
+      <p>Those are fourteen clubs found through a search, not a national survey, so do not read six-in-fourteen as a statistic. Read it as a warning to check.</p>
+      <p><strong>If you are turned away, you have not failed at badminton. You went to the wrong room.</strong> A club that plays league fixtures on a Tuesday is not being unkind when it says its Tuesday is not for beginners; it is describing what happens there. The right room exists and is usually in the same building on a different night.</p>
+      <p>What to look for on the club's page, in order: an explicit statement about standard or ability; the words "all abilities" or "beginners welcome", which do appear and are meant; a separate beginners' or improvers' session; or a coached session. If none of those is there, ask before you go rather than finding out in the hall.</p>
+
+      <h2 id="good-enough">Will I be good enough?</h2>
+      <p>For the right session, almost certainly yes - and the question is about which session rather than about you.</p>
+      <p>Badminton is unusual in how quickly a complete beginner becomes playable in doubles. You need to be able to serve, return, and not stand still, and most people who played at school have that after twenty minutes of remembering.</p>
+      <p>The honest answer to "I have not played since school" is that you are not a beginner in the sense clubs mean. Clubs excluding beginners are usually excluding people who have never held a racket, not people who are rusty.</p>
+      <p>If you have never held a racket at all, a club night is the harder route and a coached or pay-and-play session is the easier one. Badminton England runs beginner-focused sessions built around exactly this, and plenty of clubs run their own beginner courses. Starting there and moving to a club night in a few months is a much better evening than starting at the deep end.</p>
+
+      <h2 id="turn-up">Do I have to tell them I am coming?</h2>
+      <p>Message them first, because several clubs require it and a few are full.</p>
+      <p>"Just turn up" is the advice everyone gives and it is not reliably true. Of the clubs we read, four asked to be contacted before a first visit and three were operating waiting lists. One takes no visitors at all because it is at capacity.</p>
+      <p>A short message also solves three other problems at once. It tells you whether they take beginners, it means somebody is expecting you, and it usually gets you told which door to use, which sounds trivial and is not when you are standing outside a leisure centre at ten to eight.</p>
+      <p><strong>What it costs.</strong> Visitor fees at the clubs we read ran from £5 to £14 a night, and the usual arrangement is that you can come two or three times before deciding whether to join. A free first session is uncommon: one club of the fourteen. Some clubs credit your trial fees against the membership if you join, which is worth asking about.</p>
+
+      <h2 id="five-minutes">What happens in the first five minutes?</h2>
+      <p>You arrive, somebody takes your money, you get a peg or a marker with your name on it, and you put it in a queue.</p>
+      <p>At a well-run club a person will find you. Several of the clubs we read say so explicitly, including one whose page promises that someone will greet you and make sure you get selected. At a less organised club you may have to say "hello, it is my first time" to whoever looks like they are in charge, which is the hardest sentence of the evening and the only one you have to produce.</p>
+      <p>Then get changed, put your shoes on, and get on a court to hit for a few minutes if one is free. Warming up with a stranger is normal and asking someone to knock up with you is much easier than asking them for a game, because it is temporary and nobody is committing to anything.</p>
+
+      <h2 id="games">How do games get made up?</h2>
+      <p>At most clubs a pegboard decides, you do not pick your own games, and as a visitor you are not expected to.</p>
+      <p>Nine of the fourteen clubs we read use a pegboard or an equivalent board of names or tags. It is the single most common mechanism in UK club badminton and, as far as we can find, nobody has ever explained it to a newcomer.</p>
+
+      <figure style="margin:26px 0 0">
+        <img src="/img/diagrams/pegboard-how-it-works.svg" alt="A diagram of a club pegboard in four steps. Step one: you arrive and your peg goes at the back of a vertical queue of pegs. Step two: when your peg reaches the front, the person at the top of the queue takes the next three pegs below theirs and decides the pairings, so a game of four is made without anyone being asked. Step three: when that game finishes, all four pegs go to the back of the queue, with the winners returning first so the losers get on court again sooner. Step four: to sit out, you lift your peg off the queue entirely and put it in the parking area at the top of the board, which removes you from selection without you having to decline anybody." style="width:100%;height:auto;border-radius:12px" />
+        <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">The mechanism at most UK club nights. Boards differ in detail; the queue, the picking from the front and the parking area are near-universal.</figcaption>
+      </figure>
+
+      <p style="margin-top:22px"><strong>Here is the part that should make you feel better.</strong> Clubs write down that a visitor should not be expected to pick their own games, and equally should not be skipped when their peg reaches the front. One club's code of conduct puts both halves in a single sentence. Another says assistance will be provided for new players as required.</p>
+      <p>So the sentence you are dreading - asking three strangers whether you can join in - is a sentence you will not have to say. The board asks for you.</p>
+      <p>Some clubs do it differently: a free-for-all rotation, an organiser making the games, or an app that grades players and assigns courts. If you cannot see a board when you arrive, ask how games are picked. It is a normal question and it does not mark you out.</p>
+
+      <h2 id="talk">Will anyone talk to me?</h2>
+      <p>Probably, but not always immediately, and this is the fear that turns out to be real more often than the one about ability.</p>
+      <p>We are not going to pretend otherwise. The most detailed first-hand account we could find of a badly-going first night is not about being outclassed; it is about nobody speaking to the writer between games while everyone else caught up with their friends. That is a real thing that happens, and it happens at clubs that would describe themselves as friendly.</p>
+      <p>Two things help. The first is that the pegboard forces contact: you will play with three different people every game and against two more, so within an hour you have shared a court with a dozen people whether or not anyone made conversation at the side.</p>
+      <p>The second is that this is largely a first-night problem. Clubs are groups of people who already know each other, doing a thing they do every week. Nobody is excluding you; they are just mid-conversation. It reads completely differently on the third visit, which is one reason the two-or-three-visit trial exists.</p>
+      <p><strong>If it is still like that after three visits, that is information about the club rather than about you.</strong> The account we read ends happily, at the fourth club the writer tried.</p>
+
+      <h2 id="ruin">What if I ruin the game for the other three?</h2>
+      <p>You will not, because the person picking is supposed to make the game balanced, and most clubs write that down.</p>
+      <p>The convention is that whoever picks assembles a game that works rather than the strongest possible four. One club's guidance is unusually explicit: do not put three of the best players with a beginner, but two stronger players and two weaker ones is fine. That is the standard shape of a club game and it is designed to absorb exactly the gap you are worried about.</p>
+      <p>The same club tells players that if they are unhappy with the games they are being picked for, they should say so to a coach. If a club has written that down for its own members, it is not going to mind a visitor being in a mixed game.</p>
+      <p>What actually annoys people at club level is not weak play. It is not trying, apologising after every point, and hitting the shuttle back to the wrong person during knock-ups. None of those requires any skill to avoid.</p>
+
+      <h2 id="playing">How much will I actually be playing?</h2>
+      <p>Expect roughly as much time on court as off it, though this is the number clubs are vaguest about and we would like a better answer than anyone currently has.</p>
+      <p>One of the clubs we read publishes a claim: on average you can expect to be on court at least as much as you are off it. That is the only figure we found anywhere, it is a club describing itself, and nobody has measured it across clubs.</p>
+      <p>Games are usually doubles, played to 21 points, with clubs often dropping to 15 when the hall is busy so the queue moves. A game takes somewhere between twelve and twenty minutes, so a two-hour session is realistically four to six games with waits in between.</p>
+      <p><strong>The waiting is the part nobody warns you about, and it is not a fault in the club.</strong> With four people per court and more than four people wanting to play, someone is always sitting down. A busy night with a short queue is a good sign, not a bad one.</p>
+
+      <h2 id="bring">What do I need to bring?</h2>
+      <p>Bring a racket and indoor shoes with non-marking soles, and leave everything else at home.</p>
+      <p><strong>The shoes are the only thing that will actually get you turned away.</strong> Sports halls ban soles that leave marks on the floor, and clubs say so bluntly: non-marking footwear, nothing with black rubber. Any indoor trainer with a pale sole is fine. Running shoes are usually allowed but are the wrong shape for the sideways movement, so they are a compromise rather than a problem.</p>
+      <p><strong>Bring your own racket if you possibly can.</strong> Loan rackets were reliably available at one club of the fourteen we read and explicitly refused at two. A cheap racket from a sports shop is completely adequate for a first night, and borrowing from a friend is better still.</p>
+      <p><strong>Do not bring shuttles.</strong> Almost every club supplies them and most use feather ones that cost real money. Turning up with a tube of your own is the one piece of over-preparation that reads oddly.</p>
+      <p>Otherwise: whatever you would wear to a gym, water, and a towel. One club we read asks people not to wear jeans, which tells you how low the bar is everywhere else.</p>
+
+      <h2 id="unwritten">The unwritten rules nobody tells you</h2>
+      <p>There are about eight of them, they are all small, and knowing them is most of what makes you look like you have done this before.</p>
+      <ul>
+        <li><strong>Do not walk behind a court mid-rally.</strong> Wait until the point ends, then go quickly and leave a decent gap. One club asks people not even to open the hall door until they can see the shuttle on the floor.</li>
+        <li><strong>Return the shuttle properly.</strong> If it lands on your side, hit it or pass it back to the server. Do not push it under the net with your racket: it wrecks the feathers and everyone notices.</li>
+        <li><strong>Your side calls your lines, and their call is final.</strong> Even when you are sure they are wrong. If your own side disagrees, give it to the opposition or play the point again.</li>
+        <li><strong>A shuttle standing on its feathers is new; one lying on its side is used.</strong> This is universal and completely unexplained anywhere.</li>
+        <li><strong>Toss or knock up for serve.</strong> Someone spins a racket or hits the shuttle up between the pairs.</li>
+        <li><strong>Whoever hit it into the net fetches it.</strong></li>
+        <li><strong>Say thanks at the end.</strong> A handshake, a fist bump or just "thanks, good game" to all three. This one matters more than any of the others.</li>
+        <li><strong>To sit out, take your peg off the board.</strong> Do not decline a game once you have been picked. Removing your peg is invisible and declining a person is not.</li>
+      </ul>
+      <p>That last one deserves saying twice, because it is the answer to a question people are too embarrassed to ask. If you would rather not play a particular game, or you need a rest, or you have had enough of one person's temper, you never say so to anybody. You lift your peg out of the queue for a few minutes and put it back when you are ready.</p>
+
+      <h2 id="hate-it">What if I hate it?</h2>
+      <p>Then leave at the end, do not go back, and try a different kind of session rather than concluding that badminton is not for you.</p>
+      <p>Clubs vary enormously and the variation is mostly invisible from outside. A club that plays serious league badminton and a club that plays social doubles are the same sport in the same building on different nights, and being wrong about which one you walked into is a scheduling mistake rather than a verdict.</p>
+      <p><strong>The concession this guide owes you is that a club night might be the wrong format entirely.</strong> If you want to play without the social machinery, pay-and-play sessions at a leisure centre need nothing from you but a booking. If you want to learn properly, a coached course will do more in six weeks than a year of Tuesdays. If you want the club and not the standard, look for a beginners' or improvers' session rather than the main night.</p>
+      <p>And if you go three times and still stand alone between games, that is a fact about that club. There is almost certainly another one within a few miles.</p>
+
+      <div class="guide-callout" style="margin-top:26px">
+        <h4>If you only do one thing</h4>
+        <p style="margin-top:8px">Read the club's own page for the words "beginner" or "ability" before you go, and message them if you cannot find either. Two minutes there saves the worst version of this evening.</p>
+      </div>
+
+      <div class="guide-callout" style="margin-top:24px">
+        <h4>The board, without the board</h4>
+        <p>Some clubs run the queue on a screen rather than a pegboard, and ePegboard is one of the things they use. It does the same job: everyone gets a turn, the games come out balanced, and nobody has to ask a stranger for a game. If your club still uses pegs, that works perfectly well too.</p>
+        <p style="margin-top:14px"><a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See what it looks like</a></p>
+      </div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      @foreach (var f in faqPairs)
+      {
+        <h3>@f.Q</h3>
+        <p>@f.A</p>
+      }
+
+      <h2 id="related">Where to go next</h2>
+      <p>Once you have been a few times, the thing that improves your game fastest is not your racket: it is knowing where to stand. <a href="/guides/badminton-doubles-positioning">Badminton doubles positioning</a> covers the two shapes and when to switch between them, and it is the single most useful thing to read before your third visit.</p>
+      <p>If you decide to buy a racket of your own, <a href="/guides/how-to-choose-a-badminton-racket">how to choose a badminton racket</a> counts what the market actually stocks at each price and finds most of what a club player wants under £80.</p>
+      <p>And if you end up helping to run the thing, which happens faster than you expect, <a href="/guides/how-to-run-a-badminton-club-night">the organiser's checklist</a> is where that starts.</p>
+
+      <div style="margin-top:34px;padding-top:22px;border-top:1px solid var(--line)">
+        <h4 style="margin:0 0 8px">How this guide was put together</h4>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:0">ePegboard builds club-night software, so we see a lot of club nights, but we have not been to yours. The specifics here come from reading fourteen UK clubs' own websites and codes of conduct on 26 August 2026, plus Badminton England's published material on beginner sessions. Where we quote a club rule, it is that club's own wording.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0">Two honest limits. Fourteen clubs found through a search is a small and unrepresentative sample, so the counts here are a reason to check rather than a national picture. And nobody has measured how much of an evening a newcomer actually spends on court, including us, so the answer in that section is the best available rather than a good one.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0"><strong>Sources:</strong> <a href="https://www.badmintonengland.co.uk/play/programmes/no-strings-badminton" target="_blank" rel="noopener">Badminton England on beginner sessions</a> &middot; <a href="https://www.kitesbc.uk/games/" target="_blank" rel="noopener">Kites BC on how games are picked</a> &middot; <a href="https://www.lewesbadmintonclub.co.uk/code-of-conduct" target="_blank" rel="noopener">Lewes BC code of conduct</a> &middot; <a href="https://hursleybadminton.wordpress.com/etiquette/" target="_blank" rel="noopener">Hursley BC on etiquette</a> &middot; <a href="https://www.cheadlehulmebadmintonclub.co.uk/faqs" target="_blank" rel="noopener">Cheadle Hulme BC FAQs</a> &middot; <a href="https://www.bcbadmintonclub.co.uk/how-to-join" target="_blank" rel="noopener">Balsall Common BC on joining</a> &middot; <a href="https://www.yeovilbadmintonclub.co.uk/news/detail/badminton-etiquette" target="_blank" rel="noopener">Yeovil BC on court etiquette</a></p>
+        <p style="color:var(--muted-2);font-size:.9rem;margin:12px 0 0">Published 26 August 2026 by ePegboard. Club websites read 26 August 2026.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
