@@ -240,4 +240,24 @@
     <lastmod>2026-08-10</lastmod>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.epegboard.com/desktopreleasenotes</loc>
+    <lastmod>2026-06-20</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.epegboard.com/download</loc>
+    <lastmod>2026-06-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.epegboard.com/reportbug</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.epegboard.com/requestfeature</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
