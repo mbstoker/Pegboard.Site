@@ -1,0 +1,237 @@
+@page "/guides/badminton-service-rules"
+@using PegboardWebSite.Services
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "Badminton service rules: the ones club players argue about, and what the Laws actually say";
+    ViewData["Description"] = "BWF publishes two service-height laws at the same time, on purpose. So the clubmate who says it is about your waist is quoting a current law, not a stale one. The service rules that get argued about at club level, settled against the Laws.";
+    ViewData["OgTitle"] = "The badminton service rules club players argue about";
+
+    const string published = "2026-08-26";
+    const string canonical = "https://www.epegboard.com/guides/badminton-service-rules";
+
+    // QUESTION SET (production step 1) - each is an H2 below. Ordered by
+    // contested x consequential, NOT by Law number:
+    //  1 How high are you allowed to hit the serve?
+    //  2 Who serves next, and who stands where?
+    //  3 Wrong service court, and you won the rally
+    //  4 The serve clips the net
+    //  5 Pauses, feints and wind-ups
+    //  6 Can you put spin on the serve?
+    //  7 Where must your feet be?
+    //  8 Where can the partners stand?
+    //  9 Can the receiver's partner hit the serve?
+    // 10 You miss the shuttle completely
+    // 11 The serve was going out and they hit it anyway
+    // 12 Serving before the receiver is ready
+    // 13 Who serves first in the next game?
+    // 14 Which of the two service laws is your league playing under?
+
+    var faqPairs = new (string Q, string A)[]
+    {
+        ("Is there a service judge at a club night?",
+         "No, and that is most of why these arguments happen. The Laws assume an umpire and a service judge exist to make these calls; at a club night the standard is whoever sounds most confident. Knowing the Law number is the only thing that settles it, which is why they are all cited here."),
+        ("Do these rules change for singles?",
+         "The service laws themselves do not. What changes is the court: in singles you serve from the right when your score is even and the left when it is odd, and the service court is long and narrow rather than short and wide. The doubles service-order rules in this guide do not apply."),
+        ("What about mixed doubles?",
+         "Identical service laws. The conventions about who stands where during a rally differ, but nothing in Law 9 to 14 treats mixed differently."),
+        ("Is the scoring system changing?",
+         "Yes, from 4 January 2027: games to 15, best of three, with two clear points needed at 14-all and a cap at 20-all. That is a scoring change and it does not touch the service laws - we compared the two published editions and Law 9 is unchanged. Any scoring example you read elsewhere will date on that day."),
+        ("What if the ceiling or a beam is in the way?",
+         "Touching the ceiling or side walls is a fault under Law 13.3.3, but the Laws also let the local badminton authority make bye-laws for obstructions where the building requires it, subject to its Member Association. So the low beam at your hall probably is covered by a local rule, and that rule is your league's to make rather than something the Laws settle."),
+        ("Can we just agree to ignore all this?",
+         "For a social night, largely yes, and most clubs already do. The rules that are worth knowing are the ones that decide a point you have already played - the wrong service court, the net cord, serving before someone is ready. Those come up whether or not anyone has agreed anything."),
+        ("Where can I read the Laws myself?",
+         "BWF publishes them free as Section 4.1 of its Statutes, and the Alternative Service Laws are a separate short document at Section 4.1.4. Both are linked at the foot of this guide. They are shorter than you expect - the service laws are about a page and a half.")
+    };
+
+    var articleJsonLd = GuideSchema.Article(
+        "Badminton service rules: the ones club players argue about, and what the Laws actually say",
+        "BWF publishes two service-height laws at the same time, on purpose. The service rules that get argued about at club level, settled against the Laws.",
+        canonical, published);
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+}
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Service rules</span></div>
+      <h1 style="margin-top:10px">Badminton service rules: the ones club players argue about, and what the Laws actually say</h1>
+      <div class="guide-meta">
+        <span class="gm-tag">Guide</span>
+        <span>Playing</span>
+        <span>14 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:820px">
+
+    <div class="prose">
+      <p class="lead"><strong>The serve must be below 1.15 metres - unless your competition is running the other law, in which case it is below your waist.</strong> BWF publishes both at once, deliberately. Law 9.1.6 sets the fixed height; the Alternative Service Laws keep the old waist-and-lowest-rib test plus the downward-pointing racket, and referees are instructed to tell team managers which set is in use. So the clubmate insisting it is about your waist is not behind the times. They are quoting a current law.</p>
+
+      <p>You know how this goes: someone serves, someone else says "that was above your waist", and the rally stops while four adults who have played for years work out that not one of them can quote the rule.</p>
+    </div>
+
+    <div class="guide-callout" style="margin-top:30px">
+      <h4>The short version</h4>
+      <ul style="margin:10px 0 0">
+        <li><strong>There are two service-height laws, both current.</strong> 1.15 metres, or the waist and lowest rib with the racket pointing down. Which applies is decided per competition, not per opinion.</li>
+        <li><strong>The fixed height comes with a measuring device.</strong> Referees are told to check umpires can use one. No device beside the court is a strong hint about which law you are under.</li>
+        <li><strong>The receiving side never swaps service courts.</strong> Law 11.1.3. This is the rule club players get wrong most often, and it decides who receives next.</li>
+        <li><strong>Served from the wrong court and won the rally? Keep the point.</strong> Law 12.2: correct the error, the existing score stands. No let, no replay, no penalty.</li>
+        <li><strong>A serve that clips the net and lands in is good.</strong> There is no service let for a net cord. Caught on the tape or in the net is a fault, not a let.</li>
+        <li><strong>You cannot put spin on the shuttle as you release it.</strong> Law 9.1.5, main-law text since 1 January 2025.</li>
+      </ul>
+    </div>
+
+    <p style="margin-top:22px;color:var(--muted-2);font-size:.95rem">Written for UK club-level doubles. Law numbering follows the BWF Laws of Badminton in force 26 April 2025, and the Alternative Service Laws at Section 4.1.4 of the BWF Statutes. Para badminton has its own service provisions, noted where they apply.</p>
+
+    <div class="guide-toc" style="margin-top:26px">
+      <h4>In this guide</h4>
+      <a href="#height">How high can you hit the serve?</a>
+      <a href="#who-serves">Who serves next, and who stands where?</a>
+      <a href="#wrong-court">Wrong service court, and you won the rally</a>
+      <a href="#net-cord">The serve clips the net</a>
+      <a href="#feint">Pauses, feints and wind-ups</a>
+      <a href="#spin">Can you put spin on the serve?</a>
+      <a href="#feet">Where must your feet be?</a>
+      <a href="#partners">Where can the partners stand?</a>
+      <a href="#partner-hits">Can the receiver's partner hit the serve?</a>
+      <a href="#miss">You miss the shuttle completely</a>
+      <a href="#going-out">The serve was going out and they hit it anyway</a>
+      <a href="#not-ready">Serving before the receiver is ready</a>
+      <a href="#next-game">Who serves first in the next game?</a>
+      <a href="#which-law">Which law is your league playing under?</a>
+      <a href="#faq">Frequently asked questions</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+
+      <h2 id="height">How high can you hit the serve?</h2>
+      <p>The shuttle must be below 1.15 metres from the floor at the instant your racket hits it - or below your waist, if your competition is running the alternative law.</p>
+      <p>Both are live. The main Laws of Badminton give the fixed height at Law 9.1.6: the whole shuttle below 1.15 metres from the surface of the court at the instant of being hit. Separately, BWF maintains a short document of Alternative Laws, and its service section replaces 9.1.6 with two clauses that will be familiar to anyone who learned the game before 2018. The shuttle must be below the server's waist, defined as an imaginary line round the body level with the lowest part of the bottom rib. And the shaft and racket head must point downward at the instant of hitting.</p>
+      <p>That second clause is the half everybody forgets. The old rule was always two tests, not one, and the racket angle was the part that stopped players driving a serve flat from below waist height.</p>
+
+      <figure style="margin:26px 0 0">
+        <img src="/img/diagrams/service-height-two-laws.svg" alt="Two servers side by side. On the left, the fixed-height law: a horizontal line at 1.15 metres above the floor with a service height measuring device beside the court, and the shuttle below the line at the moment of contact. On the right, the alternative law: a line around the server's body level with the lowest rib, with the shuttle below it, and the racket shaft and head angled downward. The fixed height does not move between players; the waist line is higher for a taller player and lower for a shorter one." style="width:100%;height:auto;border-radius:12px" />
+        <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">The same serve, judged two ways. The fixed height is the same for everyone on court. The waist line moves with the player, which is exactly why it was replaced - and exactly why it is easier to judge without equipment.</figcaption>
+      </figure>
+
+      <p style="margin-top:22px"><strong>Which one applies is a decision someone makes before the tournament starts.</strong> BWF's instructions to technical officials tell the Referee to remind team managers whether the fixed height service or the alternative service laws will be in use. They also tell the Referee that if the fixed height law is being used, umpires must be familiar with the service height measuring device and given training if they need it.</p>
+      <p>That last instruction is the practical tell, and it explains a great deal. The fixed height is tied to a piece of equipment: a transparent measuring device set at 1.15 metres beside the court that the service judge sights along. Where there is no device, judging a fixed height by eye is guesswork, and the waist test is what a human can actually see.</p>
+      <p>Badminton Scotland has published exactly that position: the new law applies only where a service height device is in use beside the court, and at all other tournaments the previous Law, with the waist and the downward racket head, applies. We could not find an equivalent published position from Badminton England, and we are not going to invent one for them.</p>
+      <p>So at your club night, with no device, no service judge and no umpire, you are almost certainly playing something like the waist rule whether anyone has said so or not.</p>
+      <p>One clarification, because it is in the Law and it matters to some readers: Para badminton Standing Classes use the Alternative Service Laws as a matter of course under Law 9.1.6.2, and Wheelchair Badminton uses an armpit height under 9.1.6.1 together with the downward-racket clause. Those are not elections. They are the law for those classes.</p>
+
+      <h2 id="who-serves">Who serves next, and who stands where?</h2>
+      <p>The serving side swaps courts when it wins a point; the receiving side does not swap at all.</p>
+      <p>That single asymmetry is the source of most doubles service confusion, and Law 11.1.3 states it plainly: the player of the receiving side who served last stays in the same service court from where they served last, with the reverse pattern for their partner. Law 11.1.5 adds the general form - players do not change their respective service courts until they win a point when their side is serving.</p>
+      <p>Everything else follows from the score. The serving side serves from the right when its score is even, including zero, and from the left when it is odd (Laws 11.1.1 and 11.1.2). The receiver is whoever is standing diagonally opposite (11.1.4).</p>
+      <p><strong>And there is only ever one server per turn.</strong> Win the rally while serving and the same player serves again, from the other court (11.3.1). Lose it and the serve passes to the other side (11.3.2). Your partner does not get a go first. If your club still plays two serves each, that has not been the law since 2006.</p>
+
+      <figure style="margin:26px 0 0">
+        <img src="/img/diagrams/service-court-rotation.svg" alt="A badminton court from above, shown three times to follow a doubles rally sequence. In the first, the serving side's score is even so their server is in the right service court and the receiver stands diagonally opposite. In the second, the serving side has won the point, so the same server has moved across to the left court and serves again, while both receiving players have stayed exactly where they were. In the third, the receiving side has won the rally and become the serving side, serving from the court that matches their own score, again with no swap by the players who have just become receivers." style="width:100%;height:auto;border-radius:12px" />
+        <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">The serving pair swaps courts when it scores. The receiving pair never does. Watch the two players on the right across all three: they do not move between courts once.</figcaption>
+      </figure>
+
+      <h2 id="wrong-court">Wrong service court, and you won the rally</h2>
+      <p>Serving from the wrong service court costs you nothing: the error is corrected, and the existing score stands whoever won the rally.</p>
+      <p>This surprises almost everyone. A service court error is serving or receiving out of turn, or from the wrong service court (Law 12.1). The remedy, in full, is that the error is corrected when the shuttle is not in play and the existing score stands (Law 12.2). No let, no replay, no point deducted, and it makes no difference who won the rally.</p>
+      <p>Club players routinely expect one of three things that the Laws do not provide: replaying the point, awarding it to the other side, or arguing that it depends on who benefited. None of these is in there.</p>
+
+      <h2 id="net-cord">The serve clips the net</h2>
+      <p>A serve that clips the net and still lands in the right service court is good. Play on.</p>
+      <p>Badminton has no service let for a net cord. If you have come from tennis this feels wrong, and it is the single most common imported error at club level.</p>
+      <p><strong>The two ways a net cord does end the rally are both faults, not lets.</strong> A serve caught on the net and left suspended on its top is a fault (13.2.1). A serve that passes over the net and is then caught in the net is also a fault (13.2.2). Either way the serving side loses the point.</p>
+      <p>Here is the part worth knowing, because it looks like a contradiction and is not. Those same two events, happening after the service has been returned, are lets (14.2.3). Same shuttle, same net, opposite outcome - the difference is only whether the rally had started. Most clubs play both as lets, which is generous to the server by exactly one point every time.</p>
+
+      <h2 id="feint">Pauses, feints and wind-ups</h2>
+      <p>Once your racket has finished moving backwards, any delay in starting the serve is undue delay.</p>
+      <p>Law 9.1.2 is unusually blunt about this: on completion of the backward movement of the server's racket head, any delay in the start of the service shall be considered to be an undue delay. Law 9.1.7 then requires that the racket keeps moving forwards from the start of the service until it is delivered. Between them they outlaw the pause-and-restart, the double wind-up and the hold that waits for the receiver to lean.</p>
+      <p>What the Laws do not do is put a number on it. There is no permitted delay in seconds anywhere in Law 9, and the general standard in 9.1.1 - neither side shall cause undue delay once both are ready - is umpire judgement. At a club night there is no umpire, so in practice the standard is social. If your serve routine involves a pause that people comment on, it is probably not legal, and you already know it is not.</p>
+
+      <h2 id="spin">Can you put spin on the serve?</h2>
+      <p>You cannot add spin to the shuttle as you release it, and this is the newest rule in Law 9.</p>
+      <p>Law 9.1.5 requires that the server releases the shuttle without adding spin, and that the racket initially hits the base of the shuttle. The no-spin half ran as an experimental variation and became main-law text on 1 January 2025, so it is recent, and most published guides have not caught up with it.</p>
+      <p>The base clause is older and has a longer history: it is what ended the S-serve, where the server struck the feathers to make the shuttle tumble unpredictably. Hitting the base first is what makes a serve's flight readable.</p>
+
+      <h2 id="feet">Where must your feet be?</h2>
+      <p>The server and the receiver must both stand inside their own service court without touching a line, with some part of both feet stationary on the floor.</p>
+      <p>Two separate requirements, and clubs usually remember one. Law 9.1.3 puts the server and receiver in diagonally opposite service courts without touching the boundary lines of those courts. Touching a line is a fault; there is no tolerance for a toe on the centre line.</p>
+      <p>Law 9.1.4 then requires that some part of both feet of the server <em>and the receiver</em> stays in contact with the surface in a stationary position, from the start of the service until it is delivered. That the receiver is bound by this too is the half that gets forgotten. A receiver who is bouncing, stepping in, or lifting a heel as the server starts is faulting, and nobody at a club night has ever called it.</p>
+      <p>What it permits is worth knowing as well. "Some part of both feet" is not "both feet flat and still". You can turn your body, transfer weight, and pivot on the ball of a foot. You cannot drag, lift or step.</p>
+
+      <h2 id="partners">Where can the partners stand?</h2>
+      <p>The partners may stand anywhere on their own side of the net, as long as they do not block the opposing server's or receiver's view.</p>
+      <p>Law 9.5 gives the partners any positions within their respective courts which do not unsight the opposing server or receiver. Note the word: <em>courts</em>, not service courts. The partners are not confined to a service box, and a partner standing well forward or right across the other half is doing nothing wrong.</p>
+      <p><strong>Now the gap.</strong> Law 9.5 forbids unsighting, but Law 13 does not list unsighting as a fault. Nothing in the Laws makes it a point against the player who blocked the view. The remedy is for the player who cannot see to call a let before the serve. In practice clubs either award a fault, which the Laws do not support, or say nothing at all, which is the more common outcome.</p>
+
+      <h2 id="partner-hits">Can the receiver's partner hit the serve?</h2>
+      <p>Only the receiver may play the serve: if the receiver's partner hits it, that is a fault against the receiving side (Law 13.2.3).</p>
+      <p>Only the receiver may play the serve. This comes up in mixed and in beginners' doubles, usually when a serve drifts towards the wrong player and instinct takes over. It also has a quieter cousin: if the serve touches the receiver's partner without being hit at all, the shuttle has touched the person of a player, which is a fault under 13.3.4. Standing well clear of a serve you are not allowed to touch is the practical lesson.</p>
+
+      <h2 id="miss">You miss the shuttle completely</h2>
+      <p>You lose the rally, and there is no second serve.</p>
+      <p>Law 9.1.8 is one line: in attempting to serve, the server shall not miss the shuttle. Air-shot the serve and it is a fault. Law 9.3 confirms the logic - the service is delivered when the shuttle is hit by the racket, or when the server misses it. Either way the serve is over.</p>
+      <p>The absence is as important as the rule. The Laws never mention a second serve at any point, which is why players arriving from tennis keep expecting one. It is not that badminton took second serves away; it is that they were never in there.</p>
+
+      <h2 id="going-out">The serve was going out and they hit it anyway</h2>
+      <p>Once the serve has been returned, the rally is live and where it would have landed stops mattering.</p>
+      <p>This one turns on some awkward drafting. Law 9.1 describes a correct service as one where the shuttle's flight is upwards over the net so that, <em>if not intercepted</em>, it shall land in the receiver's service court. Read at speed, that sounds like a serve heading long is a fault even after it has been played.</p>
+      <p>The qualifier is doing the work. The Law describes a shuttle that has not been intercepted. Once the receiver has hit it, it has been intercepted, and the question of where it would have gone never arises. If you think a serve is going out, you have to let it drop - which is the same judgement call as any other line, and the same one you will get wrong under pressure.</p>
+
+      <h2 id="not-ready">Serving before the receiver is ready</h2>
+      <p>That is a let, not a fault - so the point is replayed rather than awarded.</p>
+      <p>Law 9.4 says the server shall not serve before the receiver is ready, and Law 14.2.1 makes it a let when they do. On a let, play since the last service does not count and the player who served last serves again (Law 14.3).</p>
+      <p><strong>But the same Law closes the obvious loophole.</strong> The receiver is considered to have been ready if a return of the service is attempted. You cannot swing at it, miss, and then claim you were not ready. Clubs regularly get this pair backwards, awarding the point to the receiving side when the correct answer is to serve it again.</p>
+
+      <h2 id="next-game">Who serves first in the next game?</h2>
+      <p>Either player of the winning pair may serve first in the next game, and either player of the losing pair may receive first.</p>
+      <p>Law 11.6: either player of the winning side may serve first in the next game, and either player of the losing side may receive first. The service order does not carry over, and it is not tied to who served last, who served first last time, or who is standing where.</p>
+      <p>Most club players believe the order continues, and it costs nothing to know that it does not. If one of you serves better under pressure, that is now a decision rather than an accident.</p>
+
+      <h2 id="which-law">Which law is your league playing under?</h2>
+      <p>Go and read your league's handbook, because that is where the answer lives and it is not the same everywhere.</p>
+      <p>BWF's alternative laws exist, and its instructions to officials assume somebody has chosen between them for each tournament. What the Laws do not say is who makes that choice or on what basis. The alternative <em>scoring</em> systems in the same document carry a "by prior arrangement" qualifier; the alternative <em>service</em> laws carry no equivalent. That silence is real, and we are not going to fill it with a guess.</p>
+      <p>What we can tell you is where to look. Your county or local league publishes a handbook or a set of rules, and it will either specify the service law, specify the BWF Laws generally, or say nothing. Badminton Scotland has published a position. We could not find one from Badminton England, which is not the same as there not being one - their site did not yield a readable guidance page to us, and the honest answer is that we do not know.</p>
+      <p><strong>The concession, because this guide would be dishonest without it.</strong> Almost none of this is worth raising on a social club night. Nobody is measuring 1.15 metres, there is no service judge, and a player who starts quoting Law 9.1.4 at a receiver who lifted a heel will not be short of court time because everyone will stop asking them to play.</p>
+      <p>The rules worth actually knowing are the four that decide a point already played, where the alternative is an argument nobody can settle: the wrong service court, the net cord, serving before someone was ready, and who serves next. Those come up on their own. The rest is for the night your club plays a league fixture and somebody turns up who does know the difference.</p>
+
+      <div class="guide-callout" style="margin-top:26px">
+        <h4>If you only do one thing</h4>
+        <p style="margin-top:8px">Stop swapping sides when you are receiving. The serving pair changes courts when it scores; the receiving pair never does.</p>
+      </div>
+
+      <div class="guide-callout" style="margin-top:24px">
+        <h4>Fair games, without the admin</h4>
+        <p>ePegboard does not umpire anything. What it does is pick the games: balanced pairings on a club night, with court time spread evenly across everyone who turns up, so the evening runs without one person holding a pen and a list. Free for clubs.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+      </div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      @foreach (var f in faqPairs)
+      {
+        <h3>@f.Q</h3>
+        <p>@f.A</p>
+      }
+
+      <h2 id="related">Where to go next</h2>
+      <p>The service laws decide who serves and from where. Where everyone stands once the rally is live is a different subject, and a more useful one for most club players: <a href="/guides/badminton-doubles-positioning">badminton doubles positioning</a> covers the two shapes and when to switch between them.</p>
+      <p>If you are the person who ends up settling these arguments, you are probably also the person running the night. <a href="/guides/how-to-run-a-badminton-club-night">The complete organiser's checklist</a> covers the rest of it, and <a href="/guides/badminton-club-night-formats-compared">club night formats compared</a> deals with how the games get made in the first place.</p>
+
+      <div style="margin-top:34px;padding-top:22px;border-top:1px solid var(--line)">
+        <h4 style="margin:0 0 8px">How this guide was put together</h4>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:0">ePegboard builds club-night software. We are not umpires and we do not officiate. Every rule here was read from the BWF Laws of Badminton in force 26 April 2025, the Alternative Laws of Badminton at Section 4.1.4 of the BWF Statutes, and BWF's Instructions to Technical Officials, rather than from anyone's summary of them - which matters on this subject, because summaries are where the folklore comes from.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0">Where we could not establish something, we have said so rather than picking an answer: we found no published Badminton England position on which service law applies domestically, and the Laws do not say who chooses between the two or on what basis.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0"><strong>Sources:</strong> <a href="https://extranet.bwf.sport/docs/document-system/81/1466/1470/Section%204.1%20-%20Laws%20of%20Badminton%20-%2026%20April%202025%20V5.0%20(2)%20.pdf" target="_blank" rel="noopener">BWF Laws of Badminton, in force 26 April 2025</a> &middot; <a href="https://extranet.bwf.sport/docs/document-system/81/1466/1470/Section%204.1.4%20-%20Alternative%20Laws%20of%20Badminton%20-1.pdf" target="_blank" rel="noopener">BWF Alternative Laws of Badminton (Section 4.1.4)</a> &middot; <a href="https://extranet.bwf.sport/docs/document-system/81/1466/1470/Section%204.1.1%20-%20Instructions%20to%20Technical%20Officials%20_ITTO_%20-%209%20November%202024%20V7.0%20(1).pdf" target="_blank" rel="noopener">BWF Instructions to Technical Officials</a> &middot; <a href="https://badmintonscotland.org.uk/news/service-height-guidance/" target="_blank" rel="noopener">Badminton Scotland service height guidance</a> &middot; <a href="https://bwfbadminton.com/news-single/2017/11/29/experimental-service-law-from-march-2018" target="_blank" rel="noopener">BWF on the experimental service law, November 2017</a></p>
+        <p style="color:var(--muted-2);font-size:.9rem;margin:12px 0 0">Published 26 August 2026 by ePegboard. Checked against the Laws in force 26 April 2025; the next edition takes effect 4 January 2027 and does not change Law 9.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
