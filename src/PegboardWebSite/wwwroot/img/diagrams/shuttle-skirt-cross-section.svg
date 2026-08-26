@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img"
-     aria-label="A cross-section comparison of two shuttlecock skirts, drawn to the dimensions in Law 2. On the left, a feathered shuttle: sixteen separate natural feathers fixed into a rounded cork base, splaying outward to form a crown of separate overlapping quills. On the right, a synthetic shuttle: the same base carrying a single moulded one-piece skirt with a perforated mesh wall. A dashed outline inside the synthetic skirt shows it drawing in slightly at high speed, a shrinkage of about a millimetre in diameter which lowers its drag. Below, both shuttles are shown turning over after being struck, rotating from skirt-first to base-first; the feather shuttle completes its turn in a shorter distance, which published testing identifies as the clearest performance difference between the two.">
+     aria-label="A cross-section comparison of two shuttlecock skirts, drawn to the dimensions in Law 2. On the left, a feathered shuttle: sixteen separate natural feathers fixed into a rounded cork base, splaying outward to form a crown of separate overlapping quills. On the right, a synthetic shuttle: the same base carrying a single moulded one-piece skirt with a perforated mesh wall. A dashed outline inside the synthetic skirt shows it drawing in slightly at high speed, a shrinkage of about a millimetre in diameter which lowers its drag, although the same study calculates that even a two millimetre reduction would move the drag coefficient by only about nought point nought three, so the mechanism may matter less than it is usually said to. Below, both shuttles are shown turning over after being struck, rotating from skirt-first to base-first; the feather shuttle completes its turn in a shorter distance, which published testing identifies as the clearest performance difference between the two.">
   <title>Sixteen separate quills, or one moulded skirt. The difference shows up in the turn, not the drop.</title>
 
   <!--
@@ -11,7 +11,12 @@
     SCALE: 1 mm = 3 units. Base 26 mm = 78 units. Feather length 66 mm = 198 units.
     Crown diameter 62 mm = 186 units. Do not redraw by eye; these are legal dimensions.
 
-    The turnover claim and the skirt-deformation mechanism are from the NTU flight-dynamics thesis
+    The turnover claim and the skirt-deformation mechanism are from the NTU flight-dynamics thesis.
+    IMPORTANT, and the reason the drawing exaggerates the shrinkage rather than scaling it: the same
+    thesis is sceptical of its own mechanism - "a frontal diameter reduction of 2mm will only decrease
+    the drag coefficient by approximately 0.03 ... might not be as significant as what Cooke and Alam
+    et al. have thought". Do not redraw this to imply the deformation explains the feel difference.
+    The TURNOVER is the finding; the shrinkage is a mechanism of contested importance
     and Cooke's drag-coefficient work. The article states both with their sources.
     ILLUSTRATIVE, not documentary - this is a schematic, not a photograph of a shuttle.
   -->

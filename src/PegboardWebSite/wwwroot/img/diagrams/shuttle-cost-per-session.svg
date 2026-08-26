@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img"
-     aria-label="Three stacked panels about shuttle cost. The first shows a feather tube holding twelve shuttles beside a Mavis-type nylon tube holding six, illustrating that tube sizes are not consistent and prices must be divided by the number in the tube before they can be compared. Hybrids and synthetic-feather shuttles are also sold in twelves. The second shows the resulting price per shuttle as two horizontal range bars read from UK retailers on 26 August 2026: feather runs from about ninety-five pence to about four pounds twenty-five, and nylon from about one pound fifteen to about two pounds thirty-five, so the entire nylon range sits inside the feather range and the two overlap completely. The third gives the arithmetic: cost per session equals the tube price divided by the number in the tube, multiplied by the shuttles your club actually uses in a session, with that last figure left blank because no credible published figure for it exists and the reader must measure their own.">
+     aria-label="Three stacked panels about shuttle cost. The first shows a feather tube holding twelve shuttles beside a Mavis-type nylon tube holding six, illustrating that tube sizes are not consistent and prices must be divided by the number in the tube before they can be compared. Hybrids and synthetic-feather shuttles are also sold in twelves. The second shows the resulting price per shuttle as two horizontal range bars read from UK retailers on 26 August 2026: feather runs from about ninety-five pence to about four pounds twenty-five, and common branded nylon from about one pound to about two pounds thirty-five, so the entire common-nylon range sits inside the feather range and the two overlap completely, though the nylon floor clears the feather floor by only about five pence. That nylon band is scoped to recognisable branded shuttles a club would put on court; cheaper recreational and coaching nylon exists below it, at around eighty-three pence a shuttle, and undercuts every feather shuttle read. The third gives the arithmetic: cost per session equals the tube price divided by the number in the tube, multiplied by the shuttles your club actually uses in a session, with that last figure left blank because no credible published figure for it exists and the reader must measure their own.">
   <title>Tube sizes are not consistent, and once you divide, the two price ranges overlap completely</title>
 
   <!--
@@ -8,7 +8,13 @@
     underlying figures were retrieved by an automated reader that disagreed with itself within a
     single retailer. See the build-pack hedge list.
       feather  ~£11 to ~£51 per tube of 12  =  ~£0.95 to ~£4.25 per shuttle
-      nylon    ~£7  to ~£14 per tube of 6   =  ~£1.15 to ~£2.35 per shuttle
+      nylon    ~£6  to ~£14 per tube of 6   =  ~£1.00 to ~£2.35 per shuttle   <- COMMON BRANDED nylon
+    SCOPING, and it is load-bearing: the nylon floor is where recognisable branded nylon starts
+    (Victor 500, Carlton T800/C100 at £5.99/6; Yonex Mavis 10 at £6.50; mainstream Mavis 300/600
+    nearer £11-£14), NOT the bottom of the UK market. Recreational/coaching nylon goes lower -
+    Zsig £4.99 for six, about 83p each. INCLUDE THOSE AND THE HEADLINE CLAIM BELOW IS FALSE,
+    because 83p undercuts the 95p feather floor. Do not widen the band without redrawing the
+    conclusion (Mike, 2026-08-26).
     SCALE on the range bars: £0 at x=200, 200 units per £1.
     The third term is deliberately blank. No credible club-level breakage rate exists.
   -->
@@ -61,13 +67,14 @@
   <text x="382" y="421" text-anchor="end" font-family="system-ui,sans-serif" font-size="14" fill="#0f766e">&#163;0.95</text>
   <text x="1058" y="421" font-family="system-ui,sans-serif" font-size="14" fill="#0f766e">&#163;4.25</text>
 
-  <!-- nylon: £1.15 to £2.35 -->
-  <rect x="430" y="446" width="240" height="30" rx="6" fill="#1d4ed8" opacity="0.85"/>
+  <!-- nylon: £1.00 to £2.35   (scale: £0 at x=200, 200 units per £1) -->
+  <rect x="400" y="446" width="270" height="30" rx="6" fill="#1d4ed8" opacity="0.85"/>
   <text x="200" y="467" font-family="system-ui,sans-serif" font-size="16" fill="#1d4ed8" font-weight="600">Nylon</text>
-  <text x="422" y="467" text-anchor="end" font-family="system-ui,sans-serif" font-size="14" fill="#1d4ed8">&#163;1.15</text>
+  <text x="392" y="467" text-anchor="end" font-family="system-ui,sans-serif" font-size="14" fill="#1d4ed8">&#163;1</text>
   <text x="678" y="467" font-family="system-ui,sans-serif" font-size="14" fill="#1d4ed8">&#163;2.35</text>
 
-  <text x="200" y="506" font-family="system-ui,sans-serif" font-size="16" fill="#b45309" font-weight="600">The whole nylon range sits inside the feather range.</text>
+  <text x="200" y="506" font-family="system-ui,sans-serif" font-size="16" fill="#b45309" font-weight="600">The whole common-nylon range sits inside the feather range.</text>
+  <text x="200" y="527" font-family="system-ui,sans-serif" font-size="13" fill="#94a3b8">Branded club nylon only, and the floor clears feather by 5p. Cheaper recreational nylon (~83p) undercuts every feather shuttle.</text>
 
   <!-- ===== PANEL 3: the arithmetic ===== -->
   <line x1="60" y1="562" x2="1140" y2="562" stroke="#e2e8f0" stroke-width="2"/>
