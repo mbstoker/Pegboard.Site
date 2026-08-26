@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img"
+     aria-label="A cross-section comparison of two shuttlecock skirts, drawn to the dimensions in Law 2. On the left, a feathered shuttle: sixteen separate natural feathers fixed into a rounded cork base, splaying outward to form a crown of separate overlapping quills. On the right, a synthetic shuttle: the same base carrying a single moulded one-piece skirt with a perforated mesh wall. A dashed outline on the synthetic shows the skirt flexing outward under high-speed airflow, which the separate feather quills do not do. Below, both shuttles are shown turning over after being struck, rotating from skirt-first to base-first; the feather shuttle completes its turn in a shorter distance, which published testing identifies as the clearest performance difference between the two.">
+  <title>Sixteen separate quills, or one moulded skirt. The difference shows up in the turn, not the drop.</title>
+
+  <!--
+    Dimensions per BWF Laws of Badminton, Law 2 (in force 26/04/2025):
+      feathered shuttle - 16 feathers fixed in the base; feathers 62 mm to 70 mm from tip to base top;
+      tips on a circle 58 mm to 68 mm in diameter; base 25 mm to 28 mm diameter, rounded on the bottom.
+      non-feathered - the skirt replaces natural feathers; measurements and weight as feathered, with
+      a variation of up to 10 per cent allowed for the different properties of synthetic materials.
+    SCALE: 1 mm = 3 units. Base 26 mm = 78 units. Feather length 66 mm = 198 units.
+    Crown diameter 62 mm = 186 units. Do not redraw by eye; these are legal dimensions.
+
+    The turnover claim and the skirt-deformation mechanism are from the NTU flight-dynamics thesis
+    and Cooke's drag-coefficient work. The article states both with their sources.
+    ILLUSTRATIVE, not documentary - this is a schematic, not a photograph of a shuttle.
+  -->
+
+  <rect width="1200" height="675" fill="#ffffff"/>
+
+  <text x="600" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#0f172a" font-weight="600">What is actually different inside the two</text>
+
+  <!-- ============ LEFT: feather ============ -->
+  <text x="320" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#0f766e" font-weight="600">Feathered</text>
+
+  <!-- 16 quills, drawn as separate splaying shafts -->
+  <g stroke="#0f766e" stroke-width="3.5" stroke-linecap="round" fill="none">
+    <line x1="285" y1="330" x2="227" y2="132"/>
+    <line x1="292" y1="330" x2="250" y2="132"/>
+    <line x1="299" y1="330" x2="273" y2="132"/>
+    <line x1="306" y1="330" x2="296" y2="132"/>
+    <line x1="313" y1="330" x2="309" y2="132"/>
+    <line x1="320" y1="330" x2="320" y2="132"/>
+    <line x1="327" y1="330" x2="331" y2="132"/>
+    <line x1="334" y1="330" x2="344" y2="132"/>
+    <line x1="341" y1="330" x2="367" y2="132"/>
+    <line x1="348" y1="330" x2="390" y2="132"/>
+    <line x1="355" y1="330" x2="413" y2="132"/>
+  </g>
+  <!-- vane webbing, hinted so the quills read as feathers not spokes -->
+  <g stroke="#5eead4" stroke-width="2" fill="none" opacity="0.85">
+    <path d="M240 175 L400 175"/><path d="M255 220 L385 220"/><path d="M268 265 L372 265"/>
+  </g>
+  <!-- crown circle -->
+  <ellipse cx="320" cy="132" rx="93" ry="17" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-dasharray="5 4"/>
+  <!-- cork base: 26 mm wide, rounded on the bottom -->
+  <path d="M281 330 L281 344 A39 26 0 0 0 359 344 L359 330 Z" fill="#b45309"/>
+  <rect x="281" y="322" width="78" height="10" fill="#92400e"/>
+
+  <text x="320" y="392" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" fill="#0f172a">16 separate quills</text>
+  <text x="320" y="414" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#64748b">A stiff crown. Air passes between them</text>
+  <text x="320" y="434" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#64748b">and the shape holds.</text>
+
+  <!-- ============ RIGHT: synthetic ============ -->
+  <text x="880" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#1d4ed8" font-weight="600">Synthetic</text>
+
+  <!-- deformed outline under load, drawn first so the solid skirt sits on top -->
+  <path d="M845 330 L757 132 M915 330 L1003 132" stroke="#93b4fc" stroke-width="3" stroke-dasharray="7 5" fill="none"/>
+  <text x="1015" y="150" font-family="system-ui,sans-serif" font-size="14" fill="#1d4ed8">flexes outward</text>
+  <text x="1015" y="168" font-family="system-ui,sans-serif" font-size="14" fill="#1d4ed8">under load</text>
+
+  <!-- one-piece moulded skirt -->
+  <path d="M841 330 L787 132 L973 132 L919 330 Z" fill="#eff6ff" stroke="#1d4ed8" stroke-width="3.5"/>
+  <!-- perforated mesh wall -->
+  <g stroke="#93b4fc" stroke-width="1.6" fill="none">
+    <path d="M800 175 L960 175"/><path d="M812 220 L948 220"/><path d="M824 265 L936 265"/><path d="M833 300 L927 300"/>
+    <path d="M820 150 L812 320"/><path d="M860 140 L855 325"/><path d="M900 140 L905 325"/><path d="M940 150 L948 320"/>
+  </g>
+  <ellipse cx="880" cy="132" rx="93" ry="17" fill="none" stroke="#1d4ed8" stroke-width="2.5" stroke-dasharray="5 4"/>
+  <path d="M841 330 L841 344 A39 26 0 0 0 919 344 L919 330 Z" fill="#b45309"/>
+  <rect x="841" y="322" width="78" height="10" fill="#92400e"/>
+
+  <text x="880" y="392" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" fill="#0f172a">One moulded skirt</text>
+  <text x="880" y="414" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#64748b">A single wall, so it can deform</text>
+  <text x="880" y="434" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#64748b">as the air load rises.</text>
+
+  <!-- shared base label -->
+  <text x="600" y="352" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#92400e">both: cork base,</text>
+  <text x="600" y="370" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#92400e">25-28 mm, rounded</text>
+
+  <!-- ============ BOTTOM: turnover ============ -->
+  <line x1="60" y1="470" x2="1140" y2="470" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="60" y="503" font-family="system-ui,sans-serif" font-size="19" fill="#0f172a" font-weight="600">Turnover: the flip from skirt-first to base-first after you hit it</text>
+
+  <g font-family="system-ui,sans-serif" font-size="15" fill="#0f766e">
+    <text x="60" y="546">Feathered</text>
+  </g>
+  <g stroke="#0f766e" stroke-width="2.5" fill="none">
+    <path d="M175 546 L560 546" stroke-dasharray="4 4"/>
+  </g>
+  <g fill="#0f766e">
+    <path d="M190 536 l0 20 l-16 -10 z"/>
+    <circle cx="300" cy="546" r="9"/>
+    <path d="M420 556 l0 -20 l16 10 z"/>
+  </g>
+  <line x1="436" y1="522" x2="436" y2="570" stroke="#0f766e" stroke-width="3"/>
+  <text x="450" y="551" font-family="system-ui,sans-serif" font-size="15" fill="#0f766e">turned</text>
+
+  <g font-family="system-ui,sans-serif" font-size="15" fill="#1d4ed8">
+    <text x="60" y="616">Synthetic</text>
+  </g>
+  <g stroke="#1d4ed8" stroke-width="2.5" fill="none">
+    <path d="M175 616 L680 616" stroke-dasharray="4 4"/>
+  </g>
+  <g fill="#1d4ed8">
+    <path d="M190 606 l0 20 l-16 -10 z"/>
+    <circle cx="360" cy="616" r="9"/>
+    <path d="M540 626 l0 -20 l16 10 z"/>
+  </g>
+  <line x1="556" y1="592" x2="556" y2="640" stroke="#1d4ed8" stroke-width="3"/>
+  <text x="570" y="621" font-family="system-ui,sans-serif" font-size="15" fill="#1d4ed8">turned</text>
+
+  <text x="700" y="580" font-family="system-ui,sans-serif" font-size="15" fill="#475569">Published testing puts the feather shuttle's</text>
+  <text x="700" y="600" font-family="system-ui,sans-serif" font-size="15" fill="#475569">turnover ahead. It found no such gap on the</text>
+  <text x="700" y="620" font-family="system-ui,sans-serif" font-size="15" fill="#475569">drop after the shuttle has turned - which is</text>
+  <text x="700" y="640" font-family="system-ui,sans-serif" font-size="15" fill="#475569">the part most people argue about.</text>
+
+  <text x="1160" y="663" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">epegboard.com</text>
+</svg>
