@@ -1,14 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img"
-     aria-label="A bar chart of eighteen UK venues' adult peak badminton court prices, normalised to a sixty-minute court and sorted cheapest first. Swansea Bay Sports Park nine pounds, Newcastle University ten pounds, Plympton Academy ten pounds fifty, Benham Sports Centre twelve pounds, Danbury twelve pounds, Codsall twelve pounds fifty, Wombourne twelve pounds fifty, Botwell Green twelve pounds seventy as an upper bound only, Pateley Bridge thirteen pounds twenty-five, Tendring thirteen pounds sixty-five, Glasgow Club fourteen pounds, Oxford fourteen pounds ninety-six, Sefton fifteen pounds, Vivacity fifteen pounds, Brunel University fifteen pounds, Halton fifteen pounds twenty-seven, Castle Leisure Centre Bury fifteen pounds forty-seven, and Eric Liddell in London sixteen pounds twenty. The median is thirteen pounds forty-five. The three cheapest venues are two universities and a school, and the two dearest council venues are both ones that sell a slot shorter than an hour.">
-  <title>Half of UK venues charge between £12 and £15 a court an hour, and the cheapest are all in education</title>
+     aria-label="A bar chart of eighteen UK venues' adult peak badminton court prices, normalised to a sixty-minute court and sorted cheapest first. Swansea Bay Sports Park nine pounds, Newcastle University ten pounds, Plympton Academy ten pounds fifty, Benham Sports Centre twelve pounds, Danbury twelve pounds, Codsall twelve pounds fifty, Wombourne twelve pounds fifty, Botwell Green twelve pounds seventy as an upper bound only, Pateley Bridge thirteen pounds twenty-five, Tendring thirteen pounds sixty-five, Glasgow Club fourteen pounds, Oxford fourteen pounds ninety-six, Vivacity fifteen pounds, Brunel University fifteen pounds, Halton fifteen pounds twenty-seven, Castle Leisure Centre Bury fifteen pounds forty-seven, Sefton sixteen pounds, and the Eric Liddell Sports Centre in London sixteen pounds twenty. The median is thirteen pounds forty-five. Education venues are marked separately and occupy both ends of the range: the three cheapest are two universities and a state school, while the single most expensive is an independent school's sports centre and a university sits mid-table at fifteen pounds. The two venues selling less than a full hour, Halton and Bury, both finish in the four most expensive despite advertising mid-range prices.">
+  <title>The three cheapest venues are education venues. So is the most expensive.</title>
 
   <!--
-    Data: Marketing/GEO/court-hire-survey-2026-08-26/ - 22 UK venues read 2026-08-26,
-    18 of which sell a comparable per-court unit. Published rate cards and booking pages only;
-    no price estimated or taken from a search snippet.
+    Data: Marketing/GEO/court-hire-survey-2026-08-26/ - 24 UK venues across 22 rows, read 2026-08-26.
+    18 sell a comparable per-court unit. Published rate cards and booking pages only.
     Prices NORMALISED to 60 minutes: Halton sells 55 min, Bury sells 45 min.
     Re-run analyze.mjs in that folder to reproduce every figure here.
-    Teal = university or school. Slate = council, trust or private.
+
+    CORRECTED 2026-08-26 (round 1 review): Sefton was drawn at £15.00, which is the 2025/26 column
+    of a document titled "Fees and Charges 2026-27". The 2026/27 charge is £16.00, so Sefton moves
+    from 13th to 17th. Headline stats are unaffected: median £13.45, Q1 £12.00, Q3 £15.00.
+
+    COLOUR: teal = university or school of any kind. The first version reserved teal for the cheap
+    end, which visually asserted "education is cheaper" - false, since the dearest venue in the
+    sample is an independent school's centre and Brunel sits mid-table. Education now carries one
+    colour wherever it lands, and the title states the real finding.
   -->
 
   <rect width="1200" height="675" fill="#ffffff"/>
@@ -16,7 +23,6 @@
   <text x="40" y="36" font-family="system-ui,sans-serif" font-size="23" fill="#0f172a" font-weight="600">What 18 UK venues charge for a badminton court</text>
   <text x="40" y="60" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">Adult peak rate, normalised to a 60-minute court &#183; published prices read 26 August 2026</text>
 
-  <!-- gridlines at £5, £10, £15 -->
   <g stroke="#e2e8f0" stroke-width="1">
     <line x1="540" y1="88" x2="540" y2="616"/>
     <line x1="780" y1="88" x2="780" y2="616"/>
@@ -43,14 +49,13 @@
     <rect x="300" y="390" width="672"   height="20" fill="#64748b"/>
     <rect x="300" y="419" width="718.1" height="20" fill="#64748b"/>
     <rect x="300" y="448" width="720"   height="20" fill="#64748b"/>
-    <rect x="300" y="477" width="720"   height="20" fill="#64748b"/>
-    <rect x="300" y="506" width="720"   height="20" fill="#0f766e"/>
-    <rect x="300" y="535" width="733.0" height="20" fill="#64748b"/>
-    <rect x="300" y="564" width="742.6" height="20" fill="#64748b"/>
-    <rect x="300" y="593" width="777.6" height="20" fill="#64748b"/>
+    <rect x="300" y="477" width="720"   height="20" fill="#0f766e"/>
+    <rect x="300" y="506" width="733.0" height="20" fill="#64748b"/>
+    <rect x="300" y="535" width="742.6" height="20" fill="#64748b"/>
+    <rect x="300" y="564" width="768"   height="20" fill="#64748b"/>
+    <rect x="300" y="593" width="777.6" height="20" fill="#0f766e"/>
   </g>
 
-  <!-- venue names -->
   <g font-family="system-ui,sans-serif" font-size="15" fill="#0f172a" text-anchor="end">
     <text x="288" y="115">Swansea Bay Sports Park</text>
     <text x="288" y="144">Newcastle University</text>
@@ -64,15 +69,14 @@
     <text x="288" y="376">Tendring (Clacton)</text>
     <text x="288" y="405">Glasgow Club</text>
     <text x="288" y="434">Oxford City Council</text>
-    <text x="288" y="463">Sefton</text>
-    <text x="288" y="492">Vivacity, Peterborough</text>
-    <text x="288" y="521">Brunel University</text>
-    <text x="288" y="550">Halton</text>
-    <text x="288" y="579">Castle Leisure Centre, Bury</text>
+    <text x="288" y="463">Vivacity, Peterborough</text>
+    <text x="288" y="492">Brunel University</text>
+    <text x="288" y="521">Halton</text>
+    <text x="288" y="550">Castle Leisure Centre, Bury</text>
+    <text x="288" y="579">Sefton</text>
     <text x="288" y="608">Eric Liddell, London</text>
   </g>
 
-  <!-- values -->
   <g font-family="system-ui,sans-serif" font-size="15" fill="#0f172a" font-weight="600">
     <text x="742"    y="115">&#163;9.00</text>
     <text x="790"    y="144">&#163;10.00</text>
@@ -88,30 +92,28 @@
     <text x="1028.1" y="434">&#163;14.96</text>
     <text x="1030"   y="463">&#163;15.00</text>
     <text x="1030"   y="492">&#163;15.00</text>
-    <text x="1030"   y="521">&#163;15.00</text>
-    <text x="1043"   y="550">&#163;15.27</text>
-    <text x="1052.6" y="579">&#163;15.47</text>
+    <text x="1043"   y="521">&#163;15.27</text>
+    <text x="1052.6" y="550">&#163;15.47</text>
+    <text x="1078"   y="579">&#163;16.00</text>
     <text x="1087.6" y="608">&#163;16.20</text>
   </g>
 
-  <!-- slot-length flags on the two normalised rows -->
+  <!-- slot-length flags on the two rows that sell under an hour -->
   <g font-family="system-ui,sans-serif" font-size="13" fill="#ffffff">
-    <text x="312" y="550">sells 55 min</text>
-    <text x="312" y="579">sells 45 min</text>
+    <text x="312" y="521">sells 55 min, advertises &#163;14.00</text>
+    <text x="312" y="550">sells 45 min, advertises &#163;11.60</text>
   </g>
 
-  <!-- median -->
   <line x1="945.6" y1="88" x2="945.6" y2="616" stroke="#b45309" stroke-width="2.5" stroke-dasharray="6 5"/>
   <text x="945.6" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#b45309" font-weight="600">median &#163;13.45</text>
 
-  <!-- key -->
   <g font-family="system-ui,sans-serif" font-size="15" fill="#475569">
     <rect x="40" y="655" width="14" height="14" fill="#0f766e"/>
     <text x="60" y="667">University or school</text>
-    <rect x="230" y="655" width="14" height="14" fill="#64748b"/>
-    <text x="250" y="667">Council, trust or private</text>
-    <rect x="460" y="655" width="14" height="14" fill="#94a3b8"/>
-    <text x="480" y="667">Upper bound only</text>
+    <rect x="250" y="655" width="14" height="14" fill="#64748b"/>
+    <text x="270" y="667">Council, trust or charity</text>
+    <rect x="490" y="655" width="14" height="14" fill="#94a3b8"/>
+    <text x="510" y="667">Upper bound only</text>
   </g>
   <text x="1160" y="667" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">epegboard.com</text>
 </svg>

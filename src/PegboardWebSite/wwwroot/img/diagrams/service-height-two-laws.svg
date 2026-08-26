@@ -24,7 +24,7 @@
 
   <!-- ===== the 1.15 m line: ONE line, both players ===== -->
   <line x1="120" y1="301" x2="1080" y2="301" stroke="#0f766e" stroke-width="3.5"/>
-  <text x="1080" y="293" text-anchor="end" font-family="system-ui,sans-serif" font-size="19" fill="#0f766e" font-weight="600">Law 9.1.6 &#8212; 1.15 m, the same for both</text>
+  <text x="1080" y="293" text-anchor="end" font-family="system-ui,sans-serif" font-size="19" fill="#0f766e" font-weight="600">Law 9.1.6: 1.15 m, the same for both</text>
 
   <!-- measuring device beside the court -->
   <g>
@@ -67,11 +67,7 @@
   <ellipse cx="937" cy="384" rx="17" ry="22" fill="none" stroke="#334155" stroke-width="5" transform="rotate(42 937 384)"/>
   <circle cx="937" cy="412" r="9" fill="#0f172a"/>
 
-  <!-- the gap that makes the point -->
-  <line x1="1010" y1="301" x2="1010" y2="339" stroke="#b45309" stroke-width="2"/>
-  <line x1="1002" y1="301" x2="1018" y2="301" stroke="#b45309" stroke-width="2"/>
-  <line x1="1002" y1="339" x2="1018" y2="339" stroke="#b45309" stroke-width="2"/>
-  <text x="1026" y="326" font-family="system-ui,sans-serif" font-size="15" fill="#b45309">the two rules<tspan x="1026" dy="18">disagree by this</tspan></text>
+  <text x="1010" y="470" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">Rib heights are<tspan x="1010" dy="18">schematic and vary</tspan><tspan x="1010" dy="18">between players</tspan></text>
 
   <!-- key -->
   <g font-family="system-ui,sans-serif" font-size="16" fill="#475569">

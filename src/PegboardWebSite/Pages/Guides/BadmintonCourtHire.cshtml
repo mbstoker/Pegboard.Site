@@ -3,48 +3,52 @@
 @{
     Layout = "_LayoutMarketing";
     ViewData["Title"] = "Badminton court hire: what UK clubs pay, and what is actually negotiable";
-    ViewData["Description"] = "We read the published rates at 22 UK venues. The median is £13.45 a court an hour, but the headline rate is the least comparable number on the table - and the savings that matter come from how the booking is structured, not from haggling.";
+    ViewData["Description"] = "We read the published prices at 24 UK venues. Across the 18 selling a comparable court, the median is £13.45 an hour - but the headline rate is the least comparable number on the table, and the biggest published discount is one nobody negotiates for.";
     ViewData["OgTitle"] = "What UK badminton clubs pay for court hire";
 
     const string published = "2026-08-26";
     const string canonical = "https://www.epegboard.com/guides/badminton-court-hire";
 
-    // QUESTION SET (production step 1) - each is an H2 below, and the per-article
-    // acceptance criteria in the build-pack map onto these:
+    // QUESTION SET (production step 1) - each is an H2 below:
     //  1 What are you actually buying?
     //  2 What should you expect to pay, and how do you compare two quotes?
     //  3 What drives the difference?
-    //  4 Does block booking get you a discount?
-    //  5 Is VAT charged?
-    //  6 What else is negotiable besides the rate?
-    //  7 Is the whole hall cheaper than the courts inside it?
-    //  8 Who do you talk to, and when in their year?
-    //  9 Is the venue bound by a community use agreement?
-    // 10 Which contract terms matter as much as the rate?
-    // 11 What do you need ready before you ask?
-    // 12 When should you walk away?
+    //  4 Is off-peak cheaper, and can your club use it?
+    //  5 Does block booking get you a discount?
+    //  6 Is VAT charged?
+    //  7 What else is negotiable besides the rate?
+    //  8 Is the whole hall cheaper than the courts inside it?
+    //  9 Who do you talk to, and when in their year?
+    // 10 Is the venue bound by a community use agreement?
+    // 11 Which contract terms matter as much as the rate?
+    // 12 What do you need ready before you ask?
+    // 13 When should you walk away?
+    //
+    // EVERY FIGURE ON THIS PAGE COMES OUT OF Marketing/GEO/court-hire-survey-2026-08-26/analyze.mjs.
+    // Do not compute anything in prose. Round 1 review found that almost every blocking error was a
+    // number that was correct in the sample file and was changed or guessed at while drafting.
 
     var faqPairs = new (string Q, string A)[]
     {
         ("Should we hire more courts than we need so nobody sits out?",
-         "Usually no. An extra court costs the same every week whether it is busy or not, and sit-outs are mostly a rotation problem rather than a capacity one. Work out what your busiest realistic night looks like, hire for that, and fix the queue rather than buying your way out of it."),
+         "Usually no. An extra court costs the same every week whether it is busy or not, and sit-outs are more often a rotation problem than a capacity one. Work out what your busiest realistic night looks like, hire for that, and fix the queue rather than buying your way out of it."),
         ("Can we sublet spare courts to another group?",
-         "Ask before you assume. Most hire agreements we could find are silent on it in public, and the ones that are not tend to prohibit it, because the centre would rather sell that court itself. It is worth asking directly, since a second group sharing your block is one of the few things that lowers your cost per player at all."),
+         "Ask, because we cannot tell you. No operator we looked at publishes its block-booking terms, so we have no basis for saying what is normal here. It is worth asking directly: a second group sharing your block is one of the few things that lowers your cost per player at all."),
         ("Is it cheaper to run two shorter nights or one long one?",
-         "Two nights almost never costs less, because the price is per court-hour either way and you double your exposure to peak pricing. It can still be the right call for other reasons - splitting standards, or fitting more members into a small hall - but treat it as a membership decision rather than a saving."),
+         "Two nights almost never costs less, because the price is per court-hour either way and you double your exposure to peak pricing. It can still be the right call for other reasons, such as splitting standards or fitting more members into a small hall, but treat it as a membership decision rather than a saving."),
         ("Do we have to be affiliated to hire a council hall?",
-         "Not usually for the booking itself, but affiliation is what most clubs use to evidence public liability cover, and a centre will normally ask to see cover before it lets a regular block. Check what your own affiliation actually includes rather than assuming it covers every person on court."),
+         "Not usually for the booking itself, but a centre will normally want to see evidence of public liability cover before letting a regular block, and affiliation is a common route to that. Check what your own affiliation actually includes, in its current wording, rather than assuming it covers every person on court."),
         ("What if the centre wants to move us to a different night?",
-         "This is the most common thing that goes wrong with a good rate, and it is why the cancellation and variation terms matter more than the price. Ask what notice they must give you to move or cancel a session, and what happens to the sessions you have already paid for. If the answer is vague, get it in writing before you commit to a series."),
+         "This is why the variation and cancellation terms matter as much as the price. Ask what notice they must give to move or cancel a session, and what happens to sessions you have already paid for. If the answer is vague, get it in writing before you commit to a series."),
         ("Would registering as a CASC make court hire cheaper?",
-         "Not directly. CASC status affects rates relief and tax treatment for the club, not what a leisure centre charges you. It can matter if your club owns or leases its own facility, which is a different situation from hiring one."),
+         "Not directly. CASC status affects rates relief and tax treatment for the club itself, not what a leisure centre charges you. It matters more if your club owns or leases its own facility, which is a different situation from hiring one."),
         ("What about hiring a school hall during the holidays?",
-         "School lettings are often the cheapest option in a given town, but term-time and holiday availability are usually governed separately, and a hall that is available in June may be shut in August. If your season runs through the summer, ask about holiday access before you move.")
+         "School lettings are often the cheapest option in a given town, but term-time and holiday availability are usually governed separately, and a hall available in June may be shut in August. If your season runs through the summer, ask about holiday access before you move.")
     };
 
     var articleJsonLd = GuideSchema.Article(
         "Badminton court hire: what UK clubs pay, and what is actually negotiable",
-        "We read the published rates at 22 UK venues. The median is £13.45 a court an hour, but the headline rate is the least comparable number on the table.",
+        "We read the published prices at 24 UK venues. Across the 18 selling a comparable court, the median is £13.45 an hour.",
         canonical, published);
 }
 
@@ -60,7 +64,7 @@
       <div class="guide-meta">
         <span class="gm-tag">Guide</span>
         <span>Running a club</span>
-        <span>15 min read</span>
+        <span>16 min read</span>
       </div>
     </div>
   </div>
@@ -70,7 +74,7 @@
   <div class="wrap" style="max-width:820px">
 
     <div class="prose">
-      <p class="lead"><strong>Expect £12 to £15 per court per hour, and normalise the quote before you compare it.</strong> Across 18 UK venues whose published rates we read, the median was £13.45. But a centre advertising £11.60 can be dearer than one advertising £15.00, because it sells 45 minutes. Before you negotiate the rate, settle three things: what unit the centre is selling, whether ten sessions on one invoice unlocks both a discount and a VAT exemption, and whether the whole hall costs less than the courts inside it.</p>
+      <p class="lead"><strong>Convert every quote to a price per hour before you compare it, then check the off-peak rate before you negotiate anything.</strong> Across the 18 UK venues we surveyed that sell a comparable court, the median was £13.45 an hour and half sat between £12.00 and £15.00. But one centre advertising £11.60 is the fourth cheapest on paper and the third dearest in reality, because it sells 45 minutes. And where off-peak prices are published they run 14 to 34 per cent below peak, which beats every club discount in our survey and requires no conversation at all.</p>
 
       <p>Get this wrong and you find out in August: the renewal lands, it is up again, and the committee starts talking about putting subs up rather than asking why nobody read the council's fees paper in February.</p>
     </div>
@@ -78,22 +82,23 @@
     <div class="guide-callout" style="margin-top:30px">
       <h4>The short version</h4>
       <ul style="margin:10px 0 0">
-        <li><strong>The headline rate is the least comparable number you have.</strong> Slot length varies from 45 to 60 minutes, and some centres charge per player rather than per court.</li>
-        <li><strong>Ten sessions is the number that matters twice.</strong> It is the threshold for HMRC's block-booking VAT exemption and, at some centres, for a commercial discount. Same number, two different savings.</li>
-        <li><strong>Check the whole hall against the courts inside it.</strong> At two venues we surveyed, hiring the entire hall costs less than hiring four of its five courts.</li>
-        <li><strong>The club rate is real and mostly unpublished.</strong> Where centres do publish one it runs up to a third below the casual rate. Most say "contact us", which is the point.</li>
-        <li><strong>The education sector is a different market.</strong> Universities and school lettings in our sample priced below the leisure-centre band.</li>
-        <li><strong>Reception cannot change a price.</strong> Rates are set annually, in public committee papers, months before they take effect.</li>
+        <li><strong>The headline rate is the least comparable number you have.</strong> Slot lengths run from 45 to 60 minutes, and some centres charge per player rather than per court.</li>
+        <li><strong>Check off-peak first.</strong> Where it is published it runs 14 to 34 per cent below peak. It is the largest discount in our survey and the only one you do not have to ask for.</li>
+        <li><strong>Ten sessions is the number that matters twice.</strong> It is the threshold for HMRC's block-booking VAT exemption and, at some centres, for a commercial discount.</li>
+        <li><strong>Ask whether the hall is a sports facility or a bare hall.</strong> A village, church or school hall let bare is VAT-exempt already. Asking them to put the posts and nets out can change that.</li>
+        <li><strong>Whole-hall hire beats taking every court, and only that.</strong> At two venues the whole hall costs less than all five of its courts. Against four of them it is dearer everywhere we looked.</li>
+        <li><strong>The club rate is real and mostly unpublished.</strong> Where centres publish one it runs up to a third below casual. Most say "contact us", which is the point.</li>
       </ul>
     </div>
 
-    <p style="margin-top:22px;color:var(--muted-2);font-size:.95rem">Written for UK club organisers hiring courts from a leisure centre, school or university. Prices are what 22 venues published on 26 August 2026 and typically change each April. The VAT section follows HMRC's published guidance and is not tax advice.</p>
+    <p style="margin-top:22px;color:var(--muted-2);font-size:.95rem">Written for UK club organisers hiring courts from a leisure centre, school or university. Figures come from a survey of 24 venues whose published prices we read on 26 August 2026; 18 sell a comparable per-court unit. Sixteen of those are on 2026/27 prices and two on 2025/26, which is flagged where it matters. The VAT section follows HMRC's published guidance and is not tax advice.</p>
 
     <div class="guide-toc" style="margin-top:26px">
       <h4>In this guide</h4>
       <a href="#unit">What are you actually buying?</a>
       <a href="#what-to-pay">What should you expect to pay?</a>
       <a href="#drivers">What drives the difference?</a>
+      <a href="#off-peak">Is off-peak cheaper, and can your club use it?</a>
       <a href="#block">Does block booking get you a discount?</a>
       <a href="#vat">Is VAT charged on court hire?</a>
       <a href="#negotiable">What else is negotiable besides the rate?</a>
@@ -109,130 +114,199 @@
     <div class="prose" style="margin-top:34px">
 
       <h2 id="unit">What are you actually buying?</h2>
-      <p>Three centres quoting "about twelve pounds a court" can mean three different things, and the gap between them is wider than anything you will negotiate off the rate.</p>
-      <p><strong>Slot length is not standard.</strong> Castle Leisure Centre in Bury sells a 45-minute court. Halton Borough Council sells 55 minutes. Most of the rest sell an hour. Nobody labels this as a discount or a premium; it just sits in the booking system, and it moves the real price by up to a third.</p>
-      <p><strong>Some centres charge per player, not per court.</strong> The PEAK in Stirling prices badminton at £6.50 per adult with a minimum of two players. For a club running doubles that is roughly £26 a court-hour, against a £13.45 median for the same two hours of the same sport. A club that budgets per court and books a per-player venue has doubled its cost before anyone picks up a racket.</p>
-      <p><strong>And "a court" does not always mean four people on it.</strong> Better's Brook Leisure Centre in Belfast states that the initial booking covers one player and reserves the court, with additional players paying separately at reception. Bury charges a guest fee of half the court fee for non-member additional players. Ask what the price includes before you compare it to anything.</p>
+      <p>You are buying a court for a slot that is not always an hour, sometimes priced per player rather than per court, and not always including everyone who walks on with you.</p>
+      <p><strong>Slot length is not standard.</strong> Castle Leisure Centre in Bury sells a 45-minute court and Halton Borough Council sells 55 minutes. Every other comparable venue in our survey sells a full hour. Nobody labels the short slot as anything, and it moves the real price by up to a third.</p>
+      <p><strong>Some centres charge per player.</strong> The PEAK in Stirling prices badminton at £6.50 per adult with a minimum of two players, which for a club running doubles is roughly £26 a court-hour against a £13.45 median. A club that budgets per court and books a per-player venue has doubled its cost before anyone picks up a racket.</p>
+      <p><strong>And "a court" does not always mean four people on it.</strong> Better's Brook Leisure Centre in Belfast states that the initial booking covers one player and reserves the court, with additional players paying separately at reception. Bury charges a guest fee of half the court fee for non-member additional players.</p>
 
       <h2 id="what-to-pay">What should you expect to pay?</h2>
-      <p>The median is £13.45 per court per hour, and half of UK venues sit between £12.00 and £15.00.</p>
-      <p>No published national figure for badminton court hire exists, so we made one. On 26 August 2026 we read the published rate cards and booking pages of 22 UK venues, spread across councils, leisure trusts, universities, schools and one private operator. Eighteen of them sell a comparable per-court unit. The other four sell something else, which is a finding in its own right.</p>
+      <p>Expect a median of £13.45 per court per hour, with half the venues we surveyed sitting between £12.00 and £15.00.</p>
+      <p>No published national figure for badminton court hire exists, so we made one. On 26 August 2026 we read the published rate cards and booking pages of 24 UK venues across councils, leisure trusts, universities, schools and one independent school's sports centre. Eighteen sell a comparable per-court unit; the other six sell something else, which is a finding in its own right.</p>
 
       <figure style="margin:26px 0 0">
-        <img src="/img/diagrams/court-hire-rates.svg" alt="A chart of eighteen UK venues' adult peak badminton court prices, normalised to a sixty-minute court and sorted from cheapest to dearest. They run from nine pounds at Swansea Bay Sports Park to sixteen pounds twenty at the Eric Liddell Sports Centre in London. The median is thirteen pounds forty-five. The three cheapest are a university, a university and a school. Councils cluster between twelve pounds and fifteen pounds forty-seven." style="width:100%;height:auto;border-radius:12px" />
-        <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">Eighteen venues, adult peak rate, normalised to a 60-minute court. Read 26 August 2026. Every venue is named, and the figures re-derive from the published survey.</figcaption>
+        <img src="/img/diagrams/court-hire-rates.svg" alt="A chart of eighteen UK venues' adult peak badminton court prices, normalised to a sixty-minute court and sorted cheapest first. They run from nine pounds at Swansea Bay Sports Park to sixteen pounds twenty at the Eric Liddell Sports Centre in London, with a median of thirteen pounds forty-five. The three cheapest are two universities and a school. The two venues that sell less than a full hour, Halton and Castle Leisure Centre in Bury, both finish in the four most expensive despite advertising mid-range prices." style="width:100%;height:auto;border-radius:12px" />
+        <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">Eighteen venues, adult peak rate, normalised to a 60-minute court. Every venue is named below, and every figure re-derives from the published survey script.</figcaption>
       </figure>
 
-      <p style="margin-top:22px"><strong>Now the part that makes the table usable.</strong> Before you compare your quote to that median, convert it to an hour. Bury advertises £11.60 and Sefton advertises £15.00, and Bury is the more expensive of the two.</p>
+      <div style="overflow-x:auto;margin-top:22px">
+        <table style="width:100%;border-collapse:collapse;font-size:.93rem">
+          <caption style="caption-side:top;text-align:left;padding-bottom:8px;color:var(--muted-2);font-size:.92rem">Adult peak court hire, read 26 August 2026. "Per hour" converts the advertised slot to 60 minutes.</caption>
+          <thead>
+            <tr style="text-align:left;border-bottom:2px solid var(--line)">
+              <th style="padding:7px 9px">Venue</th><th style="padding:7px 9px">Type</th><th style="padding:7px 9px">Advertised</th><th style="padding:7px 9px">Per hour</th><th style="padding:7px 9px">Fee year</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:7px 9px">Swansea Bay Sports Park</td><td style="padding:7px 9px">University</td><td style="padding:7px 9px">£9.00</td><td style="padding:7px 9px">£9.00</td><td style="padding:7px 9px">2026/27</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:7px 9px">Newcastle University</td><td style="padding:7px 9px">University</td><td style="padding:7px 9px">£10.00</td><td style="padding:7px 9px">£10.00</td><td style="padding:7px 9px">2026/27</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:7px 9px">Plympton Academy</td><td style="padding:7px 9px">School</td><td style="padding:7px 9px">£10.50</td><td style="padding:7px 9px">£10.50</td><td style="padding:7px 9px">2026/27</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:7px 9px">Benham Sports Centre</td><td style="padding:7px 9px">Charity</td><td style="padding:7px 9px">£12.00</td><td style="padding:7px 9px">£12.00</td><td style="padding:7px 9px">2026/27</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:7px 9px">Danbury Leisure Centre</td><td style="padding:7px 9px">Council</td><td style="padding:7px 9px">£12.00</td><td style="padding:7px 9px">£12.00</td><td style="padding:7px 9px">2026/27</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:7px 9px">Codsall Leisure Centre</td><td style="padding:7px 9px">Council</td><td style="padding:7px 9px">£12.50</td><td style="padding:7px 9px">£12.50</td><td style="padding:7px 9px">2026/27</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:7px 9px">Wombourne Leisure Centre</td><td style="padding:7px 9px">Council</td><td style="padding:7px 9px">£12.50</td><td style="padding:7px 9px">£12.50</td><td style="padding:7px 9px">2026/27</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:7px 9px">Botwell Green</td><td style="padding:7px 9px">Trust</td><td style="padding:7px 9px">up to £12.70</td><td style="padding:7px 9px">up to £12.70</td><td style="padding:7px 9px">2026/27</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:7px 9px">Pateley Bridge Leisure Hub</td><td style="padding:7px 9px">Council</td><td style="padding:7px 9px">£13.25</td><td style="padding:7px 9px">£13.25</td><td style="padding:7px 9px">2026/27</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:7px 9px">Tendring (Clacton)</td><td style="padding:7px 9px">Council</td><td style="padding:7px 9px">£13.65</td><td style="padding:7px 9px">£13.65</td><td style="padding:7px 9px">2025/26</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:7px 9px">Glasgow Club</td><td style="padding:7px 9px">Trust</td><td style="padding:7px 9px">£14.00</td><td style="padding:7px 9px">£14.00</td><td style="padding:7px 9px">2026/27</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:7px 9px">Oxford City Council</td><td style="padding:7px 9px">Council</td><td style="padding:7px 9px">£14.96</td><td style="padding:7px 9px">£14.96</td><td style="padding:7px 9px">2026/27</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:7px 9px">Vivacity, Peterborough</td><td style="padding:7px 9px">Trust</td><td style="padding:7px 9px">£15.00</td><td style="padding:7px 9px">£15.00</td><td style="padding:7px 9px">2026/27</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:7px 9px">Brunel University</td><td style="padding:7px 9px">University</td><td style="padding:7px 9px">£15.00</td><td style="padding:7px 9px">£15.00</td><td style="padding:7px 9px">2026/27</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:7px 9px"><strong>Halton</strong></td><td style="padding:7px 9px">Council</td><td style="padding:7px 9px"><strong>£14.00 / 55 min</strong></td><td style="padding:7px 9px"><strong>£15.27</strong></td><td style="padding:7px 9px">2025/26</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:7px 9px"><strong>Castle Leisure Centre, Bury</strong></td><td style="padding:7px 9px">Council</td><td style="padding:7px 9px"><strong>£11.60 / 45 min</strong></td><td style="padding:7px 9px"><strong>£15.47</strong></td><td style="padding:7px 9px">2026/27</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:7px 9px">Sefton</td><td style="padding:7px 9px">Council</td><td style="padding:7px 9px">£16.00</td><td style="padding:7px 9px">£16.00</td><td style="padding:7px 9px">2026/27</td></tr>
+            <tr><td style="padding:7px 9px">Eric Liddell, London</td><td style="padding:7px 9px">Independent school</td><td style="padding:7px 9px">£16.20</td><td style="padding:7px 9px">£16.20</td><td style="padding:7px 9px">2026/27</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="margin-top:22px"><strong>The two rows in bold are the point of the whole table.</strong> Bury advertises £11.60, the fourth cheapest headline price in the survey. Converted to an hour it is £15.47, the third most expensive. Halton advertises £14.00 and moves from twelfth to fifteenth the same way.</p>
 
       <figure style="margin:26px 0 0">
-        <img src="/img/diagrams/court-hire-slot-length.svg" alt="Two pairs of bars. On the left, the advertised prices: Castle Leisure Centre in Bury at eleven pounds sixty, Sefton at fifteen pounds. On the right, the same two normalised to a sixty-minute court: Bury rises to fifteen pounds forty-seven because it sells forty-five minutes, overtaking Sefton, which stays at fifteen pounds because it already sells an hour. The order reverses." style="width:100%;height:auto;border-radius:12px" />
-        <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">The same two centres, before and after normalising. Bury sells 45 minutes, so its cheaper-looking price is the dearer one.</figcaption>
+        <img src="/img/diagrams/court-hire-slot-length.svg" alt="Two ranked columns of the same eighteen venues. On the left they are ordered by advertised price, and Castle Leisure Centre in Bury sits fourth from cheapest at eleven pounds sixty. On the right they are ordered by real price per hour, and Bury has moved to third from most expensive at fifteen pounds forty-seven, because it sells a forty-five minute court. A line traces Bury's position between the two columns to show the jump. Halton makes a smaller jump for the same reason, selling fifty-five minutes." style="width:100%;height:auto;border-radius:12px" />
+        <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">The same eighteen venues, ranked by what they advertise and by what they actually charge per hour. Both venues selling under an hour finish in the four most expensive.</figcaption>
       </figure>
 
-      <p style="margin-top:22px">Divide the price by the minutes and multiply by sixty. It takes ten seconds and it is the only way two quotes mean the same thing.</p>
-      <p>One caveat we will not hide: one of our eighteen rows is an upper bound rather than a price. Botwell Green publishes "up to £12.70" rather than a figure. Leaving it out moves the median to £13.65 and changes neither quartile, so the shape of the answer holds either way.</p>
+      <p style="margin-top:22px">Divide the price by the minutes and multiply by sixty. That is the whole technique, and it is the only way two quotes mean the same thing.</p>
+      <p>Two caveats we will not bury. One of the eighteen rows is an upper bound rather than a price, because Botwell Green publishes "up to £12.70"; leaving it out moves the median to £13.65 and changes neither quartile. And two venues are on 2025/26 prices where the rest are on 2026/27, so the median blends two fee years by a small amount.</p>
 
       <h2 id="drivers">What drives the difference?</h2>
-      <p>Operator type is the signal you can see; region is not separable from it at any sample a club could reasonably gather.</p>
-      <p>The education sector prices below the leisure-centre market. The three cheapest venues in our survey were Swansea Bay Sports Park at £9.00, Newcastle University at £10.00 and Plympton Academy's hall at £10.50. Councils clustered higher, with a median of £13.65 across nine venues, and the most expensive venue in the sample was the one private company in it.</p>
-      <p>We are not going to tell you how much of that is region, because our own data cannot support the claim. All three of our North West venues are council-run, the only Welsh venue is a university, and the only private operator is in London. Operator type and geography are tangled together, and any percentage we attached to either would be invented. Directionally: look at who runs the building before you look at where it is.</p>
+      <p>Operator type is the signal you can see, and region is not separable from it at any sample a club could reasonably gather.</p>
+      <div style="overflow-x:auto;margin-top:16px">
+        <table style="width:100%;border-collapse:collapse;font-size:.95rem">
+          <thead>
+            <tr style="text-align:left;border-bottom:2px solid var(--line)">
+              <th style="padding:8px 10px">Operator</th><th style="padding:8px 10px">Venues</th><th style="padding:8px 10px">Median</th><th style="padding:8px 10px">Range</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">University</td><td style="padding:8px 10px">3</td><td style="padding:8px 10px">£10.00</td><td style="padding:8px 10px">£9.00 to £15.00</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">School</td><td style="padding:8px 10px">1</td><td style="padding:8px 10px">£10.50</td><td style="padding:8px 10px">-</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Trust or charity</td><td style="padding:8px 10px">4</td><td style="padding:8px 10px">£13.35</td><td style="padding:8px 10px">£12.00 to £15.00</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Council</td><td style="padding:8px 10px">9</td><td style="padding:8px 10px">£13.65</td><td style="padding:8px 10px">£12.00 to £16.00</td></tr>
+            <tr><td style="padding:8px 10px">Independent school centre</td><td style="padding:8px 10px">1</td><td style="padding:8px 10px">£16.20</td><td style="padding:8px 10px">-</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:18px">The three cheapest venues in the survey are two universities and a school hall. That is a real signal and it is worth acting on. It is not the same as saying education is cheaper, though, and we should be precise about the difference: Brunel University charges £15.00, above six of the nine councils, and the most expensive venue in the whole survey is an independent school's own sports centre.</p>
+      <p>We are not going to tell you how much of the variation is region, because our data cannot support it. All three North West venues are council-run, the only Welsh venue is a university, and the sample is eighteen. Any percentage we attached would be invented. Look at who runs the building before you look at where it is, and then go and check the specific places near you.</p>
+
+      <h2 id="off-peak">Is off-peak cheaper, and can your club use it?</h2>
+      <p>Off-peak is the largest published discount in this survey, running 14 to 34 per cent below peak at the three venues that publish both.</p>
+      <p>Benham drops from £12.00 to £10.00, Bury from £15.47 to £13.33 an hour, and Oxford from £14.96 to £9.94. That last one is a third off, and it is larger than any club or block discount we found anywhere.</p>
+      <p><strong>Nobody negotiates for this and everybody could.</strong> It is on the price list, it requires no conversation, and most clubs never look at it because the club night has always been on a Tuesday at eight.</p>
+      <p>The catch is real and it is about your members, not your budget. Off-peak usually means daytime or late evening, which suits retired players, shift workers, students and parents during school hours, and suits nobody in full-time work who wants to play at eight. For most clubs this is not a saving they can take. For a club with a daytime section, a juniors slot or an over-60s group, it is the cheapest court time available and it is sitting in plain sight.</p>
 
       <h2 id="block">Does block booking get you a discount?</h2>
-      <p>Where a centre publishes a club or block rate, the discount is large - and most centres do not publish one.</p>
-      <p>Halton Borough Council publishes badminton club hire at £9.30 for a 55-minute court against £14.00 for the same court booked casually. Normalised, that is £10.15 an hour against £15.27: a third off, for being a club.</p>
-      <p><strong>Watch for the trap in how block rates are listed.</strong> Tendring District Council's published block rate is £14.40, which is higher than its casual rate of £13.65. The 20% discount for ten or more sessions on one invoice is applied separately, bringing it to £11.52 - about 16% below casual. A club comparing headline numbers would conclude that block booking costs more.</p>
-      <p>Everywhere else, the club rate exists and is withheld. North Yorkshire says there are "reduced rates for block and club bookings" without a figure. Codsall and Wombourne both say to email. Better's Belfast centres say block bookings are by enquiry only. That is not an oversight, and it is the best news in this guide: a price that is never published is a price that is set in a conversation.</p>
+      <p>Where a centre publishes a club or block rate the discount is large, and most centres do not publish one at all.</p>
+      <p>Halton Borough Council publishes badminton club hire at £9.30 for a 55-minute court against £14.00 casual, which converts to £10.15 against £15.27 an hour: a third off, for being a club. We should flag what that document is, because this guide tells you to read these papers carefully. It is a schedule for 2025/26 captioned "all are subject to approval", so it is a proposal from a fee year that has since ended, and it is the oldest figure in our survey.</p>
+      <p><strong>Watch how block rates are listed.</strong> Tendring District Council's published block rate is £14.40, higher than its casual rate of £13.65. The 20 per cent discount for ten or more sessions on one invoice is applied separately, bringing it to £11.52, about 16 per cent below casual. A club comparing headline numbers would conclude that block booking costs more.</p>
+      <p>Everywhere else the club rate exists in some form and is not published. North Yorkshire refers to "reduced rates for block and club bookings" without a figure. Codsall and Wombourne both direct you to email. Better's Belfast centres take block bookings by enquiry only. We cannot tell you whether each of those centres holds a standard club rate or simply prices case by case, and neither can anyone else from the outside, which is the useful part: an unpublished price is one that gets set in a conversation.</p>
+
+      <div class="guide-callout" style="margin-top:26px">
+        <h4>When to stop negotiating</h4>
+        <p style="margin-top:8px">A guide like this can leave you feeling you should always be pushing. You should not.</p>
+        <p style="margin-top:8px"><strong>If your normalised rate is at or below £12.00 an hour, you are in the cheapest quarter of everything we surveyed.</strong> If you also already hold a club or block rate, there is realistically nothing left on the table, and the time is better spent on filling the courts you have than on shaving the price of them.</p>
+      </div>
 
       <h2 id="vat">Is VAT charged on court hire?</h2>
-      <p>A single casual booking is normally standard-rated at 20%, and a series of ten or more sessions can be exempt - which is why ten sessions is the most valuable number in this guide.</p>
-      <p>HMRC's guidance on land and property treats letting facilities for playing sport as normally standard-rated. It then sets out an exemption for a series of lets, and the conditions are specific enough to be worth reading against your own booking. All of them must be met: ten or more sessions; the same sport each time; the same place; an interval between sessions of at least one day and no more than fourteen; the series paid for as a whole with written evidence; the hirer a school, club or association; and exclusive use during each session.</p>
-      <p><strong>Two of those conditions bite in practice.</strong> The fourteen-day interval means a fortnightly club is inside the rule but a club that skips a fortnight for half-term may break its own series. And "paid for as a whole" carries a real cost: the evidence has to show payment is due whether or not each session is used. You are buying the exemption with your cancellation flexibility, and that trade is worth making consciously rather than discovering later.</p>
-      <p><strong>Now the part every article about this gets wrong, including by omission.</strong> Qualifying for the exemption does not mean 20% comes off your invoice. It depends entirely on who you are hiring from:</p>
+      <p>It depends on what kind of room you are hiring, not just on how you book it, and that is the part almost every guide skips.</p>
+      <p><strong>Start with the building.</strong> HMRC treats letting facilities for playing sport as normally standard-rated at 20 per cent. But a general purpose hall, such as a village or church hall, that merely has floor markings is not classed as a sports facility, and letting it is exempt even when it is let for playing sport. School halls are treated the same way, provided it is the bare hall being supplied. Gymnasiums are excluded from that treatment.</p>
+      <p><strong>And here is the trap, which sits directly on advice this guide gives elsewhere.</strong> If equipment such as racquets and nets is provided along with the hall, the supply becomes standard-rated sports facilities. So asking the village hall to put the posts and nets out for you can convert an exempt let into a taxable one. If you hire a bare hall and bring your own posts, ask before you change that arrangement.</p>
+      <p><strong>Now the booking.</strong> For a genuine sports facility, a series of ten or more sessions can be exempt, unless the provider has opted to tax. All of the following must be true: ten or more sessions; the same sport each time; the same place; an interval of at least one day and no more than 14 between sessions; the series paid for as a whole with written evidence; the hirer a school, club or association; and exclusive use during each session.</p>
+      <p>Three of those conditions bite in practice. HMRC states plainly that there is no exception for an interval over 14 days caused by the facility closing for any reason, so a school-holiday break can end your series. The payment condition means the evidence must show payment is due whether or not each session is used, although a refund for the provider's own unforeseen non-availability does not affect this. And "unless the provider has opted to tax" is not a footnote: a commercial landlord who has opted to tax charges VAT regardless of your series.</p>
+      <p><strong>What all this does not mean is that qualifying takes 20 per cent off your invoice.</strong> Whether exemption changes your price depends on who you are hiring from:</p>
       <ul>
-        <li><strong>A commercial operator</strong> charging you standard-rated hire: a qualifying series should remove the VAT, and you should see it.</li>
-        <li><strong>A local authority:</strong> probably nothing changes, because since 2023 HMRC has accepted that councils' own leisure services can be treated as outside the scope of VAT altogether. There may be no 20% there to remove. You are already not paying it.</li>
-        <li><strong>A charitable leisure trust:</strong> it depends on whether the trust qualifies as an eligible body under the sports exemption, which turns on its constitution rather than on your booking.</li>
+        <li><strong>A commercial operator</strong> currently charging you standard-rated hire: a qualifying series should remove the VAT, unless they have opted to tax. Whether the saving reaches you or is retained in their margin is a commercial question, not a tax one.</li>
+        <li><strong>A local authority:</strong> possibly nothing changes. Since Revenue and Customs Brief 3 (2023), HMRC has accepted that councils' leisure services can be treated as non-business and outside the scope of VAT, but that treatment is conditional and is adopted authority by authority rather than automatically. Contracted-out leisure services are a different case again.</li>
+        <li><strong>A charitable leisure trust:</strong> the sports exemption for eligible bodies applies to supplies made to individuals taking part in the activity. A club booking a court is not an individual taking part, so for your block the operative route is the same series-of-lets exemption as for a commercial operator, not the trust's charitable status.</li>
       </ul>
-      <p>So do not walk in asking for 20% off. Ask two questions instead: <em>is our booking standard-rated at the moment</em>, and <em>if we structure it as a series of ten or more sessions on one invoice, does that change the VAT treatment?</em> Those are answerable by the person who raises your invoice, and they cost nothing to ask.</p>
-      <p>That this works is not theoretical. Sefton's published fees schedule codes badminton court hire with an exemption that applies to not-for-profit groups "or when the block booking exemption can be applied", and standard rating otherwise. Tendring codes casual hire and block bookings differently from each other. Two councils, independently, publishing the rule in their own price lists.</p>
+      <p>So do not walk in asking for 20 per cent off. Ask three questions instead: <em>is our booking standard-rated at the moment</em>, <em>are we hiring a sports facility or a bare hall</em>, and <em>if we structure it as a series of ten or more sessions on one invoice, does that change the treatment?</em> Those are answerable by the person who raises your invoice.</p>
+      <p>That the series rule shows up in real pricing is not theoretical. Sefton's published fees schedule notes that exemption applies to individuals and not-for-profit groups, "or when the block booking exemption can be applied", with standard rating otherwise.</p>
 
       <div class="guide-callout" style="margin-top:26px">
         <h4>Worked example: a club at Wombourne, 4 courts, 2 hours, 38 weeks</h4>
         <p style="margin-top:8px">Wombourne Leisure Centre publishes £12.50 a court and £59.00 for the whole five-court hall.</p>
         <ul style="margin:12px 0 0">
           <li>Four courts for two hours: <strong>4 &times; 2 &times; £12.50 = £100.00 a week</strong>, or £3,800 over a 38-week season.</li>
-          <li>The whole hall for two hours: <strong>£59.00 &times; 2 = £118.00 a week</strong>, or £4,484 a season.</li>
-          <li>So the fifth court, plus exclusive use of the hall, costs <strong>£18.00 a week</strong> - £9.00 per extra court-hour against a £12.50 list rate.</li>
+          <li>All five courts for two hours: <strong>5 &times; 2 &times; £12.50 = £125.00</strong>, so the hall at <strong>£59.00 &times; 2 = £118.00</strong> saves £7.00 a week if you wanted all five anyway.</li>
+          <li>But against the four courts you actually need, the hall costs <strong>£18.00 a week more</strong>. The fifth court and exclusive use are worth £18.00 a week to you, or they are not.</li>
         </ul>
-        <p style="margin-top:12px">And the VAT? Wombourne is run by a district council, so the supply is likely already outside the scope of VAT. There is probably no 20% to save here, whatever your booking looks like. That is the honest answer for a large share of UK clubs, and it is why the question to ask is about your own supplier rather than about the rule.</p>
+        <p style="margin-top:12px">And the VAT? Wombourne is a district council leisure centre, so the supply may already be outside the scope under the 2023 position, in which case there is no 20 per cent to remove whatever your booking looks like. Ask them; do not assume it either way.</p>
       </div>
 
       <h2 id="negotiable">What else is negotiable besides the rate?</h2>
-      <p>More is negotiable than the rate, and we are going to be straight with you about the evidence here: no operator we could find publishes its block-booking terms, so what follows is a list of things worth asking for rather than a description of what is normal.</p>
-      <p>Ask about which courts and which slot, because a fixed allocation each week is worth more to a club than a floating one. Ask about storage, because a cupboard for posts, nets and a first-aid kit removes a job somebody currently does every week. Ask about access and setup time, and whether your two hours includes putting the posts out. Ask whether you can run a one-off tournament on your usual night without being charged as a new booking. Ask what happens to your slot in the school holidays.</p>
-      <p>None of these appear on a rate card, all of them are decided by a person, and several of them are worth more over a season than a fifty-pence reduction in the hourly rate.</p>
+      <p>More is negotiable than the rate, though we should be straight about the evidence: no operator we could find publishes its block-booking terms, so this is a list of things worth asking for rather than a description of what is normal.</p>
+      <p>Worth asking for:</p>
+      <ul>
+        <li><strong>A fixed court allocation and slot each week</strong>, rather than a floating one.</li>
+        <li><strong>Storage</strong> for posts, nets and a first-aid kit, which removes a job somebody currently does every week.</li>
+        <li><strong>Access and setup time</strong>, and whether your two hours includes putting the posts out. Check the VAT point above before asking them to supply equipment.</li>
+        <li><strong>A one-off tournament</strong> on your usual night without being re-charged as a new booking.</li>
+        <li><strong>What happens to your slot in the school holidays</strong>, which is also a VAT question if you are relying on a series.</li>
+      </ul>
+      <p><strong>And the lever most clubs never use: offer something back.</strong> A centre or school is not only selling court time, it has its own objectives, and a club can meet them cheaply. A taster session for the school's pupils, an after-school club, a junior section that feeds the venue's own programmes, or simply filling a slot that is otherwise dead are all worth real money to the person you are negotiating with. This is the only lever available to a club with no alternative venue, and it is the one this guide would push hardest.</p>
 
       <h2 id="whole-hall">Is the whole hall cheaper than the courts inside it?</h2>
-      <p>Hiring the whole hall is sometimes cheaper than hiring four of the courts inside it, and one line of arithmetic tells you which.</p>
-      <p>Multiply the per-court rate by the number of courts in the hall, and compare it to the whole-hall price. In our survey:</p>
+      <p>The whole hall can be cheaper than taking every court in it, but it is dearer than taking one court fewer at every venue we surveyed, so the arithmetic decides it.</p>
+      <p>Multiply the per-court rate by the number of courts in the hall and compare it to the whole-hall price:</p>
       <div style="overflow-x:auto;margin-top:16px">
         <table style="width:100%;border-collapse:collapse;font-size:.95rem">
           <thead>
             <tr style="text-align:left;border-bottom:2px solid var(--line)">
-              <th style="padding:8px 10px">Venue</th><th style="padding:8px 10px">Courts &times; rate</th><th style="padding:8px 10px">Whole hall</th><th style="padding:8px 10px">Verdict</th>
+              <th style="padding:8px 10px">Venue</th><th style="padding:8px 10px">Whole hall</th><th style="padding:8px 10px">Every court</th><th style="padding:8px 10px">One court fewer</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Codsall</td><td style="padding:8px 10px">5 &times; £12.50 = £62.50</td><td style="padding:8px 10px">£59.00</td><td style="padding:8px 10px"><strong>Hall is cheaper</strong></td></tr>
-            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Wombourne</td><td style="padding:8px 10px">5 &times; £12.50 = £62.50</td><td style="padding:8px 10px">£59.00</td><td style="padding:8px 10px"><strong>Hall is cheaper</strong></td></tr>
-            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Newcastle University</td><td style="padding:8px 10px">8 &times; £10.00 = £80.00</td><td style="padding:8px 10px">£80.00</td><td style="padding:8px 10px">Exactly level</td></tr>
-            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Plympton Academy</td><td style="padding:8px 10px">4 &times; £10.50 = £42.00</td><td style="padding:8px 10px">£42.00</td><td style="padding:8px 10px">Exactly level</td></tr>
-            <tr><td style="padding:8px 10px">Eric Liddell, London</td><td style="padding:8px 10px">5 &times; £16.20 = £81.00</td><td style="padding:8px 10px">£79.20</td><td style="padding:8px 10px">Break-even just under 5</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Codsall (5 courts)</td><td style="padding:8px 10px">£59.00</td><td style="padding:8px 10px">£62.50 - <strong>hall cheaper</strong></td><td style="padding:8px 10px">£50.00 - hall dearer</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Wombourne (5 courts)</td><td style="padding:8px 10px">£59.00</td><td style="padding:8px 10px">£62.50 - <strong>hall cheaper</strong></td><td style="padding:8px 10px">£50.00 - hall dearer</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Newcastle University (8)</td><td style="padding:8px 10px">£80.00</td><td style="padding:8px 10px">£80.00 - level</td><td style="padding:8px 10px">£70.00 - hall dearer</td></tr>
+            <tr><td style="padding:8px 10px">Plympton Academy (4)</td><td style="padding:8px 10px">£42.00</td><td style="padding:8px 10px">£42.00 - level</td><td style="padding:8px 10px">£31.50 - hall dearer</td></tr>
           </tbody>
         </table>
       </div>
-      <p style="margin-top:18px">Two of those five make the whole hall cheaper than four of its courts, and two more make the extra courts free. Exclusive use is worth having on its own terms: no stray five-a-side in the next bay, no queue of pay-and-play players at the door, and the option to spread out when forty people turn up instead of thirty.</p>
+      <p style="margin-top:18px">Three other venues in our survey publish a whole-hall price and no court count, so their halls cannot be converted at all and we have not guessed at them.</p>
+      <p>What the table says is narrower than the usual advice. If you want every court in the hall, ask for the hall price, because at two of four venues it is cheaper and at the other two it costs the same while adding exclusive use. If you want fewer courts than the hall holds, the hall is dearer, and the question becomes what exclusivity is worth to you: no five-a-side in the next bay, no pay-and-play queue at the door, and room to spread out when forty people turn up instead of thirty.</p>
 
       <h2 id="who">Who do you talk to, and when?</h2>
-      <p>Talk to a named administrator or centre manager rather than reception, and do it well before April, when the new rates take effect.</p>
-      <p>Centres route block enquiries away from the booking desk. LeisurePlex in Lisburn directs block bookings to a named administrator. Codsall and Wombourne both direct them to the centre's email rather than its phone line. The pattern is consistent enough to plan around, though we should be clear this next part is our read rather than something anyone publishes: the person who answers the booking line has a price list and no authority to depart from it. Asking them for a club rate reliably produces the casual rate.</p>
-      <p><strong>The timing is more useful than the routing.</strong> Council leisure prices are set annually, with effect from 1 April, and they go through committee as published papers. Sefton's 2026/27 sports fees appeared as a committee document showing the current charge, the proposed charge and the percentage increase, before any of it took effect. Oxford publishes the same thing. Halton's schedule is captioned "subject to approval".</p>
-      <p>So next year's price is a public document, months before your renewal letter. Search your council's website for its fees and charges paper, find the sports pages, and you will know what is coming and roughly when the number is still amendable. Very few clubs do this, and it is free.</p>
+      <p>Talk to a named administrator or centre manager rather than the booking desk, and do it months before April when new prices take effect.</p>
+      <p>Centres route block enquiries away from reception. LeisurePlex in Lisburn directs block bookings to a named administrator, and Codsall and Wombourne both direct them to the centre's email rather than its phone line. The inference we draw from that, and it is an inference rather than something anyone publishes, is that the booking desk holds a price list rather than any authority to depart from it.</p>
+      <p><strong>The timing matters more than the routing, at councils specifically.</strong> Council leisure prices are set annually with effect from 1 April, and they go through committee as published papers. Sefton's 2026/27 sports fees appeared as a committee document showing the current charge, the proposed charge and the percentage increase. Oxford publishes the same thing, and Halton's schedule is captioned "subject to approval".</p>
+      <p>So next year's council price is a public document months before your renewal letter arrives. Search your council's website for its fees and charges paper and find the sports pages. Universities, trusts and schools do not work this way, so this particular trick is a council one.</p>
+      <p>One warning that this guide learned the hard way. A committee paper is a proposal, and the column headings matter: these documents typically show the current year, an inflation-adjusted figure and the proposed new charge side by side. Read the wrong column and you will quote a price that is a year out or one that was never adopted.</p>
 
       <h2 id="cua">Is the venue bound by a community use agreement?</h2>
-      <p>If you hire a school or academy sports hall built or extended in the last twenty years or so, there may be a contractual ceiling on what it can charge you - and you can go and look.</p>
-      <p>Sport England publishes a model community use agreement, and it contains a pricing clause requiring that prices are no greater than those at similar local-authority-run facilities in the area. The template also covers the split between term-time and holiday community use, an advance booking arrangement reviewed annually, identified priority groups, and a review committee that assesses usage and pricing.</p>
-      <p>These agreements are typically secured by planning condition, because community use is often the mitigation offered when a development affects playing fields, and Sport England is a statutory consultee on that. Which means the agreement is a planning document: findable in your local authority's planning portal against the school's application.</p>
-      <p>We cannot tell you whether your venue has one. That is a per-venue lookup and it is the reader's to do. But no other guide on this subject will tell you the lookup exists, and a club that finds one has a very different conversation from a club that opens with "could you do it a bit cheaper".</p>
+      <p>A school or academy sports hall may be covered by a community use agreement that governs its pricing policy, and it is worth finding out because these agreements are public documents.</p>
+      <p>Sport England publishes guidance on community use agreements and says they should typically cover hours of availability, management arrangements and pricing policy. It also recommends that such an agreement is secured through a condition on the planning permission for the development, which is the useful part for you: a planning condition is on the public planning record.</p>
+      <p>So if you hire a school hall built or extended in the last twenty years or so, look up the school's planning application on your local authority's planning portal and see whether a community use agreement was required. What it says about pricing is specific to that agreement, and we are not going to characterise it for you, because the terms are negotiated per site and Sport England's own material is a template to be adapted rather than a fixed obligation.</p>
+      <p>We cannot tell you whether your venue has one. But no other guide on this subject will tell you the lookup exists, and a club that finds one is having a different conversation from a club that opens with "could you do it a bit cheaper".</p>
 
       <h2 id="terms">Which contract terms matter as much as the rate?</h2>
       <p>Cancellation, variation and notice terms matter as much as the rate does, and this is the one question in this guide where the honest answer is that nobody publishes the standard.</p>
-      <p>We went looking for what a normal leisure-centre block-booking agreement contains and found nothing public at any operator. So rather than invent a norm, here is what to get in writing before you commit to a series:</p>
+      <p>We went looking for what a normal leisure-centre block-booking agreement contains and found nothing public at any operator. Rather than invent a norm, here is what to get in writing before you commit to a series:</p>
       <ul>
         <li>What notice must <em>they</em> give to cancel or move a session, and what happens to sessions already paid for.</li>
         <li>What notice must <em>you</em> give, and how many sessions you may cancel without losing the block rate. Remember the VAT trade: a series that qualifies for exemption is one you have agreed to pay for whether or not you use it.</li>
         <li>Whether the rate is fixed for the term or reviewed on 1 April regardless.</li>
-        <li>What happens when the hall is taken for an exam, a polling station, or a school production.</li>
+        <li>What happens when the hall is taken for an exam, a polling station or a school production.</li>
         <li>Whether your allocation carries over automatically at renewal, or is re-offered.</li>
       </ul>
-      <p>That last one matters more than clubs expect. A block that has to be reapplied for each year is a block you can lose to whoever asks first.</p>
+      <p>That last one is worth more attention than it usually gets. A block that has to be reapplied for each year is a block you can lose to whoever asks first.</p>
 
       <h2 id="ready">What do you need ready before you ask?</h2>
-      <p>Have evidence of public liability cover ready, and a named person who can sign for the club.</p>
-      <p>Most centres will want to see that the club is insured before letting a regular block, and for most UK clubs that cover comes through national or county affiliation rather than a separate policy. What we would flag, because it catches clubs out, is that club affiliation and individual player membership are different things and cover different people. Do not assume that affiliating the club covers every individual who turns up on a Tuesday. Check what your own affiliation actually includes, in its current wording, before you tell a centre you are covered.</p>
-      <p>Beyond insurance: a constitution, a bank account in the club's name, and a named signatory. A centre letting a regular block to an unincorporated group wants to know who it is contracting with.</p>
+      <p>Have evidence of public liability cover ready, a named person who can sign, and answers to the safeguarding questions a venue will ask if juniors are involved.</p>
+      <p>A centre letting a regular block will normally want to see that the club is insured, and for many clubs that cover comes through national or county affiliation rather than a separate policy. We would flag one thing that catches clubs out: club affiliation and individual player membership are different things and cover different people. Do not assume that affiliating the club covers every individual who turns up on a Tuesday, and check what your own affiliation includes, in its current wording, before you tell a centre you are covered.</p>
+      <p>Beyond insurance, expect to be asked for some of: a constitution, a bank account in the club's name, a named signatory, your safeguarding policy and DBS position if juniors attend, a risk assessment, first-aid provision and who your first-aider is, and how incidents get reported. Schools ask more of this than leisure centres do, and they ask it earlier.</p>
 
       <h2 id="walk-away">When should you walk away?</h2>
-      <p>Walk away only when there is somewhere else to go - and for a lot of clubs, there is not.</p>
-      <p>Start with the honest version. Most clubs have one hall that is the right size, in the right place, at the right time of the evening. If that is you, "walk away" is not a lever, and pretending otherwise wastes your time. What you have instead is the block-structure work above, which is real and does not require an alternative.</p>
-      <p>But if you have not looked, look, because the education sector is a different market and it is more accessible than clubs assume. School lettings are published by the hour through letting platforms - several hundred UK schools list badminton facilities - and in our survey the school hall was cheaper per court than every council venue. Universities were cheaper again.</p>
-      <p><strong>To compare a whole-hall price against your per-court rate, you need the court count.</strong> Sport England's design guidance gives the standard sizes: a four-court hall is around 33 by 18 metres, six courts 33.75 by 27, eight courts 37 by 33.75. A listing that gives dimensions but not court numbers can be converted. A listing that gives neither cannot, and we would not guess.</p>
-      <p>What you give up moving to a school is usually parking, changing rooms, a bar, and the caretaker's goodwill on the night somebody is ill. Those are worth something. Price the move, then decide.</p>
+      <p>Walk away only when there is somewhere else to go, and for a lot of clubs there is not.</p>
+      <p>Start with the honest version. Most clubs have one hall that is the right size, in the right place, at the right time of the evening. If that is you, "walk away" is not a lever, and pretending otherwise wastes your time. What you have instead is off-peak, the block structure, and the offer-something-back play above, none of which needs an alternative.</p>
+      <p>But if you have not looked, look, because the three cheapest venues in our survey were education venues. School lettings are published by the hour through letting platforms such as SchoolHire, and facility finders including Playfinder and Sport England's Active Places Power will show you what physically exists near you. Both are free and neither requires you to talk to anyone.</p>
+      <p><strong>To compare a whole-hall price against a per-court rate you need the court count.</strong> Sport England's design guidance gives a four-court hall as 34.5 by 20 metres, revised up from a previous 33 by 18 metre standard. A listing that gives dimensions can be converted with that. A listing that gives neither dimensions nor court numbers cannot, and we would not guess.</p>
+      <p>What you usually give up moving to a school is parking, changing rooms, a bar, and the caretaker's goodwill on the night somebody is ill. Price the move, then decide.</p>
 
       <div class="guide-callout" style="margin-top:26px">
         <h4>If you only do one thing</h4>
-        <p style="margin-top:8px">Work out what your centre charges per <em>hour</em> before you compare it to anything. A 45-minute court at £11.60 costs more than a 60-minute court at £15.00.</p>
+        <p style="margin-top:8px">Work out what your centre charges per <em>hour</em> before you compare it to anything. A 45-minute court at £11.60 is the fourth-cheapest advertised price in our survey and the third most expensive in reality.</p>
       </div>
 
       <div class="guide-callout" style="margin-top:24px">
@@ -249,16 +323,16 @@
       }
 
       <h2 id="related">Where to go next</h2>
-      <p>If you are hiring courts because you are setting a club up from scratch, the venue is one of five things you need at once. <a href="/guides/how-to-start-a-badminton-club">How to start a badminton club</a> covers the others - players, kit, fees and your first sessions.</p>
-      <p>Once the hall is booked, the cost per player depends entirely on how full the courts are. <a href="/guides/fair-court-time-busy-club-night">Giving everyone fair court time on a busy night</a> deals with the sit-out problem directly, and <a href="/guides/how-to-run-a-badminton-club-night">the complete organiser's checklist</a> covers the rest of the evening.</p>
-      <p>And the next question after "what does the hall cost" is usually "what do we charge for it". That one has its own answer and its own arithmetic, and it is the guide we are writing next.</p>
+      <p>If you are hiring courts because you are setting a club up from scratch, the venue is one of five things you need at once. <a href="/guides/how-to-start-a-badminton-club">How to start a badminton club</a> covers the others: players, kit, fees and your first sessions.</p>
+      <p>Once the hall is booked, your cost per player depends entirely on how full the courts are. <a href="/guides/fair-court-time-busy-club-night">Giving everyone fair court time on a busy night</a> deals with the sit-out problem directly, and <a href="/guides/how-to-run-a-badminton-club-night">the complete organiser's checklist</a> covers the rest of the evening.</p>
+      <p>The next question after "what does the hall cost" is usually "what do we buy with the rest of it". Shuttles are the other recurring line, and <a href="/guides/feather-vs-nylon-shuttlecocks">feather vs nylon: what your club should buy</a> works out the cost per session the same way this guide works out the cost per court.</p>
 
       <div style="margin-top:34px;padding-top:22px;border-top:1px solid var(--line)">
         <h4 style="margin:0 0 8px">How this guide was put together</h4>
-        <p style="color:var(--muted-2);font-size:.95rem;margin:0">ePegboard builds club-night software. We do not hire out courts, and we are not tax advisers. The prices here come from a survey we ran ourselves: on 26 August 2026 we read the published rate cards and booking pages of 22 UK venues and recorded every figure, with its source. Eighteen sell a comparable per-court unit and those are the ones in the chart. The VAT section is compiled from HMRC's published guidance, and where the treatment depends on your supplier we have said so rather than picking the answer that sounds most useful.</p>
-        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0">Where we could not find a source, we have said that too: no operator publishes its block-booking terms, no published figure exists for what clubs actually negotiate off list price, and we found no published badminton rate at any Northern Ireland venue.</p>
-        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0"><strong>Sources:</strong> <a href="https://www.gov.uk/guidance/vat-on-land-and-property-notice-742" target="_blank" rel="noopener">HMRC, VAT on land and property (Notice 742)</a> &middot; <a href="https://www.gov.uk/guidance/sport-supplies-that-are-vat-exempt-notice-70145" target="_blank" rel="noopener">HMRC, Sport supplies that are VAT exempt (Notice 701/45)</a> &middot; <a href="https://www.sportengland.org/how-we-can-help/facilities-and-planning/planning-for-sport/community-use-agreements" target="_blank" rel="noopener">Sport England on community use agreements</a> &middot; <a href="https://www.sportengland.org/guidance-and-support/facilities-and-planning/design-and-cost-guidance/sports-halls" target="_blank" rel="noopener">Sport England sports halls design guidance</a> &middot; <a href="https://modgov.sefton.gov.uk/documents/s134842/Fees%20and%20Charges%202026-27%20-%20Sports%20V1.3.pdf" target="_blank" rel="noopener">Sefton Council fees and charges 2026-27</a> &middot; <a href="https://tdcdemocracy.tendringdc.gov.uk/documents/s74469/Schedule%20of%20Fees%20and%20Charges.pdf" target="_blank" rel="noopener">Tendring District Council schedule of fees and charges</a> &middot; <a href="https://councillors.halton.gov.uk/documents/s78625/Appendix%20A%20Sports%20Service%20fees%20and%20charges%202025.26.docx.pdf" target="_blank" rel="noopener">Halton Borough Council sports fees 2025/26</a></p>
-        <p style="color:var(--muted-2);font-size:.9rem;margin:12px 0 0">Published 26 August 2026 by ePegboard. Prices checked 26 August 2026.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:0">ePegboard builds club-night software. We do not hire out courts, we are not tax advisers, and we have never negotiated a court-hire contract. The prices here come from a survey we ran ourselves: on 26 August 2026 we read the published rate cards and booking pages of 24 UK venues and recorded every figure with its source and its fee year. Eighteen sell a comparable per-court unit and those are the ones in the chart and table.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0">The VAT section is compiled from HMRC's published notices, and where the treatment depends on your supplier or your building we have said so rather than picking the answer that sounds most useful. Where we could not find a source we have said that too: no operator publishes its block-booking terms, no published figure exists for what clubs actually negotiate off list price, and we found no published badminton rate at any Northern Ireland venue.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0"><strong>Sources:</strong> <a href="https://www.gov.uk/guidance/vat-on-land-and-property-notice-742" target="_blank" rel="noopener">HMRC, VAT on land and property (Notice 742)</a> &middot; <a href="https://www.gov.uk/guidance/sport-supplies-that-are-vat-exempt-notice-70145" target="_blank" rel="noopener">HMRC, Sport supplies that are VAT exempt (Notice 701/45)</a> &middot; <a href="https://www.gov.uk/government/publications/revenue-and-customs-brief-3-2023-changes-to-vat-treatment-of-local-authority-leisure-services" target="_blank" rel="noopener">Revenue and Customs Brief 3 (2023): local authority leisure services</a> &middot; <a href="https://www.sportengland.org/how-we-can-help/facilities-and-planning/planning-for-sport/community-use-agreements" target="_blank" rel="noopener">Sport England on community use agreements</a> &middot; <a href="https://www.sportengland.org/guidance-and-support/facilities-and-planning/design-and-cost-guidance/sports-halls" target="_blank" rel="noopener">Sport England sports halls design guidance</a> &middot; <a href="https://modgov.sefton.gov.uk/documents/s134842/Fees%20and%20Charges%202026-27%20-%20Sports%20V1.3.pdf" target="_blank" rel="noopener">Sefton Council fees and charges 2026-27</a> &middot; <a href="https://tdcdemocracy.tendringdc.gov.uk/documents/s74469/Schedule%20of%20Fees%20and%20Charges.pdf" target="_blank" rel="noopener">Tendring District Council schedule of fees and charges</a> &middot; <a href="https://councillors.halton.gov.uk/documents/s78625/Appendix%20A%20Sports%20Service%20fees%20and%20charges%202025.26.docx.pdf" target="_blank" rel="noopener">Halton Borough Council sports fees 2025/26</a></p>
+        <p style="color:var(--muted-2);font-size:.9rem;margin:12px 0 0">Published 26 August 2026 by ePegboard. Prices read 26 August 2026; 16 of the 18 comparable venues are on 2026/27 fee years and two on 2025/26.</p>
       </div>
 
     </div>

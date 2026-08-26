@@ -1,0 +1,256 @@
+@page "/guides/feather-vs-nylon-shuttlecocks"
+@using PegboardWebSite.Services
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "Feather vs nylon shuttlecocks: what your club should buy, and what it will actually cost";
+    ViewData["Description"] = "Nylon is sold in sixes and feather in twelves, so every price comparison you have read is wrong. And if you already buy feather, the grades fly much the same when new - what the premium buys is how long they last.";
+    ViewData["OgTitle"] = "Feather vs nylon: what your club should buy";
+
+    const string published = "2026-08-26";
+    const string canonical = "https://www.epegboard.com/guides/feather-vs-nylon-shuttlecocks";
+
+    // QUESTION SET (production step 1) - each is an H2 below:
+    //  1 What changed in 2026?
+    //  2 What does your league actually require?
+    //  3 Is your money buying flight, or buying lifespan?
+    //  4 What is the honest performance difference?
+    //  5 What does each cost per session?
+    //  6 How do shuttles actually fail?
+    //  7 What should your club buy for which night?
+    //  8 Speed ratings, and how to test yours
+    //  9 Juniors and beginners
+    // 10 Synthetic feather and hybrids
+    // 11 Storage and conditioning
+    // 12 Who pays, and how does the club recover it?
+
+    var faqPairs = new (string Q, string A)[]
+    {
+        ("Can we mix feather and nylon on the same night?",
+         "Yes, and plenty of clubs do it without thinking of it as a decision. The usual split is nylon on the beginners' or juniors' court and feather everywhere else. What you should avoid is mixing them within a single game, because the flight differs enough that players will notice mid-rally."),
+        ("Do we have to buy the same speed all year?",
+         "No, and a club playing in a cold hall in January and a warm one in July has a real case for two speeds. Most clubs settle on one because managing two is a faff, which is a reasonable trade rather than a technical answer."),
+        ("Is it worth buying a whole season's shuttles at once?",
+         "Bulk terms are real - several UK retailers publish free delivery thresholds and club programmes - but feather shuttles do not improve in storage and a year in a dry cupboard will cost you some of them. Buying a term at a time is the usual compromise."),
+        ("What do we do with shuttles that are too worn for a game?",
+         "Keep them. Worn feather shuttles are still fine for warm-ups, for feeding drills, and for anything where flight consistency does not decide a point. A club that retires shuttles straight from match play to the bin is throwing away most of their remaining use."),
+        ("Are cheap unbranded feather shuttles a false economy?",
+         "On the evidence, probably - though not for the reason people give. The testing we could find suggests the grades fly much the same when they come out of the tube, so you are not buying worse flight; you are buying fewer sessions. Whether that is a false economy depends entirely on the price gap in front of you."),
+        ("Does any of this apply to a school or junior club?",
+         "The cost arithmetic does, and it lands harder because breakage is higher. The rest largely does not: a junior session should be on nylon, and if that is what you already do then you have made the decision this guide is about and can stop reading.")
+    };
+
+    var articleJsonLd = GuideSchema.Article(
+        "Feather vs nylon shuttlecocks: what your club should buy, and what it will actually cost",
+        "Nylon is sold in sixes and feather in twelves, so every price comparison you have read is wrong. And the feather grades fly much the same when new - the premium buys lifespan.",
+        canonical, published);
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+}
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Feather vs nylon</span></div>
+      <h1 style="margin-top:10px">Feather vs nylon shuttlecocks: what your club should buy, and what it will actually cost</h1>
+      <div class="guide-meta">
+        <span class="gm-tag">Guide</span>
+        <span>Equipment</span>
+        <span>16 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:820px">
+
+    <div class="prose">
+      <p class="lead"><strong>Buy nylon for juniors, beginners and coaching, feather for club nights and fixtures, and read your league handbook before you order, because the rule varies by division.</strong> The comparison everyone publishes is broken: nylon is sold in tubes of six and feather in tubes of twelve, so the headline prices are not comparable. Per shuttle, the two ranges overlap. And if your club already buys feather, the live decision is not feather versus nylon at all - the grades fly much the same when new, so what the premium buys is how long they last.</p>
+
+      <p>You know the version of this that hurts: the tube runs out on court three, somebody shouts for a new one, and the box you ordered in September is empty in November.</p>
+    </div>
+
+    <div class="guide-callout" style="margin-top:30px">
+      <h4>The short version</h4>
+      <ul style="margin:10px 0 0">
+        <li><strong>Nylon comes in sixes, feather in twelves.</strong> Compare the price per shuttle, never per tube, or you will overstate nylon's advantage by a factor of two.</li>
+        <li><strong>Feather grades fly much the same when new.</strong> The published testing we could find puts the difference in durability, not in flight. You are buying sessions, not performance.</li>
+        <li><strong>BWF approved synthetic shuttles for sanctioned competition in April 2026.</strong> Only at certain tournament grades so far, and as an evaluation programme, but the direction is now settled.</li>
+        <li><strong>Your league's rule is probably not what you think.</strong> It varies by division, and at least one large league recommends plastic.</li>
+        <li><strong>"Five times more durable" is a nylon-versus-nylon claim.</strong> It is a manufacturer's comparison against other nylon, recycled everywhere as if it beat feather.</li>
+        <li><strong>Nobody has a credible club breakage rate, including us.</strong> So measure your own - three sessions and a tally is enough.</li>
+      </ul>
+    </div>
+
+    <p style="margin-top:22px;color:var(--muted-2);font-size:.95rem">Written for the person who buys the shuttles: a club chair, secretary or treasurer. Price bands were read from UK retailers on 26 August 2026 and move constantly, so treat them as shape rather than as quotes. Shuttle specifications follow the BWF Laws of Badminton.</p>
+
+    <div class="guide-toc" style="margin-top:26px">
+      <h4>In this guide</h4>
+      <a href="#changed">What changed in 2026?</a>
+      <a href="#league">What does your league actually require?</a>
+      <a href="#lifespan">Is your money buying flight, or buying lifespan?</a>
+      <a href="#performance">What is the honest performance difference?</a>
+      <a href="#cost">What does each cost per session?</a>
+      <a href="#fail">How do shuttles actually fail?</a>
+      <a href="#which-night">What should your club buy for which night?</a>
+      <a href="#speed">Speed ratings, and how to test yours</a>
+      <a href="#juniors">Juniors and beginners</a>
+      <a href="#hybrids">Synthetic feather and hybrids</a>
+      <a href="#storage">Storage and conditioning</a>
+      <a href="#who-pays">Who pays, and how does the club recover it?</a>
+      <a href="#faq">Frequently asked questions</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+
+      <h2 id="changed">What changed in 2026?</h2>
+      <p>BWF approved synthetic shuttlecocks for use in sanctioned competition on 8 April 2026, which ends the assumption every buying guide is still built on.</p>
+      <p>The approval covers two named products, from Victor and Yonex, at BWF Grade 3 tournaments and Junior International tournaments, as part of an ongoing evaluation programme. Their use has to be registered with BWF in advance and notified to the Continental Confederation. It is a controlled trial rather than a general permission.</p>
+      <p>It is also not sudden. BWF announced in January 2020 that it was beginning to adopt synthetic feather shuttles for international sanctioned tournaments, developed with Yonex, and framed it explicitly around long-term sustainability and being less dependent on natural feathers.</p>
+      <p><strong>Does it change what your club buys this season? Almost certainly not.</strong> Your league's rules have not moved, the approved products are not yet a normal UK club purchase, and nothing here obliges you to do anything. What it does is settle an argument about direction. Anyone telling you synthetic shuttles are for practice and feather is for real badminton is describing a distinction the sport's governing body has started dismantling.</p>
+
+      <h2 id="league">What does your league actually require?</h2>
+      <p>There is no national answer, and the rule is set per league and often per division, so the only reliable source is your own handbook.</p>
+      <p>Four English league rulebooks, read directly, show how much this varies:</p>
+      <div style="overflow-x:auto;margin-top:16px">
+        <table style="width:100%;border-collapse:collapse;font-size:.95rem">
+          <thead>
+            <tr style="text-align:left;border-bottom:2px solid var(--line)">
+              <th style="padding:8px 10px">League</th><th style="padding:8px 10px">What the rules say</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Exeter &amp; District</td><td style="padding:8px 10px">Home teams provide feathered shuttlecocks, in all divisions</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Solihull District</td><td style="padding:8px 10px">Feather required in Division 1; committee-approved standard elsewhere</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Coventry</td><td style="padding:8px 10px">Premier: feathered. Division One: feathered <em>or synthetic (hybrid)</em>. Other divisions: any approved shuttle</td></tr>
+            <tr><td style="padding:8px 10px">Birmingham</td><td style="padding:8px 10px">Feather in Division One; home team chooses otherwise - and the league <em>recommends cork-based plastic shuttles</em></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:18px">Coventry has already written hybrids into its regulations. Birmingham actively recommends plastic. "Leagues mandate feather" is not true as a general statement, and a club that assumes it may be spending several hundred pounds a season on a rule that does not apply to it.</p>
+      <p><strong>One structural point the rules make for you.</strong> In most league rulebooks the home team supplies the shuttles, so your fixture list, not your membership, decides how many match-grade tubes you need. Count your home fixtures before you order.</p>
+
+      <h2 id="lifespan">Is your money buying flight, or buying lifespan?</h2>
+      <p>Across feather grades, the money buys serviceable life rather than flight, because the grades perform much the same when they come out of the tube.</p>
+      <p>The best evidence we could find for this is a doctoral thesis from Nanyang Technological University that flight-tested fourteen shuttle types. Across feather grades running from economical practice shuttles to BWF-approved tournament shuttles, it reports that <em>"insignificant difference was observed between the various types of feather shuttlecocks"</em>, and explains why: <em>"the difference between the various grades of shuttlecocks lies in their durability... their 'out of box' flight performance is likely to be similar."</em></p>
+      <p>Its destructive-testing phase closes the loop. Tournament-grade shuttles showed less performance degradation than practice-grade ones, and the author's own conclusion is the sentence a treasurer wants: <em>"the additional cost of tournament-grade feather shuttles may be offset by the increased serviceable life."</em></p>
+      <p>A separate 500-shot durability test run by the coaching site Badminton Insight, across ten shuttles from about £5 to about £35 a tube, found the expensive shuttles lasted over three times as long as several cheaper ones and finished visibly less worn. That test is worth knowing about and worth caveating: the site is sponsored by Victor and recommends a Victor shuttle in its conclusions, which it discloses.</p>
+      <p><strong>So the argument your club is having is probably the wrong one.</strong> If you already buy feather, feather versus nylon is settled for you and the live question is cheap feather versus good feather. On this evidence the cheap tube is not buying you worse badminton. It is buying you fewer sessions, and whether that is a saving depends entirely on the price gap in front of you.</p>
+
+      <h2 id="performance">What is the honest performance difference?</h2>
+      <p>Feather wins clearly on turnover, which is the flip from skirt-first to base-first immediately after you hit it, and the gap on the rest of the flight is narrower than the folklore claims.</p>
+      <p>There is real published aerodynamics here rather than assertion. Feather shuttles hold a roughly constant drag coefficient across a wide range of speeds, while a championship-grade synthetic showed a marked drop in drag coefficient above roughly sixteen metres per second, attributed to the skirt deforming under load where a feather crown does not.</p>
+      <p>But the same NTU work complicates the story in the club's favour. The synthetics it tested had more drag per unit mass and so a shorter flight range - and yet, on the part everyone argues about, it found the <em>"post-vertex drop quality of the tested synthetic shuttlecock was not inferior to the feather shuttlecocks"</em>, concluding that from an aerodynamic point of view the synthetic is not inferior in flight trajectory.</p>
+      <p>Where feather was clearly superior was turnover. That is a more precise and more useful answer than "feather flies better", and it matches what players actually report feeling: the difference shows up in the instants after contact, in the bite on a net shot and the way the shuttle sits up, rather than in the drop everyone points at.</p>
+
+      <figure style="margin:26px 0 0">
+        <img src="/img/diagrams/shuttle-skirt-cross-section.svg" alt="A cross-section comparison of two shuttlecock skirts. On the left, a feather shuttle: sixteen overlapping natural feathers fixed into a rounded cork base, forming a stiff crown that holds its shape when air is forced through it. On the right, a synthetic shuttle: a single moulded one-piece skirt on a similar base, which flexes outward under high-speed airflow where the feather crown does not. Below, the same two shuttles are shown immediately after being struck, turning from skirt-first to base-first, with the feather shuttle completing the turn in a shorter distance." style="width:100%;height:auto;border-radius:12px" />
+        <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">The structural difference and what it does. A feather crown is sixteen separate overlapping feathers; a synthetic skirt is one moulded piece that deforms under load. Turnover is where the gap is clearest.</figcaption>
+      </figure>
+
+      <p style="margin-top:22px">One thing the Laws settle rather than the marketing. A feathered shuttle must have sixteen feathers fixed in the base, feathers of 62 to 70 millimetres, a base of 25 to 28 millimetres rounded on the bottom, and a weight from 4.74 to 5.50 grams. Synthetic shuttles are covered explicitly: the skirt replaces natural feathers, the measurements and weight follow the same specification, and a variation of up to ten per cent is allowed because of the different properties of synthetic materials. A nylon shuttle is not a toy version of a shuttle. It is a shuttle, with its own tolerance written into the same Law.</p>
+
+      <h2 id="cost">What does each cost per session?</h2>
+      <p>Work it out as the price per shuttle multiplied by the shuttles you use in a session, and be careful at the first step, because that is where every published comparison goes wrong.</p>
+      <p><strong>Nylon is sold in tubes of six. Feather is sold in tubes of twelve.</strong> Every retailer we looked at follows this, and almost every comparison article ignores it. Setting a £44 feather tube against a £14 nylon tube looks like a three-to-one difference and is not: it is twelve shuttles against six.</p>
+
+      <figure style="margin:26px 0 0">
+        <img src="/img/diagrams/shuttle-cost-per-session.svg" alt="A worked comparison in two halves. The top half shows the trap: a feather tube priced around forty-four pounds beside a nylon tube priced around fourteen pounds looks like a three-to-one saving, but the feather tube holds twelve shuttles and the nylon tube holds six, so per shuttle the gap is much smaller. The bottom half shows the arithmetic to use instead: price per shuttle equals tube price divided by the number in the tube, and cost per session equals price per shuttle multiplied by shuttles used per session, with a blank left for the reader to fill in their own club's usage." style="width:100%;height:auto;border-radius:12px" />
+        <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">The pack sizes differ, so the tube prices are not comparable. Divide to a price per shuttle first, then multiply by what your club actually gets through.</figcaption>
+      </figure>
+
+      <p style="margin-top:22px">Reading UK retailers on 26 August 2026, feather ran from roughly £11 to roughly £51 a tube of twelve, and nylon from roughly £7 to £14 a tube of six. We are giving you bands rather than a price list on purpose: individual prices move week to week, they differed between a retailer's own category page and its product page while we were reading them, and a table of forty figures would be out of date before you read it. Take your own retailer's numbers and put them through the arithmetic.</p>
+      <p><strong>Convert those bands and something awkward falls out.</strong> Per shuttle, feather ran from about 95p to about £4.25, and nylon from about £1.15 to about £2.35. The ranges overlap heavily. The cheapest feather shuttle in the market costs less per shuttle than the cheapest nylon one - which is only a saving if it survives the evening.</p>
+      <p><strong>Which is where we have to be honest about the number nobody has.</strong> The second half of the calculation is shuttles used per session, and there is no credible published figure for it at club level. Not from us either. The figures in circulation - one to two games per feather shuttle, five to ten times longer for nylon - come from retailer and coaching pages with no method, no player standard, no shot count and no sample behind them. We are not going to launder them by repeating them with our name on.</p>
+
+      <div class="guide-callout" style="margin-top:26px">
+        <h4>Measure your own club in three sessions</h4>
+        <p style="margin-top:8px">This takes one person and a piece of paper, and it produces the only number that describes your club rather than someone else's.</p>
+        <ol style="margin:12px 0 0">
+          <li>Put a known count of shuttles into play at the start of the night. Write it down.</li>
+          <li>At the end, count what is still fit for a game. The difference is your usage.</li>
+          <li>Note the number of courts and roughly how many games were played, so you can scale it.</li>
+          <li>Repeat for three sessions, because one bad-tempered night with two big hitters is not your average.</li>
+        </ol>
+        <p style="margin-top:12px">Divide your total spend by the sessions it covered and you have a cost per session that is actually yours. Do it once for feather and once for nylon on a comparable night and the decision makes itself.</p>
+      </div>
+
+      <p style="margin-top:22px">There is one durability figure from a non-commercial source worth knowing. When BWF began adopting synthetic feather shuttles in 2020, it reported that testing found synthetic feather could reduce shuttlecock usage by up to twenty-five per cent. That is a governing body's own figure from elite tournament testing, and it is not a club number - but it is the only one in this field that does not come from someone selling shuttles.</p>
+
+      <h2 id="fail">How do shuttles actually fail?</h2>
+      <p>Shuttles fail in two unrelated ways, and the official durability standard only tests one of them.</p>
+      <p>The first is sudden: a snapped feather shaft, usually from a smash or a mishit. The second is gradual, and it is the one that costs clubs money without anyone noticing. Feathers splay and wear, the shuttle slows, and it stays in play because no single moment marks it as finished.</p>
+      <p>BWF's approval test addresses the first. A shuttle is smashed ten times from a high lift and vertical fall, and to qualify there must be no feather breakage and no decrease in diameter. The NTU work is direct about why that is the wrong test for a club: the BWF evaluation <em>"only evaluates the smash durability. It does not take into account of the general degradation of the shuttlecock with feather wear from lower intensity usage"</em>, and it concludes that <em>"the definition of shuttlecock durability in a non-tournament environment will be different from that of the BWF."</em></p>
+      <p>The difference is context. In a sponsored tournament, shuttles are replaced long before they wear out. In a club, a shuttle stays in play until somebody decides it has degraded past what they will put up with - which might be four games, and might be after everyone has quietly stopped enjoying the flat ones.</p>
+      <p><strong>This has a practical consequence for buying.</strong> If your club's shuttles mostly die from smashes, durability grade is what you are shopping for. If they mostly die of gradual wear, you are shopping for something the official standard does not measure, and the grade on the box tells you less than you think.</p>
+
+      <h2 id="which-night">What should your club buy for which night?</h2>
+      <p>Most clubs should hold more than one shuttle rather than standardising on a single box, because the nights are not the same as each other.</p>
+      <p>The pattern that follows from everything above, and we should flag that the recommendation is ours rather than something we can cite: nylon for juniors, beginners and coached sessions, where breakage is high and flight subtlety is not what anyone is working on. Mid-grade feather for ordinary club nights, where the players will notice the difference and the budget still has to survive the season. League-compliant feather kept separately for home fixtures, in whatever your division's rules actually require.</p>
+      <p>The single-box habit is usually inherited rather than decided. It is simpler to administer, which is a real advantage, but it means one group is always playing with the wrong shuttle for their night.</p>
+
+      <h2 id="speed">Speed ratings, and how to test yours</h2>
+      <p>Shuttle speed is a physical test you can run on your own court in two minutes, not a brand's opinion.</p>
+      <p>The Law is specific. A player hits a full underhand stroke from over the back boundary line, upwards and parallel to the sidelines, and a shuttle of the correct speed lands not less than 530 millimetres and not more than 990 millimetres short of the other back boundary line. That is the whole test. Mark those two distances once with tape and you can settle the speed argument in your hall permanently.</p>
+      <p><strong>The direction of the temperature effect catches people out.</strong> Warm air is less dense, so there is less drag, so the shuttle flies further - which means a warm hall needs a <em>lower</em> speed number, and a cold one a higher number. The usual mapping runs from 75 for high altitude through 76 for hot conditions, 77 for most sea-level play, 78 for cold and 79 for cold below sea level.</p>
+      <p>Which number suits a typical UK hall is disputed among the sources we read: some say 78 is by far the most common in the UK and Europe, others that 77 suits most UK venues because they run cool. We are not going to adjudicate that from retailer pages, and you do not need us to, because you have a court and some tape. Note too that the brands do not share a scale - Yonex numbers its own range one to five while others print 76, 77 and 78 - so a speed number is not portable between manufacturers.</p>
+
+      <h2 id="juniors">Juniors and beginners</h2>
+      <p>Junior and beginner sessions should be on nylon, and the strongest reason is not the cost.</p>
+      <p>Feather punishes poor technique in a specific way: a mistimed hit loads the feather shaft, which is exactly the sudden failure mode, so a session full of people learning to time the shuttle destroys feather shuttles faster than a session of good players hitting harder. Retailers say plainly that feather is not recommended for beginners for this reason, and the mechanism holds up.</p>
+      <p>The argument we would actually make to a committee, and it is our judgement rather than a sourced finding, is about the session rather than the spend. A shuttle that breaks every few rallies turns a coaching hour into a shuttle-changing hour. Juniors lose the thread, the coach spends the session managing equipment, and the money saved on a cheaper tube buys nobody anything.</p>
+
+      <h2 id="hybrids">Synthetic feather and hybrids</h2>
+      <p>"Hybrid" is used in UK retail for two products that have almost nothing in common, so check what is actually in the tube before comparing prices.</p>
+      <p>The first is a feather shuttle with synthetic reinforcement. Babolat's hybrid, for instance, is cork head, synthetic nylon base and natural goose feathers, and the manufacturer's claim is a longer life cycle because the nylon base protects the feathers, with flight quality equivalent to feather.</p>
+      <p>The second has no feather in it at all. Yonex's Crosswind 70 uses a porous nylon wing structure with a nylon and carbon graphite stem and a natural cork base, and the company claims performance close to feather even on smash deceleration.</p>
+      <p><strong>Retail categorisation is not reliable here.</strong> We found the same Babolat hybrid filed under feather by one retailer and under nylon by another. If it matters to your league compliance, read the product's own specification rather than the category it is sitting in.</p>
+      <p>Has nylon actually improved, or is that just what people say? There is now an answer better than opinion, and it is the one at the top of this guide: BWF approved two of these products for sanctioned competition in April 2026. Whatever anyone remembers about plastic shuttles from a decade ago, that is not the product being approved now.</p>
+      <p>What we will not do is quote you durability figures for them. The user-level reports in circulation come from retailer blogs, and the most detailed one we found is published by a company that sells goose-feather shuttles and is reviewing a rival product. That is not evidence.</p>
+
+      <h2 id="storage">Storage and conditioning</h2>
+      <p>Feather shuttles need some humidity or the shafts go brittle and snap, and a damp sponge in the tube is the cheap version of every product sold to solve this.</p>
+      <p>The practice is consistent across sources: keep feather shuttles somewhere around 50 to 60 per cent relative humidity, put a damp - not wet - sponge in the tube overnight if your storage is dry, or use hydrated humidifier beads. Some players pass a tube briefly through steam before play to restore flexibility. Avoid leaving them open to dry air for long periods, and avoid a hot car.</p>
+      <p><strong>We should be straight about the status of this.</strong> It is well-attested folk practice with a plausible mechanism, repeated by retailers, coaches and players alike, and we could find no controlled study behind it. That is not a reason to ignore it - the mechanism is sound and the intervention costs nothing - but it is a reason not to state a specific humidity as though it had been measured for your hall.</p>
+
+      <h2 id="who-pays">Who pays, and how does the club recover it?</h2>
+      <p>Shuttles come out of subs and door fees, and the club that never separates that line from the rest of its costs is the club that gets surprised in November.</p>
+      <p>Two structural facts set the bill. Home teams supply the shuttles in most league rulebooks, so your home fixture count drives the match-grade spend. And club-night usage scales with courts and hours rather than with membership, so a club that adds a second night doubles its shuttle bill without adding a single member.</p>
+      <p>The practical version: work out your cost per session using the method above, multiply by sessions in the season, add your home fixtures, and check that against what subs actually bring in. Most clubs we have seen carry this as an unexamined lump. It is usually the second largest thing they spend money on, after the hall.</p>
+      <p><strong>And the concession this guide owes you.</strong> If your club runs juniors on nylon and club nights on a mid-grade feather that people are happy with, you have already made every decision in this article correctly, and the arithmetic will tell you so. The reason to run it anyway is not to change your mind. It is so that when somebody at the AGM says the club should switch to save money, you have a number rather than an opinion.</p>
+
+      <div class="guide-callout" style="margin-top:26px">
+        <h4>If you only do one thing</h4>
+        <p style="margin-top:8px">Divide by the tube size before you compare anything. Nylon comes in sixes, feather in twelves, and almost every comparison you will read forgets it.</p>
+      </div>
+
+      <div class="guide-callout" style="margin-top:24px">
+        <h4>Fair games, without the admin</h4>
+        <p>ePegboard does not sell shuttles and has no view on which tube you buy. What it does is run the night itself: balanced games, court time spread evenly, and a record of how many games actually got played - which, if you are trying to work out your cost per session, is the number you were about to go and count by hand. Free for clubs.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+      </div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      @foreach (var f in faqPairs)
+      {
+        <h3>@f.Q</h3>
+        <p>@f.A</p>
+      }
+
+      <h2 id="related">Where to go next</h2>
+      <p>Shuttles are usually the second biggest thing a club spends money on. The largest is almost always the hall, and that one has more give in it than most clubs realise: <a href="/guides/badminton-court-hire">what UK clubs pay for court hire, and what is actually negotiable</a> covers the survey and the levers.</p>
+      <p>If you are equipping players rather than the club, <a href="/guides/how-to-choose-a-badminton-racket">how to choose a badminton racket</a> counts what the market actually stocks at each price and finds the club specification concentrated under £80. And if you are setting up from scratch, <a href="/guides/how-to-start-a-badminton-club">how to start a badminton club</a> covers kit alongside venue, players and fees.</p>
+
+      <div style="margin-top:34px;padding-top:22px;border-top:1px solid var(--line)">
+        <h4 style="margin:0 0 8px">How this guide was put together</h4>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:0">ePegboard builds club-night software. We do not sell shuttles, we have no affiliate arrangement with anyone who does, and we have not tested a shuttle ourselves. This guide is compiled from the BWF Laws of Badminton, BWF's own announcements on synthetic shuttles, published academic work on shuttle aerodynamics and durability, four English league rulebooks read directly, and manufacturers' published specifications. Where a finding comes from a commercially interested source, we have said so in the text.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0">Where we could not find a source, we have said that too. There is no credible published breakage rate for club-level play, from us or anyone else, which is why this guide gives you a method to measure your own rather than a number to trust. Price bands were read on 26 August 2026 and will have moved.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0"><strong>Sources:</strong> <a href="https://extranet.bwf.sport/docs/document-system/81/1466/1470/Section%204.1%20-%20Laws%20of%20Badminton%20-%2026%20April%202025%20V5.0%20(2)%20.pdf" target="_blank" rel="noopener">BWF Laws of Badminton (Laws 2 and 3)</a> &middot; <a href="https://corporate.bwfbadminton.com/news-single/2026/04/08/use-of-synthetic-shuttlecocks-at-selected-bwf-tournaments-tournament-postponement" target="_blank" rel="noopener">BWF on synthetic shuttlecocks at selected tournaments, April 2026</a> &middot; <a href="https://corporate.bwfbadminton.com/news-single/2020/01/20/bwf-begins-adoption-of-synthetic-feather-shuttlecock-for-long-term-sustainability" target="_blank" rel="noopener">BWF on beginning adoption of the synthetic feather shuttlecock, 2020</a> &middot; <a href="https://www.worldbadminton.com/reference/research/documents/evaluation_of_shuttlecock_flight_dynamics.pdf" target="_blank" rel="noopener">Lin, "Understanding and Evaluation of Badminton Shuttlecocks Through Flight Dynamics and Experimental Approach", NTU</a> &middot; <a href="https://www.coventrybadminton.co.uk/rules" target="_blank" rel="noopener">Coventry Badminton League rules</a> &middot; <a href="https://badmintonbirmingham.co.uk/rules/" target="_blank" rel="noopener">Birmingham Badminton League rules</a> &middot; <a href="https://www.exeterbadmintonleague.co.uk/rules/league" target="_blank" rel="noopener">Exeter &amp; District Badminton League rules</a> &middot; <a href="https://www.solihullbadmintonleague.co.uk/league-rules" target="_blank" rel="noopener">Solihull District Badminton League rules</a></p>
+        <p style="color:var(--muted-2);font-size:.9rem;margin:12px 0 0">Published 26 August 2026 by ePegboard. Prices checked 26 August 2026.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
