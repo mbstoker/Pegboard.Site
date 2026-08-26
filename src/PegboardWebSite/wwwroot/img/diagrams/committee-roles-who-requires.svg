@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" role="img"
+     aria-label="A matrix of badminton club committee posts against the five things that might require them. Down the left are the posts: chair, secretary, treasurer, welfare officer, fixtures secretary, and everything else. Across the top are five columns: the law, a bank, Badminton England affiliation, CASC registration, and convention. The law column is completely empty, marked with a note that no officer is required by law. The bank column marks chair, secretary and treasurer, because a bank needs named signatories who are identity checked, which is what actually forces those three posts. The affiliation column marks only the welfare officer, as a condition of two thousand and twenty-six to twenty-seven affiliation for all clubs. The CASC column is empty of posts entirely, with a note that it imposes constitutional requirements rather than officers. The convention column marks every post including fixtures secretary and the others. A caption records that the smallest working committee is four posts held by at least three people.">
+  <title>The law requires none of them. The bank is what forces the classic three.</title>
+
+  <!--
+    Sources, all read 2026-08-26:
+      Law: an unincorporated association has no required officer, no registration, no filing.
+      Bank: constitution + minutes appointing signatories + ID and address docs + credit check on
+            each; minimum two signatories, commonly three named with any two to sign.
+      Affiliation: Badminton England names four common roles (chair, secretary, treasurer, welfare
+            officer) at /resource-hub/clubs/governance/effective-club-committees, and a trained Club
+            Welfare Officer is a condition of 2026/27 affiliation for all clubs.
+      CASC: imposes constitutional requirements (dissolution wording, non-distribution, open to the
+            whole community) and names NO officers.
+      Convention: model constitutions and the nine published club constitutions surveyed.
+    The empty Law column is the finding. Do not add ticks to it.
+  -->
+
+  <rect width="1200" height="620" fill="#ffffff"/>
+
+  <text x="600" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#0f172a" font-weight="600">Who actually requires which post</text>
+  <text x="600" y="66" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">Five sources of requirement, and they do not agree</text>
+
+  <!-- column headers -->
+  <g font-family="system-ui,sans-serif" font-size="17" fill="#0f172a" text-anchor="middle" font-weight="600">
+    <text x="470" y="126">The law</text>
+    <text x="620" y="126">A bank</text>
+    <text x="775" y="126">Affiliation</text>
+    <text x="925" y="126">CASC</text>
+    <text x="1080" y="126">Convention</text>
+  </g>
+
+  <!-- the empty law column, highlighted -->
+  <rect x="400" y="140" width="140" height="330" fill="#fef3c7" opacity="0.5"/>
+
+  <!-- grid -->
+  <g stroke="#e2e8f0" stroke-width="1">
+    <line x1="60" y1="140" x2="1150" y2="140"/>
+    <line x1="60" y1="196" x2="1150" y2="196"/>
+    <line x1="60" y1="252" x2="1150" y2="252"/>
+    <line x1="60" y1="308" x2="1150" y2="308"/>
+    <line x1="60" y1="364" x2="1150" y2="364"/>
+    <line x1="60" y1="414" x2="1150" y2="414"/>
+    <line x1="60" y1="470" x2="1150" y2="470"/>
+  </g>
+
+  <!-- row labels -->
+  <g font-family="system-ui,sans-serif" font-size="18" fill="#0f172a">
+    <text x="60" y="176">Chair</text>
+    <text x="60" y="232">Secretary</text>
+    <text x="60" y="288">Treasurer</text>
+    <text x="60" y="344" font-weight="600">Welfare Officer</text>
+    <text x="60" y="396">Fixtures Secretary</text>
+    <text x="60" y="450">Everything else</text>
+  </g>
+
+  <!-- BANK column: chair, secretary, treasurer -->
+  <g font-family="system-ui,sans-serif" font-size="26" fill="#0f766e" text-anchor="middle" font-weight="700">
+    <text x="620" y="182">&#10003;</text>
+    <text x="620" y="238">&#10003;</text>
+    <text x="620" y="294">&#10003;</text>
+  </g>
+
+  <!-- AFFILIATION column: welfare officer only -->
+  <text x="775" y="350" text-anchor="middle" font-family="system-ui,sans-serif" font-size="26" fill="#b45309" font-weight="700">&#10003;</text>
+
+  <!-- CONVENTION column: everything -->
+  <g font-family="system-ui,sans-serif" font-size="24" fill="#94a3b8" text-anchor="middle">
+    <text x="1080" y="182">&#10003;</text>
+    <text x="1080" y="238">&#10003;</text>
+    <text x="1080" y="294">&#10003;</text>
+    <text x="1080" y="350">&#10003;</text>
+    <text x="1080" y="400">&#10003;</text>
+    <text x="1080" y="454">&#10003;</text>
+  </g>
+
+  <!-- column notes -->
+  <text x="470" y="308" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#b45309" font-weight="600">nothing</text>
+  <text x="470" y="330" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#b45309">no officer is</text>
+  <text x="470" y="348" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#b45309">required by law</text>
+
+  <text x="925" y="300" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">names no officers;</text>
+  <text x="925" y="318" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">its requirements are</text>
+  <text x="925" y="336" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">about the constitution</text>
+
+  <!-- explanatory notes -->
+  <text x="620" y="500" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#0f766e">needs named signatories,</text>
+  <text x="620" y="518" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#0f766e">identity-checked</text>
+
+  <text x="775" y="500" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#b45309">a condition of 2026/27</text>
+  <text x="775" y="518" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#b45309">affiliation, all clubs</text>
+
+  <line x1="60" y1="548" x2="1150" y2="548" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="60" y="580" font-family="system-ui,sans-serif" font-size="17" fill="#0f172a" font-weight="600">The smallest committee that works: four posts, held by at least three people.</text>
+  <text x="60" y="602" font-family="system-ui,sans-serif" font-size="15" fill="#64748b">Four because an affiliated club needs a welfare officer. Three people because the bank wants two different signatories.</text>
+
+  <text x="1160" y="602" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">epegboard.com</text>
+</svg>

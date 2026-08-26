@@ -1,0 +1,223 @@
+@page "/guides/badminton-club-constitution"
+@using PegboardWebSite.Services
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "Writing a badminton club constitution: which template to start from, and what to change";
+    ViewData["Description"] = "Do not write one from scratch. Governing bodies publish free badminton templates that are better than anything you would draft - but every one we read has a winding-up clause that fails HMRC's test for community amateur sports clubs.";
+    ViewData["OgTitle"] = "Badminton club constitution: which template, and what to fix";
+
+    const string published = "2026-08-26";
+    const string canonical = "https://www.epegboard.com/guides/badminton-club-constitution";
+
+    // QUESTION SET (production step 1) - each is an H2 below:
+    //  1 Who is actually asking for it?
+    //  2 What does it legally have to contain?
+    //  3 Which template should you start from?
+    //  4 Which clauses do clubs get wrong?
+    //  5 What happens to the money if the club folds?
+    //  6 Ours is from 1994 - is it still all right?
+    //  7 Does having one protect me personally?
+    //  8 Do we have to register it anywhere?
+    //  9 What about CASC or charity status?
+    // 10 Do we need a solicitor?
+
+    var faqPairs = new (string Q, string A)[]
+    {
+        ("How long should a constitution be?",
+         "Shorter than most clubs make them. The published ones we read run from two pages to eight, and the long ones are mostly procedural detail that would sit better in bye-laws. A rule of thumb: if changing it would require an AGM and you can imagine wanting to change it within a year, it should not be in the constitution."),
+        ("What are bye-laws, and do we need them?",
+         "They are the club's operational rules, sitting under the constitution and changeable by the committee without calling a general meeting. Joining procedures, session times, the guest policy. Guidance for clubs recommends them precisely so that everyday changes do not need a members' vote, and most badminton clubs would benefit from splitting their document this way."),
+        ("Can members vote by email or online?",
+         "Only if your constitution allows it, and most older ones do not because they predate the question. If you are revising anyway, this is a cheap clause to add and it makes every future vote easier."),
+        ("Do we need a quorum, and what should it be?",
+         "Yes, or a handful of people can bind the whole club. Set it low enough that you can actually reach it: a quorum you routinely miss is worse than a modest one, because it stops you making decisions at all."),
+        ("Who owns the club's equipment?",
+         "The members collectively, in an unincorporated association, which is why the winding-up clause matters. If your club owns anything of value, that clause decides where it goes and it is worth getting right before it is needed rather than after."),
+        ("Does the constitution need to be signed?",
+         "Not usually. What matters is that it was adopted at a properly convened meeting and that the minutes record it, because the minutes are what a bank will ask to see alongside the document itself.")
+    };
+
+    var articleJsonLd = GuideSchema.Article(
+        "Writing a badminton club constitution: which template to start from, and what to change",
+        "Do not write one from scratch. But every free badminton template we read has a winding-up clause that fails HMRC's CASC test.",
+        canonical, published);
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+}
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Club constitution</span></div>
+      <h1 style="margin-top:10px">Writing a badminton club constitution: which template to start from, and what to change</h1>
+      <div class="guide-meta">
+        <span class="gm-tag">Guide</span>
+        <span>Running a club</span>
+        <span>13 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:820px">
+
+    <div class="prose">
+      <p class="lead"><strong>Do not write one from scratch. Take a governing body's template and change three things in it.</strong> Badminton England, Badminton Wales, the LTA and sportscotland all publish free templates that are better drafted than anything a club committee will produce on a Tuesday. What none of them will tell you is which one to pick or what is wrong with it, because each is promoting its own. The change that matters most is the winding-up clause: every free badminton template we read has one that would fail HMRC's test for community amateur sports clubs.</p>
+
+      <p>Nobody writes a constitution because they want one. They write it because a bank has just refused to open an account without it.</p>
+    </div>
+
+    <div class="guide-callout" style="margin-top:30px">
+      <h4>The short version</h4>
+      <ul style="margin:10px 0 0">
+        <li><strong>The law requires nothing.</strong> There is no prescribed content, nowhere to register it, and no audit requirement.</li>
+        <li><strong>Start from a template, not a blank page.</strong> Badminton England publishes one; so do Badminton Wales and sportscotland.</li>
+        <li><strong>Fix the winding-up clause.</strong> It is the most commonly wrong clause in badminton constitutions and the one with a regulator attached.</li>
+        <li><strong>It does not protect you personally.</strong> In an unincorporated club the members remain responsible for the club's obligations, and the templates say so.</li>
+        <li><strong>Review it every two years.</strong> That is Badminton England's own recommendation, and most club constitutions are far older.</li>
+        <li><strong>CASC and charity status are mutually exclusive.</strong> For a badminton club, CASC is usually the relevant one and charity usually is not.</li>
+      </ul>
+    </div>
+
+    <p style="margin-top:22px;color:var(--muted-2);font-size:.95rem">Written for a UK club officer who has been asked for a constitution. Templates and governing-body guidance were read on 26 August 2026, alongside nine published badminton club constitutions found through search - a convenience sample, not a representative one. Not legal advice.</p>
+
+    <div class="guide-toc" style="margin-top:26px">
+      <h4>In this guide</h4>
+      <a href="#who-asks">Who is actually asking for it?</a>
+      <a href="#contain">What does it legally have to contain?</a>
+      <a href="#template">Which template should you start from?</a>
+      <a href="#wrong">Which clauses do clubs get wrong?</a>
+      <a href="#dissolution">What happens to the money if the club folds?</a>
+      <a href="#old">Ours is from 1994. Is it still all right?</a>
+      <a href="#protect">Does having one protect me personally?</a>
+      <a href="#register">Do we have to register it anywhere?</a>
+      <a href="#casc">What about CASC or charity status?</a>
+      <a href="#solicitor">Do we need a solicitor?</a>
+      <a href="#faq">Frequently asked questions</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+
+      <h2 id="who-asks">Who is actually asking for it?</h2>
+      <p>Four people, and knowing which one is asking tells you how much work to do.</p>
+      <ul>
+        <li><strong>A bank</strong>, opening the club account. This is the most common trigger and the most demanding, because the bank wants the document plus minutes of the meeting that adopted it and appointed the signatories.</li>
+        <li><strong>A funder</strong>, assessing a grant application. They want to see that the club is properly constituted and that money cannot end up in a member's pocket.</li>
+        <li><strong>Affiliation</strong>, where a governing body expects one as part of being a recognised club.</li>
+        <li><strong>A landlord or venue</strong>, before granting a regular booking or a lease.</li>
+      </ul>
+      <p>If it is the bank, you need a document that exists and reads properly. If it is a funder or you are considering CASC registration, the specific clauses below start to matter a great deal.</p>
+
+      <h2 id="contain">What does it legally have to contain?</h2>
+      <p>Nothing. There is no statutory content for an unincorporated association's constitution.</p>
+      <p>Guidance for clubs states it about as plainly as it can be stated: there are no specific rules on the form or content, provided what is in it is not illegal. No prescribed clauses, no minimum length, no approved wording.</p>
+      <p><strong>So the real question is not what the law requires but who will read it.</strong> A bank checks that the club is properly constituted and that signatories were properly appointed. A funder checks that surpluses cannot be distributed to members. HMRC, if you register as a CASC, checks several specific things and is the only one of the three that will reject you over a single clause.</p>
+      <p>What a workable badminton constitution actually contains: the club's name and objects, who can be a member and how they join, the officers and committee, how meetings are called and what constitutes a quorum, how money is handled and who can sign, a discipline procedure, how the document itself is amended, and what happens if the club closes.</p>
+
+      <h2 id="template">Which template should you start from?</h2>
+      <p>Badminton England's, if you are an English club, because it is the one the body most likely to ask for it publishes.</p>
+      <p>It sits in their club development toolkit under governance, and they describe the constitution as a public document that everyone involved in the club should be able to read - which is worth taking seriously, since a large number of clubs treat theirs as something kept in a drawer.</p>
+      <p>The alternatives are all reasonable and each has a distinct strength:</p>
+      <div style="overflow-x:auto;margin-top:16px">
+        <table style="width:100%;border-collapse:collapse;font-size:.95rem">
+          <thead>
+            <tr style="text-align:left;border-bottom:2px solid var(--line)">
+              <th style="padding:8px 10px">Source</th><th style="padding:8px 10px">What it is</th><th style="padding:8px 10px">Best for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Badminton England</td><td style="padding:8px 10px">Template plus a two-yearly review recommendation</td><td style="padding:8px 10px">English affiliated clubs, by default</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Badminton Wales</td><td style="padding:8px 10px">Fill-in-the-blanks template with bracketed placeholders</td><td style="padding:8px 10px">The quickest start, if you fix the clauses below</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">The LTA</td><td style="padding:8px 10px">Clause-by-clause legal commentary</td><td style="padding:8px 10px">Understanding <em>why</em> a clause exists. It is tennis, but the law is the same</td></tr>
+            <tr><td style="padding:8px 10px">sportscotland</td><td style="padding:8px 10px">Sample constitution with explanatory notes</td><td style="padding:8px 10px">Scottish clubs, and anyone who wants the reasoning alongside</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:18px"><strong>What no template publisher will do is tell you what is wrong with theirs</strong>, which is the rest of this article.</p>
+
+      <h2 id="wrong">Which clauses do clubs get wrong?</h2>
+      <p>Three, and two of them are inherited from the templates rather than invented by the club.</p>
+      <p><strong>The winding-up clause</strong> is the big one and it has its own section below.</p>
+      <p><strong>An officer named in one clause and missing from another.</strong> The Badminton Wales template names a Club Welfare Officer in its discipline provisions and does not include the post in its committee clause. Adopt it as written and your constitution refers to an officer you have never appointed. Whichever template you use, read it once looking only for names of posts, and check each one appears in the committee section.</p>
+      <p><strong>Clauses that predate how the club now works.</strong> Voting in person only, membership categories the club abandoned years ago, a subscription-setting procedure nobody follows. These are not legal problems but they undermine the document: a constitution that visibly does not describe the club is one nobody consults.</p>
+      <p>One observation from reading nine published badminton constitutions, offered as an observation rather than a claim. Clauses recur across them near-verbatim, including in clubs with no connection to each other, which strongly suggests most were adapted from a small number of common ancestors. That is worth knowing because it means the errors travel too. A flaw in a widely-copied template is a flaw in hundreds of clubs' documents, and it is not something any individual club did wrong.</p>
+
+      <h2 id="dissolution">What happens to the money if the club folds?</h2>
+      <p>Whatever your constitution says - and if you are a CASC or ever want to be, the wording has to be right or HMRC will not accept you.</p>
+      <p>A dissolution clause directs what happens to any assets left after debts are paid. The point of it is to stop the remaining members simply dividing the money between themselves, which is exactly what a funder or HMRC wants ruled out.</p>
+      <p><strong>This is the most commonly wrong clause in badminton constitutions, and the problem is upstream of the clubs.</strong> Of the nine published constitutions we read, two had no dissolution clause at all, and of those that did, exactly one was worded in a way that would satisfy HMRC's requirement for community amateur sports clubs. The rest direct assets to bodies with "similar aims and objectives", or to a named organisation, neither of which is the test HMRC applies.</p>
+      <p>Every free badminton template we read has the same weakness. So if CASC registration matters to you, this is the clause to take to HMRC's own published guidance and copy from there rather than from any template.</p>
+      <p>One club we read directs its residue to a named national body that is a company limited by guarantee rather than a charity, which may make the clause inoperable as written. It is a good illustration of why "give it to the governing body" is not automatically a safe answer.</p>
+
+      <h2 id="old">Ours is from 1994. Is it still all right?</h2>
+      <p>Probably not, and Badminton England's own recommendation is to review it every two years.</p>
+      <p>That is a much shorter cycle than most clubs work to, and it exists because the surrounding requirements move: safeguarding expectations, affiliation conditions, data protection, and the club's own practices. A twenty-year-old constitution is rarely invalid. It is usually just describing a different club.</p>
+      <p><strong>Four things to check first in an old document</strong>, in order of how likely they are to cause a problem:</p>
+      <ul>
+        <li><strong>The dissolution clause</strong> - see above.</li>
+        <li><strong>Whether it names a welfare officer.</strong> Older constitutions predate the post entirely, and an affiliated club now needs one.</li>
+        <li><strong>Whether the officers listed are the officers you have.</strong> If your document requires posts nobody fills, you are technically in breach of your own rules.</li>
+        <li><strong>How it can be amended</strong>, because you will need that clause to fix the others.</li>
+      </ul>
+      <p>Fix those four and leave the rest until it bothers somebody. A wholesale rewrite needs an AGM and a majority, and it usually stalls.</p>
+
+      <h2 id="protect">Does having one protect me personally?</h2>
+      <p>No, and this is the assumption worth correcting before anything else in this guide.</p>
+      <p>An unincorporated association is not a separate legal person. Its members are personally responsible for its debts and contractual obligations, and the constitution does not change that - it organises how the club runs, not who is liable if it cannot pay.</p>
+      <p>The templates are honest about this when you read them. One badminton model states plainly that all members are jointly and severally responsible for the club's financial liabilities. That is not a drafting error; it is what an unincorporated association is.</p>
+      <p><strong>What actually addresses the risk is a different set of things:</strong> insurance, which for most clubs comes through affiliation and covers officers rather than players; not signing contracts the club cannot service; and, for a club with real assets or a lease, taking advice about whether to incorporate. A constitution is a governance document, not a shield.</p>
+
+      <h2 id="register">Do we have to register it anywhere?</h2>
+      <p>No. There is nowhere to send it and nobody to approve it.</p>
+      <p>An unincorporated association files nothing, registers nowhere and has no supervising body. You adopt the constitution at a properly convened meeting, record that in the minutes, and keep both. The minutes matter more than people expect, because a bank will ask for them alongside the document.</p>
+      <p>The exception is if you register as a CASC or a charity, at which point HMRC or the Charity Commission will read the document. But that is registering the club, not the constitution.</p>
+
+      <h2 id="casc">What about CASC or charity status?</h2>
+      <p>They are mutually exclusive, and for a badminton club CASC is usually the relevant one.</p>
+      <p>Community amateur sports club registration brings tax reliefs and is designed for exactly this kind of organisation. It imposes real constitutional requirements: the dissolution wording above, a bar on distributing surpluses to members, being open to the whole community, and being organised on an amateur basis.</p>
+      <p>It also imposes a cost ceiling that catches clubs out. Where total membership and participation costs exceed £520 a year, the club must make advertised provision for people who cannot pay more than that - and "total" means subs plus match fees plus everything else a member must pay to take part.</p>
+      <p>Charitable status is a heavier framework, brings trustee duties, and is uncommon for a badminton club. If somebody on your committee is pushing for it, the first question is what it would achieve that CASC would not.</p>
+
+      <h2 id="solicitor">Do we need a solicitor?</h2>
+      <p>No, for the ordinary case.</p>
+      <p>Adapting a governing body's template, checking the clauses named above and adopting it at a general meeting is within any committee's reach. The templates exist precisely so that clubs do not need to pay for this.</p>
+      <p><strong>Where advice is worth buying:</strong> if the club owns property or holds a lease, if it employs anybody, or if it is considering incorporating. Those raise questions a template cannot answer and where getting it wrong is expensive.</p>
+      <p>And the concession this guide owes you: if your constitution exists, the bank accepted it, your officers match what it says, and the dissolution clause would satisfy HMRC, you are finished. It does not need to be elegant and nobody is going to read it again until something goes wrong.</p>
+
+      <div class="guide-callout" style="margin-top:26px">
+        <h4>If you only do one thing</h4>
+        <p style="margin-top:8px">Open your constitution and read the winding-up clause. It is the one most likely to be wrong, and the only one a regulator will reject you over.</p>
+      </div>
+
+      <div class="guide-callout" style="margin-top:24px">
+        <h4>Fair games, without the admin</h4>
+        <p>ePegboard has nothing to do with your constitution. What it does is take one recurring job off the committee the document creates: running the night, picking balanced games and keeping court time even. Free for clubs.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+      </div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      @foreach (var f in faqPairs)
+      {
+        <h3>@f.Q</h3>
+        <p>@f.A</p>
+      }
+
+      <h2 id="related">Where to go next</h2>
+      <p>The constitution names your officers; which of those posts you actually have to fill is a separate question with a surprising answer: <a href="/guides/badminton-club-committee-roles">which committee roles does a badminton club have to fill</a> covers who imposes what, and why the answer is now four posts rather than three.</p>
+      <p>The clauses about money are the ones that get used most. <a href="/guides/setting-club-subs">Setting club subs</a> covers what to charge and the CASC threshold in more detail, and <a href="/guides/collecting-club-subs">collecting club subs</a> covers getting paid.</p>
+      <p>If you are writing a constitution because you are starting a club, <a href="/guides/how-to-start-a-badminton-club">how to start a badminton club</a> covers the rest of the setup.</p>
+
+      <div style="margin-top:34px;padding-top:22px;border-top:1px solid var(--line)">
+        <h4 style="margin:0 0 8px">How this guide was put together</h4>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:0">ePegboard builds club-night software. We are not lawyers and this is not legal advice. It is compiled from the constitution templates and guidance published by Badminton England, Badminton Wales, the LTA and sportscotland, from HMRC's published guidance on community amateur sports clubs, and from reading nine badminton clubs' own published constitutions on 26 August 2026.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0">Two limits. Nine constitutions found through search is a convenience sample and the proportions in it are not a picture of the sector. And where we say clauses recur across unrelated clubs, that is an observation about documents we read rather than a proven lineage; we have not traced where any particular template came from.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0"><strong>Sources:</strong> <a href="https://www.badmintonengland.co.uk/resource-hub/clubs/governance/club-constitution" target="_blank" rel="noopener">Badminton England on club constitutions</a> &middot; <a href="https://badminton.wales/wp-content/uploads/2024/09/Constitution-Template.pdf" target="_blank" rel="noopener">Badminton Wales constitution template</a> &middot; <a href="https://www.lta.org.uk/4918f5/siteassets/roles/venues/file/guidance-on-template-constitution-of-unincorporated-association-2024.pdf" target="_blank" rel="noopener">LTA guidance on a template constitution</a> &middot; <a href="https://sportscotland.org.uk/media/xexbeovl/clubconstitutionguide.pdf" target="_blank" rel="noopener">sportscotland club constitution guide</a> &middot; <a href="https://www.gov.uk/government/publications/community-amateur-sports-clubs-detailed-guidance-notes/community-amateur-sports-clubs-detailed-guidance-notes" target="_blank" rel="noopener">HMRC, Community Amateur Sports Clubs guidance</a> &middot; <a href="https://www.gov.uk/unincorporated-associations" target="_blank" rel="noopener">gov.uk on unincorporated associations</a></p>
+        <p style="color:var(--muted-2);font-size:.9rem;margin:12px 0 0">Published 26 August 2026 by ePegboard. Templates and club constitutions read 26 August 2026.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
