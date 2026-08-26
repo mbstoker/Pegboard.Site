@@ -1,103 +1,101 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img"
-     aria-label="A chart of annual membership fees at UK badminton clubs plotted on one horizontal axis from zero to four hundred and fifty pounds. The clubs form two separate clusters with an empty stretch between them. On the left, five clubs charging a small administrative subscription between twenty and seventy pounds, who then charge four to eight pounds sixty every session on top. On the right, fourteen clubs charging an all-in season subscription with sessions included: nine of them cluster tightly between one hundred and seventy-five and two hundred and thirty pounds, the median is one hundred and ninety-seven pounds seventy-five, and a thin tail runs out to four hundred and fifty. Between seventy and one hundred and thirty pounds there is one club and otherwise nothing, which is the point of the chart: these are two different products rather than one price range.">
-  <title>There is no average sub. There are two products, and almost nothing between them.</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" width="1200" height="580" role="img"
+     aria-label="A chart of UK badminton club subscriptions plotted on one horizontal axis from zero to four hundred and sixty pounds. Two rows of dots. The upper row is fourteen clubs that charge a small annual subscription and then a fee every session on top: they run from five pounds to ninety nine pounds, with a median of thirty pounds, and thirteen of the fourteen sit at seventy pounds or below. The lower row is twenty one clubs charging one all-in season subscription with sessions included: they run from one hundred and five pounds to four hundred and fifty pounds, with a median of one hundred and sixty pounds and half of them between one hundred and forty and two hundred and ten. No all-in club charges less than one hundred and five pounds and only one split-model club charges more than seventy. A caption records that the two rows are not cheap and expensive versions of the same thing, they are different products, and that only sixteen per cent of the nine hundred and twenty three club websites probed stated a price at all.">
+  <title>Two products, not one price range. The medians are £30 and £160.</title>
 
   <!--
-    Data: 25 UK badminton clubs, published fees read 2026-08-26. Convenience sample found through
-    search - England-heavy, one Welsh club, none from Scotland or Northern Ireland. Not representative.
+    Data: 41 UK badminton clubs verified from 923 club websites probed on 2026-08-26.
+    Every figure re-derives:  node analyze.mjs
+    in Marketing/GEO/club-subs-survey-2026-08-26/. Sample and per-club rulings in sample.mjs.
 
-    Model A, all-in season sub (n=14): range £130-£450, median £197.75, IQR £175-£230.
-      9 of the 14 sit inside £175-£230.
-    Model B, admin sub + pay per session (n=5): sub £20-£70, median £50, sessions £4.00-£8.60.
-    Model C, no membership at all (n=2): not plotted - they have no annual fee to place on this axis.
+      Model B, admin sub + pay per session (n=14):
+        5 15 15 20 20 26 30 30 35 35 50 55 70 99      median £30
+      Model A, all-in season sub (n=21):
+        105 110 110 125 140 140 150 150 150 160 160 175 185 195 200 210 230 240 265 330 450
+        median £160, Q1 £140, Q3 £210
 
-    SCALE: £0 at x=120, £450 at x=1120. 1000 units for £450 = 2.2222 units per £1.
-    Dot positions are the clubs' actual published subs, not jitter.
+    THIS REPLACED AN EARLIER VERSION plotting a lost 25-club sample whose figures could not
+    be re-derived. Its claim of "an empty stretch between £70 and £130" does NOT survive the
+    rebuild: the two groups now nearly touch at £99 and £105. The separation is real but it
+    is in WHAT YOU GET, not a gap on the number line. Do not restore the gap language.
   -->
 
-  <rect width="1200" height="560" fill="#ffffff"/>
+  <rect width="1200" height="580" fill="#ffffff"/>
 
-  <text x="600" y="42" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#0f172a" font-weight="600">What UK badminton clubs charge as an annual sub</text>
-  <text x="600" y="68" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">25 clubs, published fees read 26 August 2026. Each dot is one club.</text>
+  <text x="600" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#0f172a" font-weight="600">There is no average badminton sub</text>
+  <text x="600" y="64" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">41 UK clubs that publish a price, 26 August 2026. Clubs sell two different products.</text>
 
-  <!-- axis -->
-  <line x1="120" y1="400" x2="1130" y2="400" stroke="#0f172a" stroke-width="2.5"/>
-  <g stroke="#e2e8f0" stroke-width="1">
-    <line x1="231.1" y1="150" x2="231.1" y2="400"/>
-    <line x1="342.2" y1="150" x2="342.2" y2="400"/>
-    <line x1="453.3" y1="150" x2="453.3" y2="400"/>
-    <line x1="564.4" y1="150" x2="564.4" y2="400"/>
-    <line x1="675.6" y1="150" x2="675.6" y2="400"/>
-    <line x1="786.7" y1="150" x2="786.7" y2="400"/>
-    <line x1="897.8" y1="150" x2="897.8" y2="400"/>
-    <line x1="1008.9" y1="150" x2="1008.9" y2="400"/>
-  </g>
+  <!-- axis: x=90 at £0, x=1130 at £460  =>  2.2609 px per £ -->
+  <line x1="90" y1="420" x2="1130" y2="420" stroke="#0f172a" stroke-width="2"/>
   <g font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">
-    <text x="120" y="424">&#163;0</text>
-    <text x="231.1" y="424">&#163;50</text>
-    <text x="342.2" y="424">&#163;100</text>
-    <text x="453.3" y="424">&#163;150</text>
-    <text x="564.4" y="424">&#163;200</text>
-    <text x="675.6" y="424">&#163;250</text>
-    <text x="786.7" y="424">&#163;300</text>
-    <text x="897.8" y="424">&#163;350</text>
-    <text x="1008.9" y="424">&#163;400</text>
-    <text x="1120" y="424">&#163;450</text>
+    <line x1="90" y1="420" x2="90" y2="428" stroke="#cbd5e1"/><text x="90" y="446">£0</text>
+    <line x1="316.1" y1="420" x2="316.1" y2="428" stroke="#cbd5e1"/><text x="316.1" y="446">£100</text>
+    <line x1="542.2" y1="420" x2="542.2" y2="428" stroke="#cbd5e1"/><text x="542.2" y="446">£200</text>
+    <line x1="768.3" y1="420" x2="768.3" y2="428" stroke="#cbd5e1"/><text x="768.3" y="446">£300</text>
+    <line x1="994.4" y1="420" x2="994.4" y2="428" stroke="#cbd5e1"/><text x="994.4" y="446">£400</text>
   </g>
+  <text x="610" y="470" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#64748b">what the club asks up front, per adult per year</text>
 
-  <!-- THE GAP: £70 to £130 -->
-  <rect x="275.6" y="150" width="133.3" height="250" fill="#fef3c7" opacity="0.55"/>
-  <text x="342.2" y="196" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" fill="#b45309" font-weight="600">almost nothing</text>
-  <text x="342.2" y="218" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" fill="#b45309" font-weight="600">between &#163;70 and &#163;130</text>
-
-  <!-- Model B cluster: subs £20, £50, £50, £50, £70 -->
-  <g fill="#1d4ed8">
-    <circle cx="164.4" cy="370" r="13"/>
-    <circle cx="231.1" cy="370" r="13"/>
-    <circle cx="231.1" cy="342" r="13"/>
-    <circle cx="231.1" cy="314" r="13"/>
-    <circle cx="275.6" cy="370" r="13"/>
+  <!-- ROW 1: model B, admin sub + per session. y = 160 -->
+  <text x="90" y="118" font-family="system-ui,sans-serif" font-size="18" fill="#0f172a" font-weight="600">Small sub, then pay per session</text>
+  <text x="90" y="140" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">14 clubs &#183; median £30 &#183; plus £3.50 to £12 every time you play</text>
+  <g fill="#b45309" opacity="0.85">
+    <circle cx="101.3" cy="180" r="8"/>
+    <circle cx="123.9" cy="180" r="8"/>
+    <circle cx="123.9" cy="196" r="8"/>
+    <circle cx="135.2" cy="180" r="8"/>
+    <circle cx="135.2" cy="196" r="8"/>
+    <circle cx="148.8" cy="180" r="8"/>
+    <circle cx="157.8" cy="180" r="8"/>
+    <circle cx="157.8" cy="196" r="8"/>
+    <circle cx="169.1" cy="180" r="8"/>
+    <circle cx="169.1" cy="196" r="8"/>
+    <circle cx="203.0" cy="180" r="8"/>
+    <circle cx="214.3" cy="180" r="8"/>
+    <circle cx="248.3" cy="180" r="8"/>
+    <circle cx="313.8" cy="180" r="8"/>
   </g>
-  <text x="220" y="286" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" fill="#1d4ed8" font-weight="600">Admin sub</text>
-  <text x="220" y="306" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#1d4ed8">+ &#163;4.00 to &#163;8.60</text>
-  <text x="220" y="326" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#1d4ed8">every session</text>
+  <!-- median marker £30 -->
+  <line x1="157.8" y1="212" x2="157.8" y2="230" stroke="#b45309" stroke-width="2"/>
+  <text x="157.8" y="248" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#b45309" font-weight="600">median £30</text>
 
-  <!-- Model A cluster: £130, £140, £150, £175, £185, £187, £196.50, £199, £210, £225, £230, £230, £240, £450 -->
-  <g fill="#0f766e">
-    <circle cx="408.9" cy="370" r="13"/>
-    <circle cx="431.1" cy="370" r="13"/>
-    <circle cx="453.3" cy="370" r="13"/>
-    <circle cx="508.9" cy="370" r="13"/>
-    <circle cx="531.1" cy="370" r="13"/>
-    <circle cx="535.6" cy="342" r="13"/>
-    <circle cx="556.7" cy="370" r="13"/>
-    <circle cx="562.2" cy="342" r="13"/>
-    <circle cx="586.7" cy="370" r="13"/>
-    <circle cx="620.0" cy="370" r="13"/>
-    <circle cx="631.1" cy="342" r="13"/>
-    <circle cx="631.1" cy="314" r="13"/>
-    <circle cx="653.3" cy="370" r="13"/>
-    <circle cx="1120.0" cy="370" r="13"/>
+  <!-- ROW 2: model A, all-in. y = 330 -->
+  <text x="90" y="292" font-family="system-ui,sans-serif" font-size="18" fill="#0f172a" font-weight="600">One all-in season sub, sessions included</text>
+  <text x="90" y="314" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">21 clubs &#183; median £160 &#183; nothing further to pay to play</text>
+  <g fill="#0f766e" opacity="0.85">
+    <circle cx="327.4" cy="360" r="8"/>
+    <circle cx="338.7" cy="360" r="8"/>
+    <circle cx="338.7" cy="376" r="8"/>
+    <circle cx="372.6" cy="360" r="8"/>
+    <circle cx="406.5" cy="360" r="8"/>
+    <circle cx="406.5" cy="376" r="8"/>
+    <circle cx="429.1" cy="360" r="8"/>
+    <circle cx="429.1" cy="376" r="8"/>
+    <circle cx="429.1" cy="392" r="8"/>
+    <circle cx="451.7" cy="360" r="8"/>
+    <circle cx="451.7" cy="376" r="8"/>
+    <circle cx="485.7" cy="360" r="8"/>
+    <circle cx="508.3" cy="360" r="8"/>
+    <circle cx="530.9" cy="360" r="8"/>
+    <circle cx="542.2" cy="360" r="8"/>
+    <circle cx="564.8" cy="360" r="8"/>
+    <circle cx="610.0" cy="360" r="8"/>
+    <circle cx="632.6" cy="360" r="8"/>
+    <circle cx="689.1" cy="360" r="8"/>
+    <circle cx="836.1" cy="360" r="8"/>
+    <circle cx="1107.4" cy="360" r="8"/>
   </g>
+  <!-- IQR band £140-£210 -->
+  <rect x="406.5" y="344" width="68.3" height="4" fill="#0f766e" opacity="0.35"/>
+  <line x1="451.7" y1="404" x2="451.7" y2="414" stroke="#0f766e" stroke-width="2"/>
+  <text x="464" y="414" font-family="system-ui,sans-serif" font-size="14" fill="#0f766e" font-weight="600">median £160</text>
 
-  <!-- IQR band + median -->
-  <line x1="508.9" y1="286" x2="631.1" y2="286" stroke="#0f766e" stroke-width="4"/>
-  <line x1="508.9" y1="278" x2="508.9" y2="294" stroke="#0f766e" stroke-width="4"/>
-  <line x1="631.1" y1="278" x2="631.1" y2="294" stroke="#0f766e" stroke-width="4"/>
-  <text x="570" y="270" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#0f766e">half of them, &#163;175 to &#163;230</text>
+  <!-- the near-touch, annotated honestly -->
+  <line x1="313.8" y1="180" x2="327.4" y2="360" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="330" y="270" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">the two groups nearly touch here, at £99 and £105 -</text>
+  <text x="330" y="288" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">but one buys a season's badminton and the other buys a membership card</text>
 
-  <line x1="559.5" y1="160" x2="559.5" y2="400" stroke="#b45309" stroke-width="2.5" stroke-dasharray="6 5"/>
-  <text x="559.5" y="152" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#b45309" font-weight="600">median &#163;197.75</text>
-
-  <text x="700" y="196" font-family="system-ui,sans-serif" font-size="17" fill="#0f766e" font-weight="600">All-in season sub, sessions included</text>
-  <text x="700" y="218" font-family="system-ui,sans-serif" font-size="15" fill="#0f766e">14 clubs, &#163;130 to &#163;450</text>
-
-  <!-- the outlier, labelled rather than hidden -->
-  <line x1="1120" y1="356" x2="1120" y2="330" stroke="#94a3b8" stroke-width="1.5"/>
-  <text x="1120" y="322" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">one London club</text>
-
-  <text x="120" y="472" font-family="system-ui,sans-serif" font-size="16" fill="#475569">Two clubs charge no membership at all and take money at the door, so they do not appear on this axis.</text>
-  <text x="120" y="496" font-family="system-ui,sans-serif" font-size="16" fill="#475569">A convenience sample found through search: England-heavy, one Welsh club, none from Scotland or Northern Ireland.</text>
-
-  <text x="1160" y="536" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">epegboard.com</text>
+  <line x1="60" y1="500" x2="1140" y2="500" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="60" y="528" font-family="system-ui,sans-serif" font-size="17" fill="#0f172a" font-weight="600">These are not cheap and expensive versions of the same thing.</text>
+  <text x="60" y="552" font-family="system-ui,sans-serif" font-size="15" fill="#64748b">Ask which model a quoted "average sub" averaged. And note what is missing: of 923 club websites probed, only 16% stated a price at all.</text>
+  <text x="1140" y="552" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">epegboard.com</text>
 </svg>
