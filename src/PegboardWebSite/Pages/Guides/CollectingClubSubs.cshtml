@@ -1,0 +1,214 @@
+@page "/guides/collecting-club-subs"
+@using PegboardWebSite.Services
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "Collecting club subs: how to actually get paid";
+    ViewData["Description"] = "At 60 members paying £50, the entire fee difference between the cheapest and dearest way to collect is under £90 a year. What actually costs a volunteer treasurer their evenings is how often you bill, not what you bill through.";
+    ViewData["OgTitle"] = "Collecting club subs without losing your evenings";
+
+    const string published = "2026-08-26";
+    const string canonical = "https://www.epegboard.com/guides/collecting-club-subs";
+
+    // QUESTION SET (production step 1) - each is an H2 below:
+    //  1 Are you billing annually, termly, or per session?
+    //  2 What are the options, and what do they cost?
+    //  3 What does each cost you in chasing?
+    //  4 How do you reconcile payment against attendance?
+    //  5 The member who never pays
+    //  6 Does the club need its own bank account?
+    //  7 What records do you actually need?
+    //  8 Do you owe the ICO a fee?
+    //  9 Is your guest income taxable?
+    // 10 What breaks when the treasurer changes?
+
+    var faqPairs = new (string Q, string A)[]
+    {
+        ("Can we ask members to cover the transaction fee?",
+         "Several platforms let you pass it on, and it is a real choice rather than a technical one. Our view is that on the sums involved it buys you very little and costs you a conversation every time somebody notices. If the fee matters enough to pass on, change the billing model instead."),
+        ("Is it worth taking payments in cash to avoid fees?",
+         "Cash is free to take and not free to bank: business accounts commonly charge around a pound per hundred beyond a free allowance, which is roughly what a card reader costs. Add the trip to the bank and the counting, and cash is usually the most expensive option once your time has any value at all."),
+        ("What if a member wants to pay for the whole family?",
+         "Fine, and common. The only thing to get right is the record: you need to know which individuals the payment covers, because your membership list and your insurance both work per person rather than per payment."),
+        ("Do we need a treasurer at all if the money is automated?",
+         "Yes. Automation handles collection, not oversight. Somebody still has to reconcile, chase the failures, produce the annual accounts and answer questions at the AGM, and somebody other than that person should be able to see the account."),
+        ("Can we hold money in a committee member's personal account to get started?",
+         "Do not. For an unincorporated association the members are personally responsible for the club's obligations, and mixing club money into a personal account destroys the boundary that protects whoever's name is on it. If the bank account is slow, that is an argument for starting the application early, not for skipping it."),
+        ("What happens to the money if the club folds?",
+         "Your constitution should say, and if it does not, that is worth fixing before you need it. Most club constitutions direct remaining funds to another club or to a sporting body rather than to members, and a CASC has rules about this that are stricter than a plain club's.")
+    };
+
+    var articleJsonLd = GuideSchema.Article(
+        "Collecting club subs: how to actually get paid",
+        "The entire fee difference between the cheapest and dearest way to collect is under £90 a year. What costs a treasurer their evenings is how often you bill.",
+        canonical, published);
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+}
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Collecting club subs</span></div>
+      <h1 style="margin-top:10px">Collecting club subs: how to actually get paid</h1>
+      <div class="guide-meta">
+        <span class="gm-tag">Guide</span>
+        <span>Running a club</span>
+        <span>14 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:820px">
+
+    <div class="prose">
+      <p class="lead"><strong>Change how often you bill, not what you bill through.</strong> At 60 members paying £50, the entire fee difference between the cheapest and dearest realistic option is under £90 a year, which is less than two subs. What actually costs a volunteer their evenings is the number of transactions per member per year: bill annually and you have one, collect at the door and you have forty. A prepaid block of sessions removes most of the work and is a billing change, not a piece of software.</p>
+
+      <p>The version that goes wrong is a spreadsheet with forty names, three of them highlighted, and nobody quite willing to send the fourth reminder.</p>
+    </div>
+
+    <div class="guide-callout" style="margin-top:30px">
+      <h4>The short version</h4>
+      <ul style="margin:10px 0 0">
+        <li><strong>The fees barely differ.</strong> Under £90 a year separates every realistic option at 60 members. Stop optimising them.</li>
+        <li><strong>Billing frequency is the whole game.</strong> One transaction a year per member is a different job from forty.</li>
+        <li><strong>"Free" club apps are paid for on the payment rail.</strong> One charges no subscription and 2.5% plus 20p, which is dearer than a card reader.</li>
+        <li><strong>Standing orders fail silently.</strong> No notification when one is cancelled. That, not the fee, is the real difference from Direct Debit.</li>
+        <li><strong>You are probably exempt from the ICO fee and still bound by the law.</strong> Those are not the same thing and almost nobody says so.</li>
+        <li><strong>Guest money is taxable where member subs are not.</strong> Your records need to tell the two apart.</li>
+      </ul>
+    </div>
+
+    <p style="margin-top:22px;color:var(--muted-2);font-size:.95rem">Written for a volunteer UK club treasurer. Rates were read from providers' own pricing pages on 26 August 2026 and change without notice. This is not tax or legal advice, and where a club's own constitution governs something, it wins.</p>
+
+    <div class="guide-toc" style="margin-top:26px">
+      <h4>In this guide</h4>
+      <a href="#billing">Are you billing annually, termly, or per session?</a>
+      <a href="#options">What are the options, and what do they cost?</a>
+      <a href="#chasing">What does each cost you in chasing?</a>
+      <a href="#reconcile">How do you reconcile payment against attendance?</a>
+      <a href="#never-pays">The member who never pays and keeps playing</a>
+      <a href="#bank">Does the club need its own bank account?</a>
+      <a href="#records">What records do you actually need?</a>
+      <a href="#ico">Do you owe the ICO a fee?</a>
+      <a href="#tax">Is your guest income taxable?</a>
+      <a href="#handover">What breaks when the treasurer changes?</a>
+      <a href="#faq">Frequently asked questions</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+
+      <h2 id="billing">Are you billing annually, termly, or per session?</h2>
+      <p>Answer that before you look at a single payment provider, because it decides how much work you are signing up for and almost nothing else does.</p>
+      <p>The arithmetic is unglamorous. An annual sub is one transaction per member per year: forty members, forty payments, reconciled in an afternoon in September. Per-session collection at a weekly club night is around forty transactions per member per year: forty members, sixteen hundred payments, and a job that never stops.</p>
+      <p>Every payment method handles the first case easily. No payment method fixes the second, because the problem is the count rather than the mechanism.</p>
+      <p><strong>Which is why the highest-leverage thing available to a treasurer is not a product at all.</strong> Selling sessions in prepaid blocks collapses forty transactions into four or five. Clubs do this already: one sells ten-session blocks, another runs a discounted card of six or more sessions. The second of those is a piece of card with boxes on it.</p>
+
+      <h2 id="options">What are the options, and what do they cost?</h2>
+      <p>Between about zero and 2.5 per cent, which across a club's whole year comes to less than two members' subs.</p>
+      <div style="overflow-x:auto;margin-top:16px">
+        <table style="width:100%;border-collapse:collapse;font-size:.95rem">
+          <caption style="caption-side:top;text-align:left;padding-bottom:8px;color:var(--muted-2);font-size:.92rem">Published UK rates, read 26 August 2026. Right-hand column is the annual cost at 60 members paying £50.</caption>
+          <thead>
+            <tr style="text-align:left;border-bottom:2px solid var(--line)">
+              <th style="padding:8px 10px">Method</th><th style="padding:8px 10px">Published cost</th><th style="padding:8px 10px">On £3,000/yr</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Bank transfer / standing order</td><td style="padding:8px 10px">Free</td><td style="padding:8px 10px"><strong>£0</strong></td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Direct Debit (GoCardless)</td><td style="padding:8px 10px">1% + 20p, capped £4</td><td style="padding:8px 10px">about £42</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Card reader (SumUp)</td><td style="padding:8px 10px">1.69%</td><td style="padding:8px 10px">about £51</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Card reader (Square, Zettle)</td><td style="padding:8px 10px">1.75%</td><td style="padding:8px 10px">about £53</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">Cash</td><td style="padding:8px 10px">Free to take, about 1% to bank it</td><td style="padding:8px 10px">about £30, plus the trip</td></tr>
+            <tr><td style="padding:8px 10px">Club app with payments built in</td><td style="padding:8px 10px">2.5% + 20p</td><td style="padding:8px 10px"><strong>about £87</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:18px"><strong>Two things in that table are worth more than the rest of it.</strong></p>
+      <p>The first is that "free" club software is not free, it is paid for on the payment rail. An app charging no subscription and 2.5% plus 20p is charging you more than double the underlying Direct Debit rate, and more than a card reader. That is a legitimate business model and it is not a saving.</p>
+      <p>The second is a claim you can now ignore: that Direct Debit needs years of trading or a large turnover before a club can use it. It does not. Providers like GoCardless and Stripe collect under their own scheme membership, with no monthly fee and no minimum, so a twenty-member club could start next week.</p>
+
+      <h2 id="chasing">What does each cost you in chasing?</h2>
+      <p>Far more than the fees do, and the difference between methods is about notification rather than money.</p>
+      <p>A standing order is an instruction from the member to their own bank. The club is not a party to it, so when somebody cancels one, nobody tells you. You find out by reading a statement, weeks later, and then you have an awkward conversation about money that was due in September.</p>
+      <p>Direct Debit is an instruction the club initiates, so a failure comes back as a failure. That is the real difference, and it is worth more than the forty pounds it costs.</p>
+      <p><strong>We should be straight about what nobody knows.</strong> There is no published figure for how long collecting subs actually takes a treasurer. We found one club that publishes its treasurer role as about thirty minutes a week at the start of the season and much less afterwards, and that is a junior club on annual billing, which is the easy case. Nobody has surveyed this and we are not going to pretend a number exists.</p>
+
+      <figure style="margin:26px 0 0">
+        <img src="/img/diagrams/subs-fee-vs-labour.svg" alt="A chart with two axes. The horizontal axis is the annual cost in fees at sixty members paying fifty pounds, running from zero to about ninety pounds, and every payment method sits within that narrow span. The vertical axis is the treasurer's workload, measured as transactions per member per year, and it runs from one for annual billing up to around forty for collecting at the door every week. The methods are spread almost flat along the bottom of the fee axis while the labour axis varies by a factor of forty, showing that the choice of payment method barely moves cost while the choice of billing frequency moves workload enormously. A prepaid block of sessions is marked partway down the labour axis as the change that moves a club from the top of it to near the bottom." style="width:100%;height:auto;border-radius:12px" />
+        <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">The fee axis spans about £90. The labour axis spans a factor of forty. Almost every guide to this subject argues about the horizontal one.</figcaption>
+      </figure>
+
+      <h2 id="reconcile">How do you reconcile payment against attendance?</h2>
+      <p>Mostly by arranging not to have to, because matching individual payments to individual nights is a job with no good version.</p>
+      <p>The device clubs actually use is prepayment. Sell a block of sessions, or a term, or a year, and the question changes from "did this person pay tonight" to "does this person have credit", which is a list you can read rather than a reconciliation you have to perform.</p>
+      <p>The clubs in our small survey that publish their arrangements do exactly this: ten-session blocks with an expiry, a discounted multi-session card, or a plain rule that payment is settled before the session starts. None of them tries to reconcile forty nights against forty people after the fact.</p>
+      <p>If you must collect on the night, the reconciliation you need is a list of who was there, not a list of who paid. The first is easier to capture and it is the one that tells you whether the second is complete.</p>
+
+      <h2 id="never-pays">The member who never pays and keeps playing</h2>
+      <p>Your constitution almost certainly gives you the answer, and most club constitutions are silent because nobody has read them recently.</p>
+      <p>The principle is straightforward and it is stronger than treasurers expect. Where an association has subscription rules, a member does not acquire membership rights until the subscription is paid. In plain terms: if they have not paid, they are not a member, and a non-member has no right to play.</p>
+      <p>That is a legal position rather than a social one, and using it well means writing it down before you need it. Guidance for clubs on constitutions suggests adding failure to pay as a ground for removal, and noting that somebody removed still owes what they owed.</p>
+      <p><strong>One club publishes the version we would copy.</strong> If a Direct Debit is not set up or payment not made within two weeks of joining, the committee reserves the right to pause or cancel the membership and refuse admission to sessions. It is unambiguous, it is on the website, and it means the awkward conversation happens once, in writing, rather than every week at the door.</p>
+
+      <h2 id="bank">Does the club need its own bank account?</h2>
+      <p>Yes, and start the application earlier than you think, because it can take weeks or months.</p>
+      <p>Community and treasurer accounts do exist and several banks offer them, typically for a few pounds a month with an allowance of free transactions and a turnover ceiling. What they also involve is credit checks on every signatory, a copy of your constitution, minutes of the meeting that appointed the signatories, and identity and address documents for each of them.</p>
+      <p><strong>What you must not do, whatever the delay, is run club money through somebody's personal account.</strong> For an unincorporated association the members are personally responsible for the club's obligations, and mixing the money in removes the boundary that protects whoever's name is on the account. If the bank is slow, that is an argument for applying early rather than for improvising.</p>
+      <p>Clubs report being refused accounts on questionable grounds, including being told they must be a registered charity when they need not be. We could not find hard numbers on how often that happens, so treat it as a known frustration rather than a statistic, and be prepared to try more than one bank.</p>
+
+      <h2 id="records">What records do you actually need?</h2>
+      <p>Less than you fear, and a spreadsheet is adequate for most clubs.</p>
+      <p>Guidance for unincorporated sports clubs is reassuring on this. Full accounts should be prepared annually. They do not have to be filed anywhere the public can inspect them, though a funder or a governing body may ask to see them. And there is no legal requirement for an audit unless your own constitution imposes one, which is worth checking, because some do.</p>
+      <p>An independent voluntary-sector advice centre, which sells nothing, recommends an account book, a petty cash book or a spreadsheet, and publishes free templates. Receipts column, payments column, running balance. That is the whole method for a club of this size, and we would rather tell you that than sell you something.</p>
+      <p>The six-year retention rule people quote applies where the club has a Corporation Tax liability. Most small badminton clubs do not, which brings us to the next question.</p>
+
+      <h2 id="ico">Do you owe the ICO a fee?</h2>
+      <p>Probably not, and you are still bound by data protection law, which are two different things almost nobody separates.</p>
+      <p>The Information Commissioner's Office publishes a not-for-profit exemption. Broadly, you qualify if the organisation is not-for-profit, and you only process information necessary to establish or maintain membership or support, only for administering activities for members and people in regular contact, only about people you need it for, and only for as long as they are members or as long as membership administration requires.</p>
+      <p>Most badminton clubs sit inside that. <strong>Two things break it:</strong> being responsible for CCTV, which a club with its own clubhouse might be and a club hiring a leisure centre is not, and trading or sharing in personal data. If you are outside the exemption, the lowest fee tier is £52, reduced by £5 for paying by Direct Debit, and £40 for registered charities. Not paying when you owe it carries penalties running from £400.</p>
+      <p><strong>Here is the part every other page misses.</strong> Being exempt from the fee is not being exempt from the law. An exempt club is still a data controller. You still owe members a privacy notice explaining what you hold and why, you still have to keep it secure, you still have to delete it when it is no longer needed, and members can still ask you for a copy of what you hold about them.</p>
+      <p>None of that is onerous for a club holding names, emails and a payment history. It is a page on your website and a habit of deleting old lists. But "we're exempt" is not the end of the sentence.</p>
+
+      <h2 id="tax">Is your guest income taxable?</h2>
+      <p>Member subscriptions are not taxable and money from visitors paying their own way generally is, which is the real reason your records need to tell them apart.</p>
+      <p>The principle is mutual trading: a club cannot make a taxable profit from trading with its own members, so subscriptions sit outside the charge to tax. Visitors are a different matter. HMRC's guidance is that no liability arises where a member pays for their personal guests, but a visitor paying their own way is treated as any other visitor and that income goes into the club's trading profit.</p>
+      <p>Calling visitors "temporary members" does not change this unless their rights are equivalent to a full member's.</p>
+      <p><strong>What this means practically is small but real.</strong> The £8 you take at the door from a drop-in and the £50 sub you take in September are different categories, and if your record is one column of "money in", you cannot separate them later. Two columns from the start costs nothing.</p>
+
+      <h2 id="handover">What breaks when the treasurer changes?</h2>
+      <p>Almost everything, and this is the failure clubs actually experience rather than the ones the guides warn about.</p>
+      <p>The list is predictable once you write it down, and nobody writes it down until the week the treasurer stands down. Bank mandates have to be changed, which means new credit checks and often weeks of delay. Whoever set up the payment account may have used a personal email. The spreadsheet may be on one laptop. The card reader is in somebody's kitchen drawer. The Direct Debit provider's login belongs to a person rather than a role.</p>
+      <p>The fixes are dull and take an hour. Use a club email address for every account rather than an individual's. Keep the records somewhere two people can reach. Write down where everything is and who holds it. And put a second pair of eyes on the account, which is worth doing anyway: volunteer organisations do occasionally get defrauded, and a treasurer will never propose that control about themselves.</p>
+      <p><strong>And the concession this guide owes you.</strong> If your club bills annually, the money arrives, and one person reconciles it in an afternoon each September, you do not have a collection problem and none of this needs changing. The evidence says that describes a lot of clubs. The whole fee difference we have been discussing is under two members' subs, and a spreadsheet is a perfectly good answer.</p>
+
+      <div class="guide-callout" style="margin-top:26px">
+        <h4>If you only do one thing</h4>
+        <p style="margin-top:8px">Count how many payments you handle per member per year. If it is more than a handful, change the billing, not the app.</p>
+      </div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      @foreach (var f in faqPairs)
+      {
+        <h3>@f.Q</h3>
+        <p>@f.A</p>
+      }
+
+      <h2 id="related">Where to go next</h2>
+      <p>This guide is about getting paid. Deciding the number is the other half: <a href="/guides/setting-club-subs">setting club subs</a> covers what UK clubs actually charge, and finds two distinct models rather than one price range.</p>
+      <p>The two costs the subs have to cover are the hall and the shuttles. <a href="/guides/badminton-court-hire">What UK clubs pay for court hire</a> has the survey and the negotiating levers, and <a href="/guides/feather-vs-nylon-shuttlecocks">feather vs nylon</a> works out the cost per session.</p>
+
+      <div style="margin-top:34px;padding-top:22px;border-top:1px solid var(--line)">
+        <h4 style="margin:0 0 8px">How this guide was put together</h4>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:0">ePegboard builds club-night software. We do not process payments and we do not sell a payments product, but we are in an adjacent business and you should read this knowing that. It is compiled from payment providers' own published rates, the ICO's published exemption criteria, HMRC guidance on mutual trading, published guidance on club constitutions and accounts, and the payment arrangements nine UK badminton clubs publish on their own websites.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0">Three limits worth stating. Nobody has measured how long collecting subs actually takes a treasurer, including us, so this guide reasons about transaction counts rather than hours. Nine clubs is a convenience sample and not a picture of the sector. And every other guide to this subject that we could find is published by a company selling the answer it recommends, with two exceptions, both of which we have cited; that is a conflict we partly share and it is why the recommendation here is a billing change and a spreadsheet rather than a purchase.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0"><strong>Sources:</strong> <a href="https://ico.org.uk/for-organisations/data-protection-fee/" target="_blank" rel="noopener">ICO on the data protection fee and exemptions</a> &middot; <a href="https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim24220" target="_blank" rel="noopener">HMRC, mutual trading and visitors' fees (BIM24220)</a> &middot; <a href="https://www.resourcecentre.org.uk/information/bookkeeping-for-small-groups/" target="_blank" rel="noopener">The Resource Centre on bookkeeping for small groups</a> &middot; <a href="https://gocardless.com/pricing/" target="_blank" rel="noopener">GoCardless pricing</a> &middot; <a href="https://www.sumup.com/en-gb/fees/" target="_blank" rel="noopener">SumUp fees</a> &middot; <a href="https://buddle.co/learning-and-support-resources/money-matters" target="_blank" rel="noopener">Buddle on club money</a></p>
+        <p style="color:var(--muted-2);font-size:.9rem;margin:12px 0 0">Published 26 August 2026 by ePegboard. Provider rates read 26 August 2026 and change without notice.</p>
+      </div>
+
+    </div>
+  </div>
+</section>

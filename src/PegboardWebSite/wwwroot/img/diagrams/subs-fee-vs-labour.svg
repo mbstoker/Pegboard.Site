@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" role="img"
+     aria-label="A chart with two axes showing that payment fees barely vary while treasurer workload varies enormously. The horizontal axis is the annual cost in fees at sixty members paying fifty pounds, running only from zero to about ninety pounds, so every payment method sits within a very narrow span: bank transfer at zero, cash at about thirty pounds, Direct Debit at about forty-two, card readers at about fifty-one to fifty-three, and a club app with payments built in at about eighty-seven. The vertical axis is the treasurer's workload measured as transactions handled per member per year, running from one for annual billing, through about three for termly billing and about five for prepaid session blocks, up to about forty for collecting at the door every week. An arrow marks the move from door collection down to prepaid blocks as the change that removes most of the work, and a note records that this is a billing decision rather than a payment method.">
+  <title>The fees span about £90. The workload spans a factor of forty. Most guides argue about the wrong axis.</title>
+
+  <!--
+    Fees: providers' own published UK rates, read 2026-08-26, applied to 60 members x £50 = £3,000/yr.
+      bank transfer £0 · cash ~1% to bank beyond the free allowance, ~£30 · GoCardless 1% + 20p
+      capped £4 = ~£42 · SumUp 1.69% = ~£51 · Square/Zettle 1.75% = ~£53 · club app 2.5% + 20p = ~£87.
+    Workload: transactions per member per year, which is arithmetic on billing frequency, not measured
+    labour. NO figure for treasurer hours is published anywhere and none is asserted here.
+
+    SCALE: fee axis £0 at x=200, £90 at x=1080 (9.778 units per £1).
+           labour axis 1 tx at y=500, 40 tx at y=120, logarithmic so the low end is legible.
+  -->
+
+  <rect width="1200" height="620" fill="#ffffff"/>
+
+  <text x="600" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#0f172a" font-weight="600">Fees barely move. Workload moves by forty times.</text>
+  <text x="600" y="66" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">A club of 60 members paying &#163;50 a year</text>
+
+  <!-- axes -->
+  <line x1="200" y1="520" x2="1100" y2="520" stroke="#0f172a" stroke-width="2.5"/>
+  <line x1="200" y1="100" x2="200" y2="520" stroke="#0f172a" stroke-width="2.5"/>
+  <text x="650" y="576" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" fill="#0f172a" font-weight="600">Annual cost in fees &#8594;</text>
+  <text x="60" y="310" font-family="system-ui,sans-serif" font-size="17" fill="#0f172a" font-weight="600">Payments</text>
+  <text x="60" y="332" font-family="system-ui,sans-serif" font-size="17" fill="#0f172a" font-weight="600">handled</text>
+  <text x="60" y="354" font-family="system-ui,sans-serif" font-size="17" fill="#0f172a" font-weight="600">per member</text>
+  <text x="60" y="376" font-family="system-ui,sans-serif" font-size="17" fill="#0f172a" font-weight="600">per year</text>
+
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">
+    <text x="200" y="544">&#163;0</text>
+    <text x="444" y="544">&#163;25</text>
+    <text x="689" y="544">&#163;50</text>
+    <text x="933" y="544">&#163;75</text>
+    <text x="1080" y="544">&#163;90</text>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="end">
+    <text x="190" y="506">1</text>
+    <text x="190" y="410">3</text>
+    <text x="190" y="352">5</text>
+    <text x="190" y="232">15</text>
+    <text x="190" y="126">40</text>
+  </g>
+  <g stroke="#e2e8f0" stroke-width="1">
+    <line x1="200" y1="500" x2="1100" y2="500"/>
+    <line x1="200" y1="404" x2="1100" y2="404"/>
+    <line x1="200" y1="346" x2="1100" y2="346"/>
+    <line x1="200" y1="226" x2="1100" y2="226"/>
+    <line x1="200" y1="120" x2="1100" y2="120"/>
+  </g>
+
+  <!-- the band that contains every payment method -->
+  <rect x="200" y="100" width="880" height="420" fill="#f0fdfa" opacity="0.5"/>
+  <text x="640" y="608" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#0f766e">Every option on this chart sits inside &#163;90 a year. That is under two members' subs.</text>
+
+  <!-- ANNUAL BILLING row (1 tx) -->
+  <g fill="#0f766e">
+    <circle cx="200" cy="500" r="12"/>
+    <circle cx="493" cy="500" r="12"/>
+    <circle cx="699" cy="500" r="12"/>
+    <circle cx="1051" cy="500" r="12"/>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#0f766e" text-anchor="middle">
+    <text x="200" y="482">bank transfer</text>
+    <text x="493" y="482">Direct Debit</text>
+    <text x="699" y="482">card reader</text>
+    <text x="1051" y="482">club app</text>
+  </g>
+  <text x="1110" y="505" font-family="system-ui,sans-serif" font-size="15" fill="#0f766e" font-weight="600">billed</text>
+  <text x="1110" y="523" font-family="system-ui,sans-serif" font-size="15" fill="#0f766e" font-weight="600">annually</text>
+
+  <!-- TERMLY (3 tx) -->
+  <circle cx="493" cy="404" r="12" fill="#0f766e" opacity="0.65"/>
+  <text x="1110" y="409" font-family="system-ui,sans-serif" font-size="15" fill="#0f766e">termly</text>
+
+  <!-- PREPAID BLOCKS (5 tx) -->
+  <circle cx="699" cy="346" r="12" fill="#0f766e" opacity="0.65"/>
+  <text x="1110" y="351" font-family="system-ui,sans-serif" font-size="15" fill="#0f766e">prepaid blocks</text>
+
+  <!-- DOOR COLLECTION (40 tx) -->
+  <circle cx="293" cy="120" r="14" fill="#b91c1c"/>
+  <circle cx="699" cy="120" r="14" fill="#b91c1c"/>
+  <text x="1110" y="125" font-family="system-ui,sans-serif" font-size="15" fill="#b91c1c" font-weight="600">at the door,</text>
+  <text x="1110" y="143" font-family="system-ui,sans-serif" font-size="15" fill="#b91c1c" font-weight="600">every week</text>
+  <text x="293" y="102" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#b91c1c">cash</text>
+  <text x="699" y="102" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#b91c1c">card reader</text>
+
+  <!-- the move that matters -->
+  <path d="M660 140 Q600 250 660 330" fill="none" stroke="#b45309" stroke-width="3.5" marker-end="url(#a)"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+  <text x="440" y="220" font-family="system-ui,sans-serif" font-size="17" fill="#b45309" font-weight="600">This is the move</text>
+  <text x="440" y="242" font-family="system-ui,sans-serif" font-size="17" fill="#b45309" font-weight="600">worth making</text>
+  <text x="440" y="266" font-family="system-ui,sans-serif" font-size="15" fill="#b45309">and it is a billing decision,</text>
+  <text x="440" y="286" font-family="system-ui,sans-serif" font-size="15" fill="#b45309">not a payment method</text>
+
+  <text x="1160" y="608" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">epegboard.com</text>
+</svg>
