@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img"
-     aria-label="A cross-section comparison of two shuttlecock skirts, drawn to the dimensions in Law 2. On the left, a feathered shuttle: sixteen separate natural feathers fixed into a rounded cork base, splaying outward to form a crown of separate overlapping quills. On the right, a synthetic shuttle: the same base carrying a single moulded one-piece skirt with a perforated mesh wall. A dashed outline on the synthetic shows the skirt flexing outward under high-speed airflow, which the separate feather quills do not do. Below, both shuttles are shown turning over after being struck, rotating from skirt-first to base-first; the feather shuttle completes its turn in a shorter distance, which published testing identifies as the clearest performance difference between the two.">
+     aria-label="A cross-section comparison of two shuttlecock skirts, drawn to the dimensions in Law 2. On the left, a feathered shuttle: sixteen separate natural feathers fixed into a rounded cork base, splaying outward to form a crown of separate overlapping quills. On the right, a synthetic shuttle: the same base carrying a single moulded one-piece skirt with a perforated mesh wall. A dashed outline inside the synthetic skirt shows it drawing in slightly at high speed, a shrinkage of about a millimetre in diameter which lowers its drag. Below, both shuttles are shown turning over after being struck, rotating from skirt-first to base-first; the feather shuttle completes its turn in a shorter distance, which published testing identifies as the clearest performance difference between the two.">
   <title>Sixteen separate quills, or one moulded skirt. The difference shows up in the turn, not the drop.</title>
 
   <!--
@@ -24,18 +24,25 @@
   <text x="320" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#0f766e" font-weight="600">Feathered</text>
 
   <!-- 16 quills, drawn as separate splaying shafts -->
-  <g stroke="#0f766e" stroke-width="3.5" stroke-linecap="round" fill="none">
-    <line x1="285" y1="330" x2="227" y2="132"/>
-    <line x1="292" y1="330" x2="250" y2="132"/>
-    <line x1="299" y1="330" x2="273" y2="132"/>
-    <line x1="306" y1="330" x2="296" y2="132"/>
-    <line x1="313" y1="330" x2="309" y2="132"/>
-    <line x1="320" y1="330" x2="320" y2="132"/>
-    <line x1="327" y1="330" x2="331" y2="132"/>
-    <line x1="334" y1="330" x2="344" y2="132"/>
-    <line x1="341" y1="330" x2="367" y2="132"/>
-    <line x1="348" y1="330" x2="390" y2="132"/>
-    <line x1="355" y1="330" x2="413" y2="132"/>
+  <!-- 16 quills. Law 2.2.1 requires sixteen feathers fixed in the base, so sixteen are drawn.
+       Base spread 283 to 357 (the 78-unit cork), crown spread 227 to 413 (the 186-unit circle). -->
+  <g stroke="#0f766e" stroke-width="2.8" stroke-linecap="round" fill="none">
+    <line x1="283.0" y1="330" x2="227.0" y2="132"/>
+    <line x1="287.9" y1="330" x2="239.4" y2="132"/>
+    <line x1="292.9" y1="330" x2="251.8" y2="132"/>
+    <line x1="297.8" y1="330" x2="264.2" y2="132"/>
+    <line x1="302.7" y1="330" x2="276.6" y2="132"/>
+    <line x1="307.7" y1="330" x2="289.0" y2="132"/>
+    <line x1="312.6" y1="330" x2="301.4" y2="132"/>
+    <line x1="317.5" y1="330" x2="313.8" y2="132"/>
+    <line x1="322.5" y1="330" x2="326.2" y2="132"/>
+    <line x1="327.4" y1="330" x2="338.6" y2="132"/>
+    <line x1="332.3" y1="330" x2="351.0" y2="132"/>
+    <line x1="337.3" y1="330" x2="363.4" y2="132"/>
+    <line x1="342.2" y1="330" x2="375.8" y2="132"/>
+    <line x1="347.1" y1="330" x2="388.2" y2="132"/>
+    <line x1="352.1" y1="330" x2="400.6" y2="132"/>
+    <line x1="357.0" y1="330" x2="413.0" y2="132"/>
   </g>
   <!-- vane webbing, hinted so the quills read as feathers not spokes -->
   <g stroke="#5eead4" stroke-width="2" fill="none" opacity="0.85">
@@ -54,10 +61,11 @@
   <!-- ============ RIGHT: synthetic ============ -->
   <text x="880" y="80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#1d4ed8" font-weight="600">Synthetic</text>
 
-  <!-- deformed outline under load, drawn first so the solid skirt sits on top -->
-  <path d="M845 330 L757 132 M915 330 L1003 132" stroke="#93b4fc" stroke-width="3" stroke-dasharray="7 5" fill="none"/>
-  <text x="1015" y="150" font-family="system-ui,sans-serif" font-size="14" fill="#1d4ed8">flexes outward</text>
-  <text x="1015" y="168" font-family="system-ui,sans-serif" font-size="14" fill="#1d4ed8">under load</text>
+  <!-- deformation at speed is a SHRINKAGE, not a splay. Cooke measured roughly a 1 mm reduction
+       in skirt diameter at about 38 m/s. Drawn inside the solid outline, exaggerated to be visible. -->
+  <path d="M845 330 L806 140 M915 330 L954 140" stroke="#93b4fc" stroke-width="3" stroke-dasharray="7 5" fill="none"/>
+  <text x="985" y="150" font-family="system-ui,sans-serif" font-size="14" fill="#1d4ed8">draws in slightly</text>
+  <text x="985" y="168" font-family="system-ui,sans-serif" font-size="14" fill="#1d4ed8">at high speed</text>
 
   <!-- one-piece moulded skirt -->
   <path d="M841 330 L787 132 L973 132 L919 330 Z" fill="#eff6ff" stroke="#1d4ed8" stroke-width="3.5"/>
@@ -71,8 +79,8 @@
   <rect x="841" y="322" width="78" height="10" fill="#92400e"/>
 
   <text x="880" y="392" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" fill="#0f172a">One moulded skirt</text>
-  <text x="880" y="414" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#64748b">A single wall, so it can deform</text>
-  <text x="880" y="434" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#64748b">as the air load rises.</text>
+  <text x="880" y="414" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#64748b">A single wall. It draws in a little at</text>
+  <text x="880" y="434" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#64748b">speed, and resists spin-splay better.</text>
 
   <!-- shared base label -->
   <text x="600" y="352" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#92400e">both: cork base,</text>

@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img"
-     aria-label="Two ranked columns of the same eighteen venues. The left column ranks them by the price they advertise, cheapest at the top; Castle Leisure Centre in Bury sits fourth from cheapest at eleven pounds sixty, and Halton sits twelfth at fourteen pounds. The right column ranks the same venues by their real price per sixty-minute court. Bury has moved down to sixteenth of eighteen at fifteen pounds forty-seven, because it sells a forty-five minute court, and Halton has moved to fifteenth at fifteen pounds twenty-seven because it sells fifty-five minutes. Lines trace both venues between the columns to show the jump. Every other venue sells a full hour and barely moves.">
-  <title>Bury advertises the fourth cheapest price in the survey and charges the third most expensive</title>
+     aria-label="Two ranked columns of the same eighteen venues. The left column ranks them by the price they advertise, cheapest at the top; Castle Leisure Centre in Bury sits fourth from cheapest at eleven pounds sixty, and Halton sits thirteenth at fourteen pounds fifty. The right column ranks the same venues by their real price per sixty-minute court. Bury has moved down to fifteenth of eighteen at fifteen pounds forty-seven, because it sells a forty-five minute court, and Halton has moved from thirteenth to sixteenth at fifteen pounds eighty-two because it sells fifty-five minutes. Lines trace both venues between the columns to show the jump. Every other venue sells a full hour and barely moves.">
+  <title>Bury advertises the fourth cheapest price in the survey and charges the fourth most expensive</title>
 
   <!--
     Data: Marketing/GEO/court-hire-survey-2026-08-26/ - analyze.mjs prints both rankings and the
     rank movement for every venue selling under an hour. Do not hand-compute these positions.
-      Castle Leisure Centre (Bury): £11.60 / 45 min. Advertised rank 4 of 18 -> real rank 16 of 18.
-      Halton BC:                    £14.00 / 55 min. Advertised rank 12 of 18 -> real rank 15 of 18.
+      Castle Leisure Centre (Bury): £11.60 / 45 min. Advertised rank 4 of 18 -> real rank 15 of 18.
+      Halton BC:                    £14.50 / 55 min. Advertised rank 13 of 18 -> real rank 16 of 18.
 
     REPLACES a pairwise Bury-vs-Sefton comparison. That version depended on Sefton's price, which
     round-1 review found had been read from the wrong column of the source document. A rank shift
@@ -33,13 +33,13 @@
     <rect x="250" y="320" width="200" height="19" rx="4"/><rect x="250" y="347" width="200" height="19" rx="4"/>
     <rect x="250" y="374" width="200" height="19" rx="4"/><rect x="250" y="401" width="200" height="19" rx="4"/>
     <rect x="250" y="428" width="200" height="19" rx="4"/>
-    <rect x="250" y="482" width="200" height="19" rx="4"/><rect x="250" y="509" width="200" height="19" rx="4"/>
+    <rect x="250" y="455" width="200" height="19" rx="4"/><rect x="250" y="509" width="200" height="19" rx="4"/>
     <rect x="250" y="536" width="200" height="19" rx="4"/><rect x="250" y="563" width="200" height="19" rx="4"/>
     <rect x="250" y="590" width="200" height="19" rx="4"/><rect x="250" y="617" width="200" height="19" rx="4"/>
   </g>
-  <!-- Bury: left rank 4 (y=239). Halton: left rank 12 (y=455) -->
+  <!-- Bury: left rank 4 (y=239). Halton: left rank 13 (y=482) -->
   <rect x="250" y="239" width="200" height="19" rx="4" fill="#b45309"/>
-  <rect x="250" y="455" width="200" height="19" rx="4" fill="#fbbf77"/>
+  <rect x="250" y="482" width="200" height="19" rx="4" fill="#fbbf77"/>
 
   <!-- RIGHT column, x 750..950 -->
   <g fill="#e2e8f0">
@@ -50,27 +50,27 @@
     <rect x="750" y="374" width="200" height="19" rx="4"/><rect x="750" y="401" width="200" height="19" rx="4"/>
     <rect x="750" y="428" width="200" height="19" rx="4"/><rect x="750" y="455" width="200" height="19" rx="4"/>
     <rect x="750" y="482" width="200" height="19" rx="4"/><rect x="750" y="509" width="200" height="19" rx="4"/>
-    <rect x="750" y="590" width="200" height="19" rx="4"/>
+    <rect x="750" y="590" width="200" height="19" rx="4"/><rect x="750" y="617" width="200" height="19" rx="4"/>
   </g>
-  <!-- Halton: right rank 15 (y=536). Bury: right rank 16 (y=563) -->
-  <rect x="750" y="536" width="200" height="19" rx="4" fill="#fbbf77"/>
-  <rect x="750" y="563" width="200" height="19" rx="4" fill="#b45309"/>
+  <!-- Bury: right rank 15 (y=536). Halton: right rank 16 (y=563) -->
+  <rect x="750" y="563" width="200" height="19" rx="4" fill="#fbbf77"/>
+  <rect x="750" y="536" width="200" height="19" rx="4" fill="#b45309"/>
 
   <!-- traces -->
-  <line x1="452" y1="248" x2="748" y2="572" stroke="#b45309" stroke-width="3"/>
-  <line x1="452" y1="464" x2="748" y2="545" stroke="#fbbf77" stroke-width="3"/>
+  <line x1="452" y1="248" x2="748" y2="545" stroke="#b45309" stroke-width="3"/>
+  <line x1="452" y1="491" x2="748" y2="572" stroke="#fbbf77" stroke-width="3"/>
 
   <!-- labels -->
   <g font-family="system-ui,sans-serif" font-size="15" font-weight="600">
     <text x="242" y="253" text-anchor="end" fill="#b45309">Bury &#183; 4th &#183; &#163;11.60</text>
-    <text x="242" y="469" text-anchor="end" fill="#92400e">Halton &#183; 12th &#183; &#163;14.00</text>
-    <text x="958" y="577" fill="#b45309">Bury &#183; 16th &#183; &#163;15.47</text>
-    <text x="958" y="550" fill="#92400e">Halton &#183; 15th &#183; &#163;15.27</text>
+    <text x="242" y="496" text-anchor="end" fill="#92400e">Halton &#183; 13th &#183; &#163;14.50</text>
+    <text x="958" y="550" fill="#b45309">Bury &#183; 15th &#183; &#163;15.47</text>
+    <text x="958" y="577" fill="#92400e">Halton &#183; 16th &#183; &#163;15.82</text>
   </g>
 
   <g font-family="system-ui,sans-serif" font-size="14" fill="#64748b">
     <text x="242" y="271" text-anchor="end">sells 45 minutes</text>
-    <text x="242" y="487" text-anchor="end">sells 55 minutes</text>
+    <text x="242" y="514" text-anchor="end">sells 55 minutes</text>
   </g>
 
   <text x="600" y="655" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" fill="#0f172a">Divide the price by the minutes, multiply by sixty, then compare</text>

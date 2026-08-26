@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img"
-     aria-label="A bar chart of eighteen UK venues' adult peak badminton court prices, normalised to a sixty-minute court and sorted cheapest first. Swansea Bay Sports Park nine pounds, Newcastle University ten pounds, Plympton Academy ten pounds fifty, Benham Sports Centre twelve pounds, Danbury twelve pounds, Codsall twelve pounds fifty, Wombourne twelve pounds fifty, Botwell Green twelve pounds seventy as an upper bound only, Pateley Bridge thirteen pounds twenty-five, Tendring thirteen pounds sixty-five, Glasgow Club fourteen pounds, Oxford fourteen pounds ninety-six, Vivacity fifteen pounds, Brunel University fifteen pounds, Halton fifteen pounds twenty-seven, Castle Leisure Centre Bury fifteen pounds forty-seven, Sefton sixteen pounds, and the Eric Liddell Sports Centre in London sixteen pounds twenty. The median is thirteen pounds forty-five. Education venues are marked separately and occupy both ends of the range: the three cheapest are two universities and a state school, while the single most expensive is an independent school's sports centre and a university sits mid-table at fifteen pounds. The two venues selling less than a full hour, Halton and Bury, both finish in the four most expensive despite advertising mid-range prices.">
+     aria-label="A bar chart of eighteen UK venues' adult peak badminton court prices, normalised to a sixty-minute court and sorted cheapest first. Swansea Bay Sports Park nine pounds, Newcastle University ten pounds, Plympton Academy ten pounds fifty, Benham Sports Centre twelve pounds, Danbury twelve pounds, Codsall twelve pounds fifty, Wombourne twelve pounds fifty, Botwell Green twelve pounds seventy as an upper bound only, Pateley Bridge thirteen pounds twenty-five, Tendring thirteen pounds sixty-five, Glasgow Club fourteen pounds, Oxford fourteen pounds ninety-six, Vivacity fifteen pounds, Brunel University fifteen pounds, Castle Leisure Centre Bury fifteen pounds forty-seven, Halton fifteen pounds eighty-two, Sefton sixteen pounds, and the Eric Liddell Sports Centre in London sixteen pounds twenty. The median is thirteen pounds forty-five. Education venues are marked separately and occupy both ends of the range: the three cheapest are two universities and a state school, while the single most expensive is an independent school's sports centre and a university sits mid-table at fifteen pounds. The two venues selling less than a full hour, Bury and Halton, both finish in the four most expensive; Bury advertises the fourth cheapest headline price in the entire survey.">
   <title>The three cheapest venues are education venues. So is the most expensive.</title>
 
   <!--
@@ -50,8 +50,8 @@
     <rect x="300" y="419" width="718.1" height="20" fill="#64748b"/>
     <rect x="300" y="448" width="720"   height="20" fill="#64748b"/>
     <rect x="300" y="477" width="720"   height="20" fill="#0f766e"/>
-    <rect x="300" y="506" width="733.0" height="20" fill="#64748b"/>
-    <rect x="300" y="535" width="742.6" height="20" fill="#64748b"/>
+    <rect x="300" y="506" width="742.6" height="20" fill="#64748b"/>
+    <rect x="300" y="535" width="759.4" height="20" fill="#64748b"/>
     <rect x="300" y="564" width="768"   height="20" fill="#64748b"/>
     <rect x="300" y="593" width="777.6" height="20" fill="#0f766e"/>
   </g>
@@ -71,8 +71,8 @@
     <text x="288" y="434">Oxford City Council</text>
     <text x="288" y="463">Vivacity, Peterborough</text>
     <text x="288" y="492">Brunel University</text>
-    <text x="288" y="521">Halton</text>
-    <text x="288" y="550">Castle Leisure Centre, Bury</text>
+    <text x="288" y="521">Castle Leisure Centre, Bury</text>
+    <text x="288" y="550">Halton</text>
     <text x="288" y="579">Sefton</text>
     <text x="288" y="608">Eric Liddell, London</text>
   </g>
@@ -92,16 +92,16 @@
     <text x="1028.1" y="434">&#163;14.96</text>
     <text x="1030"   y="463">&#163;15.00</text>
     <text x="1030"   y="492">&#163;15.00</text>
-    <text x="1043"   y="521">&#163;15.27</text>
-    <text x="1052.6" y="550">&#163;15.47</text>
+    <text x="1052.6" y="521">&#163;15.47</text>
+    <text x="1069.4" y="550">&#163;15.82</text>
     <text x="1078"   y="579">&#163;16.00</text>
     <text x="1087.6" y="608">&#163;16.20</text>
   </g>
 
   <!-- slot-length flags on the two rows that sell under an hour -->
   <g font-family="system-ui,sans-serif" font-size="13" fill="#ffffff">
-    <text x="312" y="521">sells 55 min, advertises &#163;14.00</text>
-    <text x="312" y="550">sells 45 min, advertises &#163;11.60</text>
+    <text x="312" y="521">sells 45 min, advertises &#163;11.60</text>
+    <text x="312" y="550">sells 55 min, advertises &#163;14.50</text>
   </g>
 
   <line x1="945.6" y1="88" x2="945.6" y2="616" stroke="#b45309" stroke-width="2.5" stroke-dasharray="6 5"/>
