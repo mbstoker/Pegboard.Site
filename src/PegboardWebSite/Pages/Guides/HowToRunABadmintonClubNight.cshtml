@@ -2,30 +2,32 @@
 @using PegboardWebSite.Services
 @{
     Layout = "_LayoutMarketing";
-    ViewData["Title"] = "Running a badminton club night: the complete organiser's checklist";
-    ViewData["Description"] = "A complete, practical checklist for running a badminton club night: what to sort before players arrive, how to run a fair and full session on the night, and what to tidy up afterwards.";
-    ViewData["OgTitle"] = "The complete club-night organiser's checklist";
+    ViewData["Title"] = "How to run a badminton club night: the operating system behind a good session";
+    ViewData["Description"] = "A practical organiser's guide to running a badminton club night from check-in to final court: capacity, arrivals, rotation, game quality, changeovers, newcomers, exceptions, payments and the end-of-night review.";
+    ViewData["OgTitle"] = "How to run a badminton club night well";
 
-    const string published = "2026-07-01";
+    const string published = "2026-07-01";   // first publication - held deliberately; GuideSchema
+                                             // ties dateModified to it (#396), so advancing it
+                                             // would claim this page is new. Revised 2026-08-26.
     const string canonical = "https://www.epegboard.com/guides/how-to-run-a-badminton-club-night";
 
     var faqPairs = new (string Q, string A)[]
     {
-        ("How do you organise a badminton club night?",
-         "In three parts. Before: book the courts, sort shuttles and equipment, set up sign-in and a way to collect fees, and have a plan for how you will rotate players. During: welcome people (especially newcomers), keep every court busy with balanced, varied games, share court time fairly, and keep scores if you rate players. After: settle payments, note attendance, and gather a little feedback. Getting the before and during right is what makes a night feel effortless."),
-        ("How many courts do you need per player?",
-         "A rough rule of thumb is four to six players per court for a doubles club night. Fewer than four per court and people rarely sit out, but courts can go idle; more than six and waiting times climb. Around five per court usually gives a good balance of full courts and short waits, though it depends on how long your games run and how you rotate."),
-        ("How do you handle newcomers at a club night?",
-         "Give them a warm welcome, a quick word on how the night runs, and make sure they get into varied, balanced games early rather than being left on the edge. Newcomers decide whether to come back based largely on their first night or two, so a little deliberate effort to include them, in both who they play and how much, pays off more than almost anything else you do."),
-        ("What is the hardest part of running a club night?",
-         "Almost always the rotation: deciding who plays next, with whom, on which court, over and over, while keeping court time fair, games balanced and everyone mixing. Doing that well by hand for a couple of hours is a real skill and a lot of concentration, which is why it is the part most clubs eventually hand over to software so the organiser can play too."),
-        ("Do you need software to run a club night?",
-         "No, plenty of clubs run happily on a paper pegboard or a whiteboard, especially smaller, settled ones. Software earns its place as clubs get busier and more mixed, because it takes over the hard, relentless job of rotating players fairly and keeps records without extra effort. The bigger and more varied your night, the more it helps.")
+        ("How many players should a badminton club have per court?",
+         "There is no single ideal number, but the maths is simple: four players can be on a doubles court at once. Six players per court gives a theoretical average playing share of 67%; eight gives 50%, before changeovers. Decide what amount of waiting your club is comfortable with rather than relying on a universal ratio."),
+        ("What should an organiser do when a court becomes free?",
+         "Ideally almost nothing. The next four should already be known or prepared, so the finishing players leave, the score is recorded and the next game starts. Long decision-making after a court empties wastes the one resource the club has already paid for."),
+        ("How should newcomers be handled?",
+         "Explain the session in under a minute, estimate their standard without making it an audition, and get them into an appropriate game early. Mix them with established players over the night rather than isolating all newcomers together or throwing them into unsuitable games for the sake of inclusion."),
+        ("Should club nights record scores?",
+         "Only if the club gets value from the data. Scores are useful for ratings, recaps and competition/team evidence, but score entry should not delay court turnover. A club that does not use results afterwards can legitimately keep the session simpler."),
+        ("Do you need an organiser on duty all night?",
+         "Someone needs authority for exceptions, but the routine should not require one person to make every decision. A clear pegboard process, shared kiosk or software can let players handle normal check-ins, scores and court changes while an organiser deals only with unusual cases.")
     };
 
     var articleJsonLd = GuideSchema.Article(
-        "Running a badminton club night: the complete organiser's checklist",
-        "A complete, practical checklist for running a badminton club night: what to sort before players arrive, how to run a fair and full session, and what to tidy up afterwards.",
+        "How to run a badminton club night: the operating system behind a good session",
+        "A practical organiser's guide to running a badminton club night from check-in to final court: capacity, arrivals, rotation, game quality, changeovers, newcomers, exceptions, payments and the end-of-night review.",
         canonical, published);
     var faqJsonLd = GuideSchema.Faq(faqPairs);
 }
@@ -35,17 +37,16 @@
     <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
 }
 
-<!-- HERO -->
 <section class="page-hero" style="padding:0">
   <div class="wrap">
     <div class="inner">
-      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Club-night checklist</span></div>
-      <h1 style="margin-top:10px">Running a badminton club night: the complete organiser's checklist</h1>
-      <p class="lede">A good club night looks effortless from the court. Behind it is a person who sorted the right things beforehand and knows what to keep an eye on once play starts. This is the full checklist, from booking the hall to locking up.</p>
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Running a club night</span></div>
+      <h1 style="margin-top:10px">How to run a badminton club night without spending the whole night running it</h1>
+      <p class="lede">A good session is not one where the organiser makes brilliant decisions for two hours. It is one where ordinary decisions happen almost automatically and the organiser only has to notice the exceptions.</p>
       <div class="guide-meta">
-        <span class="gm-tag">Checklist</span>
+        <span class="gm-tag">Guide</span>
         <span>Club nights</span>
-        <span>10 min read</span>
+        <span>12 min read</span>
       </div>
     </div>
   </div>
@@ -53,58 +54,210 @@
 
 <section style="padding-top:40px">
   <div class="wrap" style="max-width:820px">
+
     <div class="guide-toc">
       <h4>In this guide</h4>
-      <a href="#before">Before the night</a>
-      <a href="#during">On the night</a>
-      <a href="#after">After the night</a>
-      <a href="#hard">The part that is genuinely hard</a>
+      <a href="#before">Before the doors open</a>
+      <a href="#arrival">Design the arrival in under a minute</a>
+      <a href="#loop">The loop that runs the whole evening</a>
+      <a href="#quality">What makes a good next game?</a>
+      <a href="#turnover">Protect court turnover</a>
+      <a href="#newcomer">Give newcomers an ordinary good night</a>
+      <a href="#exceptions">Design for the awkward cases</a>
+      <a href="#scores">Scores, ratings and data</a>
+      <a href="#money">Keep money out of the live bottleneck</a>
+      <a href="#close">End the night deliberately</a>
+      <a href="#organiser">The organiser should be an exception handler</a>
       <a href="#faq">Frequently asked questions</a>
     </div>
 
     <div class="prose" style="margin-top:34px">
-      <p class="lead">Running a club night well is mostly about preparation and a handful of good habits. Sort the right things before anyone arrives, run the session with a light but deliberate hand, and tidy up properly afterwards, and the night feels smooth to everyone playing. This is the complete checklist, split into before, during and after, with links to deeper guides on the trickier bits. Think of it as the hub; the other <a href="/guides">guides</a> go deeper on each piece.</p>
 
-      <h2 id="before">Before the night</h2>
-      <p>Most of what makes a night good is decided before it starts:</p>
+      <p class="lead"><strong>The basic club-night loop is tiny: someone arrives, waits, plays, comes off and waits again.</strong> The organiser's job is to make that loop fast, fair and enjoyable while coping with all the ways real people refuse to behave like entries in a fixture list.</p>
+
+      <p>That suggests a useful way to judge the night. Do not ask whether the organiser worked hard. Ask whether players always knew roughly what to do next.</p>
+
+      <h2 id="before">Before the doors open</h2>
+
+      <p>Most club-night stress is created before the session and merely discovered during it.</p>
+
+      <p>Know five things before the first player arrives:</p>
+
+      <ol>
+        <li><strong>How much court capacity you have.</strong> Courts × hours is the resource you have bought.</li>
+        <li><strong>How many players you expect.</strong> If attendance is regularly eight per court, waiting is going to be part of the product whether you like it or not.</li>
+        <li><strong>How people become eligible for the next game.</strong> Queue, pegboard, organiser selection, software - choose it before the first argument.</li>
+        <li><strong>What a valid game looks like.</strong> Strict mixed? Any doubles? Fixed pairs? Different standards? Decide which constraints are real.</li>
+        <li><strong>Who has authority when the process cannot decide.</strong> There should be an answer to "who can override this?" that does not involve a committee meeting beside Court 3.</li>
+      </ol>
+
+      <p>Then check the boring physical things: shuttles, nets/posts if the venue does not supply them, first-aid provision, court labels, access arrangements and whatever device or board runs the session.</p>
+
+      <p>Do this early enough that the first ten minutes are badminton, not setup.</p>
+
+      <h2 id="arrival">Design the arrival in under a minute</h2>
+
+      <p>A regular should be able to enter the hall, become available for play and deal with any session fee with almost no conversation.</p>
+
+      <p>A newcomer needs only a little more:</p>
+
       <ul>
-        <li><strong>Courts and hall.</strong> Book the courts, confirm the times, and know how many courts you actually have to play with.</li>
-        <li><strong>Shuttles and equipment.</strong> Enough shuttles for the standard you play, plus spare nets, posts and a first-aid kit.</li>
-        <li><strong>Sign-in.</strong> A quick way to see who is here, whether that is a sheet, a whiteboard or an app. This is the backbone of fair rotation.</li>
-        <li><strong>Fees.</strong> A simple, reliable way to collect and record session fees, so money is not a scramble at the end.</li>
-        <li><strong>A rotation plan.</strong> Decide how you will pick games before you are under pressure. Our guide to <a href="/guides/badminton-club-night-rotation">fair player rotation</a> covers the options.</li>
-        <li><strong>A welcome for newcomers.</strong> Know who is new and have a plan to fold them in, rather than leaving it to chance.</li>
+        <li>their name;</li>
+        <li>rough playing standard;</li>
+        <li>whether they need a racket;</li>
+        <li>how they will know when they are on;</li>
+        <li>where to wait;</li>
+        <li>and when/how to pay.</li>
       </ul>
 
-      <h2 id="during">On the night</h2>
-      <p>Once play starts, the organiser's job is to keep the night fair, full and friendly:</p>
+      <p>Do not give a six-minute explanation of the rating algorithm while twelve other people queue behind them. The newcomer needs enough information to join the system. Everything else can be learned after a game.</p>
+
+      <p>Arrival is also when player state begins. Someone is either <strong>available</strong>, <strong>playing</strong>, <strong>voluntarily resting</strong> or <strong>gone</strong>. Treat those states consistently and later fairness becomes much easier.</p>
+
+      <h2 id="loop">The loop that runs the whole evening</h2>
+
+      <p>Once the first courts are full, the same event repeats all night:</p>
+
+      <ol>
+        <li>a court is going to finish;</li>
+        <li>prepare the next game;</li>
+        <li>the current game ends;</li>
+        <li>capture the result if you need it;</li>
+        <li>move the four finishers back to waiting/resting;</li>
+        <li>send the prepared four on;</li>
+        <li>prepare again.</li>
+      </ol>
+
+      <p>The important sequencing is that <strong>selection happens before the court is empty</strong>.</p>
+
+      <p>If game-making only starts once four people are standing beside an unused court, every selection decision consumes paid court time. At a busy club, those two-minute gaps compound dramatically over a session.</p>
+
+      <h2 id="quality">What makes a good next game?</h2>
+
+      <p>There is no one answer, but the order matters.</p>
+
+      <p>For an ordinary social club night, a sensible hierarchy is:</p>
+
+      <ol>
+        <li><strong>Do not create a serious waiting injustice.</strong></li>
+        <li><strong>Make a game that is plausibly competitive.</strong></li>
+        <li><strong>Avoid obvious recent partner/opponent repetition where alternatives exist.</strong></li>
+        <li><strong>Respect useful preferences</strong> - a league pair, a requested mixed game, someone who enjoys stronger opposition - where they do not distort the whole queue.</li>
+      </ol>
+
+      <p>Notice what is missing: perfection.</p>
+
+      <p>A club-night organiser is not solving the final of the World Championships. A game between four people of nearby standard that gets everybody on court promptly is often better than waiting five extra minutes for the theoretically optimal quartet.</p>
+
+      <p>For the mechanics behind that trade-off, see <a href="/guides/badminton-club-night-rotation">fair club-night rotation</a>.</p>
+
+      <h2 id="turnover">Protect court turnover</h2>
+
+      <p>On a crowded night, the court itself is the bottleneck. Treat an empty one like a restaurant would treat an empty table with customers waiting.</p>
+
+      <p>Small operational habits matter:</p>
+
       <ul>
-        <li><strong>Welcome everyone, especially newcomers.</strong> A quick hello and a word on how the night runs makes all the difference to whether people come back.</li>
-        <li><strong>Keep courts busy.</strong> Idle courts are wasted time; aim to have the next game ready as each court frees up.</li>
-        <li><strong>Balance the games.</strong> Close games are good games. Match players so nobody is stuck in a walkover, at either end.</li>
-        <li><strong>Share court time fairly.</strong> Track who has been waiting longest and make sure the quiet players are not left out. See our guide to <a href="/guides/fair-court-time-busy-club-night">fair court time</a>.</li>
-        <li><strong>Keep the games varied.</strong> Spread partners and opponents around so the night stays fresh and nobody is stuck in the same four, as covered in our <a href="/guides/game-variety-stop-same-players">game variety</a> guide.</li>
-        <li><strong>Keep score, if you rate players.</strong> Recording results is what lets a <a href="/guides/badminton-club-rating-systems">rating system</a> keep everyone's standard current.</li>
+        <li>prepare the next four while the current game is finishing;</li>
+        <li>put court labels somewhere unambiguous;</li>
+        <li>make the call visible as well as verbal in a noisy hall;</li>
+        <li>record results in seconds, not through a form with twelve fields;</li>
+        <li>have a default if a called player has disappeared;</li>
+        <li>do not wait three minutes for one person to finish a conversation while everyone else watches the court.</li>
       </ul>
 
-      <h2 id="after">After the night</h2>
-      <p>A tidy finish saves you trouble later:</p>
-      <ul>
-        <li><strong>Settle up.</strong> Reconcile the fees while it is fresh, so nothing is chased later.</li>
-        <li><strong>Record attendance.</strong> Even a simple count feeds trends over time and helps with planning.</li>
-        <li><strong>Note anything for next time.</strong> A shuttle order needed, a newcomer to follow up, a court that was double-booked.</li>
-        <li><strong>Gather a little feedback.</strong> Especially from newcomers and from anyone who seemed to have a quiet night.</li>
-      </ul>
-      <p>Over a season this record becomes genuinely useful, feeding everything from <a href="/guides/picking-league-teams-club-data">team selection</a> to spotting who has drifted off and might appreciate a nudge.</p>
+      <p>You are not trying to turn club badminton into an airport turnaround. People are there socially. The point is simply that avoidable empty-court minutes are the one form of waiting the club has complete control over.</p>
 
-      <h2 id="hard">The part that is genuinely hard</h2>
-      <p>Look back over the on-the-night list and one job stands out: the rotation. Keeping courts busy, games balanced, court time fair and the mixing fresh, all at once, all evening, is the hard core of running a club night, and it is where a night is won or lost. Everything else on the checklist is preparation and tidying; this is the live, relentless bit that depends on one person's concentration.</p>
-      <p>That is exactly the job <a href="/features/club-nights">ePegboard</a> was built to take over. It keeps every court busy with balanced, varied games, evens out court time across the night, handles latecomers and drop-ins, and shows why each game was picked, all running on a player rating that updates after every game and feeds your competitions and team selection too. It means the organiser can run a great night and actually play in it. It is free for clubs, needs no install, and clubs have already run more than 1,100 sessions and over 33,000 games on it. If you are still weighing it up, our guides on <a href="/guides/best-badminton-club-night-software">choosing club-night software</a> and <a href="/guides/paper-pegboard-to-app">moving on from the paper pegboard</a> are good next reads.</p>
+      <h2 id="newcomer">Give newcomers an ordinary good night</h2>
+
+      <p>Newcomers are sometimes treated so carefully that their night stops resembling normal membership.</p>
+
+      <p>You do not need to put them on first, give them the club captain as a personal escort and rotate every senior member through a ceremonial welcome game.</p>
+
+      <p>Do three things well:</p>
+
+      <ol>
+        <li><strong>Do not lose them in the queue.</strong> Make sure their eligibility is visible.</li>
+        <li><strong>Estimate standard early.</strong> Their first game should give you information without humiliating either side.</li>
+        <li><strong>Give them several appropriate connections.</strong> Mix them with established players of compatible level rather than isolating all guests together.</li>
+      </ol>
+
+      <p>Then let them experience the actual club. They need to discover whether they like <em>this</em> night, not a special demonstration version that vanishes on visit two.</p>
+
+      <h2 id="exceptions">Design for the awkward cases</h2>
+
+      <p>Normal games are easy. A robust club-night process is defined by what happens when normal stops.</p>
+
+      <p><strong>Late arrival:</strong> no credit for time before they arrived; waiting begins now.</p>
+
+      <p><strong>Voluntary rest:</strong> pause their eligibility rather than letting a twenty-minute sit-out accumulate priority.</p>
+
+      <p><strong>Early departure:</strong> remove them immediately so they are not selected for a court while driving home.</p>
+
+      <p><strong>Player missing when called:</strong> give the place to a sensible substitute and leave the missing player eligible when they return; do not freeze a court.</p>
+
+      <p><strong>Injury / abandoned game:</strong> record it differently from an ordinary result if ratings depend on scores. Do not turn an injury into a 21-0 performance signal unless that is explicitly what your system means.</p>
+
+      <p><strong>Wrong score:</strong> have a correction path. Data people cannot correct becomes data people stop trusting.</p>
+
+      <p><strong>Uneven number or unexpected court loss:</strong> re-evaluate capacity rather than pretending the old rotation still describes the room.</p>
+
+      <h2 id="scores">Scores, ratings and data</h2>
+
+      <p>Recording scores is worthwhile when it creates something the club values: better ratings, useful player history, competition seeding, recaps or evidence for team decisions.</p>
+
+      <p>It is not mandatory good administration.</p>
+
+      <p>If nobody looks at results afterwards, asking every game to type 21-17 into a system is ritual data collection. Drop it.</p>
+
+      <p>If you do use scores, capture them at the moment the game ends. Memory decays quickly and reconstruction after the session creates disputes.</p>
+
+      <p>Also decide what the score means. If player ratings use margin, 21-19 and 21-8 carry different information. If the model is outcome-only, the extra point detail may be useful for history but not rating. Our <a href="/guides/badminton-club-rating-systems">rating-systems guide</a> covers that distinction.</p>
+
+      <h2 id="money">Keep money out of the live bottleneck</h2>
+
+      <p>Payments have a habit of becoming a queue beside the queue.</p>
+
+      <p>Where possible, collect before the night, on arrival or through a method players can complete without the organiser. If someone needs to reconcile cash, do not make that the same moment they are supposed to choose Court 2's next game.</p>
+
+      <p>The principle is broader: separate <strong>transactional admin</strong> from <strong>live court operation</strong>. Membership questions, address changes and committee business can wait. A free court cannot.</p>
+
+      <h2 id="close">End the night deliberately</h2>
+
+      <p>The final twenty minutes need a policy too.</p>
+
+      <p>If a game starts at 9:52 in a hall that must be empty at 10, everybody already knows how that ends. Stop launching full games at a sensible cut-off, or switch to a shorter target score for the last round if your club is comfortable doing so.</p>
+
+      <p>Then close the loop:</p>
+
+      <ul>
+        <li>make sure results are captured;</li>
+        <li>check nobody remains marked as playing;</li>
+        <li>reconcile payments if required;</li>
+        <li>count shuttles / note stock if that matters;</li>
+        <li>record venue or equipment problems while they are fresh;</li>
+        <li>share any recap only if it contains something members will value.</li>
+      </ul>
+
+      <p>Do not turn the post-session process into another administrative hobby. Keep the data you expect to use.</p>
+
+      <h2 id="organiser">The organiser should be an exception handler</h2>
+
+      <p>This is the design target for the whole night.</p>
+
+      <p>A pegboard can achieve it in a small settled club because players move their own pegs and know the conventions. A strong human organiser can achieve it by delegating routine tasks. Software can achieve it by maintaining queue state, history and suggestions automatically.</p>
+
+      <p><a href="/features/club-nights">ePegboard</a> is one implementation: a shared board can handle check-in, waiting, live games and scores while the picker proposes the next four; the organiser can accept, alter or override. The value is not that every decision becomes automatic. It is that routine decisions no longer require the organiser's continuous attention.</p>
+
+      <p>That gives you a better test than "does the app have feature X?"</p>
+
+      <p><strong>Can the organiser play a normal game without the session falling apart while they are on court?</strong></p>
+
+      <p>If yes, the operating system of the night is doing its job.</p>
 
       <div class="guide-callout">
-        <h4>Let the software run the hard part</h4>
-        <p>ePegboard takes over the rotation so you can run a fair, full night and play in it too. Free for clubs, nothing to install.</p>
-        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+        <h4>The organiser's dashboard in five questions</h4>
+        <p style="margin-top:8px">Are all available courts occupied? Is anyone waiting much longer than peers? Are the games broadly competitive? Is anybody accidentally excluded? Is there an exception that needs a human? If the first four are fine, go and play.</p>
       </div>
 
       <h2 id="faq">Frequently asked questions</h2>
@@ -113,19 +266,7 @@
         <h3>@f.Q</h3>
         <p>@f.A</p>
       }
-    </div>
-  </div>
-</section>
 
-<!-- CTA -->
-<section class="cta" style="margin-top:56px">
-  <div class="wrap">
-    <h2>Run your best club night yet</h2>
-    <p>Everything on the checklist, with the hard part handled for you. Free for clubs.</p>
-    <div class="cta-actions">
-      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
-      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
     </div>
-    <p class="fine">Browse every guide in the <a href="/guides">guides section</a>.</p>
   </div>
 </section>

@@ -2,30 +2,32 @@
 @using PegboardWebSite.Services
 @{
     Layout = "_LayoutMarketing";
-    ViewData["Title"] = "Mixed-ability club night: keeping beginners and advanced players happy";
-    ViewData["Description"] = "How to run a mixed-ability badminton club night that gives beginners and advanced players balanced, competitive games, without manually sorting everyone into level-based courts.";
-    ViewData["OgTitle"] = "Keeping beginners and advanced players both happy";
+    ViewData["Title"] = "Mixed-ability badminton club nights: balance is more than equal team totals";
+    ViewData["Description"] = "How to run a mixed-standard badminton night without either segregating everyone by grade or forcing extreme mismatches. Learn about team balance, four-player skill spread, bridge games, newcomer uncertainty and when level-based courts make sense.";
+    ViewData["OgTitle"] = "How to run a mixed-ability badminton club night";
 
-    const string published = "2026-07-05";
+    const string published = "2026-07-05";   // first publication - held deliberately; GuideSchema
+                                             // ties dateModified to it (#396), so advancing it
+                                             // would claim this page is new. Revised 2026-08-26.
     const string canonical = "https://www.epegboard.com/guides/mixed-ability-badminton-club-night";
 
     var faqPairs = new (string Q, string A)[]
     {
-        ("How do you run a badminton club night with mixed abilities?",
-         "Aim for close games rather than sorting players into level-based courts. On each game, pair a stronger player with a weaker one on each side so the two teams are evenly matched, and mix people across levels through the night so beginners get games with more experienced players. Watch the score lines: if a court keeps finishing 21-5 your pairings are off. Segregating strictly by grade can be right for coaching, but for an open club night, balanced mixed games keep the widest range of people happy."),
-        ("Should beginners and advanced players play together?",
-         "Yes, in balanced games. A beginner paired with a strong player against another balanced pair gets a proper, competitive game and learns fast, and most strong players are happy to help when the game is close. What does not work is strong-versus-weak, where one side is walked over. The skill is in the pairing, not in keeping the two groups apart."),
-        ("How do you stop advanced players getting bored at a mixed club night?",
-         "Give them regular close games. Advanced players are not bored by playing with weaker partners, they are bored by one-sided games. If every few rounds they get a genuinely competitive match, and the pairing is balanced so their side is not carrying a walkover, they stay engaged. Reserving the occasional round of top-level games among your strongest players also helps, as long as it does not eat into everyone else's court time."),
-        ("How do you keep beginners from feeling out of their depth?",
-         "Put them in balanced games from the start, not on a beginners-only court in the corner. A beginner on the same side as a stronger player, in a close game, feels included and improves, whereas being kept separate signals they are not really part of the night. A warm welcome, a quick word on how the night runs, and early varied games do more for retention than anything else."),
-        ("Is it better to split courts by ability?",
-         "Usually not for a social club night. Splitting by ability is simple to run but it caps beginners' improvement, isolates newcomers, and leaves courts unbalanced when numbers on each level do not divide evenly. Balanced mixed games are harder to organise by hand but give a better night for a wide ability spread. Level-based courts make more sense for focused coaching or when a group specifically wants a high-level practice.")
+        ("Should beginners and advanced badminton players play together?",
+         "Sometimes, but not as a universal policy. A moderate difference can produce an excellent game and useful social mixing. An extreme difference can make the weaker player avoid the shuttle and the stronger player cover most of the court. Aim for a manageable four-player spread as well as balanced teams."),
+        ("Is strong-plus-weak versus strong-plus-weak always balanced?",
+         "It may be balanced in predicted score while still being a poor experience. Doubles is interactive: stronger players can dominate the rally, weaker players may be targeted, and partnership roles can become distorted. Game quality depends on the range across all four players, not only the sum on each side."),
+        ("Should a club have graded courts?",
+         "They can be useful when the ability range is very wide, for coaching, or for a dedicated higher-level practice block. The problem is making them permanent social boundaries. A good mixed club can use temporary level bands while still creating bridge games between adjacent standards."),
+        ("How should you place a new player whose standard is unknown?",
+         "Treat the first few games as information gathering. Start around the standard they describe, use stable partners/opponents who can absorb a slightly wrong estimate, then adjust quickly. Do not make one first game into a formal trial or leave an obviously wrong estimate unchanged all evening."),
+        ("How do you keep stronger players at a mixed club?",
+         "Give them enough demanding badminton. That may include balanced mixed-standard games, but it should also include peer-level games and partnership practice where appropriate. Inclusion should not mean asking the strongest members to spend every game compensating for the widest gaps.")
     };
 
     var articleJsonLd = GuideSchema.Article(
-        "Mixed-ability club night: keeping beginners and advanced players happy",
-        "How to run a mixed-ability badminton club night that gives beginners and advanced players balanced, competitive games, without manually sorting everyone into level-based courts.",
+        "Mixed-ability badminton club nights: balance is more than equal team totals",
+        "How to run a mixed-standard badminton night without either segregating everyone by grade or forcing extreme mismatches. Learn about team balance, four-player skill spread, bridge games, newcomer uncertainty and when level-based courts make sense.",
         canonical, published);
     var faqJsonLd = GuideSchema.Faq(faqPairs);
 }
@@ -35,17 +37,16 @@
     <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
 }
 
-<!-- HERO -->
 <section class="page-hero" style="padding:0">
   <div class="wrap">
     <div class="inner">
-      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Mixed-ability nights</span></div>
-      <h1 style="margin-top:10px">Mixed-ability club night: keeping beginners and advanced players both happy</h1>
-      <p class="lede">A wide ability spread is the reality at most club nights, and it is the thing organisers wrestle with most. Get it right and everyone gets a good game. Get it wrong and your beginners drift off while your strongest players quietly look elsewhere.</p>
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Mixed ability</span></div>
+      <h1 style="margin-top:10px">Mixed-ability badminton: a close score is not the whole definition of a good game</h1>
+      <p class="lede">Put your best player with your newest player against the second-best and second-newest and the arithmetic may say “perfectly balanced”. Then watch the two strong players conduct a singles match around their partners.</p>
       <div class="guide-meta">
         <span class="gm-tag">Guide</span>
         <span>Club nights</span>
-        <span>9 min read</span>
+        <span>11 min read</span>
       </div>
     </div>
   </div>
@@ -53,77 +54,199 @@
 
 <section style="padding-top:40px">
   <div class="wrap" style="max-width:820px">
+
     <div class="guide-toc">
       <h4>In this guide</h4>
-      <a href="#problem">The mixed-ability problem</a>
-      <a href="#segregation">Why splitting by level is the easy wrong answer</a>
-      <a href="#balance">Balance the game, do not sort the players</a>
-      <a href="#byhand">Running a mixed night by hand</a>
-      <a href="#beginners">Looking after beginners</a>
-      <a href="#advanced">Keeping advanced players engaged</a>
-      <a href="#software">Where software takes over the hard part</a>
+      <a href="#two">There are two kinds of balance</a>
+      <a href="#extremes">Why extreme mixing can fail</a>
+      <a href="#bands">Why permanent grading can fail too</a>
+      <a href="#bridge">Use bridge games between nearby standards</a>
+      <a href="#new">Treat a newcomer as uncertain, not low</a>
+      <a href="#strong">Give strong players some strong-player badminton</a>
+      <a href="#developing">Do not turn developing players into a project</a>
+      <a href="#scores">What scorelines can tell you</a>
+      <a href="#manual">A manual picking method</a>
+      <a href="#software">What a mixed-ability picker should optimise</a>
+      <a href="#split">When splitting the session is the right answer</a>
       <a href="#faq">Frequently asked questions</a>
     </div>
 
     <div class="prose" style="margin-top:34px">
-      <p class="lead">Almost every badminton club night has a wide range of standards in the hall at once: absolute beginners, steady social players, and a few who could hold their own in a league. Keeping all of them happy on the same courts is the single hardest part of running a mixed club, and it is where good intentions most often come apart. This guide is about how to give everyone balanced, competitive games across that spread, without falling back on sorting people into level-based courts, which is the approach organisers reach for first and regret later.</p>
 
-      <h2 id="problem">The mixed-ability problem</h2>
-      <p>The tension is simple to state and hard to solve. Your beginners want games they can actually play, where they touch the shuttle and feel like they belong. Your advanced players want a real test. Put a beginner against your two strongest and it is a miserable game for everyone: the beginner is embarrassed, the strong pair is bored, and nobody wants a repeat. Do that a few weeks running and the beginner stops coming.</p>
-      <p>But the opposite, keeping the groups apart, has its own quiet costs. Beginners never get to play with better players, which is exactly how people improve, and they feel like second-class members stuck on the far court. So the organiser is caught between two bad options, and the answer that actually works is neither of them.</p>
+      <p class="lead"><strong>A mixed club needs to balance both the two teams and the four-player skill spread.</strong> Those are different problems. Equal team totals can predict a close result while the individual experience on court remains badly mismatched.</p>
 
-      <h2 id="segregation">Why splitting by level is the easy wrong answer</h2>
-      <p>The instinct is to divide the hall: strong players on courts one and two, everyone else on three and four. It is easy to run and it feels fair. It is also, for most social club nights, the wrong call. Here is why it keeps letting clubs down:</p>
+      <p>This is why neither extreme works as a universal rule: "keep standards separate" wastes opportunities to mix, while "always pair strongest with weakest" can create games that look ingenious on a spreadsheet and feel strange from the first rally.</p>
+
+      <h2 id="two">There are two kinds of balance</h2>
+
+      <p>Imagine four players rated, purely for illustration:</p>
+
+      <p><strong>1900, 1800, 1200, 1100.</strong></p>
+
+      <p>You can make teams of 1900 + 1100 versus 1800 + 1200. The totals are both 3000. On that crude measure, the game is perfectly balanced.</p>
+
+      <p>But the spread across the court is 800 rating points. That may matter enormously.</p>
+
+      <p>Now consider:</p>
+
+      <p><strong>1600, 1550, 1500, 1450.</strong></p>
+
+      <p>There are many ways to make close teams, and the four players are also operating in a narrower performance range.</p>
+
+      <p>A good picker therefore cares about at least:</p>
+
+      <ol>
+        <li><strong>team closeness:</strong> are the two sides expected to be competitive?</li>
+        <li><strong>game shape:</strong> is the skill spread among the four reasonable for the kind of session you are running?</li>
+      </ol>
+
+      <p>The second is why "balanced teams" and "good game" should not be synonyms.</p>
+
+      <h2 id="extremes">Why extreme mixing can fail</h2>
+
+      <p>Doubles creates several failure modes when the gap is huge.</p>
+
+      <p><strong>The stronger player can take too much court.</strong> Often this is well-intentioned: they see shuttles their partner may struggle with and start covering them. The weaker player gets fewer meaningful contacts.</p>
+
+      <p><strong>The weaker player can become the target.</strong> In anything resembling competitive play, the tactically correct strategy may be to direct pressure towards the less secure player. A supposedly inclusive game can turn into twenty rallies of discovering the same weakness.</p>
+
+      <p><strong>Shot expectations differ.</strong> One player anticipates rotations, interceptions and attacking patterns their partner has not learned yet. Both become frustrated for different reasons.</p>
+
+      <p><strong>The result can still be close.</strong> This is the deceptive bit. Two strong players carrying two developing partners can produce 21-19 while two participants barely experience the game normally.</p>
+
+      <p>None of that means different standards should not mix. It means there is a useful distance and an unhelpful distance.</p>
+
+      <h2 id="bands">Why permanent grading can fail too</h2>
+
+      <p>The opposite solution is to label courts A, B and C and leave everybody there.</p>
+
+      <p>That solves game-shape problems immediately. It also creates new ones.</p>
+
+      <p>Hard categories make boundaries socially visible. The strongest B may be almost indistinguishable from the weakest A but get a completely different set of partners. A player who improves may wait weeks for someone to decide they are allowed onto the next court.</p>
+
+      <p>Attendance also refuses to cooperate. Seven A players and seventeen B/C players do not divide themselves according to the number of courts you happened to hire.</p>
+
+      <p>Level-based courts are useful tools when they have a reason - coaching, high-level match practice, a beginner introduction, a large enough population for each band. They become limiting when the label replaces game-by-game judgement.</p>
+
+      <h2 id="bridge">Use bridge games between nearby standards</h2>
+
+      <p>The most useful mixing often happens across <strong>adjacent</strong> standards.</p>
+
+      <p>A developing player who is becoming comfortable in club doubles plays with three solid intermediates. A strong intermediate joins two advanced players and another strong intermediate. A newcomer who clearly has technique is moved up after one exploratory game.</p>
+
+      <p>Think of these as bridge games. They connect the club's skill network without asking every game to span from absolute beginner to county player.</p>
+
+      <p>Over an evening, a player's mix might be:</p>
+
       <ul>
-        <li><strong>It caps improvement.</strong> Players get better by playing people better than them. Wall your beginners off and you remove the main thing that would move them up.</li>
-        <li><strong>It isolates newcomers.</strong> Being sent to the beginners' court on your first night is a clear signal that you are not really part of the club yet. That is the opposite of what keeps people coming back.</li>
-        <li><strong>The numbers rarely divide neatly.</strong> You almost never have exactly the right count on each level to fill courts evenly, so one group sits out more than the other and courts go half-empty.</li>
-        <li><strong>Standards are not tidy bands.</strong> The gap between your best beginner and your weakest intermediate is often smaller than the gaps within each group. Drawing hard lines cuts across the real spread of ability.</li>
+        <li>several games close to their own standard;</li>
+        <li>one game where they are among the stronger players;</li>
+        <li>one where they are stretched by better opposition;</li>
+        <li>perhaps a requested or fixed-pair game.</li>
       </ul>
-      <p>Level-based courts do have their place: a focused coaching block, or a group who specifically want a high-level practice session. As the default for a social night with a broad membership, they cost you more than they save.</p>
 
-      <h2 id="balance">Balance the game, do not sort the players</h2>
-      <p>The approach that works is to stop thinking about which court someone belongs on, and start thinking about whether each individual game is even. A balanced game does not mean four players of identical standard. It means two evenly-matched sides, and you get that by pairing across levels:</p>
+      <p>That is a richer night than either strict grading or forced maximum mixing.</p>
+
+      <h2 id="new">Treat a newcomer as uncertain, not low</h2>
+
+      <p>"I haven't played at a club before" can describe someone holding a racket for the first time or somebody who played to a high level at university fifteen years ago.</p>
+
+      <p>Do not convert unknown into beginner.</p>
+
+      <p>Use the first game as a low-stakes measurement. Pick stable players around the approximate standard the newcomer describes. People with good control and adaptable games are particularly useful because a slightly wrong estimate does not immediately destroy the match.</p>
+
+      <p>Then adjust.</p>
+
+      <p>If the newcomer is clearly out of place after five rallies, the organiser has learned something. You do not need to wait for three 21-5 results before admitting the initial grade was wrong.</p>
+
+      <p>A rating system should behave similarly: a new estimate should be more willing to move than one backed by years of results.</p>
+
+      <h2 id="strong">Give strong players some strong-player badminton</h2>
+
+      <p>It is convenient to say strong players only care whether the final score is close. Some do; some do not.</p>
+
+      <p>A player preparing for league first division may want sustained fast exchanges with three players who read the same patterns. A strong front-court player may want a regular partner behind them. A player who spends every social game moderating their smash and covering a developing partner can reasonably want something else from part of the evening.</p>
+
+      <p>So schedule or permit peer-level games.</p>
+
+      <p>The fairness question is court access, not whether every game must represent the club's full membership. If everyone gets a reasonable share of the courts, there is nothing inherently exclusionary about one strong game happening alongside a developing one.</p>
+
+      <p>The warning is when "occasional strong game" becomes a permanent private court that consumes shared capacity without an explicit club policy.</p>
+
+      <h2 id="developing">Do not turn developing players into a project</h2>
+
+      <p>Not every game with a better player needs to become coaching.</p>
+
+      <p>Unrequested instruction after every rally can make a social night feel like an assessment. Often the more useful inclusion is simply playing normal badminton: serve to them, trust them with their area, talk as you would with any partner and let the rally teach some of the lesson.</p>
+
+      <p>If the club offers coaching, make that explicit and separate where possible. Club night can then remain a place to use skills rather than receive a correction on each one.</p>
+
+      <h2 id="scores">What scorelines can tell you</h2>
+
+      <p>Score is useful evidence, but diagnose it carefully.</p>
+
+      <p>A stream of 21-6 results means your predictions or pairings need attention. It does not tell you automatically <em>why</em>.</p>
+
+      <p>Possible causes include:</p>
+
       <ul>
-        <li>Put a stronger player with a weaker one on each side, rather than the two strongest together against the two weakest.</li>
-        <li>Aim for a close final score. If most games are landing somewhere near 21-17 rather than 21-6, your pairing is working.</li>
-        <li>Let the make-up of each game shift through the night, so a beginner plays with and against a range of people rather than the same two every round.</li>
+        <li>wrong player ratings;</li>
+        <li>equal-looking team totals hiding a poor four-player shape;</li>
+        <li>one partnership working unusually well;</li>
+        <li>a player carrying an injury;</li>
+        <li>styles that create a bad match-up;</li>
+        <li>or ordinary variance in a short game.</li>
       </ul>
-      <p>Done this way, a beginner and an advanced player end up on court together in a game that is genuinely competitive. The beginner gets a proper game and picks things up from a better player. The advanced player gets a close match, which is what they actually wanted, not a walkover. Nobody is sorted, labelled or sidelined. The whole hall plays together, and it works because the games are even, not because the players are the same.</p>
 
-      <h2 id="byhand">Running a mixed night by hand</h2>
-      <p>If you are working a board, balancing a wide spread takes deliberate effort. A few habits help:</p>
+      <p>Use repeated patterns, not one score, to redesign policy. Use an obviously wrong individual game as immediate evidence to adjust that evening.</p>
+
+      <h2 id="manual">A manual picking method</h2>
+
+      <p>When a court becomes free:</p>
+
+      <ol>
+        <li>identify the players fairly due consideration;</li>
+        <li>remove combinations with an extreme four-player spread unless there is a specific reason for them;</li>
+        <li>among the remaining fours, find teams that are close;</li>
+        <li>prefer fresh partners/opponents if game quality remains similar;</li>
+        <li>occasionally create a bridge game or peer-level game deliberately;</li>
+        <li>watch the result and adjust uncertain players quickly.</li>
+      </ol>
+
+      <p>This is harder than "strongest + weakest on both sides", but it produces a more natural session.</p>
+
+      <h2 id="software">What a mixed-ability picker should optimise</h2>
+
+      <p>A good algorithm should not simply minimise the difference between the two team ratings.</p>
+
+      <p>It should also be able to penalise a wide spread across the four players, respect wait fairness, avoid repetitive combinations and understand any hard constraints the club cares about.</p>
+
+      <p><a href="/features/club-nights">ePegboard's game picker</a> considers both expected closeness and skill spread alongside waiting, queue position and recent partner/opponent history. That distinction matters most in exactly this kind of club: it can reject a mathematically even but oddly shaped 1900+1100 versus 1800+1200 game in favour of a four whose standards fit together better.</p>
+
+      <p>Human override remains important. A rating cannot know that somebody is returning from six months out or that tonight's objective is league-pair practice unless the club gives the system that context.</p>
+
+      <h2 id="split">When splitting the session is the right answer</h2>
+
+      <p>Sometimes the ability range is too wide for one rotation to serve everybody well.</p>
+
+      <p>Signs include:</p>
+
       <ul>
-        <li><strong>Split your strong pairs.</strong> Resist the temptation to let your two best players team up every round. Spread them across games so each court has a balancing influence.</li>
-        <li><strong>Read the score lines.</strong> A run of lopsided results is your signal to adjust. If one court keeps finishing 21-5, remake the next game there differently.</li>
-        <li><strong>Rotate the pairings.</strong> Keep a rough mental note of who has partnered whom, and deliberately break up combinations that keep recurring, so the mixing stays fresh.</li>
-        <li><strong>Watch your quiet players.</strong> Beginners and newcomers are the easiest to accidentally leave on the bench. Make a point of getting them into balanced games early and often.</li>
-      </ul>
-      <p>This is a real skill, and doing it consistently across a two-hour night, while also taking scores and welcoming latecomers, is genuinely demanding. It rests on one person holding the whole picture in their head, which is exactly why it is the part that most often slips.</p>
-
-      <h2 id="beginners">Looking after beginners</h2>
-      <p>Whether a beginner comes back is usually decided in their first night or two, and it turns almost entirely on how included they felt. The things that matter most:</p>
-      <ul>
-        <li>Give them a warm welcome and a quick word on how the night runs, so they are not left guessing.</li>
-        <li>Get them into balanced, competitive games from the start, not parked on a beginners-only court.</li>
-        <li>Make sure they touch the shuttle and feel part of the game, which a good pairing takes care of.</li>
-        <li>Have a quiet word afterwards, and follow up if they do not come back the next week.</li>
+        <li>only a tiny number of viable games connect the top and bottom of the room;</li>
+        <li>strong players repeatedly need to moderate normal shots;</li>
+        <li>beginners spend most games under pressure they cannot yet process;</li>
+        <li>the picker keeps recycling the same bridge players because they are the only connectors;</li>
+        <li>coaching needs and competitive-play needs are happening simultaneously.</li>
       </ul>
 
-      <h2 id="advanced">Keeping advanced players engaged</h2>
-      <p>Your strongest players are not put off by playing with weaker partners. They are put off by one-sided games and by feeling their court time is being spent carrying walkovers with nothing back. Keep them happy by making sure they get regular close games, where a good pairing means their side is genuinely tested. The occasional round of top-level games among your best players is fine too, as a treat rather than a fixture, as long as it does not quietly eat into everyone else's share of the courts. Handled well, a mixed night gives your advanced players plenty of competitive badminton and the satisfaction of helping the club's newer players come on.</p>
+      <p>Then create separate but permeable sessions or court blocks: beginner/improver, general club, advanced practice. Let people move as their standard and goals change.</p>
 
-      <h2 id="software">Where software takes over the hard part</h2>
-      <p>Balancing a wide ability spread by hand, game after game, all evening, is the hardest job on a club night and the one a person is least able to keep up reliably. It is exactly the load <a href="/features/club-nights">ePegboard</a> was built to carry. It makes each game by matching players so the two sides are even, mixing across levels through the night, so beginners get competitive games with stronger players and advanced players get a real test, without anyone being sorted onto a level-based court. It keeps court time fair across the whole spread, so your quieter players are not left out, and it shows why each game was picked, so a balanced-looking match is something the room can see rather than take on trust.</p>
-      <p>All of that runs on a player rating that reflects how people actually perform, not just who won, and updates after every game, so the balancing stays accurate as standards shift through the season. It means the organiser can run a genuinely mixed, fair night and play in it too. It is <a href="/badminton-club-management-software">free for clubs</a>, runs in any browser with nothing to install, and clubs have already run more than 1,100 sessions and over 33,000 games on it.</p>
+      <p>Segmentation is not failure. <strong>Permanent social segregation without a route between groups</strong> is the part worth avoiding.</p>
 
       <div class="guide-callout">
-        <h4>Balanced games across every level, picked for you</h4>
-        <p>ePegboard matches players so beginners and advanced players get close, competitive games together, and keeps court time fair across the whole spread. Free for clubs, nothing to install.</p>
-        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+        <h4>Balance has a shape</h4>
+        <p style="margin-top:8px">Do not ask only “are the two teams equal?” Ask “will all four players be able to play recognisable badminton in this game?” The best mixed-ability sessions optimise both.</p>
       </div>
-
-      <p>If mixed abilities are your main challenge, our guides on <a href="/guides/badminton-club-night-rotation">fair player rotation</a> and <a href="/guides/fair-court-time-busy-club-night">fair court time</a> go deeper on the parts around it.</p>
 
       <h2 id="faq">Frequently asked questions</h2>
       @foreach (var f in faqPairs)
@@ -131,19 +254,7 @@
         <h3>@f.Q</h3>
         <p>@f.A</p>
       }
-    </div>
-  </div>
-</section>
 
-<!-- CTA -->
-<section class="cta" style="margin-top:56px">
-  <div class="wrap">
-    <h2>Give everyone a good game, whatever their level</h2>
-    <p>Balanced, varied games across a wide ability spread, picked for you. Free for clubs.</p>
-    <div class="cta-actions">
-      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
-      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
     </div>
-    <p class="fine">More guides on running a badminton club are in the <a href="/guides">guides section</a>.</p>
   </div>
 </section>

@@ -2,30 +2,32 @@
 @using PegboardWebSite.Services
 @{
     Layout = "_LayoutMarketing";
-    ViewData["Title"] = "How to give everyone fair court time on a busy night";
-    ViewData["Description"] = "Uneven court time is the number-one complaint at busy badminton clubs. Here is what fair court time really means, why it goes wrong, and how to keep everyone's share even across a busy session.";
-    ViewData["OgTitle"] = "Fair court time on a busy club night";
+    ViewData["Title"] = "Fair court time at badminton club nights: the maths behind the waiting";
+    ViewData["Description"] = "A busy badminton night has a hard capacity limit. Learn how players-per-court determines the maximum playing share, why equal game counts can still be unfair, and how to handle long games, late arrivals and queue skips.";
+    ViewData["OgTitle"] = "Fair court time: the maths behind the waiting";
 
-    const string published = "2026-07-01";
+    const string published = "2026-07-01";   // first publication - held deliberately; GuideSchema
+                                             // ties dateModified to it (#396), so advancing it
+                                             // would claim this page is new. Revised 2026-08-26.
     const string canonical = "https://www.epegboard.com/guides/fair-court-time-busy-club-night";
 
     var faqPairs = new (string Q, string A)[]
     {
-        ("What counts as fair court time at a club night?",
-         "Fair court time means everyone gets a similar share of playing time for the time they are present, not necessarily the same number of games. A player there all evening should get more games than someone who arrived in the last half hour, but each should get their fair share of the time they were actually there. Measuring against time present, rather than games played or sign-in order, is the key."),
-        ("Why do some players always seem to sit out more?",
-         "Usually because rotation is tracked by memory or sign-in order rather than by real waiting time. Quieter players do not chase a game, latecomers get treated as if they have been waiting all night, and long games on one court leave that group behind. None of it is deliberate, which is exactly why it keeps happening; the fix is to track who has actually been waiting longest rather than relying on who speaks up."),
-        ("How do you handle latecomers fairly?",
-         "Add them to the queue at the point they arrive, not the front and not forgotten at the back. From then on they should be treated by how long they have actually been waiting, so they are not pushed behind players who have already had several games, but they also do not leapfrog people who have been waiting a while. The aim is their fair share of the time that is left."),
-        ("Should stronger players get less court time to make it fair?",
-         "No. Fair court time is about time present, not ability. Everyone who turns up deserves a similar share regardless of standard. Ability belongs in how you balance the games, pairing and matching so games are close, not in how much anyone plays. Keeping those two things separate is what makes a night feel fair to strong and weak players alike."),
-        ("Can software really keep court time even?",
-         "Yes, and it is one of the things software does far better than a person. It counts exactly how long each player has been waiting, factors that into every game it picks, and never forgets the quiet player in the corner. It can also stop anyone waiting too long by prioritising whoever has been out longest, which is very hard to keep track of by eye on a busy night.")
+        ("How much court time can each player get?",
+         "For doubles, four places are available on each court. If N players share C continuously occupied courts, the theoretical average playing share is 4C divided by N, capped at 100%. With 24 players and 3 courts, for example, only 12 can play at once, so the group average cannot exceed 50% of the session."),
+        ("Is the same number of games always fair?",
+         "No. Games have different lengths and players are present for different amounts of time. Equal game counts can hide substantial differences in actual minutes played, while a late arrival should not be given a whole evening's game count in the remaining hour."),
+        ("Should a player who had a very long game wait longer afterwards?",
+         "There is no universal rule, but if your fairness objective is actual court time rather than number of starts, game duration matters. A player who has just had a 28-minute game has received more of the scarce court resource than someone whose previous game lasted 11 minutes. Clubs can choose whether to compensate for that."),
+        ("How should late arrivals be treated?",
+         "Give them no credit for time before they arrived, then count their waiting normally from arrival. They should not jump people who were already waiting, but nor should they remain permanently behind players who have since returned to court."),
+        ("Can software create more court time?",
+         "No. It can reduce avoidable idle time and distribute the available capacity more consistently, but it cannot beat the physical limit set by courts, players and session length. If waits remain unacceptable with every court occupied, the solution is more capacity, fewer attendees or a longer session.")
     };
 
     var articleJsonLd = GuideSchema.Article(
-        "How to give everyone fair court time on a busy night",
-        "What fair court time really means at a badminton club, why it goes wrong, and how to keep everyone's share even across a busy session.",
+        "Fair court time at badminton club nights: the maths behind the waiting",
+        "A busy badminton night has a hard capacity limit. Learn how players-per-court determines the maximum playing share, why equal game counts can still be unfair, and how to handle long games, late arrivals and queue skips.",
         canonical, published);
     var faqJsonLd = GuideSchema.Faq(faqPairs);
 }
@@ -35,17 +37,16 @@
     <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
 }
 
-<!-- HERO -->
 <section class="page-hero" style="padding:0">
   <div class="wrap">
     <div class="inner">
       <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Fair court time</span></div>
-      <h1 style="margin-top:10px">How to give everyone fair court time on a busy night</h1>
-      <p class="lede">Ask a club what causes the most grumbling and it is almost never the shuttles or the hall. It is court time. Someone always feels they sat out too long while others played twice. Here is how to make sure the share is genuinely even.</p>
+      <h1 style="margin-top:10px">Fair court time: the maths behind the waiting</h1>
+      <p class="lede">If 24 players share three doubles courts, half the room must be off court at any instant. No rotation system can fix that. What it can do is decide whether the unavoidable waiting is shared sensibly.</p>
       <div class="guide-meta">
         <span class="gm-tag">Guide</span>
         <span>Fairness</span>
-        <span>8 min read</span>
+        <span>10 min read</span>
       </div>
     </div>
   </div>
@@ -53,51 +54,169 @@
 
 <section style="padding-top:40px">
   <div class="wrap" style="max-width:820px">
+
     <div class="guide-toc">
       <h4>In this guide</h4>
-      <a href="#meaning">What fair court time actually means</a>
-      <a href="#wrong">Why it goes wrong</a>
-      <a href="#byhand">Keeping it even by hand</a>
-      <a href="#software">Where software helps most</a>
+      <a href="#capacity">Start with the physical capacity</a>
+      <a href="#games">Why games played is only a proxy</a>
+      <a href="#present">Fairness needs a denominator</a>
+      <a href="#long">Long games create hidden inequality</a>
+      <a href="#idle">The one kind of waiting you can eliminate</a>
+      <a href="#late">Late arrivals and voluntary sit-outs</a>
+      <a href="#busy">When the night is simply too busy</a>
+      <a href="#manual">A manual fairness method that works</a>
+      <a href="#software">What software can and cannot solve</a>
       <a href="#faq">Frequently asked questions</a>
     </div>
 
     <div class="prose" style="margin-top:34px">
-      <p class="lead">Uneven court time is the single most common complaint at a busy badminton club, and the frustrating thing is that it is almost never anyone's fault. No organiser sets out to leave someone sitting; it happens because keeping track of everyone's playing time in a busy hall is genuinely hard. This guide breaks down what fair court time really means, why it slips, and the practical ways to keep everyone's share even, from a few good habits at the board to letting software count it for you. It sits alongside our broader guide to <a href="/guides/badminton-club-night-rotation">fair player rotation</a>.</p>
 
-      <h2 id="meaning">What fair court time actually means</h2>
-      <p>The most useful definition is simple: everyone should get a similar share of court time for the time they are present. That last phrase does a lot of work. Someone who plays from seven until ten should get more games than someone who rolls in at half nine, and that is fair. What is not fair is two people who were both there all evening walking away having played very different amounts.</p>
-      <p>So the thing to measure is not games played in total, and definitely not who signed in first. It is each player's share relative to how long they have actually been in the hall. A newcomer who arrived late is not owed a full night's worth of games, but they are owed their fair slice of the time that was left. Get that idea straight and most court-time disputes dissolve, because you can point to it.</p>
+      <p class="lead"><strong>Fair court time starts with an uncomfortable fact: on a busy night, most of the waiting is not an organisational failure.</strong> It is arithmetic. Four players fit on a doubles court. Once more than four players per court attend, somebody has to be sitting out.</p>
 
-      <h2 id="wrong">Why it goes wrong</h2>
-      <p>Uneven court time creeps in through a handful of familiar routes:</p>
+      <p>That distinction matters because clubs often try to solve a capacity problem with increasingly elaborate rotation rules. If every court is continuously occupied and the average player is still waiting too long, the queue is not broken. The session is full.</p>
+
+      <h2 id="capacity">Start with the physical capacity</h2>
+
+      <p>For doubles, the theoretical average share of time on court is:</p>
+
+      <p style="text-align:center;font-size:1.08rem"><strong>4 × courts ÷ players present</strong></p>
+
+      <p>Cap the result at 100%. It assumes every court is occupied continuously and ignores changeovers, so reality will normally be a little worse.</p>
+
+      <div class="cmp-wrap">
+        <table class="cmp-table">
+          <thead>
+            <tr><th>Courts</th><th>Players</th><th>Players per court</th><th>Maximum average playing share</th><th>Max average play in 2 hours</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2</td><td>12</td><td>6</td><td>67%</td><td>80 min</td></tr>
+            <tr><td>3</td><td>20</td><td>6.7</td><td>60%</td><td>72 min</td></tr>
+            <tr><td>3</td><td>24</td><td>8</td><td>50%</td><td>60 min</td></tr>
+            <tr><td>4</td><td>28</td><td>7</td><td>57%</td><td>About 69 min</td></tr>
+            <tr><td>4</td><td>32</td><td>8</td><td>50%</td><td>60 min</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="margin-top:18px">This is the number organisers should know before promising "plenty of games". Eight players per court means that, even under perfect utilisation, the average person is waiting as much as playing.</p>
+
+      <p>That may be acceptable. Many clubs deliberately trade some waiting for a lower fee and a larger social group. The important thing is to recognise the trade rather than blame the person running the board.</p>
+
+      <h2 id="games">Why games played is only a proxy</h2>
+
+      <p>Most clubs count games because it is easy. Four games each sounds fair.</p>
+
+      <p>But one game might take nine minutes and another twenty-four. A player who wins three quick games 21-8 can record more "games" while using less court time than someone who has two long deuce games.</p>
+
+      <p>So there are at least three things a club could mean by equal court time:</p>
+
       <ul>
-        <li><strong>Tracking by memory.</strong> On a busy night nobody can accurately hold in their head who has played how much. The quiet player who does not chase a game slips down.</li>
-        <li><strong>Sign-in order, not waiting time.</strong> Ordering by who arrived treats a latecomer as if they have been waiting all evening, or buries them at the back forever.</li>
-        <li><strong>Long games on one court.</strong> A single drawn-out three-setter leaves that group of four well behind everyone else, and it is easy to forget to make it up to them.</li>
-        <li><strong>The squeaky wheel.</strong> Confident players ask for a game; reserved ones wait to be picked. Without a system, the confident ones play more.</li>
+        <li><strong>equal starts:</strong> similar number of games;</li>
+        <li><strong>equal minutes:</strong> similar actual time on court;</li>
+        <li><strong>equal opportunity:</strong> similar share of the available session while each person was present and willing to play.</li>
       </ul>
-      <p>Notice that none of these is bad intent. They are all just the limits of doing a hard counting job by eye, which is why the same few names end up feeling short-changed week after week.</p>
 
-      <h2 id="byhand">Keeping it even by hand</h2>
-      <p>If you are running a board, these habits make a real difference:</p>
+      <p>For most social clubs, equal opportunity is the best practical target. Exact minutes would require timing every game and can over-correct normal variation. But when the differences become large, pretending all games are equivalent stops feeling fair.</p>
+
+      <h2 id="present">Fairness needs a denominator</h2>
+
+      <p>Two players with four games each are not necessarily equally treated.</p>
+
+      <p>If Priya was available for the full two-hour session and Dan arrived for the final hour, equal game counts would mean Dan received twice the game rate.</p>
+
+      <p>That is why the denominator should be <strong>time available</strong>, not attendance on the sign-in sheet.</p>
+
+      <p>Availability matters too. If somebody chooses to sit out for twenty minutes, that period should not build a claim on the next three courts. Likewise a player who leaves, changes clothes and spends fifteen minutes talking before checking out should not be accumulating "wait".</p>
+
+      <p>A useful fairness record therefore needs states:</p>
+
+      <p><strong>playing → waiting → voluntarily resting → waiting again → gone.</strong></p>
+
+      <p>A pegboard can represent some of that. An organiser can remember some. A digital system can timestamp all of it. The principle is the same whichever tool you use.</p>
+
+      <h2 id="long">Long games create hidden inequality</h2>
+
+      <p>Imagine Court 1 finishes three games while Court 2 is still grinding through a 29-27 marathon.</p>
+
+      <p>The four on Court 2 have not been treated badly - they have been playing the whole time. But when they finally come off, a simple "put them at the back" rule can produce odd totals because the rest of the room has cycled through more starts.</p>
+
+      <p>This is where clubs need to decide what they value.</p>
+
+      <p>If you optimise <strong>games played</strong>, you may try to get the long-game players back on quickly so their count catches up. That actually gives them even more court time.</p>
+
+      <p>If you optimise <strong>court-time share</strong>, they have already received plenty of the scarce resource and can wait normally.</p>
+
+      <p>The second interpretation is usually more coherent. It also explains why counting wait duration is more useful than simply comparing game totals.</p>
+
+      <h2 id="idle">The one kind of waiting you can eliminate</h2>
+
+      <p>Some waiting is mathematically unavoidable. <strong>Idle court time while willing players are waiting is not.</strong></p>
+
+      <p>A three-minute gap between games on four courts, repeated six times during a night, loses 72 court-minutes:</p>
+
+      <p style="text-align:center;font-size:1.05rem"><strong>3 minutes × 4 courts × 6 changeovers = 72 court-minutes</strong></p>
+
+      <p>In doubles terms that is 288 player-minutes of capacity - nearly five hours of individual playing opportunity collectively lost to changeovers.</p>
+
+      <p>You will never get transitions to zero. Players need to leave, scores need recording and the next four need to reach the court. But the next game should be decided before the previous one ends whenever possible.</p>
+
+      <p>This is often the highest-return operational improvement on a crowded night: not a more sophisticated fairness formula, just fewer empty courts.</p>
+
+      <h2 id="late">Late arrivals and voluntary sit-outs</h2>
+
+      <p>Latecomers expose whether a club is tracking fairness or merely preserving a line.</p>
+
+      <p>When somebody arrives, they have accumulated <strong>zero previous waiting</strong>. Put them into the live queue without pretending they were available earlier.</p>
+
+      <p>From that moment onwards, however, their waiting is real. Once people who were ahead have played and returned, the newcomer should be able to move ahead of them naturally. "You arrived last, so you stay behind everybody all night" is no more defensible than putting them straight on court.</p>
+
+      <p>Voluntary rests are similar. Pause the fairness clock while somebody sits out by choice; restart it when they become available again. Otherwise the system rewards somebody for taking a break with immediate priority over people who remained ready to play.</p>
+
+      <h2 id="busy">When the night is simply too busy</h2>
+
+      <p>Suppose your rotation is transparent, every court is constantly occupied, late arrivals are handled properly and the average player still spends an hour of a two-hour night off court.</p>
+
+      <p>You have exhausted the scheduling fixes.</p>
+
+      <p>The remaining levers are physical or commercial:</p>
+
       <ul>
-        <li>Track who has been sitting out longest and give them the next game, rather than going by who asks or who signed in first.</li>
-        <li>When you add a latecomer, slot them in by arrival time and then treat them by real waiting time from that point.</li>
-        <li>Keep an eye on the slow court and make up the difference to a group who got stuck in a long game.</li>
-        <li>Make a point of pulling in the quiet players; they are the ones a memory-based system loses.</li>
-        <li>Set a rough ceiling in your head for how long anyone should wait, and treat crossing it as a problem to fix immediately.</li>
+        <li>add a court;</li>
+        <li>extend the session;</li>
+        <li>cap attendance or use booking;</li>
+        <li>split the session into two groups or standards;</li>
+        <li>add a second club night;</li>
+        <li>or accept the wait and price/describe the session accordingly.</li>
       </ul>
-      <p>Done well this keeps things fair, but it is relentless, and it depends entirely on one person concentrating for the whole session. Look away to take a payment or answer a question and the count drifts.</p>
 
-      <h2 id="software">Where software helps most</h2>
-      <p>Court time is the area where software has the clearest advantage over even a very good organiser, because it is fundamentally a counting problem, and counting is what computers are for. <a href="/features/club-nights">ePegboard</a> knows exactly how long every player has been waiting, factors that into every game it suggests, and never loses track of the quiet person in the corner. It keeps each player's share even for the time they are present, prioritises whoever has been waiting longest, and can make sure nobody is left sitting past a reasonable limit.</p>
-      <p>Because the numbers are on screen, fairness stops being a matter of trust and becomes something the whole room can see, which takes the heat out of the conversation entirely. It handles latecomers and drop-ins without distorting anyone's share, and it does all of it while the organiser is free to play. It is free for clubs and runs in any browser.</p>
+      <p>Software cannot create court capacity. Any product that implies otherwise is solving the wrong equation.</p>
+
+      <h2 id="manual">A manual fairness method that works</h2>
+
+      <p>If you run a physical board, keep the rule set small:</p>
+
+      <ol>
+        <li>Players become eligible when they come off court or explicitly rejoin after a rest.</li>
+        <li>Record the order in which they became eligible.</li>
+        <li>Normally include whoever has waited longest in the next game.</li>
+        <li>If you skip somebody to avoid a terrible match, keep them at the front for the next suitable game.</li>
+        <li>Do not "catch up" players purely because their game count is low if their previous games were unusually long.</li>
+        <li>Prepare the next four before a court becomes free.</li>
+      </ol>
+
+      <p>This will not equalise every minute. It will produce a system members can understand and audit, which is often more important than theoretical optimisation.</p>
+
+      <h2 id="software">What software can and cannot solve</h2>
+
+      <p><a href="/features/club-nights">ePegboard</a> can timestamp the states a board only implies: who is playing, waiting or sitting out, how long they have waited, and what has happened earlier in the session. Its picker can use that alongside player level and pairing history when selecting the next four.</p>
+
+      <p>The advantage is consistency rather than magic. The quiet player does not need to remind the organiser they have been waiting; the late arrival does not receive fictional credit for the first hour; a deliberate skip can remain visible.</p>
+
+      <p>But the capacity equation still wins. If thirty-two players are sharing four doubles courts, only sixteen can play at once. The best software can distribute the other sixteen people's waiting well and keep changeovers short. It cannot make Court 5 appear.</p>
 
       <div class="guide-callout">
-        <h4>Let the counting look after itself</h4>
-        <p>ePegboard tracks everyone's waiting time and keeps court time even, automatically, so no one gets left on the bench. Free for clubs.</p>
-        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+        <h4>Diagnose before you optimise</h4>
+        <p style="margin-top:8px"><strong>If courts are idle while players wait, fix the operation. If some people consistently wait more than others, fix the rotation. If everybody waits too much with every court full, fix the capacity.</strong></p>
       </div>
 
       <h2 id="faq">Frequently asked questions</h2>
@@ -106,19 +225,9 @@
         <h3>@f.Q</h3>
         <p>@f.A</p>
       }
-    </div>
-  </div>
-</section>
 
-<!-- CTA -->
-<section class="cta" style="margin-top:56px">
-  <div class="wrap">
-    <h2>Even court time, every night</h2>
-    <p>No more grumbling about who sat out. ePegboard keeps everyone's share fair. Free for clubs.</p>
-    <div class="cta-actions">
-      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
-      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
+      <p>For the broader policy behind who plays next, see <a href="/guides/badminton-club-night-rotation">badminton club-night rotation</a>. If your next question is whether to restrict attendance or add courts, the same capacity arithmetic should drive the decision.</p>
+
     </div>
-    <p class="fine">More on running a fair night in the <a href="/guides">guides section</a>.</p>
   </div>
 </section>

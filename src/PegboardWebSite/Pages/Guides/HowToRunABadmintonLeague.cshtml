@@ -2,30 +2,32 @@
 @using PegboardWebSite.Services
 @{
     Layout = "_LayoutMarketing";
-    ViewData["Title"] = "How to run a local inter-club badminton league: a secretary's guide";
-    ViewData["Description"] = "A practical guide for league secretaries: setting up divisions, drawing fixtures, collecting and publishing results, and handling promotion and relegation for a local inter-club badminton league.";
-    ViewData["OgTitle"] = "How to run a local inter-club badminton league";
+    ViewData["Title"] = "How to run a local badminton league: write the awkward rules before you need them";
+    ViewData["Description"] = "A practical guide to running an inter-club badminton league: divisions, formats, player eligibility, fixtures, postponements, incomplete teams, results, disputes, promotion and the awkward cases that decide whether clubs trust the competition.";
+    ViewData["OgTitle"] = "How to run a local badminton league";
 
-    const string published = "2026-07-05";
+    const string published = "2026-07-05";   // first publication - held deliberately; GuideSchema
+                                             // ties dateModified to it (#396), so advancing it
+                                             // would claim this page is new. Revised 2026-08-26.
     const string canonical = "https://www.epegboard.com/guides/how-to-run-a-local-badminton-league";
 
     var faqPairs = new (string Q, string A)[]
     {
-        ("How do you set up a local badminton league?",
-         "Gather enough clubs willing to enter teams, agree a match format (typically a set number of doubles rubbers between two teams), and organise the teams into divisions by standard. Draw a fixture so every team plays every other home and away, set a results-reporting process, and agree the points system and the promotion and relegation rules up front. Appoint a secretary to run the fixtures and table. A committee of the participating clubs usually governs it and settles disputes."),
-        ("How many teams do you need for a badminton league?",
-         "A single division works from about six to ten teams, which gives a full home-and-away season without matches being too sparse or too crowded. Fewer than six and teams play each other too often; many more than ten in one division makes for a very long season, so at that point you split into two or more divisions by standard, with promotion and relegation between them."),
-        ("How does promotion and relegation work in a badminton league?",
-         "At the end of the season, the top one or two teams in each division below the top are promoted, and the bottom one or two in each division above the lowest are relegated, swapping places. Agree the exact numbers before the season so it is clear, and decide how to break ties in the table (usually match points first, then rubbers or games won, then points difference). Publish the rules so every club knows what they are playing for."),
-        ("How do you divide teams into divisions?",
-         "For an established league, divisions are set by the previous season's results through promotion and relegation. For a new league, or a new team joining, you seed by known standard: ask clubs to place their teams honestly, use any past results you have, and be ready to adjust after the first season once real results show where teams actually belong. Play-based ratings from club sessions can help sense-check where a new team sits before the season starts."),
-        ("What is the best points system for a badminton league?",
-         "The common approach is to award match points for the overall result (for example, points for a win, fewer for a draw), and to count the individual rubbers or games within each match as the first tie-break. Keep it simple and decide it before the season. What matters most is that the system is agreed, published, and applied consistently, so the final table is one nobody argues with.")
+        ("How many teams should a badminton league division contain?",
+         "There is no universal ideal. The right size follows from the season window and how many matches teams can host. In a double round robin, N teams each play 2(N−1) matches, so 6 teams means 10 matches each, 8 means 14 and 10 means 18. Choose the division size from calendar capacity rather than a rule of thumb."),
+        ("Should every team play home and away?",
+         "It is common and gives symmetrical home/away opportunity, but it doubles the fixture count. A new or short-season league can legitimately start with a single round robin or central venues. Decide which constraint matters more: symmetry, travel, venue availability or season length."),
+        ("How do you stop clubs putting strong players into lower teams?",
+         "Write an eligibility system before the season. Existing English leagues use methods such as nominated players, team orders and limits on how many times a player can play up before becoming tied to a higher team. The precise rule matters less than being objective, auditable and difficult to exploit."),
+        ("What happens if a team withdraws halfway through?",
+         "The rules must say whether completed results stand, are expunged or are converted in some other way. Expunging all results is mathematically clean because teams have then faced the same opponent set, but it can erase legitimate wins. Whatever policy you choose, publish it before the season."),
+        ("What is the most important job of a league secretary?",
+         "Maintaining a single trusted state of the competition: registered teams and players, agreed fixtures, validated results, table, outstanding disputes and rule decisions. If clubs keep different versions of those facts, every later decision becomes harder.")
     };
 
     var articleJsonLd = GuideSchema.Article(
-        "How to run a local inter-club badminton league: a secretary's guide",
-        "A practical guide for league secretaries: setting up divisions, drawing fixtures, collecting results, and handling promotion and relegation for a local inter-club badminton league.",
+        "How to run a local badminton league: write the awkward rules before you need them",
+        "A practical guide to running an inter-club badminton league: divisions, formats, player eligibility, fixtures, postponements, incomplete teams, results, disputes, promotion and the awkward cases that decide whether clubs trust the competition.",
         canonical, published);
     var faqJsonLd = GuideSchema.Faq(faqPairs);
 }
@@ -35,17 +37,16 @@
     <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
 }
 
-<!-- HERO -->
 <section class="page-hero" style="padding:0">
   <div class="wrap">
     <div class="inner">
       <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Running a league</span></div>
-      <h1 style="margin-top:10px">How to run a local inter-club badminton league</h1>
-      <p class="lede">Running a league is mostly organisation: divisions, fixtures, results and a table everyone trusts. This is the secretary's guide, from getting clubs on board to promotion and relegation at the end of the season.</p>
+      <h1 style="margin-top:10px">How to run a local badminton league: write the awkward rules first</h1>
+      <p class="lede">“Everyone plays everyone and we add up the results” describes the easy 20%. A league earns trust in the other 80%: the postponed match, the ineligible reserve, the team that withdraws in February and the table tie nobody expected.</p>
       <div class="guide-meta">
         <span class="gm-tag">Guide</span>
         <span>Leagues</span>
-        <span>10 min read</span>
+        <span>14 min read</span>
       </div>
     </div>
   </div>
@@ -53,72 +54,256 @@
 
 <section style="padding-top:40px">
   <div class="wrap" style="max-width:820px">
-    <div class="guide-toc">
+
+    <div class="prose">
+      <p class="lead"><strong>Design the league from its failure cases backwards.</strong> Decide what happens when a fixture cannot be played, a team is incomplete, a player appears in the wrong side, a result is disputed or a team disappears. Once those rules exist, divisions and tables are comparatively easy.</p>
+
+      <p>This guide is aimed at local inter-club competition rather than a national governing-body event. The examples are informed by current English local-league rules, but they are examples, not a model rulebook: Coventry, Exeter and Solihull already differ substantially in eligibility, promotion, postponement and match structure.</p>
+    </div>
+
+    <div class="guide-toc" style="margin-top:28px">
       <h4>In this guide</h4>
-      <a href="#setup">Getting a league off the ground</a>
-      <a href="#divisions">Setting up divisions</a>
-      <a href="#format">Match format and points</a>
-      <a href="#fixtures">Drawing the fixtures</a>
-      <a href="#results">Collecting and publishing results</a>
-      <a href="#proreg">Promotion and relegation</a>
-      <a href="#teams">Seeding divisions and picking teams with data</a>
+      <a href="#purpose">Decide what the league is for</a>
+      <a href="#numbers">Let the calendar choose division size</a>
+      <a href="#format">Specify a match completely</a>
+      <a href="#eligibility">Player eligibility is where loopholes live</a>
+      <a href="#fixtures">Build fixtures around real venues</a>
+      <a href="#postponement">Write a postponement rule people can obey</a>
+      <a href="#results">Make the result process boring</a>
+      <a href="#table">Points, tie-breaks and false incentives</a>
+      <a href="#withdrawal">Plan for incomplete teams and withdrawals</a>
+      <a href="#promotion">Promotion is also division engineering</a>
+      <a href="#governance">Separate rules from discretion</a>
+      <a href="#data">Where club data helps - and where it does not</a>
       <a href="#faq">Frequently asked questions</a>
     </div>
 
     <div class="prose" style="margin-top:34px">
-      <p class="lead">A local badminton league gives clubs something to play for beyond the weekly night, and the secretary is the person who makes it run. The job is mostly organisation and fairness: get the divisions right, draw sensible fixtures, keep results flowing in, and publish a table nobody argues with. This guide walks through each part, and finishes on one place where hard data can quietly make the job easier: working out where teams belong and who should represent a club.</p>
 
-      <h2 id="setup">Getting a league off the ground</h2>
-      <p>A league needs enough clubs willing to commit teams for a whole season. Start by gauging interest among nearby clubs, then agree the basics together:</p>
+      <h2 id="purpose">Decide what the league is for</h2>
+
+      <p>A league can optimise several different things:</p>
+
       <ul>
-        <li><strong>Who governs it.</strong> Usually a committee of the participating clubs, with a secretary to run the day-to-day fixtures and table.</li>
-        <li><strong>The season.</strong> When it runs, how long, and how matches are scheduled around clubs' regular nights and venue availability.</li>
-        <li><strong>The rules.</strong> Match format, points, eligibility of players, and how disputes are settled, all written down and agreed before a ball is hit.</li>
-        <li><strong>The cost.</strong> A small entry fee per team usually covers admin, trophies and affiliation. Keep it modest.</li>
+        <li>competitive matches between similar-strength teams;</li>
+        <li>regular inter-club participation;</li>
+        <li>a clear pathway from lower to higher divisions;</li>
+        <li>meaningful opportunities for developing players;</li>
+        <li>geographically local competition with manageable travel;</li>
+        <li>or simply giving existing clubs a season-long structure.</li>
       </ul>
-      <p>Getting agreement up front on the rules is what saves you arguments later. A league lives or dies on whether clubs trust it to be run fairly.</p>
 
-      <h2 id="divisions">Setting up divisions</h2>
-      <p>If you have more than about ten teams, split them into divisions by standard so matches are competitive rather than lopsided. A division of six to ten teams gives a good home-and-away season. Teams are grouped so each plays others of a similar level, with promotion and relegation moving them between divisions over time. For a brand-new league, you seed the initial divisions by known standard, then let the first season's results correct any misjudgements. More on getting that seeding right below.</p>
+      <p>These goals occasionally conflict. Aggressive promotion and relegation improves sorting but creates churn. Strict player nomination protects divisions but can make it difficult to field a team when three people are unavailable. Large divisions create a fuller competition but increase venue and travel demands.</p>
 
-      <h2 id="format">Match format and points</h2>
-      <p>A league match between two teams is usually made up of several doubles rubbers, for example a set number of men's, ladies' and mixed pairs, with each pair playing the opposing pairs. Agree:</p>
-      <ul>
-        <li><strong>The rubbers.</strong> How many, and of what type, make up one match.</li>
-        <li><strong>The scoring.</strong> Games per rubber and points per game, following standard badminton scoring.</li>
-        <li><strong>The points system.</strong> Match points for the overall result, with rubbers or games won as the tie-break. Keep it simple.</li>
-        <li><strong>Player eligibility.</strong> Who can play for which team, to stop a club stacking a low division with strong players.</li>
-      </ul>
-      <p>Decide the points system and tie-break order before the season, and publish them, so the final table is beyond dispute.</p>
+      <p>Write the league's priorities down. They become the principles for resolving rules you did not predict.</p>
 
-      <h2 id="fixtures">Drawing the fixtures</h2>
-      <p>Within a division, every team plays every other, home and away, across the season. This is a round-robin fixture, and you draw it the same way you would any round robin: list the teams, fix one, and rotate the rest to generate each round's pairings, then assign home and away across the two halves of the season. Space the fixtures sensibly across the calendar and give clubs their full schedule at the start so they can arrange venues and players. Build in a little slack for rearranged matches, which always happen.</p>
+      <h2 id="numbers">Let the calendar choose division size</h2>
 
-      <h2 id="results">Collecting and publishing results</h2>
-      <p>The unglamorous heart of the secretary's job. Set a clear process:</p>
-      <ul>
-        <li><strong>A reporting deadline.</strong> Both clubs, or the home club, submit the result within a set time of the match.</li>
-        <li><strong>A standard result format,</strong> so you get the rubber-by-rubber scores you need for tie-breaks, not just the overall result.</li>
-        <li><strong>A published table,</strong> updated promptly so clubs can see where they stand. Visibility keeps interest up and results coming in.</li>
-        <li><strong>A record of everything,</strong> so a query weeks later can be settled from the results, not from memory.</li>
-      </ul>
-      <p>Keeping the table current and accurate is what makes clubs trust the league. Late or missing results are the most common friction, so chase them consistently.</p>
+      <p>Do not begin with "a good division has eight teams". Begin with how many match dates a team can actually sustain.</p>
 
-      <h2 id="proreg">Promotion and relegation</h2>
-      <p>At the season's end, promotion and relegation keep divisions competitive by moving teams to where they belong. The usual pattern is that the top one or two teams in a division go up and the bottom one or two go down, swapping places with the division above and below. Set the exact numbers before the season, decide your tie-break order for the table (match points, then rubbers or games won, then points difference is common), and publish it all so every club knows what they are playing for right to the final match.</p>
+      <p>In a double round robin, each team plays:</p>
 
-      <h2 id="teams">Seeding divisions and picking teams with data</h2>
-      <p>Two recurring headaches for a league have a common cause: guesswork. Where do you place a new team, or a club's second team, when you have no league record for them? And within a club, which players and pairings should represent each team? Both are usually settled on reputation and gut feel, which is how teams end up seeded in the wrong division and clubs field pairings that look right on paper but do not gel.</p>
-      <p>This is where real playing data helps, and it is worth being honest about the limits: a league secretary cannot see inside another club's sessions, so data mostly helps clubs prepare their own teams and helps seed teams whose clubs already track results. Where clubs run their sessions on a system that rates players on how they actually perform, that rating gives an objective read on standard, one that can sense-check where a new team should be seeded and help a club pick balanced, representative teams on evidence rather than reputation.</p>
-      <p>That is one of the things clubs use <a href="/features/club-nights">ePegboard</a> for. Because it rates players on how they perform across their club nights, not just who won, a club can use that data to <a href="/guides/picking-league-teams-club-data">pick league teams on evidence</a>, seeing which pairings actually work and how players compare, and share a sensible read on their standard when a new team needs seeding. It is <a href="/features/league-team-support">free for clubs</a> and runs in any browser. It will not run your league's fixtures and table for you, that is the secretary's system, but it does give the clubs in your league a better basis for the team-selection and seeding decisions that feed into it.</p>
+      <p style="text-align:center;font-size:1.08rem"><strong>2 × (teams in division − 1)</strong></p>
 
-      <div class="guide-callout">
-        <h4>Help your clubs pick teams on evidence</h4>
-        <p>ePegboard rates players on how they actually play, so clubs can seed and select league teams on data rather than reputation. Free for clubs, runs in any browser.</p>
-        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+      <div class="cmp-wrap">
+        <table class="cmp-table">
+          <thead><tr><th>Teams in division</th><th>Matches per team, home & away</th><th>Total matches in division</th></tr></thead>
+          <tbody>
+            <tr><td>5</td><td>8</td><td>20</td></tr>
+            <tr><td>6</td><td>10</td><td>30</td></tr>
+            <tr><td>7</td><td>12</td><td>42</td></tr>
+            <tr><td>8</td><td>14</td><td>56</td></tr>
+            <tr><td>10</td><td>18</td><td>90</td></tr>
+          </tbody>
+        </table>
       </div>
 
-      <p>For the club-side of this, our guide on <a href="/guides/picking-league-teams-club-data">picking balanced league teams from your club-night data</a> goes deeper, and <a href="/guides/badminton-club-rating-systems">how club rating systems work</a> explains the ratings behind it.</p>
+      <p style="margin-top:18px">Current Coventry rules say divisions should contain six or seven teams where possible. That is a useful real-world example, not evidence of an optimal number. The reason is operational: enough opponents for a season without creating an impossible fixture burden.</p>
+
+      <p>For a new league, a single round robin, central venue or shorter pilot can be wiser than copying the full home-and-away structure of an established competition on day one.</p>
+
+      <h2 id="format">Specify a match completely</h2>
+
+      <p>"Six doubles" is not a complete format.</p>
+
+      <p>A rulebook should define:</p>
+
+      <ul>
+        <li>team size and any gender composition;</li>
+        <li>which pairs play which opposing pairs;</li>
+        <li>best of three or another scoring structure;</li>
+        <li>what happens if time expires mid-rubber;</li>
+        <li>whether substitutions are permitted and when;</li>
+        <li>shuttle requirements and who supplies them;</li>
+        <li>minimum team size before a match is considered conceded;</li>
+        <li>the treatment of an unplayed rubber;</li>
+        <li>start-time / continuous-play obligations;</li>
+        <li>and who decides disputed line calls or conduct issues when there is no umpire.</li>
+      </ul>
+
+      <p>Local rules differ sharply. Coventry, for example, has separate men's, mixed and ladies structures and explicit consequences for delay; Solihull has its own six-rubber structures and incomplete-team provisions. That variation is exactly why a new league should design from its local players and venue reality rather than copying isolated clauses.</p>
+
+      <h2 id="eligibility">Player eligibility is where loopholes live</h2>
+
+      <p>If one club enters several teams at different levels, somebody will eventually ask whether a strong first-team player can help the fourth team on a difficult night.</p>
+
+      <p>The rules need an answer before that person is standing in the hall.</p>
+
+      <p>Common mechanisms include:</p>
+
+      <ul>
+        <li><strong>pre-season nominations:</strong> named stronger players cannot play down;</li>
+        <li><strong>team order / merit lists:</strong> squads have a declared hierarchy;</li>
+        <li><strong>play-up limits:</strong> after a player represents a higher side a set number of times, they become tied higher;</li>
+        <li><strong>transfer deadlines:</strong> restrict mid-season movement between clubs or teams;</li>
+        <li><strong>committee standard powers:</strong> a backstop where a nominally legal player is clearly inappropriate for the division.</li>
+      </ul>
+
+      <p>Current Coventry, Exeter and Solihull rules use different combinations of these ideas. Coventry has nominations and appearance thresholds; Exeter permits limited play-up before a player becomes tied; Solihull also combines nominations with appearance rules.</p>
+
+      <p>For a new league, simpler is better. Every extra exception creates an administrative state somebody must track. But too little control makes "team" mean whoever a club can assemble that evening.</p>
+
+      <h2 id="fixtures">Build fixtures around real venues</h2>
+
+      <p>The mathematical fixture generator is the easy part. The constraint problem is harder:</p>
+
+      <ul>
+        <li>Club A only hosts on Tuesdays.</li>
+        <li>Club B has two teams sharing the same two courts.</li>
+        <li>Club C loses its school hall during exams.</li>
+        <li>Two teams from the same club should not both be away every week.</li>
+        <li>Christmas, half-terms and cup weeks remove chunks of calendar.</li>
+      </ul>
+
+      <p>Gather each team's home-night, venue availability and blackout dates before generating fixtures. Then leave deliberate slack near the end of the season for rearrangements.</p>
+
+      <p>Published dates should have one canonical owner. A spreadsheet emailed in September and a website updated in January cannot both be the truth.</p>
+
+      <p>If clubs are permitted to agree their own dates, set a deadline by which all fixtures must be lodged with the league. Coventry's current rules do exactly that: clubs arrange fixtures and submit the full list before matches proceed.</p>
+
+      <h2 id="postponement">Write a postponement rule people can obey</h2>
+
+      <p>"Matches may be rearranged by mutual agreement" sounds friendly until April contains eleven unplayed fixtures.</p>
+
+      <p>Define:</p>
+
+      <ol>
+        <li>what counts as a valid reason;</li>
+        <li>how quickly the opponent and secretary must be notified;</li>
+        <li>who proposes replacement dates;</li>
+        <li>the deadline for agreeing one;</li>
+        <li>the final date by which it must be played;</li>
+        <li>and what happens when clubs cannot agree.</li>
+      </ol>
+
+      <p>Real leagues take quite different positions. Coventry generally restricts postponement to hall unavailability or exceptional circumstances with secretary permission; Solihull explicitly says player unavailability is not normally good cause.</p>
+
+      <p>The stricter the rule, the more you should make sure ordinary clubs can realistically field teams under the eligibility rules. There is little value in a beautifully rigid fixture list that produces forfeits every February.</p>
+
+      <h2 id="results">Make the result process boring</h2>
+
+      <p>The league should receive one structured result containing enough information to recalculate everything it publishes.</p>
+
+      <p>At minimum:</p>
+
+      <ul>
+        <li>fixture identity;</li>
+        <li>date and venue;</li>
+        <li>players / pairings, if eligibility is checked;</li>
+        <li>each rubber score;</li>
+        <li>overall match result;</li>
+        <li>captain confirmation or dispute flag;</li>
+        <li>submission timestamp.</li>
+      </ul>
+
+      <p>Do not ask the secretary to retype a WhatsApp photo of a scorecard into a second system if you can avoid it.</p>
+
+      <p>Set a reporting deadline and a correction window. Coventry currently makes the winner responsible for the scorecard (home team on a draw) and imposes a deadline; the exact penalty is its choice, but the principle is strong: <strong>results submission is part of the fixture, not optional paperwork afterwards.</strong></p>
+
+      <h2 id="table">Points, tie-breaks and false incentives</h2>
+
+      <p>There is no universally correct league-points system.</p>
+
+      <p>You can rank by matches won, award points for win/draw/loss, award points by rubbers, or combine them. Each rewards something different.</p>
+
+      <p>Before choosing, run hypothetical final tables. Ask:</p>
+
+      <ul>
+        <li>Can a team benefit from conceding rather than playing short?</li>
+        <li>Does a 6-0 win matter more than a 4-2 win, and should it?</li>
+        <li>Can a team with fewer match wins top the table through bonus/rubber points?</li>
+        <li>What happens when teams played unequal numbers because of withdrawals?</li>
+      </ul>
+
+      <p>Then write the tie-break sequence all the way to the end. Current Solihull rules, for example, go through matches, rubbers, games and points and eventually head-to-head criteria; Coventry uses its own sequence. There is no reason your league must copy either. There is every reason not to invent a tie-break after seeing which clubs it affects.</p>
+
+      <h2 id="withdrawal">Plan for incomplete teams and withdrawals</h2>
+
+      <p>A withdrawal halfway through the season is the rulebook's stress test.</p>
+
+      <p>Suppose Team X has played five of seven opponents, including an upset win over the title favourite, then folds.</p>
+
+      <p>You have three broad choices:</p>
+
+      <ul>
+        <li><strong>expunge its results:</strong> mathematically restores equal opponent sets but erases games that happened;</li>
+        <li><strong>retain completed results and award future concessions:</strong> preserves history but gives unplayed opponents a different type of result;</li>
+        <li><strong>retain only a defined minimum / use averages:</strong> possible, but complexity rises quickly.</li>
+      </ul>
+
+      <p>Coventry currently expunges results of a withdrawing team that has played matches and treats it as bottom of the division. Other leagues can choose differently. The key is that the decision is known before it changes the title race.</p>
+
+      <p>Do the same for incomplete teams: define whether missing rubbers are conceded, what score is recorded and whether financial/league penalties are separate from the sporting result.</p>
+
+      <h2 id="promotion">Promotion is also division engineering</h2>
+
+      <p>"Top two up, bottom two down" works only while the number of teams remains stable.</p>
+
+      <p>Then a club withdraws a team. A new club enters. Two clubs merge. A second team is added. One division has five teams and another eight. Suddenly normal promotion does not produce sensible divisions.</p>
+
+      <p>Write a hierarchy:</p>
+
+      <ol>
+        <li>normal promotion/relegation;</li>
+        <li>how vacancies are filled;</li>
+        <li>how new teams are placed;</li>
+        <li>limits on multiple teams from one club in a division;</li>
+        <li>committee power to restructure divisions between seasons.</li>
+      </ol>
+
+      <p>Make that restructuring power explicit but bounded. Clubs should know that league composition can be adjusted for viability without believing the committee can casually overturn competitive results.</p>
+
+      <h2 id="governance">Separate rules from discretion</h2>
+
+      <p>The secretary should administer the competition, not become its court of final appeal.</p>
+
+      <p>For decisions that can materially affect standings - eligibility breaches, forfeits, conduct, exceptional postponements - define:</p>
+
+      <ul>
+        <li>who makes the first decision;</li>
+        <li>whether that person must recuse themselves if their club is involved;</li>
+        <li>what evidence is considered;</li>
+        <li>the appeal route;</li>
+        <li>the appeal deadline;</li>
+        <li>and whether decisions / precedents are recorded.</li>
+      </ul>
+
+      <p>A short published decision note is often healthier than a private chain of emails. Next season's committee then knows how the same clause was interpreted last time.</p>
+
+      <h2 id="data">Where club data helps - and where it does not</h2>
+
+      <p>Player ratings can help a club choose teams and can give a league useful context when placing a completely new side. They are not a substitute for league results.</p>
+
+      <p>In particular, an internal club rating may not be calibrated against another club's scale. A 1700 in Club A and a 1700 in Club B are not automatically equivalent unless the rating networks are connected.</p>
+
+      <p>That limits how far a league secretary should take club-night data. Use it as evidence when seeding a new team, not as an allegedly objective cross-club ranking.</p>
+
+      <p>On the club side, <a href="/guides/picking-league-teams-club-data">team-selection data</a> can still be valuable: results, player form and partnership records help captains make a better decision about who should represent each side. <a href="/features/league-team-support">ePegboard's league-team tools</a> sit on that club side of the boundary; they do not replace the league's fixture, eligibility and table administration.</p>
+
+      <div class="guide-callout">
+        <h4>The secretary's real product</h4>
+        <p style="margin-top:8px">It is not the fixture list. It is <strong>a competition state every club believes</strong>: these players were eligible, these matches count, this is the table, these are the outstanding fixtures, and this is how any exception was decided.</p>
+      </div>
 
       <h2 id="faq">Frequently asked questions</h2>
       @foreach (var f in faqPairs)
@@ -126,19 +311,12 @@
         <h3>@f.Q</h3>
         <p>@f.A</p>
       }
-    </div>
-  </div>
-</section>
 
-<!-- CTA -->
-<section class="cta" style="margin-top:56px">
-  <div class="wrap">
-    <h2>Better team selection for the clubs in your league</h2>
-    <p>Play-based ratings that help clubs seed and pick teams on evidence. Free for clubs.</p>
-    <div class="cta-actions">
-      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
-      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
+      <div style="margin-top:34px;padding-top:22px;border-top:1px solid var(--line)">
+        <h4 style="margin:0 0 8px">Examples consulted</h4>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:0">Current local-league examples checked on 26 August 2026: <a href="https://www.coventrybadminton.co.uk/rules" target="_blank" rel="noopener">Coventry Badminton Association rules</a>, <a href="https://www.exeterbadmintonleague.co.uk/rules/players" target="_blank" rel="noopener">Exeter &amp; District player rules</a>, and <a href="https://www.solihullbadmintonleague.co.uk/league-rules" target="_blank" rel="noopener">Solihull District Badminton League rules</a>. They are evidence of how real leagues solve edge cases, not templates to copy wholesale.</p>
+      </div>
+
     </div>
-    <p class="fine">More guides on running a badminton club are in the <a href="/guides">guides section</a>.</p>
   </div>
 </section>

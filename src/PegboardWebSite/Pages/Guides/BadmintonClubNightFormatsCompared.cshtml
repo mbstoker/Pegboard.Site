@@ -2,30 +2,32 @@
 @using PegboardWebSite.Services
 @{
     Layout = "_LayoutMarketing";
-    ViewData["Title"] = "Club night formats compared: winner-stays-on vs round-robin vs fair rotation";
-    ViewData["Description"] = "An honest comparison of badminton club-night formats: winner-stays-on (king of the court), round robin, and automated fair rotation. When each works, where it falls down, and how to choose.";
-    ViewData["OgTitle"] = "Badminton club night formats compared";
+    ViewData["Title"] = "Badminton club night formats compared: what each system optimises";
+    ViewData["Description"] = "Winner-stays-on, round robin, queue rotation and balanced live picking solve different problems. Compare court-time fairness, flexibility, competition, admin and game quality before choosing how to run your badminton night.";
+    ViewData["OgTitle"] = "Which badminton club-night format fits your club?";
 
-    const string published = "2026-07-05";
+    const string published = "2026-07-05";   // first publication - held deliberately; GuideSchema
+                                             // ties dateModified to it (#396), so advancing it
+                                             // would claim this page is new. Revised 2026-08-26.
     const string canonical = "https://www.epegboard.com/guides/badminton-club-night-formats-compared";
 
     var faqPairs = new (string Q, string A)[]
     {
-        ("What are the rules of winner-stays-on in badminton?",
-         "In winner-stays-on, also called king of the court, the winning pair or player keeps the court and the losers come off, replaced by the next pair or player waiting. Play a short game, often first to 11 or 15, then swap out the losers. It is quick to run and needs no organiser, but over an evening it concentrates court time on the strongest players, who keep winning and stay on, while weaker players lose fast and spend most of the night waiting."),
-        ("Is winner-stays-on fair?",
-         "Not over a whole club night. It is fair in the narrow sense that the court is won on court, but the effect is that your strongest players play far more than everyone else. Winners stay on and keep winning, so court time pools at the top and your weaker and newer players are benched repeatedly. For a short, casual warm-up it is fine; as the main format for a mixed club night it steadily pushes your weaker players away."),
-        ("What is the best format for a badminton club night?",
-         "It depends on your club, but for a typical mixed social night the answer is a fair rotation that keeps court time even, games balanced and pairings varied, rather than winner-stays-on (which benches weaker players) or a rigid round robin (which cannot cope with people arriving and leaving). Winner-stays-on suits a quick casual session, a round robin suits a one-off tournament, and fair rotation suits an ongoing social club, which is what most clubs are."),
-        ("What is the difference between round robin and king of the court?",
-         "A round robin is a fixed fixture where everyone plays everyone once, guaranteeing each entrant a full, fair set of games; it suits a one-off tournament with a known field. King of the court (winner-stays-on) is a continuous format where the winner holds the court and challengers queue; it is quick and casual but concentrates play on the winners. Round robin is fair but rigid; king of the court is flexible but skews court time to the strongest."),
-        ("How do I stop the same players dominating the court?",
-         "Move away from winner-stays-on, which rewards dominance by design, and use a rotation that shares court time by how long people have waited rather than by who keeps winning. Make balanced games so the strong are not simply beating the weak repeatedly, and vary pairings so nobody is stuck watching the same four hold court. An automated fair rotation does this consistently across a whole night, which is very hard to keep up by hand.")
+        ("Is winner-stays-on unfair?",
+         "It deliberately rewards winning with more court time, so it is not court-time neutral. That can be exactly the point in a competitive king-of-the-court drill. It is a poor default if your social club promises broadly equal playing opportunities, especially when standards vary."),
+        ("Is a round robin suitable for a normal club night?",
+         "Usually only when attendance is fixed. Round robins are excellent for a planned event because fixtures and rests can be distributed in advance. Ordinary club nights have late arrivals, early departures and changing numbers, which make a fixed draw awkward."),
+        ("What is the simplest format to run?",
+         "A basic queue or pegboard is usually simplest: players come off court, join the back and the next eligible group goes on. It handles changing attendance well. Its weakness is that game quality and partner variety depend on how the four players are chosen."),
+        ("What is the best format for a mixed-ability social club?",
+         "Usually a live rotation that treats waiting time as a fairness constraint while also considering player standard and recent partners. The exact balance depends on the club: some prioritise strict queue order, some game quality, and some player choice."),
+        ("Can a club use more than one format?",
+         "Yes. A social night can use normal rotation most weeks, king of the court for a short competitive session, and a round robin for an internal event. The format should follow the purpose of the session.")
     };
 
     var articleJsonLd = GuideSchema.Article(
-        "Club night formats compared: winner-stays-on vs round-robin vs fair rotation",
-        "An honest comparison of badminton club-night formats: winner-stays-on, round robin, and automated fair rotation. When each works, where it falls down, and how to choose.",
+        "Badminton club night formats compared: what each system optimises",
+        "Winner-stays-on, round robin, queue rotation and balanced live picking solve different problems. Compare court-time fairness, flexibility, competition, admin and game quality before choosing how to run your badminton night.",
         canonical, published);
     var faqJsonLd = GuideSchema.Faq(faqPairs);
 }
@@ -35,17 +37,16 @@
     <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
 }
 
-<!-- HERO -->
 <section class="page-hero" style="padding:0">
   <div class="wrap">
     <div class="inner">
       <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Formats compared</span></div>
-      <h1 style="margin-top:10px">Club night formats compared: winner-stays-on vs round-robin vs fair rotation</h1>
-      <p class="lede">Winner-stays-on, round robin, or a fair rotation? The format you run shapes how the whole night feels. Here is an honest comparison of the three, what each is good at, and where each one lets a club down.</p>
+      <h1 style="margin-top:10px">Badminton club night formats compared: what each system optimises</h1>
+      <p class="lede">There is no clever format that simultaneously maximises court-time equality, competitive reward, player choice, perfect game balance and zero administration. Choose which trade-off your night is supposed to make.</p>
       <div class="guide-meta">
         <span class="gm-tag">Comparison</span>
-        <span>Formats</span>
-        <span>9 min read</span>
+        <span>Club nights</span>
+        <span>10 min read</span>
       </div>
     </div>
   </div>
@@ -55,79 +56,138 @@
   <div class="wrap" style="max-width:820px">
     <div class="guide-toc">
       <h4>In this guide</h4>
-      <a href="#three">The three formats</a>
-      <a href="#wso">Winner-stays-on (king of the court)</a>
-      <a href="#rr">Round robin</a>
-      <a href="#rotation">Fair rotation</a>
-      <a href="#table">When to use each</a>
-      <a href="#verdict">The honest verdict</a>
+      <a href="#question">Start with the purpose of the session</a>
+      <a href="#queue">Queue or pegboard rotation</a>
+      <a href="#winner">Winner-stays-on / king of the court</a>
+      <a href="#round">Round robin</a>
+      <a href="#balanced">Balanced live rotation</a>
+      <a href="#hybrid">Hybrid formats often work best</a>
+      <a href="#table">Comparison table</a>
+      <a href="#choose">How to choose</a>
       <a href="#faq">Frequently asked questions</a>
     </div>
 
     <div class="prose" style="margin-top:34px">
-      <p class="lead">Ask around and you will find clubs running very different nights: some let the winners hold the court, some draw up a fixture, some rotate players to keep things even. Each format shapes the evening in its own way, and the wrong one for your club quietly costs you members. This is an honest look at the three main formats, winner-stays-on, round robin, and fair rotation, judged on what actually matters: does everyone get a fair share of good games?</p>
+      <p class="lead"><strong>A club-night format is a policy for allocating a scarce resource: court time.</strong> Everything else - queues, pegboards, ratings, winners staying on, organiser picks - decides who gets that resource next and with whom.</p>
 
-      <h2 id="three">The three formats</h2>
-      <p>Nearly every club night is a version of one of these:</p>
+      <p>That is why arguments about the "best" format go nowhere. A competitive ladder wants winners to be rewarded. A social club may want the exact opposite: yesterday's result should have no effect on whether you get your fair share tonight. A tournament wants a complete fixture. A drop-in session wants to survive three late arrivals without redrawing anything.</p>
+
+      <h2 id="question">Start with the purpose of the session</h2>
+      <p>Before choosing mechanics, decide what the night is trying to optimise.</p>
       <ul>
-        <li><strong>Winner-stays-on</strong>, also called king of the court: the winners keep the court, the losers come off, and the next in the queue come on.</li>
-        <li><strong>Round robin</strong>: a fixed fixture where everyone plays everyone, drawn in advance.</li>
-        <li><strong>Fair rotation</strong>: players are rotated to keep court time even, games balanced and pairings varied across the whole night.</li>
+        <li><strong>Equal opportunity to play:</strong> waits should be broadly comparable.</li>
+        <li><strong>Competitive progression:</strong> winning should move you up or keep you on.</li>
+        <li><strong>Good games:</strong> four players should be close enough in standard to produce a contest.</li>
+        <li><strong>Mixing:</strong> partners and opponents should change across the evening.</li>
+        <li><strong>Player autonomy:</strong> members should have some say over whom they play.</li>
+        <li><strong>Low administration:</strong> the system should keep moving without a full-time organiser.</li>
       </ul>
-      <p>They are not equally good for the same situations, and the differences show up most in how court time is shared out.</p>
+      <p>You can have several of these. You cannot maximise all of them at once.</p>
 
-      <h2 id="wso">Winner-stays-on (king of the court)</h2>
-      <p>The winning pair holds the court and plays the next challengers; the losers join the back of the queue. Games are short so the court turns over. It needs no organiser, which is its main appeal, and it has a nice competitive edge for a casual session.</p>
-      <p>The problem is baked into the rules. Winners stay on, so your strongest players keep winning and keep playing, while weaker and newer players lose quickly and spend most of the night in the queue. Court time pools at the top, which is the exact opposite of what a mixed social night wants. It works as a short, punchy warm-up or a casual drop-in among players of similar standard. As the main format for a mixed club night, it steadily benches the very people a club most needs to keep, its beginners and its improvers.</p>
+      <h2 id="queue">Queue or pegboard rotation</h2>
+      <p>This is the ordinary club workhorse: players who come off join a queue, and the next eligible players go on when a court becomes free. A physical pegboard is one implementation; a written list or digital queue is another.</p>
 
-      <h2 id="rr">Round robin</h2>
-      <p>A round robin draws a fixture in advance so everyone plays everyone once, with even sit-outs built into the draw. It is the fairest format for a fixed field, which is why leagues and tournaments use it, and everyone is guaranteed a full set of games.</p>
-      <p>Its weakness is rigidity. A round robin assumes a known set of entrants for a known set of rounds. A club night is neither: people arrive late, leave early, drop in once or turn up for the first time, none of which a pre-drawn fixture handles. Repeat the same draw every week and it goes stale; redraw it each week by hand and it becomes a chore that drifts unfair over the season. It is a genuinely good format, but for a one-off event, not an ongoing social night. Our <a href="/guides/how-to-run-a-badminton-round-robin">round robin guide</a> covers running one properly.</p>
+      <p><strong>Its great strength is resilience.</strong> Someone arrives at 8:17? Add them. Someone leaves at nine? Remove them. Court 3 becomes unavailable? The queue still exists. No fixture needs rebuilding.</p>
 
-      <h2 id="rotation">Fair rotation</h2>
-      <p>Fair rotation takes the everyone-gets-a-fair-go idea of a round robin and makes it work on a live, changing club night. Instead of a fixed fixture, it decides each game as courts free up, sharing court time by how long people have actually waited, balancing the two sides so games are close, and varying who plays with whom so nobody is stuck with the same partners. It copes with latecomers and drop-ins because there is no fixed draw to break.</p>
-      <p>The catch is that doing this well by hand, game after game, all evening, is genuinely hard, which is why clubs increasingly let software do it. Done right, it gives the fairest night of the three for an ongoing mixed club: even court time, balanced games, and good mixing, without benching anyone the way winner-stays-on does.</p>
+      <p>The queue itself, however, does not decide what makes a good game. Clubs solve that in different ways:</p>
+      <ul>
+        <li>take the next four strictly in order;</li>
+        <li>let the person at the front choose three others;</li>
+        <li>let an organiser choose from the next few;</li>
+        <li>separate players loosely by standard;</li>
+        <li>or use software to choose four while respecting waiting.</li>
+      </ul>
 
-      <h2 id="table">When to use each</h2>
+      <p>That distinction matters. A queue can be excellent at <em>when</em> somebody plays and poor at <em>who</em> they play with.</p>
+
+      <p><strong>Best for:</strong> ordinary drop-in club nights where attendance changes through the evening.</p>
+      <p><strong>Main risk:</strong> hidden human bias in selecting partners, or mechanically taking the next four even when the resulting game is obviously poor.</p>
+
+      <h2 id="winner">Winner-stays-on / king of the court</h2>
+      <p>Winner-stays-on turns court allocation into a reward. The winners remain; the losers leave; challengers come on.</p>
+
+      <p>That can be great fun. It creates consequence, momentum and a clear target: knock the current pair off. With short games and reasonably matched players it is an excellent competitive exercise.</p>
+
+      <p>But its court-time distribution is not an accidental side effect. <strong>Better-performing players receive more play by design.</strong> If one pair wins six short games, they may be on court while several others cycle through one game each.</p>
+
+      <p>That is not "unfair" if everybody knowingly joined a king-of-the-court session. It becomes a mismatch when a social club says everyone pays the same fee for broadly equal badminton and then uses winning to determine access to the courts.</p>
+
+      <p>There are variants that soften the effect: winners stay for a maximum of two games; winning pair splits; both pairs leave after a fixed number of rallies; or courts are graded so challengers meet similar standards.</p>
+
+      <p><strong>Best for:</strong> a competitive block, drill, ladder-style session or group of similar-standard players.</p>
+      <p><strong>Main risk:</strong> turning playing strength into a court-time entitlement.</p>
+
+      <h2 id="round">Round robin</h2>
+      <p>A round robin answers a different question: how do we give a known group a complete and comprehensible set of fixtures?</p>
+
+      <p>For a fixed event it is hard to beat. Everybody knows whom they will play, results can produce a table, and fixtures can be arranged so rest is distributed sensibly.</p>
+
+      <p>Its weakness on an ordinary club night is not fairness but assumptions. A draw assumes the entrants are known. Club attendance often is not.</p>
+
+      <p>A player arriving twenty minutes late can invalidate a neat sequence. A no-show creates byes. Somebody leaving with a sore calf can strand later fixtures. You can repair all of that, but by then you are manually running a tournament every Tuesday.</p>
+
+      <p>Round robin also does not inherently mean balanced games. "Everyone plays everyone" deliberately creates some mismatches when ability varies; that may be fine because completeness is the objective.</p>
+
+      <p><strong>Best for:</strong> internal competitions, graded groups, fixed attendance and events where results matter.</p>
+      <p><strong>Main risk:</strong> rigidity when the participant list changes.</p>
+
+      <h2 id="balanced">Balanced live rotation</h2>
+      <p>A balanced live rotation keeps the flexibility of a queue but makes game composition another explicit decision.</p>
+
+      <p>When a court becomes available, the system asks something like:</p>
+      <p><em>Who has waited long enough to deserve consideration, and among those players, which four make a useful game without repeating the same partnerships?</em></p>
+
+      <p>This is not one formal badminton format. It is a family of policies. One club may make waiting time almost absolute; another may allow a player to wait slightly longer for a much better match; another may force the first player in the queue into every next pick.</p>
+
+      <p>The advantage is that fairness can be defined across several dimensions:</p>
+      <ul>
+        <li>court time;</li>
+        <li>waiting time;</li>
+        <li>standard of game;</li>
+        <li>partner variety;</li>
+        <li>opponent variety.</li>
+      </ul>
+
+      <p>The disadvantage is cognitive load. A good organiser can do this for ten players almost without thinking. At twenty-four players, four courts and a stream of late arrivals, remembering everybody's last three partners and cumulative wait becomes a real scheduling problem.</p>
+
+      <p>Software such as <a href="/features/club-nights">ePegboard</a> is useful here because it can keep those histories without turning the organiser into an accountant. But automation does not remove the policy choice: the club still needs to decide how strongly fairness, game balance and queue order should compete.</p>
+
+      <p><strong>Best for:</strong> ongoing social or mixed-standard nights where people arrive and leave dynamically.</p>
+      <p><strong>Main risk:</strong> making the algorithm opaque or over-optimising game quality at the expense of understandable queue fairness.</p>
+
+      <h2 id="hybrid">Hybrid formats often work best</h2>
+      <p>Real clubs do not have to swear allegiance to one system.</p>
+
+      <p>A normal Tuesday might use balanced rotation. The final half-hour could become king of the court for anyone who wants it. Once a month, sixteen regulars might enter a round robin. A beginner court might use coach-arranged games while the rest of the hall runs from a queue.</p>
+
+      <p>That is not inconsistency. Different parts of the programme have different objectives.</p>
+
+      <p>The useful discipline is to label the change. If winner-stays-on begins at 9:30, tell people that the fairness rule has changed for the final half-hour. Players are far more accepting of a trade-off when it is explicit.</p>
+
+      <h2 id="table">Comparison table</h2>
       <div class="cmp-wrap">
         <table class="cmp-table">
           <thead>
-            <tr><th>Format</th><th>Court time</th><th>Best for</th><th>Where it falls down</th></tr>
+            <tr><th>Format</th><th>Handles drop-ins</th><th>Court-time equality</th><th>Game balance</th><th>Admin</th><th>Best use</th></tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Winner-stays-on (king of the court)</td>
-              <td>Pools on the winners; weaker players wait most of the night.</td>
-              <td>Short casual sessions or warm-ups among players of similar standard, where no organiser is wanted.</td>
-              <td>Benches beginners and improvers, so it slowly drives away the players a mixed club needs to keep.</td>
-            </tr>
-            <tr>
-              <td>Round robin</td>
-              <td>Even by design across a fixed field.</td>
-              <td>One-off in-house tournaments and events with a known, settled set of entrants.</td>
-              <td>Cannot cope with latecomers, drop-ins or early leavers, and goes stale or unfair if repeated week to week.</td>
-            </tr>
-            <tr>
-              <td>Fair rotation</td>
-              <td>Kept even for the time each player is present, across the whole night.</td>
-              <td>Ongoing mixed social club nights where people come and go and abilities vary.</td>
-              <td>Very hard to keep up consistently by hand, which is why most clubs run it with software.</td>
-            </tr>
+            <tr><td><strong>Queue / pegboard</strong></td><td>Excellent</td><td>Good if queue rules are consistent</td><td>Depends how four are chosen</td><td>Low</td><td>General club night</td></tr>
+            <tr><td><strong>Winner-stays-on</strong></td><td>Good</td><td>Low by design</td><td>Can self-sort over time</td><td>Very low</td><td>Competitive block / drill</td></tr>
+            <tr><td><strong>Round robin</strong></td><td>Poor</td><td>Predictable within the draw</td><td>Not guaranteed</td><td>Low after setup, high when disrupted</td><td>Fixed event</td></tr>
+            <tr><td><strong>Balanced live rotation</strong></td><td>Excellent</td><td>Configurable</td><td>Strong if ratings are useful</td><td>High by hand; low with software</td><td>Mixed social club</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2 id="verdict">The honest verdict</h2>
-      <p>There is no single best format, only a best format for a given night. Winner-stays-on is right for a quick, casual session. A round robin is right for a one-off tournament. But for what most clubs actually run, an ongoing mixed social night, fair rotation wins, because it is the only one of the three that keeps court time even for everyone while games stay balanced and varied. Winner-stays-on gives your best players a great night at everyone else's expense; a round robin cannot handle the comings and goings of a real club night; fair rotation is built for exactly that situation.</p>
-      <p>The reason more clubs did not always run fair rotation is that it is hard work by hand. That is the part <a href="/features/club-nights">ePegboard</a> takes over. It runs a fair rotation automatically: it keeps every court busy with balanced games matched on player level, shares court time evenly for the time each person is present, varies partners and opponents, and handles latecomers and drop-ins without breaking a fixture. It shows why each game was picked, so a fair-looking night is something the room can see rather than take on trust. The outcome is the best night for the most people: everyone gets their share of good, close, varied games, and nobody is benched for being new or being beaten. It is <a href="/badminton-club-management-software">free for clubs</a>, runs in any browser with nothing to install, and clubs have already run more than 1,100 sessions and over 33,000 games on it.</p>
+      <h2 id="choose">How to choose</h2>
+      <p>For most ordinary club nights, start with a queue because it matches the reality of changing attendance. Then decide how clever the game-selection step needs to be.</p>
+
+      <p>If your players are close in standard and happily self-select, a physical pegboard may be enough. If the room is mixed and organisers spend half the night fixing mismatches, add balancing. If people complain about repetitive partnerships, track variety. If the group explicitly wants competitive consequences, introduce winner-stays-on or a ladder as a separate format.</p>
 
       <div class="guide-callout">
-        <h4>Fair rotation, without the hard work</h4>
-        <p>ePegboard runs a fair rotation for you: even court time, balanced games, varied pairings, nobody benched. Free for clubs, nothing to install.</p>
-        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+        <h4>The useful question</h4>
+        <p style="margin-top:8px"><strong>What behaviour does this format reward?</strong> Winner-stays-on rewards winning. A strict queue rewards waiting. A round robin rewards completion. Balanced rotation tries to reward patience while improving the game itself. Choose the behaviour your club wants.</p>
       </div>
-
-      <p>For more on the rotation itself, see our guides on <a href="/guides/badminton-club-night-rotation">fair player rotation</a> and <a href="/guides/fair-court-time-busy-club-night">fair court time on a busy night</a>.</p>
 
       <h2 id="faq">Frequently asked questions</h2>
       @foreach (var f in faqPairs)
@@ -135,19 +195,8 @@
         <h3>@f.Q</h3>
         <p>@f.A</p>
       }
-    </div>
-  </div>
-</section>
 
-<!-- CTA -->
-<section class="cta" style="margin-top:56px">
-  <div class="wrap">
-    <h2>Run the format that keeps everyone playing</h2>
-    <p>Fair rotation, run for you: even court time, balanced games, nobody benched. Free for clubs.</p>
-    <div class="cta-actions">
-      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
-      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
+      <p>For the mechanics of live rotation, see <a href="/guides/badminton-club-night-rotation">badminton club-night rotation</a>. For a fixed event, see <a href="/guides/how-to-run-a-badminton-round-robin">how to run a badminton round robin</a>.</p>
     </div>
-    <p class="fine">More guides on running a badminton club are in the <a href="/guides">guides section</a>.</p>
   </div>
 </section>

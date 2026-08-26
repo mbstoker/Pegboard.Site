@@ -2,36 +2,32 @@
 @using PegboardWebSite.Services
 @{
     Layout = "_LayoutMarketing";
-    ViewData["Title"] = "How to roll out ePegboard to your club";
-    ViewData["Description"] = "A before / on-the-night / after playbook for switching your club night to ePegboard so it lands with your players and keeps them coming back.";
-    ViewData["OgTitle"] = "Rolling out ePegboard to your club";
+    ViewData["Title"] = "How to introduce ePegboard to your badminton club without making the night about the app";
+    ViewData["Description"] = "A practical rollout plan for moving a badminton club from a pegboard, whiteboard or organiser-led rotation to ePegboard: test it first, explain the problem it solves, keep the first night familiar and automate only as trust grows.";
+    ViewData["OgTitle"] = "Introducing ePegboard without disrupting the club night";
 
-    const string published = "2026-08-02";
+    const string published = "2026-08-02";   // first publication - held deliberately; GuideSchema
+                                             // ties dateModified to it (#396), so advancing it
+                                             // would claim this page is new. Revised 2026-08-26.
     const string canonical = "https://www.epegboard.com/guides/rolling-out-epegboard-to-your-club";
 
     var faqPairs = new (string Q, string A)[]
     {
-        ("What is the best way to introduce ePegboard to a club night?",
-         "Run a simple loop and repeat it every session. Before the night, tell the club why you are switching and tie it to a problem members already grumble about, then explain how it will work. On the night, have the tablet out somewhere people gather so they can see it running. After the night, share the session recap link and point out that claiming their profile unlocks their own stats from that evening. The single most important part is that last step: lead with what a player gets to see, not with a request to sign up."),
-        ("Do players have to create an account to play?",
-         "No. The organiser runs the night and adds players at the tablet, and nobody needs an account for that. Claiming a profile is entirely optional and happens after the session, off the back of the recap link. What it adds is the personal side: a player's own results, rating and history from that night and every night after. So the club night works for everyone from game one, and accounts are the bonus for players who want to follow their own progress."),
-        ("How do I help my players get the most out of ePegboard?",
-         "Point them beyond the recap. The recap of the night is only the first taste - claiming a profile is what opens up the rest for a player: their own rating and how it moves, their game history at your club, their progress over the weeks. That is what keeps the night giving them something after they have packed up and gone home. Your job is not to chase anyone into signing up; it is simply to show them what is there. Share the session recap and mention that claiming their profile lets them see their own games and rating from the night, then let curiosity do the rest. Sharing it with a few keen members first helps, so when it reaches the wider group chat it reads as look what you can see rather than a request to register."),
-        ("Why should I explain the switch before anyone sees the app?",
-         "Because a change that answers a complaint people already have is welcomed, and a change that appears out of nowhere is resisted. If members have grumbled that games do not rotate, or that court time feels uneven, name that problem when you announce the switch and say this is what fixes it. You are not selling an app; you are solving something the club already feels. That framing is what turns a new tablet on the table from an intrusion into something people are curious to try."),
-        ("How quickly will players start engaging?",
-         "Faster than most organisers expect, if you run the loop consistently. One club that ran this loop consistently had more than twenty players on their own accounts after just two sessions, where most clubs see a handful trickle in over weeks. The difference was not the club being unusually keen; it was the method: explain the why beforehand, keep the tablet accessible, and after the night share the recap leading with the personal stats. Do that every session and it compounds."),
-        ("Do we have to let ePegboard pick every game?",
-         "No - you choose how hands-on to be. You can let it build every game and just tap start, review and tweak each suggestion before starting, or run it pegboard-style: turn on 'Force include first queue player' and 'Limit to first N players in queue', then hand the tablet to the player at the front of the queue to pick their own game from the next few waiting and swap it around if they want. Plenty of clubs coming from a pegboard start in that traditional style - players enjoy the sense of control - and move toward fully automated over a few weeks as they see the balanced games it makes. Running the shared tablet in kiosk mode lets you pass it safely between players while admin controls stay behind your organiser PIN."),
-        ("How should we set players' starting ratings when we begin?",
-         "You can leave everyone on the default and let the system learn them, but games in the first few sessions will be more hit-and-miss. Better is to give each member an approximate rating when you add them - a rough tier is plenty - which you can set on import or on the member form. Even loose guesses make the opening games noticeably closer from the very first night."),
-        ("The games look a bit unbalanced in our first few weeks - is something wrong?",
-         "No, that is normal while ratings settle. A new player's rating swings around for their first couple of dozen games before it settles down. Keep an eye on the suggestions during that period and override any that look lopsided - swap a player, or build the game by hand. It does not slow the system down: ratings are learned from the game results, not from who picked the game, so they still hone in on the right numbers underneath.")
+        ("Do players need an ePegboard account?",
+         "No. The organiser can run the club night and add players without requiring each person to register. A player account is optional and becomes useful if someone wants their own history, results, rating and other player features."),
+        ("Should we switch straight to automatic game picking?",
+         "Not unless that already suits the club. A pegboard club can start with a familiar queue and organiser review, or let the front player choose from a limited group, then increase automation after members have seen how the suggestions behave. The objective is trust, not maximum automation on night one."),
+        ("Should we enter player ratings before the first session?",
+         "Approximate starting ratings help the first suggestions. They do not need to be precise: broad relative levels are more useful than pretending you know exact numbers. Review obviously poor suggestions while the system accumulates results."),
+        ("What should we tell members before the first night?",
+         "Tell them what problem you are trying to improve, what will be different on the night and what will stay the same. Keep it short. Members do not need a feature tour before they have seen the board run."),
+        ("What if some members dislike using phones or apps?",
+         "They do not need to use one. The shared board can remain the visible centre of the session and the organiser can check people in and run games. Personal phones and accounts are optional ways to follow the night or keep personal history, not an entry requirement.")
     };
 
     var articleJsonLd = GuideSchema.Article(
-        "How to roll out ePegboard to your club",
-        "A before / on-the-night / after playbook for switching your club night to ePegboard so it lands with your players and keeps them coming back.",
+        "How to introduce ePegboard to your badminton club without making the night about the app",
+        "A practical rollout plan for moving a badminton club from a pegboard, whiteboard or organiser-led rotation to ePegboard: test it first, explain the problem it solves, keep the first night familiar and automate only as trust grows.",
         canonical, published);
     var faqJsonLd = GuideSchema.Faq(faqPairs);
 }
@@ -41,17 +37,16 @@
     <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
 }
 
-<!-- HERO -->
 <section class="page-hero" style="padding:0">
   <div class="wrap">
     <div class="inner">
       <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Rolling out ePegboard</span></div>
-      <h1 style="margin-top:10px">How to roll out ePegboard to your club</h1>
-      <p class="lede">Deciding to use an app is the easy part. Getting a club to take to it - and getting your players to really engage with it - is where organisers get stuck. This is the loop one club used to do exactly that, and why each step works.</p>
+      <h1 style="margin-top:10px">How to roll out ePegboard without making the club night about the app</h1>
+      <p class="lede">The best rollout is slightly boring. Players arrive, see where they are in the queue, play their games and go home thinking the night ran well. The technology should become obvious only when it removes a problem they already noticed.</p>
       <div class="guide-meta">
         <span class="gm-tag">Guide</span>
         <span>Adoption</span>
-        <span>10 min read</span>
+        <span>9 min read</span>
       </div>
     </div>
   </div>
@@ -59,111 +54,150 @@
 
 <section style="padding-top:40px">
   <div class="wrap" style="max-width:820px">
-    <div class="guide-toc">
+
+    <div class="prose">
+      <p class="lead"><strong>Do not launch software. Change one part of the club night.</strong> Decide what you want to improve - fairer waiting, better-balanced games, more variety, less work for the organiser - and introduce ePegboard as the mechanism for that change.</p>
+
+      <p>A badminton club is a difficult place to force a digital transformation. Half the room is there to get away from screens. Some members have used the same pegboard for fifteen years and see no reason to replace something that basically works. They have a point.</p>
+
+      <p>So the rollout should preserve what people value and remove what causes friction. If the new system needs a speech, three accounts and a tutorial before anybody can play, you have improved the wrong thing.</p>
+    </div>
+
+    <div class="guide-toc" style="margin-top:28px">
       <h4>In this guide</h4>
-      <a href="#loop">The loop at a glance</a>
-      <a href="#problem">Start from a problem your members already feel</a>
-      <a href="#before">Before the session: tell the club why</a>
-      <a href="#night">On the night: put the tablet where people gather</a>
-      <a href="#after">After the session: share the recap, lead with the stats</a>
-      <a href="#repeat">Repeat it, identically</a>
-      <a href="#pace">Ease in at your own pace: how much you let the app decide</a>
-      <a href="#ratings">Give the ratings a good start</a>
-      <a href="#questions">Answer the questions your members will ask</a>
-      <a href="#help">If you get stuck, we are one email away</a>
+      <a href="#success">Define success before you switch</a>
+      <a href="#test">Run a private test before the club sees it</a>
+      <a href="#message">Tell members what is changing - and what is not</a>
+      <a href="#familiar">Keep the first night familiar</a>
+      <a href="#ratings">Seed ratings without pretending they are precise</a>
+      <a href="#night">What to watch on the first two nights</a>
+      <a href="#automation">Increase automation only after trust</a>
+      <a href="#players">Let player accounts be optional</a>
+      <a href="#feedback">Use objections as configuration feedback</a>
       <a href="#faq">Frequently asked questions</a>
     </div>
 
     <div class="prose" style="margin-top:34px">
-      <p class="lead">Most organisers who move their club night to an app expect the hard part to be the software. It rarely is. The app runs the night from evening one. The part that decides whether the move sticks is the people: whether the club takes to it, and whether your players actually engage with it rather than the whole thing living on one organiser's tablet. Getting players onto their own accounts is a big part of that - it is what lets the night keep giving them something once they have gone home, which is what keeps them coming back - and it is the piece most organisers find hardest. This guide is the playbook for exactly that, drawn from one club that ran it consistently and got more than twenty players onto their own accounts in just two sessions, where most clubs see a handful trickle in over weeks. Here is precisely what they did, and why each step pulls its weight.</p>
 
-      <h2 id="loop">The loop at a glance</h2>
-      <p>The whole thing is one short loop, run the same way every session. Nothing here is clever; the power is in doing it consistently rather than once.</p>
-      <div class="guide-callout">
-        <h4>The before / on-the-night / after loop</h4>
-        <ol style="margin:8px 0 0;padding-left:20px">
-          <li><strong>Before</strong> - post in your club chat: why you are switching (tied to a real gripe) and how it will work.</li>
-          <li><strong>On the night</strong> - have the tablet out and accessible; let people be curious.</li>
-          <li><strong>After</strong> - share the session recap and lead with what players can see: their own stats when they claim their profile.</li>
-          <li><strong>Repeat</strong> - run the same three steps next session, and the next.</li>
-        </ol>
+      <h2 id="success">Define success before you switch</h2>
+      <p>"We are going to use ePegboard" is not a useful objective. Decide what should be better three sessions later.</p>
+      <ul>
+        <li>Are waits distributed more evenly?</li>
+        <li>Do strong and developing players get fewer obvious mismatches?</li>
+        <li>Are the same partnerships appearing less often?</li>
+        <li>Does the organiser spend less time deciding the next four?</li>
+        <li>Are late arrivals and sit-outs easier to handle?</li>
+      </ul>
+      <p>Pick one or two. That gives the club a reason for the change and gives you something concrete to judge afterwards.</p>
+
+      <p>This also stops a common rollout mistake: enabling every feature because it exists. A club that wants fairer rotation does not need to begin by discussing ratings history, personal profiles, competition tools and payments. Solve the first problem first.</p>
+
+      <h2 id="test">Run a private test before the club sees it</h2>
+      <p>Do not learn the mechanics while twenty people are standing behind you with rackets.</p>
+
+      <p>Before the first live night, create a dummy session or use the instant demo. Practise the actions that matter under pressure:</p>
+      <ul>
+        <li>add or check in a player;</li>
+        <li>start the next game;</li>
+        <li>enter a result;</li>
+        <li>sit somebody out and bring them back;</li>
+        <li>handle a late arrival;</li>
+        <li>change a suggested game you do not like;</li>
+        <li>void or correct a mistake.</li>
+      </ul>
+
+      <p>You do not need to know every setting. You do need to know how to recover when somebody says, "I wasn't in that game."</p>
+
+      <p>If another person often runs the club night, include them in the test. A system that works only when its enthusiast is present has not replaced the old process; it has created a new dependency.</p>
+
+      <h2 id="message">Tell members what is changing - and what is not</h2>
+      <p>Send one short message before the first session. Lead with the club problem rather than the product.</p>
+
+      <p>For example, the useful information is:</p>
+      <ul>
+        <li>we are trying a different way of managing the queue because waits have been uneven;</li>
+        <li>you still turn up and play as normal;</li>
+        <li>there will be a shared screen showing the courts and queue;</li>
+        <li>nobody needs to download anything or make an account.</li>
+      </ul>
+
+      <p>That last point matters. Compulsory registration creates resistance before the feature that justified registration has any value to the player.</p>
+
+      <p>Do not send a feature list. People understand a club-night system much faster by watching Court 2 finish and seeing the next four names appear.</p>
+
+      <h2 id="familiar">Keep the first night familiar</h2>
+      <p>If the club currently uses a pegboard, you do not need to change both the tool and the social rules on the same evening.</p>
+
+      <p>ePegboard can be used in different degrees of automation. A club can begin close to its existing process: preserve a queue, force inclusion of the player at the front, restrict selection to the next few waiting players, and let an organiser or player adjust the proposed four.</p>
+
+      <p>That gives members something recognisable: <em>I can still see that I am near the front; I can still understand why I am due to play.</em></p>
+
+      <p>The benefit is that the system can simultaneously remember things the physical board cannot - recent partners, opponents, ratings, waits and completed games.</p>
+
+      <div class="guide-callout" style="margin-top:26px">
+        <h4>Change one variable at a time</h4>
+        <p style="margin-top:8px">First change the board. Then, if the club wants it, change how games are picked. A rollout is easier to diagnose when you know which change people are reacting to.</p>
       </div>
 
-      <h2 id="problem">Start from a problem your members already feel</h2>
-      <p>The clubs that adopt smoothly do not introduce an app because it is new; they introduce it because it fixes something members were already complaining about. One club on ePegboard switched because the traditional pegboard was not rotating games well, and that was a genuine, named grievance in the club before any app appeared. When the change is the answer to a gripe people already have, it is welcomed. When it appears out of nowhere, it is resisted.</p>
-      <p>So before you announce anything, be clear in your own head what problem you are solving. Uneven court time, the same four always playing together, games that are never quite balanced, no record of who played whom - these are the usual ones, and each is something our guides on <a href="/guides/fair-court-time-busy-club-night">fair court time</a>, <a href="/guides/game-variety-stop-same-players">game variety</a> and <a href="/guides/badminton-club-night-rotation">rotation</a> dig into. Pick the one your members actually feel, and lead with that.</p>
+      <h2 id="ratings">Seed ratings without pretending they are precise</h2>
+      <p>Balanced game suggestions need some idea of player standard. On a brand-new club list, the system cannot infer that from results it has not seen.</p>
 
-      <h2 id="before">Before the session: tell the club why</h2>
-      <p>A day or two before the first night, post in whatever channel your club already lives in - a WhatsApp group, a Facebook group, wherever the chatter happens. Two things, kept short:</p>
+      <p>Give regular members approximate starting levels if you can. Think in relative terms: beginner, developing, solid club, strong club, county-level - whatever distinctions make sense in your room. The objective is to stop the first night pairing two obvious extremes as though they were equal.</p>
+
+      <p>Do not spend an evening arguing whether somebody should be 1470 or 1510. The starting value is a prior, not a verdict. Results move it.</p>
+
+      <p>For players you do not know at all, leave the estimate broad and review early suggestions. If a game looks obviously wrong to a human who knows the group, change it.</p>
+
+      <p>That does not invalidate the rating system. Ratings learn from results; the algorithm does not need to have selected the game itself in order to learn from it.</p>
+
+      <h2 id="night">What to watch on the first two nights</h2>
+      <p>Do not judge the rollout by whether every suggested game is perfect. Judge the system around the games.</p>
+
+      <p><strong>Watch the queue.</strong> Can players understand when they are likely to play? If not, explain the display or adjust the queue constraints.</p>
+
+      <p><strong>Watch the organiser.</strong> Are they still mentally rebuilding every game from scratch? If so, the configuration may be too permissive or trust has not developed yet.</p>
+
+      <p><strong>Watch the awkward cases.</strong> Late arrival, someone sitting out, a player leaving early, a game being abandoned. Ordinary games are easy for any system; edge cases decide whether the organiser trusts it.</p>
+
+      <p><strong>Watch the room, not just the screen.</strong> If three players are repeatedly saying the same thing - "I'm always with X", "I waited ages", "those four were obviously uneven" - treat it as data. Sometimes the perception is wrong. Sometimes the settings are.</p>
+
+      <h2 id="automation">Increase automation only after trust</h2>
+      <p>Automatic picking is not the prize. A good club night is.</p>
+
+      <p>Once members have seen several sensible games, you can reduce the amount of organiser review. If the club likes choosing its own combinations, you may never want full automation. If the organiser is tired of being the human matchmaking engine, letting ePegboard pick everything may be the point of using it.</p>
+
+      <p>There is no maturity model where "fully automatic" is level three and everybody should aspire to it. Choose the operating style that suits the club.</p>
+
+      <p>What you should avoid is half-trusting automation indefinitely: letting the system pick, then changing every suggestion because a human feels obliged to improve it. Either identify the rule the picker is missing and configure around it, or give it enough freedom to do the job.</p>
+
+      <h2 id="players">Let player accounts be optional</h2>
+      <p>A player does not need an account in order to be part of the club night. Keep that distinction clear.</p>
+
+      <p>The shared board is the club tool. A personal account is for a player who wants more: their history, results, rating, recaps and other player-side features.</p>
+
+      <p>After a session, sharing the recap is a natural way to expose that value. "Here was tonight's session; you can claim your player if you want to keep your own history" is a better invitation than "everyone please register by Thursday".</p>
+
+      <p>Some people will claim themselves immediately. Some will never care. Neither group should affect whether they get a fair game on Tuesday night.</p>
+
+      <h2 id="feedback">Use objections as configuration feedback</h2>
+      <p>Not every complaint means the software is wrong, but almost every repeated complaint tells you something about the club's unwritten rules.</p>
+
+      <p>"The first person waiting should always be in the next game" is a queue philosophy. "Do not put two beginners together" is a balancing rule. "We like choosing our own partners sometimes" is an autonomy preference. A physical pegboard hides these policies inside whoever happens to be running it; software forces you to notice them.</p>
+
+      <p>That is useful. Write down repeated objections and decide whether each one is:</p>
       <ul>
-        <li><strong>Why we are changing.</strong> Name the problem from the section above. We have all felt the rotation going stale, so we are trying something that sorts it. This does the heavy lifting: it frames the tablet as a fix, not a fad.</li>
-        <li><strong>How it will work.</strong> A sentence on what to expect on the night - there will be a tablet, you will still just turn up and play, the app decides the games. No homework for members, nothing to download before they arrive.</li>
-      </ul>
-      <p>You are not trying to explain the whole app. You are removing the surprise, so that when people walk in and see a tablet on the table it is the thing they were told about, not an unexplained change to how their club night runs. Not sure how to word it? Our <a href="https://docs.epegboard.com/how-to/organiser-message-templates/" target="_blank" rel="noopener">organiser message templates</a> give you a copy-paste version of each of these messages to tweak for your club.</p>
-
-      <h2 id="night">On the night: put the tablet where people gather</h2>
-      <p>On the first night, have the tablet down and accessible - somewhere people naturally stand and wait, not tucked away by the organiser. That is genuinely most of the work. Players get curious about a screen showing courts, names and who is up next, and they wander over and look. You do not need a launch speech. A visible, running board that people can see doing its job sells itself far better than any announcement.</p>
-      <p>Run the night as normal. The point of evening one is not to get anyone signing up; it is simply to let the club see the thing work and feel that it is fair. Everything after this step is easier because people have now watched it run.</p>
-
-      <h2 id="after">After the session: share the recap, lead with the stats</h2>
-      <p>This is the step that matters most, and the one most clubs get slightly wrong. When the session ends, ePegboard gives you a shareable recap of the night. Here is how the best club used it:</p>
-      <ul>
-        <li><strong>Test it with a few people first.</strong> Send the recap link to a handful of keen members before anyone else. When they have opened it and had a look, you are ready for the wider post.</li>
-        <li><strong>Then post it to the whole club</strong> - and lead with what they can see, not with a request. Something like: here is tonight's session, and if you claim your profile you can see your own games, results and rating from the night. That framing - look what you can see - works far better than please go and make an account.</li>
-      </ul>
-      <p>The reason the pre-share matters is subtle but real: by the time the link hits the main group, a few people have already engaged with it, so it lands as something worth opening rather than a cold ask. And leading with the player's own stats is the actual hook. Claiming a profile is optional and happens off the back of curiosity about their own results - which is a far stronger pull than being told to register. This is the step that turns a night run on one organiser's tablet into a club whose players are engaged with it in their own right. There is a <a href="https://docs.epegboard.com/how-to/organiser-message-templates/#after-the-session" target="_blank" rel="noopener">ready-made after-session message</a> you can copy and drop your recap link into.</p>
-
-      <div class="cmp-wrap">
-        <table class="cmp-table">
-          <thead>
-            <tr><th>Instead of</th><th>Do this</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Announcing an app because it is new</td><td>Frame it as the fix for a gripe members already have</td></tr>
-            <tr><td>Springing the tablet on people cold</td><td>Explain the why and how in the club chat first</td></tr>
-            <tr><td>A launch speech on the night</td><td>Put the tablet where people gather and let curiosity work</td></tr>
-            <tr><td>Please go and sign up</td><td>Claim your profile to see your own stats from tonight</td></tr>
-            <tr><td>Posting the recap cold to everyone</td><td>Share with a few first, then post to the wider club</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h2 id="repeat">Repeat it, identically</h2>
-      <p>None of the above is a one-off launch. The club in this example ran the same loop for their second session and every session after: a message before to say how they were using it, the tablet accessible on the night, the recap shared afterwards leading with the stats. Consistency is what compounds. Each session a few more players claim their profile, the recaps get more familiar, and within a handful of weeks it is simply how the club night runs. Treat it as a habit, not a launch event.</p>
-
-      <h2 id="pace">Ease in at your own pace: how much you let the app decide</h2>
-      <p>You do not have to hand the whole night over to the app on day one. It runs in three broad styles, and a club used to a pegboard can start at the gentle end and move along the scale as trust builds.</p>
-      <ul>
-        <li><strong>Fully automated.</strong> The picker builds each game and you just tap Start. Best once the club trusts it - and for this you want to leave the picking constraints off, so the picker has the freedom to make the fairest, most varied games.</li>
-        <li><strong>Organiser-led.</strong> The picker suggests each game and you review it - swap a player, lock someone in, change the format - before you start it. The hands-on middle ground, and where most organisers begin.</li>
-        <li><strong>Traditional, pegboard-style.</strong> The closest thing to the board people already know. In the session settings, turn on <strong>Force include first queue player</strong> and <strong>Limit to first N players in queue</strong>, then hand the tablet to the player at the front of the queue and let them pick their own game from the next few waiting - and swap the suggestion around if they fancy different players. It is assisted picking: just like taking the top peg and choosing your four, except the app keeps it fair and keeps the record.</li>
-      </ul>
-      <p>That last style is worth calling out on its own. Clubs that let the front player pick their game and swap the suggestions around have found it genuinely popular - it gives players a sense of control and makes the wait part of the fun, rather than something the organiser does to them. Plenty of pegboard clubs start here and drift toward automated over a few weeks, once people have seen the balanced games it makes.</p>
-      <p>A device split that works nicely: run the shared tablet in <a href="https://docs.epegboard.com/club-nights/kiosk-mode/" target="_blank" rel="noopener">kiosk mode</a> so it can be passed safely between players - they can check people in, run the games and enter scores, while the admin controls stay locked behind your organiser PIN. Keep the jobs that need sign-off - manual overrides, voiding a game, changing settings - on your own phone, which steps into admin mode with the same PIN. The tablet lives with the players; you keep the few controls that need a grown-up, without hovering over the desk.</p>
-      <p>And players do not have to crowd the tablet at all. Anyone can follow the night live from their own phone by typing the code shown on the club's screen - the live board, who is on, who is up next - and once they are checked in they get their own running total for the evening, updating as each game finishes. No account is needed to follow along; claiming a profile is what turns that into a rating and history they keep. It is a good thing to mention in your after-the-session post - see <a href="/for-players">the player side</a>.</p>
-
-      <h2 id="ratings">Give the ratings a good start</h2>
-      <p>ePegboard builds its balanced games from player ratings, so the better your starting ratings, the better the games from the very first night.</p>
-      <p>You can leave everyone on the default - new players start at a middle rating - and let the system work each person out. It will. But the games in your first few sessions will be more hit-and-miss while it does, because it is starting with no idea who is who.</p>
-      <p>Better is to give each member an approximate rating when you add them - a rough tier is plenty (a beginner, an improver, a solid club player, a strong county-level player). You can set it on import or on the member form. Even loose guesses make the opening games noticeably closer and save the system a lot of guessing.</p>
-      <p>Either way, expect movement early. A new player's rating swings around a fair bit for their first couple of dozen games while the system learns where they sit, then it settles down. During that settling-in period, keep half an eye on the suggestions: if one comes out lopsided, override it - swap a player, or build the game by hand.</p>
-      <p>Here is the reassuring part. Doing that does not slow the system down or throw it off. It learns each player's level from the game <em>results</em>, not from who chose the game - so overriding a pick while ratings are still settling simply smooths the games on the night; underneath, the ratings still hone in on the right numbers. You are helping the night along, not fighting the system. For the detail, see <a href="https://docs.epegboard.com/ratings/overview/" target="_blank" rel="noopener">how ratings work</a>.</p>
-
-      <h2 id="questions">Answer the questions your members will ask</h2>
-      <p>A few questions come up almost every time, and having answers ready keeps momentum. Members tend to ask how it works, why it is free, and whether it will keep being improved. The easiest move is to do a little homework and point people at the material that already answers them, rather than fielding each one yourself:</p>
-      <ul>
-        <li><strong>How does it work?</strong> The <a href="/guides">guides section</a> and the <a href="/features/club-nights">club nights feature page</a> explain what the app does and why games come out the way they do.</li>
-        <li><strong>Why is it free?</strong> The more clubs use ePegboard, the better it gets for everyone - more inter-club play, more feedback, more improvements - so growing the community matters to us more than charging for the club night. It is free for clubs, with no card and no paywall on the basics. Point members at the <a href="/pricing">pricing page</a> for the fuller answer.</li>
-        <li><strong>Will it keep being updated?</strong> Yes - it is actively developed and updates ship regularly, and a lot of what ships comes straight from what clubs ask for, so if something about your setup is clunky, telling us is the fastest route to changing it.</li>
+        <li>a setting to change;</li>
+        <li>a club rule to make explicit;</li>
+        <li>a misunderstanding to explain;</li>
+        <li>or a genuine product gap to send to <a href="mailto:support@epegboard.com">support@epegboard.com</a>.</li>
       </ul>
 
-      <h2 id="help">If you get stuck, we are one email away</h2>
-      <p>You will not be on your own with this. If a member asks something you cannot answer, or something in the app looks wrong or is missing, email <a href="mailto:support@epegboard.com">support@epegboard.com</a> - we normally reply within 24 hours. And because a lot of what we build comes straight from these messages, flagging a rough edge is also the fastest way to get it fixed or added.</p>
+      <p>The first few sessions are not just a software rollout. They are a surprisingly good audit of how your club thinks a fair night should work.</p>
 
-      <div class="guide-callout">
-        <h4>The short version</h4>
-        <p>Tie the switch to a real problem, explain it before the night, keep the tablet accessible, and after each session share the recap leading with the player's own stats. Run that loop every week and your club ends up on its own accounts - not just your tablet.</p>
-        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+      <div class="guide-callout" style="margin-top:28px">
+        <h4>The rollout in one sentence</h4>
+        <p style="margin-top:8px"><strong>Explain the problem, keep the first night familiar, override obvious mistakes, and automate only the parts that earn the club's trust.</strong></p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Set up your club</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">Try the instant demo</a></p>
       </div>
 
       <h2 id="faq">Frequently asked questions</h2>
@@ -172,19 +206,7 @@
         <h3>@f.Q</h3>
         <p>@f.A</p>
       }
-    </div>
-  </div>
-</section>
 
-<!-- CTA -->
-<section class="cta" style="margin-top:56px">
-  <div class="wrap">
-    <h2>Roll it out on your next club night</h2>
-    <p>Free for clubs. Nothing to install. Post in your club chat and start the loop this week.</p>
-    <div class="cta-actions">
-      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
-      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
     </div>
-    <p class="fine">More on running a modern club in the <a href="/guides">guides section</a>.</p>
   </div>
 </section>

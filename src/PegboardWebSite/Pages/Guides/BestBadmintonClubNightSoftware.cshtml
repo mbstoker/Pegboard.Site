@@ -2,30 +2,32 @@
 @using PegboardWebSite.Services
 @{
     Layout = "_LayoutMarketing";
-    ViewData["Title"] = "Best badminton club-night software: what to look for";
-    ViewData["Description"] = "A practical buyer's guide to badminton club-night and session software: the features that actually matter, what to check before you commit, and how to tell a real fit from a feature list.";
-    ViewData["OgTitle"] = "Best badminton club-night software: what to look for";
+    ViewData["Title"] = "Best badminton club-night software in 2026: which tool fits which club?";
+    ViewData["Description"] = "A current comparison of ePegboard, ShuttlSync, ShuttleStats, NextFour, QourtX and SportRevive for badminton club nights - live rotation, ratings, bookings, payments, offline use, pricing and the trade-offs between them.";
+    ViewData["OgTitle"] = "Best badminton club-night software in 2026";
 
-    const string published = "2026-07-01";
+    const string published = "2026-07-01";   // first publication - held deliberately; GuideSchema
+                                             // ties dateModified to it (#396), so advancing it
+                                             // would claim this page is new. Revised 2026-08-26.
     const string canonical = "https://www.epegboard.com/guides/best-badminton-club-night-software";
 
     var faqPairs = new (string Q, string A)[]
     {
-        ("Is there free badminton club software?",
-         "Yes. Some session software, including ePegboard, is free for clubs with no card required, covering the full club-night workflow of sign-in, game picking, scoring, ratings, attendance and reports. Others charge per club or per member, sometimes with a limited free tier. Because the running cost of this kind of software is low, a generous free offer is realistic, so treat a paywall on the basics as a reason to look closer rather than a mark of quality."),
-        ("What should I look for in club-night software?",
-         "In rough order: does it run balanced, varied games without a lot of manual fiddling; does it keep court time even across a busy night; does it handle latecomers and drop-ins cleanly; can players see their own stats; can you export your data; and does it run on the devices you already have with no install. A long feature list matters less than whether it does the core job, running a fair night, well."),
-        ("Do we need to install anything?",
-         "The best modern options run in a web browser, so any laptop or tablet works and there is nothing to maintain. A few tools are Windows-only desktop apps, which suit venues with unreliable internet but tie you to one machine. Check whether the tool is web-based, and whether there is an offline fallback if your hall's connection is patchy."),
-        ("Can we get our club's data out?",
-         "You should be able to. Your members, results and history are your club's, and good software lets you export them to CSV whenever you want. If a tool makes it hard to get your data out, that is a warning sign, because it is the main thing that locks a club in."),
-        ("What is the difference between club-night software and club management software?",
-         "Club-night software runs the session itself: sign-in, game picking, rotation, scoring and live stats. Club management software leans towards membership, payments, bookings and admin. The strongest tools do both from one place and on one player rating, so the night you run and the records you keep stay joined up rather than living in separate systems.")
+        ("What is the best badminton club-night software?",
+         "There is no single winner for every club. ePegboard is strongest when live game picking, transparent fairness, ratings and wider badminton workflows are central. ShuttlSync is a strong browser-based alternative with offline sessions and social stats. ShuttleStats is compelling when bookings and payments are part of the problem. NextFour is a natural digital-pegboard option. SportRevive suits clubs that prefer a generated fixture sheet."),
+        ("Is there free badminton club-night software?",
+         "Yes. Several current products offer meaningful free use, including ePegboard, ShuttlSync, SportRevive and free tiers from some broader club platforms. The limits differ: for example ShuttlSync's free live sessions are currently limited to two courts, while paid plans increase that. Always check the current pricing page before rollout."),
+        ("Do players have to create accounts?",
+         "Not with every product. ePegboard, ShuttlSync and ShuttleStats can all run a club session without requiring every player to create a personal account. This is worth checking because compulsory onboarding can create unnecessary friction for a social club."),
+        ("Should club-night software work offline?",
+         "Only if your hall needs it. ShuttlSync explicitly supports offline sessions and some native apps may be less dependent on a live browser connection. If your venue has unreliable connectivity, test the exact failure mode before committing - not just whether the marketing page contains the word offline."),
+        ("What should I test before choosing software?",
+         "Run a realistic session with your actual club edge cases: a late arrival, someone sitting out, a player leaving early, two courts finishing together, an organiser override and a disputed pick. A polished setup screen tells you very little about how the product behaves at 9pm in a busy hall.")
     };
 
     var articleJsonLd = GuideSchema.Article(
-        "Best badminton club-night software: what to look for",
-        "The features that actually matter in badminton club-night and session software, what to check before you commit, and how to tell a genuine fit from a long feature list.",
+        "Best badminton club-night software in 2026: which tool fits which club?",
+        "A current comparison of ePegboard, ShuttlSync, ShuttleStats, NextFour, QourtX and SportRevive for badminton club nights - live rotation, ratings, bookings, payments, offline use, pricing and the trade-offs between them.",
         canonical, published);
     var faqJsonLd = GuideSchema.Faq(faqPairs);
 }
@@ -35,115 +37,205 @@
     <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
 }
 
-<!-- HERO -->
 <section class="page-hero" style="padding:0">
   <div class="wrap">
     <div class="inner">
-      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Best club-night software</span></div>
-      <h1 style="margin-top:10px">Best badminton club-night software: what to actually look for</h1>
-      <p class="lede">Every tool has a feature list as long as your arm. Far fewer do the one job that matters well: running a fair, full, friendly club night without the organiser chained to a screen. Here is how to tell them apart.</p>
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Club-night software</span></div>
+      <h1 style="margin-top:10px">Best badminton club-night software in 2026: which tool fits which club?</h1>
+      <p class="lede">There are now enough credible badminton-specific tools that “use an app” is no longer a useful recommendation. The interesting question is what kind of club night you want the software to run.</p>
       <div class="guide-meta">
-        <span class="gm-tag">Buyer's guide</span>
+        <span class="gm-tag">Comparison</span>
         <span>Club software</span>
-        <span>9 min read</span>
+        <span>13 min read</span>
       </div>
     </div>
   </div>
 </section>
 
 <section style="padding-top:40px">
-  <div class="wrap" style="max-width:820px">
-    <div class="guide-toc">
+  <div class="wrap" style="max-width:900px">
+
+    <div class="prose">
+      <p class="lead"><strong>The market has split into several useful philosophies.</strong> Some tools are digital pegboards. Some optimise live pairings from ratings and waiting time. Some generate the entire night's fixture sheet in advance. Others start with bookings and payments and add the court board around them.</p>
+
+      <p>That means the best choice depends less on the longest feature list than on which problem currently consumes your organiser's attention.</p>
+
+      <p style="color:var(--muted-2);font-size:.95rem"><strong>Disclosure:</strong> this comparison is published by ePegboard, so we are not an independent reviewer. We checked competitors' public product and pricing pages on 26 August 2026 and have tried to describe their strengths as we would want ours described. We have not run a full club night on every product. Features and prices can change; verify anything material with the supplier before deciding.</p>
+    </div>
+
+    <div class="guide-toc" style="margin-top:28px">
       <h4>In this guide</h4>
-      <a href="#job">Start with the job, not the features</a>
-      <a href="#checklist">The features that actually matter</a>
-      <a href="#redflags">Questions to ask, and red flags</a>
-      <a href="#price">A word on price</a>
-      <a href="#epegboard">How ePegboard measures up</a>
+      <a href="#shortlist">The shortlist</a>
+      <a href="#different">The decision most comparisons miss</a>
+      <a href="#epegboard">ePegboard</a>
+      <a href="#shuttlsync">ShuttlSync</a>
+      <a href="#shuttlestats">ShuttleStats</a>
+      <a href="#nextfour">NextFour</a>
+      <a href="#qourtx">QourtX</a>
+      <a href="#sportrevive">SportRevive</a>
+      <a href="#test">How to test any of them properly</a>
       <a href="#faq">Frequently asked questions</a>
     </div>
 
     <div class="prose" style="margin-top:34px">
-      <p class="lead">If you have searched for the best badminton club-night software, you have probably found a dozen tools that all sound similar. The trick is not comparing feature lists line by line, it is being clear about the job you need doing and checking, honestly, which tools do that job well. This guide walks through the criteria that actually make a difference on the night, and the questions worth asking before you commit your club to anything.</p>
 
-      <h2 id="job">Start with the job, not the features</h2>
-      <p>The core job of club-night software is simple to state and hard to do: keep every court busy with games that are balanced and varied, share court time fairly across everyone who turns up, and do it without a person having to babysit a screen all evening. Almost everything else, payments, competitions, membership admin, is useful but secondary. If a tool nails the core and bolts the rest on, you have something. If it has forty features but still leaves your organiser refereeing arguments about whose turn it is, the feature count did not help.</p>
-      <p>So before you compare anything, write down what a good night looks like for your club. A small social group wants easy mixing and no fuss. A busy competitive club wants close games and even court time. A club running <a href="/guides/how-to-run-handicap-doubles-tournament">handicap competitions</a> or picking <a href="/guides/picking-league-teams-club-data">league teams</a> wants those to run off the same data. Knowing which of these you are lets you weigh the criteria below rather than being dazzled by a list.</p>
+      <h2 id="shortlist">The shortlist</h2>
 
-      <h2 id="checklist">The features that actually matter</h2>
-      <p>These are the things worth checking, roughly in the order they affect your night.</p>
       <div class="cmp-wrap">
         <table class="cmp-table">
           <thead>
-            <tr><th>What to check</th><th>Why it matters</th><th>Good sign</th></tr>
+            <tr>
+              <th>Tool</th>
+              <th>Best fit</th>
+              <th>Session model</th>
+              <th>Current pricing signal</th>
+            </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Game quality</td>
-              <td>Balanced, varied games are the whole point. This is where cheap tools cut corners.</td>
-              <td>Games are matched on level and on who has played whom, not just pulled off a queue.</td>
+              <td><strong>ePegboard</strong></td>
+              <td>Clubs wanting live balanced picking, explicit queue fairness and badminton workflows around the session</td>
+              <td>Live court release and next-game picking</td>
+              <td>Free for clubs</td>
             </tr>
             <tr>
-              <td>Court-time fairness</td>
-              <td>The most common complaint at any club is uneven court time.</td>
-              <td>It tracks real waiting time and evens out the share of games across the night.</td>
+              <td><strong>ShuttlSync</strong></td>
+              <td>Recreational clubs wanting browser-based rotation, ratings, RSVP, social stats and offline sessions</td>
+              <td>Live player shuffle</td>
+              <td>Free to 2 live courts; £9.99/month Pro to 4</td>
             </tr>
             <tr>
-              <td>Latecomers and drop-ins</td>
-              <td>Real club nights are messy; people arrive and leave throughout.</td>
-              <td>Adding or removing a player mid-session is one tap and does not distort fairness.</td>
+              <td><strong>ShuttleStats</strong></td>
+              <td>Clubs where bookings, payment collection and the live night need to become one workflow</td>
+              <td>Live matchmaking + court board</td>
+              <td>No subscription; platform fee on member payments</td>
             </tr>
             <tr>
-              <td>Player ratings</td>
-              <td>Balancing, handicaps and team selection are only as good as the rating behind them.</td>
-              <td>Ratings update automatically from results, so nobody has to grade players by hand.</td>
+              <td><strong>NextFour</strong></td>
+              <td>Clubs wanting a familiar mobile-first digital pegboard with optional skill-based picking</td>
+              <td>Pegboard, skill-based or manual</td>
+              <td>Core nights free; some modes/features paid</td>
             </tr>
             <tr>
-              <td>Player-facing stats</td>
-              <td>Live stats keep members engaged and turn ratings into a talking point.</td>
-              <td>Players can see their rating, win rate and history on their own phone.</td>
+              <td><strong>QourtX</strong></td>
+              <td>Larger racquet clubs wanting wallboards, queues, membership and broader venue operations</td>
+              <td>Live smart queue / court assignment</td>
+              <td>Public pages currently describe a free small-club tier; confirm larger-club pricing</td>
             </tr>
             <tr>
-              <td>Runs on your kit</td>
-              <td>You should not have to buy hardware or install anything.</td>
-              <td>Works in a browser on a tablet or laptop you already own.</td>
-            </tr>
-            <tr>
-              <td>Data ownership</td>
-              <td>Your members and history are yours; getting locked in is the real cost.</td>
-              <td>One-click CSV export of members, attendance and results.</td>
-            </tr>
-            <tr>
-              <td>Everything in one place</td>
-              <td>Separate tools for nights, competitions and admin drift out of sync.</td>
-              <td>Sessions, competitions and records share one system and one rating.</td>
+              <td><strong>SportRevive</strong></td>
+              <td>Groups that prefer a full balanced fixture sheet rather than deciding each next game live</td>
+              <td>Generated rounds, editable during session</td>
+              <td>Free</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2 id="redflags">Questions to ask, and red flags</h2>
-      <p>Before you roll anything out to your members, get answers to these:</p>
-      <ul>
-        <li><strong>Can I try it on a real night without paying first?</strong> If you cannot see it run with your own players before committing, that is a red flag.</li>
-        <li><strong>How does it decide games?</strong> You do not need the internal maths, but it should be able to show you why a game was picked. "It just picks" is not reassuring when a member disputes it.</li>
-        <li><strong>What happens to court time when the night gets busy?</strong> Plenty of tools look fine with eight players and fall apart with thirty.</li>
-        <li><strong>How do I get my data out?</strong> If the answer is vague, assume you cannot.</li>
-        <li><strong>What does it cost as we grow?</strong> Watch for per-member pricing that quietly scales into a real bill.</li>
-      </ul>
-      <p>The biggest red flag of all is software that makes the organiser work harder, not less. The point is to hand over the repetitive decisions so the person running the night can actually play. If a demo leaves you doing more tapping than you would with a <a href="/guides/paper-pegboard-to-app">paper pegboard</a>, keep looking.</p>
+      <p style="margin-top:18px">Those labels are deliberately about fit, not a medal table. A product can be excellent at a job your club does not need.</p>
 
-      <h2 id="price">A word on price</h2>
-      <p>Session software is cheap to run, so free-for-clubs is a genuine and sustainable offer, not a trap or a trial that expires. That said, free should mean the real thing, not a stripped demo that nags you to upgrade. Check that the free version covers the whole night, sign-in, picking, scoring, ratings and reports, and that anything paid is for genuinely bigger needs like a large multi-site club or a one-off event, rather than the basics every club needs. Cheap or free is fine. Cheap-feeling is not.</p>
+      <h2 id="different">The decision most comparisons miss: live queue or planned rounds?</h2>
 
-      <h2 id="epegboard">How ePegboard measures up</h2>
-      <p><a href="/badminton-club-management-software">ePegboard</a> was built around exactly the criteria above. It keeps courts busy with balanced, varied games, tracks court-time fairness across the whole night, handles latecomers and drop-ins in a tap, and shows why each game was picked so disputes end with evidence rather than argument. Players follow their own rating and stats on their phones, everything runs in a browser with nothing to install, and you can export your data whenever you like. Sessions, <a href="/features/competitions">handicap competitions</a> and <a href="/features/league-team-support">league team selection</a> all run off one player rating, so nothing drifts out of sync.</p>
-      <p>It is free for clubs, with no card to enter, and clubs have already run more than 1,100 sessions and over 33,000 games on it. The fastest way to judge any tool, including this one, is to run a real night on it, so the honest recommendation is to try it with your own players and see how the evening feels.</p>
+      <p>Before comparing ratings, leaderboards or colour schemes, decide whether the software should plan the evening <strong>as it happens</strong> or <strong>as a sequence of rounds</strong>.</p>
 
-      <div class="guide-callout">
-        <h4>See it on your own club night</h4>
-        <p>Run a real session on ePegboard, free, and judge it the only way that counts. No card, no install, running in minutes.</p>
-        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+      <p>A live system waits for a court to finish, looks at who is currently available and chooses the next game. It naturally absorbs late arrivals, early departures and courts finishing at different times.</p>
+
+      <p>A round-based system generates a schedule: Round 1, Round 2, Round 3. This is wonderfully legible. Everyone can see the evening, rests can be distributed across the draw, and printing the sheet is possible. The cost is that reality keeps editing the plan.</p>
+
+      <p>Neither is intrinsically superior. A stable nine-player group may prefer knowing all five games at 7pm. A thirty-player drop-in club with arrivals until 8:15 almost certainly benefits from live decisions.</p>
+
+      <p>The second decision is equally important: <strong>what can outweigh queue order?</strong> Skill? Partner repeats? A requested rest? Some software treats queue fairness as a hard rule; some optimises a combined score. Ask the vendor to explain an example where the longest-waiting player is not selected.</p>
+
+      <h2 id="epegboard">ePegboard: strongest when the picking policy itself matters</h2>
+
+      <p><a href="/badminton-club-management-software">ePegboard</a> is built around the moment a court becomes free. Its picker considers expected closeness, skill spread, waiting fairness, queue order, partner/opponent variety, recent repeats, gender balance and avoiding straight-back-on games. Organisers can accept the suggestion, swap players, lock somebody in or build a game manually.</p>
+
+      <p>The useful differentiator is not merely that it uses an algorithm; several competitors do. It exposes <em>why</em> a game was suggested and lets a club promote preferences to hard constraints - for example forcing the first player in the queue into the next pick. That matters for clubs where "fair" is a policy the room cares about, not just an optimisation score.</p>
+
+      <p>Ratings and session history feed wider ePegboard workflows including handicap competitions and league-team support. Players do not need personal accounts for the club night; a shared kiosk can remain the centre of the session.</p>
+
+      <p><strong>Choose it if:</strong> the hardest part of your night is making the next four fair, close and varied while keeping the logic understandable.</p>
+
+      <p><strong>Look elsewhere if:</strong> your primary problem is integrated online booking/payment collection. That is currently more central to products such as ShuttleStats and broader club-management platforms.</p>
+
+      <h2 id="shuttlsync">ShuttlSync: a strong browser-based recreational-club alternative</h2>
+
+      <p><a href="https://www.shuttlsync.com/" target="_blank" rel="noopener">ShuttlSync</a> is one of the closest current comparisons to ePegboard in philosophy. It is badminton-specific, browser-based and combines session sign-up, player shuffle, live scoring, ratings, club stats, seasons and achievements.</p>
+
+      <p>Its shuffle uses games played, time sitting out and partner variety, and organisers can still move people manually. A particularly useful distinction is explicit <strong>offline session support</strong>, which is worth attention if your hall's Wi-Fi is unreliable.</p>
+
+      <p>Its current free plan allows unlimited players and sessions with live play on up to two courts. Club Pro is listed at £9.99 per month and increases live sessions to four courts while adding rating insights.</p>
+
+      <p><strong>Choose it if:</strong> you want a lightweight browser system with social/player features and offline operation, and your court count fits its current tier structure.</p>
+
+      <p><strong>Check carefully if:</strong> you routinely run more than four courts; its current public pricing page describes live support up to four.</p>
+
+      <h2 id="shuttlestats">ShuttleStats: strongest when money and attendance are part of the same problem</h2>
+
+      <p><a href="https://shuttlestats.app/learn" target="_blank" rel="noopener">ShuttleStats</a> starts a little earlier in the club-night journey. Members can book sessions and pay through Stripe; capacity, waitlists, cancellation/refund handling and session credits sit alongside auto-matchmaking, a live court board, courtside scoring, ratings and player statistics.</p>
+
+      <p>That makes it especially interesting for pay-as-you-go clubs where the organiser currently spends as much time chasing £12 session fees as choosing games.</p>
+
+      <p>The business model is also different. Its public page currently says there is no subscription for the full club toolkit; instead it charges an agreed flat platform fee when a member makes a payment. Free sessions incur no platform fee.</p>
+
+      <p><strong>Choose it if:</strong> booking, capacity and payment reconciliation are inseparable from running the night.</p>
+
+      <p><strong>Check carefully if:</strong> you want ratings to follow a player consistently between different clubs. ShuttleStats states that each club's player data and profiles are isolated, so a person playing at two clubs has separate club-specific statistics.</p>
+
+      <h2 id="nextfour">NextFour: the digital pegboard is the product</h2>
+
+      <p><a href="https://nextfour.app/" target="_blank" rel="noopener">NextFour</a> supports badminton alongside squash, tennis, padel and table tennis. Its language will feel immediately familiar to clubs replacing a physical board: players "peg on", watch the live queue and can use a courtside tablet in Terminal mode.</p>
+
+      <p>Sessions can use Pegboard, Skill-based or Manual picking. This makes NextFour a good candidate for a club that wants a gradual migration rather than a philosophical change in how its night works.</p>
+
+      <p>The pricing needs one extra check at decision time. NextFour says core club nights are free, while paid plans unlock features including Pegboard, Skill-based picking and Terminal mode; subscriptions are handled through the mobile app stores. The public support page does not currently put one simple web price beside those tiers.</p>
+
+      <p><strong>Choose it if:</strong> a familiar, mobile-first pegboard experience matters more than building a large badminton-specific data ecosystem around the club.</p>
+
+      <h2 id="qourtx">QourtX: broader racquet-club operations with a strong wallboard</h2>
+
+      <p><a href="https://www.qourtx.com/badminton-club-management" target="_blank" rel="noopener">QourtX</a> is aimed across racquet sports rather than only badminton. Its badminton offering includes a smart waiting queue, skill-based court assignments, skip tracking, configurable rest, guest check-in, session analytics and a live wallboard intended for a large display.</p>
+
+      <p>That broader scope can be an advantage for a multi-sport venue or a club wanting membership and operations around the session rather than only game rotation.</p>
+
+      <p>There is one thing we would verify before publishing a committee budget. QourtX's current public pages are not perfectly consistent about commercial packaging: its badminton page says free for clubs up to 50 members with larger clubs starting at £5.99/month, while its main site describes a free Local tier and a substantially different per-active-member Club tier. That may reflect a product or pricing transition, but it is enough reason to ask for the applicable plan in writing.</p>
+
+      <p><strong>Choose it if:</strong> you want the club-night wallboard inside a broader racquet-club management product.</p>
+
+      <h2 id="sportrevive">SportRevive: best thought of as a very smart fixture sheet</h2>
+
+      <p><a href="https://sportrevive.com/badminton-fixture-generator" target="_blank" rel="noopener">SportRevive</a> takes a different route. Tick who arrived, choose courts and desired games per player, and it generates a full set of rounds with teams balanced by rating, partners rotated and sit-outs shared.</p>
+
+      <p>That is attractive because the result is inspectable before anybody hits a shuttle. It can be printed, run from phones and edited when someone arrives late or leaves. Scores feed the ratings and recap afterwards.</p>
+
+      <p>The trade-off is inherent in the model: it begins from a planned sheet rather than independent courts releasing at unpredictable times. Some clubs will prefer that structure; some will find live next-game selection more natural.</p>
+
+      <p><strong>Choose it if:</strong> your attendance is reasonably stable and you like the clarity of knowing the rounds in advance.</p>
+
+      <h2 id="test">How to test any of them properly</h2>
+
+      <p>Do not test with eight perfectly behaved imaginary players. That is the software equivalent of buying hiking boots by standing on carpet.</p>
+
+      <p>Run a trial that includes:</p>
+      <ol>
+        <li>a late arrival after several games have started;</li>
+        <li>one player asking to sit out and then rejoin;</li>
+        <li>two courts finishing within seconds of each other;</li>
+        <li>a pairing you deliberately want to keep together;</li>
+        <li>an obviously bad algorithm suggestion that you override;</li>
+        <li>a player leaving before the end;</li>
+        <li>a wrong score that needs correcting;</li>
+        <li>and, if your hall is unreliable, loss of internet.</li>
+      </ol>
+
+      <p>Then ask the organiser one question: <strong>did this remove decisions from my head, or merely move them onto a screen?</strong></p>
+
+      <p>Also test exit. Export whatever data the product says belongs to your club. A system can be free to enter and expensive to leave if years of results cannot come with you.</p>
+
+      <div class="guide-callout" style="margin-top:26px">
+        <h4>Our own recommendation is deliberately testable</h4>
+        <p style="margin-top:8px">If live fair rotation is your main problem, put ePegboard beside the closest alternative and run the same awkward club-night scenarios through both. We would rather win that comparison on the night than on this page.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Set up a free club</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">Try the instant demo</a></p>
       </div>
 
       <h2 id="faq">Frequently asked questions</h2>
@@ -152,19 +244,12 @@
         <h3>@f.Q</h3>
         <p>@f.A</p>
       }
-    </div>
-  </div>
-</section>
 
-<!-- CTA -->
-<section class="cta" style="margin-top:56px">
-  <div class="wrap">
-    <h2>Try the club-night software clubs actually stick with</h2>
-    <p>Balanced games, fair court time, free for your club. Runs in any browser.</p>
-    <div class="cta-actions">
-      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
-      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
+      <div style="margin-top:34px;padding-top:22px;border-top:1px solid var(--line)">
+        <h4 style="margin:0 0 8px">Research note</h4>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:0">Competitor descriptions and prices were checked against their public websites on 26 August 2026: <a href="https://nextfour.app/" target="_blank" rel="noopener">NextFour</a>, <a href="https://www.shuttlsync.com/pricing" target="_blank" rel="noopener">ShuttlSync</a>, <a href="https://shuttlestats.app/learn" target="_blank" rel="noopener">ShuttleStats</a>, <a href="https://www.qourtx.com/badminton-club-management" target="_blank" rel="noopener">QourtX</a> and <a href="https://sportrevive.com/badminton-fixture-generator" target="_blank" rel="noopener">SportRevive</a>. This is a market snapshot, not a permanent feature matrix.</p>
+      </div>
+
     </div>
-    <p class="fine">More on running your club well in the <a href="/guides">guides section</a>.</p>
   </div>
 </section>

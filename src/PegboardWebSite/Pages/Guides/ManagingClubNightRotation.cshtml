@@ -2,30 +2,32 @@
 @using PegboardWebSite.Services
 @{
     Layout = "_LayoutMarketing";
-    ViewData["Title"] = "Pegboard, organiser or app: how to manage club-night rotation";
-    ViewData["Description"] = "The real ways badminton clubs manage who plays next - a self-managed pegboard queue, an organiser making the games, players sorting themselves out, or an app - compared on court time, balance, variety and effort.";
-    ViewData["OgTitle"] = "How to manage your club-night rotation";
+    ViewData["Title"] = "Pegboard, organiser, player choice or app: who should control the badminton rotation?";
+    ViewData["Description"] = "Four ways to manage a badminton club-night rotation compared by transparency, consistency, game quality, volunteer load and player autonomy - plus hybrid models that work better than choosing one extreme.";
+    ViewData["OgTitle"] = "Who should control your badminton club-night rotation?";
 
-    const string published = "2026-07-01";
+    const string published = "2026-07-01";   // first publication - held deliberately; GuideSchema
+                                             // ties dateModified to it (#396), so advancing it
+                                             // would claim this page is new. Revised 2026-08-26.
     const string canonical = "https://www.epegboard.com/guides/managing-club-night-rotation";
 
     var faqPairs = new (string Q, string A)[]
     {
-        ("How do most badminton clubs decide who plays next?",
-         "Most clubs run a pegboard or a queue: players put their peg or name down when they come off, and go back on in turn. Many also have an organiser who makes up the games by hand to balance the levels and mix people. Some looser clubs let players sort out their own games. What clubs almost never do, despite it being common in casual drop-in play, is winner-stays-on, because it leaves weaker players sitting out all night."),
-        ("Is it better to have one organiser make the games?",
-         "It can produce the best games, because a good organiser balances levels and mixes people in a way a plain queue never will. The catch is that it depends entirely on that person being there, being good at it, and being willing to run the board all evening instead of playing. It works brilliantly at clubs with the right volunteer and falls apart the moment they are away, which is why many clubs move the job to software."),
-        ("Should you let players arrange their own games?",
-         "In a small, friendly club where everyone knows everyone, it is fine and saves anyone having to run things. At a busier or more mixed club it tends to go wrong: friends pair up every time, stronger players avoid weaker ones, newcomers are left standing, and courts sit idle while people negotiate. The bigger and more mixed your club, the more some structure helps."),
-        ("What is a pegboard and how does the queue work?",
-         "A pegboard is the traditional badminton club-night tool: a board with numbered courts and a peg for each player. When you finish a game you move your peg to the waiting area, and the next players in line go on, usually first-in-first-out. It is simple and visible to everyone, which is why it has lasted, but it cannot balance games by ability or track court time, so it leans on whoever is running it."),
-        ("When should a club move from a pegboard to an app?",
-         "When the manual approach stops keeping up. The usual signs are more players than one person can track fairly, regular grumbles about court time or one-sided games, newcomers not sticking around, or simply wanting your organiser to be able to play. A small, settled club may never need to move. A growing, mixed one usually finds an app solves exactly those problems, and a free one costs nothing to try.")
+        ("Is a pegboard fair?",
+         "A pegboard can be very fair at queue order if everyone follows the same rule. It does not automatically make fair games or remember previous partnerships. Its fairness therefore depends on what job you expect the board to do and what judgement remains with players or the organiser."),
+        ("Is an organiser better than an algorithm at making games?",
+         "An experienced organiser has context software may not know - injuries, friendships, coaching goals and who is having a bad night. Software has better memory and consistency across waits, ratings and repeated pairings. A strong hybrid is often software proposing the routine game while a human keeps override authority."),
+        ("Should the front player be allowed to choose the next game?",
+         "It can work well if the choice is bounded. For example, the longest-waiting player must be included and may choose from the next several eligible players. That preserves player autonomy without turning the whole room into unrestricted self-selection."),
+        ("Does software remove the need for club rules?",
+         "No. It makes the rules more explicit. A club still needs to decide whether queue order is hard or soft, how much game balance can justify a skip, whether fixed pairs are allowed and how long someone can wait. Software executes policy; it should not invent the policy silently."),
+        ("When should a club change its rotation method?",
+         "When the failure mode of the current method is recurring and material: the organiser never plays, queue disputes keep returning, games are repeatedly poor, newcomers cannot understand the process, or the system depends on one person being present. Do not change merely because a more modern tool exists.")
     };
 
     var articleJsonLd = GuideSchema.Article(
-        "Pegboard, organiser or app: how to manage club-night rotation",
-        "The real ways badminton clubs manage who plays next - a self-managed pegboard queue, an organiser making the games, players sorting themselves out, or an app - compared on court time, balance, variety and effort.",
+        "Pegboard, organiser, player choice or app: who should control the badminton rotation?",
+        "Four ways to manage a badminton club-night rotation compared by transparency, consistency, game quality, volunteer load and player autonomy - plus hybrid models that work better than choosing one extreme.",
         canonical, published);
     var faqJsonLd = GuideSchema.Faq(faqPairs);
 }
@@ -35,17 +37,16 @@
     <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
 }
 
-<!-- HERO -->
 <section class="page-hero" style="padding:0">
   <div class="wrap">
     <div class="inner">
-      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Managing the rotation</span></div>
-      <h1 style="margin-top:10px">Pegboard, organiser or app: how to manage your club-night rotation</h1>
-      <p class="lede">Every badminton club has to answer the same question all night: who plays next, and who with? There are really only a few ways clubs do it. Here is an honest comparison of each, and how to work out which one fits your club.</p>
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Managing rotation</span></div>
+      <h1 style="margin-top:10px">Who should control the club-night rotation?</h1>
+      <p class="lede">A pegboard gives control to the queue. A good organiser keeps it in one person's head. Self-selection gives it to the players. Software puts policy into code. The trade-off is not old versus new - it is where you want judgement to live.</p>
       <div class="guide-meta">
         <span class="gm-tag">Comparison</span>
         <span>Club nights</span>
-        <span>8 min read</span>
+        <span>10 min read</span>
       </div>
     </div>
   </div>
@@ -53,65 +54,176 @@
 
 <section style="padding-top:40px">
   <div class="wrap" style="max-width:820px">
+
     <div class="guide-toc">
       <h4>In this guide</h4>
-      <a href="#table">The approaches at a glance</a>
-      <a href="#pegboard">The self-managed pegboard queue</a>
-      <a href="#organiser">An organiser makes the games</a>
-      <a href="#freeforall">Players arrange their own games</a>
-      <a href="#app">Letting an app manage it</a>
-      <a href="#which">Which should your club use?</a>
+      <a href="#five">Five things you are choosing</a>
+      <a href="#pegboard">Pegboard: put trust in a visible queue</a>
+      <a href="#organiser">Organiser: put trust in judgement</a>
+      <a href="#players">Self-selection: put trust in the room</a>
+      <a href="#software">Software: put trust in explicit policy</a>
+      <a href="#hybrids">The hybrids are often better</a>
+      <a href="#failure">Choose by failure mode, not feature list</a>
+      <a href="#transition">How to change without provoking a culture war</a>
       <a href="#faq">Frequently asked questions</a>
     </div>
 
     <div class="prose" style="margin-top:34px">
-      <p class="lead">Managing a club night comes down to how you decide who plays next. Unlike casual drop-in play, organised badminton clubs do not tend to use winner-stays-on or a random draw; in practice it is one of a few real approaches, a self-managed pegboard queue, an organiser making up the games, players sorting themselves out, or software doing it. Each has a genuine place, and each has a failure mode. This guide compares them honestly so you can pick the one that fits your club. For the wider picture of what makes a night fair, see our guide to <a href="/guides/badminton-club-night-rotation">fair player rotation</a>.</p>
 
-      <h2 id="table">The approaches at a glance</h2>
-      <p>Rated on the four things a good night has to balance, plus how much running it takes.</p>
+      <p class="lead"><strong>Every rotation method delegates the same decisions somewhere:</strong> who is due, which four should play, who partners whom, whether a preference can override the normal order, and what happens when the obvious answer is a bad game.</p>
+
+      <p>No method makes those questions disappear. The difference is whether the answer lives in a physical queue, a volunteer's judgement, the players' negotiation or a configured system.</p>
+
+      <h2 id="five">Five things you are choosing</h2>
+
+      <p>Compare rotation methods on these five axes:</p>
+
+      <ol>
+        <li><strong>Transparency:</strong> can a player understand why they are - or are not - next?</li>
+        <li><strong>Consistency:</strong> will Tuesday's rule still be Thursday's rule when a different organiser is present?</li>
+        <li><strong>Game quality:</strong> can the method avoid obviously poor matches?</li>
+        <li><strong>Player autonomy:</strong> how much say do members have over their own partners/opponents?</li>
+        <li><strong>Volunteer load:</strong> how much attention does the method consume while the session is live?</li>
+      </ol>
+
+      <p>A sixth is sometimes forgotten: <strong>recoverability</strong>. What happens when the board is wrong, the organiser is absent, the tablet loses connection or somebody disputes the choice?</p>
+
       <div class="cmp-wrap">
         <table class="cmp-table">
           <thead>
-            <tr><th>Approach</th><th>Court time</th><th>Game balance</th><th>Variety</th><th>Effort to run</th></tr>
+            <tr><th>Method</th><th>Transparency</th><th>Human context</th><th>Consistency</th><th>Player autonomy</th><th>Live admin</th></tr>
           </thead>
           <tbody>
-            <tr><td>Self-managed pegboard queue</td><td>Fairly even</td><td>Ignored</td><td>Low</td><td>Low</td></tr>
-            <tr><td>Organiser makes the games</td><td>Even if done well</td><td>Good</td><td>Good</td><td>High, all on one person</td></tr>
-            <tr><td>Players arrange their own</td><td>Uneven</td><td>Hit and miss</td><td>Low, cliques form</td><td>None, but chaotic</td></tr>
-            <tr><td>App or software</td><td>Even</td><td>Good</td><td>Good</td><td>Low</td></tr>
+            <tr><td><strong>Strict pegboard / queue</strong></td><td>Very high</td><td>Low unless someone intervenes</td><td>High if rule is simple</td><td>Low - medium</td><td>Low</td></tr>
+            <tr><td><strong>Organiser picks</strong></td><td>Medium</td><td>Very high</td><td>Depends on organiser</td><td>Low unless invited</td><td>High</td></tr>
+            <tr><td><strong>Players self-select</strong></td><td>Low as a system</td><td>High</td><td>Low</td><td>Very high</td><td>Low centrally</td></tr>
+            <tr><td><strong>Configured software</strong></td><td>Medium - high if explainable</td><td>Limited unless overridden</td><td>Very high</td><td>Depends on mode</td><td>Low - medium</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2 id="pegboard">The self-managed pegboard queue</h2>
-      <p>The classic. A board with numbered courts and a peg for each player; you put your peg down when you come off, and go back on in turn. It is transparent, everyone can see the order, and it needs almost no running once people know how it works. Court time comes out fairly even, because the queue is first-in-first-out.</p>
-      <p>What it does not do is think about the games. The queue will happily send out a strong pair against a weak one, or the same four who just played, because it only knows the order, not the standard or the history. So you get even court time but a steady stream of one-sided and repetitive games. It suits small, settled clubs where the standard is fairly even and everyone is happy to muck in.</p>
+      <p style="margin-top:18px">Those are tendencies, not scores. A badly configured app can be less transparent than a brilliant organiser; a well-run pegboard can include plenty of player choice.</p>
 
-      <h2 id="organiser">An organiser makes the games</h2>
-      <p>At a lot of clubs, an experienced person runs the board: making up each game by hand, balancing the levels, splitting strong pairs, mixing people and keeping an eye on who has been waiting. Done well, this is the best of the manual options by a distance, because a good organiser weighs all four fairness factors at once in a way no simple queue can.</p>
-      <p>The weakness is not the method, it is the dependence. It rests entirely on that one person being there, being good at it, and being willing to spend the whole night on the board rather than playing. When they are away, quality drops off a cliff, and even the best organiser struggles to keep it perfectly fair and consistent for two or three hours while also taking scores and money. It is a lot to ask of a volunteer, which is exactly the load software is built to lift.</p>
+      <h2 id="pegboard">Pegboard: put trust in a visible queue</h2>
 
-      <h2 id="freeforall">Players arrange their own games</h2>
-      <p>Some clubs run loose: no board, no organiser, players just sort out who plays whom. In a small, friendly group where everyone knows everyone, it works and it is nicely informal. The trouble is that it does not scale. Left to themselves, friends pair up with friends, stronger players drift towards stronger players, newcomers hover at the edges not liking to push in, and courts sit empty while people negotiate. It is the approach most likely to leave someone having a quietly miserable night, and it is hardest on exactly the people a club most wants to keep.</p>
+      <p>The physical pegboard's enduring strength is epistemic: everybody can see the same state.</p>
 
-      <h2 id="app">Letting an app manage it</h2>
-      <p>The newest option is to let software make the games. <a href="/features/club-nights">ePegboard</a> keeps the transparency of the pegboard, everyone can see who is on and who is waiting, and adds the judgement of a good organiser: it makes balanced, varied games matched on player level and who has played whom, tracks court time so everyone gets a fair share, and shows why each game was picked. It does that consistently all night, and it frees the organiser to actually play.</p>
-      <p>In effect it gives you the strengths of the other approaches at once, the even court time of the queue and the game quality of a good organiser, without their weaknesses or the dependence on one person. It runs on a player rating that updates after every game, works in any browser, and is free for clubs.</p>
+      <p>Your peg is here. Those pegs are ahead. Court 3 contains these four. Nobody needs to trust an organiser's memory or an invisible algorithm.</p>
 
-      <h2 id="which">Which should your club use?</h2>
-      <p>There is no single right answer, only a right answer for your club:</p>
+      <p>A strict first-four queue also has excellent reproducibility. Given the same board, two different organisers should make the same next call.</p>
+
+      <p>The weakness is that <strong>order is not game design</strong>. A queue can tell you who is due; it cannot by itself tell you whether the first four should be split 1+4 versus 2+3, whether two of them partnered ten minutes ago or whether the player fifth in line would transform a hopeless mismatch.</p>
+
+      <p>Many successful pegboard clubs therefore already use a hybrid without calling it one: the queue determines eligibility, then a player or organiser chooses the actual four/teams from a small window.</p>
+
+      <p><strong>Use it when:</strong> the group values visible order, standards are not too difficult to mix, and the remaining human judgement is manageable.</p>
+
+      <h2 id="organiser">Organiser: put trust in judgement</h2>
+
+      <p>A skilled organiser sees information no board contains.</p>
+
+      <p>They know Priya has a shoulder problem, Ben and Marcus are practising for Saturday's match, Ana is new but clearly stronger than her self-described "intermediate", and two players have asked not to partner after an argument nobody wants formalised in club settings.</p>
+
+      <p>That context is valuable.</p>
+
+      <p>The cost is that the organiser becomes infrastructure.</p>
+
+      <p>If their method is mostly tacit knowledge, another volunteer cannot reproduce it. If they play a game, the next selection waits. If they unconsciously favour louder or more familiar players, there may be no audit trail. And after two hours, human working memory is not going to contain every recent partnership and wait accurately.</p>
+
+      <p><strong>Use it when:</strong> the club has a capable willing organiser and values contextual judgement more than formal consistency.</p>
+
+      <p>Then document at least the basic principles so the night does not collapse when that person goes on holiday.</p>
+
+      <h2 id="players">Self-selection: put trust in the room</h2>
+
+      <p>Unstructured self-selection gets criticised because it can create cliques. It can also be delightful.</p>
+
+      <p>Six friends on one court do not need a scheduling engine. A small group of similar standard may negotiate games faster than any board. Players can request rematches, coach one another and form partnerships without asking permission.</p>
+
+      <p>The method becomes fragile when access to court time depends on social confidence.</p>
+
+      <p>The player who says, "Right, you three with me" gets games. The newcomer who does not know whether they are allowed to insert themselves waits. Strong players can gravitate towards one another; nobody owns the responsibility for the person left over.</p>
+
+      <p>So the relevant variable is not just group size. It is <strong>social symmetry</strong>: do all members have roughly equal confidence and standing in the group?</p>
+
+      <p><strong>Use it when:</strong> the room is small, socially integrated and capable of noticing its own exclusions.</p>
+
+      <h2 id="software">Software: put trust in explicit policy</h2>
+
+      <p>Software's strength is not superior wisdom. It is memory and consistency.</p>
+
+      <p>A system can retain:</p>
+
       <ul>
-        <li><strong>Small, settled, even standard.</strong> A self-managed pegboard queue is simple and perfectly good.</li>
-        <li><strong>You have a great organiser who is happy to run it.</strong> Organiser-made games give lovely nights, as long as you are not left stranded when they are away.</li>
-        <li><strong>Very small and informal.</strong> Letting players sort themselves out is fine, but watch that newcomers are not being left out.</li>
-        <li><strong>Busy, mixed-ability, or growing.</strong> This is where an app earns its place, doing the organiser's job every game without tying anyone to the board.</li>
+        <li>actual wait duration;</li>
+        <li>games played;</li>
+        <li>player ratings;</li>
+        <li>recent partners/opponents;</li>
+        <li>sit-outs;</li>
+        <li>late arrivals;</li>
+        <li>fixed-pair requests;</li>
+        <li>and whatever constraints the club has configured.</li>
       </ul>
-      <p>If your nights already run smoothly, there is no need to change. If the same complaints keep coming back, or your organiser never gets to play, it is worth trying the approach that fixes both.</p>
+
+      <p>Its failure mode is different: the system may optimise a rule the club never consciously chose.</p>
+
+      <p>If a player who waited longest is skipped because a much closer game exists without them, was that fair? There is no technical answer. The club needs a policy.</p>
+
+      <p><a href="/features/club-nights">ePegboard</a>, for example, treats waiting, expected closeness, queue position and variety as signals, while allowing organisers to turn some preferences into hard constraints and to override any proposed game. That is valuable only if those controls match how the club wants to operate.</p>
+
+      <p><strong>Use software when:</strong> the desired rules exceed what the room can track comfortably and you are willing to make those rules explicit.</p>
+
+      <h2 id="hybrids">The hybrids are often better</h2>
+
+      <p>The interesting designs sit between the four columns.</p>
+
+      <h3>Queue + front-player choice</h3>
+      <p>The longest-waiting player must be included, then chooses three players from the next six or eight. Court-time priority remains visible while the player gets agency over game style.</p>
+
+      <h3>Software suggestion + organiser veto</h3>
+      <p>The system handles routine memory; the organiser intervenes for context the data does not know. This is often a better division of labour than either fully manual or unquestioned automation.</p>
+
+      <h3>Self-selection + maximum-wait rule</h3>
+      <p>Players arrange games freely, but anyone crossing a published wait threshold gets priority into the next suitable court. Social freedom exists inside a fairness guardrail.</p>
+
+      <h3>Normal rotation + requested court</h3>
+      <p>Most courts follow standard rotation while one court occasionally hosts a league pair, coaching game or player-requested four. The exception is explicit rather than secretly distorting the queue.</p>
+
+      <p>Hybrids work because the two parts can compensate for each other's failure modes.</p>
+
+      <h2 id="failure">Choose by failure mode, not feature list</h2>
+
+      <p>Ask what is currently going wrong:</p>
+
+      <p><strong>"Nobody knows whose turn it is."</strong><br />You need more visible queue state.</p>
+
+      <p><strong>"The order is fair but the games are awful."</strong><br />Keep the queue; improve team/game selection.</p>
+
+      <p><strong>"Only one person can run the night."</strong><br />Externalise their rules into a process or system.</p>
+
+      <p><strong>"Members hate being told whom to play."</strong><br />Increase bounded player choice rather than abolishing fairness.</p>
+
+      <p><strong>"Newcomers stand around."</strong><br />Give someone or something explicit responsibility for incorporating them.</p>
+
+      <p><strong>"The app makes odd choices nobody understands."</strong><br />Improve explainability/configuration or choose a simpler method.</p>
+
+      <p>Do not replace a pegboard whose only problem is that it looks old.</p>
+
+      <h2 id="transition">How to change without provoking a culture war</h2>
+
+      <p>A club-night process becomes part of the club's social contract. Changing it can feel larger than the technology deserves.</p>
+
+      <p>So preserve one familiar invariant.</p>
+
+      <p>If moving from a pegboard to software, keep longest-wait priority initially. If moving from organiser picks, let the organiser review suggestions. If adding player choice, restrict it to a known eligibility window.</p>
+
+      <p>Then compare the result against the failure you set out to fix.</p>
+
+      <p>Our separate <a href="/guides/rolling-out-epegboard-to-your-club">ePegboard rollout guide</a> goes deeper into that transition, but the principle applies to any new system: <strong>change the decision process deliberately, not merely the display it runs on.</strong></p>
 
       <div class="guide-callout">
-        <h4>The pegboard's fairness, an organiser's judgement</h4>
-        <p>ePegboard gives you both, automatically, every game, and lets your organiser play too. Free for clubs, runs in any browser.</p>
-        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+        <h4>The useful design question</h4>
+        <p style="margin-top:8px"><strong>Which decisions should be automatic, which should be visible, and which should remain human?</strong> Once you can answer that, the choice between board, organiser and app becomes much easier.</p>
       </div>
 
       <h2 id="faq">Frequently asked questions</h2>
@@ -120,19 +232,7 @@
         <h3>@f.Q</h3>
         <p>@f.A</p>
       }
-    </div>
-  </div>
-</section>
 
-<!-- CTA -->
-<section class="cta" style="margin-top:56px">
-  <div class="wrap">
-    <h2>Give your club night the best of every approach</h2>
-    <p>Even court time, balanced games, and nobody chained to the board. Free for clubs.</p>
-    <div class="cta-actions">
-      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
-      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
     </div>
-    <p class="fine">More club-night guides in the <a href="/guides">guides section</a>.</p>
   </div>
 </section>
