@@ -2,30 +2,33 @@
 @using PegboardWebSite.Services
 @{
     Layout = "_LayoutMarketing";
-    ViewData["Title"] = "How to start a badminton club: the practical operator's guide";
-    ViewData["Description"] = "A practical, step-by-step guide to starting a badminton club: finding a venue, recruiting players, sorting kit and fees, running your first sessions, and setting the night up to run fairly from day one.";
+    ViewData["Title"] = "How to start a badminton club: from first court to sustainable club night";
+    ViewData["Description"] = "A new badminton club works when court capacity, player numbers and session fees fit together. Here is how to test demand, choose a venue, set the fee, organise the club and run a first night people want to return to.";
     ViewData["OgTitle"] = "How to start a badminton club";
 
-    const string published = "2026-07-05";
+    const string published = "2026-07-05";   // FIRST publication. Rewritten 2026-08-26 - do not
+                                             // advance this: GuideSchema hardcodes dateModified to
+                                             // datePublished (#396), so moving it claims the page
+                                             // is new. The update date is stated in the body.
     const string canonical = "https://www.epegboard.com/guides/how-to-start-a-badminton-club";
 
     var faqPairs = new (string Q, string A)[]
     {
-        ("How do I start a badminton club?",
-         "In rough order: find a venue with courts and a regular slot you can book, line up a core of players to guarantee your first sessions are not empty, sort the basics of kit, shuttles and a way to collect fees, then run your first sessions and spread the word. Decide early how you will run the night fairly, because a good first impression on court is what turns curious first-timers into regulars. None of it needs to be elaborate to begin with."),
-        ("How much does it cost to start a badminton club?",
-         "The main cost is court hire, typically charged per court per hour, which you cover through session fees. Beyond that you need shuttles (feather shuttles cost more but fly better; nylon last longer), a few spare nets and posts if the venue does not provide them, and a first-aid kit. Many clubs start with almost no reserve by setting a session fee that covers court hire plus a small margin for shuttles. Affiliation to your national body adds a modest annual fee but brings insurance and other benefits."),
-        ("How many players do you need to start a badminton club?",
-         "Enough to fill the courts you book without long waits. As a rough guide, four to six players per court works for a doubles night, so a single-court start needs a core of six to eight committed regulars, and two courts around twelve to sixteen. Start with a court count that matches the players you can reliably bring, and add courts as numbers grow, rather than booking a big hall you cannot fill."),
-        ("Do I need to affiliate my badminton club to a governing body?",
-         "It is not compulsory, but it is worth it for most clubs. Affiliating to your national or regional badminton body usually brings public liability insurance, access to coaching and safeguarding resources, entry to leagues and tournaments, and a listing that helps new players find you. The annual fee is modest relative to what it covers, and insurance in particular is something most venues and committees want in place."),
-        ("How do I run my first badminton club night fairly?",
-         "Have a plan for rotation before players arrive, so you are not improvising under pressure. Keep every court busy, make balanced games so nobody is stuck in a walkover, share court time evenly for the time each person is present, and mix people up so newcomers are included rather than left on the edge. Getting this right from the first session matters more than anything, because first-timers decide whether to come back largely on that first night.")
+        ("How many players do I need to start a badminton club?",
+         "You can start with one court and a small committed core. Six players on one doubles court gives everyone a theoretical two-thirds share of court time if play is continuous and rotation is equal; eight players reduces that to half. The important number is not membership but how many people reliably attend each session."),
+        ("How much should a badminton club charge per session?",
+         "Add the costs of the session (court hire, shuttles and a sensible allowance for recurring club costs), then divide by the number of players you can realistically expect to pay. Do not price from a full attendance figure if you know some weeks will be quieter, and leave a modest surplus so one poor night does not create a loss."),
+        ("Do I need a constitution and committee before the first session?",
+         "Not necessarily if you are simply testing whether a small adult session has demand. But once you are taking regular money, making recurring bookings, affiliating, applying for funding or running juniors, formalise it. A simple constitution, separate club finances and clearly assigned responsibilities make the club safer and easier to run."),
+        ("Should a new club use feather or nylon shuttlecocks?",
+         "Choose for the players and the type of session rather than assuming one is always cheaper. Nylon is durable and often suits beginner or coaching sessions; established club players commonly expect feather. If you intend to enter a league, check its shuttle rules before buying stock."),
+        ("Should a new badminton club affiliate with Badminton England?",
+         "For a club in England, affiliation is worth investigating early because it can provide insurance and access to governing-body support, but it also comes with membership and administrative conditions. Read the current-season terms rather than treating affiliation as a box to tick. Clubs elsewhere should check their own national or regional governing body.")
     };
 
     var articleJsonLd = GuideSchema.Article(
-        "How to start a badminton club: the practical operator's guide",
-        "A practical, step-by-step guide to starting a badminton club: finding a venue, recruiting players, sorting kit and fees, running your first sessions, and setting the night up to run fairly from day one.",
+        "How to start a badminton club: from first court to sustainable club night",
+        "A new badminton club works when court capacity, player numbers and session fees fit together. Here is how to test demand, choose a venue, set the fee, organise the club and run a first night people want to return to.",
         canonical, published);
     var faqJsonLd = GuideSchema.Faq(faqPairs);
 }
@@ -41,11 +44,11 @@
     <div class="inner">
       <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Starting a club</span></div>
       <h1 style="margin-top:10px">How to start a badminton club</h1>
-      <p class="lede">Starting a club is less daunting than it looks. Find somewhere to play, get a core of players together, sort a few basics, and run a good first session. This is the practical guide to each step, from empty hall to a night people come back to.</p>
+      <p class="lede">The difficult part is not finding a name or writing a constitution. It is getting the same four things to agree with each other: a hall, enough players, an affordable fee and a club night people enjoy enough to return to.</p>
       <div class="guide-meta">
         <span class="gm-tag">Guide</span>
         <span>Getting started</span>
-        <span>11 min read</span>
+        <span>12 min read</span>
       </div>
     </div>
   </div>
@@ -53,85 +56,224 @@
 
 <section style="padding-top:40px">
   <div class="wrap" style="max-width:820px">
-    <div class="guide-toc">
+
+    <div class="prose">
+      <p class="lead"><strong>Start with the smallest version of the club that can produce a good night.</strong> One or two courts, a dependable core of players and a fee that covers the session are enough. Prove that people come back before you commit to a large hall, a season's worth of courts or a cupboard full of equipment.</p>
+
+      <p>There is a temptation to treat starting a club as an administrative project: choose a name, recruit a committee, open accounts, make a logo, announce a launch. Those things eventually matter. But none of them fixes the expensive failure mode: three booked courts and seven people standing in the hall.</p>
+
+      <p>The useful question is therefore not simply <em>"How do I start a badminton club?"</em> It is <strong>"What is the smallest sustainable club night I can start, and what has to be true before I make it bigger?"</strong></p>
+    </div>
+
+    <div class="guide-callout" style="margin-top:28px">
+      <h4>The short version</h4>
+      <ol style="margin:10px 0 0">
+        <li>Decide who the club is for before you book anything.</li>
+        <li>Find a regular venue, but do not overbook courts.</li>
+        <li>Build a committed core of players before launch night.</li>
+        <li>Set the fee from realistic attendance, not maximum capacity.</li>
+        <li>Formalise insurance, finances and governance as the club becomes recurring.</li>
+        <li>Run the first few nights exceptionally well. Retention matters more than launch publicity.</li>
+      </ol>
+    </div>
+
+    <div class="guide-toc" style="margin-top:28px">
       <h4>In this guide</h4>
-      <a href="#venue">1. Find a venue</a>
-      <a href="#players">2. Get your players together</a>
-      <a href="#kit">3. Sort the kit and shuttles</a>
-      <a href="#money">4. Fees, insurance and affiliation</a>
-      <a href="#structure">5. A light bit of structure</a>
-      <a href="#firstnight">6. Run a great first session</a>
-      <a href="#fair">7. Run the night fairly from day one</a>
-      <a href="#grow">8. Growing from there</a>
+      <a href="#club">1. Decide what club you are starting</a>
+      <a href="#venue">2. Find a venue without overcommitting</a>
+      <a href="#capacity">3. Match players to courts</a>
+      <a href="#money">4. Set a fee that survives a quiet night</a>
+      <a href="#players">5. Find the first players before the launch</a>
+      <a href="#formal">6. Insurance, affiliation and club structure</a>
+      <a href="#kit">7. Buy less equipment than you think</a>
+      <a href="#firstnight">8. Make the first night worth returning to</a>
+      <a href="#grow">9. Grow when the existing night is full, not before</a>
       <a href="#faq">Frequently asked questions</a>
     </div>
 
     <div class="prose" style="margin-top:34px">
-      <p class="lead">You do not need a committee, a constitution and a bank account to start a badminton club. You need a hall with courts, a handful of people who will actually turn up, and a night that is good enough that they come back and bring a friend. Everything else can grow from there. This guide walks through the practical steps in the order you will meet them, and finishes on the thing that quietly decides whether a new club sticks: running the night well enough that first-timers become regulars.</p>
 
-      <h2 id="venue">1. Find a venue</h2>
-      <p>Everything starts with somewhere to play. Look at leisure centres, school and college sports halls, church and community halls, and university facilities. What you are after:</p>
-      <ul>
-        <li><strong>Marked badminton courts</strong>, or a hall big enough to set them up, with enough ceiling height (a low ceiling ruins the game).</li>
-        <li><strong>A regular slot</strong> you can book weekly at the same time, so members can rely on it.</li>
-        <li><strong>A sensible court-hire cost</strong> you can cover through session fees. Ask about off-peak rates, which are often much cheaper.</li>
-        <li><strong>Equipment</strong>: check whether nets and posts are provided or whether you need your own.</li>
-      </ul>
-      <p>Book a court count you can realistically fill from the start, and add courts as you grow, rather than committing to a big hall that sits half-empty and eats your fees.</p>
+      <h2 id="club">1. Decide what club you are starting</h2>
 
-      <h2 id="players">2. Get your players together</h2>
-      <p>An empty first session kills a club before it starts, so line up a core before you open the doors. Ways to find your first members:</p>
-      <ul>
-        <li>Friends, colleagues and anyone you already know who plays or wants to.</li>
-        <li>Local community Facebook groups and badminton-specific groups for your area.</li>
-        <li>A listing on your national body's club finder once you are up and running.</li>
-        <li>A notice at the venue itself, and word of mouth once the night exists.</li>
-        <li>Local schools and universities, where there are often players looking for somewhere to play outside term-time sessions.</li>
-      </ul>
-      <p>Aim for a committed core who will turn up every week whatever the weather. Six to eight reliable regulars is enough to make a single-court night feel alive, and a lively night is what pulls new people in.</p>
+      <p>"Badminton club" covers several quite different things. A relaxed pay-and-play evening for adults who have not played since school needs a different hall, shuttle budget and rotation from a club aimed at experienced league players.</p>
 
-      <h2 id="kit">3. Sort the kit and shuttles</h2>
-      <p>The equipment list is short:</p>
+      <p>Before looking for courts, be able to describe the session in one sentence. For example:</p>
+
       <ul>
-        <li><strong>Shuttles.</strong> Feather shuttles fly better and are what most standards prefer, but cost more and break faster. Nylon shuttles last longer and cost less, which suits a new club watching the budget. Many clubs use nylon for casual play and feather for match practice.</li>
-        <li><strong>Nets and posts.</strong> If the venue does not provide them, you will need a set, plus a spare.</li>
-        <li><strong>A first-aid kit</strong>, and someone who knows where it is.</li>
-        <li><strong>Spare rackets</strong>, so a newcomer without one can still play and try the club out. You do not need to spend much on these: our count of one specialist's whole catalogue found the specs that suit a club player concentrated under £80, and <a href="/guides/how-to-choose-a-badminton-racket">choosing a badminton racket</a> sets out which three of them actually matter.</li>
+        <li><strong>Social adult doubles:</strong> mixed ability, games arranged on the night, newcomers welcome.</li>
+        <li><strong>Intermediate club badminton:</strong> players already comfortable with doubles, with balanced rotating games.</li>
+        <li><strong>Competitive club:</strong> stronger standard, feather shuttles, teams and league play likely.</li>
+        <li><strong>Beginner or coached session:</strong> instruction matters as much as game time and you may need a qualified coach.</li>
+        <li><strong>Junior club:</strong> a different safeguarding and supervision proposition from an adult club; do not treat it as the adult model with younger players.</li>
       </ul>
 
-      <h2 id="money">4. Fees, insurance and affiliation</h2>
-      <p>Keep the money side simple. Set a session fee that covers your court hire plus a small margin for shuttles and the occasional bit of kit. Collect it in whatever way is easiest to run and record, whether that is cash, a bank transfer, or a payment on arrival. A small float in reserve for shuttles and repairs is worth building up.</p>
-      <p>Affiliating to your national or regional badminton body is worth doing early. It typically brings public liability insurance, which many venues expect, plus coaching and safeguarding resources, league and tournament entry, and a club listing that helps new players find you. The annual fee is modest against what it covers. If you plan to run juniors, get the safeguarding side right from the start.</p>
+      <p>This decision solves problems later. It tells people whether the club is for them, determines what kind of first players you need, and stops a common source of friction: half the room expecting relaxed social games while the other half wants serious match practice.</p>
 
-      <h2 id="structure">5. A light bit of structure</h2>
-      <p>You do not need much, but a little structure helps a club last beyond its founder. Agree who does what, even informally: someone to book the courts, someone to handle the money, someone to run the night. As you grow, a simple committee and a basic set of club rules make decisions easier and share the load, so it does not all rest on one person. Do not over-engineer this at the start. A club of ten does not need a formal constitution; a club of sixty benefits from one.</p>
+      <h2 id="venue">2. Find a venue without overcommitting</h2>
 
-      <h2 id="firstnight">6. Run a great first session</h2>
-      <p>Your first few sessions set the tone. The aims are simple: everyone plays plenty, the games are enjoyable, and newcomers feel welcome. Get there before your players, set up the nets, have shuttles out and a plan for who plays whom. Welcome each person as they arrive, especially anyone on their own, and make sure nobody stands around wondering what to do. A warm, busy, friendly first night is the single best advert your club has.</p>
+      <p>A good venue is not necessarily the cheapest hall. The thing you are buying is a <strong>repeatable weekly slot</strong>.</p>
 
-      <h2 id="fair">7. Run the night fairly from day one</h2>
-      <p>Here is the part that quietly decides whether a new club grows or fizzles: how fair the night feels on court. First-timers decide whether to come back largely on that first evening, and what they are judging is whether they got plenty of good games and felt included, or stood on the side while the same four played all night. So from your very first session:</p>
+      <p>Leisure centres, schools, colleges, universities and community sports halls are the obvious places to ask. When you view one, look beyond the number of marked courts:</p>
+
       <ul>
-        <li><strong>Keep every court busy</strong>, with the next game ready as each court frees up.</li>
-        <li><strong>Make balanced games</strong>, so nobody is stuck in a walkover at either end.</li>
-        <li><strong>Share court time evenly</strong> for the time each person is present, so quieter players and newcomers are not left out.</li>
-        <li><strong>Mix people up</strong>, so first-timers play with a range of members rather than being parked together in the corner.</li>
+        <li><strong>Floor and run-off:</strong> the surface should be suitable for sport and there should be sensible space around the courts.</li>
+        <li><strong>Ceiling and obstructions:</strong> basketball hoops, beams and a low roof can turn clears into local rules.</li>
+        <li><strong>Lighting:</strong> bright is not automatically good if players lose a white shuttle against the lights.</li>
+        <li><strong>Nets and posts:</strong> ask what is included, where it is stored and who sets it up.</li>
+        <li><strong>Regular availability:</strong> find out what happens during school holidays, exams, elections, events and maintenance closures.</li>
+        <li><strong>Access:</strong> parking, public transport, changing facilities and how late the building stays open all affect attendance.</li>
+        <li><strong>Cancellation terms:</strong> a cheap court becomes expensive if you are paying for empty weeks months in advance.</li>
       </ul>
-      <p>Doing this by hand is a real skill, and it is a lot to hold in your head while you are also welcoming people, taking fees and playing yourself. This is the one part of setting up a club where a bit of help pays off immediately. <a href="/features/club-nights">ePegboard</a> takes over the rotation: it keeps every court busy with balanced, varied games, shares court time evenly across the night, and handles latecomers and drop-ins, so your first session runs fairly and fully without you glued to a board. It is <a href="/badminton-club-management-software">free for clubs</a> and runs in any browser with nothing to install, so a brand-new club can start on it from session one. Our guide to <a href="/guides/how-to-run-a-badminton-club-night">running a club night</a> is the natural next read once you are up and running.</p>
 
-      <h2 id="grow">8. Growing from there</h2>
-      <p>Once the night is established, growth tends to look after itself if the sessions are good, but you can help it along:</p>
+      <p>Ask about a trial booking or a short initial block before signing up for a season. If you have twelve interested people, that is not the same as having twelve people who will pay and appear every Thursday.</p>
+
+      <p><strong>Book for demonstrated attendance, not optimism.</strong> It is much easier to add a court to a busy night than to make an empty court feel like growth.</p>
+
+      <h2 id="capacity">3. Match players to courts</h2>
+
+      <p>This is the arithmetic underneath almost every club-night decision.</p>
+
+      <p>A doubles court holds four players at once. If court time were shared perfectly and every court stayed occupied, the average player's maximum share of playing time would simply be:</p>
+
+      <p style="text-align:center;font-size:1.05rem"><strong>4 ÷ players per court</strong></p>
+
+      <div style="overflow-x:auto;margin-top:16px">
+        <table style="width:100%;border-collapse:collapse;font-size:.95rem">
+          <thead>
+            <tr style="text-align:left;border-bottom:2px solid var(--line)">
+              <th style="padding:8px 10px">Players per court</th>
+              <th style="padding:8px 10px">Theoretical share playing</th>
+              <th style="padding:8px 10px">In a 2-hour session</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">5</td><td style="padding:8px 10px">80%</td><td style="padding:8px 10px">96 minutes</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">6</td><td style="padding:8px 10px">67%</td><td style="padding:8px 10px">80 minutes</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 10px">7</td><td style="padding:8px 10px">57%</td><td style="padding:8px 10px">About 69 minutes</td></tr>
+            <tr><td style="padding:8px 10px">8</td><td style="padding:8px 10px">50%</td><td style="padding:8px 10px">60 minutes</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="margin-top:18px">Those are theoretical ceilings, not promises: changeovers, late arrivals, long games and empty courts all reduce them. But the table exposes the trade-off. More players per court make the finances easier and the waiting harder.</p>
+
+      <p>A new club therefore does not need a magic number of members. It needs enough <strong>reliable attendees</strong> to cover the courts without packing so many people into the hall that the session becomes mostly sitting down.</p>
+
+      <p>For example, six reliable players can make one court viable. Twelve can support two. If you have sixteen names on a WhatsApp group but only ten normally turn up, you have a ten-player club for booking purposes.</p>
+
+      <h2 id="money">4. Set a fee that survives a quiet night</h2>
+
+      <p>Do not start by asking what nearby clubs charge. Start with what your session costs.</p>
+
+      <p>The basic calculation is:</p>
+
+      <p style="text-align:center;font-size:1.05rem"><strong>(court hire + shuttles + session overhead) ÷ realistic attendance = break-even fee</strong></p>
+
+      <p>Suppose, purely as an example, two courts for two hours cost £80 and you expect to use £20 of shuttles. The night costs £100 before any other club expenses. At twelve paying players that is £8.33 each. Charging £8 because another club does would guarantee a loss; charging £9 or £10 starts to create some resilience.</p>
+
+      <p>The important word is <strong>realistic</strong>. Do not divide by fourteen because fourteen people once said they were interested. Use the number you expect on an ordinary wet November evening.</p>
+
+      <p>Your session fee also needs to contribute towards costs that do not arrive every week: affiliation or insurance, payment charges, replacement equipment, website or administration costs, competition fees and the occasional cancelled session you cannot recover.</p>
+
+      <p>A club does not need to make a large profit. It does need enough reserve that two quiet weeks do not send the organiser looking for their own debit card.</p>
+
+      <div class="guide-callout" style="margin-top:26px">
+        <h4>Price from the bad-but-normal night</h4>
+        <p style="margin-top:8px">If the club only breaks even when every expected player attends, the fee is too low or the court booking is too large. Build the model around ordinary attendance and let full nights build the reserve.</p>
+      </div>
+
+      <h2 id="players">5. Find the first players before the launch</h2>
+
+      <p>A launch is far easier when it is not actually the first time anyone has agreed to come.</p>
+
+      <p>Start with people you can contact directly: friends, colleagues, former club players, parents you know through school, local badminton groups and players from informal sessions. You are looking for a <strong>core</strong>, not hundreds of impressions on social media.</p>
+
+      <p>Then make the offer specific. "New badminton club starting soon" asks people to imagine too much. "Intermediate doubles, Thursdays 8-10pm at X Sports Hall, first session £8, message to reserve a place" gives them a decision they can make.</p>
+
+      <p>Local Facebook groups, community pages, the venue itself and governing-body club finders can widen the circle once the session exists. But early recruitment has one job: make sure the first person who arrives does not walk into an empty hall.</p>
+
+      <p>Keep the first few sessions deliberately easy to join. Explain the standard without making newcomers prove themselves at the door, say whether they need a racket, and tell them how games will be organised. Uncertainty loses people before the badminton gets a chance.</p>
+
+      <h2 id="formal">6. Insurance, affiliation and club structure</h2>
+
+      <p>This is where "start small" needs a limit. You can test demand without designing a miniature national governing body. Once the session becomes a recurring club, however, the money and responsibility are no longer imaginary.</p>
+
+      <p>For an adult club in England, investigate <a href="https://www.badmintonengland.co.uk/clubs/" target="_blank" rel="noopener">Badminton England club affiliation</a> early. Affiliation can bring club and committee insurance as well as access to governing-body support, but read the current season's membership and affiliation conditions before relying on that cover. Badminton England's published membership information makes clear that affiliation and player membership interact; it is not simply an insurance policy purchased by the organiser.</p>
+
+      <p>Even without affiliation, consider what insurance the club needs and what the venue requires. Public liability is the obvious issue, but the right cover depends on how the club is structured and what it does.</p>
+
+      <p>Once you are collecting regular fees, move the money out of one person's everyday account. A small community sports club can operate as an unincorporated association, but it should still have a basic governing document, clear roles and proper financial controls. <a href="https://www.sportengland.org/funding-and-campaigns/code-sports-governance" target="_blank" rel="noopener">Sport England's governance guidance</a> explicitly treats a constitution as the normal governing document for an unincorporated association and stresses financial oversight and risk management.</p>
+
+      <p>In practice, that means you do not need bureaucracy for its own sake. You do want:</p>
+
       <ul>
-        <li>Ask members to bring a friend, and make sure guests get a proper, welcoming game.</li>
-        <li>Keep your club listing and social presence current so new players can find you.</li>
-        <li>Add courts or a second night as demand grows, rather than letting waits get long.</li>
-        <li>As you get bigger, consider entering a <a href="/guides/how-to-run-a-local-badminton-league">local league</a> or running the odd internal competition to give members something to aim at.</li>
+        <li>a short constitution saying what the club exists to do and how decisions are made;</li>
+        <li>a club bank account rather than one organiser's personal account;</li>
+        <li>at least two people who understand the finances;</li>
+        <li>someone responsible for bookings and venue contact;</li>
+        <li>a record of members, payments and important decisions;</li>
+        <li>a simple route for dealing with complaints, welfare issues or disputes.</li>
       </ul>
-      <p>Start small, run a genuinely good night, and let it grow from there. The clubs that last are the ones where the sessions are worth coming back to, week after week.</p>
 
-      <div class="guide-callout">
-        <h4>Run a fair, full night from session one</h4>
-        <p>ePegboard handles the rotation so your new club's nights feel fair and welcoming from the very first session. Free for clubs, nothing to install, running in minutes.</p>
+      <p><strong>Do not file this under "only if we run juniors", because that stopped being true.</strong> Under Badminton England's A Sport That Cares standards, every affiliated club and group must appoint a Club Welfare Officer, and that person must be <em>"trained in preparation for affiliation from September 2026"</em>. It applies to an adults-only club exactly as it applies to a junior one.</p>
+
+      <p><strong>What is conditional is the DBS, not the training.</strong> The welfare officer needs an active Badminton England DBS where the club has any under-18s; the workshop is required either way. Clubs routinely merge those two tests and conclude an adult club is exempt from both. It is exempt from one. The same phase also asks that every coach is registered as a Coach Member with an active licence, and that each role holds the training its row of Badminton England's training matrix requires.</p>
+
+      <p>If children will attend, treat safeguarding as the first item in the project rather than the last item on a checklist: roles involving regulated activity with young people bring safer-recruitment and DBS obligations of their own. Read the <a href="https://www.badmintonengland.co.uk/clubs/a-sport-that-cares" target="_blank" rel="noopener">current standards</a> and the <a href="https://www.badmintonengland.co.uk/safeguarding/" target="_blank" rel="noopener">safeguarding hub</a> before the first session, not before the first junior session.</p>
+
+      <h2 id="kit">7. Buy less equipment than you think</h2>
+
+      <p>Most badminton venues already own the expensive hardware. Check before buying anything.</p>
+
+      <p>You may need shuttles, a first-aid provision appropriate to the session, a couple of loan rackets and perhaps nets or posts if the venue does not supply them. You probably do not need twenty club rackets, matching shirts or a year's worth of shuttles before you know what players prefer.</p>
+
+      <p>Shuttles deserve a decision rather than a default. Traditional nylon is durable and can make sense for beginners and coaching. Established club players often prefer feather, and some competitions require it. The economics are less obvious than tube prices suggest because pack sizes and durability differ; our <a href="/guides/feather-vs-nylon-shuttlecocks">feather vs nylon shuttlecock guide</a> works through the actual trade-off.</p>
+
+      <p>Keep a few playable spare rackets for guests. They do not need to be premium models: our count of one specialist's entire catalogue found the specs that suit a club player concentrated at or below £80, and <a href="/guides/how-to-choose-a-badminton-racket">how to choose a badminton racket</a> sets out which of them actually matter. A newcomer should be able to discover whether they like the club without buying £100 of equipment first.</p>
+
+      <h2 id="firstnight">8. Make the first night worth returning to</h2>
+
+      <p>People will forgive a basic website. They are less forgiving of paying for badminton and spending half the evening wondering whether anyone has remembered them.</p>
+
+      <p>Be early. Have the courts ready. Know how players are checking in and paying. Introduce people who arrive alone. Explain how games are picked before the first court finishes.</p>
+
+      <p>Then concentrate on four things:</p>
+
+      <ul>
+        <li><strong>Keep courts occupied.</strong> Empty court time is the one resource you cannot recover after the booking ends.</li>
+        <li><strong>Share court time fairly.</strong> Arrival time can matter, but confidence, friendship with the organiser and willingness to shout "we're on next" should not.</li>
+        <li><strong>Make games competitive enough to be enjoyable.</strong> Perfect balance is impossible; repeated walkovers are avoidable.</li>
+        <li><strong>Mix the room.</strong> A newcomer who spends the evening playing only with the other newcomers has technically been included and socially been excluded.</li>
+      </ul>
+
+      <p>This gets harder as soon as attendance grows. With eight players it is easy to remember who sat out. With twenty-two, three courts, two late arrivals and a player taking a break, the organiser is now solving a scheduling problem while trying to play badminton.</p>
+
+      <p>That is where <a href="/features/club-nights">ePegboard</a> fits naturally: it tracks who is waiting, spreads court time, builds balanced and varied games, and handles arrivals and sit-outs without asking one person to keep the whole night in their head. It is free for clubs and works in a browser. The separate guide to <a href="/guides/how-to-run-a-badminton-club-night">running a badminton club night</a> goes much further into rotation once the club exists.</p>
+
+      <h2 id="grow">9. Grow when the existing night is full, not before</h2>
+
+      <p>A healthy first goal is not "get to fifty members". It is <strong>make one session consistently good</strong>.</p>
+
+      <p>Watch what happens over several weeks. Are courts continuously busy? Are waits becoming long? Are newcomers returning? Are you turning people away? Is the session covering its costs without depending on one unusually busy week?</p>
+
+      <p>Only then choose the next constraint to remove. That might mean another court, a longer session, a second evening, a waiting list, a beginner session separate from the stronger night, or eventually league teams and internal competitions.</p>
+
+      <p>Growth can damage a club as easily as help it. Adding ten players without adding court capacity makes the finances look excellent right up until the players notice they are paying to sit down. Adding courts before the demand exists creates the opposite problem.</p>
+
+      <p>The useful rhythm is simple:</p>
+
+      <p><strong>fill → stabilise → add capacity → fill again.</strong></p>
+
+      <p>Do that while keeping the session enjoyable and the administration shareable, and the organisation around the club can grow at roughly the same speed as the badminton itself.</p>
+
+      <div class="guide-callout" style="margin-top:28px">
+        <h4>If you only remember one thing</h4>
+        <p style="margin-top:8px">Do not optimise the launch. Optimise the second visit. The first night gets someone through the door; the experience they have on court decides whether you have a club next month.</p>
+      </div>
+
+      <div class="guide-callout" style="margin-top:24px">
+        <h4>Run the club night without becoming the full-time picker</h4>
+        <p>ePegboard handles waiting, rotation, balanced games and court-time fairness while you run the club and play in it. It is free for clubs and there is nothing to install.</p>
         <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
       </div>
 
@@ -141,6 +283,12 @@
         <h3>@f.Q</h3>
         <p>@f.A</p>
       }
+
+      <h2 id="sources">Sources and scope</h2>
+      <p>This guide is written primarily for people starting a community badminton club in England. The operating principles (venue, capacity, fees, player retention and rotation) travel well, but affiliation, insurance, safeguarding and governance requirements vary by country and by the type of organisation. Check the rules that apply where you are.</p>
+      <p><strong>Sources:</strong> <a href="https://www.badmintonengland.co.uk/clubs/" target="_blank" rel="noopener">Badminton England: clubs and affiliation</a> &middot; <a href="https://www.badmintonengland.co.uk/membership/" target="_blank" rel="noopener">Badminton England: membership</a> &middot; <a href="https://www.badmintonengland.co.uk/clubs/a-sport-that-cares" target="_blank" rel="noopener">Badminton England: A Sport That Cares (the club minimum standards)</a> &middot; <a href="https://www.badmintonengland.co.uk/safeguarding/" target="_blank" rel="noopener">Badminton England: safeguarding</a> &middot; <a href="https://www.sportengland.org/funding-and-campaigns/code-sports-governance" target="_blank" rel="noopener">Sport England: Code for Sports Governance</a> &middot; <a href="https://www.sportengland.org/guidance-and-support/safeguarding" target="_blank" rel="noopener">Sport England safeguarding guidance</a>.</p>
+      <p style="color:var(--muted-2);font-size:.9rem">Updated 26 August 2026. The example session costs are illustrative rather than UK market averages.</p>
+
     </div>
   </div>
 </section>
@@ -148,8 +296,8 @@
 <!-- CTA -->
 <section class="cta" style="margin-top:56px">
   <div class="wrap">
-    <h2>Starting a club? Run the night on ePegboard</h2>
-    <p>Fair, full, welcoming sessions from day one. Free for clubs. Runs in any browser.</p>
+    <h2>Starting a club? Make the first night a good one</h2>
+    <p>ePegboard handles game rotation, waiting and court-time fairness so you can concentrate on the people in the hall. Free for clubs.</p>
     <div class="cta-actions">
       <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
       <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
