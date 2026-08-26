@@ -1,0 +1,214 @@
+@page "/guides/how-to-smash-harder"
+@using PegboardWebSite.Services
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "How to smash harder: what the measurements say, and why it is not your wrist";
+    ViewData["Description"] = "Across 18 skilled players, wrist flexion range of movement had no measurable relationship with shuttle speed. The wrist flexor is the second-to-last muscle to switch on. Here is what does produce the speed.";
+    ViewData["OgTitle"] = "How to smash harder: it is not your wrist";
+
+    const string published = "2026-08-26";
+    const string canonical = "https://www.epegboard.com/guides/how-to-smash-harder";
+
+    // QUESTION SET (production step 1) - each is an H2 below:
+    //  1 Why is my smash slow when I am hitting it as hard as I can?
+    //  2 Is it the wrist or the forearm?
+    //  3 What produces the speed, and in what order?
+    //  4 Where should you make contact?
+    //  5 Do you have to jump?
+    //  6 How hard should you actually be swinging?
+    //  7 Would a better racket help?
+    //  8 Does lower string tension make it faster?
+    //  9 Should you be strengthening anything?
+    // 10 How fast is a club smash anyway?
+
+    var faqPairs = new (string Q, string A)[]
+    {
+        ("How tight should I grip the racket?",
+         "Every coaching page in this field teaches a loose grip that tightens at the last moment, and we could find no study that has measured grip force against racket head speed in badminton. The research literature names it as a gap. So it may well be right; it is untested, and we are not going to present it as a finding."),
+        ("Does the non-racket arm matter?",
+         "Nobody has tested it. It is widely taught as a cue for balance and rotation, and there is no published badminton measurement of it either way."),
+        ("Why does my smash keep going long?",
+         "Almost always the contact point rather than the power. Hitting the shuttle when it is above or behind you sends it flat, because the racket face cannot be angled down. Getting behind it so contact is in front of your body is the same fix as for a slow smash."),
+        ("Is a jump smash worth learning?",
+         "Yes, for the angle. It buys contact height and a steeper line into the court. Just do not learn it expecting more speed, because that is not what the measurements show it delivers."),
+        ("Do heavier shuttles come off faster?",
+         "Shuttle speed grades exist to compensate for altitude and temperature, not to make anyone hit harder. A faster-graded shuttle flies further for the same hit, which is a different thing from leaving the racket faster."),
+        ("How long does it take to change this?",
+         "Longer than a session, because you are replacing a movement pattern rather than adding effort. The one change that pays back quickly is the contact point, since that is about where you stand rather than how you swing.")
+    };
+
+    var articleJsonLd = GuideSchema.Article(
+        "How to smash harder: what the measurements say, and why it is not your wrist",
+        "Wrist flexion range of movement has no measurable relationship with shuttle speed. Here is what does.",
+        canonical, published);
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+}
+<!-- HERO -->
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Smashing harder</span></div>
+      <h1 style="margin-top:10px">How to smash harder: what the measurements say, and why it is not your wrist</h1>
+      <div class="guide-meta">
+        <span class="gm-tag">Guide</span>
+        <span>Technique</span>
+        <span>16 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:820px">
+
+    <div class="prose">
+      <p class="lead"><strong>"It is all in the wrist" is not a simplification. It is the wrong joint, and badminton biomechanics has said so since 1969.</strong> When 18 skilled players were measured with 3D motion capture, how far they flexed their wrists had no statistically detectable relationship with how fast the shuttle left the racket. What did predict it was trunk separation, shoulder rotation, and a shorter, sharper acceleration phase. Your wrist flexor is the second-to-last muscle to switch on, 43.5 milliseconds before contact.</p>
+
+      <p>Which is the answer to the question most people are actually asking, which is not "how do I use my wrist" but "why is this slow when I am swinging as hard as I can".</p>
+    </div>
+
+    <div class="guide-callout" style="margin-top:30px">
+      <h4>The short version</h4>
+      <ul style="margin:10px 0 0">
+        <li><strong>Wrist flexion does not predict shuttle speed.</strong> Measured at r = 0.208, p = 0.408, across 18 skilled players. That is a null result, not a weak one.</li>
+        <li><strong>Forearm pronation is the joint people mean.</strong> It is a different movement from flexing the wrist, and it is what separates experts from novices.</li>
+        <li><strong>Swinging harder is not the lever.</strong> A shorter acceleration phase correlated with more speed, not a longer swing.</li>
+        <li><strong>Where you hit it on the strings costs you more than you think.</strong> Among elite players, impact location explained 26% of the variation in their own speed.</li>
+        <li><strong>Jump for the angle, not the speed.</strong> Jump height did not significantly predict shuttle speed.</li>
+        <li><strong>A heavier racket will not do it.</strong> Swingweight changes your swing speed and leaves the shuttle's speed alone.</li>
+      </ul>
+    </div>
+
+    <p style="margin-top:22px;color:var(--muted-2);font-size:.95rem">Written for a UK club player. Every figure here comes from published, peer-reviewed measurement, cited at the foot of the page and read on 26 August 2026. One limit up front, because it matters: no published study has measured recreational club players. The measured groups are competitive players and untrained volunteers, and we say which is which each time.</p>
+
+    <div class="guide-toc" style="margin-top:26px">
+      <h4>In this guide</h4>
+      <a href="#slow">Why is my smash slow when I am hitting it as hard as I can?</a>
+      <a href="#wrist">Is it the wrist or the forearm?</a>
+      <a href="#order">What produces the speed, and in what order?</a>
+      <a href="#contact">Where should you make contact?</a>
+      <a href="#jump">Do you have to jump?</a>
+      <a href="#how-hard">How hard should you actually be swinging?</a>
+      <a href="#racket">Would a better racket help?</a>
+      <a href="#tension">Does lower string tension make it faster?</a>
+      <a href="#strength">Should you be strengthening anything?</a>
+      <a href="#speed">How fast is a club smash anyway?</a>
+      <a href="#faq">Frequently asked questions</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+
+      <h2 id="slow">Why is my smash slow when I am hitting it as hard as I can?</h2>
+      <p>Because effort and racket head speed are not the same thing, and the way most club players generate effort actively costs them speed.</p>
+      <p>The measurement that makes this concrete: across 18 male players of regional, national and international standard, <strong>a shorter acceleration phase went with a faster shuttle</strong>, at r = -0.543. The acceleration phase averaged 38.1 milliseconds. Players who spent longer accelerating the racket hit it slower.</p>
+      <p>That is the opposite of what "hit it harder" makes you do. Pushing at the shuttle through a long, muscular swing is a longer acceleration phase. What produces speed is a sequence that arrives late and fast.</p>
+      <p>Alongside it, <strong>trunk separation before the swing</strong> predicted speed too. And the single strongest correlation in the whole dataset was racket head speed at contact, at r = 0.903, which sounds circular until you notice what it rules out: nothing else about the player mattered nearly as much as how fast the racket was moving. Not strength, not size, not effort.</p>
+
+      <h2 id="wrist">Is it the wrist or the forearm?</h2>
+      <p>The forearm, and this has been the published position for nearly fifty years.</p>
+      <p>Poole wrote in 1969 that badminton strokes are made with forearm rotation rather than wrist snap. Rantzmayer published an article in the <em>Badminton Gazette</em> in 1977 titled "Wrist snap - myth or reality?". Gowitzke and Waddell reported in 2000 that their high-speed film work had laid the myth to rest. A 2015 review in <em>Sports Medicine</em> notes that players rarely use a wrist snap at all.</p>
+      <p><strong>The advice your clubmate gave you was already known to be wrong when he was learning it.</strong></p>
+      <p>The two movements are not the same and the difference is worth ten seconds with your own arm. Rest your forearm on a table, palm up. Curling your hand towards you is wrist flexion. Turning your palm to face down, without moving your elbow or your wrist, is pronation. It is the forearm bones crossing over each other. That second movement is the one that finishes a smash.</p>
+      <p>And it is what separates skill levels. When 22 players were compared, <strong>novices reached their peak racket velocity through elbow extension, at 20.9 m/s. Experts reached theirs through forearm pronation, at 33.9 m/s.</strong> Pronation produced racket head velocity around 16 per cent higher, from 70 per cent higher angular velocity at the end of the forearm.</p>
+      <p><strong>One thing not to take from that.</strong> Rotating your forearm <em>further</em> is not the answer. In the 18-player dataset, pronation range of movement did not predict speed either (r = -0.242, p = 0.333). It is about how fast and how late, not how far. Range of movement is not the variable.</p>
+
+      <h2 id="order">What produces the speed, and in what order?</h2>
+      <p>A sequence that runs from the middle of your body outwards, and finishes at the part of you furthest from the floor.</p>
+      <p>Hips and spine rotate away from the shuttle first. Hip rotation reverses while the spine is still counter-rotating. The spine reverses as the upper arm starts rotating outwards at the shoulder. Then the shoulder rotates inwards with the elbow and forearm still lagging behind. Only at the end do the elbow extend and the forearm pronate.</p>
+      <p>The muscle timings say the same thing in a way that is harder to argue with. Measured from the moment of contact backwards: middle deltoid switches on 441 milliseconds out, the major deltoid at 173, triceps at 78, wrist extensor at 63, biceps at 49, <strong>the wrist flexor at 43.5</strong>, and posterior deltoid last at 33.</p>
+
+      <figure style="margin:26px 0 0">
+        <img src="/img/diagrams/smash-power-chain.svg" alt="Two panels. The upper one is a timeline of the last 450 milliseconds before contact, marking when each muscle switches on: middle deltoid at 441 milliseconds out, major deltoid at 173, triceps at 78, wrist extensor at 63, biceps at 49, wrist flexor at 43.5, posterior deltoid at 33, with the final 38.1 milliseconds shaded as the acceleration phase. The lower panel ranks what predicts shuttle speed across 18 skilled players: racket head speed 0.903, wrist joint travelling through space 0.767, a shorter acceleration phase minus 0.543, shoulder internal rotation 0.508 and trunk separation minus 0.484 are all significant, while jump height 0.454, pronation range of movement minus 0.242 and wrist flexion range of movement 0.208 are all not significant." style="width:100%;height:auto;border-radius:12px" />
+        <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">The wrist flexor is sixth of seven to switch on. Its range of movement is bottom of the list of things that predict speed, and it is not on the list at all in any statistical sense.</figcaption>
+      </figure>
+
+      <p style="margin-top:22px"><strong>A trap in that lower panel, which is also the reason the myth survives.</strong> The second bar, the wrist joint travelling through space, correlates strongly at r = 0.767. That is the wrist <em>joint</em> being carried through the air by the shoulder and trunk. It is not the wrist bending. Those two get reported as one thing, and once they are, "the wrist matters" looks like it has evidence behind it.</p>
+      <p>There is a well-known paper that is quoted as showing the wrist is the biggest contributor, at 26.5 per cent. Reading it, that figure is the linear velocity of the wrist joint centre at impact expressed as a share of racket head speed: 9.2 m/s of a racket head doing 34.6 m/s. It is a measure of how fast that point in space was travelling, not of how much of the speed the wrist muscles produced. Most of that 9.2 m/s was handed to the wrist by the shoulder and the trunk.</p>
+      <p><strong>We are not going to give you a percentage breakdown at all</strong>, and it is worth saying why: the published attributions are 53 per cent, 66 per cent, 57 per cent and 26.5 per cent for different joints from different research groups. They use different methods, they do not add up, and they are not comparable. Any page that shows you a tidy pie chart of where smash power comes from has made it up.</p>
+
+      <h2 id="contact">Where should you make contact?</h2>
+      <p>High and in front, and this is the section with the most recoverable speed in it.</p>
+      <p>Across 65 international players from 19 nations and 2,386 smashes, <strong>where the shuttle met the string bed explained 26.2 per cent of the variation in a player's own shuttle speed</strong>. Not the variation between players. The variation in one player's own smashes.</p>
+      <p>A miss within one standard deviation of that player's average impact point, which is to say an ordinary and unremarkable miss, cost <strong>up to 5.3 per cent of their maximum speed and up to 2.9 degrees of direction</strong>.</p>
+      <p>If international players lose that much to impact location, a club player loses more. And unlike the sequencing, this one is mostly about footwork: contact happens where you put your body. Getting behind the shuttle so you strike it in front of you is the change, and it pays back faster than anything else here because it is about where you stand rather than how you move your arm.</p>
+
+      <h2 id="jump">Do you have to jump?</h2>
+      <p>Not for speed. Jump if you want the angle.</p>
+      <p>In the 18-player dataset, <strong>jump height did not significantly predict shuttle speed</strong> (r = 0.454, p = 0.059). A separate study across 84 elite trials found no relationship at all. The jump smash yields something on the order of 3 per cent more initial shuttle velocity than a standing smash.</p>
+      <p>What jumping does buy, and this is measured too, is <strong>contact height and a steeper angle into the court</strong>. It costs a higher landing force through more extended knees, which is a real consideration if your knees are already telling you things.</p>
+      <p>So the cue "jump to smash harder" is the right shot for the wrong reason. Jumping gets you above the shuttle so you can hit down at it. That is worth having. It is not where the speed comes from, and a club player who cannot yet get behind the shuttle consistently will gain more from fixing that than from adding a jump to a shot they are already mistiming.</p>
+
+      <h2 id="how-hard">How hard should you actually be swinging?</h2>
+      <p>Not flat out, and there is a number on this.</p>
+      <p>Among 52 international players at the 2017 World Championships, the best spatial accuracy came at <strong>80 to 99 per cent of the player's maximum speed</strong>. The relationship was not one universal trade-off either; the players fell into three distinct clusters, which is a polite way of saying this is individual.</p>
+      <p>The practical reading for a club night: your hardest smash is not your best smash, and the gap between them is small enough that giving up the last few per cent costs you almost nothing and buys you the shot landing where you aimed.</p>
+
+      <h2 id="racket">Would a better racket help?</h2>
+      <p>Not with speed, and there is a controlled study saying so.</p>
+      <p>Twenty experienced players hit with five rackets of varying moment of inertia. Heavier-swinging rackets slowed the racket head down, by around <strong>0.7 m/s for every 5 kg&#183;cm&#178; of extra swingweight</strong>. And yet there was <strong>no significant effect on the speed of the shuttle</strong>. The heavier racket moved the impact point further out along the string bed, which offset the slower head speed.</p>
+      <p>That is worth sitting with, because it is the opposite of what a "power racket" is sold on. The mass helps and the slower swing hurts, and on these measurements they cancel.</p>
+      <p>If you want the longer version of what a racket's specs actually change, we have written it: <a href="/guides/how-to-choose-a-badminton-racket">how to choose a badminton racket</a>. We do not sell rackets and take no commission from anyone who does.</p>
+
+      <h2 id="tension">Does lower string tension make it faster?</h2>
+      <p>In a machine, yes, and we would not change your stringing on the strength of it.</p>
+      <p>One study fired shuttles at five rackets strung from 22 to 30 lb using a motor at a fixed speed, filmed at 2,000 frames per second. The order held throughout: lower tension, faster shuttle. Five frames after impact, <strong>22 lb gave 56.30 m/s against 30 lb at 50.51 m/s</strong>, a difference of about 11.5 per cent.</p>
+      <p><strong>Three reasons to hold that lightly.</strong> It is a machine at a fixed input speed, which is exactly the thing a human does not do: a player with a tighter string bed swings differently. It is one study. And a widely-read review quotes a different row of the same paper's results, which makes the effect appear to happen at speeds twenty times slower than an actual smash, so even the summaries of this finding are unreliable.</p>
+      <p>What we would say instead: tension is a control-versus-power preference that most club players notice far less than the marketing implies, and if you are chasing 11 per cent of shuttle speed you will find more of it in the contact-point section above.</p>
+
+      <h2 id="strength">Should you be strengthening anything?</h2>
+      <p>Not your wrist, on the available evidence.</p>
+      <p>No study we could find links isolated wrist or forearm strength to smash speed. The one strength relationship that does appear is specific in a way that matters: shoulder internal rotation torque measured <em>in the position the shot is actually played in</em>, with the arm up and rotated back, correlated with racket velocity. The same shoulder's torque measured in a neutral position did not.</p>
+      <p>Which is a fairly ordinary finding dressed up in numbers: strength shows up where you trained it. Squeezing a grip trainer at your desk is not the position you smash from.</p>
+      <p><strong>And the concession this guide owes you.</strong> If you can already get behind the shuttle, make contact in front of you and hit down into the court, you have most of what is available here, and the remaining gains are small and slow. Plenty of good club players have an ordinary smash and win a lot of games, because a smash is one shot and the rally is decided by whether you can get back into position afterwards.</p>
+
+      <h2 id="speed">How fast is a club smash anyway?</h2>
+      <p>Nobody has measured club players, and we are not going to pretend otherwise. What exists is a ladder.</p>
+      <p>Across 77 players from untrained to elite, measured with Doppler radar, shuttle speed rose <strong>linearly with skill level, 138 per cent from the bottom of the range to the top</strong>, with the full sample spanning 24.44 to 81.66 m/s. In 3D motion capture, international players' shuttles left at 94.4 m/s, national at 91.2, and regional at 86.4.</p>
+      <p><strong>One warning before you compare yourself to any of those.</strong> Radar and motion capture do not agree with each other, and the gap is large. Radar puts elite players around 70 m/s; motion capture puts international players at 94.4. Different instruments, different definitions of the moment being measured. Never put a radar number and a motion-capture number side by side, including the ones above, which is why they are in separate sentences.</p>
+      <p>The records, since everyone asks. <strong>565 km/h</strong> is the fastest badminton hit, set by Satwiksairaj Rankireddy on 14 April 2023, and it is a controlled factory test rather than a match. <strong>426 km/h</strong> is the fastest hit in competition, by Mads Pieler Kolding on 10 January 2017. Older figures still circulating, including one repeated as current in a peer-reviewed paper in 2021, are twenty years out of date.</p>
+      <p><strong>And here is what all of those numbers are actually worth.</strong> A shuttle decelerates faster than any other projectile in sport. A typical smash loses about half its velocity within roughly 0.05 seconds and is down to a fifth of its launch speed by 0.25 seconds. The aerodynamic force on it at speed is around 50 times the force of gravity.</p>
+
+      <figure style="margin:26px 0 0">
+        <img src="/img/diagrams/smash-deceleration.svg" alt="A decay curve showing shuttle speed as a percentage of the speed it left the racket at, against time from zero to a quarter of a second. It starts at one hundred per cent, is at about half by five hundredths of a second, and about one fifth by a quarter of a second. Three markers show the record 565 kilometres per hour at impact, about 283 at five hundredths of a second, and about 113 kilometres per hour at a quarter of a second, which is slower than a club player's smash leaves the racket." style="width:100%;height:auto;border-radius:12px" />
+        <figcaption style="margin-top:10px;color:var(--muted-2);font-size:.92rem">The world-record smash is doing roughly 113 km/h a quarter of a second after it was hit. This is why placement beats power, and it is not a coaching platitude but a property of the shuttle.</figcaption>
+      </figure>
+
+      <p style="margin-top:22px">The 565 km/h shuttle is travelling at around 113 km/h a quarter of a second later. Which means the number everyone quotes describes an instant that has already gone by the time the shuttle has crossed the net.</p>
+
+      <div class="guide-callout" style="margin-top:26px">
+        <h4>If you only do one thing</h4>
+        <p style="margin-top:8px">Move your feet so the shuttle is in front of you when you hit it. Impact location alone explained a quarter of the variation in international players' own smash speeds, and it is the only item here that is about where you stand rather than how you move.</p>
+      </div>
+
+      <div class="guide-callout" style="margin-top:24px">
+        <h4>Fair games, without the admin</h4>
+        <p>ePegboard will not fix your smash. What it does is run your club night: balanced games, even court time, and nobody sitting out three in a row. Free for clubs.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
+      </div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      @foreach (var f in faqPairs)
+      {
+        <h3>@f.Q</h3>
+        <p>@f.A</p>
+      }
+
+      <h2 id="related">Where to go next</h2>
+      <p>The contact-point finding above is a footwork problem wearing a technique costume. <a href="/guides/badminton-footwork-split-step">The split step and the six corners</a> covers getting there in the first place.</p>
+      <p>If the racket section left you wondering what specs are worth paying for, <a href="/guides/how-to-choose-a-badminton-racket">how to choose a badminton racket</a> counts what the market actually offers at each price.</p>
+
+      <div style="margin-top:34px;padding-top:22px;border-top:1px solid var(--line)">
+        <h4 style="margin:0 0 8px">How this guide was put together</h4>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:0">ePegboard builds club-night software. We are not coaches and we have measured nothing ourselves. Every figure above is from published, peer-reviewed research, read in the original rather than in anyone's summary, on 26 August 2026. We sell no rackets, no strings and no coaching, and take no commission from anyone who does.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0">Four limits worth stating plainly. <strong>No published study has measured recreational club players</strong>; the measured groups are competitive players and untrained volunteers, and we have said which each time. <strong>Grip force has never been measured against racket head speed in badminton</strong>, so the loose-grip cue everyone teaches is neither endorsed nor debunked here. <strong>The non-racket arm has never been tested</strong> in badminton, so it is absent. And <strong>we have deliberately not published a percentage breakdown</strong> of where smash power comes from, because the published attributions use incompatible methods and cannot be combined.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0">Two claims circulating on other pages that we checked and will not repeat: that breaking the movement sequence costs 30 to 40 per cent of your speed, which we could not trace to any source, and a much-quoted 408 km/h competition record, which rests on a single low-quality secondary reference.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0"><strong>Sources:</strong> <a href="https://oars.uos.ac.uk/1188/1/applsci-10-01248.pdf" target="_blank" rel="noopener">King, Towler, Dillon &amp; McErlain-Naylor (2020), correlational analysis of shuttlecock speed determinants</a> &middot; <a href="https://www.stuartmcnaylor.com/publication/badmintonIL/McErlain-Naylor_et_al_2020.pdf" target="_blank" rel="noopener">McErlain-Naylor et al. (2020), racket-shuttlecock impact location</a> &middot; <a href="https://www.worldbadminton.com/reference/research/documents/The_Science_of_Badminton_Game.pdf" target="_blank" rel="noopener">Phomsoupha &amp; Laffaye (2015), The Science of Badminton</a> &middot; <a href="https://www.worldbadminton.com/reference/research/documents/Shuttlecock_velocity_during_a_smash_stroke.pdf" target="_blank" rel="noopener">Phomsoupha &amp; Laffaye (2014), shuttlecock velocity and skill level</a> &middot; <a href="https://ojs.ub.uni-konstanz.de/cpa/article/download/2233/2089" target="_blank" rel="noopener">Waddell &amp; Gowitzke (2000), biomechanical principles applied to badminton power strokes</a> &middot; <a href="https://ojs.ub.uni-konstanz.de/cpa/article/view/789/725" target="_blank" rel="noopener">Rambely &amp; Abu Osman (2005), upper limb joint contributions</a> &middot; <a href="https://www.worldbadminton.com/reference/research/documents/5682-16593-1-PB.pdf" target="_blank" rel="noopener">Vanasant et al. (2013), the effect of string tension on shuttlecock velocity</a> &middot; <a href="https://www.guinnessworldrecords.com/world-records/92507-fastest-badminton-hit-male" target="_blank" rel="noopener">Guinness World Records, fastest badminton hit</a> &middot; <a href="https://www.guinnessworldrecords.com/world-records/fastest-badminton-hit-in-competition-(male)" target="_blank" rel="noopener">Guinness World Records, fastest hit in competition</a></p>
+        <p style="color:var(--muted-2);font-size:.9rem;margin:12px 0 0">Published 26 August 2026 by ePegboard. All sources read 26 August 2026.</p>
+      </div>
+
+    </div>
+  </div>
+</section>

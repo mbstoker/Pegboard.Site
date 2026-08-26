@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" role="img"
+     aria-label="A curve showing how fast a smashed shuttlecock slows down. The vertical axis is speed as a percentage of the speed it left the racket at. The horizontal axis is time, from zero to a quarter of a second. The curve starts at one hundred per cent, has fallen to about half by five hundredths of a second, and is down to one fifth by a quarter of a second. Three markers are placed on it. At the moment of impact the world record hit is 565 kilometres per hour. At five hundredths of a second it is about 283. At a quarter of a second it is about 113 kilometres per hour, which is slower than a club player's own smash leaves the racket. A note records that the aerodynamic force on a shuttle at high speed is about fifty times the force of gravity, which is why no other projectile in sport slows like this.">
+  <title>The record 565 km/h shuttle is doing about 113 km/h a quarter of a second later.</title>
+
+  <!--
+    Source: Phomsoupha & Laffaye (2014), "Shuttlecock velocity during a smash stroke in
+    badminton evolves linearly with skill level", Computer Methods in Biomechanics and
+    Biomedical Engineering 17(S1) 140-141 - a typical smash loses about half its velocity
+    in roughly 0.05 s and is down to about a fifth of launch velocity by 0.25 s. The
+    ~50x gravitational aerodynamic force and the 0.5-0.6 drag coefficient are from
+    Phomsoupha & Laffaye (2015), "The Science of Badminton", Sports Medicine.
+
+    The 565 km/h anchor is Guinness World Records, fastest badminton hit (male),
+    Satwiksairaj Rankireddy, 14 April 2023 - a CONTROLLED TEST at the Yonex Tokyo factory,
+    not a match. The in-competition record is 426 km/h (Mads Pieler Kolding, 10 Jan 2017).
+    Do not label the 565 as a match figure.
+
+    The curve is drawn to the two published points (50% at 0.05 s, 20% at 0.25 s) with a
+    smooth decay between them. It is an ILLUSTRATION of a published shape, not a fitted
+    model of a specific trajectory, and the article says so.
+    Read 2026-08-26.
+  -->
+
+  <rect width="1200" height="620" fill="#ffffff"/>
+
+  <text x="600" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#0f172a" font-weight="600">A smash is only fast for about a twentieth of a second</text>
+  <text x="600" y="66" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">Speed as a share of the speed it left the racket at</text>
+
+  <!-- axes: x 130 (0s) to 1090 (0.25s) => 3840 px per second ; y 500 (0%) to 120 (100%) -->
+  <g stroke="#e2e8f0" stroke-width="1">
+    <line x1="130" y1="120" x2="1090" y2="120"/>
+    <line x1="130" y1="196" x2="1090" y2="196"/>
+    <line x1="130" y1="272" x2="1090" y2="272"/>
+    <line x1="130" y1="348" x2="1090" y2="348"/>
+    <line x1="130" y1="424" x2="1090" y2="424"/>
+  </g>
+  <line x1="130" y1="500" x2="1090" y2="500" stroke="#0f172a" stroke-width="2"/>
+  <line x1="130" y1="110" x2="130" y2="500" stroke="#0f172a" stroke-width="2"/>
+
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="end">
+    <text x="120" y="125">100%</text>
+    <text x="120" y="201">80%</text>
+    <text x="120" y="277">60%</text>
+    <text x="120" y="353">40%</text>
+    <text x="120" y="429">20%</text>
+    <text x="120" y="505">0</text>
+  </g>
+
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">
+    <text x="130" y="524">0</text>
+    <text x="322" y="524">0.05 s</text>
+    <text x="514" y="524">0.10 s</text>
+    <text x="706" y="524">0.15 s</text>
+    <text x="898" y="524">0.20 s</text>
+    <text x="1090" y="524">0.25 s</text>
+  </g>
+  <text x="610" y="548" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#64748b">time since the racket hit it</text>
+
+  <!-- the decay curve: 100% at 0, 50% at 0.05s, 20% at 0.25s -->
+  <path d="M 130 120 C 180 196, 250 272, 322 310 C 420 362, 560 400, 706 415 C 830 424, 980 424, 1090 424"
+        fill="none" stroke="#0f766e" stroke-width="3.5"/>
+
+  <!-- markers -->
+  <circle cx="130" cy="120" r="6" fill="#0f766e"/>
+  <circle cx="322" cy="310" r="6" fill="#0f766e"/>
+  <circle cx="1090" cy="424" r="6" fill="#b45309"/>
+
+  <text x="146" y="112" font-family="system-ui,sans-serif" font-size="16" fill="#0f172a" font-weight="600">565 km/h</text>
+  <text x="146" y="132" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">the record, in a factory test</text>
+
+  <text x="338" y="304" font-family="system-ui,sans-serif" font-size="16" fill="#0f172a" font-weight="600">about 283 km/h</text>
+  <text x="338" y="324" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">half of it, gone in 0.05 s</text>
+
+  <text x="1080" y="404" text-anchor="end" font-family="system-ui,sans-serif" font-size="16" fill="#b45309" font-weight="600">about 113 km/h</text>
+  <text x="1080" y="450" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" fill="#b45309">slower than your own smash leaves your racket</text>
+
+  <line x1="60" y1="572" x2="1140" y2="572" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="60" y="596" font-family="system-ui,sans-serif" font-size="15" fill="#64748b">Aerodynamic force on a shuttle at speed is roughly 50 times the force of gravity on it. Nothing else in sport decelerates like this, which is why where you put it beats how hard you hit it.</text>
+  <text x="1140" y="596" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">epegboard.com</text>
+</svg>

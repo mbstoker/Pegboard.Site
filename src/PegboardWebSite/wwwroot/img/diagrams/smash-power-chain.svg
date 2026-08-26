@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" width="1200" height="780" role="img"
+     aria-label="Two panels about the badminton smash. The upper panel is a timeline of the last 450 milliseconds before the racket meets the shuttle, marking when each muscle switches on. The middle deltoid fires first at 441 milliseconds before contact, the major deltoid at 173, the triceps at 78, the wrist extensor at 63, the biceps at 49, the wrist flexor at 43.5, and the posterior deltoid last at 33. The final 38.1 milliseconds are shaded as the acceleration phase. The wrist flexor is the second to last muscle to switch on, 43.5 milliseconds before contact. The lower panel ranks what actually predicts how fast the shuttle leaves the racket, measured across eighteen skilled players. Racket head speed at contact correlates at 0.903, wrist joint travelling through space at 0.767, a shorter acceleration phase at minus 0.543, shoulder internal rotation at 0.508, and trunk separation at minus 0.484, all statistically significant. Jump height at 0.454 and forearm pronation range of movement at minus 0.242 and wrist flexion range of movement at 0.208 are all not statistically significant, shown in grey. The caption notes that the joint every club player is told to use is both the last to fire and the one with no measurable relationship to shuttle speed.">
+  <title>The wrist fires second to last, and its range of movement predicts nothing.</title>
+
+  <!--
+    Sources, all read 2026-08-26.
+
+    UPPER PANEL - EMG onset times, milliseconds before shuttle contact. From Tsai et al.,
+      reported in Phomsoupha & Laffaye (2015), "The Science of Badminton", Sports Medicine,
+      DOI 10.1007/s40279-014-0287-2.
+        middle deltoid -441, major deltoid -173, triceps -78, wrist extensor -63,
+        biceps -49, wrist flexor -43.5, posterior deltoid -33.
+      Acceleration phase 38.1 ms (SD 5.2) from King et al. (2020), below.
+
+    LOWER PANEL - Pearson r against post-impact shuttlecock speed, n=18 male players of
+      regional/national/international standard, 3D motion capture. King, Towler, Dillon &
+      McErlain-Naylor (2020), "A correlational analysis of shuttlecock speed kinematic
+      determinants in the badminton jump smash", Applied Sciences 10(4) 1248.
+        racket head speed at contact      r  0.903  p <0.001   SIG
+        peak wrist joint LINEAR velocity  r  0.767  p <0.001   SIG   (the joint travelling
+                                                                     through space, delivered
+                                                                     by shoulder and trunk -
+                                                                     NOT wrist flexion)
+        acceleration phase duration       r -0.543  p  0.020   SIG
+        shoulder internal rotation angle  r  0.508  p  0.031   SIG
+        X-factor at end of retraction     r -0.484  p  0.042   SIG
+        jump height                       r  0.454  p  0.059   ns
+        elbow pronation ROM               r -0.242  p  0.333   ns
+        wrist flexion ROM                 r  0.208  p  0.408   ns
+
+    DO NOT add a "percentage contribution" panel. The literature's attributions (53% / 66%
+    / 57% / wrist 26.5%) use different decomposition methods, are not additive and are not
+    comparable. See the article's method note.
+
+    To reproduce: the two papers above are open access and both tables are in their bodies.
+  -->
+
+  <rect width="1200" height="780" fill="#ffffff"/>
+
+  <text x="600" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" fill="#0f172a" font-weight="600">The last half-second of a smash</text>
+  <text x="600" y="64" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">When each muscle switches on, and what actually predicts the shuttle's speed</text>
+
+  <!-- ============ UPPER PANEL: EMG onset timeline ============ -->
+  <!-- axis: x = 90 at -450ms, x = 1130 at 0ms  =>  2.311 px per ms -->
+
+  <!-- acceleration phase shading: -38.1ms to 0  =>  x 1041.9 to 1130 -->
+  <rect x="1041.9" y="150" width="88.1" height="150" fill="#fef3c7"/>
+
+  <line x1="90" y1="300" x2="1130" y2="300" stroke="#0f172a" stroke-width="2"/>
+
+  <!-- axis ticks every 50ms -->
+  <g stroke="#cbd5e1" stroke-width="1" font-family="system-ui,sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">
+    <line x1="90" y1="300" x2="90" y2="308"/>       <text x="90" y="326">-450</text>
+    <line x1="205.6" y1="300" x2="205.6" y2="308"/> <text x="205.6" y="326">-400</text>
+    <line x1="321.1" y1="300" x2="321.1" y2="308"/> <text x="321.1" y="326">-350</text>
+    <line x1="436.7" y1="300" x2="436.7" y2="308"/> <text x="436.7" y="326">-300</text>
+    <line x1="552.2" y1="300" x2="552.2" y2="308"/> <text x="552.2" y="326">-250</text>
+    <line x1="667.8" y1="300" x2="667.8" y2="308"/> <text x="667.8" y="326">-200</text>
+    <line x1="783.3" y1="300" x2="783.3" y2="308"/> <text x="783.3" y="326">-150</text>
+    <line x1="898.9" y1="300" x2="898.9" y2="308"/> <text x="898.9" y="326">-100</text>
+    <line x1="1014.4" y1="300" x2="1014.4" y2="308"/><text x="1014.4" y="326">-50</text>
+    <line x1="1130" y1="300" x2="1130" y2="308"/>   <text x="1130" y="326">0</text>
+  </g>
+  <text x="610" y="348" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">milliseconds before the racket meets the shuttle</text>
+
+  <!-- contact marker -->
+  <line x1="1130" y1="140" x2="1130" y2="300" stroke="#0f172a" stroke-width="2.5"/>
+  <text x="1124" y="134" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#0f172a" font-weight="600">contact</text>
+
+  <!-- acceleration phase label -->
+  <text x="1086" y="288" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#b45309" font-weight="600">38.1 ms</text>
+  <text x="1086" y="176" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#b45309">acceleration</text>
+  <text x="1086" y="192" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#b45309">phase</text>
+
+  <!-- onsets: x = 1130 + (t * 2.3111), t negative -->
+  <!-- middle deltoid -441 -> 111.2 ; major deltoid -173 -> 730.2 ; triceps -78 -> 949.7
+       wrist extensor -63 -> 984.4 ; biceps -49 -> 1016.8 ; wrist flexor -43.5 -> 1029.5
+       posterior deltoid -33 -> 1053.7 -->
+  <g stroke="#0f766e" stroke-width="2">
+    <line x1="111.2" y1="230" x2="111.2" y2="300"/>
+    <line x1="730.2" y1="230" x2="730.2" y2="300"/>
+    <line x1="949.7" y1="256" x2="949.7" y2="300"/>
+    <line x1="984.4" y1="230" x2="984.4" y2="300"/>
+    <line x1="1016.8" y1="256" x2="1016.8" y2="300"/>
+  </g>
+  <line x1="1029.5" y1="204" x2="1029.5" y2="300" stroke="#b45309" stroke-width="3"/>
+  <line x1="1053.7" y1="256" x2="1053.7" y2="300" stroke="#0f766e" stroke-width="2"/>
+
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#0f766e">
+    <text x="111.2" y="222" text-anchor="middle">middle deltoid</text>
+    <text x="730.2" y="222" text-anchor="middle">major deltoid</text>
+    <text x="944" y="248" text-anchor="end">triceps</text>
+    <text x="984.4" y="222" text-anchor="middle">wrist extensor</text>
+    <text x="1010" y="248" text-anchor="end">biceps</text>
+    <text x="1059" y="248" text-anchor="start">posterior deltoid</text>
+  </g>
+  <text x="1029.5" y="196" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#b45309" font-weight="700">wrist flexor, 43.5 ms out</text>
+  <text x="1029.5" y="180" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#b45309">second to last of the seven</text>
+
+  <!-- ============ LOWER PANEL: correlations ============ -->
+  <line x1="60" y1="392" x2="1140" y2="392" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="60" y="424" font-family="system-ui,sans-serif" font-size="19" fill="#0f172a" font-weight="600">What predicts how fast the shuttle leaves</text>
+  <text x="60" y="446" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">Correlation with shuttlecock speed across 18 skilled players. Grey bars are not statistically significant.</text>
+
+  <!-- bars: zero at x=620, 1.0 = 460px  => 460 px per 1.0 -->
+  <line x1="620" y1="466" x2="620" y2="744" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- row 1: racket head speed 0.903 -->
+  <text x="610" y="489" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#0f172a">Racket head speed at contact</text>
+  <rect x="620" y="476" width="415.4" height="18" fill="#0f766e"/>
+  <text x="1043" y="490" font-family="system-ui,sans-serif" font-size="14" fill="#0f766e" font-weight="600">0.903</text>
+
+  <!-- row 2: wrist joint linear velocity 0.767 -->
+  <text x="610" y="523" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#0f172a">Wrist joint travelling through space</text>
+  <rect x="620" y="510" width="352.8" height="18" fill="#0f766e"/>
+  <text x="980" y="524" font-family="system-ui,sans-serif" font-size="14" fill="#0f766e" font-weight="600">0.767</text>
+
+  <!-- row 3: acceleration phase -0.543 -->
+  <text x="610" y="557" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#0f172a">A shorter acceleration phase</text>
+  <rect x="370.2" y="544" width="249.8" height="18" fill="#0f766e"/>
+  <text x="362" y="558" text-anchor="end" font-family="system-ui,sans-serif" font-size="14" fill="#0f766e" font-weight="600">-0.543</text>
+
+  <!-- row 4: shoulder internal rotation 0.508 -->
+  <text x="610" y="591" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#0f172a">Shoulder internal rotation</text>
+  <rect x="620" y="578" width="233.7" height="18" fill="#0f766e"/>
+  <text x="861" y="592" font-family="system-ui,sans-serif" font-size="14" fill="#0f766e" font-weight="600">0.508</text>
+
+  <!-- row 5: X-factor -0.484 -->
+  <text x="610" y="625" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#0f172a">Trunk separation before the swing</text>
+  <rect x="397.4" y="612" width="222.6" height="18" fill="#0f766e"/>
+  <text x="389" y="626" text-anchor="end" font-family="system-ui,sans-serif" font-size="14" fill="#0f766e" font-weight="600">-0.484</text>
+
+  <!-- row 6: jump height 0.454 ns -->
+  <text x="610" y="659" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">Jump height</text>
+  <rect x="620" y="646" width="208.8" height="18" fill="#cbd5e1"/>
+  <text x="836" y="660" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">0.454 &#183; not significant</text>
+
+  <!-- row 7: pronation ROM -0.242 ns -->
+  <text x="610" y="693" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#94a3b8">Forearm pronation, range of movement</text>
+  <rect x="508.7" y="680" width="111.3" height="18" fill="#cbd5e1"/>
+  <text x="500" y="694" text-anchor="end" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">-0.242 &#183; not significant</text>
+
+  <!-- row 8: wrist flexion ROM 0.208 ns -->
+  <text x="610" y="727" text-anchor="end" font-family="system-ui,sans-serif" font-size="15" fill="#b45309" font-weight="600">Wrist flexion, range of movement</text>
+  <rect x="620" y="714" width="95.7" height="18" fill="#fbbf24"/>
+  <text x="724" y="728" font-family="system-ui,sans-serif" font-size="14" fill="#b45309" font-weight="600">0.208 &#183; not significant</text>
+
+  <text x="60" y="766" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">Rows 1 and 2 are the racket and the wrist being carried through space by the shoulder and trunk. That is not the same as flexing the wrist, which is the bottom row.</text>
+  <text x="1140" y="766" text-anchor="end" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">epegboard.com</text>
+</svg>
