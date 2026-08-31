@@ -28,7 +28,7 @@ Use a free loopback port, a writable disposable data-protection key directory an
 ```powershell
 $env:ASPNETCORE_ENVIRONMENT='Development'
 $env:ASPNETCORE_URLS='http://127.0.0.1:5180'
-$env:ConnectionStrings__DefaultConnection='<non-production PostgreSQL connection string>'
+$env:ConnectionStrings__PegboardDb='<non-production PostgreSQL connection string>'
 # Configure ASP.NET data-protection keys to a writable disposable local directory.
 dotnet run --project src/PegboardWebSite/PegboardWebSite.csproj
 Invoke-WebRequest http://127.0.0.1:5180/
