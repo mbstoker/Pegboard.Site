@@ -44,12 +44,12 @@ The deployable is a self-contained `win-x64` publish of `src/PegboardWebSite`. T
 
 ## Current variances
 
-### SITE-ENGINEERING-001 — no self-contained local liveness harness
+### SITE-ENGINEERING-001 — no self-contained local verification harness
 
-- **Scope/owner:** local runtime verification; Growth.
-- **Rule not met:** a safe, repository-owned local run/health path that works from committed non-secret configuration.
-- **Reason:** the application starts on loopback, but `/` requires a writable data-protection key store and non-production PostgreSQL configuration; the repository has no dedicated dependency-free health endpoint or committed harness that provisions those inputs.
-- **Risk/containment:** build and tests remain mandatory; runtime smoke evidence is required when an authorised non-production configuration is available, and production data must never be used as a shortcut.
+- **Scope/owner:** automated HTTP tests and local runtime verification; Growth.
+- **Rule not met:** a safe, repository-owned full test/run/health path that works from committed non-secret configuration.
+- **Reason:** the application starts on loopback, but HTTP requests require a writable data-protection key store and non-production PostgreSQL configuration. At the reviewed revision the 13 HTTP tests all return HTTP 500 in a clean restricted environment for the same missing runtime inputs; the repository has no committed harness that provisions them.
+- **Risk/containment:** build remains mandatory and the red test result blocks verification; runtime smoke requires an authorised non-production configuration, and production data must never be used as a shortcut.
 - **Acceptance:** pending Mike; no variance is active until accepted.
 - **Review/expiry:** review 2026-09-30; expire 2026-12-31 if accepted without remediation.
-- **Removal condition:** provide a safe committed local harness or dependency-free health endpoint and verify it from a clean checkout.
+- **Removal condition:** provide a safe committed test/runtime harness or dependency-free health path and make the full test suite green from a clean checkout.
