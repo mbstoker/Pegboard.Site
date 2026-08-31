@@ -23,15 +23,19 @@ The solution test command is the full required automated suite. Page or filter-s
 
 ## Safe local runtime and health
 
-Use a free loopback port, a writable disposable data-protection key directory and a non-production connection string. Do not point a local run at the live site database. The current root page depends on those settings; without them the process can listen successfully but `/` returns HTTP 500, which is not a passing smoke test.
+Use a free loopback port. Do not point a local run at the live site database. The site degrades to seed/default behaviour when PostgreSQL is unavailable, so the root liveness smoke does not require a database connection; data-dependent work must supply an explicitly non-production `PegboardDb` connection.
 
 ```powershell
 $env:ASPNETCORE_ENVIRONMENT='Development'
 $env:ASPNETCORE_URLS='http://127.0.0.1:5180'
-$env:ConnectionStrings__PegboardDb='<non-production PostgreSQL connection string>'
-# Configure ASP.NET data-protection keys to a writable disposable local directory.
 dotnet run --project src/PegboardWebSite/PegboardWebSite.csproj
 Invoke-WebRequest http://127.0.0.1:5180/
+```
+
+For data-dependent verification only:
+
+```powershell
+$env:ConnectionStrings__PegboardDb='<non-production PostgreSQL connection string>'
 ```
 
 The repository has no dedicated health endpoint; an HTTP 200 from `/` is the local liveness smoke. Concurrent server runs require different ports and independent non-production data configurations.
@@ -44,12 +48,4 @@ The deployable is a self-contained `win-x64` publish of `src/PegboardWebSite`. T
 
 ## Current variances
 
-### SITE-ENGINEERING-001 — no self-contained local verification harness
-
-- **Scope/owner:** automated HTTP tests and local runtime verification; Growth.
-- **Rule not met:** a safe, repository-owned full test/run/health path that works from committed non-secret configuration.
-- **Reason:** the application starts on loopback, but HTTP requests require a writable data-protection key store and non-production PostgreSQL configuration. At the reviewed revision the 13 HTTP tests all return HTTP 500 in a clean restricted environment for the same missing runtime inputs; the repository has no committed harness that provisions them.
-- **Risk/containment:** build remains mandatory and the red test result blocks verification; runtime smoke requires an authorised non-production configuration, and production data must never be used as a shortcut.
-- **Acceptance:** pending Mike; no variance is active until accepted.
-- **Review/expiry:** review 2026-09-30; expire 2026-12-31 if accepted without remediation.
-- **Removal condition:** provide a safe committed test/runtime harness or dependency-free health path and make the full test suite green from a clean checkout.
+None accepted. Absence of a dedicated health endpoint is recorded as a repository fact; the root smoke and full HTTP test suite are the current executable signals.
