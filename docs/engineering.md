@@ -26,7 +26,7 @@ The solution test command is the full required automated suite. Page or filter-s
 Use a free loopback port. Do not point a local run at the live site database. The site degrades to seed/default behaviour when PostgreSQL is unavailable, so the root liveness smoke does not require a database connection; data-dependent work must supply an explicitly non-production `PegboardDb` connection.
 
 ```powershell
-$siteRoot = (Resolve-Path .).Path
+$siteRoot = (git rev-parse --show-toplevel).Trim()
 $env:ASPNETCORE_ENVIRONMENT='Development'
 $env:ASPNETCORE_URLS='http://127.0.0.1:5180'
 dotnet run --project (Join-Path $siteRoot 'src/PegboardWebSite/PegboardWebSite.csproj')
