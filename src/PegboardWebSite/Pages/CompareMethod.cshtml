@@ -90,9 +90,10 @@
     <div class="inner">
       <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/compare">Compare</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Method</span></div>
       <h1 style="margin-top:10px">How it was scored</h1>
-      <p class="lede">The rubric was written before anything was looked at. This page is all of it: the fifteen criteria and their weights, the evidence rules, every score the evaluator revised while running, what we corrected afterwards, and the raw output with nothing taken out.</p>
+      <p class="lede">The rubric was written before anything was looked at, and the same one was used for all three runs with its weights unaltered. This page is all of it: the fifteen criteria and their weights, the evidence rules, the scores each evaluator revised while running, what we corrected afterwards, and the raw outputs with nothing taken out.</p>
       <div class="guide-meta">
         <span class="gm-tag">Method</span>
+        <span>3 runs</span>
         <span>9 September 2026</span>
       </div>
     </div>
@@ -160,7 +161,9 @@
 
       <h2 id="revisions">Scores the evaluator revised while running</h2>
 
-      <p>Twenty scores were revised downward during the self-consistency pass. <strong>Ours is first because it is the one that matters for reading the rest:</strong> a scoring pass that only ever finds fault with other people's products is not a scoring pass.</p>
+      <p>Run 1's self-consistency pass, below, revised twenty scores downward. <strong>Ours is first because it is the one that matters for reading the rest:</strong> a scoring pass that only ever finds fault with other people's products is not a scoring pass.</p>
+
+      <p>Run 2 did the same thing harder and to us specifically: it cut our explainability score because we name eight picker signals without publishing their weights, and our resilience score because offline running needs the separate paid Windows product and the web app's behaviour on a dropped connection is undocumented. <strong>Those two corrections cost us six points and took us from 91.5 to 85.5</strong>, and they changed none of the top ten positions. Run 3 scored us lower again, at 78.5, chiefly by reading skill-balanced doubles as partial rather than full.</p>
 
       <div class="cmp-wrap">
         <table class="cmp-table">
@@ -196,7 +199,9 @@
 
       <h2 id="retrieval">Retrieval log</h2>
 
-      <p>Whether each product's page could actually be read. <strong>Ten could not be, and those ten were not scored.</strong> This log is the difference between "we could not check" and "it does not do this".</p>
+      <p>Run 1's log, kept because it is the instructive one. Whether each product's page could actually be read. <strong>Ten could not be, and those ten were not scored.</strong> This log is the difference between "we could not check" and "it does not do this".</p>
+
+      <p><strong>Run 2, reading pages through a browser, scored 27 of the 30.</strong> Only two defeated it: Court Manager, whose address serves an admin login form with no public product information, and QSENPAI, whose address returns a 404 with nothing deployed at it. Run 3 scored 22 and located SmashHQ, which neither of the others found.</p>
 
       <p>We re-checked all ten by hand on 9 September 2026 rather than leaving them as a blank. <strong>Six return a page title and nothing else, because they build their pages in the browser</strong> - open them normally and they work fine. One declined the request with a 403, two are app-store listings that rate-limit automated readers, and one URL in our own records is simply wrong and returns a 404.</p>
 
@@ -214,14 +219,17 @@
         </table>
       </div>
 
-      <h2 id="raw">The prompt and the unedited output</h2>
+      <h2 id="raw">The prompt and the unedited outputs</h2>
 
-      <p>Both are published as plain text, exactly as run and returned. They are not tidied, and they contain the parts that do not suit us - including the 97.5 we have corrected on this site to 95.5.</p>
+      <p>Published as plain text, exactly as sent and returned. They are not tidied, and they contain the parts that do not suit us - including the 97.5 that run 1 printed and we corrected to 95.5, and run 3 scoring us 17 points lower than run 1 did.</p>
 
       <ul>
-        <li><a href="/evidence/ai-comparison-2026-09-09/prompt.txt">The prompt, in full</a></li>
-        <li><a href="/evidence/ai-comparison-2026-09-09/output.txt">The unedited output, in full</a></li>
+        <li><a href="/evidence/ai-comparison-2026-09-09/prompt.txt">The prompt, in full</a> - identical for all three runs, weights unaltered</li>
+        <li><a href="/evidence/ai-comparison-2026-09-09/output.txt">Run 1, unedited</a> - static fetch, 19 of 30 scored</li>
+        <li><a href="/evidence/ai-comparison-2026-09-09/output-run3.txt">Run 3, unedited</a> - a second AI vendor, 22 of 30 scored</li>
       </ul>
+
+      <p>Run 2's full report is the one this site leans on most, because it read 27 of the 30. Its scores, corrections and retrieval findings are reproduced above and throughout <a href="/compare">the results page</a>; the complete report will be published here alongside the other two.</p>
 
       <div class="guide-callout" style="margin-top:26px">
         <h4>If you make one of these products</h4>
