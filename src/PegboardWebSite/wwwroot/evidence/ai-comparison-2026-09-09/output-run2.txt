@@ -1,394 +1,503 @@
-Run 2 - browser-rendered retrieval, 27 of 30 scored, 9 September 2026.
+Run 2 - browser-rendered retrieval, 27 of 30 scored, 9 September 2026. Unedited.
 ==================================================================
 
-# AI comparison - run 2 (Opus 5 High, browser-rendered retrieval), 2026-09-09
+# Running the club night: 30 products, one rubric
 
-**Provenance.** A transcription of the report as published, with the two score tables computed
-from its own evidence grid rather than retyped, so the arithmetic cannot drift from the cells it
-came from. The prose is reproduced as written.
+**Independent software evaluation for a UK recreational badminton club**
+**Access date for all sources: 9 September 2026**
 
-**Why this run matters.** It read **27 of the 30** candidates, against 19 for run 1 and 22 for
-run 3, because it rendered pages in a browser instead of fetching static HTML. It is the
-best-evidenced of the three and the one epegboard.com/compare leans on.
+A weekly social badminton club — 18–26 attendees, four courts, mixed strengths, players
+arriving late and leaving early — needs balanced games without unfair waits. Thirty candidate
+products were assessed against the club's pre-declared 100-point rubric, using each vendor's own
+documentation, retrieved from the canonical URL supplied for it and nowhere else.
 
-## Declared interest, in the run's own words
+**Candidate count: 30.** 29 with a supplied canonical URL, plus SmashHQ with none.
+27 scored · 2 unscoreable (no public product content) · 1 UNLOCATED.
 
-> The machine this evaluation was run on lists `C:\Business\ePegboard` as a recent project
-> folder, and ePegboard is one of the candidates. No local files were opened; ePegboard was
-> assessed only from www.epegboard.com and docs.epegboard.com, under the same evidential
-> standard as every other candidate. ePegboard finishes first, so the committee should read
-> section G, which quantifies how much of that lead is documentation depth rather than
-> demonstrated capability, before treating the result as settled.
+---
 
-**The run was not blind, and said so.** It scored ePegboard 85.5 against run 1's 95.5.
+## Declared interest
 
-## The rubric
+The machine this evaluation was run on lists `C:\Business\ePegboard` as a recent project folder,
+and ePegboard is one of the candidates. No local files were opened; ePegboard was assessed only
+from `www.epegboard.com` and `docs.epegboard.com`, under the same evidential standard as every
+other candidate. ePegboard finishes first, so the committee should read section G — which
+quantifies how much of that lead is documentation depth rather than demonstrated capability —
+before treating the result as settled.
 
-Unchanged from run 1: 15 criteria, 100 points, weights unaltered.
+---
 
-- **C1** Check-in and late joiners - 6
-- **C2** Dynamic allocation - 12
-- **C3** Skill-balanced doubles - 12
-- **C4** Sit-out fairness - 10
-- **C5** Partner variety - 8
-- **C6** Explainability - 8
-- **C7** Manual override - 5
-- **C8** Rating system - 7
-- **C9** Scoring and history - 5
-- **C10** Display / kiosk - 5
-- **C11** Attendance reporting - 5
-- **C12** Payments and admin - 5
-- **C13** Competitions - 4
-- **C14** Resilience - 4
-- **C15** Price and limits - 4
+## Method and scoring key
 
-Scoring: `2` fully meets, `1` partially, `0` verified absent, `U` insufficient evidence.
-A resolved criterion contributes `weight x score / 2`. **U contributes nothing and is never
-converted to zero**; it is carried as unresolved headroom.
+| Symbol | Meaning |
+|---|---|
+| **2** | Fully meets the criterion — the source describes the rule, the edge cases and the limits |
+| **1** | Partially meets it — capability evidenced, but operational detail absent (a feature bullet or benefit statement is a 1, never a 2) |
+| **0** | Verified not to meet it |
+| **U** | Insufficient evidence. **Never converted to zero.** |
+
+Each criterion contributes `weight × score ÷ 2`. U contributes nothing to the verified score and
+is carried instead as unresolved headroom.
+
+### Criteria and weights (unaltered)
+
+| # | Criterion | Weight |
+|---|---|---|
+| 1 | Arrival/check-in and late joiners | 6 |
+| 2 | Dynamic next-game/court allocation | 12 |
+| 3 | Skill-balanced doubles | 12 |
+| 4 | Waiting-time / sit-out fairness | 10 |
+| 5 | Partner/opponent variety | 8 |
+| 6 | Explainability / transparency | 8 |
+| 7 | Manual override and special cases | 5 |
+| 8 | Player rating system | 7 |
+| 9 | Live scoring, statistics and history | 5 |
+| 10 | Multi-court display / kiosk operation | 5 |
+| 11 | Attendance and session reporting | 5 |
+| 12 | Payments and member administration | 5 |
+| 13 | Competitions / tournaments / league workflows | 4 |
+| 14 | Resilience and device accessibility | 4 |
+| 15 | Price and practical limits | 4 |
+| | **Total** | **100** |
+
+---
 
 ## A. Evidence table
 
-| Product | C1 | C2 | C3 | C4 | C5 | C6 | C7 | C8 | C9 | C10 | C11 | C12 | C13 | C14 | C15 | Verified |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+Columns are criteria 1–15 in rubric order. Sorted by verified score, highest first.
+
+| Product | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | Verified |
+|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|---:|
 | ePegboard | 2 | 2 | 2 | 2 | 1 | 1 | 2 | 2 | 2 | 2 | 2 | 1 | 1 | 1 | 2 | **85.5** |
-| ShuttlePilot | 2 | 2 | 2 | 2 | 1 | 1 | 2 | 1 | 2 | 1 | 1 | 1 | U | 1 | 1 | **73** |
-| Court Buddy | 2 | 1 | 1 | 2 | 1 | 0 | 2 | 1 | 2 | U | 2 | 1 | 2 | 1 | 1 | **61** |
-| Racket Social | 1 | 1 | 1 | 2 | 1 | 1 | 1 | 1 | 2 | 2 | U | 0 | 1 | 2 | 2 | **59** |
+| ShuttlePilot | 2 | 2 | 2 | 2 | 1 | 1 | 2 | 1 | 2 | 1 | 1 | 1 | U | 1 | 1 | **73.0** |
+| Court Buddy | 2 | 1 | 1 | 2 | 1 | 0 | 2 | 1 | 2 | U | 2 | 1 | 2 | 1 | 1 | **61.0** |
+| Racket Social | 1 | 1 | 1 | 2 | 1 | 1 | 1 | 1 | 2 | 2 | U | 0 | 1 | 2 | 2 | **59.0** |
 | QourtX | 2 | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 | 2 | 1 | 2 | 1 | 1 | 1 | **55.5** |
 | ShuttleFlow | 1 | 1 | 1 | 1 | U | 1 | 1 | 1 | 2 | 2 | 1 | 2 | U | 1 | 1 | **51.5** |
-| Ladderly | 2 | 1 | 2 | 1 | U | 1 | U | 2 | 1 | U | U | 1 | U | 2 | 1 | **51** |
-| Qcourt | 1 | 1 | 1 | 1 | 1 | U | 2 | 1 | 1 | 1 | 2 | 1 | U | 1 | 1 | **49** |
+| Ladderly | 2 | 1 | 2 | 1 | U | 1 | U | 2 | 1 | U | U | 1 | U | 2 | 1 | **51.0** |
+| Qcourt | 1 | 1 | 1 | 1 | 1 | U | 2 | 1 | 1 | 1 | 2 | 1 | U | 1 | 1 | **49.0** |
 | ShuttleOps | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 | 1 | U | 2 | 2 | U | 1 | 2 | **48.5** |
 | Shuttl | 1 | 1 | 1 | 1 | U | 1 | 1 | 1 | 2 | 1 | 1 | 1 | U | 1 | 1 | **46.5** |
-| NextFour | 2 | 1 | 1 | 1 | U | 1 | 1 | U | 1 | 2 | 1 | 1 | U | 1 | 1 | **46** |
-| PaQueueKa | 1 | 1 | 1 | 1 | 1 | U | U | 1 | 2 | 1 | 1 | 1 | 0 | 1 | 2 | **46** |
+| NextFour | 2 | 1 | 1 | 1 | U | 1 | 1 | U | 1 | 2 | 1 | 1 | U | 1 | 1 | **46.0** |
+| PaQueueKa | 1 | 1 | 1 | 1 | 1 | U | U | 1 | 2 | 1 | 1 | 1 | 0 | 1 | 2 | **46.0** |
 | CourtsFlow | 2 | 1 | 1 | 1 | U | U | 2 | 1 | 1 | U | U | 1 | U | 1 | 1 | **40.5** |
-| Badminton Peg System | 1 | 1 | U | 1 | U | U | 2 | 1 | 1 | 1 | 1 | U | U | 1 | 2 | **36** |
+| Badminton Peg System | 1 | 1 | U | 1 | U | U | 2 | 1 | 1 | 1 | 1 | U | U | 1 | 2 | **36.0** |
 | vsBadminton | 1 | 1 | 1 | 1 | 1 | U | 1 | U | U | U | U | U | U | 1 | 2 | **32.5** |
-| UBR | U | 1 | 1 | U | U | 1 | U | 1 | 2 | U | 1 | U | 1 | U | 1 | **31** |
-| Racket Arena | U | 1 | 1 | 1 | U | U | U | 1 | 1 | U | 1 | 1 | U | U | U | **28** |
+| UBR | U | 1 | 1 | U | U | 1 | U | 1 | 2 | U | 1 | U | 1 | U | 1 | **31.0** |
+| Racket Arena | U | 1 | 1 | 1 | U | U | U | 1 | 1 | U | 1 | 1 | U | U | U | **28.0** |
 | Queue Master | 1 | 1 | 1 | U | U | U | 1 | 1 | U | 1 | U | U | U | 1 | 1 | **27.5** |
 | BadBoard | U | 1 | 1 | 1 | 1 | U | U | U | 1 | U | U | U | U | U | 1 | **25.5** |
 | Matchit | U | 1 | 1 | 1 | U | U | U | U | 1 | U | U | U | U | 1 | 1 | **23.5** |
 | CourtMaster | U | 1 | U | U | U | U | U | 1 | 1 | 1 | U | U | 1 | 1 | 1 | **20.5** |
-| ServeLeague | U | U | U | U | U | U | U | 1 | 1 | U | 1 | 1 | 2 | 1 | 1 | **19** |
-| SportyHQ | U | U | U | U | U | U | U | 1 | 1 | U | 1 | 1 | 2 | 2 | U | **19** |
-| Badmatch | U | 1 | 1 | U | U | U | U | 1 | 1 | U | U | U | U | U | U | **18** |
+| ServeLeague | U | U | U | U | U | U | U | 1 | 1 | U | 1 | 1 | 2 | 1 | 1 | **19.0** |
+| SportyHQ | U | U | U | U | U | U | U | 1 | 1 | U | 1 | 1 | 2 | 2 | U | **19.0** |
+| Badmatch | U | 1 | 1 | U | U | U | U | 1 | 1 | U | U | U | U | U | U | **18.0** |
 | Digital Pegboard | U | 1 | U | 1 | U | U | U | U | 1 | U | U | U | U | 1 | U | **15.5** |
-| Airchy WebOS | U | U | U | U | U | U | U | 1 | 1 | U | 1 | 1 | U | U | U | **11** |
-| eBadders | U | U | U | U | U | U | U | 1 | 1 | U | 1 | 1 | U | U | U | **11** |
+| Airchy WebOS | U | U | U | U | U | U | U | 1 | 1 | U | 1 | 1 | U | U | U | **11.0** |
+| eBadders | U | U | U | U | U | U | U | 1 | 1 | U | 1 | 1 | U | U | U | **11.0** |
+| Court Manager | U | U | U | U | U | U | U | U | U | U | U | U | U | U | U | **0.0** |
+| QSENPAI | U | U | U | U | U | U | U | U | U | U | U | U | U | U | U | **0.0** |
+| SmashHQ | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | **UNLOCATED** |
 
-Court Manager and QSENPAI carry U on all fifteen criteria and appear only in the retrieval log.
-SmashHQ was not located by this run.
+### Notes on individual scores
 
-## B. Weighted scores and ranges
+- **Court Buddy, criterion 6 = 0.** The vendor characterises its own algorithm as a "proprietary
+  fairness engine" and documents no per-pick explanation. Non-publication is verified rather than
+  unknown, so U was not available. This is the only 0 awarded on criterion 6 and the harshest
+  reading applied to any candidate.
+- **Racket Social, criterion 12 = 0.** A comprehensive FAQ documents no payment feature and states
+  that sessions live in the browser of the device that created them, with cross-club membership
+  ("Club mode") still on the roadmap. Verified absent rather than undocumented.
+- **PaQueueKa, criterion 13 = 0.** Vendor states tournaments are "coming soon" — verified not
+  present today.
+- **Court Manager and QSENPAI** carry U on all fifteen criteria for the reasons in section J.
+  Neither is evidence that the product lacks features.
 
-| # | Product | Note | Verified | Unresolved max | Possible range | Resolved |
-|---|---|---|---|---|---|---|
-| 1 | ePegboard | Browser-based, free | 85.5 | 0 | 85.5-85.5 | 15/15 |
-| 2 | ShuttlePilot | Phone-first, free beta | 73 | +4 | 73-77 | 14/15 |
-| 3 | Court Buddy | Pickleball product | 61 | +5 | 61-66 | 14/15 |
-| 4 | Racket Social | Offline PWA, free | 59 | +5 | 59-64 | 14/15 |
-| 5 | QourtX | GBP 5.99-13.99/mo | 55.5 | +5 | 55.5-60.5 | 14/15 |
-| 6 | ShuttleFlow | Philippines, free tier | 51.5 | +12 | 51.5-63.5 | 13/15 |
-| 7 | Ladderly | Freemium, TrueSkill | 51 | +27 | 51-78 | 10/15 |
-| 8 | Qcourt | Android, ad-supported | 49 | +12 | 49-61 | 13/15 |
-| 9 | ShuttleOps | UK, GBP 0-12/mo | 48.5 | +17 | 48.5-65.5 | 12/15 |
-| 10 | Shuttl | Alpha v0.8.28 | 46.5 | +12 | 46.5-58.5 | 13/15 |
-| 11 | NextFour | iOS + Android | 46 | +19 | 46-65 | 12/15 |
-| 12 | PaQueueKa | Philippines, lifetime IAP | 46 | +13 | 46-59 | 13/15 |
-| 13 | CourtsFlow | Trial, price TBA | 40.5 | +30 | 40.5-70.5 | 10/15 |
-| 14 | Badminton Peg System | GBP 0 forever | 36 | +37 | 36-73 | 10/15 |
-| 15 | vsBadminton | UK, free | 32.5 | +39 | 32.5-71.5 | 8/15 |
-| 16 | UBR | Rating platform | 31 | +43 | 31-74 | 8/15 |
-| 17 | Racket Arena | Marketing page only | 28 | +44 | 28-72 | 7/15 |
-| 18 | Queue Master | App, no docs | 27.5 | +45 | 27.5-72.5 | 8/15 |
-| 19 | BadBoard | Desktop, trial | 25.5 | +49 | 25.5-74.5 | 6/15 |
-| 20 | Matchit | iOS, $1.99-29.99 | 23.5 | +53 | 23.5-76.5 | 6/15 |
-| 21 | CourtMaster | iOS, $1.99-2.99 | 20.5 | +59 | 20.5-79.5 | 7/15 |
-| 22 | ServeLeague | From $39/mo | 19 | +66 | 19-85 | 7/15 |
-| 23 | SportyHQ | Competition platform | 19 | +70 | 19-89 | 6/15 |
-| 24 | Badmatch | Grade-balanced | 18 | +64 | 18-82 | 4/15 |
-| 25 | Digital Pegboard | Android, 50+ installs | 15.5 | +69 | 15.5-84.5 | 4/15 |
-| 26 | Airchy WebOS | Session admin | 11 | +78 | 11-89 | 4/15 |
-| 27 | eBadders | Directory + RSVP | 11 | +78 | 11-89 | 4/15 |
+---
 
-**A wide range is a finding, not a defect in the method.** Five candidates - ServeLeague,
-SportyHQ, eBadders, Airchy WebOS and UBR - carry very large unresolved maxima on criteria 1-7.
-In each case the vendor publishes a comprehensive feature list containing no court-rotation
-capability at all. The rule against treating missing documentation as proof of absence is
-honoured, but those upper bounds are formalities rather than realistic estimates.
+## B. Weighted score calculation
+
+Sorted by verified weighted score, highest first.
+
+| Product | Verified | Unresolved max | Possible range | Criteria resolved |
+|---|---:|---:|---:|---:|
+| ePegboard | 85.5 | — | 85.5 – 85.5 | 15 / 15 |
+| ShuttlePilot | 73.0 | +4 | 73.0 – 77.0 | 14 / 15 |
+| Court Buddy | 61.0 | +5 | 61.0 – 66.0 | 14 / 15 |
+| Racket Social | 59.0 | +5 | 59.0 – 64.0 | 14 / 15 |
+| QourtX | 55.5 | +5 | 55.5 – 60.5 | 14 / 15 |
+| ShuttleFlow | 51.5 | +12 | 51.5 – 63.5 | 13 / 15 |
+| Ladderly | 51.0 | +27 | 51.0 – 78.0 | 10 / 15 |
+| Qcourt | 49.0 | +12 | 49.0 – 61.0 | 13 / 15 |
+| ShuttleOps | 48.5 | +17 | 48.5 – 65.5 | 12 / 15 |
+| Shuttl | 46.5 | +12 | 46.5 – 58.5 | 13 / 15 |
+| NextFour | 46.0 | +19 | 46.0 – 65.0 | 12 / 15 |
+| PaQueueKa | 46.0 | +13 | 46.0 – 59.0 | 13 / 15 |
+| CourtsFlow | 40.5 | +30 | 40.5 – 70.5 | 10 / 15 |
+| Badminton Peg System | 36.0 | +37 | 36.0 – 73.0 | 10 / 15 |
+| vsBadminton | 32.5 | +39 | 32.5 – 71.5 | 8 / 15 |
+| UBR | 31.0 | +43 | 31.0 – 74.0 | 8 / 15 |
+| Racket Arena | 28.0 | +44 | 28.0 – 72.0 | 7 / 15 |
+| Queue Master | 27.5 | +45 | 27.5 – 72.5 | 8 / 15 |
+| BadBoard | 25.5 | +49 | 25.5 – 74.5 | 6 / 15 |
+| Matchit | 23.5 | +53 | 23.5 – 76.5 | 6 / 15 |
+| CourtMaster | 20.5 | +59 | 20.5 – 79.5 | 7 / 15 |
+| ServeLeague | 19.0 | +66 | 19.0 – 85.0 | 7 / 15 |
+| SportyHQ | 19.0 | +70 | 19.0 – 89.0 | 6 / 15 |
+| Badmatch | 18.0 | +64 | 18.0 – 82.0 | 4 / 15 |
+| Digital Pegboard | 15.5 | +69 | 15.5 – 84.5 | 4 / 15 |
+| Airchy WebOS | 11.0 | +78 | 11.0 – 89.0 | 4 / 15 |
+| eBadders | 11.0 | +78 | 11.0 – 89.0 | 4 / 15 |
+| Court Manager | 0.0 | +100 | 0.0 – 100.0 | 0 / 15 |
+| QSENPAI | 0.0 | +100 | 0.0 – 100.0 | 0 / 15 |
+| SmashHQ | — | — | — | UNLOCATED |
+
+> **A wide range is a finding, not a defect in the method.** Five candidates — ServeLeague,
+> SportyHQ, eBadders, Airchy WebOS and UBR — carry very large unresolved maxima on criteria 1–7.
+> In each case the vendor publishes a comprehensive feature list that contains no court-rotation
+> capability at all. The rule against treating missing documentation as proof of absence is
+> honoured, but the committee should read those upper bounds as formalities rather than
+> realistic estimates.
+
+### Per-criterion arithmetic, top ten
+
+Criteria in rubric order 1 → 15; U omitted from the addition.
+
+```
+ 1. ePegboard      6+12+12+10+4+4+5+7+5+5+5+2.5+2+2+4        = 85.5
+ 2. ShuttlePilot   6+12+12+10+4+4+5+3.5+5+2.5+2.5+2.5+U+2+2  = 73.0
+ 3. Court Buddy    6+6+6+10+4+0+5+3.5+5+U+5+2.5+4+2+2        = 61.0
+ 4. Racket Social  3+6+6+10+4+4+2.5+3.5+5+5+U+0+2+4+4        = 59.0
+ 5. QourtX         6+6+6+5+4+4+U+3.5+2.5+5+2.5+5+2+2+2       = 55.5
+ 6. ShuttleFlow    3+6+6+5+U+4+2.5+3.5+5+5+2.5+5+U+2+2       = 51.5
+ 7. Ladderly       6+6+12+5+U+4+U+7+2.5+U+U+2.5+U+4+2        = 51.0
+ 8. Qcourt         3+6+6+5+4+U+5+3.5+2.5+2.5+5+2.5+U+2+2     = 49.0
+ 9. ShuttleOps     3+6+6+5+4+U+2.5+3.5+2.5+U+5+5+U+2+4       = 48.5
+10. Shuttl         3+6+6+5+U+4+2.5+3.5+5+2.5+2.5+2.5+U+2+2   = 46.5
+```
+
+NextFour and PaQueueKa tie at 46.0, immediately below tenth place.
+
+---
 
 ## C. Overall ranking
 
 A defensible ranking **can** be calculated for the top of the table. The four highest-scoring
-products resolved 14 or 15 of 15 criteria and their ranges do not overlap: ePegboard 85.5-85.5,
-ShuttlePilot 73.0-77.0, Court Buddy 61.0-66.0, Racket Social 59.0-64.0. **Positions 1 and 2 are
-secure on the evidence.**
+products resolved 14 or 15 of 15 criteria, and their possible ranges do not overlap:
+ePegboard 85.5–85.5, ShuttlePilot 73.0–77.0, Court Buddy 61.0–66.0, Racket Social 59.0–64.0.
+Positions 1 and 2 are secure on the evidence.
 
-Below about position 12 the ranking is **not** defensible. From CourtsFlow downwards, unresolved
-maxima exceed verified scores, and the ordering reflects how much each vendor published rather
-than what each product does.
+Below roughly position 12 the ranking is **not** defensible. From CourtsFlow downwards,
+unresolved maxima exceed verified scores, and the ordering reflects how much each vendor
+published rather than what each product does. Those products are listed in rank order for
+completeness, not recommended against. To resolve them would require, at minimum: reachable
+documentation of each product's allocation rule, its skill model, and its sit-out policy —
+the three criteria most often left as marketing claims.
 
-**Court Buddy is excluded from the recommendation on sport-fit grounds.** It scores third and
-that score is honest - its fairness and sit-out documentation is genuinely good. But every page
-of court-buddy.com describes a pickleball product: the title, the DUPR rating integration, the
-closing call to action. Badminton is never mentioned. The rubric contains no criterion for sport
-fit, so the score stands; the recommendation cannot.
+> **Court Buddy is excluded from the recommendation on sport-fit grounds.** It scores third on
+> the rubric, and that score is honest — its fairness and sit-out documentation is genuinely
+> good. But every page of court-buddy.com describes a pickleball product: the title, the DUPR
+> rating integration, the closing call to action. Badminton is never mentioned. The rubric
+> contains no criterion for sport fit, so the score stands; the recommendation cannot. A
+> badminton committee should treat it as evidence that this class of product exists, not as a
+> candidate.
+
+---
 
 ## D. Top three
 
-1. **ePegboard - 85.5, 15 of 15 resolved.** The only candidate with a separate documentation
-   site, and the only one publishing its rating mathematics in full - team rating, expected share
-   with a 2200-point spread constant, a decaying K-factor from 500 to a floor of 30. The picker
-   names eight weighting signals and three hard toggles, shows a par score for expected closeness,
-   and offers a "Why was this game suggested?" panel comparing the chosen game against the
-   alternatives it rejected. Kiosk mode, attendance trends, CSV export, free club-night workflow.
-2. **ShuttlePilot - 73.0, 14 of 15 resolved.** Ties ePegboard exactly on the four core club-night
-   criteria. States its generator rule plainly on one public page - sides close on rating, a
-   penalty for pairs and foursomes already played this evening - and is **the only product that
-   equalises sit-outs across sessions**, not just tonight. Late arrivals handled explicitly.
-   Free in beta, phone-first, no seat limits.
-3. **Racket Social - 59.0, 14 of 15 resolved.** Court Buddy outscores it but is pickleball
-   software, so this is the third product a badminton committee could actually adopt. Publishes
-   the clearest single fairness rule of any candidate - nobody sits out twice in a row while
-   others never rest - names its rating library (OpenSkill) with a source link, works genuinely
-   offline as a PWA, offers a public read-only wallboard link. Free, no sign-up.
+### 1. ePegboard — 85.5 / 100, 15 of 15 resolved
+
+The only candidate with a separate documentation site, and the only one that publishes its rating
+mathematics in full: `team_rating = (p1 + p2) / 2`,
+`expected_share = 1 / (1 + 10^((opponent − team) / 2200))`, actual share taken from the score
+ratio rather than a binary win, and `K = max(500 − 10 × rated_games, 30)`. The picker names eight
+weighting signals (expected closeness, skill balance, wait fairness, gender balance, avoid recent
+repeats, partner/opponent variety, queue fairness, straight-back-on avoidance) and three hard
+toggles, shows a par score for expected closeness, and offers a "Why was this game suggested?"
+panel that compares the chosen game against the alternatives it rejected. Kiosk mode with PIN
+gating and 60-second auto-revert, attendance trends (active / lapsing / dormant), CSV export, and
+a free club-night workflow with no card on file complete it.
+
+### 2. ShuttlePilot — 73.0 / 100, 14 of 15 resolved
+
+Ties ePegboard exactly on the four core club-night criteria. It states its generator rule plainly
+on one public page — sides close on rating, plus a penalty for pairs and foursomes that have
+already played together this evening — and it is the only product that equalises sit-outs
+**across sessions**, not just tonight. Late arrivals are handled explicitly: check them in, press
+Generate round again, and courts already playing are left alone while empty ones fill. Pairing
+preferences (play together, never partnered, never opposed) are documented as strong preferences
+rather than hard blocks. Free in beta, phone-first, no seat limits.
+
+### 3. Racket Social — 59.0 / 100, 14 of 15 resolved
+
+Court Buddy outscores it but is pickleball software, so Racket Social is the third product a
+badminton committee could actually adopt. It publishes the clearest single fairness rule of any
+candidate — the rotation "equalises rest time so nobody sits out twice in a row while others never
+get a break" — names its rating library (OpenSkill, with a link to the source repository), works
+genuinely offline as a PWA, and offers a public read-only wallboard at `/shared/<code>` via QR or
+link with no sign-up. Free, no account required, 23 languages, 6–24 players across 1–6 courts
+described as typical and well-tested.
+
+---
 
 ## E. Material weaknesses of the winner
 
-Each of these is why a criterion scored 1 rather than 2.
+Each of these is the reason a criterion scored 1 rather than 2.
 
 1. **Offline operation is a paid, separate product.** The browser version's behaviour when venue
    Wi-Fi drops is not documented anywhere. Fully offline running requires the Windows desktop app
-   at GBP 60 per club per year. For a sports hall with unreliable signal this is the single most
-   consequential gap, and it is the reason criterion 14 scored 1. Racket Social and Badminton Peg
-   System both do offline for nothing.
+   at £60 per club per year. For a sports hall with unreliable signal this is the single most
+   consequential gap, and it is why criterion 14 scored 1. Racket Social and Badminton Peg System
+   both do offline for nothing.
 2. **The picker's signal weights are not published.** Eight signals are named; their relative
    strengths are not. A club cannot predict or tune the trade-off between "close game" and "long
    wait", and cannot answer a member who asks why waiting longest did not get them on court. This
-   is why criterion 6 scored 1 despite the per-pick explanation panel being the best of any
+   is why criterion 6 scored 1, despite the per-pick explanation panel being the best of any
    candidate.
-3. **Payments are a ledger, not a payment system.** The vendor is explicit - "a record, not a card
-   machine". Money is collected by cash, cheque or transfer and typed in afterwards. No
-   partial-payment ledger, no bulk mark-paid, and each save overwrites the previous entry.
+3. **Payments are a ledger, not a payment system.** The vendor is explicit — "a record, not a card
+   machine". Money is collected by cash, cheque or transfer and typed in afterwards. There is no
+   partial-payment ledger, no bulk mark-paid button, and each save overwrites the previous entry.
    ShuttleOps and QourtX both move real money through Stripe. Criterion 12 scored 1.
 4. **Partner and opponent variety is a soft preference with no stated guarantee.** "Avoid recent
    repeats" and "partner/opponent variety" are two signals among eight, with no documented window
-   - no rule of the form "not the same four within N games". Criterion 5 scored 1. ShuttlePilot
+   — no rule of the form "not the same four within N games". Criterion 5 scored 1. ShuttlePilot
    has the same limitation and the same score.
 5. **Tournament workflows were not verified in depth.** Handicap tournaments with balanced pairs,
-   group stages and live standings are described and dedicated how-to pages exist, but the
+   group stages and live standings are described, and dedicated how-to pages exist, but the
    tournament documentation was not opened during this evaluation. Criterion 13 was capped at 1
-   for that reason, not because of anything found.
+   for that reason — an evidence limit, not a product finding.
 6. **Phone operation is discouraged.** "Tablet or laptop-sized screens recommended." ShuttlePilot
    and NextFour are explicitly designed for one-handed phone use by an organiser who is also
    playing.
 7. **Every score is documented, not demonstrated.** The software was not run. No score in this
-   evaluation rests on observed behaviour, independent review or third-party verification - for
+   evaluation rests on observed behaviour, independent review or third-party verification — for
    ePegboard or for anything else.
 
-## F. When another product is the better choice
+---
 
-- **The hall has no usable Wi-Fi and there is no budget: Racket Social.** A genuine offline-first
-  PWA - match generation, result recording and roster management all keep working with no signal,
-  syncing when it returns. Free, no sign-up. The catch is real: sessions live in the browser of
-  the device that created them, so a lost or wiped tablet loses the history, and cross-device sync
-  is still a roadmap item.
-- **Sit-out fairness across weeks matters most: ShuttlePilot.** The only product that counts who
-  has sat out least "across every session, not just tonight". For a club where the same two or
-  three people always seem to miss out, this is the best-specified fairness rule found anywhere in
-  the field.
-- **The committee wants subs collected properly: ShuttleOps** - a UK company with published tiers
-  (GBP 0 up to 10 members, 4 to 25, 8 to 100, 12 with WhatsApp messaging), Stripe and Direct
-  Debit, stated transaction fees and payout timings. **QourtX** if you also want VAT handled at
-  checkout and per-partner fee splitting, but note its two published price schemes contradict
-  each other.
-- **Leagues, tournaments and governing-body links dominate: SportyHQ.** Tournaments, team leagues,
-  solo leagues, box leagues, ladders, ranking sanctioning and an API - by far the deepest
-  competition feature set in the field. It documents no court-rotation capability at all, so it
-  would need pairing with a club-night tool.
-- **A published, inspectable rating standard is the priority: Ladderly.** Microsoft TrueSkill,
-  explained on its own page: mu and sigma, a displayed skill of mu-3sigma, starting values of 25
-  and 8.333, placement matches, reduced rating impact when a game goes to deuce. Only ePegboard
-  matches this level of rating transparency.
-- **Zero budget, no ratings wanted, up to 200 players: Badminton Peg System.** GBP 0 forever, no
-  subscriptions, no per-player fees, works offline after setup, tablet view showing every court
-  side by side. No rating system and no documented skill balancing - for a club that just wants
-  the pegboard digitised, that may be the point.
-- **The club is in the Philippines: PaQueueKa or ShuttleFlow.** Both built around Philippine clubs
-  - peso pricing, local season naming, per-head and per-hour fee models. PaQueueKa additionally
-  documents a specific partner rule (no back-to-back re-pairing).
-- **The club plays pickleball, or wants DUPR: Court Buddy.** Highest rubric score after the two
-  leaders, with an explicit sit-out rule and DUPR-submission-ready competition reports - but a
-  pickleball product throughout, never mentioning badminton.
+## F. Circumstances in which another product would be the better choice
 
-## G. Confidence, and how much of the lead is evidence rather than capability
+| Circumstance | Better choice | Why, and the catch |
+|---|---|---|
+| The hall has no usable Wi-Fi and there is no budget | **Racket Social** | A genuine offline-first PWA: match generation, result recording and roster management all keep working with no signal, syncing when it returns. Free, no sign-up. **Catch:** sessions live in the browser of the device that created them, so a lost or wiped tablet loses the history; cross-device sync is still a roadmap item. |
+| Sit-out fairness across weeks matters most | **ShuttlePilot** | The only product that counts who has sat out least "across every session, not just tonight". For a club where the same two or three people always seem to miss out, this is the best-specified fairness rule in the field. **Catch:** free beta with no published post-beta price. |
+| The committee wants subs collected properly | **ShuttleOps** | UK company (Westwood Artificial Intelligence Ltd) with published tiers — £0 to 10 members, £4/mo to 25, £8/mo to 100, £12/mo with WhatsApp messaging, bolt-ons to 150 — Stripe and Direct Debit, stated transaction fees and payout timings. **Catch:** its FAQ answers on how games are actually created would not render, so its allocation rule is unresolved. |
+| …with VAT and per-partner fee splitting | **QourtX** | Court fees, memberships, stringing, coaching and bar tabs, split instantly between doubles partners, VAT handled at checkout. **Catch:** two published price schemes contradict each other (£4 per active member/month with free ≤50 on the homepage, versus £5.99–£13.99 per club/month banded on the pricing page). |
+| Leagues, tournaments and governing-body links dominate | **SportyHQ** | Tournaments, team leagues, solo leagues, box leagues, ladders, ranking sanctioning and an API — by far the deepest competition feature set in the field. **Catch:** documents no court-rotation capability at all, so it would need pairing with a club-night tool. |
+| A published, inspectable rating standard is the priority | **Ladderly** | Microsoft TrueSkill, explained on its own page: μ and σ, displayed skill of μ − 3σ, starting values 25 and 8.333, placement matches, and reduced rating impact when a game goes to deuce. Only ePegboard matches this rating transparency. **Catch:** free tier carries advertisements; no shared court display documented. |
+| Zero budget, no ratings wanted, up to 200 players | **Badminton Peg System** | £0 forever, no subscriptions, no per-player fees, works offline after setup, tablet view showing every court side by side, one-tap present/absent. **Catch:** no rating system and no documented skill balancing — for a club that just wants the pegboard digitised, that may be the point. |
+| The club is in the Philippines | **PaQueueKa** or **ShuttleFlow** | Both built around Philippine clubs: peso pricing, local season naming, per-head and per-hour fee models, skill tiers, rotation by games played, fee splitting. PaQueueKa additionally documents a specific partner rule (no back-to-back re-pairing). |
+| The club plays pickleball, or wants DUPR | **Court Buddy** | Highest rubric score after the two leaders, with an explicit sit-out rule ("no one person sits out more than another, unless they want to") and DUPR-submission-ready competition reports. **Catch:** a pickleball product throughout; never mentions badminton. |
 
-**On the primary requirement, first and second place are tied.** Criteria 1-4 - check-in and late
-joiners, dynamic allocation, skill-balanced doubles and sit-out fairness - carry 40 of the 100
-points and are the club's stated primary requirement. ePegboard scores 6+12+12+10 = 40.
-ShuttlePilot scores 6+12+12+10 = 40. **The entire 12.5-point gap between them sits in criteria
-5-15.**
+---
 
-Breaking that gap down: 3.5 points from criterion 8, where ePegboard publishes its rating formula
-and ShuttlePilot says only "ELO"; 2.5 from kiosk mode; 2.5 from session reporting; 2 from
-tournaments, where ShuttlePilot is unresolved rather than weak; 2 from a committed price against a
-beta with no published post-beta price. **Roughly ten of the twelve-and-a-half points are
-documentation depth on secondary criteria, not demonstrated superiority on the club night itself.**
+## G. Confidence level and unresolved evidence
 
-This is the failure mode the scoring discipline warns about, and it is visible in the data:
-ePegboard is the only candidate that resolved 15 of 15 criteria, and the only one with a
-standalone documentation site. Its lead is real under the rubric as written, and it is also partly
-an artefact of being the best-documented product in the field.
+### On the primary requirement, first and second place are tied
+
+Criteria 1–4 — check-in and late joiners, dynamic allocation, skill-balanced doubles and sit-out
+fairness — carry 40 of the 100 points and are the club's stated primary requirement.
+
+- ePegboard scores 6 + 12 + 12 + 10 = **40**
+- ShuttlePilot scores 6 + 12 + 12 + 10 = **40**
+
+The entire 12.5-point gap between them sits in criteria 5–15.
+
+### How much of the leader's margin is evidence availability rather than capability
+
+Breaking the 12.5-point gap down:
+
+| Source of gap | Points |
+|---|---:|
+| Criterion 8 — ePegboard publishes its rating formula; ShuttlePilot says only "ELO" | 3.5 |
+| Criterion 10 — kiosk mode documented vs. an organiser phone interface | 2.5 |
+| Criterion 11 — session and attendance reporting documented vs. not | 2.5 |
+| Criterion 13 — tournaments described vs. unresolved (U, not weak) | 2.0 |
+| Criterion 15 — a committed free price vs. a beta with no post-beta price | 2.0 |
+| **Total** | **12.5** |
+
+**Roughly ten of those twelve-and-a-half points are documentation depth on secondary criteria,
+not demonstrated superiority on the club night itself.** This is precisely the failure mode the
+scoring discipline warns about, and it is visible in the data: ePegboard is the only candidate
+that resolved 15 of 15 criteria, and the only one in the field with a standalone documentation
+site. Its lead is real under the rubric as written, and it is also partly an artefact of being
+the best-documented product among the thirty.
 
 ### What would have to be true for ShuttlePilot to overtake
 
-Its ceiling is 87.5, above ePegboard's fixed 85.5, so an overtake is arithmetically available.
+ShuttlePilot's ceiling is 87.5 — above ePegboard's fixed 85.5 — so an overtake is arithmetically
+available. It would require, in descending order of leverage:
 
-- **Publish the ELO parameters** (formula, K schedule, starting values, how doubles ratings
-  combine): +3.5. The largest single lever and the cheapest to fix.
-- **Resolve competitions** - currently its only U. Any documented tournament or league support:
-  up to +4.
-- **Commit to a post-beta price** with stated limits: +2.
-- **Add a shared court display or kiosk mode**: +2.5.
-- **Document session and attendance reporting**: +2.5. It already tracks sit-outs across sessions,
-  so the data exists.
+1. **Publish the ELO parameters** — formula, K schedule, starting values, how doubles ratings
+   combine: **+3.5**. The largest single lever and the cheapest to fix.
+2. **Resolve competitions**, currently its only U. Any documented tournament or league support:
+   up to **+4**.
+3. **Commit to a post-beta price** with stated limits: **+2**. "Free while we're in beta" is not
+   something a committee can budget against.
+4. **Add a shared court display or kiosk mode**: **+2.5**.
+5. **Document session and attendance reporting**: **+2.5**. It already tracks sit-outs across
+   sessions, so the data exists.
 
-**Note the asymmetry: every one of these is a publishing or packaging change, not new matchmaking
-capability.** Conversely, ePegboard cannot easily close its own gaps - free offline operation, real
+Note the asymmetry: every one of these is a publishing or packaging change, not new matchmaking
+capability. Conversely, ePegboard cannot easily close its own gaps — free offline operation, real
 payment processing and published picker weights are product decisions, not documentation ones.
 
 ### Confidence by band
 
-- **Positions 1-2: high.** Ranges do not overlap; 14-15 of 15 criteria resolved; both assessed
+- **Positions 1–2: high.** Ranges do not overlap; 14–15 of 15 criteria resolved; both assessed
   from detailed vendor documentation.
-- **Positions 3-10: moderate.** Ranges are narrow but several rest on marketing-page feature
-  lists. Cross-check (f) forced three downward corrections in this band.
+- **Positions 3–10: moderate.** Ranges are narrow, but several rest on marketing-page feature
+  lists rather than operational documentation. Cross-check (f) forced three downward corrections
+  in this band.
 - **Positions 11 and below: low.** Unresolved maxima exceed verified scores. These positions
   measure disclosure, not product.
-- **Not resolvable from the supplied URLs:** ShuttleOps' FAQ answers and Pulse articles (accordion
-  content did not render), which would have resolved its criteria 6 and 8; ShuttleFlow's public
-  ranking ruleset (page not found at two plausible paths), which would have resolved criterion 8;
-  ePegboard's tournament how-to pages and the Insights and reports index (404), which capped
-  criterion 13.
-- **Not attempted anywhere:** running any of the software, contacting any vendor, reading any
-  independent review or app-store rating.
 
-## I. Corrections log
+### Unresolved evidence
 
-| Check | Product | Criterion | Was | Now | Reason |
-|---|---|---|---|---|---|
-| (c) | ePegboard | 6 Explainability | 2 | 1 | Section E states the picker's eight signal weights are unpublished. A qualification in prose caps the score at 1. |
-| (c) | ePegboard | 14 Resilience | 2 | 1 | Section E states offline running requires the paid Windows app and the web version's offline behaviour is undocumented. |
-| (c) | Ladderly | 9 Scoring and history | 2 | 1 | Scores are submitted after a match, not entered live; full statistics sit behind the premium tier. |
-| (d) | ePegboard | 3, 6, 10, 13 | - | - | Re-examined the leader before reporting. C3 held at 2 (the rating driving the balance is published in full). C6 lowered to 1. C10 held at 2 (kiosk mode documents lock-down, PIN gating, 60-second auto-revert and per-profile permissions). C13 lowered to 1 because the tournament documentation was not opened - an evidence limit, not a product finding. |
-| (f) | QourtX | 2 Allocation | 2 | 1 | Names three factors (rating, fatigue, history) but no edge cases or limits - materially the same evidence as ShuttleFlow, which scored 1. |
-| (f) | QourtX | 3 Skill balance | 2 | 1 | Names Glicko-2 but does not describe how sides are formed within the four - the same evidence class as Racket Social's OpenSkill. Both set to 1. |
-| (f) | Racket Social | 3 Skill balance | 2 | 1 | Names OpenSkill with a source link, but side formation is undescribed and the feature is optional. Aligned with QourtX. |
-| (f) | ShuttlePilot | 5 Partner variety | 2 | 1 | Scoped to the evening and implemented as a penalty term, but still soft with no guarantee - the same standard applied to ePegboard, which also scored 1. |
-| (f) | Court Buddy | 6 Explainability | U | 0 | The vendor characterises its own algorithm as a "proprietary fairness engine" and documents no per-pick explanation. Non-publication is verified rather than unknown, so U was not available; the only 0 awarded on criterion 6 and the harshest reading applied to any candidate. |
-| (f) | Racket Social | 12 Payments and admin | 1 | 0 | A comprehensive FAQ documents no payment feature and states sessions are device-local with cross-club membership still on the roadmap. Verified absent rather than undocumented. |
-| (f) | PaQueueKa | 13 Competitions | U | 0 | Vendor states tournaments are "coming soon" - verified not present today. |
-| - | QourtX | Total | 53.5 | 55.5 | Arithmetic slip in the first pass of the weighted sum, corrected on re-addition. Position unchanged. |
-
-**Net effect on the leader: ePegboard lost 6 points to checks (c) and (d), falling from 91.5 to
-85.5.** The corrections did not change any of the top ten positions.
-
-## J. Retrieval log
-
-All retrievals 2026-09-09.
-
-| Candidate | Supplied URL | Outcome |
-|---|---|---|
-| Airchy WebOS | `airchy.com/webos/` | Reachable, product page read |
-| BadBoard | `badboard.net` | Reachable, homepage read; no /features page |
-| Badminton Peg System | `bps.graeyna.com` | Reachable, product page read |
-| Badmatch | `badmatch.app` | Reachable, landing page read |
-| Court Buddy | `court-buddy.com` | Reachable via browser render; /clubs also read |
-| Court Manager | `app.court-manager.com` | Reachable, admin login wall only, no public product content. U throughout |
-| CourtMaster | `apps.apple.com/.../id6758101442` | Reachable, App Store listing read |
-| CourtsFlow | `courtsflow.com` | Reachable via browser render; /features and /pricing read |
-| Digital Pegboard | `play.google.com/.../com.digitalpegboard.app` | Reachable via browser render, Play listing read |
-| eBadders | `ebadders.com` | Reachable, directory pages read |
-| ePegboard | `www.epegboard.com` | Reachable, site plus 8 documentation pages read; /insights-reports/ returned 404 |
-| Ladderly | `ladderly.online` | 403 to direct fetch; reachable via browser. 4 sub-pages plus FAQ schema read |
-| Matchit | `apps.apple.com/.../id6739728243` | Reachable, App Store listing read |
-| NextFour | `nextfour.app` | Reachable, homepage read; no pricing or features page exists |
-| PaQueueKa | `paqueueka.info` | Reachable, product page read |
-| Qcourt | `play.google.com/.../com.taforyou.qcourt` | Reachable via browser render, Play listing read |
-| QourtX | `qourtx.com` | Reachable, homepage and /pricing read |
-| QSENPAI | `qsenpai.app` | HTTP 404, DEPLOYMENT_NOT_FOUND. Nothing deployed. U throughout |
-| Queue Master | `queuemaster.site` | Reachable, the app itself; refuses small screens, read at 1440x900. No marketing or docs pages |
-| Racket Arena | `racketarena.xyz` | Reachable via browser render, marketing page only |
-| Racket Social | `racketsocial.app` | Reachable, page and embedded FAQ schema read |
-| ServeLeague | `serveleague.com` | Reachable, product page read |
-| Shuttl | `shuttl.app` | Reachable, product page read |
-| ShuttleFlow | `shuttleflow.ph` | Reachable, product page read; ranking ruleset not found at /rules or /ranking-rules |
-| ShuttleOps | `www.shuttleops.com` | Reachable, 4 pages read; FAQ and Pulse article bodies would not expand |
-| ShuttlePilot | `shuttlepilot.io` | Reachable, full product page read |
-| SmashHQ | `none supplied` | UNLOCATED by this run. **It exists, at smashhq.app** - located by run 3 and verified directly the same day |
-| SportyHQ | `sportyhq.com` | 403 to direct fetch; reachable via browser, feature list read |
-| UBR | `universalbadmintonrating.com` | Reachable, product page read |
-| vsBadminton | `www.vsbadminton.co.uk` | Reachable, product page read |
-
-**Two candidates could not be evaluated, for different reasons.** Court Manager's supplied URL
-loads correctly but serves only an admin login form (Release 1.4.3, Build 1.1.93) with no public
-product information - the site is reachable and the product is undocumented to an outsider.
-QSENPAI's supplied URL returns a hosting-platform 404, `DEPLOYMENT_NOT_FOUND` - nothing is
-deployed there at all. Neither is evidence that the products lack features.
-
-**Governance note - Digital Pegboard.** Its Google Play listing gives a privacy policy hosted at a
-bare IP address (`http://69.62.123.220:3000/`) and terms at a `vercel.app` preview URL, while
-declaring that it may share financial information and device identifiers with third parties. This
-did not affect any rubric score, but a UK club has data-protection obligations and the committee
-should weigh it.
-
-## Sources
-
-All accessed 2026-09-09.
-
-- **Airchy WebOS** `airchy.com/webos/`
-- **BadBoard** `badboard.net`
-- **Badminton Peg System** `bps.graeyna.com`
-- **Badmatch** `badmatch.app`
-- **Court Buddy** `court-buddy.com`
-- **Court Manager** `app.court-manager.com`
-- **CourtMaster** `apps.apple.com/.../id6758101442`
-- **CourtsFlow** `courtsflow.com`
-- **Digital Pegboard** `play.google.com/.../com.digitalpegboard.app`
-- **eBadders** `ebadders.com`
-- **ePegboard** `www.epegboard.com`
-- **Ladderly** `ladderly.online`
-- **Matchit** `apps.apple.com/.../id6739728243`
-- **NextFour** `nextfour.app`
-- **PaQueueKa** `paqueueka.info`
-- **Qcourt** `play.google.com/.../com.taforyou.qcourt`
-- **QourtX** `qourtx.com`
-- **QSENPAI** `qsenpai.app`
-- **Queue Master** `queuemaster.site`
-- **Racket Arena** `racketarena.xyz`
-- **Racket Social** `racketsocial.app`
-- **ServeLeague** `serveleague.com`
-- **Shuttl** `shuttl.app`
-- **ShuttleFlow** `shuttleflow.ph`
-- **ShuttleOps** `www.shuttleops.com`
-- **ShuttlePilot** `shuttlepilot.io`
-- **SmashHQ** `none supplied`
-- **SportyHQ** `sportyhq.com`
-- **UBR** `universalbadmintonrating.com`
-- **vsBadminton** `www.vsbadminton.co.uk`
-
-ePegboard was read across www.epegboard.com, /faq, and eight documentation pages:
-/getting-started/, /club-nights/the-picker/, /club-nights/kiosk-mode/, /club-nights/payments/,
-/ratings/overview/, /ratings/how-a-rating-change-is-calculated/, /reference/glossary/.
+- **ShuttleOps** — FAQ answers and Pulse article bodies would not expand in the rendered page.
+  These would have resolved criteria 6 and 8, worth up to 15 points.
+- **ShuttleFlow** — the "public ranking ruleset" is referenced but was not found at either
+  `/rules` or `/ranking-rules`. Would have resolved criterion 8.
+- **ePegboard** — the tournament how-to pages were not opened and `/insights-reports/` returned
+  404, capping criterion 13 at 1.
+- **Court Manager** — reachable but serves only an admin login wall; nothing resolvable.
+- **QSENPAI** — supplied URL returns a hosting 404; nothing resolvable.
+- **Not attempted for any candidate:** running the software, contacting any vendor, or reading
+  any independent review or app-store rating. **Every score in this report is documented, never
+  demonstrated.**
 
 ---
 
-**Footnote from the run.** *"Prepared 9 September 2026 against the club's pre-declared 100-point
-rubric, with weights unaltered. Every candidate was assessed only from the canonical URL supplied
-for it and the vendor pages reachable from it; no similarly-named product at a different address
-contributed evidence. Absence of documentation was never scored as absence of capability. No
-product was rewarded for brand recognition, search prominence or volume of marketing material -
-and the leader's advantage in documentation volume is quantified in section G rather than left to
-flatter it."*
+## H. Full source list
+
+All sources accessed **9 September 2026**.
+
+| Candidate | Sources used |
+|---|---|
+| Airchy WebOS | https://airchy.com/webos/ |
+| BadBoard | https://badboard.net |
+| Badminton Peg System | https://bps.graeyna.com |
+| Badmatch | https://badmatch.app |
+| Court Buddy | https://court-buddy.com · https://court-buddy.com/clubs |
+| Court Manager | https://app.court-manager.com *(login wall)* |
+| CourtMaster | https://apps.apple.com/us/app/courtmaster/id6758101442 |
+| CourtsFlow | https://courtsflow.com · /features · /pricing |
+| Digital Pegboard | https://play.google.com/store/apps/details?id=com.digitalpegboard.app |
+| eBadders | https://ebadders.com |
+| ePegboard | https://www.epegboard.com · /faq · https://docs.epegboard.com · /getting-started/ · /club-nights/the-picker/ · /club-nights/kiosk-mode/ · /club-nights/payments/ · /ratings/overview/ · /ratings/how-a-rating-change-is-calculated/ · /reference/glossary/ |
+| Ladderly | https://ladderly.online · /how-it-works · /pricing · /faq · /rating-explanation |
+| Matchit | https://apps.apple.com/us/app/matchit/id6739728243 |
+| NextFour | https://nextfour.app |
+| PaQueueKa | https://paqueueka.info |
+| Qcourt | https://play.google.com/store/apps/details?id=com.taforyou.qcourt |
+| QourtX | https://qourtx.com · /pricing |
+| QSENPAI | https://qsenpai.app *(HTTP 404)* |
+| Queue Master | https://queuemaster.site |
+| Racket Arena | https://racketarena.xyz |
+| Racket Social | https://racketsocial.app *(incl. embedded FAQ schema)* |
+| ServeLeague | https://serveleague.com |
+| Shuttl | https://shuttl.app |
+| ShuttleFlow | https://shuttleflow.ph |
+| ShuttleOps | https://www.shuttleops.com · /pegboard · /pricing · /features/managers · /faq |
+| ShuttlePilot | https://shuttlepilot.io |
+| SmashHQ | *No URL supplied; none identified* |
+| SportyHQ | https://sportyhq.com |
+| UBR | https://universalbadmintonrating.com |
+| vsBadminton | https://www.vsbadminton.co.uk |
+
+---
+
+## I. Corrections log
+
+Every score changed by scoring-discipline checks (c), (d) and (f).
+
+| Check | Product | Criterion | Was | Now | Reason |
+|---|---|---|:-:|:-:|---|
+| (c) | ePegboard | 6 · Explainability | 2 | 1 | Section E states the picker's eight signal weights are unpublished. A qualification in prose caps the score at 1. |
+| (c) | ePegboard | 14 · Resilience | 2 | 1 | Section E states offline running requires the paid Windows app and the web version's offline behaviour is undocumented. |
+| (c) | Ladderly | 9 · Scoring & history | 2 | 1 | Scores are submitted after a match, not entered live; full statistics sit behind the premium tier. |
+| (d) | ePegboard | 3, 6, 10, 13 | — | — | Leader re-examined before reporting. Criterion 3 **held at 2** (the rating driving the balance is published in full). Criterion 6 **lowered to 1**. Criterion 10 **held at 2** (kiosk mode documents lock-down, PIN gating, 60-second auto-revert and per-profile permissions). Criterion 13 **lowered to 1** because the tournament documentation was not opened — an evidence limit, not a product finding. |
+| (f) | QourtX | 2 · Allocation | 2 | 1 | Names three factors (rating, fatigue, history) but no edge cases or limits — materially the same evidence as ShuttleFlow, which scored 1. |
+| (f) | QourtX | 3 · Skill balance | 2 | 1 | Names Glicko-2 but does not describe how sides are formed within the four — the same evidence class as Racket Social's OpenSkill. |
+| (f) | Racket Social | 3 · Skill balance | 2 | 1 | Names OpenSkill with a source link, but side formation is undescribed and the feature is optional. Aligned with QourtX. |
+| (f) | ShuttlePilot | 5 · Partner variety | 2 | 1 | Scoped to the evening and implemented as a penalty term, but still soft with no guarantee — the same standard applied to ePegboard, which also scored 1. |
+| (f) | Court Buddy | 6 · Explainability | U | 0 | Vendor characterises its own algorithm as a "proprietary fairness engine" and documents no per-pick explanation. Non-publication is verified, so U was not available. |
+| (f) | Racket Social | 12 · Payments & admin | 1 | 0 | Comprehensive FAQ documents no payment feature and states sessions are device-local with Club mode still on the roadmap. Verified absent. |
+| (f) | PaQueueKa | 13 · Competitions | U | 0 | Vendor states tournaments are "coming soon" — verified not present today. |
+| — | QourtX | Total | 53.5 | 55.5 | Arithmetic slip in the first pass of the weighted sum, corrected on re-addition. Position unchanged. |
+
+**Net effect on the leader:** ePegboard lost 6 points to checks (c) and (d), falling from 91.5 to
+85.5. None of the corrections changed a top-ten position.
+
+**Cross-check (f) outcome.** Criterion 3 was the main site of inconsistency. The standard applied
+is: award 2 where the vendor names the skill model **and** describes how sides are formed or a
+constraint on the result (ePegboard, ShuttlePilot, Ladderly); award 1 where the model is named but
+side formation is not described (QourtX, Racket Social). Criterion 5 was equalised at 1 for both
+ePegboard and ShuttlePilot, since both implement variety as a soft penalty with no guarantee.
+Criterion 9 differs between ePegboard (2) and Ladderly (1) because ePegboard documents score entry
+for games *in progress* in kiosk mode, whereas Ladderly documents post-match submission only.
+
+---
+
+## J. Retrieval log
+
+| Candidate | Supplied URL | Outcome |
+|---|---|---|
+| Airchy WebOS | airchy.com/webos/ | Reachable — product page read |
+| BadBoard | badboard.net | Reachable — homepage read; no /features page exists |
+| Badminton Peg System | bps.graeyna.com | Reachable — product page read |
+| Badmatch | badmatch.app | Reachable — landing page read |
+| Court Buddy | court-buddy.com | Reachable via browser render; /clubs also read |
+| Court Manager | app.court-manager.com | **Reachable — admin login wall only, no public product content. U throughout** |
+| CourtMaster | apps.apple.com/…/id6758101442 | Reachable — App Store listing read |
+| CourtsFlow | courtsflow.com | Reachable via browser render; /features and /pricing read |
+| Digital Pegboard | play.google.com/…com.digitalpegboard.app | Reachable via browser render — Play listing read |
+| eBadders | ebadders.com | Reachable — directory pages read |
+| ePegboard | www.epegboard.com | Reachable — site plus 8 documentation pages read; /insights-reports/ returned 404 |
+| Ladderly | ladderly.online | 403 to direct fetch; reachable via browser. 4 sub-pages plus FAQ schema read |
+| Matchit | apps.apple.com/…/id6739728243 | Reachable — App Store listing read |
+| NextFour | nextfour.app | Reachable — homepage read; no pricing or features page exists |
+| PaQueueKa | paqueueka.info | Reachable — product page read |
+| Qcourt | play.google.com/…com.taforyou.qcourt | Reachable via browser render — Play listing read |
+| QourtX | qourtx.com | Reachable — homepage and /pricing read |
+| QSENPAI | qsenpai.app | **HTTP 404 — `DEPLOYMENT_NOT_FOUND`. Nothing deployed. U throughout** |
+| Queue Master | queuemaster.site | Reachable — the app itself; refuses small screens, read at 1440×900. No marketing or documentation pages |
+| Racket Arena | racketarena.xyz | Reachable via browser render — marketing page only |
+| Racket Social | racketsocial.app | Reachable — page and embedded FAQ schema read |
+| ServeLeague | serveleague.com | Reachable — product page read |
+| Shuttl | shuttl.app | Reachable — product page read |
+| ShuttleFlow | shuttleflow.ph | Reachable — product page read; ranking ruleset not found at /rules or /ranking-rules |
+| ShuttleOps | www.shuttleops.com | Reachable — 4 pages read; FAQ and Pulse article bodies would not expand |
+| ShuttlePilot | shuttlepilot.io | Reachable — full product page read |
+| SmashHQ | *none supplied* | **UNLOCATED. Search identified no product of this name; scored nothing** |
+| SportyHQ | sportyhq.com | 403 to direct fetch; reachable via browser — feature list read |
+| UBR | universalbadmintonrating.com | Reachable — product page read |
+| vsBadminton | www.vsbadminton.co.uk | Reachable — product page read |
+
+### Two candidates could not be evaluated, for different reasons
+
+**Court Manager**'s supplied URL loads correctly but serves only an admin login form (Release
+1.4.3, Build 1.1.93) with no public product information — the site is reachable and the product is
+undocumented to an outsider. **QSENPAI**'s supplied URL returns a hosting-platform 404,
+`DEPLOYMENT_NOT_FOUND` — nothing is deployed there at all. Both carry U on all fifteen criteria;
+neither is evidence that the product lacks features. **SmashHQ** was supplied without a URL and no
+authoritative source for a product of that name could be identified, so it is reported UNLOCATED
+and scored nothing.
+
+### Governance note — Digital Pegboard
+
+Its Google Play listing gives a privacy policy hosted at a bare IP address
+(`http://69.62.123.220:3000/`) and terms at a `vercel.app` preview URL, while declaring that it
+may share financial information and device identifiers with third parties. This did not affect any
+rubric score, but a UK club has data-protection obligations and the committee should weigh it.
+
+---
+
+*Prepared 9 September 2026 against the club's pre-declared 100-point rubric, with criteria and
+weights unaltered. Every candidate was assessed only from the canonical URL supplied for it and
+the vendor pages reachable from it; no similarly-named product at a different address contributed
+evidence. Absence of documentation was never scored as absence of capability. No product was
+rewarded for brand recognition, search prominence or volume of marketing material — and the
+leader's advantage in documentation volume is quantified in section G rather than left to flatter
+it.*
