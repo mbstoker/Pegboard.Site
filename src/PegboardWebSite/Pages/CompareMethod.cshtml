@@ -57,18 +57,22 @@
     var retrieval = new (string Product, string Result)[]
     {
         ("Airchy WebOS", "Read"), ("BadBoard", "Read"), ("Badminton Peg System", "Read"),
-        ("Badmatch", "Read, but very sparse"), ("Court Buddy", "Reached, no readable page content"),
-        ("Court Manager", "Reached, no readable page content"), ("CourtMaster", "App Store page returned HTTP 429"),
-        ("CourtsFlow", "Reached, no readable page content"), ("Digital Pegboard", "Read"),
+        ("Badmatch", "Read, but very sparse"),
+        ("Court Buddy", "Title only - page built in the browser. Also a pickleball product"),
+        ("Court Manager", "Title only - page built in the browser, and the URL used was its app dashboard"),
+        ("CourtMaster", "App Store page rate-limited the request (HTTP 429)"),
+        ("CourtsFlow", "Title only - page built in the browser. An earlier run read it and scored 59.5"),
+        ("Digital Pegboard", "Read"),
         ("eBadders", "Read"), ("ePegboard", "Read"), ("Ladderly", "Read"),
         ("Matchit", "App Store page could not be retrieved"), ("NextFour", "Read"),
         ("PaQueueKa", "Read"), ("Qcourt", "Read"), ("QourtX", "Read"),
-        ("QSENPAI", "Could not retrieve or read the supplied URL"), ("Queue Master", "Reached, no readable page content"),
-        ("Racket Arena", "Reached, no readable page content"), ("Racket Social", "Read"),
+        ("QSENPAI", "HTTP 404 - the URL in our records is wrong"),
+        ("Queue Master", "Title only - page built in the browser"),
+        ("Racket Arena", "Title only - page built in the browser"), ("Racket Social", "Read"),
         ("ServeLeague", "Read"), ("Shuttl", "Read"), ("ShuttleFlow", "Read"),
-        ("ShuttleOps", "Reached, no readable page content"), ("ShuttlePilot", "Read"),
+        ("ShuttleOps", "Title only - page built in the browser"), ("ShuttlePilot", "Read"),
         ("SmashHQ", "Unlocated - no canonical URL and no authoritative identity established"),
-        ("SportyHQ", "Could not retrieve or read the supplied URL"), ("UBR", "Read"), ("vsBadminton", "Read")
+        ("SportyHQ", "HTTP 403 - the request was declined"), ("UBR", "Read"), ("vsBadminton", "Read")
     };
 
     var articleJsonLd = GuideSchema.Article(
@@ -193,6 +197,10 @@
       <h2 id="retrieval">Retrieval log</h2>
 
       <p>Whether each product's page could actually be read. <strong>Ten could not be, and those ten were not scored.</strong> This log is the difference between "we could not check" and "it does not do this".</p>
+
+      <p>We re-checked all ten by hand on 9 September 2026 rather than leaving them as a blank. <strong>Six return a page title and nothing else, because they build their pages in the browser</strong> - open them normally and they work fine. One declined the request with a 403, two are app-store listings that rate-limit automated readers, and one URL in our own records is simply wrong and returns a 404.</p>
+
+      <p><strong>This is the biggest single weakness in the method, and it is systematically unfair to one kind of product.</strong> A modern single-page application is invisible to a reader that does not run JavaScript, no matter how good it is. CourtsFlow is the proof: an earlier run did read it and scored 59.5, which would have placed it mid-table. The fix for a future run is a browser that executes the page, not a better list of URLs - and until that happens, nothing on this site should be read as a judgement on those ten.</p>
 
       <div class="cmp-wrap">
         <table class="cmp-table">

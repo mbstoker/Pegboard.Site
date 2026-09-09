@@ -36,18 +36,22 @@
         (19, "Badmatch",             "17.0", "17.0-88.0",  "3/15")
     };
 
+    // Diagnosed 2026-09-09 by re-fetching every one of these by hand. Six build their pages
+    // in the browser, so a static fetch sees only a title - that is our retrieval method
+    // failing, not their site. Say so precisely; "no readable page content" reads as though
+    // their website is broken, and it is a claim about a named business.
     var notAssessed = new (string Product, string Reason)[]
     {
-        ("Court Buddy",  "Reached, no readable page content"),
-        ("Court Manager","Reached, no readable page content"),
-        ("CourtMaster",  "App Store page returned HTTP 429"),
-        ("CourtsFlow",   "Reached, no readable page content"),
+        ("Court Buddy",  "Page is built in the browser. Also a pickleball product, so arguably not a candidate at all"),
+        ("Court Manager","Page is built in the browser, and the URL we used was its app dashboard rather than its product site"),
+        ("CourtMaster",  "App Store page rate-limited our request (HTTP 429)"),
+        ("CourtsFlow",   "Page is built in the browser. An earlier run did read it, and scored it 59.5"),
         ("Matchit",      "App Store page could not be retrieved"),
-        ("QSENPAI",      "Could not retrieve or read the supplied URL"),
-        ("Queue Master", "Reached, no readable page content"),
-        ("Racket Arena", "Reached, no readable page content"),
-        ("ShuttleOps",   "Reached, no readable page content"),
-        ("SportyHQ",     "Could not retrieve or read the supplied URL")
+        ("QSENPAI",      "The URL we used returns HTTP 404. Our record of it is wrong"),
+        ("Queue Master", "Page is built in the browser"),
+        ("Racket Arena", "Page is built in the browser"),
+        ("ShuttleOps",   "Page is built in the browser"),
+        ("SportyHQ",     "Declined our request (HTTP 403)")
     };
 
     var articleJsonLd = GuideSchema.Article(
@@ -65,7 +69,7 @@
     <div class="inner">
       <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Compare</span></div>
       <h1 style="margin-top:10px">30 club-night products, scored for a UK social club night</h1>
-      <p class="lede">We asked an AI to evaluate the badminton club-night software market against a rubric written before anything was scored, for one specific kind of club: a UK social night, 18 to 26 players, four courts, mixed strength, where the live night is the main problem. It placed ePegboard first on 95.5 of 100.</p>
+      <p class="lede">We asked an AI to evaluate the badminton club-night software market against a rubric written before anything was scored, for one specific kind of club: a UK social night, 18 to 26 players, four courts, mixed strength, where the live night is the main problem. It placed ePegboard first on 95.5 of 100, ahead of the eighteen other products it was able to read.</p>
       <div class="guide-meta">
         <span class="gm-tag">Evaluation</span>
         <span>30 products</span>
@@ -160,7 +164,11 @@
 
       <h2 id="unassessed">Products we could not assess</h2>
 
-      <p><strong>These ten were not scored, and that is a statement about our retrieval, not about them.</strong> Several are app-store pages that rate-limit automated readers. Any of them could be excellent.</p>
+      <p><strong>These ten were not scored, and that is a statement about our retrieval, not about them.</strong> Any of them could be excellent.</p>
+
+      <p>We went back and checked every one by hand, because the honest reason matters. <strong>Six of the ten build their pages in the browser.</strong> Open them yourself and they work perfectly; read them the way this evaluation did, as static HTML, and you get a page title and nothing else. That is our method failing, not their websites. One declined the request outright, two are app-store listings that rate-limit automated readers, and one URL in our own records turned out to be wrong.</p>
+
+      <p>This is the sharpest limitation of the whole exercise and it runs one way: <strong>a product whose site is a modern single-page application is invisible to a reader like this, whatever it can actually do.</strong> A future run needs a browser that executes JavaScript, not a better list of URLs.</p>
 
       <div class="cmp-wrap">
         <table class="cmp-table">
