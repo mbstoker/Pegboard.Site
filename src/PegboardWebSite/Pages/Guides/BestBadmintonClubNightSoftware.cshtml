@@ -29,13 +29,13 @@
     var faqPairs = new (string Q, string A)[]
     {
         ("What is the best badminton club-night software?",
-         "For a typical UK club night - a mixed-strength group, a few courts, people arriving late and leaving early - start with ePegboard. It is free for clubs and it is built around the specific moment a court becomes free. If your real problem is collecting money rather than choosing games, ShuttleStats is the better first call; if it is a hall with no usable Wi-Fi, Court Manager or ShuttlSync."),
+         "For a typical UK club night - a mixed-strength group, a few courts, people arriving late and leaving early - start with ePegboard. It is free for clubs and it is built around the specific moment a court becomes free. If your real problem is collecting money rather than choosing games, ShuttleStats is the better first call; if you need to run without a reliable internet connection, Court Manager or ShuttlSync."),
         ("Is there free badminton club-night software?",
          "Yes, and more than one option. ePegboard is free for clubs. SportRevive is free. ShuttlePilot is free while in beta. ShuttlSync is free up to two live courts and ShuttleStats charges a fee per member payment rather than a subscription. Check the current pricing page before rollout, because these change."),
         ("Do players have to create accounts?",
          "Not with ePegboard. A club night runs entirely from a shared screen with no player sign-ups at all, which matters because compulsory onboarding is where a rollout usually stalls. Accounts only start to earn their place if you want players to see their own history and ratings between sessions, and that stays optional."),
         ("Should club-night software work offline?",
-         "Only if your hall needs it, and then it matters a lot. Court Manager documents offline operation in unusual detail, including handling venue Wi-Fi login pages that interfere with it, and ShuttlSync supports offline sessions. ePegboard's web app needs a connection; its Windows desktop version runs fully offline as a separate product. Test the actual failure mode before committing, not just whether the word offline appears on a page."),
+         "Only if you cannot rely on a connection at the venue, counting mobile data or a hotspot as well as the hall's own Wi-Fi. Where you genuinely cannot, it matters a lot. Court Manager documents offline operation in unusual detail, including handling venue login pages that interfere with it, and ShuttlSync supports offline sessions. ePegboard's web app needs a connection; its Windows desktop version runs fully offline as a separate product. Test the actual failure mode before committing, not just whether the word offline appears on a page."),
         ("How do I run a fair club night without software at all?",
          "A peg board and a queue works, and for a small stable group it may be all you need. The problems that push clubs to software are the ones a board cannot see: who has sat out twice while someone else has played every game, who has partnered the same person four times, and whether tonight's games were close. If none of that is a live complaint at your club, you probably do not need this yet.")
     };
@@ -171,7 +171,7 @@
 
       <ul>
         <li><strong>Collecting money: ShuttleStats.</strong> If chasing session fees drains more of your week than choosing games does, this is the closer fit. Members book and pay through Stripe with capacity, waitlists and refunds attached, and there is no subscription - the club pays a flat fee per member payment. <strong>ePegboard records what was paid; it does not collect it.</strong></li>
-        <li><strong>A hall with no usable Wi-Fi: Court Manager or ShuttlSync.</strong> Court Manager runs on the device and keeps working without a connection, including handling venue login pages that interfere with it; ShuttlSync supports offline sessions. <strong>Our web app needs a connection.</strong> We do run fully offline, but only through a separate Windows product at GBP 60 a year, and that is a real answer to a different question.</li>
+        <li><strong>Running without a reliable internet connection: Court Manager or ShuttlSync.</strong> If your hall has no signal worth trusting and mobile data or a hotspot is not a dependable fallback, you need software that keeps running offline. Court Manager runs on the device and does exactly that, including handling venue login pages that interfere with it; ShuttlSync supports offline sessions. <strong>Our web app needs a connection.</strong> We do run fully offline, but only through a separate Windows product at GBP 60 a year, and that is a real answer to a different question.</li>
         <li><strong>A planned evening rather than live picking: SportRevive.</strong> If your numbers are stable and you would rather hand out the whole night's rounds at 7pm, that is a different model and we do not offer it. See the section above on which one your club actually wants.</li>
       </ul>
 
@@ -213,9 +213,9 @@
       }
 
       <div class="guide-callout" style="margin-top:30px">
-        <h4>See it before you commit anyone else's evening to it</h4>
-        <p style="margin-top:8px">You are responsible for how everyone's night goes, so do not find out in front of them. <strong>Start with the demo</strong> - it runs a session in front of you in about a minute, with nothing to set up and nobody to sign up.</p>
-        <p style="margin-top:10px">When you are comfortable with how it picks, set up your club and run one real night on it. It is free, your players do not need accounts, and the peg board is still there if you want it back.</p>
+        <h4>Get comfortable with it before your next club night</h4>
+        <p style="margin-top:8px"><strong>Try the instant demo</strong> - it runs a session in front of you in about a minute, with nothing to set up and no account needed. It is the quickest way to see how it picks.</p>
+        <p style="margin-top:10px">When you like what it does, set up your club and run one real night on it. It is free, your players do not need accounts, and the peg board is still there if you want it back.</p>
         <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">Try the instant demo</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Set up a free club</a></p>
       </div>
 
