@@ -3,7 +3,7 @@
 @{
     Layout = "_LayoutMarketing";
     ViewData["Title"] = "Best badminton club-night software in 2026: which tool fits which club?";
-    ViewData["Description"] = "If choosing fair games eats your evening, start with ePegboard - free for clubs, and built around the moment a court finishes. Plus an honest look at ShuttlePilot, Court Manager, ShuttlSync, ShuttleStats, NextFour, QourtX and SportRevive, and when one of them suits you better.";
+    ViewData["Description"] = "If choosing fair games eats your evening, start with ePegboard - free for clubs, and built around the moment a court finishes. Plus an honest look at seven alternatives, and the three things ePegboard does not do.";
     ViewData["OgTitle"] = "Best badminton club-night software in 2026";
 
     const string published = "2026-07-01";   // first publication - held deliberately; GuideSchema
@@ -16,24 +16,24 @@
     // where quoted below, come from the evaluations published at /compare.
     var shortlist = new (string Tool, string Fit, string Model, string Price)[]
     {
-        ("ePegboard",     "Clubs where making the next four fair, close and varied is the hardest part of the night", "Live picking as courts free up", "Free for clubs"),
-        ("ShuttlePilot",  "Clubs wanting the live night and little else, run one-handed from a phone",                "Live rounds",                    "Free in beta; no published price after it"),
-        ("Court Manager", "Clubs replacing a physical peg board, in halls with unreliable Wi-Fi",                     "Live picking, offline-first",    "iOS app GBP 9.99 once; hosted price unpublished"),
-        ("ShuttlSync",    "Recreational clubs wanting ratings, seasons and social stats in the browser",              "Live player shuffle",            "Free to 2 courts; GBP 9.99/mo to 4"),
-        ("ShuttleStats",  "Clubs where booking, capacity and collecting money are the same problem",                  "Live matchmaking + court board", "No subscription; a flat fee per member payment"),
-        ("NextFour",      "Clubs wanting a familiar mobile pegboard and a gradual migration",                         "Pegboard, skill-based or manual","Core nights free; some modes paid"),
-        ("QourtX",        "Multi-sport venues wanting membership and operations around the session",                  "Live queue and court assignment","Free small tier; larger from GBP 5.99/mo"),
-        ("SportRevive",   "Stable groups who prefer the whole evening planned in advance",                            "Generated rounds, editable",     "Free")
+        ("ePegboard",     "Choosing the next four: close, fair and varied, with the reasoning shown", "Live picking as courts free up", "Free for clubs"),
+        ("ShuttlePilot",  "A phone-first console; sit-out fairness tracked across sessions, not just tonight",                "Live rounds",                    "Free in beta; no published price after it"),
+        ("Court Manager", "The closest peg-board replacement; works with no connection",                     "Live picking, offline-first",    "iOS app GBP 9.99 once; hosted price unpublished"),
+        ("ShuttlSync",    "Ratings that move with results, plus seasons and achievements",              "Live player shuffle",            "Free to 2 courts; GBP 9.99/mo to 4"),
+        ("ShuttleStats",  "Booking, capacity and member payments in one place",                  "Live matchmaking + court board", "No subscription; a flat fee per member payment"),
+        ("NextFour",      "The pegboard metaphor kept closest to a physical board, on phones",                         "Pegboard, skill-based or manual","Core nights free; some modes paid"),
+        ("QourtX",        "Membership and venue operations across racquet sports",                  "Live queue and court assignment","Free small tier; larger from GBP 5.99/mo"),
+        ("SportRevive",   "The whole evening generated up front, and printable",                            "Generated rounds, editable",     "Free")
     };
 
     var faqPairs = new (string Q, string A)[]
     {
         ("What is the best badminton club-night software?",
-         "For a typical UK club night - a mixed-strength group, a few courts, people arriving late and leaving early - we would say start with ePegboard, and we would say so knowing we make it. It is free for clubs, and it is built around the specific moment a court becomes free. If your real problem is collecting money, ShuttleStats is the better first call; if it is a hall with no usable Wi-Fi, Court Manager or ShuttlSync."),
+         "For a typical UK club night - a mixed-strength group, a few courts, people arriving late and leaving early - start with ePegboard. It is free for clubs and it is built around the specific moment a court becomes free. If your real problem is collecting money rather than choosing games, ShuttleStats is the better first call; if it is a hall with no usable Wi-Fi, Court Manager or ShuttlSync."),
         ("Is there free badminton club-night software?",
          "Yes, and more than one option. ePegboard is free for clubs. SportRevive is free. ShuttlePilot is free while in beta. ShuttlSync is free up to two live courts and ShuttleStats charges a fee per member payment rather than a subscription. Check the current pricing page before rollout, because these change."),
         ("Do players have to create accounts?",
-         "Not with every product, and not with ePegboard - a club night can run entirely from a shared screen with no player sign-ups at all. SportRevive goes furthest here: only the organiser needs an account. If you want players to see their own history later, that is where accounts start to earn their place."),
+         "Not with ePegboard. A club night runs entirely from a shared screen with no player sign-ups at all, which matters because compulsory onboarding is where a rollout usually stalls. Accounts only start to earn their place if you want players to see their own history and ratings between sessions, and that stays optional."),
         ("Should club-night software work offline?",
          "Only if your hall needs it, and then it matters a lot. Court Manager documents offline operation in unusual detail, including handling venue Wi-Fi login pages that interfere with it, and ShuttlSync supports offline sessions. ePegboard's web app needs a connection; its Windows desktop version runs fully offline as a separate product. Test the actual failure mode before committing, not just whether the word offline appears on a page."),
         ("How do I run a fair club night without software at all?",
@@ -42,7 +42,7 @@
 
     var articleJsonLd = GuideSchema.Article(
         "Best badminton club-night software in 2026: which tool fits which club?",
-        "Start with ePegboard - free for clubs, built around the moment a court finishes - plus an honest comparison of seven alternatives and when each one suits you better.",
+        "Start with ePegboard - free for clubs, built around the moment a court finishes - plus an honest comparison of seven alternatives and the three things it does not do.",
         canonical, published);
     var faqJsonLd = GuideSchema.Faq(faqPairs);
 }
@@ -73,9 +73,9 @@
 
     <div class="prose">
       <div class="guide-callout">
-        <h4>Our recommendation, and our interest in it</h4>
-        <p style="margin-top:8px"><strong>Try ePegboard first.</strong> It is free for clubs, it needs no player sign-ups, and it is built around the one moment that makes a club night hard: a court comes free and four people have to be chosen. You can see it working in about a minute without creating anything.</p>
-        <p style="margin-top:10px">We make ePegboard, so read the rest of this page as a vendor's argument and check the parts that matter to you. The comparison below is honest about where other products are better, and every scored claim on it is <a href="/compare">published with its working</a>.</p>
+        <h4>Start with ePegboard</h4>
+        <p style="margin-top:8px"><strong>It is free for clubs, it needs no player sign-ups, and it is built around the one moment that makes a club night hard:</strong> a court comes free and four people have to be chosen. You can see it working in about a minute without creating anything.</p>
+        <p style="margin-top:10px">We make ePegboard. The comparison below names the products that beat it in specific circumstances, and the scored evidence behind it, including our own weaknesses, is <a href="/compare">published in full</a>.</p>
         <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">Try the instant demo</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Set up a free club</a></p>
       </div>
     </div>
@@ -87,8 +87,9 @@
       <a href="#evidence">Whether clubs actually stay</a>
       <a href="#shortlist">The shortlist</a>
       <a href="#different">Live queue or planned rounds?</a>
-      <a href="#alternatives">When another product suits you better</a>
-      <a href="#limits">What ePegboard does not do</a>
+      <a href="#alternatives">Three things ePegboard does not do</a>
+      <a href="#others">Other tools worth comparing</a>
+      <a href="#limits">Other limitations worth knowing</a>
       <a href="#faq">Frequently asked questions</a>
     </div>
 
@@ -96,27 +97,27 @@
 
       <h2 id="evening">One Tuesday night</h2>
 
-      <p>Twenty-two people, four courts, 7:30pm. Court 2 finishes. Someone arrived at 8:05 and has not played yet. One of your regulars has just played three on the trot and wants to sit the next one out. Two players have partnered each other twice already.</p>
+      <p>Twenty-two people, four courts, and it is twenty past eight. Court 2 finishes. Someone who arrived at 8:05 still has not played. One of your regulars has just played three on the trot and wants to sit the next one out. Two players have partnered each other twice already.</p>
 
       <p>On a peg board, you hold all of that in your head while four people wait and look at you.</p>
 
-      <p>ePegboard puts the next game on the screen the moment the court frees up, with the players it has chosen and how even it expects the game to be. You can take it, swap somebody out, or ignore it entirely and build the game yourself.</p>
+      <p>ePegboard puts the next game on the screen the moment a court frees up, with the players it has chosen and how even it expects the game to be. You can take it, swap somebody out, lock a player in, or ignore it entirely and build the game yourself.</p>
 
-      <div class="shot" style="max-width:290px;margin:22px auto">
-        <img src="/Images/Next_game_sample.jpg" alt="ePegboard's next game card: two pairs, an Excellent match-quality badge, an expected 21-21 score, and Swap, Clear and Auto pick controls">
+      <div class="shot" style="margin:22px 0">
+        <img src="/img/session-board.png" alt="The ePegboard session board: three courts in play with running timers and live scores, a free court offering Pick and Start, the next game prep panel with swap and lock controls, and the waiting members list with check-in">
       </div>
 
-      <p style="text-align:center;color:var(--muted-2);font-size:.9rem;margin-top:-6px">The suggestion, how close it expects the game to be, and the controls to overrule it.</p>
+      <p style="color:var(--muted-2);font-size:.9rem;margin-top:-6px">Courts in play, a free court ready to pick, who is waiting, and the controls to overrule any of it.</p>
 
-      <p style="margin-top:22px">The late arrival gets picked up because waiting time counts. The player who wants a rest is paused with one tap and comes back in when they say so. The pair who keep being drawn together are steered apart because recent partners count against a pick. <strong>None of that needs you to remember it.</strong></p>
+      <p style="margin-top:22px">The late arrival comes into consideration because waiting time counts. The player who wants a rest is paused with one tap and comes back in when they say so. The pair who keep being drawn together are steered apart, because recent partners count against a pick. <strong>None of it needs you to remember it.</strong></p>
 
       <h2 id="what">What it changes about your evening</h2>
 
       <ul>
-        <li><strong>Games are closer.</strong> The picker balances the four players so the score lands nearer 21-19 than 21-8. Everybody gets a game worth playing rather than a formality.</li>
-        <li><strong>Sitting out is shared out.</strong> Waiting time is part of the decision, so the same three people do not end up carrying the evening's rests.</li>
-        <li><strong>You stop being the referee.</strong> When the pick is on a screen and the reasoning is visible, "why am I not on?" stops being a question about your judgement.</li>
-        <li><strong>You get to play.</strong> That is the actual point. An organiser who is not running the board all night is an organiser who is on court.</li>
+        <li><strong>It aims for closer games.</strong> The picker balances the four players on their ratings and shows what it expects the score to be, so more of the evening is worth playing rather than a formality.</li>
+        <li><strong>Sitting out is shared out.</strong> Waiting time is part of the decision, so the same three people are less likely to carry the evening's rests.</li>
+        <li><strong>The selection can be explained.</strong> The pick is on a screen with its reasoning visible, so "why am I not on?" has an answer that is not just your judgement.</li>
+        <li><strong>You get more of your own evening back.</strong> That is the actual point. An organiser who is not running the board all night is an organiser who can be on court.</li>
       </ul>
 
       <p>Practical things that matter on the night: no player accounts are needed, a shared tablet or laptop can run the whole session, late arrivals and early leavers are ordinary rather than disruptive, and you can always overrule the software.</p>
@@ -136,7 +137,7 @@
       <div class="cmp-wrap">
         <table class="cmp-table">
           <thead>
-            <tr><th>Tool</th><th>Best fit</th><th>Session model</th><th>Current pricing signal</th></tr>
+            <tr><th>Tool</th><th>What it leans towards</th><th>Session model</th><th>Current pricing signal</th></tr>
           </thead>
           <tbody>
             @foreach (var t in shortlist)
@@ -164,30 +165,33 @@
 
       <p>The second question is worth asking any vendor: <strong>what can outweigh queue order?</strong> Skill, partner repeats, a requested rest? Ask them to explain a case where the longest-waiting player is not picked. The answer tells you how the product actually behaves at 9pm.</p>
 
-      <h2 id="alternatives">When another product suits you better</h2>
+      <h2 id="alternatives">Three things ePegboard does not do</h2>
 
-      <p>Genuinely, and with the reason:</p>
+      <p>These are not preferences. They are capabilities we do not have, and if one of them is your actual problem then another product is the better first call.</p>
 
       <ul>
-        <li><strong>ShuttleStats</strong> - if chasing session fees is a bigger drain than choosing games. Members book and pay through Stripe, with capacity, waitlists and refunds attached, and there is no subscription: the club pays a flat fee per member payment. ePegboard records what was paid but does not collect it.</li>
-        <li><strong>Court Manager</strong> - if your hall's Wi-Fi is unreliable. It runs on the device and keeps working without a connection, and it specifically handles venue login pages interfering with that. Our web app needs a connection; our fully offline version is a separate Windows product.</li>
-        <li><strong>ShuttlePilot</strong> - if the live night is the whole job and you want it run one-handed from a phone while you play. It is the only product we found that equalises sit-outs <em>across sessions</em> rather than only tonight.</li>
-        <li><strong>SportRevive</strong> - if your numbers are stable and you would rather see the whole evening in advance, printed. Only the organiser needs an account.</li>
-        <li><strong>NextFour</strong> - if you want the pegboard metaphor kept exactly as your club knows it, on phones, with a gradual move rather than a change of approach.</li>
-        <li><strong>ShuttlSync</strong> - if seasons, achievements and social stats matter as much as the night itself, and four courts is your ceiling.</li>
-        <li><strong>QourtX</strong> - if you are a multi-sport venue wanting membership and operations around the session rather than only game rotation.</li>
+        <li><strong>Collecting money: ShuttleStats.</strong> If chasing session fees drains more of your week than choosing games does, this is the closer fit. Members book and pay through Stripe with capacity, waitlists and refunds attached, and there is no subscription - the club pays a flat fee per member payment. <strong>ePegboard records what was paid; it does not collect it.</strong></li>
+        <li><strong>A hall with no usable Wi-Fi: Court Manager or ShuttlSync.</strong> Court Manager runs on the device and keeps working without a connection, including handling venue login pages that interfere with it; ShuttlSync supports offline sessions. <strong>Our web app needs a connection.</strong> We do run fully offline, but only through a separate Windows product at GBP 60 a year, and that is a real answer to a different question.</li>
+        <li><strong>A planned evening rather than live picking: SportRevive.</strong> If your numbers are stable and you would rather hand out the whole night's rounds at 7pm, that is a different model and we do not offer it. See the section above on which one your club actually wants.</li>
       </ul>
 
-      <h3 style="margin-top:26px">A note on QourtX's pricing</h3>
-      <p>Worth one extra check before a committee budgets for it: its badminton page and its main pricing page describe different commercial models - a member-band monthly price on one, a per-active-member tier on the other. That may be a transition in progress. Ask for the applicable plan in writing.</p>
+      <h2 id="others">Other tools worth comparing</h2>
 
-      <h2 id="limits">What ePegboard does not do</h2>
-
-      <p>Taken from the same evaluations we published, including the parts that do not suit us:</p>
+      <p>These solve the same problem we do, in their own way. We would put ePegboard beside any of them, and none of them is a reason on its own to look past it.</p>
 
       <ul>
-        <li><strong>It does not take money.</strong> Payments are a record of what was collected, not a card machine. Cash, cheque or transfer, typed in afterwards.</li>
-        <li><strong>The web app needs a connection.</strong> Fully offline running means our separate Windows desktop product, at GBP 60 a year.</li>
+        <li><strong>ShuttlePilot</strong> - phone-first and free while in beta. It is the only product we found that equalises sit-outs <em>across sessions</em> rather than only within tonight, which is worth knowing if the same people always seem to miss out. No published price after beta, and no shared court display.</li>
+        <li><strong>ShuttlSync</strong> - browser-based, with a rating that moves with results, seasons and achievements. Free to two live courts, GBP 9.99 a month to four, which is a ceiling worth checking against your club's size.</li>
+        <li><strong>NextFour</strong> - keeps the pegboard metaphor closest to a physical board, on phones. Core nights are free; pegboard and skill-based picking sit behind paid tiers bought through the app stores.</li>
+        <li><strong>Court Manager</strong> - the most direct peg-board replacement in the set, with unusually well documented fairness rules. Ranks are typed in by hand and never move on their own.</li>
+        <li><strong>QourtX</strong> - built across racquet sports, with membership and venue operations around the session. Worth one extra check before a committee budgets: its badminton page and its main pricing page describe different commercial models, so ask for the applicable plan in writing.</li>
+      </ul>
+
+      <h2 id="limits">Other limitations worth knowing</h2>
+
+      <p>Beyond the three above, from the same evaluations we published:</p>
+
+      <ul>
         <li><strong>Competitions are handicap doubles.</strong> Singles and team formats are not built.</li>
         <li><strong>We publish the picker's signals but not their weights</strong>, so you cannot tune the balance between a close game and a long wait yourself.</li>
         <li><strong>We suggest a tablet or laptop</strong> rather than running the night from a phone.</li>
@@ -209,9 +213,10 @@
       }
 
       <div class="guide-callout" style="margin-top:30px">
-        <h4>Start with one night</h4>
-        <p style="margin-top:8px">You do not need a decision, a committee meeting or a migration. Run one club night on it and see whether the evening feels different. It is free, your players do not need accounts, and if it is not for you nothing has been lost but an evening's curiosity.</p>
-        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Set up a free club</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">Try the instant demo first</a></p>
+        <h4>See it before you commit anyone else's evening to it</h4>
+        <p style="margin-top:8px">You are responsible for how everyone's night goes, so do not find out in front of them. <strong>Start with the demo</strong> - it runs a session in front of you in about a minute, with nothing to set up and nobody to sign up.</p>
+        <p style="margin-top:10px">When you are comfortable with how it picks, set up your club and run one real night on it. It is free, your players do not need accounts, and the peg board is still there if you want it back.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">Try the instant demo</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Set up a free club</a></p>
       </div>
 
       <div style="margin-top:34px;padding-top:22px;border-top:1px solid var(--line)">
