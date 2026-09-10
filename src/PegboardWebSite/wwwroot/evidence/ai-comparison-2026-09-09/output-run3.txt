@@ -1,0 +1,454 @@
+Run 3 - a second AI vendor, same rubric, 9 September 2026. Unedited.
+==================================================================
+
+# Badminton club-night software: evidence audit
+
+Test/access date: **9 September 2026**. Club: UK recreational badminton, 18–26 attendees, four courts, mixed strengths, changing availability.
+
+**30 candidates; 29 supplied URLs and one independently located product.** This is a public-documentation evaluation, not an installed-app or live-club trial. ePegboard leads the verified evidence subtotal at **78.5/100**, followed by vsBadminton **61.5** and ServeLeague **61**. **A defensible overall ranking of all 30 cannot yet be calculated.** Eight supplied sites remained unreadable and are U throughout; several other candidates have material unresolved criteria.
+
+The practical recommendation is to trial ePegboard first, alongside vsBadminton. ServeLeague is third by evidence subtotal, with rotating badminton doubles a priority verification. ShuttlePilot is a close alternative worth including if the club favours its round-based workflow. These are provisional trial priorities, not proven performance rankings.
+
+## Method and fixed rubric
+
+The supplied criterion names do not include longer formal definitions. I have retained all 15 names and weights exactly, applying them to the stated club scenario. Compound criteria require evidence for their relevant parts: payment bookkeeping alone earns partial credit; a device listing does not establish resilience; a skill-mode name does not establish a rating system. Live scoring includes recording results while the session is running, not necessarily rally-by-rally input.
+
+**2 = VERIFIED FULL:** operational instructions/rules and relevant limits establish the capability for this club. **1 = VERIFIED PARTIAL:** an explicit vendor claim or only part of the criterion is established. **0 = VERIFIED ABSENT:** explicit evidence establishes non-support. **U = UNVERIFIED:** insufficient evidence, including retrieval failure. Here, “verified” means documentary support was verified; vendor claims were not independently demonstrated.
+
+A feature missing from a page is U, never automatically 0. An unsupported subfeature does not zero a composite criterion when other parts are supported. Thus ePegboard’s payment criterion is 1, although online collection is explicitly absent.
+
+| Criterion | Weight |
+| --- | --- |
+| C1 — Arrival/check-in and late joiners | 6 |
+| C2 — Dynamic next-game/court allocation | 12 |
+| C3 — Skill-balanced doubles | 12 |
+| C4 — Waiting-time / sit-out fairness | 10 |
+| C5 — Partner/opponent variety | 8 |
+| C6 — Explainability / transparency | 8 |
+| C7 — Manual override and special cases | 5 |
+| C8 — Player rating system | 7 |
+| C9 — Live scoring, statistics and history | 5 |
+| C10 — Multi-court display / kiosk operation | 5 |
+| C11 — Attendance and session reporting | 5 |
+| C12 — Payments and member administration | 5 |
+| C13 — Competitions / tournaments / league workflows | 4 |
+| C14 — Resilience and device accessibility | 4 |
+| C15 — Price and practical limits | 4 |
+
+Weights sum to **100**. C1–C7 account for 61 points. No points are added for popularity, company size, testimonials, review counts or marketing volume.
+
+## A. Evidence table by product and criterion
+
+The two matrices are one evidence table split for readability. Every cell is a finding using the legend above. Both are sorted by verified subtotal, descending; ties alphabetically. All-U products follow scored products without receiving a zero capability score. The numbered rationale supplies the sources and qualifications for every resolved cell.
+
+| Product | C1 | C2 | C3 | C4 | C5 | C6 | C7 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| ePegboard | 2 | 2 | 1 | 1 | 1 | 2 | 2 |
+| vsBadminton | 2 | 2 | 1 | 1 | 1 | 1 | 2 |
+| ServeLeague | 2 | 2 | 1 | 1 | 1 | 1 | 1 |
+| ShuttlePilot | 2 | 2 | 1 | 1 | 1 | 1 | 1 |
+| BadBoard | 2 | 2 | 1 | 1 | 1 | U | 1 |
+| Shuttl | 1 | 2 | 1 | 1 | U | 1 | 1 |
+| ShuttleFlow | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| CourtMaster - Match Manager | 1 | 1 | 1 | 1 | U | 1 | 1 |
+| SmashHQ | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| QourtX | 1 | 1 | 1 | 1 | 1 | 1 | U |
+| Racket Social | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| PaQueueKa | 1 | 1 | 1 | 1 | 1 | 1 | U |
+| eBadders | 1 | 1 | 1 | 1 | 1 | 1 | U |
+| Ladderly | 1 | 1 | 1 | 1 | U | 1 | U |
+| Badminton Peg System | 1 | 2 | U | 1 | U | 1 | 1 |
+| Qcourt | 1 | 1 | U | 1 | 1 | 1 | 1 |
+| NextFour | 1 | 1 | 1 | 1 | U | 1 | 1 |
+| UBR - Universal Badminton Rating | U | 1 | 1 | U | U | 1 | U |
+| Matchit | U | 1 | 1 | 1 | U | U | 1 |
+| Airchy WebOS | U | 1 | U | 1 | U | U | U |
+| Badmatch | U | 1 | 1 | U | U | U | U |
+| Digital Pegboard | U | 1 | U | U | U | U | U |
+| Court Buddy | U | U | U | U | U | U | U |
+| Court Manager | U | U | U | U | U | U | U |
+| CourtsFlow | U | U | U | U | U | U | U |
+| QSENPAI | U | U | U | U | U | U | U |
+| Queue Master | U | U | U | U | U | U | U |
+| Racket Arena | U | U | U | U | U | U | U |
+| ShuttleOps | U | U | U | U | U | U | U |
+| SportyHQ | U | U | U | U | U | U | U |
+
+| Product | C8 | C9 | C10 | C11 | C12 | C13 | C14 | C15 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ePegboard | 2 | 2 | 2 | 2 | 1 | 1 | 1 | 2 |
+| vsBadminton | 1 | 1 | 1 | 1 | 1 | U | 1 | 2 |
+| ServeLeague | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 2 |
+| ShuttlePilot | 1 | 2 | 1 | 1 | 1 | U | 1 | 1 |
+| BadBoard | 1 | 1 | 1 | 1 | 1 | U | 1 | 2 |
+| Shuttl | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 |
+| ShuttleFlow | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| CourtMaster - Match Manager | 1 | 2 | 1 | 1 | 1 | 1 | 1 | 1 |
+| SmashHQ | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 |
+| QourtX | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| Racket Social | 1 | 1 | 1 | 1 | U | 1 | 1 | 1 |
+| PaQueueKa | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 |
+| eBadders | 1 | 1 | U | 1 | 1 | 1 | 1 | 1 |
+| Ladderly | 2 | 1 | 1 | 1 | 1 | U | 1 | 1 |
+| Badminton Peg System | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 |
+| Qcourt | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 |
+| NextFour | U | 1 | 1 | 1 | 1 | U | 1 | 1 |
+| UBR - Universal Badminton Rating | 1 | 1 | U | 1 | 1 | 1 | 1 | 1 |
+| Matchit | U | 1 | 1 | U | U | U | 1 | 1 |
+| Airchy WebOS | 1 | 1 | 1 | 1 | 1 | U | 1 | U |
+| Badmatch | 1 | 1 | U | 1 | 1 | U | 1 | U |
+| Digital Pegboard | U | 1 | U | U | U | U | 1 | 1 |
+| Court Buddy | U | U | U | U | U | U | U | U |
+| Court Manager | U | U | U | U | U | U | U | U |
+| CourtsFlow | U | U | U | U | U | U | U | U |
+| QSENPAI | U | U | U | U | U | U | U | U |
+| Queue Master | U | U | U | U | U | U | U | U |
+| Racket Arena | U | U | U | U | U | U | U | U |
+| ShuttleOps | U | U | U | U | U | U | U | U |
+| SportyHQ | U | U | U | U | U | U | U | U |
+
+### Sourced rationale
+
+**ePegboard**
+
+C1 **2:** arrival check-in remains open all night. C2 **2:** free-court suggestions, four-player allocation and result-to-queue loop are described. C3–5 **1 each:** balance, waiting and variety compete as soft objectives; hard queue restrictions can worsen match quality. C6 **2:** a per-pick explanation identifies waiting and balance reasons. C7 **2:** swap, lock, clear, sticky pairs, individual sit-out and held requests have operating instructions. Sources: [first club night](https://docs.epegboard.com/tutorials/first-club-night/), [picker](https://docs.epegboard.com/club-nights/the-picker/), [special requests](https://docs.epegboard.com/club-nights/special-requests/).
+
+C8 **2:** starting tiers, score-share formula and settling factors are specified. C9 **2:** result entry, live updates and retained lineups/statistics/history are described. C10 **2:** shared board and PIN-controlled kiosk permissions are documented. C11 **2:** check-in times, attendance, court-time share and preserved session records. C12 **1:** member administration and payment recording, without online collection. C13 **1:** restricted handicap competition workflow; no tournament court assignment. C14 **1:** browser access; fully offline operation is a separate Windows product. C15 **2:** free web club-night workflow, unlimited nights, and scale examples beyond this club. Sources: [ratings formula](https://docs.epegboard.com/ratings/how-a-rating-change-is-calculated/), [sessions](https://docs.epegboard.com/club-nights/sessions/), [kiosk](https://docs.epegboard.com/club-nights/kiosk-mode/), [members](https://docs.epegboard.com/club-nights/members/), [payments](https://docs.epegboard.com/club-nights/payments/), [competitions](https://docs.epegboard.com/club-nights/competitions/), [pricing](https://www.epegboard.com/pricing), [scale/workflow](https://docs.epegboard.com/getting-started/).
+
+**vsBadminton**
+
+C1 **2:** add/change availability at any time; late arrivals do not inherit earlier waiting time. C2 **2:** selects available fours, respects court count and supports pick-ahead assignment. C3–5 **1:** balancing objectives compete; picking ahead reduces mixing, and gender preferences can disadvantage a lone woman. C6 **1:** selection factors and predicted scores, without a comparable per-pick explanation. C7 **2:** change partners, replace picks, mark away/resting and amend timing/settings. Sources: [playing](https://www.vsbadminton.co.uk/playing/), [advanced controls](https://www.vsbadminton.co.uk/advanced/), [questions](https://www.vsbadminton.co.uk/questions/).
+
+C8 **1:** deliberately approximate strength estimates. C9/C11 **1:** results and player summaries; long-term historical access remains limited/unclear. The May 2026 session-persistence change supersedes the old same-day restriction, but does not establish a full archive. C10 **1:** shared session access, not a documented protected kiosk. C12 **1:** club/player administration; payment handling U. C13 **U:** competitive tournament workflow not established. C14 **1:** several device types, but internet required. C15 **2:** free, with court configuration documented for this scale. Sources: [summaries](https://www.vsbadminton.co.uk/summaries/), [May update](https://www.vsbadminton.co.uk/sessions/), [sharing](https://www.vsbadminton.co.uk/sharing/), [FAQ](https://www.vsbadminton.co.uk/questions/), [home](https://www.vsbadminton.co.uk/).
+
+**ServeLeague**
+
+C1 **2:** admin can add late players and cancel remaining games for early leavers. C2 **2:** subsequent matches populate available tables; flex matches address uneven finishes. C3 **1:** rating/Swiss pairing is described, but rotating, balanced badminton doubles is not established in these guides. C4 **1:** game targets and earlier completion for lower-rated players do not establish equal waiting. C5 **1:** repeat opponents avoided; partner rotation unclear. C6/C7 **1:** published scheduling rules, locks and manual administration; temporary rest/return remains unclear. Sources: [setup guide](https://serveleague.com/tutorials/setting-up-drop-in-leagues/), [drop-in rules](https://serveleague.com/tutorials/reference/drop-in-leagues/).
+
+C8–12 **1 each:** Elo/history, score submission/statistics, kiosk mention, session administration and membership/payment features have partial operational evidence. C13 **1:** several league/bracket formats documented, but the inspected evidence does not fully specify their operation and exceptions. C14 **1:** browser/mobile access; recovery/offline handling U. C15 **2:** Casual free/unlimited players; Club US$39/month adds membership and other league formats; Pro US$89/month adds further facilities. Advanced player constraints are Pro-only. Score reflects the product across disclosed plans, not all features being free. Sources: [league features](https://serveleague.com/features/league-management/), [pricing](https://serveleague.com/pricing/).
+
+**ShuttlePilot**
+
+C1 **2:** late check-in and early departure handling explicitly preserve current matches. C2 **2:** regeneration fills empty courts while retaining existing/manual matches. C3/C5 **1:** rating-gap minimisation and repeat penalties lack full operating thresholds. C4 **1:** sit-outs use cumulative counts across sessions, without an attendance-adjusted waiting guarantee. C6 **1:** visible team gap, not a full selection explanation. C7 **1:** manual court construction/swaps; pairing restrictions are soft. C8 **1:** Elo updates/history without calculation detail. C9 **2:** up to three sets, selectable targets, player score-entry permissions and match/rating history. C10–12 **1:** court view, check-in/CSV records and roster/admin roles; kiosk and payments not established. C13 **U:** competition workflow. C14 **1:** phone/laptop, but offline recovery U. C15 **1:** unlimited beta is free; post-beta terms U. Source: [official product and FAQ](https://shuttlepilot.io).
+
+**BadBoard**
+
+C1 **2:** arrival/departure self-service in both operating modes. C2 **2:** timed rounds or game-end court filling with queued selections. C3–5 **1:** grades and opposition/sit-out memory are described, without decisive balance/fairness rules. C6 **U:** selection explanation. C7 **1:** manual/suggested picks and fixed pairs, with mode-dependent features. C8 **1:** organiser-assigned grades 1–10. C9/C11 **1:** statistics; searchable six-month archive is Timer-only. C10 **1:** multi-court PC display; kiosk safeguards U. C12 **1:** pay-for-play administration claim. C13 **U:** league-team labels do not establish a competition workflow. C14 **1:** Windows only; backup/restore feature stated. C15 **2:** annual €19.99 up to 30 members, €29.99 up to 150, €39.99 unlimited; maximum 16 courts. Attendees are not total membership. Free licence is restricted. Sources: [operation](https://badboard.net/howItWorks.aspx), [extras](https://badboard.net/extraFeatures.aspx), [pricing](https://badboard.net/purchase.aspx), [home](https://badboard.net).
+
+**Shuttl**
+
+C1 **1:** code-based joining and late queue adjustment, without edge rules. C2 **2:** minimum two/four available players, preview to an open court, then next-match preparation. C3/C4 **1:** skill-aware/fair rotation claims. C5 **U:** anti-repeat selection not established. C6/C7 **1:** visible queue and manual reordering/team slots. C8 **1:** saved skill levels, not documented adaptive ratings. C9–12 **1:** live results/history, shared views, session insights and player-pool administration; payments U. C13 **U:** competition workflow. C14 **1:** mobile web; offline recovery U. C15 **1:** current free limits are one community, two total sessions, 150 managed players and six automatic/15 racket-queue courts; weekly session retention/reuse needs clarification. Source: [official site](https://shuttl.app).
+
+**ShuttleFlow**
+
+C1–5 **1 each:** approved code/manual joins, suggested matches, skill/recency/wait inputs; late/rest edge rules and repeat controls are incomplete. C6/C7 **1:** visible queue/published ranking rules and manual assignment. C8 **1:** self-selected tiers and seasonal points, not an adaptive skill estimate. C9–12 **1:** score/history, synced court views, summaries and fee/member records; online collection unestablished. C13 **1:** seasonal ranking workflow only. C14 **1:** loaded Queue Master works offline, but live joining/shared sessions require connection. C15 **1:** free signup/guest operation; complete product pricing/limits unestablished. Sources: [home](https://shuttleflow.ph), [operating and ranking rules](https://shuttleflow.ph/how-it-works).
+
+**CourtMaster - Match Manager**
+
+C1 **1:** participants/attendance, without late/rest rules. C2–4 **1:** court progression, Elo pairing and selectable game-count/rest/level priorities; edge behaviour unspecified. C5 **U:** systematic partner/opponent repeat avoidance. C6/C7 **1:** visible modes and drag/drop pair edits; not full explanations/special cases. C8 **1:** Elo named without update detail. C9 **2:** configurable games/sets/deuce, scoring positions and point-level score history/statistics. C10–13 **1:** multi-court overview, attendance calendar, group administration and league/bracket/PDF features. C14 **1:** Apple devices; multi-court synchronisation needs internet. C15 **1:** four courts need Premium (up to 12); Japanese site ¥500/month, supplied US listing $2.99 Premium purchase; UK price unverified. Sources: [supplied listing](https://apps.apple.com/us/app/courtmaster/id6758101442), [linked English site](https://courtsync-a95f0.web.app/en/index.html), [operating guide](https://courtsync-a95f0.web.app/guide.html).
+
+**SmashHQ**
+
+C1/C2 **1:** QR check-in and timer/manual shuffle; late/rest scheduling edges unclear. C3 **1:** Same Grade mode where possible. C4/C5 **1:** fewest games first and anti-repeat penalties; waiting-duration/arrival adjustment unclear. C6/C7 **1:** public algorithm outline, configurable timing and linked pairs. C8 **1:** skill grades/leaderboards, not documented adaptive ratings. C9–12 **1:** score updates/history, current court portal, attendance/roster and approved payment-proof ledger. C13 **U:** directory tournament count is not a workflow. C14 **1:** web available; offline documentation conflicts with “coming soon” desktop downloads. C15 **1:** free up to 20 players; price/limit above 20 unverified. Sources: [official site](https://smashhq.app), [SOP guide](https://smashhq.app/docs).
+
+**QourtX**
+
+C1–6 **1 each:** check-in, auto courts, rating/fatigue pairing, waiting estimates, partner rotation and visible quality/gap indicators; largely claims, not operating rules. C7 **U:** overrides/special cases. C8–14 **1 each:** Glicko-2, live scoring/history, wallboard, no-show logs, payments/membership, seeded brackets and native apps claimed. Recovery and detailed operation unverified. C15 **1:** free under 50 members/unlimited courts, but “multi-court coordination” appears in £4/active-member/month Club tier; four-court entitlement needs clarification. Popularity, reviews and customer counts earn no points. Source: [official site](https://qourtx.com).
+
+**Racket Social**
+
+C1–3 **1:** late arrivals/roster changes and balanced round generation claimed; asynchronous court completion/edge handling unclear. C4 **1:** avoid consecutive sit-outs, without arrival/rest-return rules. C5 **1:** partner/opponent variety claim. C6/C7 **1:** round preview and manual edits, incomplete selection explanations/special cases. C8–11 **1:** OpenSkill, results/history, read-only shared courts and session records. C12 **U:** current club/payment administration; Club mode is upcoming. C13 **1:** informal rated competitions; dedicated brackets explicitly unsupported. C14 **1:** local offline core, but shared/server functions need connection and sync descriptions differ. C15 **1:** current functions free/no fixed cap; typical tested range ends at 24, below this club’s peak 26. Source: [official site and FAQ](https://racketsocial.app).
+
+**PaQueueKa**
+
+C1–6 **1 each:** code joining, end-of-game back-of-queue rotation, compatible tiers, game counts, no consecutive partner repeats and a public rule outline; late/rest and opponent-repeat details incomplete. C7 **U:** override workflow. C8 **1:** adjusted win-rate ranking and assigned tiers rather than adaptive opponent-adjusted skill. C9–12 **1:** match history, live courts, session analytics and payment/member tracking. C13 **0 / VERIFIED ABSENT:** tournament management explicitly marked coming soon. C14 **1:** iOS/Android and recovery codes; live offline behaviour U. C15 **1:** core free; optional lifetime Player Plus around ₱99/Pro Host ₱199, varying by region; UK price/capacity unconfirmed. Source: [official site and FAQ](https://paqueueka.info).
+
+**eBadders**
+
+C1–5 **1 each:** session participation/reservations, online pegboard, balanced games, game-count fairness and variety; operating edge rules unestablished. C6 **1:** published ranking logic. C7 **U:** override workflow. C8 **1:** partner/opponent-aware ranking excludes certain mixed-gender lineups from club ratings. C9 **1:** personal games/scores/statistics. C10 **U:** a laptop/tablet requirement alone does not verify multi-court display/kiosk operation. C11/C12 **1:** session-quality/participation information and club/account administration; payments U. C13 **1:** public tournament registration, not verified scheduling. C14 **1:** internet-connected browser. C15 **1:** player accounts free; organiser pricing unestablished. Sources: [help](https://ebadders.com/help/), [session manager](https://ebadders.com/help/session-manager/), [ranking](https://ebadders.com/help/ranking/), [accounts](https://ebadders.com/help/account/), [public sessions](https://ebadders.com).
+
+**Ladderly**
+
+C1–4 **1:** check-in, group/queue modes, skill matching and downtime preferences; late/rest/asynchronous details incomplete. C5/C7 **U:** variety and overrides. C6 **1:** public rating/rotation explanation, not per-pick reasoning. C8 **2:** TrueSkill mean/uncertainty, initial values, conservative ranking, placement visibility and deuce treatment specified. C9–12 **1:** results/statistics, court schedules, meetup records and club invitations; payments to the club U. C13 **U:** competition workflow. C14 **1:** phone/web access; resilience U. C15 **1:** free base; Premium CAD$30/month, but club-wide billing scope/capacity unclear. Sources: [home](https://ladderly.online), [workflow](https://ladderly.online/how-it-works), [rating explanation](https://ladderly.online/rating-explanation), [pricing](https://ladderly.online/pricing).
+
+**Badminton Peg System**
+
+C1 **1:** marking present adds to queue; late/rest edge rules incomplete. C2 **2:** finish promotes waiting players; staged queue/manual assignments documented. C3/C5 **U:** Smart Assign is queue-based; skill balance and repeat avoidance not established. C4/C6/C7 **1:** queue rotation, visible staging and manual drag/drop; detailed fairness/exceptions incomplete. C8–12 **1:** win-rate rankings, history, tablet court overview, attendance statistics and club roster; payments U. C13 **U:** competition workflows. C14 **1:** offline after setup/login, with sync described but recovery details limited. C15 **1:** free/unlimited courts and players claimed, but linked store requires manual new-club verification, contradicting instant setup. Sources: [canonical site](https://bps.graeyna.com), [linked Google Play listing](https://play.google.com/store/apps/details?id=com.bps.badmintonPegSystem).
+
+**Qcourt**
+
+C1/C2 **1:** add queue players and assign courts. C3 **U:** storing ranks does not establish skill-balanced selection. C4–7 **1:** game-count rotation, shuffle, public queue rule and pair-lock/separation controls; waiting/late/return and opponent variety incomplete. C8 **1:** rank labels. C9–12 **1:** match history, Satellite sync/multiple courts, session export and cost splitting; collecting payments U. C13 **U:** competition workflow. C14 **1:** Android and sync, recovery/offline U. C15 **1:** ad-supported free use; practical caps unestablished. Source: [supplied Google Play listing](https://play.google.com/store/apps/details?id=com.taforyou.qcourt).
+
+**NextFour**
+
+C1–4 **1:** phone/kiosk check-in, pegboard/skill/manual modes and fair rotation claim; late/return and balance rules incomplete. C5/C8 **U:** anti-repeat selection and a player rating system are not established by pairing statistics or a mode name. C6/C7 **1:** wait-time/court visibility and manual pairing/mode. C9–12 **1:** scores/history, Terminal mode, tonight’s roster and member/guest administration; payments U. C13 **U:** competitions. C14 **1:** linked iOS/Android availability; offline/recovery U. C15 **1:** free to start; ongoing cost/caps U. Source: [official site](https://nextfour.app).
+
+**UBR - Universal Badminton Rating**
+
+C1/C4/C5/C7/C10 **U:** live check-in, waiting, variety, overrides and court display/kiosk not established. C2/C3 **1:** algorithmic court/team matchups claimed. C6/C8 **1:** expected-outcome rating explanation, but no full rule/initialisation detail. C9/C11 **1:** game/event history, charts and head-to-head records. C12 **1:** player-profile/account administration only; club fees U. C13 **1:** organised mixers/events; tournament/league operation unclear. C14 **1:** web interface; resilience U. C15 **1:** free player signup; club usage pricing/caps U. Source: [canonical site](https://universalbadmintonrating.com).
+
+**Matchit**
+
+C1/C5/C6/C8/C11/C12/C13 **U:** arrival rules, variety, explanation, ratings, attendance reports, member/payments and competitions unestablished. C2–4 **1:** automatic skill-based games and game-count fairness claims. C7 **1:** manual game requests documented in release notes, but full override/rest workflow unclear. C9/C10 **1:** finished-game records and shared match management; statistics/kiosk incomplete. C14 **1:** iPhone/iOS 16.4+, without verified offline operation. C15 **1:** US Pro $1.99/month, $12.99/year or $29.99 lifetime; UK price and free-game limit U. Source: [supplied Apple listing](https://apps.apple.com/us/app/matchit/id6739728243).
+
+**Airchy WebOS**
+
+C1 **U:** session bookings/waitlists do not establish arrival check-in. C2/C4 **1:** on-screen rotation/fairness claimed without operational rules. C3/C5/C6/C7 **U:** balance, variety, explanations and overrides. C8–12 **1:** Elo, scoring, screen rotation, attendance/economics and automatic cost/payment/member features claimed; operational limits unclear. C13 **U:** moving a ranking ladder does not establish competition management. C14 **1:** linked web application; resilience U. C15 **U:** rolling rollout without usable software pricing/limits. Source: [supplied WebOS page](https://airchy.com/webos/).
+
+**Badmatch**
+
+C2/C3 **1:** automatic grade-balanced matches. C8 **1:** player grades. C9/C11 **1:** timer, stats and session history claims. C12 **1:** multi-admin clubs/player accounts, not verified payment collection. C14 **1:** web product. C1/C4/C5/C6/C7/C10/C13/C15 **U:** no sufficient detail for arrival, waiting, variety, explanations, overrides, multi-court/kiosk, competitions or pricing/limits. Source: [canonical page](https://badmatch.app).
+
+**Digital Pegboard**
+
+C2/C9 **1:** automatic rotation/court assignment and real-time match tracking claims. C14 **1:** Android listing. C15 **1:** in-app purchases declared, but cost/limits unclear. C1/C3/C4/C5/C6/C7/C8/C10/C11/C12/C13 **U:** no sufficient evidence in the retrieved description. “Smart” does not establish skill balance; “rotation” does not establish fair waiting. Source: [supplied Google Play listing](https://play.google.com/store/apps/details?id=com.digitalpegboard.app).
+
+**Court Buddy, Court Manager, CourtsFlow, QSENPAI, Queue Master, Racket Arena, ShuttleOps and SportyHQ:** C1–C15 are U because usable product content could not be retrieved from their supplied URLs. This is a retrieval finding, not a conclusion about features. Exact outcomes appear in J.
+
+## B. Weighted calculation
+
+For a resolved criterion, contribution = weight × score ÷ 2. Let **V** be the sum of resolved contributions and **M** the sum of weights of U criteria. The requested possible range is **[V, V+M]**, holding existing 0/1/2 judgments fixed. These are evidence-completion bounds, not confidence intervals or ultimate capability bounds: further evidence can also change a current 1.
+
+For all-U candidates, no verified score is reported. Their 0–100 possible range describes complete uncertainty; it does not convert any U to zero.
+
+| Product | Verified weighted score | Unresolved maximum M | Possible range | Resolved /15 |
+| --- | --- | --- | --- | --- |
+| ePegboard | 78.5 | 0 | 78.5–78.5 | 15 |
+| vsBadminton | 61.5 | 4 | 61.5–65.5 | 14 |
+| ServeLeague | 61 | 0 | 61–61 | 15 |
+| ShuttlePilot | 59.5 | 4 | 59.5–63.5 | 14 |
+| BadBoard | 55 | 12 | 55–67 | 13 |
+| Shuttl | 50 | 12 | 50–62 | 13 |
+| ShuttleFlow | 50 | 0 | 50–50 | 15 |
+| CourtMaster - Match Manager | 48.5 | 8 | 48.5–56.5 | 14 |
+| SmashHQ | 48 | 4 | 48–52 | 14 |
+| QourtX | 47.5 | 5 | 47.5–52.5 | 14 |
+| Racket Social | 47.5 | 5 | 47.5–52.5 | 14 |
+| PaQueueKa | 45.5 | 5 | 45.5–50.5 | 14 |
+| eBadders | 45 | 10 | 45–55 | 13 |
+| Ladderly | 45 | 17 | 45–62 | 12 |
+| Badminton Peg System | 44 | 24 | 44–68 | 12 |
+| Qcourt | 42 | 16 | 42–58 | 13 |
+| NextFour | 40.5 | 19 | 40.5–59.5 | 12 |
+| UBR - Universal Badminton Rating | 33 | 34 | 33–67 | 10 |
+| Matchit | 28.5 | 43 | 28.5–71.5 | 8 |
+| Airchy WebOS | 26.5 | 47 | 26.5–73.5 | 8 |
+| Badmatch | 25 | 50 | 25–75 | 7 |
+| Digital Pegboard | 12.5 | 75 | 12.5–87.5 | 4 |
+| Court Buddy | U — no resolved score | 100 | 0–100 | 0 |
+| Court Manager | U — no resolved score | 100 | 0–100 | 0 |
+| CourtsFlow | U — no resolved score | 100 | 0–100 | 0 |
+| QSENPAI | U — no resolved score | 100 | 0–100 | 0 |
+| Queue Master | U — no resolved score | 100 | 0–100 | 0 |
+| Racket Arena | U — no resolved score | 100 | 0–100 | 0 |
+| ShuttleOps | U — no resolved score | 100 | 0–100 | 0 |
+| SportyHQ | U — no resolved score | 100 | 0–100 | 0 |
+
+### Per-criterion addition for the highest evidence subtotals
+
+There is a tie at the tenth position, so both QourtX and Racket Social are included. Each expression has **15 terms in C1–C15 order**. U13, for example, means an unknown contribution between zero and criterion 13’s full weight; it is not an assigned zero.
+
+**ePegboard:** 6+12+6+5+4+8+5+7+5+5+5+2.5+2+2+4 = **78.5 verified**.
+
+**vsBadminton:** 6+12+6+5+4+4+5+3.5+2.5+2.5+2.5+2.5+U13+2+4 = **61.5 verified + U13**; range **61.5–65.5**.
+
+**ServeLeague:** 6+12+6+5+4+4+2.5+3.5+2.5+2.5+2.5+2.5+2+2+4 = **61 verified**.
+
+**ShuttlePilot:** 6+12+6+5+4+4+2.5+3.5+5+2.5+2.5+2.5+U13+2+2 = **59.5 verified + U13**; range **59.5–63.5**.
+
+**BadBoard:** 6+12+6+5+4+U6+2.5+3.5+2.5+2.5+2.5+2.5+U13+2+4 = **55 verified + U6+U13**; range **55–67**.
+
+**Shuttl:** 3+12+6+5+U5+4+2.5+3.5+2.5+2.5+2.5+2.5+U13+2+2 = **50 verified + U5+U13**; range **50–62**.
+
+**ShuttleFlow:** 3+6+6+5+4+4+2.5+3.5+2.5+2.5+2.5+2.5+2+2+2 = **50 verified**.
+
+**CourtMaster - Match Manager:** 3+6+6+5+U5+4+2.5+3.5+5+2.5+2.5+2.5+2+2+2 = **48.5 verified + U5**; range **48.5–56.5**.
+
+**SmashHQ:** 3+6+6+5+4+4+2.5+3.5+2.5+2.5+2.5+2.5+U13+2+2 = **48 verified + U13**; range **48–52**.
+
+**QourtX:** 3+6+6+5+4+4+U7+3.5+2.5+2.5+2.5+2.5+2+2+2 = **47.5 verified + U7**; range **47.5–52.5**.
+
+**Racket Social:** 3+6+6+5+4+4+2.5+3.5+2.5+2.5+2.5+U12+2+2+2 = **47.5 verified + U12**; range **47.5–52.5**.
+
+The arithmetic was recalculated from the matrix: 30 rows, 15 cells each, valid symbols, 100 total weight, and matching subtotals/ranges. This checks calculation consistency, not software performance.
+
+## C. Overall ranking
+
+**Not defensible yet.** Eight unreadable products have ranges of 0–100. Digital Pegboard’s range is 12.5–87.5. These can exceed the leader, so none may fairly be treated as a last-place product.
+
+The order in A/B is an evidence-subtotal order only. Comparable live trials are needed to distinguish actual match quality from documented functionality. Resolve canonical-page access for the blocked products, then inspect C1–C7 rules, four-court limits, resilience and pricing.
+
+## D. Provisional top three by verified evidence
+
+1. **ePegboard — 78.5.** Best-supported end-to-end club-night workflow in this audit: incremental court filling, explainable suggestions, manual controls, protected kiosk and club records. Its documentary lead earns a first trial. [Operating documentation](https://docs.epegboard.com/).
+2. **vsBadminton — 61.5, range 61.5–65.5.** Documented arrival/rest/court selection and straightforward overrides, free to use. Reliable internet and careful session handling matter. [Playing](https://www.vsbadminton.co.uk/playing/), [FAQ](https://www.vsbadminton.co.uk/questions/).
+3. **ServeLeague — 61.** Detailed drop-in scheduling and broader league/member administration. Verify rotating badminton doubles in its drop-in scheduler before choosing it. [Drop-in guide](https://serveleague.com/tutorials/setting-up-drop-in-leagues/).
+
+The half-point difference between vsBadminton and ServeLeague is not decision-significant without trials. ShuttlePilot follows at 59.5.
+
+## E. Material weaknesses of the provisional winner
+
+This section refers to ePegboard, the evidence leader.
+
+- **C3/C4/C5 = 1:** balance, waiting and variety compete. Hard queue constraints can worsen games with a small waiting pool. At 18 attendees and four full doubles courts, only two people wait; test this case carefully. [Picker rules](https://docs.epegboard.com/club-nights/the-picker/).
+- **C12 = 1:** payment recording, not collection; saving replaces an attendee’s amount rather than building an instalment ledger. [Payments](https://docs.epegboard.com/club-nights/payments/).
+- **C13 = 1:** restricted competition entrants/format; tournament court assignment remains manual. [Competitions](https://docs.epegboard.com/club-nights/competitions/).
+- **C14 = 1:** fully offline operation uses a separate £60/year Windows desktop product with later feature delivery. Its capability must not be combined with the web version’s scores. [Pricing](https://www.epegboard.com/pricing).
+
+Every qualified criterion above is 1. C3 was reduced from 2; the other five were already partial. No claim is made that the leader’s match quality, recovery or usability was demonstrated by this evaluator.
+
+## F. When another product could be preferable
+
+- **vsBadminton:** a free, focused organiser aid with dependable internet and little need for extensive administration. [FAQ](https://www.vsbadminton.co.uk/questions/).
+- **ShuttlePilot:** rounds, visible team gaps and Danish/English operation; check cumulative sit-outs with occasional attendees. [Official site](https://shuttlepilot.io).
+- **ServeLeague:** structured leagues and membership take priority, provided rotating doubles passes the trial. [League features](https://serveleague.com/features/league-management/).
+- **Racket Social:** local-device social play with unreliable connectivity; test 26 players and shared views. [FAQ](https://racketsocial.app).
+- **Badminton Peg System:** mobile pegboard/offline core, if the club can supply its own skill matching; allow for club verification. [Official listing](https://play.google.com/store/apps/details?id=com.bps.badmintonPegSystem).
+- **CourtMaster:** Apple-equipped organisers prioritising detailed scorekeeping; Premium and internet for the four-court setup. [Vendor site](https://courtsync-a95f0.web.app/en/index.html).
+
+These are conditional fits, not demonstrated superiority.
+
+## G. Confidence and unresolved evidence
+
+**Confidence:** high in arithmetic/retrieval reporting; moderate in documentary assessment; low in an overall capability ranking or match-quality superiority. **268 of 450 criterion cells are resolved.** Operational evidence is vendor-described, including the leader. No app was installed, account created, live session run or outage simulated. Mockups and testimonials were not independent demonstrations.
+
+**Leader versus second:** 78.5−61.5 = **17 points**.
+
+- **2 points (11.8%)** arise mechanically from ePegboard’s partial C13 credit where vsBadminton is U. This identifies missing-evidence contribution, not a missing competitor capability.
+- The remaining **15 points** are C6 +4, C8 +3.5, C9 +2.5, C10 +2.5 and C11 +2.5: differences in documented scope/detail, not measured performance.
+- **The causal proportion due to evidence availability cannot be quantified.** Potentially all 17 points could disappear with equivalent competitor evidence. The remaining 15 cannot honestly be labelled proven superior software.
+
+**Overtaking condition:** resolving vsBadminton’s sole U (C13) fully adds at most 4, reaching **65.5**, still 13 behind. It cannot overtake through U resolution alone. Holding ePegboard fixed, a sufficient scenario is C13 U→2 and C6/C8/C9/C10/C11 each 1→2: 61.5+4+4+3.5+2.5+2.5+2.5 = **80.5**, two ahead. That requires new evidence of complete competition, explanation, rating, scoring/history, display/kiosk and attendance/reporting capabilities. Adverse trial evidence could alternatively reduce the leader.
+
+**Common proposed trial:** use identical 18-, 22- and 26-player rosters, four courts, three late arrivals, an early leaver and a temporary rest/return. Finish courts asynchronously; include a much weaker player, a lone participant in a gender category and a requested partnership. Measure waiting while actually available, consecutive sit-outs, games per available hour, repetitions, closeness and organiser interventions. Disconnect internet, restart, correct a result and check recovery. These tests are proposed, not performed.
+
+For unreadable products, access comes first. For the others, A identifies unresolved and partial capabilities. Verify UK availability, tax-inclusive GBP prices, four-court entitlements, membership-versus-turnout limits and guest operation.
+
+## H. Full source list and access date
+
+**All sources were accessed or attempted on 9 September 2026.** Store evidence is developer-provided, not Apple/Google certification. Prices from supplied US listings remain US prices. No similarly named product at an unrelated address contributed evidence.
+
+### Canonical source register
+
+| Product | Supplied source (or identified exception) |
+| --- | --- |
+| Airchy WebOS | [airchy.com/webos/](https://airchy.com/webos/) |
+| BadBoard | [badboard.net](https://badboard.net) |
+| Badminton Peg System | [bps.graeyna.com](https://bps.graeyna.com) |
+| Badmatch | [badmatch.app](https://badmatch.app) |
+| Court Buddy | [court-buddy.com](https://court-buddy.com) |
+| Court Manager | [app.court-manager.com](https://app.court-manager.com) |
+| CourtMaster - Match Manager | [apps.apple.com/us/app/courtmaster/id6758101442](https://apps.apple.com/us/app/courtmaster/id6758101442) |
+| CourtsFlow | [courtsflow.com](https://courtsflow.com) |
+| Digital Pegboard | [play.google.com/store/apps/details?id=com.digitalpegboard.app](https://play.google.com/store/apps/details?id=com.digitalpegboard.app) |
+| eBadders | [ebadders.com](https://ebadders.com) |
+| ePegboard | [www.epegboard.com](https://www.epegboard.com) |
+| Ladderly | [ladderly.online](https://ladderly.online) |
+| Matchit | [apps.apple.com/us/app/matchit/id6739728243](https://apps.apple.com/us/app/matchit/id6739728243) |
+| NextFour | [nextfour.app](https://nextfour.app) |
+| PaQueueKa | [paqueueka.info](https://paqueueka.info) |
+| Qcourt | [play.google.com/store/apps/details?id=com.taforyou.qcourt](https://play.google.com/store/apps/details?id=com.taforyou.qcourt) |
+| QourtX | [qourtx.com](https://qourtx.com) |
+| QSENPAI | [qsenpai.app](https://qsenpai.app) |
+| Queue Master | [queuemaster.site](https://queuemaster.site) |
+| Racket Arena | [racketarena.xyz](https://racketarena.xyz) |
+| Racket Social | [racketsocial.app](https://racketsocial.app) |
+| ServeLeague | [serveleague.com](https://serveleague.com) |
+| Shuttl | [shuttl.app](https://shuttl.app) |
+| ShuttleFlow | [shuttleflow.ph](https://shuttleflow.ph) |
+| ShuttleOps | [www.shuttleops.com](https://www.shuttleops.com) |
+| ShuttlePilot | [shuttlepilot.io](https://shuttlepilot.io) |
+| SmashHQ | [smashhq.app](https://smashhq.app) — independently located |
+| SportyHQ | [sportyhq.com](https://sportyhq.com) |
+| UBR - Universal Badminton Rating | [universalbadmintonrating.com](https://universalbadmintonrating.com) |
+| vsBadminton | [www.vsbadminton.co.uk](https://www.vsbadminton.co.uk) |
+
+### Additional official pages consulted
+
+A links each finding to its source. This register includes additional indexes and supplementary pages reviewed.
+
+- **BadBoard:** [badboard.net/howItWorks.aspx](https://badboard.net/howItWorks.aspx); [badboard.net/extraFeatures.aspx](https://badboard.net/extraFeatures.aspx); [badboard.net/purchase.aspx](https://badboard.net/purchase.aspx).
+- **Badminton Peg System:** [play.google.com/store/apps/details?id=com.bps.badmintonPegSystem](https://play.google.com/store/apps/details?id=com.bps.badmintonPegSystem).
+- **CourtMaster:** [courtsync-a95f0.web.app/](https://courtsync-a95f0.web.app/); [courtsync-a95f0.web.app/en/index.html](https://courtsync-a95f0.web.app/en/index.html); [courtsync-a95f0.web.app/guide.html](https://courtsync-a95f0.web.app/guide.html).
+- **eBadders:** [ebadders.com/help/](https://ebadders.com/help/); [ebadders.com/help/session-manager/](https://ebadders.com/help/session-manager/); [ebadders.com/help/ranking/](https://ebadders.com/help/ranking/); [ebadders.com/help/account/](https://ebadders.com/help/account/).
+- **ePegboard:** [docs.epegboard.com/](https://docs.epegboard.com/); [docs.epegboard.com/getting-started/](https://docs.epegboard.com/getting-started/); [docs.epegboard.com/tutorials/first-club-night/](https://docs.epegboard.com/tutorials/first-club-night/); [docs.epegboard.com/club-nights/the-picker/](https://docs.epegboard.com/club-nights/the-picker/); [docs.epegboard.com/club-nights/sessions/](https://docs.epegboard.com/club-nights/sessions/); [docs.epegboard.com/club-nights/kiosk-mode/](https://docs.epegboard.com/club-nights/kiosk-mode/); [docs.epegboard.com/club-nights/members/](https://docs.epegboard.com/club-nights/members/); [docs.epegboard.com/club-nights/special-requests/](https://docs.epegboard.com/club-nights/special-requests/); [docs.epegboard.com/club-nights/payments/](https://docs.epegboard.com/club-nights/payments/); [docs.epegboard.com/club-nights/competitions/](https://docs.epegboard.com/club-nights/competitions/); [docs.epegboard.com/ratings/overview/](https://docs.epegboard.com/ratings/overview/); [docs.epegboard.com/ratings/how-a-rating-change-is-calculated/](https://docs.epegboard.com/ratings/how-a-rating-change-is-calculated/); [www.epegboard.com/pricing](https://www.epegboard.com/pricing).
+- **Ladderly:** [ladderly.online/how-it-works](https://ladderly.online/how-it-works); [ladderly.online/rating-explanation](https://ladderly.online/rating-explanation); [ladderly.online/pricing](https://ladderly.online/pricing).
+- **NextFour:** [nextfour.app/support.html](https://nextfour.app/support.html).
+- **ServeLeague:** [serveleague.com/features/league-management/](https://serveleague.com/features/league-management/); [serveleague.com/pricing/](https://serveleague.com/pricing/); [serveleague.com/tutorials/setting-up-drop-in-leagues/](https://serveleague.com/tutorials/setting-up-drop-in-leagues/); [serveleague.com/tutorials/reference/drop-in-leagues/](https://serveleague.com/tutorials/reference/drop-in-leagues/).
+- **ShuttleFlow:** [shuttleflow.ph/how-it-works](https://shuttleflow.ph/how-it-works).
+- **SmashHQ:** [smashhq.app/docs](https://smashhq.app/docs).
+- **vsBadminton:** [www.vsbadminton.co.uk/playing/](https://www.vsbadminton.co.uk/playing/); [www.vsbadminton.co.uk/advanced/](https://www.vsbadminton.co.uk/advanced/); [www.vsbadminton.co.uk/questions/](https://www.vsbadminton.co.uk/questions/); [www.vsbadminton.co.uk/sharing/](https://www.vsbadminton.co.uk/sharing/); [www.vsbadminton.co.uk/summaries/](https://www.vsbadminton.co.uk/summaries/); [www.vsbadminton.co.uk/sessions/](https://www.vsbadminton.co.uk/sessions/); [www.vsbadminton.co.uk/scoring/](https://www.vsbadminton.co.uk/scoring/).
+
+Unsuccessful linked-page attempts: [Ladderly FAQ](https://ladderly.online/faq), [ePegboard attendance report](https://docs.epegboard.com/insights/attendance-over-time/), [NextFour Google Play listing](https://play.google.com/store/apps/details?id=app.nextfour.mobile), [Matchit developer site](https://gamematcher-ee521.web.app/). These failures do not invalidate readable canonical sources or establish absent features.
+
+**SmashHQ identity:** https://smashhq.app uses the exact product name/logo, describes badminton club operations, provides registration/login, lists admin@smashhq.app and links its own operating guide. This establishes a first-party source matching name and product category, rather than a similarly named app. It is used under rule (i). No candidate remains UNLOCATED.
+
+## I. Corrections log
+
+Changes from provisional scoring while checking scope, qualifications and consistency follow. U is never zero.
+
+| Product | Criterion / change | Check and reason |
+| --- | --- | --- |
+| ePegboard | C3: 2 → 1 | (c)/(d): soft balance objective competes with other priorities; matches E. |
+| ServeLeague | C13: 2 → 1 | (f): inspected format evidence did not meet the full operating/exception standard. |
+| Badminton Peg System | C3: 1 → U | (f): queue-based Smart Assign does not establish skill balance. |
+| Badminton Peg System | C10: 2 → 1 | (f): overview evidence no stronger than comparable display claims. |
+| Badminton Peg System | C15: 2 → 1 | (c)/(f): manual verification qualifies instant-start practicality. |
+| ShuttleFlow | C15: 2 → 1 | (f): free signup/guest access is not full price/capacity evidence. |
+| NextFour | C8: 1 → U | (f): skill-mode label does not establish a rating system. |
+| Qcourt | C3: 1 → U | (f): stored grades do not establish balanced allocation. |
+| eBadders | C10: 1 → U | (f): tablet/laptop access is not a multi-court/kiosk feature. |
+| Matchit | C8: 1 → U | (f): skill pairing does not establish retained/updating ratings. |
+| UBR | C10: 1 → U | (f): court matchmaking is not a display/kiosk. |
+| Badmatch | C10: 1 → U | (f): viewer permissions do not establish court display/kiosk. |
+| Airchy WebOS | C1: 1 → U | (f): booking/waitlist is not arrival check-in. |
+| Airchy WebOS | C13: 1 → U | (f): a ranking ladder is not competition operation. |
+
+Further source-driven changes during the same audit: BPS C6 U→1 (visible queue); SmashHQ C3/C7 U→1 (SOP); Qcourt C5 U→1 (shuffle); eBadders C6/C13/C15 U→1 (ranking rules, registration, free player accounts); CourtMaster C1/C4/C6/C7/C12 U→1 and C9 1→2 (linked guide/site); Matchit C7 U→1 (manual-request release note); UBR C11 U→1 (event records); Badmatch C11/C12 U→1 (session history/administration).
+
+**Self-consistency gate:** all six E qualifiers have 1. C4/C5/C12/C13/C14 were already partial; C3 required correction.
+
+**Near-perfect gate:** no candidate received 2 on all 15 criteria. The highest provisional subtotal was nevertheless re-examined: ePegboard 84.5 became 78.5 after C3 fell six points. Its fairness, payment, tournament and offline limitations were rechecked; documentation volume did not upgrade them.
+
+**Cross-product gate:** marketing balance claims are 1 for every vendor; queue/grade storage without a balancing claim is U. Waiting evidence without adequate edge rules remains 1. General screen access is not kiosk evidence. ePegboard earns C6=2 for a documented explanation of an individual suggested game; aggregate algorithms/gaps alone stay 1. ePegboard and Ladderly earn C8=2 from operating rating details, not merely naming algorithms. Detailed scoring flows support C9=2 for ePegboard, ShuttlePilot and CourtMaster. C2=2 requires current-availability/free-court transition detail. These explain the remaining differences between superficially similar evidence.
+
+## J. Retrieval log
+
+“Readable” means meaningful product content was obtained at the supplied URL, allowing normal same-product redirects. “Recovered” records a failed first method followed by successful direct retrieval. “Shell only” means an HTTP page/title arrived but no usable body was readable.
+
+A browser fallback was attempted but its runtime failed; no visual inspection is claimed. Direct retrieval recovered several pages. These are audit access limitations, not proof that services are down for users.
+
+| Candidate | Final supplied-URL outcome | Treatment |
+| --- | --- | --- |
+| Airchy WebOS | Readable through web retrieval | Supported criteria scored; other cells U |
+| BadBoard | Readable through web retrieval | Supported criteria scored; other cells U |
+| Badminton Peg System | Recovered: initial web error; direct HTTP 200 with readable content | Supported criteria scored; other cells U |
+| Badmatch | Readable through web retrieval | Supported criteria scored; other cells U |
+| Court Buddy | HTTP 200 shell/title only; usable product body not readable | C1–C15 U; no verified score |
+| Court Manager | HTTP 200 shell/title only; usable product body not readable | C1–C15 U; no verified score |
+| CourtMaster - Match Manager | Recovered: initial web error; direct HTTP 200 with readable content | Supported criteria scored; other cells U |
+| CourtsFlow | HTTP 200 shell/title only; usable product body not readable | C1–C15 U; no verified score |
+| Digital Pegboard | Readable through web retrieval | Supported criteria scored; other cells U |
+| eBadders | Readable through web retrieval | Supported criteria scored; other cells U |
+| ePegboard | Readable through web retrieval | Supported criteria scored; other cells U |
+| Ladderly | Readable through web retrieval | Supported criteria scored; other cells U |
+| Matchit | Recovered: initial web error; direct HTTP 200 with readable content | Supported criteria scored; other cells U |
+| NextFour | Readable through web retrieval | Supported criteria scored; other cells U |
+| PaQueueKa | Readable through web retrieval | Supported criteria scored; other cells U |
+| Qcourt | Readable through web retrieval | Supported criteria scored; other cells U |
+| QourtX | Readable through web retrieval | Supported criteria scored; other cells U |
+| QSENPAI | Retrieval failed: HTTP 404 | C1–C15 U; no verified score |
+| Queue Master | HTTP 200 shell/title only; usable product body not readable | C1–C15 U; no verified score |
+| Racket Arena | HTTP 200 shell/title only; usable product body not readable | C1–C15 U; no verified score |
+| Racket Social | Readable through web retrieval | Supported criteria scored; other cells U |
+| ServeLeague | Readable through web retrieval | Supported criteria scored; other cells U |
+| Shuttl | Recovered: initial web error; direct HTTP 200 with readable content | Supported criteria scored; other cells U |
+| ShuttleFlow | Readable through web retrieval | Supported criteria scored; other cells U |
+| ShuttleOps | HTTP 200 shell/title only; usable product body not readable | C1–C15 U; no verified score |
+| ShuttlePilot | Recovered: initial web error; direct HTTP 200 with readable content | Supported criteria scored; other cells U |
+| SmashHQ | No supplied URL; independently located source readable | Supported criteria scored; other cells U |
+| SportyHQ | Retrieval failed: direct HTTP 403; web retrieval also failed | C1–C15 U; no verified score |
+| UBR - Universal Badminton Rating | Recovered: initial web error; direct HTTP 200 with readable content | Supported criteria scored; other cells U |
+| vsBadminton | Readable through web retrieval | Supported criteria scored; other cells U |
+
+**UNLOCATED count: 0.** SmashHQ was located under rule (i); the other 29 identities stayed tied to the supplied URLs. No substitute products were used.

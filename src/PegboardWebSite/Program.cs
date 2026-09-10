@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.StaticFiles;
 using PegboardWebSite.Services;
 using Serilog;
 
@@ -55,7 +56,13 @@ public class Program
         }
 
         app.UseHttpsRedirection();
-        app.UseStaticFiles();
+
+        // .txt is served without a charset by default, so a browser falls back to its own
+        // encoding and UTF-8 punctuation arrives as mojibake. The /compare evidence files are
+        // published verbatim and contain en-dashes and quotes, so state the charset.
+        var contentTypes = new FileExtensionContentTypeProvider();
+        contentTypes.Mappings[".txt"] = "text/plain; charset=utf-8";
+        app.UseStaticFiles(new StaticFileOptions { ContentTypeProvider = contentTypes });
 
         app.UseRouting();
 

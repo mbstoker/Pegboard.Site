@@ -1,0 +1,242 @@
+@page "/compare/method"
+@using PegboardWebSite.Services
+@{
+    Layout = "_LayoutMarketing";
+    ViewData["Title"] = "How the club-night software evaluation was scored: rubric, weights and every correction";
+    ViewData["Description"] = "The full method behind our 30-product badminton club-night comparison: the fifteen criteria and their weights declared before scoring, the evidence rules, the corrections log including the one that cut our own score, the retrieval log, and the unedited output.";
+    ViewData["OgTitle"] = "The evaluation method, in full";
+
+    const string published = "2026-09-09";
+    const string canonical = "https://www.epegboard.com/compare/method";
+
+    var criteria = new (int N, string Name, int Weight)[]
+    {
+        (1,  "Arrival, check-in and late joiners", 6),
+        (2,  "Dynamic next-game and court allocation", 12),
+        (3,  "Skill-balanced doubles", 12),
+        (4,  "Waiting-time and sit-out fairness", 10),
+        (5,  "Partner and opponent variety", 8),
+        (6,  "Explainability and transparency", 8),
+        (7,  "Manual override and special cases", 5),
+        (8,  "Player rating system", 7),
+        (9,  "Live scoring, statistics and history", 5),
+        (10, "Multi-court display and kiosk operation", 5),
+        (11, "Attendance and session reporting", 5),
+        (12, "Payments and member administration", 5),
+        (13, "Competitions, tournaments and league workflows", 4),
+        (14, "Resilience and device accessibility", 4),
+        (15, "Price and practical limits", 4)
+    };
+
+    // The evaluator's own revisions during its self-consistency pass. Ours is first
+    // deliberately - it is the one that matters for reading the rest.
+    var revisions = new (string Product, string Criterion, string Change, string Why)[]
+    {
+        ("ePegboard",     "12 Payments",      "full to partial",     "The documentation says plainly that payments are recorded, not processed. It is not a card machine, so a full score conflicted with its own prose."),
+        ("QourtX",        "5 Variety",        "full to partial",     "Partner rotation is documented; equivalent detail for opponent variety is not."),
+        ("QourtX",        "6 Explainability", "full to partial",     "Rating, fatigue and history are described, but not a user-facing explanation of why an individual match was chosen."),
+        ("QourtX",        "7 Manual override","full to partial",     "Preferences and configuration are documented; a comparable manual-override workflow is not."),
+        ("QourtX",        "14 Resilience",    "full to partial",     "Native mobile availability is documented; offline operation is not."),
+        ("ShuttlePilot",  "10 Kiosk",         "full to partial",     "Laptop multi-round visibility is documented; a kiosk or wallboard workflow is not."),
+        ("ShuttlePilot",  "12 Payments",      "full to partial",     "Roles and roster administration are documented; club payment administration is not."),
+        ("ShuttlePilot",  "14 Resilience",    "full to partial",     "Phone and browser operation is documented; offline resilience is not."),
+        ("Racket Social", "6 Explainability", "full to partial",     "The generated match and ratings are exposed, but not a detailed pick explanation."),
+        ("Racket Social", "12 Payments",      "full to unresolved",  "No adequate evidence either way."),
+        ("Racket Social", "13 Competitions",  "full to unresolved",  "Tournament functionality is described as beta or under overhaul rather than a completed workflow."),
+        ("PaQueueKa",     "13 Competitions",  "partial to absent",   "The site labels tournament management \"coming soon\", so this is verified absent as a current capability rather than merely undocumented."),
+        ("BadBoard",      "8 Ratings",        "full to partial",     "A 1-10 player grade is documented, which is not the same as a dynamic performance rating."),
+        ("BadBoard",      "10 Kiosk",         "full to partial",     "It requires a Windows laptop or PC."),
+        ("eBadders",      "6 Explainability", "full to unresolved",  "No documented selection-explanation mechanism was found."),
+        ("eBadders",      "10 Kiosk",         "full to unresolved",  "No sufficient evidence for multi-court display operation."),
+        ("eBadders",      "14 Resilience",    "full to unresolved",  "No adequate resilience or device-accessibility evidence."),
+        ("eBadders",      "15 Price",         "full to unresolved",  "Pricing and practical limits were not sufficiently documented in the retrieved material."),
+        ("vsBadminton",   "7 Manual override","full to partial",     "It can select games and has settings, but a comprehensive manual-override model is not documented."),
+        ("vsBadminton",   "15 Price",         "full to unresolved",  "No sufficiently clear current pricing evidence.")
+    };
+
+    var retrieval = new (string Product, string Result)[]
+    {
+        ("Airchy WebOS", "Read"), ("BadBoard", "Read"), ("Badminton Peg System", "Read"),
+        ("Badmatch", "Read, but very sparse"),
+        ("Court Buddy", "Title only - page built in the browser. Also a pickleball product"),
+        ("Court Manager", "Title only - page built in the browser, and the URL used was its app dashboard"),
+        ("CourtMaster", "App Store page rate-limited the request (HTTP 429)"),
+        ("CourtsFlow", "Title only - page built in the browser. Run 2, reading through a browser, scored it 40.5"),
+        ("Digital Pegboard", "Read"),
+        ("eBadders", "Read"), ("ePegboard", "Read"), ("Ladderly", "Read"),
+        ("Matchit", "App Store page could not be retrieved"), ("NextFour", "Read"),
+        ("PaQueueKa", "Read"), ("Qcourt", "Read"), ("QourtX", "Read"),
+        ("QSENPAI", "HTTP 404 - the URL in our records is wrong"),
+        ("Queue Master", "Title only - page built in the browser"),
+        ("Racket Arena", "Title only - page built in the browser"), ("Racket Social", "Read"),
+        ("ServeLeague", "Read"), ("Shuttl", "Read"), ("ShuttleFlow", "Read"),
+        ("ShuttleOps", "Title only - page built in the browser"), ("ShuttlePilot", "Read"),
+        ("SmashHQ", "Not located by this run. It exists, at smashhq.app - a later run found it and this one did not"),
+        ("SportyHQ", "HTTP 403 - the request was declined"), ("UBR", "Read"), ("vsBadminton", "Read")
+    };
+
+    var articleJsonLd = GuideSchema.Article(
+        "How the club-night software evaluation was scored: rubric, weights and every correction",
+        "The full method behind our 30-product badminton club-night comparison, including the correction that cut our own score.",
+        canonical, published);
+}
+
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+}
+
+<section class="page-hero" style="padding:0">
+  <div class="wrap">
+    <div class="inner">
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/compare">Compare</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Method</span></div>
+      <h1 style="margin-top:10px">How it was scored</h1>
+      <p class="lede">The rubric was written before anything was looked at, and the same one was used for all three runs with its weights unaltered. This page is all of it: the fifteen criteria and their weights, the evidence rules, the scores each evaluator revised while running, what we corrected afterwards, and the raw outputs with nothing taken out.</p>
+      <div class="guide-meta">
+        <span class="gm-tag">Method</span>
+        <span>3 runs</span>
+        <span>9 September 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:900px">
+
+    <div class="prose">
+      <p class="lead">The <a href="/compare">results are here</a>. This page is the working behind them, published so that a sceptical reader can disagree with the method rather than having to take the number on trust.</p>
+    </div>
+
+    <div class="guide-toc" style="margin-top:28px">
+      <h4>On this page</h4>
+      <a href="#criteria">The fifteen criteria and their weights</a>
+      <a href="#rules">The evidence rules</a>
+      <a href="#revisions">Scores the evaluator revised while running</a>
+      <a href="#ours">What we corrected afterwards</a>
+      <a href="#retrieval">Retrieval log</a>
+      <a href="#raw">The prompt and the unedited output</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+
+      <h2 id="criteria">The fifteen criteria and their weights</h2>
+
+      <p>One hundred points, declared in the prompt before any product was examined, and weighted for a UK social club night of 18 to 26 players on four courts where the live night is the main problem.</p>
+
+      <div class="cmp-wrap">
+        <table class="cmp-table">
+          <thead><tr><th>#</th><th>Criterion</th><th>Weight</th></tr></thead>
+          <tbody>
+            @foreach (var c in criteria)
+            {
+              <tr><td>@c.N</td><td>@c.Name</td><td>@c.Weight</td></tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <p style="margin-top:18px"><strong>Forty-eight of the hundred points sit in the first five criteria</strong> - arrival handling, next-game allocation, skill balance, sit-out fairness and partner variety. That is the live night, and it is where the weight deliberately went. Weight the other ten more heavily and a different product wins, which is the honest way to say that this result is scoped rather than universal.</p>
+
+      <h2 id="rules">The evidence rules</h2>
+
+      <p>Each criterion was scored in one of four states, from the product's own documentation:</p>
+
+      <ul>
+        <li><strong>Verified full</strong> - the full weight.</li>
+        <li><strong>Verified partial</strong> - half the weight.</li>
+        <li><strong>Verified absent</strong> - nothing, and the criterion counts as resolved.</li>
+        <li><strong>Insufficient evidence</strong> - nothing, and the criterion counts as unresolved.</li>
+      </ul>
+
+      <p>Four rules did the real work:</p>
+
+      <ol>
+        <li><strong>Insufficient evidence is never absence.</strong> It scores nothing but adds its full weight to the product's unresolved maximum, which is why every product has a range.</li>
+        <li><strong>One canonical URL per product</strong>, treated as its identity anchor, so a similarly named product elsewhere could not be substituted. This was added after an earlier run misidentified ShuttlePilot as a vehicle-dispatch product and scored it zero.</li>
+        <li><strong>Self-consistency.</strong> Anything the evaluator qualified in prose had to be scored partial rather than full. This is what produced the revisions below, including ours.</li>
+        <li><strong>A near-perfect total is a warning.</strong> The evaluator was told to treat one as a signal to re-examine rather than a result. The first run returned 100 out of 100 for ePegboard; this rule is why the published run does not.</li>
+      </ol>
+
+      <p>Documentation volume was explicitly not to be rewarded. It is worth saying that this rule only partly held: the evidential bar rewards documented capability, and a product that publishes a single landing page cannot demonstrate what it does. That is a real limitation of the method and it works in our favour, because we publish several hundred documentation pages.</p>
+
+      <h2 id="revisions">Scores the evaluator revised while running</h2>
+
+      <p>Run 1's self-consistency pass, below, revised twenty scores downward. <strong>Ours is first because it is the one that matters for reading the rest:</strong> a scoring pass that only ever finds fault with other people's products is not a scoring pass.</p>
+
+      <p>Run 2 did the same thing harder and to us specifically: it cut our explainability score because we name eight picker signals without publishing their weights, and our resilience score because offline running needs the separate paid Windows product and the web app's behaviour on a dropped connection is undocumented. <strong>Its self-consistency and leader re-examination checks together cost us six points, taking us from 91.5 to 85.5</strong>, and they changed none of the top ten positions. Run 3 scored us lower again, at 78.5, chiefly by reading skill-balanced doubles as partial rather than full.</p>
+
+      <div class="cmp-wrap">
+        <table class="cmp-table">
+          <thead><tr><th>Product</th><th>Criterion</th><th>Change</th><th>Reason given</th></tr></thead>
+          <tbody>
+            @foreach (var r in revisions)
+            {
+              <tr>
+                <td>@(r.Product == "ePegboard" ? Html.Raw("<strong>ePegboard</strong>") : Html.Raw(r.Product))</td>
+                <td>@r.Criterion</td>
+                <td>@r.Change</td>
+                <td>@r.Why</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <p style="margin-top:18px">Read the "unresolved" rows as what they are: the evaluator could not establish the capability from that product's documentation. Several of those products may well have the feature.</p>
+
+      <h2 id="ours">What we corrected afterwards</h2>
+
+      <p>The published run had defects of its own. We corrected four and disclosed one rather than adjusting it in our favour.</p>
+
+      <ol>
+        <li><strong>Our score, 97.5 down to 95.5.</strong> The run scored our competitions criterion fully met. Our own documentation describes groups, round-robin, live standings and knockouts without stating that singles and team formats are not built, so an evaluator reading only our public pages could not score it correctly. Corrected to partial, two independent runs then agree at 95.5.</li>
+        <li><strong>A duplicated row.</strong> Airchy WebOS appeared twice in both tables. The run flagged the duplication itself, twice, and corrected it neither time.</li>
+        <li><strong>The sort order.</strong> The run ignored its own instruction to sort by score, placing a 38.5 above a 63.0.</li>
+        <li><strong>A missing product.</strong> Matchit is one of the thirty and appears in the retrieval log, but had no row in either score table.</li>
+      </ol>
+
+      <p><strong>Disclosed and not corrected:</strong> our resilience criterion is scored fully met while the evaluation's own weaknesses section qualifies the web-versus-offline trade-off. Correcting it would take us to 93.5. We left it because 95.5 is what two runs converge on independently once the one checkable error is removed, and swapping a converged figure for a chosen one is the failure this whole method exists to avoid. A future run should settle it.</p>
+
+      <h2 id="retrieval">Retrieval log</h2>
+
+      <p>Run 1's log, kept because it is the instructive one. Whether each product's page could actually be read. <strong>Ten could not be, and those ten were not scored</strong> - which with SmashHQ, supplied without an address and not located by that run, is why run 1 scored 19 of the 30. This log is the difference between "we could not check" and "it does not do this".</p>
+
+      <p><strong>Run 2, reading pages through a browser, scored 27 of the 30.</strong> Only two defeated it: Court Manager, whose address serves an admin login form with no public product information, and QSENPAI, whose address returns a 404 with nothing deployed at it. Run 3 scored 22 and located SmashHQ, which neither of the others found.</p>
+
+      <p>We re-checked all ten by hand on 9 September 2026 rather than leaving them as a blank. <strong>Six return a page title and nothing else, because they build their pages in the browser</strong> - open them normally and they work fine. One declined the request with a 403, one app-store listing rate-limited us with a 429 and a second could not be retrieved, and one URL in our own records is simply wrong and returns a 404.</p>
+
+      <p><strong>This is the biggest single weakness in the method, and it is systematically unfair to one kind of product.</strong> A modern single-page application is invisible to a reader that does not run JavaScript, no matter how good it is. CourtsFlow is the proof: run 1 could not read it at all, and run 2, reading the same site through a browser, scored it 40.5 and placed it mid-table. Nothing about the product changed between the two - only our reader. The fix for a future run is a browser that executes the page, not a better list of URLs, and until that happens nothing on this site should be read as a judgement on those ten.</p>
+
+      <div class="cmp-wrap">
+        <table class="cmp-table">
+          <thead><tr><th>Product</th><th>Result</th></tr></thead>
+          <tbody>
+            @foreach (var r in retrieval)
+            {
+              <tr><td>@r.Product</td><td>@r.Result</td></tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="raw">The prompt and the unedited outputs</h2>
+
+      <p>Published as plain text, exactly as sent and returned. They are not tidied, and they contain the parts that do not suit us - including the 97.5 that run 1 printed and we corrected to 95.5, and run 3 scoring us 17 points lower than run 1 did.</p>
+
+      <ul>
+        <li><a href="/evidence/ai-comparison-2026-09-09/prompt.txt">The prompt, in full</a> - identical for all three runs, weights unaltered</li>
+        <li><a href="/evidence/ai-comparison-2026-09-09/output.txt">Run 1, unedited</a> - static fetch, 19 of 30 scored</li>
+        <li><a href="/evidence/ai-comparison-2026-09-09/output-run2.txt">Run 2, unedited</a> - browser-rendered, 27 of 30 scored. The run this site leans on most</li>
+        <li><a href="/evidence/ai-comparison-2026-09-09/output-run3.txt">Run 3, unedited</a> - a second AI vendor, 22 of 30 scored</li>
+      </ul>
+
+      <p>All three are the responses as returned. Run 2 opens by declaring an interest of its own - it noticed it was running on a machine with an ePegboard project folder on it, said so, and pointed the reader at the section quantifying how much of our lead is documentation depth rather than capability. It then scored us ten points lower than the run that did not know.</p>
+
+      <div class="guide-callout" style="margin-top:26px">
+        <h4>If you make one of these products</h4>
+        <p style="margin-top:8px">If your product was not assessed, or you think a criterion was scored wrongly, <a href="/contact">tell us</a>. We will re-run it against the same rubric with a URL you choose, and publish the result whichever way it goes.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
