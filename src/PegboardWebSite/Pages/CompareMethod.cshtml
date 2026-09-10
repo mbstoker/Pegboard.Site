@@ -61,7 +61,7 @@
         ("Court Buddy", "Title only - page built in the browser. Also a pickleball product"),
         ("Court Manager", "Title only - page built in the browser, and the URL used was its app dashboard"),
         ("CourtMaster", "App Store page rate-limited the request (HTTP 429)"),
-        ("CourtsFlow", "Title only - page built in the browser. An earlier run read it and scored 59.5"),
+        ("CourtsFlow", "Title only - page built in the browser. Run 2, reading through a browser, scored it 40.5"),
         ("Digital Pegboard", "Read"),
         ("eBadders", "Read"), ("ePegboard", "Read"), ("Ladderly", "Read"),
         ("Matchit", "App Store page could not be retrieved"), ("NextFour", "Read"),
@@ -163,7 +163,7 @@
 
       <p>Run 1's self-consistency pass, below, revised twenty scores downward. <strong>Ours is first because it is the one that matters for reading the rest:</strong> a scoring pass that only ever finds fault with other people's products is not a scoring pass.</p>
 
-      <p>Run 2 did the same thing harder and to us specifically: it cut our explainability score because we name eight picker signals without publishing their weights, and our resilience score because offline running needs the separate paid Windows product and the web app's behaviour on a dropped connection is undocumented. <strong>Those two corrections cost us six points and took us from 91.5 to 85.5</strong>, and they changed none of the top ten positions. Run 3 scored us lower again, at 78.5, chiefly by reading skill-balanced doubles as partial rather than full.</p>
+      <p>Run 2 did the same thing harder and to us specifically: it cut our explainability score because we name eight picker signals without publishing their weights, and our resilience score because offline running needs the separate paid Windows product and the web app's behaviour on a dropped connection is undocumented. <strong>Its self-consistency and leader re-examination checks together cost us six points, taking us from 91.5 to 85.5</strong>, and they changed none of the top ten positions. Run 3 scored us lower again, at 78.5, chiefly by reading skill-balanced doubles as partial rather than full.</p>
 
       <div class="cmp-wrap">
         <table class="cmp-table">
@@ -199,13 +199,13 @@
 
       <h2 id="retrieval">Retrieval log</h2>
 
-      <p>Run 1's log, kept because it is the instructive one. Whether each product's page could actually be read. <strong>Ten could not be, and those ten were not scored.</strong> This log is the difference between "we could not check" and "it does not do this".</p>
+      <p>Run 1's log, kept because it is the instructive one. Whether each product's page could actually be read. <strong>Ten could not be, and those ten were not scored</strong> - which with SmashHQ, supplied without an address and not located by that run, is why run 1 scored 19 of the 30. This log is the difference between "we could not check" and "it does not do this".</p>
 
       <p><strong>Run 2, reading pages through a browser, scored 27 of the 30.</strong> Only two defeated it: Court Manager, whose address serves an admin login form with no public product information, and QSENPAI, whose address returns a 404 with nothing deployed at it. Run 3 scored 22 and located SmashHQ, which neither of the others found.</p>
 
-      <p>We re-checked all ten by hand on 9 September 2026 rather than leaving them as a blank. <strong>Six return a page title and nothing else, because they build their pages in the browser</strong> - open them normally and they work fine. One declined the request with a 403, two are app-store listings that rate-limit automated readers, and one URL in our own records is simply wrong and returns a 404.</p>
+      <p>We re-checked all ten by hand on 9 September 2026 rather than leaving them as a blank. <strong>Six return a page title and nothing else, because they build their pages in the browser</strong> - open them normally and they work fine. One declined the request with a 403, one app-store listing rate-limited us with a 429 and a second could not be retrieved, and one URL in our own records is simply wrong and returns a 404.</p>
 
-      <p><strong>This is the biggest single weakness in the method, and it is systematically unfair to one kind of product.</strong> A modern single-page application is invisible to a reader that does not run JavaScript, no matter how good it is. CourtsFlow is the proof: an earlier run did read it and scored 59.5, which would have placed it mid-table. The fix for a future run is a browser that executes the page, not a better list of URLs - and until that happens, nothing on this site should be read as a judgement on those ten.</p>
+      <p><strong>This is the biggest single weakness in the method, and it is systematically unfair to one kind of product.</strong> A modern single-page application is invisible to a reader that does not run JavaScript, no matter how good it is. CourtsFlow is the proof: run 1 could not read it at all, and run 2, reading the same site through a browser, scored it 40.5 and placed it mid-table. Nothing about the product changed between the two - only our reader. The fix for a future run is a browser that executes the page, not a better list of URLs, and until that happens nothing on this site should be read as a judgement on those ten.</p>
 
       <div class="cmp-wrap">
         <table class="cmp-table">

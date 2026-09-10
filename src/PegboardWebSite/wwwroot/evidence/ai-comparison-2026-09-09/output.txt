@@ -1,6 +1,22 @@
-The evaluator response as returned, 9 September 2026. Unedited.
-It prints 97.5 for ePegboard; epegboard.com/compare publishes 95.5 and says why.
-==================================================================
+Run 1 - static fetch, 19 of 30 scored, 9 September 2026. Unedited.
+==========================================================================
+READ WITH THESE CORRECTIONS. They are not in the text below, which is why they are here.
+
+1. It prints 97.5 for ePegboard. The defensible figure is 95.5 and epegboard.com/compare
+   publishes 95.5. Our competitions documentation did not disclose what is not built.
+
+2. "Reached, but no readable page content" appears against Court Buddy, Court Manager,
+   CourtsFlow, Queue Master, Racket Arena and ShuttleOps. THOSE SITES ARE NOT BROKEN.
+   They build their pages in the browser and this run read static HTML only, so it saw a
+   page title and nothing else. Run 2 read most of them normally.
+
+3. SmashHQ is reported UNLOCATED. It exists, at smashhq.app. Run 3 found it.
+
+4. Court Manager was given app.court-manager.com, its admin dashboard. Its product site
+   is court-manager.com and nothing on it was assessed.
+
+The full diagnosis is at epegboard.com/compare/method.
+==========================================================================
 
 I counted **30 candidates**. I treated the supplied URL as the identity anchor for each product and did not substitute similarly named products elsewhere. One candidate, SmashHQ, has no supplied URL and I could not establish an authoritative product URL without violating the identity discipline, so it is **UNLOCATED** and unscored.
 

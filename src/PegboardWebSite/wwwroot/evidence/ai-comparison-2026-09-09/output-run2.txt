@@ -1,5 +1,15 @@
 Run 2 - browser-rendered retrieval, 27 of 30 scored, 9 September 2026. Unedited.
-==================================================================
+==========================================================================
+READ WITH THESE CORRECTIONS.
+
+1. It reports SmashHQ as UNLOCATED and says search identified no product of that name.
+   SmashHQ exists, at smashhq.app. Run 3 located it and we verified it directly.
+
+2. Court Manager was given app.court-manager.com, its admin dashboard, so this run saw a
+   login form. Its product site is court-manager.com and nothing on it was assessed.
+
+3. It declares its own conflict of interest in the first section. We have left that in.
+==========================================================================
 
 # Running the club night: 30 products, one rubric
 
