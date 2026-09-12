@@ -2,9 +2,9 @@
 @using PegboardWebSite.Services
 @{
     Layout = "_LayoutMarketing";
-    ViewData["Title"] = "Six AI evaluations of the badminton club-night market, scored against one rubric";
-    ViewData["Description"] = "We ran the same 100-point rubric six times, across two AI vendors and three models. ePegboard came first in all six and scored anywhere between 70.5 and 95.5. Every prompt, every score, and what most of our lead actually measures, published here.";
-    ViewData["OgTitle"] = "Six evaluations, one rubric";
+    ViewData["Title"] = "Three AI evaluations of the badminton club-night market, scored against one rubric";
+    ViewData["Description"] = "We ran the same 100-point rubric three times on one day, across two AI vendors and three models. ePegboard came first in all three and scored anywhere between 70.5 and 95.5. Every prompt, every score, and what most of our lead actually measures, published here.";
+    ViewData["OgTitle"] = "Three evaluations, one rubric";
 
     const string published = "2026-09-09";
     const string canonical = "https://www.epegboard.com/compare";
@@ -51,19 +51,16 @@
         ("Digital Pegboard",       "12.5-87.5",   "23.5-76.5",   "12.5-87.5")
     };
 
-    var runs = new (string When, string Model, string Retrieval, string Field, string Us, string Second, string Margin)[]
+    var runs = new (string Model, string Retrieval, string Field, string Us, string Second, string Margin)[]
     {
-        ("First set", "Static fetch",   "No JavaScript",   "19 of 30 scored", "95.5", "QourtX 87.5",                     "8.0"),
-        ("First set", "Claude Opus 5",  "Browser",         "27 of 30 scored", "85.5", "ShuttlePilot 73.0",               "12.5"),
-        ("First set", "GPT-6",          "Mixed",           "22 of 30 scored", "78.5", "vsBadminton 61.5",                "17.0"),
-        ("Re-run",    "ChatGPT (free)", "No JavaScript",   "30 of 33 scored", "95.5", "ShuttleFlow / Racket Social 85.5","10.0"),
-        ("Re-run",    "Claude Opus 5",  "Browser",         "32 of 33 scored", "90.5", "ShuttlSync 84.5",                 "6.0"),
-        ("Re-run",    "ChatGPT 5.6",    "Browser",         "32 of 33 scored", "70.5", "ShuttlSync 62.0",                 "8.5")
+        ("Claude Opus 5",  "Browser",       "32 of 33 scored", "90.5", "ShuttlSync 84.5",                 "6.0"),
+        ("ChatGPT 5.6",    "Browser",       "32 of 33 scored", "70.5", "ShuttlSync 62.0",                 "8.5"),
+        ("ChatGPT (free)", "No JavaScript", "30 of 33 scored", "95.5", "ShuttleFlow / Racket Social 85.5", "10.0")
     };
 
     var articleJsonLd = GuideSchema.Article(
-        "Six AI evaluations of the badminton club-night market, scored against one rubric",
-        "The same 100-point rubric run six times across two AI vendors and three models. ePegboard placed first in all six, scoring between 70.5 and 95.5.",
+        "Three AI evaluations of the badminton club-night market, scored against one rubric",
+        "The same 100-point rubric run three times across two AI vendors and three models. ePegboard placed first in all three, scoring between 70.5 and 95.5.",
         canonical, published);
 }
 
@@ -75,13 +72,13 @@
   <div class="wrap">
     <div class="inner">
       <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Compare</span></div>
-      <h1 style="margin-top:10px">Six evaluations, thirty-three products, one rubric</h1>
-      <p class="lede">We asked AI to evaluate the badminton club-night market against a rubric written before anything was scored, for one kind of club: a UK social night, 18 to 26 players, four courts, mixed strength, where the live night is the main problem. We have now run it six times, across two vendors and three models. <strong>ePegboard came first in all six.</strong> It scored anywhere from 70.5 to 95.5, and that spread is the more useful half of the result.</p>
+      <h1 style="margin-top:10px">Three evaluations, thirty-three products, one rubric</h1>
+      <p class="lede">We asked AI to evaluate the badminton club-night market against a rubric written before anything was scored, for one kind of club: a UK social night, 18 to 26 players, four courts, mixed strength, where the live night is the main problem. We ran it three times on the same day, across two vendors and three models. <strong>ePegboard came first in all three.</strong> It scored 90.5, then 95.5, then 70.5 - and that spread is the more useful half of the result.</p>
       <div class="guide-meta">
         <span class="gm-tag">Evaluation</span>
-        <span>6 runs</span>
+        <span>3 runs</span>
         <span>33 products</span>
-        <span>Updated 12 September 2026</span>
+        <span>12 September 2026</span>
       </div>
     </div>
   </div>
@@ -91,16 +88,16 @@
   <div class="wrap" style="max-width:900px">
 
     <div class="prose">
-      <p class="lead"><strong>One evaluation tells you almost nothing.</strong> You cannot separate a real result from a lucky prompt, a generous model or a bad afternoon's web crawling. Six let you see which findings hold and which move - and on this evidence, exactly one thing holds.</p>
+      <p class="lead"><strong>One evaluation tells you almost nothing.</strong> You cannot separate a real result from a lucky prompt, a generous model or a bad afternoon's web crawling. Three let you see which findings hold and which move - and on this evidence, exactly one does.</p>
 
       <p style="color:var(--muted-2);font-size:.95rem"><strong>Disclosure:</strong> we wrote the rubric and ran these evaluations ourselves, and we sell one of the products in them. Nobody independent commissioned this. The runs were Claude Opus 5 and two ChatGPT models, in September 2026. Every prompt and every unedited response is published below, including the run that scores us lowest and the section explaining what most of our lead actually measures.</p>
     </div>
 
     <div class="guide-toc" style="margin-top:28px">
       <h4>On this page</h4>
-      <a href="#runs">The six runs</a>
+      <a href="#runs">The three runs</a>
       <a href="#holds">What holds, and what does not</a>
-      <a href="#table">Every product, the three current runs</a>
+      <a href="#table">Every product, every run</a>
       <a href="#margin">What our lead actually measures</a>
       <a href="#weak">Where we are weak</a>
       <a href="#others">When another product is the better answer</a>
@@ -110,20 +107,20 @@
 
     <div class="prose" style="margin-top:34px">
 
-      <h2 id="runs">The six runs</h2>
+      <h2 id="runs">The three runs</h2>
 
-      <p>Same fifteen criteria, same weights, same club profile every time. Two things changed: the model doing the reading, and - after the first set exposed how badly it mattered - the quality of the inputs we handed it.</p>
+      <p>Same fifteen criteria, same weights, same club profile, same candidate list, same day. The only thing that changed between them was the model doing the reading.</p>
 
       <div class="cmp-wrap">
         <table class="cmp-table">
           <thead>
-            <tr><th>Set</th><th>Model</th><th>Retrieval</th><th>Field</th><th>ePegboard</th><th>Second place</th><th>Margin</th></tr>
+            <tr><th>Model</th><th>Retrieval</th><th>Field</th><th>ePegboard</th><th>Second place</th><th>Margin</th></tr>
           </thead>
           <tbody>
             @foreach (var r in runs)
             {
               <tr>
-                <td>@r.When</td><td>@r.Model</td><td>@r.Retrieval</td><td>@r.Field</td>
+                <td>@r.Model</td><td>@r.Retrieval</td><td>@r.Field</td>
                 <td><strong>@r.Us</strong></td><td>@r.Second</td><td>@r.Margin</td>
               </tr>
             }
@@ -131,26 +128,26 @@
         </table>
       </div>
 
-      <p style="margin-top:18px">The second set fixed inputs the first set got wrong: a competitor we had pointed at the wrong address, another we had wrongly concluded did not exist, six sites our reader could not render, and three real rivals missing from the field entirely. Details in <a href="#wrong">what we got wrong</a>.</p>
+      <p style="margin-top:18px">An earlier attempt at this, on a worse candidate list, is not reported here - we got four things wrong in it and fixed them before these runs. What those were, and what they cost, is in <a href="#wrong">what we got wrong</a>.</p>
 
       <h2 id="holds">What holds, and what does not</h2>
 
-      <p><strong>One finding survives all six runs: ePegboard comes first.</strong> Two vendors, three models, two versions of the prompt, wrong inputs and corrected inputs. It has not once come second.</p>
+      <p><strong>One finding survives all three runs: ePegboard comes first.</strong> Two vendors, three models, identical inputs. It does not come second in any of them.</p>
 
-      <p><strong>The score does not survive at all.</strong> It has been 70.5, 78.5, 85.5, 90.5, 95.5 and 95.5. More pointedly: <strong>70.5 and 90.5 came from the same corrected inputs on the same day</strong>, from two different models. Twenty points apart, with everything else held constant. That is a measure of how harshly a given evaluator reads a documentation page, not of how well a product runs a Tuesday night.</p>
+      <p><strong>The score does not survive at all.</strong> It is 90.5, 95.5 and 70.5 - <strong>a twenty-point spread from the same inputs on the same day</strong>, with nothing changed but which model was reading. That is a measure of how harshly a given evaluator reads a documentation page, not of how well a product runs a Tuesday night. Anyone quoting a single number off a comparison like this, ours included, is quoting the evaluator rather than the product.</p>
 
       <div class="guide-callout">
         <h4>If you take one number off this page, take the margin, not the score</h4>
-        <p style="margin-top:8px">Our lead over second place has been <strong>6.0, 8.0, 8.5, 10.0, 12.5 and 17.0</strong> points. Always positive, never comfortable. The run that read the field most completely gives the <em>smallest</em> margin of the six.</p>
+        <p style="margin-top:8px">Our lead over second place is <strong>6.0, 8.5 and 10.0</strong> points. Always positive, never comfortable - and <em>smallest</em> in the run that read the field most completely.</p>
       </div>
 
-      <p><strong>And second place has changed five times.</strong> QourtX, ShuttlePilot, vsBadminton, ShuttleFlow and Racket Social tied, then ShuttlSync twice. Only ShuttlSync has repeated. Below first place this is not a ranking - it is noise with a leader sitting on top of it, and a club should shortlist two or three and try them.</p>
+      <p><strong>Second place is not stable either.</strong> ShuttlSync takes it in two runs; ShuttleFlow and Racket Social tie for it in the third, where ShuttlSync drops to eighth. Read the table below and you will find products that move forty points between runs. Below first place this is not a ranking - it is noise with a leader sitting on top of it, and a club should shortlist two or three and try them.</p>
 
-      <h2 id="table">Every product, the three current runs</h2>
+      <h2 id="table">Every product, every run</h2>
 
-      <p>The three runs on corrected inputs. <strong>Every figure is a range:</strong> the lower bound is what that run could evidence, the upper bound is what the product would reach if every criterion it could not establish turned out to be fully met. A single figure means nothing was left unresolved. A dash means that run resolved nothing for that product - <strong>never zero, and never a judgement on it.</strong></p>
+      <p><strong>Every figure is a range:</strong> the lower bound is what that run could evidence, the upper bound is what the product would reach if every criterion it could not establish turned out to be fully met. A single figure means nothing was left unresolved. A dash means that run resolved nothing for that product - <strong>never zero, and never a judgement on it.</strong></p>
 
-      <p>The earlier three runs are not in this table. Their inputs were wrong in ways we now understand, so their numbers are history rather than evidence - they are published in full below all the same.</p>
+      
 
       <div class="cmp-wrap">
         <table class="cmp-table">
@@ -240,7 +237,7 @@
       <p>Measured on 9 September 2026, across clubs whose first session was in 2026, excluding demo and template clubs. A "session" means one where a game was actually started - counting every session record merely created would give four in five and nearly two in three, and we would rather publish the figure that survives the stricter reading.</p>
 
       <div class="guide-callout" style="margin-top:26px">
-        <h4>The test that beats all six of these</h4>
+        <h4>The test that beats all three of these</h4>
         <p style="margin-top:8px">Run your own awkward night: a late arrival after three games, someone sitting out and rejoining, two courts finishing together, a pairing you want kept, a suggestion you overrule, and a wrong score that needs correcting. Then ask the organiser whether it took decisions out of their head or just moved them onto a screen.</p>
         <p style="margin-top:14px">ePegboard is free for clubs. So are several of the products above. Try more than one.</p>
         <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">Try the instant demo</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Set up a free club</a></p>
@@ -248,7 +245,7 @@
 
       <div style="margin-top:34px;padding-top:22px;border-top:1px solid var(--line)">
         <h4 style="margin:0 0 8px">Method and sources</h4>
-        <p style="color:var(--muted-2);font-size:.95rem;margin:0">All six runs used the same pre-declared 100-point rubric with weights unaltered. The criteria and weights, both prompts, the evidence rules, every run's corrections and retrieval logs and all six unedited responses are on the <a href="/compare/method">method page</a>. Product pages were read in September 2026 and products change; verify anything material with the supplier. For a shorter read on which tool suits which club, see <a href="/guides/best-badminton-club-night-software">our club-night software comparison</a>.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:0">All three runs used the same pre-declared 100-point rubric with weights unaltered. The criteria and weights, the prompt, the evidence rules, each run's corrections and retrieval logs and all three unedited responses are on the <a href="/compare/method">method page</a> - along with the earlier attempt we are not reporting from, published in full so you can see what changed and why. Product pages were read in September 2026 and products change; verify anything material with the supplier. For a shorter read on which tool suits which club, see <a href="/guides/best-badminton-club-night-software">our club-night software comparison</a>.</p>
       </div>
 
     </div>
