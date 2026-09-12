@@ -29,40 +29,40 @@
 
     // Full field. PARSED from the three runs' own tables, never retyped. A dash means that run
     // resolved no criteria for the product - it never means zero.
-    var rows = new (string Product, string Opus, string Free, string Sol)[]
+    var rows = new (string Product, string Url, string Opus, string Free, string Sol)[]
     {
-        ("ePegboard",              "90.5",        "95.5",        "70.5"),
-        ("ShuttlSync",             "84.5",        "73.0-82.0",   "62.0-66.0"),
-        ("ShuttlePilot",           "83.0-87.0",   "80.0-89.0",   "59.5-63.5"),
-        ("vsBadminton",            "83.0-87.0",   "76.0-89.0",   "57.0-61.0"),
-        ("Shuttl",                 "80.0-84.0",   "68.5-77.5",   "50.0-62.0"),
-        ("Court Manager",          "78.5-82.5",   "64.5-77.5",   "46.5-59.5"),
-        ("Racket Social",          "77.5-82.5",   "85.5-90.5",   "50.0"),
-        ("SmashHQ",                "69.5-78.5",   "71.0-80.0",   "48.0-52.0"),
-        ("Court Buddy",            "69.5-77.5",   "35.5-77.5",   "50.0"),
-        ("QourtX",                 "68.5-73.5",   "71.5-76.5",   "50.0"),
-        ("SportRevive",            "68.0",        "82.5-91.5",   "50.0"),
-        ("eBadders",               "67.0",        "7.5-100.0",   "48.0-52.0"),
-        ("ServeLeague",            "65.5-70.5",   "52.5-78.5",   "57.5"),
-        ("Badmatch",               "64.5-68.5",   "-",           "48.0-52.0"),
-        ("PaQueueKa",              "62.0-67.0",   "55.0-68.0",   "51.5-56.5"),
-        ("Ladderly",               "59.5-76.5",   "55.5-100.0",  "41.5-58.5"),
-        ("CourtsFlow",             "59.5-63.5",   "25.5-66.5",   "51.0-55.0"),
-        ("ShuttleFlow",            "55.0-59.0",   "85.5-89.5",   "50.0-62.0"),
-        ("BadBoard",               "55.0-67.0",   "74.5-82.5",   "57.0-61.0"),
-        ("ShuttleOps",             "52.5-61.5",   "35.5-64.5",   "50.5-61.5"),
-        ("UBR",                    "52.0-72.0",   "70.5-80.5",   "37.0-63.0"),
-        ("NextFour",               "50.0-69.0",   "53.5-70.5",   "46.5-65.5"),
-        ("ShuttleStats",           "49.0-66.0",   "5.5-100.0",   "45.5-54.5"),
-        ("Airchy WebOS",           "48.0-61.0",   "25.0-75.0",   "41.5-58.5"),
-        ("Queue Master",           "43.0-70.0",   "23.5-100.0",  "34.5-65.5"),
-        ("Qcourt",                 "42.5-62.5",   "65.0-77.0",   "42.0-58.0"),
-        ("Badminton Peg System",   "42.0-66.0",   "49.5-86.5",   "39.0-73.0"),
-        ("Racket Arena",           "30.0-70.0",   "-",           "30.5-69.5"),
-        ("SportyHQ",               "21.5-87.5",   "32.5-100.0",  "36.5-72.5"),
-        ("Matchit",                "21.0-79.0",   "37.5-74.5",   "23.5-76.5"),
-        ("CourtMaster",            "17.0-83.0",   "38.5-71.5",   "46.0-54.0"),
-        ("Digital Pegboard",       "12.5-87.5",   "23.5-76.5",   "12.5-87.5")
+        ("ePegboard",              "https://www.epegboard.com",                                  "90.5",        "95.5",        "70.5"),
+        ("ShuttlSync",             "https://shuttlsync.com",                                     "84.5",        "73.0-82.0",   "62.0-66.0"),
+        ("ShuttlePilot",           "https://shuttlepilot.io",                                    "83.0-87.0",   "80.0-89.0",   "59.5-63.5"),
+        ("vsBadminton",            "https://www.vsbadminton.co.uk",                              "83.0-87.0",   "76.0-89.0",   "57.0-61.0"),
+        ("Shuttl",                 "https://shuttl.app",                                         "80.0-84.0",   "68.5-77.5",   "50.0-62.0"),
+        ("Court Manager",          "https://www.court-manager.com",                              "78.5-82.5",   "64.5-77.5",   "46.5-59.5"),
+        ("Racket Social",          "https://racketsocial.app",                                   "77.5-82.5",   "85.5-90.5",   "50.0"),
+        ("SmashHQ",                "https://smashhq.app",                                        "69.5-78.5",   "71.0-80.0",   "48.0-52.0"),
+        ("Court Buddy",            "https://court-buddy.com",                                    "69.5-77.5",   "35.5-77.5",   "50.0"),
+        ("QourtX",                 "https://qourtx.com",                                         "68.5-73.5",   "71.5-76.5",   "50.0"),
+        ("SportRevive",            "https://sportrevive.com",                                    "68.0",        "82.5-91.5",   "50.0"),
+        ("eBadders",               "https://ebadders.com",                                       "67.0",        "7.5-100.0",   "48.0-52.0"),
+        ("ServeLeague",            "https://serveleague.com",                                    "65.5-70.5",   "52.5-78.5",   "57.5"),
+        ("Badmatch",               "https://badmatch.app",                                       "64.5-68.5",   "-",           "48.0-52.0"),
+        ("PaQueueKa",              "https://paqueueka.info",                                     "62.0-67.0",   "55.0-68.0",   "51.5-56.5"),
+        ("Ladderly",               "https://ladderly.online",                                    "59.5-76.5",   "55.5-100.0",  "41.5-58.5"),
+        ("CourtsFlow",             "https://courtsflow.com",                                     "59.5-63.5",   "25.5-66.5",   "51.0-55.0"),
+        ("ShuttleFlow",            "https://shuttleflow.ph",                                     "55.0-59.0",   "85.5-89.5",   "50.0-62.0"),
+        ("BadBoard",               "https://badboard.net",                                       "55.0-67.0",   "74.5-82.5",   "57.0-61.0"),
+        ("ShuttleOps",             "https://www.shuttleops.com",                                 "52.5-61.5",   "35.5-64.5",   "50.5-61.5"),
+        ("UBR",                    "https://universalbadmintonrating.com",                       "52.0-72.0",   "70.5-80.5",   "37.0-63.0"),
+        ("NextFour",               "https://nextfour.app",                                       "50.0-69.0",   "53.5-70.5",   "46.5-65.5"),
+        ("ShuttleStats",           "https://shuttlestats.app",                                   "49.0-66.0",   "5.5-100.0",   "45.5-54.5"),
+        ("Airchy WebOS",           "https://airchy.com/webos/",                                  "48.0-61.0",   "25.0-75.0",   "41.5-58.5"),
+        ("Queue Master",           "https://queuemaster.site",                                   "43.0-70.0",   "23.5-100.0",  "34.5-65.5"),
+        ("Qcourt",                 "https://play.google.com/store/apps/details?id=com.taforyou.qcourt", "42.5-62.5",   "65.0-77.0",   "42.0-58.0"),
+        ("Badminton Peg System",   "https://bps.graeyna.com",                                    "42.0-66.0",   "49.5-86.5",   "39.0-73.0"),
+        ("Racket Arena",           "https://racketarena.xyz",                                    "30.0-70.0",   "-",           "30.5-69.5"),
+        ("SportyHQ",               "https://sportyhq.com",                                       "21.5-87.5",   "32.5-100.0",  "36.5-72.5"),
+        ("Matchit",                "https://apps.apple.com/us/app/matchit/id6739728243",         "21.0-79.0",   "37.5-74.5",   "23.5-76.5"),
+        ("CourtMaster",            "https://apps.apple.com/us/app/courtmaster/id6758101442",     "17.0-83.0",   "38.5-71.5",   "46.0-54.0"),
+        ("Digital Pegboard",       "https://play.google.com/store/apps/details?id=com.digitalpegboard.app", "12.5-87.5",   "23.5-76.5",   "12.5-87.5")
     };
 
     var runs = new (string Model, string Retrieval, string Field, string Us, string Second, string Margin)[]
@@ -106,7 +106,7 @@
 
       <p><strong>What this covers, and what it does not.</strong> These are products for <strong>running the club night</strong> - who plays next, on which court, with whom. If what your committee actually needs is membership records, subscriptions or court booking, that is a different category of <a href="/badminton-club-management-software">badminton club management software</a>, and the products that do it well are named below: ShuttleOps and ShuttleStats for subs and payments, ServeLeague and SportyHQ for membership and leagues. ePegboard does not collect money or run a booking system.</p>
 
-      <p style="color:var(--muted-2);font-size:.95rem"><strong>Disclosure:</strong> we make ePegboard, one of the products here. We wrote the rubric and ran the evaluations; nobody independent commissioned them. Every prompt and every unedited response is published, including the run that scores us lowest, and every product below links to its own site so you can check us.</p>
+      <p style="color:var(--muted-2);font-size:.95rem"><strong>Disclosure:</strong> we make ePegboard, one of the products here. We wrote the rubric and ran the evaluations; nobody independent commissioned them. Every prompt and every unedited response is published, including the run that scores us lowest, and every product below links to the page its evaluation started from - its own site, or its app listing where that is all it publishes - so you can check us.</p>
     </div>
 
     <div class="guide-toc" style="margin-top:28px">
@@ -217,7 +217,18 @@
             @foreach (var r in rows)
             {
               <tr>
-                <td>@(r.Product == "ePegboard" ? Html.Raw("<strong>ePegboard</strong>") : Html.Raw(r.Product))</td>
+                @* Every product links to the URL its evaluation started from - the disclosure
+                   above promises exactly this, and until 2026-09-12 only the shortlist kept it. *@
+                <td>
+                  @if (r.Product == "ePegboard")
+                  {
+                    <a href="@r.Url" target="_blank" rel="noopener"><strong>ePegboard</strong></a>
+                  }
+                  else
+                  {
+                    <a href="@r.Url" target="_blank" rel="noopener">@r.Product</a>
+                  }
+                </td>
                 <td>@r.Opus</td>
                 <td>@r.Free</td>
                 <td>@r.Sol</td>
