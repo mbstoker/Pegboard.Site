@@ -3,7 +3,7 @@
 @{
     Layout = "_LayoutMarketing";
     ViewData["Title"] = "How the club-night software evaluation was scored: rubric, weights and every correction";
-    ViewData["Description"] = "The full method behind our 30-product badminton club-night comparison: the fifteen criteria and their weights declared before scoring, the evidence rules, the corrections log including the one that cut our own score, the retrieval log, and the unedited output.";
+    ViewData["Description"] = "The full method behind our six-run badminton club-night comparison: the fifteen criteria and their weights declared before scoring, the evidence rules, the corrections log including the one that cut our own score, the retrieval log, the fabricated control, and all six unedited outputs.";
     ViewData["OgTitle"] = "The evaluation method, in full";
 
     const string published = "2026-09-09";
@@ -90,10 +90,10 @@
     <div class="inner">
       <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/compare">Compare</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Method</span></div>
       <h1 style="margin-top:10px">How it was scored</h1>
-      <p class="lede">The rubric was written before anything was looked at, and the same one was used for all three runs with its weights unaltered. This page is all of it: the fifteen criteria and their weights, the evidence rules, the scores each evaluator revised while running, what we corrected afterwards, and the raw outputs with nothing taken out.</p>
+      <p class="lede">The rubric was written before anything was looked at, and the same one was used for all six runs with its weights unaltered. This page is all of it: the fifteen criteria and their weights, the evidence rules, the scores each evaluator revised while running, what we corrected afterwards, the fabricated candidate we used as a control, and all six raw outputs with nothing taken out.</p>
       <div class="guide-meta">
         <span class="gm-tag">Method</span>
-        <span>3 runs</span>
+        <span>6 runs</span>
         <span>9 September 2026</span>
       </div>
     </div>
@@ -114,7 +114,8 @@
       <a href="#revisions">Scores the evaluator revised while running</a>
       <a href="#ours">What we corrected afterwards</a>
       <a href="#retrieval">Retrieval log</a>
-      <a href="#raw">The prompt and the unedited output</a>
+      <a href="#raw">The prompts and the unedited outputs</a>
+      <a href="#control">The product that does not exist</a>
     </div>
 
     <div class="prose" style="margin-top:34px">
@@ -205,7 +206,9 @@
 
       <p>We re-checked all ten by hand on 9 September 2026 rather than leaving them as a blank. <strong>Six return a page title and nothing else, because they build their pages in the browser</strong> - open them normally and they work fine. One declined the request with a 403, one app-store listing rate-limited us with a 429 and a second could not be retrieved, and one URL in our own records is simply wrong and returns a 404.</p>
 
-      <p><strong>This is the biggest single weakness in the method, and it is systematically unfair to one kind of product.</strong> A modern single-page application is invisible to a reader that does not run JavaScript, no matter how good it is. CourtsFlow is the proof: run 1 could not read it at all, and run 2, reading the same site through a browser, scored it 40.5 and placed it mid-table. Nothing about the product changed between the two - only our reader. The fix for a future run is a browser that executes the page, not a better list of URLs, and until that happens nothing on this site should be read as a judgement on those ten.</p>
+      <p><strong>This was the biggest single weakness in the method, and it was systematically unfair to one kind of product.</strong> A modern single-page application is invisible to a reader that does not run JavaScript, no matter how good it is. CourtsFlow is the proof: run 1 could not read it at all, and run 2, reading the same site through a browser, scored it 40.5 and placed it mid-table. Nothing about the product changed between the two - only our reader.</p>
+
+      <p><strong>The second set fixed it.</strong> Rendering was made a requirement, the wrong addresses were corrected and three missing rivals were added, and two of the three runs then scored 32 of 33 candidates. The exception is the free-tier run, which reports honestly that it could not execute JavaScript and fell back to a search index - <strong>and which also produced the highest score for us of any run in the second set.</strong> Weakest retrieval, most flattering number. That pairing has now happened twice.</p>
 
       <div class="cmp-wrap">
         <table class="cmp-table">
@@ -219,19 +222,36 @@
         </table>
       </div>
 
-      <h2 id="raw">The prompt and the unedited outputs</h2>
+      <h2 id="raw">The prompts and the unedited outputs</h2>
 
-      <p>Published as plain text, exactly as sent and returned. They are not tidied, and they contain the parts that do not suit us - including the 97.5 that run 1 printed and we corrected to 95.5, and run 3 scoring us 17 points lower than run 1 did.</p>
+      <p>Published as plain text, exactly as sent and returned, and not tidied. They contain the parts that do not suit us: the 97.5 run 1 printed before we corrected it, the run that scores us 70.5, and the section in run 4 concluding that most of our lead is documentation depth rather than demonstrated capability.</p>
 
+      <p><strong>The second prompt keeps the rubric, the weights, the club profile and every scoring rule of the first, unchanged.</strong> Editing any of those would have made the two sets incomparable, which would have defeated the point of re-running. What changed was the field and how it was read.</p>
+
+      <h3 style="margin-top:22px">The second set - corrected inputs</h3>
       <ul>
-        <li><a href="/evidence/ai-comparison-2026-09-09/prompt.txt">The prompt, in full</a> - identical for all three runs, weights unaltered</li>
-        <li><a href="/evidence/ai-comparison-2026-09-09/output.txt">Run 1, unedited</a> - static fetch, 19 of 30 scored</li>
-        <li><a href="/evidence/ai-comparison-2026-09-09/output-run2.txt">Run 2, unedited</a> - browser-rendered, 27 of 30 scored. The run this site leans on most</li>
-        <li><a href="/evidence/ai-comparison-2026-09-09/output-run3.txt">Run 3, unedited</a> - a second AI vendor, 22 of 30 scored</li>
-        <li><a href="/evidence/ai-comparison-2026-09-09/court-manager-2026-09-10.txt">Court Manager, re-scored 10 September</a> - one product, the same rubric, the correct address. 72.5, all fifteen criteria resolved</li>
+        <li><a href="/evidence/ai-comparison-2026-09-09/prompt-v4.txt">The second prompt, in full</a> - 33 candidates, corrected addresses, JavaScript rendering required</li>
+        <li><a href="/evidence/ai-comparison-2026-09-09/output-v4-opus.txt">Run 4, unedited</a> - Claude Opus 5, 32 of 33 scored. The most completely evidenced of the six</li>
+        <li><a href="/evidence/ai-comparison-2026-09-09/output-v4-free.txt">Run 5, unedited</a> - ChatGPT free tier. It could not execute JavaScript, says so itself, and ends part-way through its own report</li>
+        <li><a href="/evidence/ai-comparison-2026-09-09/output-v4-sol.txt">Run 6, unedited</a> - ChatGPT 5.6, 32 of 33 scored, and the harshest reader of the six</li>
       </ul>
 
-      <p>All three are the responses as returned. Run 2 opens by declaring an interest of its own - it noticed it was running on a machine with an ePegboard project folder on it, said so, and pointed the reader at the section quantifying how much of our lead is documentation depth rather than capability. It then scored us ten points lower than the run that did not know.</p>
+      <h3 style="margin-top:22px">The first set - superseded inputs, kept as history</h3>
+      <ul>
+        <li><a href="/evidence/ai-comparison-2026-09-09/prompt.txt">The first prompt, in full</a> - 30 candidates, one URL each</li>
+        <li><a href="/evidence/ai-comparison-2026-09-09/output.txt">Run 1, unedited</a> - static fetch, 19 of 30 scored</li>
+        <li><a href="/evidence/ai-comparison-2026-09-09/output-run2.txt">Run 2, unedited</a> - browser-rendered, 27 of 30 scored</li>
+        <li><a href="/evidence/ai-comparison-2026-09-09/output-run3.txt">Run 3, unedited</a> - a second vendor, 22 of 30 scored</li>
+        <li><a href="/evidence/ai-comparison-2026-09-09/court-manager-2026-09-10.txt">Court Manager, re-scored separately</a> - the correction that prompted the whole re-run</li>
+      </ul>
+
+      <p style="margin-top:18px"><strong>Two runs declared an interest of their own, unprompted.</strong> Both Claude runs noticed they were executing on a machine carrying an ePegboard project folder, said so at the top of their reports, and pointed the reader at the section quantifying how much of the leader's margin is documentation rather than capability. Neither read the folder. Both scored us lower than the runs that did not know.</p>
+
+      <h2 id="control">The product that does not exist</h2>
+
+      <p>The second set includes a <strong>fabricated candidate</strong> - a product name we invented, given a plausible address, and listed among the real ones. <strong>No run scored it.</strong> All three reported it unlocatable and moved on.</p>
+
+      <p>That control exists because the first set had one that failed in the opposite direction. We listed SmashHQ with no address, could not find it in two searches, and concluded it was fictional - then treated a run that <em>did</em> find it as having invented the evidence. It is a real company with a live product. A name we made up ourselves cannot produce that error: if a run scores it, the run is unreliable, and there is no second possibility.</p>
 
       <div class="guide-callout" style="margin-top:26px">
         <h4>If you make one of these products</h4>

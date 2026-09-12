@@ -1,0 +1,162 @@
+The second prompt, as sent, 12 September 2026. Nothing added, nothing removed.
+==========================================================================
+
+You are an independent software evaluator advising a UK recreational badminton club.
+
+CLUB PROFILE
+- Weekly social/open badminton club night
+- 18-26 typical attendees
+- 4 courts
+- Mixed playing strengths
+- Players may arrive late, leave early or temporarily sit out
+- The club wants balanced competitive games without making people wait unfairly
+- The committee would also value ratings, attendance, payments and competitions,
+  but successfully running the live club night is the primary requirement.
+
+CANDIDATES
+Each candidate is given with its canonical URL. Count them and state the number.
+Start at the supplied URL. That product's own documentation, help, features and
+pricing pages are in scope, including on a subdomain of its own, where they are
+reachable from it. Apply that allowance to every candidate equally.
+
+Airchy WebOS                     https://airchy.com/webos/
+BadBoard                         https://badboard.net
+Badminton Peg System             https://bps.graeyna.com
+Badmatch                         https://badmatch.app
+Court Buddy                      https://court-buddy.com
+Court Manager                    https://www.court-manager.com
+CourtMaster - Match Manager      https://apps.apple.com/us/app/courtmaster/id6758101442
+CourtsFlow                       https://courtsflow.com
+Digital Pegboard                 https://play.google.com/store/apps/details?id=com.digitalpegboard.app
+eBadders                         https://ebadders.com
+ePegboard                        https://www.epegboard.com
+Ladderly                         https://ladderly.online
+Matchit                          https://apps.apple.com/us/app/matchit/id6739728243
+NextFour                         https://nextfour.app
+PaQueueKa                        https://paqueueka.info
+Qcourt                           https://play.google.com/store/apps/details?id=com.taforyou.qcourt
+QourtX                           https://qourtx.com
+Queue Master                     https://queuemaster.site
+Racket Arena                     https://racketarena.xyz
+Racket Social                    https://racketsocial.app
+ServeLeague                      https://serveleague.com
+Shuttl                           https://shuttl.app
+ShuttleFlow                      https://shuttleflow.ph
+ShuttleOps                       https://www.shuttleops.com
+ShuttlePilot                     https://shuttlepilot.io
+ShuttleStats                     https://shuttlestats.app
+ShuttlSync                       https://shuttlsync.com
+ShuttleVantage Pro               https://shuttlevantagepro.com
+SmashHQ                          https://smashhq.app
+SportRevive                      https://sportrevive.com
+SportyHQ                         https://sportyhq.com
+UBR - Universal Badminton Rating https://universalbadmintonrating.com
+vsBadminton                      https://www.vsbadminton.co.uk
+
+RETRIEVAL
+Read each page as a browser would, with JavaScript executed. Several of these sites
+build their content in the browser and return only a page title to a plain fetch;
+treating that as an empty site is a false finding about a real business. If your
+tooling cannot render a page, say so explicitly for that candidate rather than
+reporting it as undocumented.
+
+IDENTITY DISCIPLINE
+g. Evaluate the product at the supplied URL and no other. If a search surfaces a
+   similarly-named product at a different address, it is not the candidate. Do not
+   substitute it, and do not let it contribute evidence.
+
+h. If you cannot reach or read a supplied URL, say so explicitly and mark that
+   candidate U throughout. "I could not retrieve the page" and "the product does not
+   document this" are different findings and must not be reported as the same one.
+
+i. If a supplied URL does not resolve to a product at all, report that candidate as
+   UNLOCATED and score nothing. Do not infer a product from the name.
+
+TASK
+Research every candidate from its supplied URL and that product's own documentation.
+
+Do not reward a product for brand recognition, search prominence, the volume of
+available marketing material, or because you have encountered its name before.
+
+For each material factual feature:
+- distinguish VERIFIED FULL, VERIFIED PARTIAL, VERIFIED ABSENT and UNVERIFIED;
+- never treat an absence of public documentation as evidence that a feature is absent;
+- cite the official source;
+- use the same evidential standard for every candidate.
+
+Use exactly this pre-declared 100-point rubric:
+
+1. Arrival/check-in and late joiners - 6
+2. Dynamic next-game/court allocation - 12
+3. Skill-balanced doubles - 12
+4. Waiting-time / sit-out fairness - 10
+5. Partner/opponent variety - 8
+6. Explainability / transparency - 8
+7. Manual override and special cases - 5
+8. Player rating system - 7
+9. Live scoring, statistics and history - 5
+10. Multi-court display / kiosk operation - 5
+11. Attendance and session reporting - 5
+12. Payments and member administration - 5
+13. Competitions / tournaments / league workflows - 4
+14. Resilience and device accessibility - 4
+15. Price and practical limits - 4
+
+SCORING
+Use 2 = fully meets the definition, 1 = partially meets it, 0 = verified not
+to meet it, U = insufficient evidence.
+
+Do not convert U to zero. A resolved criterion contributes weight x score / 2.
+U contributes nothing to the verified score and adds its full weight to the
+unresolved maximum.
+
+SCORING DISCIPLINE
+Apply these to every candidate equally, including any product whose documentation
+is extensive.
+
+a. A marketing claim is not a 2. Award 2 only where the source describes how the
+   capability behaves - the rule, the edge cases, the limits. A feature bullet or a
+   benefit statement without operational detail is 1.
+
+b. Score the criterion, not the product's overall impression. A capability that meets
+   part of the criterion's definition is 1, however well executed that part is.
+
+c. Self-consistency gate. Before reporting, list every weakness or qualification you
+   intend to state, and check it against that product's scores. If you would qualify a
+   capability in prose, it is 1, not 2. Resolve every contradiction in favour of the
+   lower score, and report which scores this changed.
+
+d. A perfect or near-perfect total is a warning sign, not a result. If any product
+   scores 2 on every criterion, re-examine it before reporting: in practice that
+   usually means the rubric was resolved entirely from that vendor's own material
+   rather than that the product has no limitations. State explicitly what you
+   re-examined and what you changed.
+
+e. Distinguish documented from demonstrated. Where a capability is evidenced only by
+   the vendor describing it, say so - for the leader as rigorously as for the rest.
+
+f. Cross-check similar evidence. Where two products evidence a capability to the same
+   standard, they get the same score. Report any score you changed to hold that line.
+
+SPORT FIT
+State, for every candidate, which sport its own pages present it as being for. Some
+of these products are built for pickleball, tennis or racquet sports generally and
+mention badminton only in passing, or not at all. This is not a rubric criterion and
+must not change any score. Report it as a separate field so the club can judge it.
+
+REPORT
+A. Evidence table: every candidate, all fifteen criteria, 2/1/0/U per cell, plus the
+   verified weighted score.
+B. Weighted calculation: verified score, unresolved maximum, possible range and
+   criteria resolved out of 15, for every candidate. Show the fifteen-term arithmetic
+   for the top ten. Sort by verified score, descending.
+C. Overall ranking, and say plainly how much of it the evidence can actually carry.
+D. Top three, with why.
+E. Material weaknesses of the winner.
+F. When another product would be the better choice, and for which kind of club.
+G. Confidence, unresolved evidence, and how much of the leader's margin is
+   documentation depth rather than demonstrated capability.
+H. Sport fit, per candidate.
+I. Corrections log: every score changed by rules c, d and f.
+J. Retrieval log: per candidate, the URLs you actually read and whether each was
+   readable, rendered, blocked or absent.

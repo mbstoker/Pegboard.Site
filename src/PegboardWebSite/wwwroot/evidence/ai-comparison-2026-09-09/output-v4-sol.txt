@@ -1,0 +1,1485 @@
+Run 6 - ChatGPT 5.6, browser retrieval, 32 of 33 scored, 12 September 2026. Unedited.
+==========================================================================
+
+# UK social badminton software evaluation
+
+Research date: **12 September 2026**. **33 candidates** were evaluated from the supplied canonical addresses, with linked official product/help/pricing pages in scope. Club: weekly open/social night, 18–26 attendees, four courts, mixed strengths, late arrivals, early departures and temporary rests.
+
+**Recommendation: trial ePegboard first.** It has the strongest documented combination of live court allocation, selection explanations, manual exceptions, kiosk permissions and reporting. This is an evidence-led shortlist, not a measured claim that its algorithm produces the best games. No product was tested through a real club night or controlled 26-player simulation.
+
+## Method and scoring interpretation
+
+The supplied weights are unchanged. **2 = VERIFIED FULL**, **1 = VERIFIED PARTIAL**, **0 = VERIFIED ABSENT**, **U = UNVERIFIED**. “Verified” here means supported by the official source read, not independently performance-tested. Vendor operational descriptions may support 2; bullets, benefit claims, incomplete components or stated qualifications receive 1. Unknown features remain U. An explicit future feature can support 0 only where the current criterion has no supported component; if informal/partial competition is already supported, it remains 1.
+
+Criteria are interpreted for the stated club. C1 requires a usable live arrival/late-entry procedure. C2 requires ongoing freed-court allocation rather than merely a preplanned fixture. C3 concerns opposing doubles teams, not just a quartet sharing a skill band. C4 covers real waiting/rest fairness with attendance changes, not simply game counts. C5 covers both partners and opponents. C6 rewards reasons for choices as well as visible state; queue displays or public broad factors are partial. C7 includes live manual choices and availability/special-case handling. C8 includes individual skill development: manual grades, win-rate standings and seasonal points are partial. C9 includes live result entry, statistics and persistent history. C10 includes operating a multicourt/shared kiosk with permissions, not merely four illustrated cards. C11 includes attendance and session reports. C12 combines member administration and payments; a roster alone, fee calculator or payment record alone is partial. C13 concerns actual event/league organisation, not merely a leaderboard. C14 combines device accessibility and resilient operation/recovery. C15 requires a usable current tariff and clear practical limits for four courts and the expected roster, including onboarding constraints.
+
+This interpretation intentionally holds related products to the same standard. Unspecified latency, fairness and scale are not inferred from branding, customer counts, testimonials, search visibility or documentation length. App-store developer descriptions count as vendor documentation, not independent app testing. Similarly named alternatives and suggested unrelated apps contribute no evidence. No sport-fit bonus or penalty is applied.
+
+The browser executed JavaScript. Hydration-only initial views were retried. Reading a public live session directory demonstrates that directory, not its claimed scheduling quality. Illustrations, seed-data selectors, FAQs and release notes remain vendor evidence. No account was created, app installed, payment made or real club session altered.
+
+## Rubric (unchanged)
+
+| # | Criterion | Weight |
+|---|---|---:|
+| 1 | Arrival/check-in and late joiners | 6 |
+| 2 | Dynamic next-game/court allocation | 12 |
+| 3 | Skill-balanced doubles | 12 |
+| 4 | Waiting-time / sit-out fairness | 10 |
+| 5 | Partner/opponent variety | 8 |
+| 6 | Explainability / transparency | 8 |
+| 7 | Manual override and special cases | 5 |
+| 8 | Player rating system | 7 |
+| 9 | Live scoring, statistics and history | 5 |
+| 10 | Multi-court display / kiosk operation | 5 |
+| 11 | Attendance and session reporting | 5 |
+| 12 | Payments and member administration | 5 |
+| 13 | Competitions / tournaments / league workflows | 4 |
+| 14 | Resilience and device accessibility | 4 |
+| 15 | Price and practical limits | 4 |
+
+## A. Evidence matrix
+
+Columns 1–15 correspond exactly to the rubric above. All resolved cells have criterion-specific official citations in the evidence dossiers below. U cells are not zero scores.
+
+| Candidate | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | Verified /100 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Airchy WebOS | 1 | 1 | 1 | 1 | U | 1 | U | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 | 41.5 |
+| BadBoard | 2 | 2 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 | 57 |
+| Badminton Peg System | 1 | 2 | U | U | U | 1 | 1 | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 | 39 |
+| Badmatch | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 | 48 |
+| Court Buddy | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 50 |
+| Court Manager | 2 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | U | U | 1 | U | 46.5 |
+| CourtMaster – Match Manager | 1 | 1 | 1 | 1 | U | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 46 |
+| CourtsFlow | 2 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 | 51 |
+| Digital Pegboard | U | 1 | U | U | U | U | U | U | 1 | U | U | U | U | 1 | 1 | 12.5 |
+| eBadders | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 | 48 |
+| ePegboard | 2 | 2 | 1 | 1 | 1 | 2 | 2 | 1 | 1 | 2 | 2 | 1 | 1 | 1 | 1 | 70.5 |
+| Ladderly | 1 | 1 | 1 | 1 | U | 1 | U | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 | 41.5 |
+| Matchit | U | 1 | 1 | 1 | U | U | U | U | 1 | U | U | U | U | 1 | 1 | 23.5 |
+| NextFour | 1 | 2 | 1 | 1 | U | 1 | 1 | U | 1 | 1 | 1 | 1 | U | 1 | 1 | 46.5 |
+| PaQueueKa | 1 | 2 | 1 | 1 | 1 | 1 | U | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 51.5 |
+| Qcourt | 1 | 1 | U | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 | 42 |
+| QourtX | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 50 |
+| Queue Master | 1 | 1 | 1 | 1 | U | 1 | 1 | 1 | U | 1 | U | U | U | 1 | U | 34.5 |
+| Racket Arena | U | 1 | 1 | 1 | U | U | U | 1 | 1 | 1 | 1 | 1 | U | U | U | 30.5 |
+| Racket Social | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 50 |
+| ServeLeague | 2 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 2 | 1 | 1 | 1 | 2 | 1 | 1 | 57.5 |
+| Shuttl | 1 | 2 | 1 | 1 | U | 1 | 1 | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 | 50 |
+| ShuttleFlow | 1 | 2 | 1 | 1 | U | 1 | 1 | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 | 50 |
+| ShuttleOps | 1 | 2 | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 | 1 | 1 | U | 1 | 1 | 50.5 |
+| ShuttlePilot | 2 | 2 | 1 | 1 | 1 | 1 | 1 | 1 | 2 | 1 | 1 | 1 | U | 1 | 1 | 59.5 |
+| ShuttleStats | 1 | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 | 45.5 |
+| ShuttlSync | 2 | 2 | 1 | 1 | 1 | 1 | 2 | 1 | 2 | 1 | 1 | 1 | U | 1 | 1 | 62 |
+| ShuttleVantage Pro | U | U | U | U | U | U | U | U | U | U | U | U | U | U | U | 0 |
+| SmashHQ | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 | 48 |
+| SportRevive | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 50 |
+| SportyHQ | U | 1 | U | U | U | 1 | 1 | 1 | 1 | 1 | 1 | 2 | 2 | 1 | 1 | 36.5 |
+| UBR – Universal Badminton Rating | U | 1 | 1 | U | 1 | 1 | U | 1 | 1 | U | 1 | 1 | 1 | 1 | 1 | 37 |
+| vsBadminton | 2 | 2 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | U | 1 | 1 | 57 |
+
+## B. Weighted calculation and descending ranking
+
+Verified = Σ(weight × score ÷ 2), only for resolved cells. Unresolved maximum = Σ(weights of U). Possible range = verified through verified + unresolved maximum. The upper endpoint supposes every U resolves to 2; it is not a forecast. Ties share a rank and are alphabetised; no tie-breaker is implied.
+
+| Rank | Candidate | Verified | Unresolved max | Possible range | Resolved /15 |
+|---:|---|---:|---:|---|---:|
+| 1 | ePegboard | 70.5 | 0 | 70.5–70.5 | 15 |
+| 2 | ShuttlSync | 62 | 4 | 62–66 | 14 |
+| 3 | ShuttlePilot | 59.5 | 4 | 59.5–63.5 | 14 |
+| 4 | ServeLeague | 57.5 | 0 | 57.5–57.5 | 15 |
+| 5 | BadBoard | 57 | 4 | 57–61 | 14 |
+| 5 | vsBadminton | 57 | 4 | 57–61 | 14 |
+| 7 | PaQueueKa | 51.5 | 5 | 51.5–56.5 | 14 |
+| 8 | CourtsFlow | 51 | 4 | 51–55 | 14 |
+| 9 | ShuttleOps | 50.5 | 11 | 50.5–61.5 | 13 |
+| 10 | Court Buddy | 50 | 0 | 50–50 | 15 |
+| 10 | QourtX | 50 | 0 | 50–50 | 15 |
+| 10 | Racket Social | 50 | 0 | 50–50 | 15 |
+| 10 | Shuttl | 50 | 12 | 50–62 | 13 |
+| 10 | ShuttleFlow | 50 | 12 | 50–62 | 13 |
+| 10 | SportRevive | 50 | 0 | 50–50 | 15 |
+| 16 | Badmatch | 48 | 4 | 48–52 | 14 |
+| 16 | eBadders | 48 | 4 | 48–52 | 14 |
+| 16 | SmashHQ | 48 | 4 | 48–52 | 14 |
+| 19 | Court Manager | 46.5 | 13 | 46.5–59.5 | 12 |
+| 19 | NextFour | 46.5 | 19 | 46.5–65.5 | 12 |
+| 21 | CourtMaster – Match Manager | 46 | 8 | 46–54 | 14 |
+| 22 | ShuttleStats | 45.5 | 9 | 45.5–54.5 | 13 |
+| 23 | Qcourt | 42 | 16 | 42–58 | 13 |
+| 24 | Airchy WebOS | 41.5 | 17 | 41.5–58.5 | 12 |
+| 24 | Ladderly | 41.5 | 17 | 41.5–58.5 | 12 |
+| 26 | Badminton Peg System | 39 | 34 | 39–73 | 11 |
+| 27 | UBR – Universal Badminton Rating | 37 | 26 | 37–63 | 11 |
+| 28 | SportyHQ | 36.5 | 36 | 36.5–72.5 | 11 |
+| 29 | Queue Master | 34.5 | 31 | 34.5–65.5 | 9 |
+| 30 | Racket Arena | 30.5 | 39 | 30.5–69.5 | 8 |
+| 31 | Matchit | 23.5 | 53 | 23.5–76.5 | 6 |
+| 32 | Digital Pegboard | 12.5 | 75 | 12.5–87.5 | 4 |
+| 33 | ShuttleVantage Pro | 0 | 100 | 0–100 | 0 |
+
+### Fifteen-term arithmetic for the top ten
+
+Each term is in rubric order. `U[w]` is an unresolved weight w, excluded from the verified sum and added to the unresolved maximum. This notation deliberately does not write U as zero.
+
+**ePegboard**: 6×2/2 + 12×2/2 + 12×1/2 + 10×1/2 + 8×1/2 + 8×2/2 + 5×2/2 + 7×1/2 + 5×1/2 + 5×2/2 + 5×2/2 + 5×1/2 + 4×1/2 + 4×1/2 + 4×1/2 = **70.5 verified**, plus **0 unresolved**.
+
+**ShuttlSync**: 6×2/2 + 12×2/2 + 12×1/2 + 10×1/2 + 8×1/2 + 8×1/2 + 5×2/2 + 7×1/2 + 5×2/2 + 5×1/2 + 5×1/2 + 5×1/2 + U[4] + 4×1/2 + 4×1/2 = **62 verified**, plus **4 unresolved**.
+
+**ShuttlePilot**: 6×2/2 + 12×2/2 + 12×1/2 + 10×1/2 + 8×1/2 + 8×1/2 + 5×1/2 + 7×1/2 + 5×2/2 + 5×1/2 + 5×1/2 + 5×1/2 + U[4] + 4×1/2 + 4×1/2 = **59.5 verified**, plus **4 unresolved**.
+
+**ServeLeague**: 6×2/2 + 12×1/2 + 12×1/2 + 10×1/2 + 8×1/2 + 8×1/2 + 5×1/2 + 7×1/2 + 5×2/2 + 5×1/2 + 5×1/2 + 5×1/2 + 4×2/2 + 4×1/2 + 4×1/2 = **57.5 verified**, plus **0 unresolved**.
+
+**BadBoard**: 6×2/2 + 12×2/2 + 12×1/2 + 10×1/2 + 8×1/2 + 8×1/2 + 5×1/2 + 7×1/2 + 5×1/2 + 5×1/2 + 5×1/2 + 5×1/2 + U[4] + 4×1/2 + 4×1/2 = **57 verified**, plus **4 unresolved**.
+
+**vsBadminton**: 6×2/2 + 12×2/2 + 12×1/2 + 10×1/2 + 8×1/2 + 8×1/2 + 5×1/2 + 7×1/2 + 5×1/2 + 5×1/2 + 5×1/2 + 5×1/2 + U[4] + 4×1/2 + 4×1/2 = **57 verified**, plus **4 unresolved**.
+
+**PaQueueKa**: 6×1/2 + 12×2/2 + 12×1/2 + 10×1/2 + 8×1/2 + 8×1/2 + U[5] + 7×1/2 + 5×1/2 + 5×1/2 + 5×1/2 + 5×1/2 + 4×0/2 + 4×1/2 + 4×1/2 = **51.5 verified**, plus **5 unresolved**.
+
+**CourtsFlow**: 6×2/2 + 12×1/2 + 12×1/2 + 10×1/2 + 8×1/2 + 8×1/2 + 5×1/2 + 7×1/2 + 5×1/2 + 5×1/2 + 5×1/2 + 5×1/2 + U[4] + 4×1/2 + 4×1/2 = **51 verified**, plus **4 unresolved**.
+
+**ShuttleOps**: 6×1/2 + 12×2/2 + 12×1/2 + 10×1/2 + 8×1/2 + 8×1/2 + 5×1/2 + U[7] + 5×1/2 + 5×1/2 + 5×1/2 + 5×1/2 + U[4] + 4×1/2 + 4×1/2 = **50.5 verified**, plus **11 unresolved**.
+
+**Court Buddy**: 6×1/2 + 12×1/2 + 12×1/2 + 10×1/2 + 8×1/2 + 8×1/2 + 5×1/2 + 7×1/2 + 5×1/2 + 5×1/2 + 5×1/2 + 5×1/2 + 4×1/2 + 4×1/2 + 4×1/2 = **50 verified**, plus **0 unresolved**.
+
+
+## C–G. Decision, weaknesses, alternatives and confidence
+
+### D. Top three by verified score
+
+1. **ePegboard — 70.5/100**, possible 70.5–70.5; 15/15 resolved.
+
+2. **ShuttlSync — 62/100**, possible 62–66; 14/15 resolved.
+
+3. **ShuttlePilot — 59.5/100**, possible 59.5–63.5; 14/15 resolved.
+
+**ePegboard** is first because the picker has a freed-court/prep loop and a documented reasons panel, while special-request controls explicitly handle players still on court. Kiosk PIN/action permissions and date/profile-filtered reports are described operationally. Its score is not based on the number of pages: the detail changes the evidential status of these particular criteria. [Picker](https://docs.epegboard.com/club-nights/the-picker/), [special requests](https://docs.epegboard.com/club-nights/special-requests/), [kiosk](https://docs.epegboard.com/club-nights/kiosk-mode/), [session reports](https://docs.epegboard.com/insights/session-summary/).
+
+**ShuttlSync** is especially relevant to uneven court finishing: it gives the organiser concrete choices to rotate one court, wait, reshuffle or bring in fresh bench players, and supports live manual rearrangement. Its free two-court tier is insufficient; the stated £9.99/month club Pro tier covers four live courts. Its late-arrival priority needs a fairness trial. [Fair rotation](https://www.shuttlsync.com/features/fair-rotation), [live sessions](https://www.shuttlsync.com/features/live-sessions), [pricing on homepage](https://www.shuttlsync.com/).
+
+**ShuttlePilot** is third because its guide describes mid-round regeneration that leaves active games intact and fills empty courts, late/early attendance handling, manual courts/swaps, and saved set-score/history behaviour. It is a credible live-night pilot candidate, but historical sit-out equalisation is different from attendance-normalised waiting tonight and strength preferences are soft. [Official workflow](https://shuttlepilot.io/).
+
+**ServeLeague**, fourth, has richer operational attendance-change, scoring, membership/payment and league evidence, but its drop-in guide uses generated rounds, similar session scores and lower-rated-player early finishing rather than demonstrating asynchronous skill-balanced doubles across four courts. UK payment-method applicability is also unresolved. [Drop-in reference](https://serveleague.com/tutorials/reference/drop-in-leagues/), [leagues](https://serveleague.com/features/league-management/), [payments](https://serveleague.com/features/payments/).
+
+### E. Winner’s material weaknesses
+
+ePegboard receives **1**, not 2, for skill balancing, fairness and variety. Its picker optimises competing soft signals; hard requirements can force less balanced games. There is no documented guarantee that an extreme mixed-strength or constrained pool will yield close games or identical waits. [Picker rules](https://docs.epegboard.com/club-nights/the-picker/).
+
+Its team Elo uses score margin and confidence but cannot isolate the contribution of an individual doubles player. Ended sessions cannot reopen. Its payment tool records a single amount per player/session, replacing the prior figure; it does not collect online/card payments or provide a payment-event ledger. [Ratings](https://docs.epegboard.com/ratings/overview/), [session lifecycle](https://docs.epegboard.com/club-nights/sessions/), [payments](https://docs.epegboard.com/club-nights/payments/).
+
+Competition support is currently doubles-focused, with singles/team events on the roadmap. Offline Windows is a separate paid edition, and new capabilities arrive on the web first; its existence is not proof that the free web version has identical offline behaviour. Free online pricing is documented, but quantitative web capacity/service limits are not established. [Competitions](https://www.epegboard.com/features/competitions), [desktop edition](https://www.epegboard.com/featuresdesktop), [pricing](https://www.epegboard.com/pricing).
+
+These qualifications are reflected in cells 3, 4, 5, 8, 9, 12, 13, 14 and 15. Full cells describe specific documented operations, not independently measured quality. No winner’s weakness is hidden behind a full score.
+
+### F. When another product could be better
+
+- **ShuttlSync:** organiser-led social clubs wanting explicit choices when courts finish at different times, live rearrangement and friendly player profiles; verify late-arrival fairness and four-court price before committing. [Official rotation](https://www.shuttlsync.com/features/fair-rotation).
+- **ShuttlePilot:** clubs comfortable recording set scores and using manual courts/soft strength preferences, whose committee accepts historical sit-out balancing. [Official workflow](https://shuttlepilot.io/).
+- **vsBadminton:** lightweight phone-based clubs particularly interested in attendance-normalised late-arrival credit and public overdue scores, willing to enforce new-session discipline and manually check court moves. [Selection rule](https://www.vsbadminton.co.uk/selection/), [session warning](https://www.vsbadminton.co.uk/sessions/).
+- **ShuttleOps:** clubs where bookings, dues and membership collection are major administrative burdens. A 26-attendee/larger-roster club should budget against Pro’s allowance, not Standard’s 25-member ceiling, and include both Direct Debit fee components. [Pricing](https://www.shuttleops.com/pricing), [first-session payment workflow](https://www.shuttleops.com/guides/first-club-session).
+- **SportyHQ or ServeLeague:** clubs/facilities with formal memberships, draws and leagues as the main job. Their richer administration does not establish a superior live next-four selector. [SportyHQ tournaments](https://sportyhq.com/features/tournament-management), [ServeLeague leagues](https://serveleague.com/features/league-management/).
+- **Racket Social:** free, local-device social doubles with offline PWA operation and read-only sharing, when device-bound storage and an upper turnout beyond its typical well-tested 24 are acceptable. [Official FAQ](https://racketsocial.app/).
+- **BadBoard:** Windows-based clubs preferring time-boxed rotations and accepting mode-limited reports/manual grades. [Operating modes](https://badboard.net/howItWorks.aspx), [report restrictions](https://badboard.net/extraFeatures.aspx).
+- **SportRevive:** stable-attendance clubs that prefer a printed whole-night fixture sheet and end-night settlement over ongoing free-court allocation. [Badminton fixture generator](https://sportrevive.com/badminton-fixture-generator).
+- **Court Buddy:** a pickleball/DUPR club rather than a badminton club, subject to its incomplete public balancing/score detail. Sport fit is reported separately and did not alter its score. [Club tools](https://court-buddy.com/clubs).
+- **UBR:** players/clubs primarily seeking expectation-based badminton ratings and structured rated mixers; flexible Open Play is explicitly future functionality. [Official events](https://www.universalbadmintonrating.com/home/events).
+
+### C and G. What the ranking can carry
+
+Confidence is **moderate in the documentary shortlist, low in comparative on-court performance**. This is a ranking of verified evidence against the rubric, not a finding that lower-ranked products lack U features. Thirty-two canonical products were readable; ShuttleVantage Pro was not. Missing public method/edge cases cap many scores at 1 rather than prove a poor algorithm.
+
+
+The leader’s verified margin over ShuttlSync is **8.5 points**. Shared resolved-cell differences are C6: +4, C9: -2.5, C10: +2.5, C11: +2.5; the runner has 4 unresolved points. The extra resolved competition evidence is not evidence that the runner lacks competitions.
+
+**None of the leader’s margin is backed by a head-to-head performance demonstration.** The entire margin is supported by differences in documented operations, qualifications and resolved coverage. It cannot be separated into a numerical “real quality” share versus “documentation depth” share from this research. The detailed reasons/kiosk/report procedures support capability evidence more strongly; they do not prove lower latency, better balance or shorter actual waits.
+
+Unknowns can change positions: compare each possible range, especially products with many U cells. A large upper endpoint is uncertainty, not a reason to recommend an unreadable product. The unreachable candidate’s 0 verified/100 unresolved is **not a zero capability score**. Sport is descriptive and makes no contribution to any total.
+
+A concrete validation night should use 26 players/four courts, a deliberately uneven skill distribution, a mid-night arrival, an early departure, a voluntary rest/rejoin, two courts finishing together, a manual swap and a connection loss. Record maximum/current wait relative to time present, repeated partners/opponents, pair-strength gaps, organiser actions and recovery. This research does not claim those tests passed. The recommendation is to run that reversible pilot before replacing the club’s current method.
+
+## H. Sport fit (separate; no scoring effect)
+
+| Candidate | Sport presented by its own pages |
+|---|---|
+| Airchy WebOS | Badminton. [Official source](https://airchy.com/webos/) |
+| BadBoard | Badminton; a separately linked tennis version is advertised. [Official source](https://badboard.net) |
+| Badminton Peg System | Badminton. [Official source](https://bps.graeyna.com) |
+| Badmatch | Badminton. [Official source](https://badmatch.app) |
+| Court Buddy | Pickleball, including DUPR integration; badminton not established on pages read. [Official source](https://court-buddy.com) |
+| Court Manager | Badminton. [Official source](https://www.court-manager.com) |
+| CourtMaster – Match Manager | Badminton, tennis, table tennis and pickleball; listing also mentions padel. [Official source](https://apps.apple.com/us/app/courtmaster/id6758101442) |
+| CourtsFlow | Badminton. [Official source](https://courtsflow.com/about) |
+| Digital Pegboard | Badminton. [Official source](https://play.google.com/store/apps/details?id=com.digitalpegboard.app) |
+| eBadders | Badminton. [Official source](https://ebadders.com) |
+| ePegboard | Badminton. [Official source](https://www.epegboard.com) |
+| Ladderly | Recreational badminton. [Official source](https://ladderly.online) |
+| Matchit | Badminton, table tennis and tennis doubles. [Official source](https://apps.apple.com/us/app/matchit/id6739728243) |
+| NextFour | Badminton, squash, tennis, padel and table tennis. [Official source](https://nextfour.app) |
+| PaQueueKa | Badminton and pickleball, with sport-specific scoring/fee hints and skills. [Official source](https://paqueueka.info) |
+| Qcourt | Badminton. [Official source](https://play.google.com/store/apps/details?id=com.taforyou.qcourt) |
+| QourtX | Racquet sports: badminton, padel, squash, tennis, pickleball; root also mentions racquetball. [Official source](https://qourtx.com) |
+| Queue Master | Sport not explicitly identified on the rendered home/News/Debug screens read. [Official source](https://queuemaster.site) |
+| Racket Arena | Badminton. [Official source](https://racketarena.xyz) |
+| Racket Social | Badminton, tennis, padel and pickleball doubles; fencing appears only as anecdotal feedback. [Official source](https://racketsocial.app) |
+| ServeLeague | Table tennis, badminton, squash, pickleball, tennis and padel. [Official source](https://serveleague.com) |
+| Shuttl | Badminton. [Official source](https://shuttl.app) |
+| ShuttleFlow | Badminton. [Official source](https://shuttleflow.ph) |
+| ShuttleOps | Badminton. [Official source](https://www.shuttleops.com) |
+| ShuttlePilot | Badminton. [Official source](https://shuttlepilot.io) |
+| ShuttleStats | Badminton. [Official source](https://shuttlestats.app) |
+| ShuttlSync | Recreational badminton. [Official source](https://shuttlsync.com) |
+| ShuttleVantage Pro | Unverified: supplied address could not be reached. [Official source](https://shuttlevantagepro.com) |
+| SmashHQ | Badminton. [Official source](https://smashhq.app) |
+| SportRevive | Badminton, tennis, pickleball and ping-pong/table tennis. [Official source](https://sportrevive.com) |
+| SportyHQ | Racquet sports generally; rankings page explicitly uses tennis/badminton examples; live ScoreSquash is squash-only. [Official source](https://sportyhq.com) |
+| UBR – Universal Badminton Rating | Badminton. [Official source](https://universalbadmintonrating.com) |
+| vsBadminton | Doubles badminton. [Official source](https://www.vsbadminton.co.uk) |
+
+## I. Corrections log: rules c, d and f
+
+The following records **draft interpretations changed during the final audit**, not changes in the products. Most are 2 → 1; unsupported fairness changes 1 → U, while equivalent club-roster/free-start evidence changes U → 1. Draft scores were not published. Cells outside this log were assigned their final status directly; no hidden U → 0 conversions occurred.
+
+The leader’s provisional 85.5-point interpretation was re-examined under rule d because detailed operational documentation had over-resolved fairness, variety, ratings and history. The four changed cells remove 5 + 4 + 3.5 + 2.5 = 15 points, reducing it to 70.5. No final candidate has 2 in every criterion, and no final score is near perfect. The re-examination checked the soft/hard selection trade-offs, team attribution, session finality, payment-record scope, competition formats, separate offline edition and practical pricing limits. The latter payment/competition/resilience/price cells were already partial, so their audit caused no further score change.
+
+| Candidate | Criteria | Before → after | Rule | Reason |
+|---|---|---|---|---|
+
+| ePegboard | C4, C5 | 2 → 1 | c,d | Soft wait and repeat penalties, hard-rule trade-offs; detailed documentation does not imply guaranteed fairness/variety. |
+| ePegboard | C8 | 2 → 1 | c,d | Team Elo cannot isolate individual doubles contribution. |
+| ePegboard | C9 | 2 → 1 | c,d | Ended sessions cannot be reopened; saved history does not remove that qualification. |
+| Court Manager | C4 | 2 → 1 | c | Rank priority can explicitly give some players fewer games. |
+| Court Buddy | C6 | 2 → 1 | f | Visible queue/ratings are partial transparency, like other products; they are not individual pick reasons. |
+| Court Buddy | C2 | 2 → 1 | c,f | Round generation/live recalculation do not establish asynchronous freed-court replacement; same standard as other round-based tools. |
+| ShuttleOps | C11 | 2 → 1 | f | Saved attendance/session fields without report controls are partial, like comparable recap/history evidence. |
+| Digital Pegboard | C4 | 1 → U | f | Enjoyable automated rotation does not specifically evidence wait/sit-out fairness; unknown rather than inferred capability. |
+| Badminton Peg System | C12 | U → 1 | f | Club setup/verified administration and roster give the same partial member-administration evidence as other club rosters; payment collection remains unestablished. |
+| Airchy WebOS | C15 | U → 1 | f | Free-start advertisement receives partial price credit, like other free-signup/core claims with unresolved ongoing terms. |
+| Court Buddy | C1, C7 | 2 → 1 | c,f | Live-add/remove/swap feature descriptions lack late-entry and conflict/special-case limits; same partial standard as comparable feature descriptions. |
+| Court Manager | C2 | 2 → 1 | c | Automatic next-game selection can pause for format/repeated-game constraints. |
+| CourtsFlow | C2 | 2 → 1 | c | Next-game selection may deliberately wait rather than refill in small repeat-constrained pools. |
+| ServeLeague | C12 | 2 → 1 | c | UK payment-method applicability is a stated qualification; rich payment/member documentation does not remove it. |
+| ShuttlePilot | C6 | 2 → 1 | f | Visible pair-strength delta explains balance, not why these four were selected. |
+| ShuttlSync | C6 | 2 → 1 | f | Result-rating explanations do not explain live allocation decisions. |
+| CourtsFlow | C3 | 2 → 1 | f | Skill bands and balancing claims have the same partial evidential status as comparable selectors without an objective/edge cases. |
+| Badminton Peg System | C14, C15 | 2 → 1 | c | Setup/login and manually verified club activation qualify availability/resilience and practical startup limits. |
+| Racket Social | C13 | 2 → 1 | c | Informal rating-based winners only; brackets, fixed seedings and finals are not yet supported. |
+| Racket Social | C14, C15 | 2 → 1 | c | Sessions are device/browser-bound; typical well-tested headcount ends at 24, while club can have 26. |
+| ShuttleStats | C8 | 2 → 1 | f | Proprietary rating claim/prediction percentage is not an operational rating formula or independent demonstration. |
+| QourtX | C15 | 2 → 1 | c | Official pricing basis and trial length conflict. |
+| SmashHQ | C14 | 2 → 1 | c | Current web/internet and future-desktop wording conflict with offline SQLite documentation. |
+| vsBadminton | C4 | 2 → 1 | c | Overdue score is soft and resuming a previous real night corrupts waits. |
+| vsBadminton | C7, C9 | 2 → 1 | c | Court moves lack occupancy validation; scorer is end-game only and history instructions have version ambiguity. |
+
+Cross-checks also retained equal partial scores, without changes: manual grades/win-rate/season points are partial ratings; unqualified “smart/balanced/fair” claims are partial selection evidence; fee calculators/payment records/member rosters alone are partial payments/member administration; illustrated multicourt screens without operating permissions are partial display/kiosk evidence. Richly described but qualified features, including the leader’s, remain 1. Known future features were not silently awarded present capabilities.
+
+## Criterion evidence dossiers
+
+Each dossier lists every criterion, its status, its material basis and the specific official source(s). U means not established in the pages read, except the wholly unreachable candidate where U means retrieval failure. “Not established” must not be read as “not supported”. Citations establish vendor statements, not measured performance. All general qualifications below were checked against the final scores; an unresolved qualification is shown as U rather than inferred absence.
+
+
+### Airchy WebOS
+
+Canonical: [Airchy WebOS](https://airchy.com/webos/). **41.5 verified; 17 unresolved; 12/15 resolved.**
+
+Most evidence is marketing or illustrative screens. The public demo selector was read, but no seed scenario was executed. Free club startup is advertised, while ongoing software pricing and rollout availability remain unresolved; shuttle promotions are not software prices.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 1 — VERIFIED PARTIAL | Session registration and waitlist promotion; late court-side admission rule not given. [official source 1](https://airchy.com/webos/) |
+| 2 | 1 — VERIFIED PARTIAL | Live rotation and court console claimed; finishing-court rule not explained. [official source 1](https://airchy.com/webos/) [official source 2](https://airchywebos.airchy.com) |
+| 3 | 1 — VERIFIED PARTIAL | Balanced pairing claimed without doubles selection mechanics. [official source 2](https://airchywebos.airchy.com) |
+| 4 | 1 — VERIFIED PARTIAL | Fair queue claimed without late-arrival or rest accounting. [official source 1](https://airchy.com/webos/) [official source 2](https://airchywebos.airchy.com) |
+| 5 | U — UNVERIFIED | No repeat-partner/opponent selection rule located.  |
+| 6 | 1 — VERIFIED PARTIAL | Screen presents queue and ratings; no reasons for an individual pick. [official source 1](https://airchy.com/webos/) [official source 2](https://airchywebos.airchy.com) |
+| 7 | U — UNVERIFIED | No operational override procedure located.  |
+| 8 | 1 — VERIFIED PARTIAL | Elo and score weighting claimed; rally-versus-match update wording differs. [official source 1](https://airchy.com/webos/) [official source 2](https://airchywebos.airchy.com) |
+| 9 | 1 — VERIFIED PARTIAL | Live scoring and player statistics claimed; demo selector lists profile/history. [official source 2](https://airchywebos.airchy.com) [official source 3](https://airchywebos.airchy.com/demo) |
+| 10 | 1 — VERIFIED PARTIAL | Four-court console illustration; no kiosk permissions procedure. [official source 2](https://airchywebos.airchy.com) |
+| 11 | 1 — VERIFIED PARTIAL | Attendance streaks and club economics; no attendance-report controls. [official source 1](https://airchy.com/webos/) |
+| 12 | 1 — VERIFIED PARTIAL | Automatic cost splitting, members/guests and charging claimed; settlement exceptions unspecified. [official source 1](https://airchy.com/webos/) |
+| 13 | U — UNVERIFIED | Demo has a compete-view selector, which does not establish a workflow.  |
+| 14 | 1 — VERIFIED PARTIAL | Offline console claimed without recovery or device-conflict mechanics. [official source 2](https://airchywebos.airchy.com) |
+| 15 | 1 — VERIFIED PARTIAL | Free club startup advertised; ongoing software tariff and practical limits not established. [official source 2](https://airchywebos.airchy.com) |
+
+### BadBoard
+
+Canonical: [BadBoard](https://badboard.net). **57 verified; 4 unresolved; 14/15 resolved.**
+
+Report availability depends on timer mode. Grades are manual. Prices count members, not tonight’s attendees. The homepage’s July 2017 announcement does not establish abandonment, but current runtime compatibility was not demonstrated.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 2 — VERIFIED FULL | Players add themselves on arrival and remove themselves when leaving. [official source 2](https://badboard.net/howItWorks.aspx) |
+| 2 | 2 — VERIFIED FULL | Timer mode and game mode; game mode prepares a game for the next free court. [official source 2](https://badboard.net/howItWorks.aspx) |
+| 3 | 1 — VERIFIED PARTIAL | Manual grades 1–10 inform suggestions; balancing calculation not disclosed. [official source 2](https://badboard.net/howItWorks.aspx) |
+| 4 | 1 — VERIFIED PARTIAL | Remembers sit-outs, but no arrival-normalised wait rule. [official source 1](https://badboard.net) |
+| 5 | 1 — VERIFIED PARTIAL | Remembers partners and opponents; no repeat bound or exception rule. [official source 1](https://badboard.net) |
+| 6 | 1 — VERIFIED PARTIAL | Visible board and suggestions; no individual selection explanation. [official source 1](https://badboard.net) [official source 2](https://badboard.net/howItWorks.aspx) |
+| 7 | 1 — VERIFIED PARTIAL | Manual/automatic picks and permanent session partnerships; finer exceptions unspecified. [official source 2](https://badboard.net/howItWorks.aspx) [official source 3](https://badboard.net/extraFeatures.aspx) |
+| 8 | 1 — VERIFIED PARTIAL | Organiser-assigned strength grades, not a documented result-updating rating engine. [official source 2](https://badboard.net/howItWorks.aspx) |
+| 9 | 1 — VERIFIED PARTIAL | Playing statistics and searchable archives; archive is timer-mode only and six months. [official source 3](https://badboard.net/extraFeatures.aspx) |
+| 10 | 1 — VERIFIED PARTIAL | Laptop court board supports up to 16 courts; no self-service kiosk controls. [official source 2](https://badboard.net/howItWorks.aspx) |
+| 11 | 1 — VERIFIED PARTIAL | Archived reports are restricted to timer mode and six months. [official source 3](https://badboard.net/extraFeatures.aspx) |
+| 12 | 1 — VERIFIED PARTIAL | Payment administration and balancing listed without collection/reconciliation procedure. [official source 3](https://badboard.net/extraFeatures.aspx) |
+| 13 | U — UNVERIFIED | No competition workflow established.  |
+| 14 | 1 — VERIFIED PARTIAL | Windows PC/laptop, backup/restore; current compatibility and offline recovery not demonstrated. [official source 2](https://badboard.net/howItWorks.aspx) [official source 3](https://badboard.net/extraFeatures.aspx) |
+| 15 | 1 — VERIFIED PARTIAL | Free basic edition; annual €19.99 up to 30 members, €29.99 up to 150, €39.99 unlimited; roster size matters. [official source 4](https://badboard.net/purchase.aspx) |
+
+### Badminton Peg System
+
+Canonical: [Badminton Peg System](https://bps.graeyna.com). **39 verified; 34 unresolved; 11/15 resolved.**
+
+The listing requires manual developer verification of a new club, qualifying the homepage’s immediate-setup language. Skill balancing, repeat avoidance and fairness rules remain unresolved. Offline operation begins after setup/login.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 1 — VERIFIED PARTIAL | Present players enter the waiting queue; late-arrival ordering not explained. [official source 1](https://bps.graeyna.com) [official source 2](https://play.google.com/store/apps/details?id=com.bps.badmintonPegSystem) |
+| 2 | 2 — VERIFIED FULL | Finishing a game automatically promotes Coming Up players; Followed By is also shown. [official source 1](https://bps.graeyna.com) |
+| 3 | U — UNVERIFIED | Smart Assign is described as queue-based, not demonstrated skill balancing.  |
+| 4 | U — UNVERIFIED | No wait/sit-out accounting rule located.  |
+| 5 | U — UNVERIFIED | No partner/opponent avoidance rule located.  |
+| 6 | 1 — VERIFIED PARTIAL | Queue stages visible; selection rationale not disclosed. [official source 1](https://bps.graeyna.com) [official source 2](https://play.google.com/store/apps/details?id=com.bps.badmintonPegSystem) |
+| 7 | 1 — VERIFIED PARTIAL | Manual picks, drag/drop and team shuffle; special-case interactions unspecified. [official source 1](https://bps.graeyna.com) |
+| 8 | 1 — VERIFIED PARTIAL | Win/loss and win-rate rankings, not opponent-adjusted skill ratings. [official source 1](https://bps.graeyna.com) |
+| 9 | 1 — VERIFIED PARTIAL | Session results and history filters; point-entry/validation rules not disclosed. [official source 1](https://bps.graeyna.com) |
+| 10 | 1 — VERIFIED PARTIAL | Tablet courts side by side and phone queue; kiosk permissions not disclosed. [official source 1](https://bps.graeyna.com) |
+| 11 | 1 — VERIFIED PARTIAL | Attendance and periodic growth/performance statistics claimed. [official source 1](https://bps.graeyna.com) [official source 2](https://play.google.com/store/apps/details?id=com.bps.badmintonPegSystem) |
+| 12 | 1 — VERIFIED PARTIAL | Club setup/player roster and verified admin account; no dues/payment collection established. [official source 1](https://bps.graeyna.com) [official source 2](https://play.google.com/store/apps/details?id=com.bps.badmintonPegSystem) |
+| 13 | U — UNVERIFIED | No competition workflow established.  |
+| 14 | 1 — VERIFIED PARTIAL | Local attendance/court changes sync later, but setup/login and new-club manual verification are required. [official source 1](https://bps.graeyna.com) [official source 2](https://play.google.com/store/apps/details?id=com.bps.badmintonPegSystem) |
+| 15 | 1 — VERIFIED PARTIAL | £0 with unlimited players/courts stated, but developer activation is a practical dependency. [official source 1](https://bps.graeyna.com) [official source 2](https://play.google.com/store/apps/details?id=com.bps.badmintonPegSystem) |
+
+### Badmatch
+
+Canonical: [Badmatch](https://badmatch.app). **48 verified; 4 unresolved; 14/15 resolved.**
+
+The linked listing materially improves the evidence beyond the small homepage. Grades require administration, bye fairness is not attendance-normalised, and public purchase costs are unresolved. Timer-based operation needs a club-night trial.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 1 — VERIFIED PARTIAL | Presence marks determine eligible players; late ordering unspecified. [official source 2](https://play.google.com/store/apps/details?id=bad.match) |
+| 2 | 1 — VERIFIED PARTIAL | 1–20 courts with independent timers; result-driven asynchronous replacement not established. [official source 2](https://play.google.com/store/apps/details?id=bad.match) |
+| 3 | 1 — VERIFIED PARTIAL | Pairs similar grades, then matches opponent pairs; no objective/edge-case calculation. [official source 2](https://play.google.com/store/apps/details?id=bad.match) |
+| 4 | 1 — VERIFIED PARTIAL | Bye counts even out play, but presence-duration and rest accounting unspecified. [official source 2](https://play.google.com/store/apps/details?id=bad.match) |
+| 5 | 1 — VERIFIED PARTIAL | Preferred partners and repeat-pairing avoidance; opponent variety unspecified. [official source 2](https://play.google.com/store/apps/details?id=bad.match) |
+| 6 | 1 — VERIFIED PARTIAL | Bench/rest and grade limits visible, not per-pick explanations. [official source 2](https://play.google.com/store/apps/details?id=bad.match) |
+| 7 | 1 — VERIFIED PARTIAL | Preferred partners and configurable grade gaps; full manual exception flow not established. [official source 2](https://play.google.com/store/apps/details?id=bad.match) |
+| 8 | 1 — VERIFIED PARTIAL | A–F manual grades with performance-based adjustment suggestions; automatic individual skill rating not established. [official source 2](https://play.google.com/store/apps/details?id=bad.match) |
+| 9 | 1 — VERIFIED PARTIAL | Tap/BWF per-set scoring, timer auto-save and session histories; timer behaviour qualifies live scoring. [official source 2](https://play.google.com/store/apps/details?id=bad.match) |
+| 10 | 1 — VERIFIED PARTIAL | Per-court timers/live bench; dedicated kiosk behaviour unspecified. [official source 2](https://play.google.com/store/apps/details?id=bad.match) |
+| 11 | 1 — VERIFIED PARTIAL | Recurring sessions and detailed session summaries claimed. [official source 2](https://play.google.com/store/apps/details?id=bad.match) |
+| 12 | 1 — VERIFIED PARTIAL | Role management, ownership transfer and session-cost calculator; no dues processor established. [official source 2](https://play.google.com/store/apps/details?id=bad.match) |
+| 13 | U — UNVERIFIED | No competition workflow established.  |
+| 14 | 1 — VERIFIED PARTIAL | Android offline-first cloud sync claimed; reconciliation/conflict behaviour unspecified. [official source 2](https://play.google.com/store/apps/details?id=bad.match) |
+| 15 | 1 — VERIFIED PARTIAL | In-app purchases; tariff and free practical limits not established. [official source 2](https://play.google.com/store/apps/details?id=bad.match) |
+
+### Court Buddy
+
+Canonical: [Court Buddy](https://court-buddy.com). **50 verified; 0 unresolved; 15/15 resolved.**
+
+This is presented as a pickleball product. That fact does not alter its numerical score. Fairness is count-based, score/ratings details are incomplete, and the Guides route remained blank in repeated rendered-browser attempts.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 1 — VERIFIED PARTIAL | Add/remove players any time and recalculate live; actual late-entry/check-in procedure not detailed. [official source 1](https://court-buddy.com) |
+| 2 | 1 — VERIFIED PARTIAL | Timed round generation and live recalculation; asynchronous freed-court replacement not established. [official source 1](https://court-buddy.com) |
+| 3 | 1 — VERIFIED PARTIAL | Fair team balancing and ratings; strength-balanced doubles mechanics not disclosed. [official source 1](https://court-buddy.com) [official source 2](https://court-buddy.com/clubs) |
+| 4 | 1 — VERIFIED PARTIAL | Equal sit-out counts except voluntary sit-outs; elapsed-wait and late-credit rule unspecified. [official source 1](https://court-buddy.com) |
+| 5 | 1 — VERIFIED PARTIAL | Fairness/rotation variety claimed without repeat limits. [official source 1](https://court-buddy.com) |
+| 6 | 1 — VERIFIED PARTIAL | Visible live sharing/queue; individual allocation reasons not disclosed. [official source 1](https://court-buddy.com) [official source 2](https://court-buddy.com/clubs) |
+| 7 | 1 — VERIFIED PARTIAL | Tap a sit-out player into a court; live swaps/removals/recalculation, but conflict/special-case limits not described. [official source 1](https://court-buddy.com) |
+| 8 | 1 — VERIFIED PARTIAL | Results/opponent strength update ratings; doubles attribution/calculation unspecified. [official source 1](https://court-buddy.com) [official source 2](https://court-buddy.com/clubs) |
+| 9 | 1 — VERIFIED PARTIAL | Individual results, head-to-head and trends; score validation procedure not established. [official source 1](https://court-buddy.com) [official source 2](https://court-buddy.com/clubs) |
+| 10 | 1 — VERIFIED PARTIAL | Multi-court/live sharing; kiosk permission scheme not established. [official source 1](https://court-buddy.com) [official source 2](https://court-buddy.com/clubs) |
+| 11 | 1 — VERIFIED PARTIAL | Attendance/session records and league reports claimed. [official source 2](https://court-buddy.com/clubs) |
+| 12 | 1 — VERIFIED PARTIAL | Club join codes, roles and roster; no club-fee collection workflow established. [official source 2](https://court-buddy.com/clubs) |
+| 13 | 1 — VERIFIED PARTIAL | League, round-robin and knockout formats listed; no full draw/exception procedure. [official source 2](https://court-buddy.com/clubs) |
+| 14 | 1 — VERIFIED PARTIAL | iOS/Android access; offline operation not established. [official source 1](https://court-buddy.com) |
+| 15 | 1 — VERIFIED PARTIAL | Free for clubs/players stated; concrete practical capacity not established. [official source 1](https://court-buddy.com) [official source 2](https://court-buddy.com/clubs) |
+
+### Court Manager
+
+Canonical: [Court Manager](https://www.court-manager.com). **46.5 verified; 13 unresolved; 12/15 resolved.**
+
+Rank priority can sacrifice equal participation. Manual choice stops automatic selection. Winner recording is less than a fully documented scoring/history system; pricing, payments and competitions remain unresolved.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 2 — VERIFIED FULL | Add players during the session; pause for a break, mark last game then remove. [official source 1](https://www.court-manager.com) |
+| 2 | 1 — VERIFIED PARTIAL | Finish-court queue/automatic pick loop documented, but requested-format or repeated-game constraints can pause selection. [official source 1](https://www.court-manager.com) |
+| 3 | 1 — VERIFIED PARTIAL | Manual ranks plus adjustable rank/fairness emphasis; balancing can reduce some players’ games. [official source 1](https://www.court-manager.com) |
+| 4 | 1 — VERIFIED PARTIAL | Ranking emphasis can explicitly skip players and give them fewer games. [official source 1](https://www.court-manager.com) |
+| 5 | 1 — VERIFIED PARTIAL | Uses who has played with whom; opponent-avoidance rule unspecified. [official source 1](https://www.court-manager.com) |
+| 6 | 1 — VERIFIED PARTIAL | Queue, rank/fairness controls and picker rule visible; no individual reasons panel. [official source 1](https://www.court-manager.com) |
+| 7 | 1 — VERIFIED PARTIAL | Manual choice available, but it disables automatic selection. [official source 1](https://www.court-manager.com) |
+| 8 | 1 — VERIFIED PARTIAL | Manual strength ranks and result-influenced queue position, not a documented adaptive rating formula. [official source 1](https://www.court-manager.com) |
+| 9 | 1 — VERIFIED PARTIAL | Record winners and session statistics; full score/history capability not established. [official source 1](https://www.court-manager.com) |
+| 10 | 1 — VERIFIED PARTIAL | Configurable court count/live board; kiosk permission flow not established. [official source 1](https://www.court-manager.com) |
+| 11 | 1 — VERIFIED PARTIAL | Current-session statistics; longitudinal attendance reports not established. [official source 1](https://www.court-manager.com) |
+| 12 | U — UNVERIFIED | No payment/member-administration workflow established.  |
+| 13 | U — UNVERIFIED | No competition workflow established.  |
+| 14 | 1 — VERIFIED PARTIAL | iOS and hosted browser access offered; offline/recovery not established. [official source 1](https://www.court-manager.com) |
+| 15 | U — UNVERIFIED | No tariff/practical roster limits established.  |
+
+### CourtMaster – Match Manager
+
+Canonical: [CourtMaster – Match Manager](https://apps.apple.com/us/app/courtmaster/id6758101442). **46 verified; 8 unresolved; 14/15 resolved.**
+
+Four courts require Premium. The developer guide says App Store release is forthcoming although the canonical listing is readable; deployment/version consistency needs checking. Japanese guide text was read alongside the listing; no app was installed.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 1 — VERIFIED PARTIAL | Event attendance/preselected participants; mid-session late admission rule not established. [official source 2](https://courtsync-a95f0.web.app/) [official source 3](https://courtsync-a95f0.web.app/guide.html) |
+| 2 | 1 — VERIFIED PARTIAL | Start courts sequentially and choose automatic redistribution modes; finishing-court regeneration rule incomplete. [official source 3](https://courtsync-a95f0.web.app/guide.html) |
+| 3 | 1 — VERIFIED PARTIAL | Level-focused/Elo pairing; objective and constrained-headcount behaviour unspecified. [official source 2](https://courtsync-a95f0.web.app/) [official source 3](https://courtsync-a95f0.web.app/guide.html) |
+| 4 | 1 — VERIFIED PARTIAL | Choose game-count or rest-bias mode; arrival-normalised accounting unspecified. [official source 3](https://courtsync-a95f0.web.app/guide.html) |
+| 5 | U — UNVERIFIED | No partner/opponent avoidance rule established.  |
+| 6 | 1 — VERIFIED PARTIAL | Court/position display and mode controls, not pick reasons. [official source 3](https://courtsync-a95f0.web.app/guide.html) |
+| 7 | 1 — VERIFIED PARTIAL | Drag icons to form pairs; interactions with automatic picking unspecified. [official source 3](https://courtsync-a95f0.web.app/guide.html) |
+| 8 | 1 — VERIFIED PARTIAL | Elo skill/history stated; update/attribution rules unspecified. [official source 2](https://courtsync-a95f0.web.app/) |
+| 9 | 1 — VERIFIED PARTIAL | Server positions, configurable scoring/sets/deuce and score sheets; history/correction behaviour incomplete. [official source 2](https://courtsync-a95f0.web.app/) [official source 3](https://courtsync-a95f0.web.app/guide.html) |
+| 10 | 1 — VERIFIED PARTIAL | Paid multi-court collaboration; no dedicated kiosk flow. [official source 1](https://apps.apple.com/us/app/courtmaster/id6758101442) [official source 2](https://courtsync-a95f0.web.app/) |
+| 11 | 1 — VERIFIED PARTIAL | Events and monthly attendance claimed without reporting controls. [official source 2](https://courtsync-a95f0.web.app/) |
+| 12 | 1 — VERIFIED PARTIAL | Member invitations/groups; no club-fee collection established. [official source 2](https://courtsync-a95f0.web.app/) [official source 3](https://courtsync-a95f0.web.app/guide.html) |
+| 13 | 1 — VERIFIED PARTIAL | Round-robin/league/PDF standings claimed; exception handling unspecified. [official source 2](https://courtsync-a95f0.web.app/) |
+| 14 | 1 — VERIFIED PARTIAL | iOS 18.6+; basic offline scoring but shared multi-court use requires internet. [official source 1](https://apps.apple.com/us/app/courtmaster/id6758101442) [official source 2](https://courtsync-a95f0.web.app/) |
+| 15 | 1 — VERIFIED PARTIAL | Free one court; ¥300/month Basic two courts; ¥500/month Premium up to 12, one subscriber unlocks group; UK checkout untested. [official source 2](https://courtsync-a95f0.web.app/) |
+
+### CourtsFlow
+
+Canonical: [CourtsFlow](https://courtsflow.com). **51 verified; 4 unresolved; 14/15 resolved.**
+
+Promising asynchronous session workflow, but fairness, rating and selection rules are not disclosed sufficiently for full scores. Post-trial pricing is unresolved. The pricing page required a later loaded snapshot.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 2 — VERIFIED FULL | Phone check-in and ongoing late admissions; guests use name/gender without account. [official source 2](https://courtsflow.com/how-it-works) |
+| 2 | 1 — VERIFIED PARTIAL | Four eligible players form next waiting game and advance on finish; may deliberately wait in small pools to avoid repeats. [official source 2](https://courtsflow.com/how-it-works) |
+| 3 | 1 — VERIFIED PARTIAL | Four starting bands and balance claims; optimisation mechanics not disclosed. [official source 2](https://courtsflow.com/how-it-works) [official source 3](https://courtsflow.com/features) |
+| 4 | 1 — VERIFIED PARTIAL | Fair/competitive claims and optional pause; wait accounting unspecified. [official source 2](https://courtsflow.com/how-it-works) [official source 3](https://courtsflow.com/features) |
+| 5 | 1 — VERIFIED PARTIAL | Avoids repeats in small sessions, sometimes waits; bounds/partner-opponent distinction unspecified. [official source 2](https://courtsflow.com/how-it-works) |
+| 6 | 1 — VERIFIED PARTIAL | Waiting game/court board and published broad goals; no individual reasons. [official source 2](https://courtsflow.com/how-it-works) [official source 3](https://courtsflow.com/features) |
+| 7 | 1 — VERIFIED PARTIAL | Edit games and change court count live; full special-case interactions unspecified. [official source 3](https://courtsflow.com/features) |
+| 8 | 1 — VERIFIED PARTIAL | Performance ratings by doubles format/club; update formula unspecified. [official source 3](https://courtsflow.com/features) |
+| 9 | 1 — VERIFIED PARTIAL | Match formats and cumulative statistics; detailed correction/history procedure unspecified. [official source 2](https://courtsflow.com/how-it-works) [official source 3](https://courtsflow.com/features) |
+| 10 | 1 — VERIFIED PARTIAL | Organiser tablet/laptop, player phones; no kiosk permission scheme. [official source 2](https://courtsflow.com/how-it-works) |
+| 11 | 1 — VERIFIED PARTIAL | Check-in and player/session statistics, no full report controls. [official source 2](https://courtsflow.com/how-it-works) [official source 3](https://courtsflow.com/features) |
+| 12 | 1 — VERIFIED PARTIAL | Guest/member invite handling; no fee collection workflow established. [official source 2](https://courtsflow.com/how-it-works) |
+| 13 | U — UNVERIFIED | No competition workflow established.  |
+| 14 | 1 — VERIFIED PARTIAL | Browser across tablet/laptop/phones; offline/recovery not established. [official source 2](https://courtsflow.com/how-it-works) |
+| 15 | 1 — VERIFIED PARTIAL | One-month trial; subsequent price to be announced. [official source 4](https://courtsflow.com/pricing) |
+
+### Digital Pegboard
+
+Canonical: [Digital Pegboard](https://play.google.com/store/apps/details?id=com.digitalpegboard.app). **12.5 verified; 75 unresolved; 4/15 resolved.**
+
+The listing is readable, so U cells mean insufficient public evidence, not retrieval failure. Generic automation/tracking claims receive only partial credit; fairness, skill, variety, kiosk and ratings are not established.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | U — UNVERIFIED | No arrival/check-in rule established.  |
+| 2 | 1 — VERIFIED PARTIAL | Automated rotation and smart assignment listed without free-court mechanics. [official source 1](https://play.google.com/store/apps/details?id=com.digitalpegboard.app) |
+| 3 | U — UNVERIFIED | No strength-balanced doubles method established.  |
+| 4 | U — UNVERIFIED | Enjoyable automated rotation alone does not establish a wait/sit-out fairness capability.  |
+| 5 | U — UNVERIFIED | No variety rule established.  |
+| 6 | U — UNVERIFIED | No selection-transparency behaviour established.  |
+| 7 | U — UNVERIFIED | No override procedure established.  |
+| 8 | U — UNVERIFIED | No rating system established.  |
+| 9 | 1 — VERIFIED PARTIAL | Real-time match tracking listed; scoring/statistics/history detail insufficient. [official source 1](https://play.google.com/store/apps/details?id=com.digitalpegboard.app) |
+| 10 | U — UNVERIFIED | No multi-court/kiosk operating detail established.  |
+| 11 | U — UNVERIFIED | No attendance-report workflow established.  |
+| 12 | U — UNVERIFIED | No payment/member-administration workflow established.  |
+| 13 | U — UNVERIFIED | No competition workflow established.  |
+| 14 | 1 — VERIFIED PARTIAL | Android listing accessible; offline/recovery not established. [official source 1](https://play.google.com/store/apps/details?id=com.digitalpegboard.app) |
+| 15 | 1 — VERIFIED PARTIAL | In-app purchases listed; amounts and operating limits unspecified. [official source 1](https://play.google.com/store/apps/details?id=com.digitalpegboard.app) |
+
+### eBadders
+
+Canonical: [eBadders](https://ebadders.com). **48 verified; 4 unresolved; 14/15 resolved.**
+
+Club rating excludes asymmetric mixed-gender games, and male/female ratings are not comparable. Session rankings require enough games, potentially excluding late/coaching players. Internet is required; league-team advice is not competition management.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 1 — VERIFIED PARTIAL | Reservations/delegated session hosts; late admission accounting not established. [official source 2](https://ebadders.com/help/) [official source 5](https://ebadders.com/help/club/) |
+| 2 | 1 — VERIFIED PARTIAL | Smart peg system chooses games; asynchronous court/finish edge cases not detailed. [official source 3](https://ebadders.com/help/session-manager/) [official source 5](https://ebadders.com/help/club/) |
+| 3 | 1 — VERIFIED PARTIAL | Learns level and avoids large team/partner gaps; balancing calculation unspecified. [official source 5](https://ebadders.com/help/club/) |
+| 4 | 1 — VERIFIED PARTIAL | Fair numbers of games claimed; wait/presence-duration rule unspecified. [official source 5](https://ebadders.com/help/club/) |
+| 5 | 1 — VERIFIED PARTIAL | Varied partners/opponents claimed; avoidance limits unspecified. [official source 3](https://ebadders.com/help/session-manager/) [official source 5](https://ebadders.com/help/club/) |
+| 6 | 1 — VERIFIED PARTIAL | Session/club ranking rules public; individual game-pick reasons not established. [official source 4](https://ebadders.com/help/ranking/) [official source 5](https://ebadders.com/help/club/) |
+| 7 | 1 — VERIFIED PARTIAL | Manually modify suggestions and partnership/game-type preferences; edge cases unspecified. [official source 5](https://ebadders.com/help/club/) |
+| 8 | 1 — VERIFIED PARTIAL | Club ranking uses results, recency and strengths, but excludes one-woman/three-men games; genders not comparable. [official source 4](https://ebadders.com/help/ranking/) |
+| 9 | 1 — VERIFIED PARTIAL | Session scores, performance/history; rating exclusions and session qualification constrain stats. [official source 4](https://ebadders.com/help/ranking/) [official source 5](https://ebadders.com/help/club/) |
+| 10 | 1 — VERIFIED PARTIAL | Laptop control and separate visible tablet, scalable devices; kiosk permissions unspecified. [official source 5](https://ebadders.com/help/club/) |
+| 11 | 1 — VERIFIED PARTIAL | Games/performance reviews and membership progress; attendance-report controls unspecified. [official source 5](https://ebadders.com/help/club/) |
+| 12 | 1 — VERIFIED PARTIAL | Club registration, delegated hosts/players and reservations; no payment collection established. [official source 2](https://ebadders.com/help/) [official source 5](https://ebadders.com/help/club/) |
+| 13 | U — UNVERIFIED | League-team selection advice is not league scheduling; no competition workflow established.  |
+| 14 | 1 — VERIFIED PARTIAL | Requires an internet-connected browser; phone possible, laptop/tablet recommended. [official source 5](https://ebadders.com/help/club/) |
+| 15 | 1 — VERIFIED PARTIAL | Currently free; concrete capacity and future pricing unspecified. [official source 5](https://ebadders.com/help/club/) |
+
+### ePegboard
+
+Canonical: [ePegboard](https://www.epegboard.com). **70.5 verified; 0 unresolved; 15/15 resolved.**
+
+Balance, waiting fairness and variety are competing soft objectives. Hard queue/no-back-to-back rules may worsen games. Team Elo cannot measure individual contribution perfectly. Ended sessions cannot reopen. Payments are records, not card/online collection, and overwrite one figure rather than form a ledger. Competitions are currently doubles-focused. Offline Windows is a separate edition with feature differences; online price is free but concrete web scale limits are not established.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 2 — VERIFIED FULL | Check in throughout the night, add new/guest players on spot, check out or sit out without ending session. [official source 9](https://docs.epegboard.com/club-nights/kiosk-mode/) [official source 12](https://docs.epegboard.com/tutorials/first-club-night/) [official source 13](https://docs.epegboard.com/club-nights/special-requests/) |
+| 2 | 2 — VERIFIED FULL | Generate on a free court, prep future games, finish/score returns players; multi-court picker considers whole room. [official source 6](https://docs.epegboard.com/club-nights/the-picker/) [official source 12](https://docs.epegboard.com/tutorials/first-club-night/) |
+| 3 | 1 — VERIFIED PARTIAL | Expected closeness and skill spread are soft optimisation signals, not guaranteed close doubles. [official source 6](https://docs.epegboard.com/club-nights/the-picker/) |
+| 4 | 1 — VERIFIED PARTIAL | Wait, queue and no-straight-back are soft by default; hard rules can force poorer games. [official source 6](https://docs.epegboard.com/club-nights/the-picker/) |
+| 5 | 1 — VERIFIED PARTIAL | Partner/opponent repeat penalties are soft; hard requirements can constrain mixing. [official source 6](https://docs.epegboard.com/club-nights/the-picker/) |
+| 6 | 2 — VERIFIED FULL | Info panel explains individual suggestions using wait/balance and alternatives; documented reason-view control. [official source 6](https://docs.epegboard.com/club-nights/the-picker/) |
+| 7 | 2 — VERIFIED FULL | Swap/lock players, manual games, sticky pairs, parked fours with hold/release/queue/cancel and mid-game status handling. [official source 6](https://docs.epegboard.com/club-nights/the-picker/) [official source 13](https://docs.epegboard.com/club-nights/special-requests/) |
+| 8 | 1 — VERIFIED PARTIAL | Margin-aware team Elo with new-player confidence; cannot isolate individual doubles contribution. [official source 7](https://docs.epegboard.com/ratings/overview/) |
+| 9 | 1 — VERIFIED PARTIAL | Live scores, saved lineups/history and ratings, but ended sessions cannot be reopened. [official source 8](https://docs.epegboard.com/club-nights/sessions/) [official source 12](https://docs.epegboard.com/tutorials/first-club-night/) |
+| 10 | 2 — VERIFIED FULL | Remembered full-screen kiosk, PIN and granular actions; admin bypass and idle return specified. [official source 9](https://docs.epegboard.com/club-nights/kiosk-mode/) |
+| 11 | 2 — VERIFIED FULL | Date/profile filters, sortable session rows, CSV and attendance trends/annual/seasonal summaries. [official source 15](https://docs.epegboard.com/insights/attendance-over-time/) [official source 16](https://docs.epegboard.com/insights/session-summary/) |
+| 12 | 1 — VERIFIED PARTIAL | Roster roles/import/export and payment summaries, but no online/card collection; one saved amount per player/session. [official source 10](https://docs.epegboard.com/club-nights/payments/) [official source 14](https://docs.epegboard.com/club-nights/members/) |
+| 13 | 1 — VERIFIED PARTIAL | Operational handicap doubles competitions; singles and team events remain roadmap. [official source 4](https://www.epegboard.com/features/competitions) |
+| 14 | 1 — VERIFIED PARTIAL | Free web and separate £60/year Windows offline edition; features/platforms differ, new features arrive web first. [official source 5](https://www.epegboard.com/pricing) [official source 11](https://www.epegboard.com/featuresdesktop) |
+| 15 | 1 — VERIFIED PARTIAL | Core web free; offline edition £60/year with 60-day trial; practical web caps not quantitatively established. [official source 5](https://www.epegboard.com/pricing) [official source 11](https://www.epegboard.com/featuresdesktop) |
+
+### Ladderly
+
+Canonical: [Ladderly](https://ladderly.online). **41.5 verified; 17 unresolved; 12/15 resolved.**
+
+Small-group mode fixes court groups for the session. Similar-strength quartets do not by themselves establish balanced opposing doubles teams. Rating visibility waits for placement confidence and deuce, not 21–19, reduces rating impact. Paid personal-statistics scope needs confirmation.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 1 — VERIFIED PARTIAL | Meetup check-in window and preferences; late admissions rule not established. [official source 1](https://ladderly.online) [official source 2](https://ladderly.online/how-it-works) |
+| 2 | 1 — VERIFIED PARTIAL | Round regeneration; small turnouts stay in groups of 4–6 per court for whole session. [official source 1](https://ladderly.online) [official source 3](https://ladderly.online/faq) |
+| 3 | 1 — VERIFIED PARTIAL | TrueSkill/similar-strength four-player groups, not detailed opposing-pair optimisation. [official source 3](https://ladderly.online/faq) |
+| 4 | 1 — VERIFIED PARTIAL | Updated wait times and downtime/competition preferences; priority and rest accounting unspecified. [official source 1](https://ladderly.online) [official source 3](https://ladderly.online/faq) |
+| 5 | U — UNVERIFIED | No repeat-partner/opponent rule established.  |
+| 6 | 1 — VERIFIED PARTIAL | Visible self-evaluation and published rating formula; no individual allocation explanation. [official source 1](https://ladderly.online) [official source 5](https://ladderly.online/rating-explanation) |
+| 7 | U — UNVERIFIED | No manual court/lineup exception flow established.  |
+| 8 | 1 — VERIFIED PARTIAL | TrueSkill μ/σ, conservative μ−3σ display and defaults; placement visibility and extra-point reduction qualify rating. [official source 5](https://ladderly.online/rating-explanation) |
+| 9 | 1 — VERIFIED PARTIAL | Score submission/basic stats; full history, ranking and head-to-head are Premium. [official source 1](https://ladderly.online) [official source 4](https://ladderly.online/pricing) |
+| 10 | 1 — VERIFIED PARTIAL | Court assignments on phones; no kiosk permissions/display workflow. [official source 1](https://ladderly.online) [official source 2](https://ladderly.online/how-it-works) |
+| 11 | 1 — VERIFIED PARTIAL | Meetup/score statistics; full attendance/session-report controls not established. [official source 1](https://ladderly.online) [official source 2](https://ladderly.online/how-it-works) |
+| 12 | 1 — VERIFIED PARTIAL | Clubs/admin-created meetups; no club-dues/payment collection established. [official source 1](https://ladderly.online) [official source 2](https://ladderly.online/how-it-works) |
+| 13 | U — UNVERIFIED | No competition workflow established.  |
+| 14 | 1 — VERIFIED PARTIAL | Phone browser and account login; offline/recovery not established. [official source 1](https://ladderly.online) [official source 3](https://ladderly.online/faq) |
+| 15 | 1 — VERIFIED PARTIAL | Core free with ads; Premium CAD$30/month; paid scope and UK practical terms need confirmation. [official source 3](https://ladderly.online/faq) [official source 4](https://ladderly.online/pricing) |
+
+### Matchit
+
+Canonical: [Matchit](https://apps.apple.com/us/app/matchit/id6739728243). **23.5 verified; 53 unresolved; 6/15 resolved.**
+
+Thin official listing; linked developer/support pages add no feature detail. Do not transfer capabilities from other apps by this developer. Pro removes a game cap whose free amount and purchase price are not public in the read listing.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | U — UNVERIFIED | No arrival/check-in behaviour established.  |
+| 2 | 1 — VERIFIED PARTIAL | AI Generate and multi-user generation claimed; free-court mechanics unspecified. [official source 1](https://apps.apple.com/us/app/matchit/id6739728243) |
+| 3 | 1 — VERIFIED PARTIAL | Skill-based balanced doubles claim; algorithm unspecified. [official source 1](https://apps.apple.com/us/app/matchit/id6739728243) |
+| 4 | 1 — VERIFIED PARTIAL | Counts games played for fair distribution; presence/wait rule unspecified. [official source 1](https://apps.apple.com/us/app/matchit/id6739728243) |
+| 5 | U — UNVERIFIED | No partner/opponent avoidance rule established.  |
+| 6 | U — UNVERIFIED | No allocation-transparency feature established.  |
+| 7 | U — UNVERIFIED | No manual override procedure established.  |
+| 8 | U — UNVERIFIED | No player rating update system established.  |
+| 9 | 1 — VERIFIED PARTIAL | Tracks games participated/finished; live point scoring and durable history not established. [official source 1](https://apps.apple.com/us/app/matchit/id6739728243) |
+| 10 | U — UNVERIFIED | No multi-court/kiosk operating details established.  |
+| 11 | U — UNVERIFIED | No attendance/session reporting established.  |
+| 12 | U — UNVERIFIED | The developer’s separate dues app is not this candidate; no payment feature established.  |
+| 13 | U — UNVERIFIED | No competition workflow established.  |
+| 14 | 1 — VERIFIED PARTIAL | iPhone iOS 16.4+; offline/recovery not established. [official source 1](https://apps.apple.com/us/app/matchit/id6739728243) |
+| 15 | 1 — VERIFIED PARTIAL | Free/IAP; Pro unlocks unlimited finished games/admin sharing, but prices and free limit unspecified. [official source 1](https://apps.apple.com/us/app/matchit/id6739728243) |
+
+### NextFour
+
+Canonical: [NextFour](https://nextfour.app). **46.5 verified; 19 unresolved; 12/15 resolved.**
+
+The support page qualifies the homepage’s free-start pitch: the important selection and terminal modes are paid unlocks, with no readable amount. Variety statistics are not evidence of a variety-aware picker; adaptive skill ratings remain unresolved.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 1 — VERIFIED PARTIAL | Phone/terminal check-in; late-player queue-credit rule unspecified. [official source 1](https://nextfour.app) |
+| 2 | 2 — VERIFIED FULL | Pegboard sends next four to free court and queue advances as games finish. [official source 1](https://nextfour.app) [official source 2](https://nextfour.app/support.html) |
+| 3 | 1 — VERIFIED PARTIAL | Skill-based mode listed; doubles balancing mechanics unspecified. [official source 1](https://nextfour.app) [official source 2](https://nextfour.app/support.html) |
+| 4 | 1 — VERIFIED PARTIAL | Fair queue/visible waiting claimed; elapsed-presence rule unspecified. [official source 1](https://nextfour.app) |
+| 5 | U — UNVERIFIED | Who-played-with statistics do not establish variety optimisation.  |
+| 6 | 1 — VERIFIED PARTIAL | Live current/next/wait board; no per-pick explanations. [official source 1](https://nextfour.app) |
+| 7 | 1 — VERIFIED PARTIAL | Manual mode and pairing pegs; special-case interactions unspecified. [official source 1](https://nextfour.app) |
+| 8 | U — UNVERIFIED | Win rates do not establish a skill-rating update system.  |
+| 9 | 1 — VERIFIED PARTIAL | Scores, win rates and player history claimed; correction/validation behaviour unspecified. [official source 1](https://nextfour.app) |
+| 10 | 1 — VERIFIED PARTIAL | Tablet Terminal self-check-in listed; no kiosk permission/lock procedure. [official source 1](https://nextfour.app) |
+| 11 | 1 — VERIFIED PARTIAL | Tonight’s presence and session/player history; report controls unspecified. [official source 1](https://nextfour.app) [official source 2](https://nextfour.app/support.html) |
+| 12 | 1 — VERIFIED PARTIAL | Members/guests and club sharing; no club-fee collection established. [official source 1](https://nextfour.app) [official source 2](https://nextfour.app/support.html) |
+| 13 | U — UNVERIFIED | No competition workflow established.  |
+| 14 | 1 — VERIFIED PARTIAL | iOS/Android plus tablet use; offline/recovery not established. [official source 1](https://nextfour.app) |
+| 15 | 1 — VERIFIED PARTIAL | Free to start, but support says paid unlocks Pegboard/Skill/Terminal; amount and caps unspecified. [official source 1](https://nextfour.app) [official source 2](https://nextfour.app/support.html) |
+
+### PaQueueKa
+
+Canonical: [PaQueueKa](https://paqueueka.info). **51.5 verified; 5 unresolved; 14/15 resolved.**
+
+Compatible skill tiers are not full team-strength optimisation. Fairness is count/tier-based. Provisional rank qualifications can disadvantage infrequent/late players. Tournaments are explicitly future features. Regional lifetime prices are approximate.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 1 — VERIFIED PARTIAL | Join by code/QR; late-arrival ordering not disclosed. [official source 1](https://paqueueka.info) |
+| 2 | 2 — VERIFIED FULL | Waiting→playing→done→queue workflow; game completion advances court queue. [official source 1](https://paqueueka.info) |
+| 3 | 1 — VERIFIED PARTIAL | Compatible five tiers including bridge tier; no opposing-pair balance objective. [official source 1](https://paqueueka.info) |
+| 4 | 1 — VERIFIED PARTIAL | Games played/tier rotation; elapsed waiting and late credit unspecified. [official source 1](https://paqueueka.info) |
+| 5 | 1 — VERIFIED PARTIAL | Avoids consecutive identical partners; opponent variety not established. [official source 1](https://paqueueka.info) |
+| 6 | 1 — VERIFIED PARTIAL | Queue stages and public ranking qualification formula; no per-pick reasons. [official source 1](https://paqueueka.info) |
+| 7 | U — UNVERIFIED | No operational manual override/sit-out exception flow established.  |
+| 8 | 1 — VERIFIED PARTIAL | Session win-rate/Bayesian rankings; 80%-of-busiest games qualification and separate quarterly seasons. [official source 1](https://paqueueka.info) |
+| 9 | 1 — VERIFIED PARTIAL | Scores and searchable histories/analytics claimed; score correction/validation not specified. [official source 1](https://paqueueka.info) |
+| 10 | 1 — VERIFIED PARTIAL | Live queue page/QR sharing; full multi-court kiosk controls unspecified. [official source 1](https://paqueueka.info) |
+| 11 | 1 — VERIFIED PARTIAL | Games/waits/utilisation analytics listed without report controls. [official source 1](https://paqueueka.info) |
+| 12 | 1 — VERIFIED PARTIAL | Club/owner templates, expense/payment tracking; no collection/reconciliation flow. [official source 1](https://paqueueka.info) |
+| 13 | 0 — VERIFIED ABSENT | Tournament brackets and round-robin are explicitly forthcoming; current competition workflow not supplied. [official source 1](https://paqueueka.info) |
+| 14 | 1 — VERIFIED PARTIAL | Recovery code/QR and backup/restore; offline/session conflict handling unspecified. [official source 1](https://paqueueka.info) |
+| 15 | 1 — VERIFIED PARTIAL | Core free; approximate lifetime ₱99 Player Plus/₱199 Pro Host vary by region; UK price not confirmed. [official source 1](https://paqueueka.info) |
+
+### Qcourt
+
+Canonical: [Qcourt](https://play.google.com/store/apps/details?id=com.taforyou.qcourt). **42 verified; 16 unresolved; 13/15 resolved.**
+
+Do not mistake random team shuffle for skill balancing. Pair-control features offer only partial variety. The older local-only privacy wording and newer Satellite live-update listing need version clarification; no full offline sync claim is inferred.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 1 — VERIFIED PARTIAL | Add players to queue; late-player priority rule unspecified. [official source 1](https://play.google.com/store/apps/details?id=com.taforyou.qcourt) |
+| 2 | 1 — VERIFIED PARTIAL | Assign queues across courts and Satellite live updates; finishing-court rule incomplete. [official source 1](https://play.google.com/store/apps/details?id=com.taforyou.qcourt) |
+| 3 | U — UNVERIFIED | Random shuffle/locked pairs do not establish skill-balanced teams.  |
+| 4 | 1 — VERIFIED PARTIAL | Queue/game counts and court time recorded; wait/rest fairness rule unspecified. [official source 1](https://play.google.com/store/apps/details?id=com.taforyou.qcourt) |
+| 5 | 1 — VERIFIED PARTIAL | Random shuffle and pair locks offer some partner mixing, not repeat-aware opponent variety. [official source 1](https://play.google.com/store/apps/details?id=com.taforyou.qcourt) |
+| 6 | 1 — VERIFIED PARTIAL | Queue, games and fees visible; no reasons for picks. [official source 1](https://play.google.com/store/apps/details?id=com.taforyou.qcourt) |
+| 7 | 1 — VERIFIED PARTIAL | Prearranged teams, pair locks, shuffle and separation settings; full exception mechanics unspecified. [official source 1](https://play.google.com/store/apps/details?id=com.taforyou.qcourt) |
+| 8 | 1 — VERIFIED PARTIAL | Manual rank/level categories, not adaptive performance-based skill rating. [official source 1](https://play.google.com/store/apps/details?id=com.taforyou.qcourt) |
+| 9 | 1 — VERIFIED PARTIAL | Game counts/time and session export; full point scoring/history workflow incomplete. [official source 1](https://play.google.com/store/apps/details?id=com.taforyou.qcourt) |
+| 10 | 1 — VERIFIED PARTIAL | Multi-court and Satellite display updates; kiosk permission scheme unspecified. [official source 1](https://play.google.com/store/apps/details?id=com.taforyou.qcourt) |
+| 11 | 1 — VERIFIED PARTIAL | Session data exported to Google Sheets/XLSX; attendance-report controls unspecified. [official source 1](https://play.google.com/store/apps/details?id=com.taforyou.qcourt) |
+| 12 | 1 — VERIFIED PARTIAL | Court/shuttle cost splits and fees; online collection not established. [official source 1](https://play.google.com/store/apps/details?id=com.taforyou.qcourt) |
+| 13 | U — UNVERIFIED | No competition workflow established.  |
+| 14 | 1 — VERIFIED PARTIAL | Android/local storage described; older privacy language and newer Satellite feature need reconciliation. [official source 1](https://play.google.com/store/apps/details?id=com.taforyou.qcourt) [official source 2](https://q-court.pages.dev/) |
+| 15 | 1 — VERIFIED PARTIAL | Free with advertising; practical capacities not established. [official source 1](https://play.google.com/store/apps/details?id=com.taforyou.qcourt) |
+
+### QourtX
+
+Canonical: [QourtX](https://qourtx.com). **50 verified; 0 unresolved; 15/15 resolved.**
+
+Official pages conflict materially on the charging basis and trial duration. Matchmaking and transaction features are predominantly marketing descriptions. Native-app availability and allocation exceptions are unresolved; confirm a written four-court club quote.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 1 — VERIFIED PARTIAL | Members/guest/walk-in kiosk check-in/out; late-credit rule unspecified. [official source 2](https://qourtx.com/features) [official source 3](https://qourtx.com/pricing) |
+| 2 | 1 — VERIFIED PARTIAL | One-click assignments and real-time queue; multi-court finish/rebuild behaviour unspecified. [official source 1](https://qourtx.com) [official source 2](https://qourtx.com/features) |
+| 3 | 1 — VERIFIED PARTIAL | Glicko-2 skill matchmaking claimed without doubles-pair calculation. [official source 1](https://qourtx.com) |
+| 4 | 1 — VERIFIED PARTIAL | Wait/skip priority and back-to-back prevention; tight-pool/late cases unspecified. [official source 2](https://qourtx.com/features) |
+| 5 | 1 — VERIFIED PARTIAL | History/repeat-aware claim; avoidance limits not disclosed. [official source 1](https://qourtx.com) [official source 2](https://qourtx.com/features) |
+| 6 | 1 — VERIFIED PARTIAL | Visible rating/wait/skip indicators, not individual choice explanations. [official source 1](https://qourtx.com) [official source 2](https://qourtx.com/features) |
+| 7 | 1 — VERIFIED PARTIAL | Preferences/rest/session settings; full manual lineup exception flow unspecified. [official source 2](https://qourtx.com/features) [official source 3](https://qourtx.com/pricing) |
+| 8 | 1 — VERIFIED PARTIAL | Glicko-2 named, but individual doubles update method not disclosed. [official source 1](https://qourtx.com) |
+| 9 | 1 — VERIFIED PARTIAL | Live score/analytics claims; result-entry/history correction rules unspecified. [official source 1](https://qourtx.com) [official source 2](https://qourtx.com/features) |
+| 10 | 1 — VERIFIED PARTIAL | Live wallboard and kiosk listed, but complete operator permissions/exception behaviour not established. [official source 2](https://qourtx.com/features) [official source 3](https://qourtx.com/pricing) |
+| 11 | 1 — VERIFIED PARTIAL | Participation/utilisation analytics and CSV/JSON export claims; report controls incomplete. [official source 2](https://qourtx.com/features) |
+| 12 | 1 — VERIFIED PARTIAL | Membership/payments, splitting and refund claims; club software Stripe billing alone is not member collection proof. [official source 1](https://qourtx.com) [official source 2](https://qourtx.com/features) |
+| 13 | 1 — VERIFIED PARTIAL | Brackets, seeding and ladders listed without operational workflow. [official source 1](https://qourtx.com) |
+| 14 | 1 — VERIFIED PARTIAL | Browser/live displays; store links are placeholders in page read, native availability not verified. [official source 1](https://qourtx.com) [official source 2](https://qourtx.com/features) |
+| 15 | 1 — VERIFIED PARTIAL | Root £4/active-member/month vs pricing £7.99/club/month for 21–30; 14-day trial vs FAQ seven days. [official source 1](https://qourtx.com) [official source 3](https://qourtx.com/pricing) |
+
+### Queue Master
+
+Canonical: [Queue Master](https://queuemaster.site). **34.5 verified; 31 unresolved; 9/15 resolved.**
+
+Home and News UI were inspected, including bulk-entry rules. News descriptions are vendor documentation; active swaps and queue behaviour were not executed. A Stats tab is not proof of statistics. The sport is deliberately left unspecified.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 1 — VERIFIED PARTIAL | Bulk/single names, availability filters and default Intermediate skill; late rule unspecified. [official source 1](https://queuemaster.site) |
+| 2 | 1 — VERIFIED PARTIAL | Magic Queue and reorderable match queue documented in News; end-court mechanics unspecified. [official source 1](https://queuemaster.site) |
+| 3 | 1 — VERIFIED PARTIAL | Wait/skill-based combination claim; doubles balancing objective unspecified. [official source 1](https://queuemaster.site) |
+| 4 | 1 — VERIFIED PARTIAL | Wait time considered; priority/rest accounting unspecified. [official source 1](https://queuemaster.site) |
+| 5 | U — UNVERIFIED | No partner/opponent avoidance rule established.  |
+| 6 | 1 — VERIFIED PARTIAL | Queue badges, position numbers and statuses visible; no individual pick explanations. [official source 1](https://queuemaster.site) |
+| 7 | 1 — VERIFIED PARTIAL | News describes active-player swaps and court moves, but conflict/special-case limits unspecified. [official source 1](https://queuemaster.site) |
+| 8 | 1 — VERIFIED PARTIAL | Editable manual skill levels, not result-updating rating engine. [official source 1](https://queuemaster.site) |
+| 9 | U — UNVERIFIED | Stats tab alone does not establish live scoring/history.  |
+| 10 | 1 — VERIFIED PARTIAL | Court moves/grid and status display; kiosk workflow not established. [official source 1](https://queuemaster.site) |
+| 11 | U — UNVERIFIED | No attendance/session-report controls established.  |
+| 12 | U — UNVERIFIED | No payment/member-administration workflow established.  |
+| 13 | U — UNVERIFIED | No competition workflow established.  |
+| 14 | 1 — VERIFIED PARTIAL | Rendered browser app; offline/persistence/recovery not established. [official source 1](https://queuemaster.site) |
+| 15 | U — UNVERIFIED | No tariff or capacity established.  |
+
+### Racket Arena
+
+Canonical: [Racket Arena](https://racketarena.xyz). **30.5 verified; 39 unresolved; 8/15 resolved.**
+
+Readable product homepage, but most capabilities are feature claims. The application was not entered. No evidence of a live-night edge-case rule, rating method or software price was established.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | U — UNVERIFIED | No check-in/late-player rule established.  |
+| 2 | 1 — VERIFIED PARTIAL | Automated queue/court management claim, no finish/rebuild procedure. [official source 1](https://racketarena.xyz) |
+| 3 | 1 — VERIFIED PARTIAL | Balanced matches claimed without pair-selection mechanics. [official source 1](https://racketarena.xyz) |
+| 4 | 1 — VERIFIED PARTIAL | Reduced waiting/fair queue claim, no accounting rule. [official source 1](https://racketarena.xyz) |
+| 5 | U — UNVERIFIED | No repeat-partner/opponent rule established.  |
+| 6 | U — UNVERIFIED | No selection-transparency behaviour established.  |
+| 7 | U — UNVERIFIED | No override procedure established.  |
+| 8 | 1 — VERIFIED PARTIAL | Session rankings/performance claimed, no update method. [official source 1](https://racketarena.xyz) |
+| 9 | 1 — VERIFIED PARTIAL | Session history and player performance listed without scoring procedure. [official source 1](https://racketarena.xyz) |
+| 10 | 1 — VERIFIED PARTIAL | Court/session board illustrated, no kiosk permissions. [official source 1](https://racketarena.xyz) |
+| 11 | 1 — VERIFIED PARTIAL | Attendance/session history listed without report controls. [official source 1](https://racketarena.xyz) |
+| 12 | 1 — VERIFIED PARTIAL | Club members, expenses and payment management listed without collection workflow. [official source 1](https://racketarena.xyz) |
+| 13 | U — UNVERIFIED | No competition workflow established.  |
+| 14 | U — UNVERIFIED | Accessible homepage does not establish supported operator devices/offline app behaviour.  |
+| 15 | U — UNVERIFIED | No software tariff/practical limits established.  |
+
+### Racket Social
+
+Canonical: [Racket Social](https://racketsocial.app). **50 verified; 0 unresolved; 15/15 resolved.**
+
+Useful free local/offline option, but current sessions are browser/device-bound. Public read-only sharing is not editable cross-device synchronisation. Twenty-six attendees are above the stated typical well-tested 24. Dedicated tournament brackets and Club mode are roadmap features.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 1 — VERIFIED PARTIAL | Late/early handling claimed in creator account; actual admission credit rule not disclosed. [official source 1](https://racketsocial.app) |
+| 2 | 1 — VERIFIED PARTIAL | Generate/preview rounds and edit upcoming matches; asynchronous free-court allocation not explained. [official source 1](https://racketsocial.app) |
+| 3 | 1 — VERIFIED PARTIAL | Optional OpenSkill/Elo balanced court assignment; team objective/edge cases unspecified. [official source 1](https://racketsocial.app) |
+| 4 | 1 — VERIFIED PARTIAL | Equal rest/no consecutive sit-outs while others never rest claimed; late accounting unspecified. [official source 1](https://racketsocial.app) |
+| 5 | 1 — VERIFIED PARTIAL | Different partners/opponents claimed without repeat-bound mechanics. [official source 1](https://racketsocial.app) |
+| 6 | 1 — VERIFIED PARTIAL | Shared read-only live queue and history; individual reasons not established. [official source 1](https://racketsocial.app) |
+| 7 | 1 — VERIFIED PARTIAL | Edit upcoming matches; active-court exception flow unspecified. [official source 1](https://racketsocial.app) |
+| 8 | 1 — VERIFIED PARTIAL | OpenSkill/Elo after matches; doubles attribution/calculation unspecified. [official source 1](https://racketsocial.app) |
+| 9 | 1 — VERIFIED PARTIAL | Per-court results and expandable history/leaderboard; score rules/corrections not disclosed. [official source 1](https://racketsocial.app) |
+| 10 | 1 — VERIFIED PARTIAL | Read-only public viewer via code; full-screen/self-service kiosk procedure not disclosed. [official source 1](https://racketsocial.app) |
+| 11 | 1 — VERIFIED PARTIAL | Session rosters/history; full longitudinal attendance reports not established. [official source 1](https://racketsocial.app) |
+| 12 | 1 — VERIFIED PARTIAL | Local multi-session rosters; club ownership/member sign-in mode is in development; payment workflow not established. [official source 1](https://racketsocial.app) |
+| 13 | 1 — VERIFIED PARTIAL | Informal rating-based winners supported; dedicated knockout/seeding/finals brackets not supported yet. [official source 1](https://racketsocial.app) |
+| 14 | 1 — VERIFIED PARTIAL | PWA works offline, but sessions currently remain in originating device’s browser; club sync is future. [official source 1](https://racketsocial.app) |
+| 15 | 1 — VERIFIED PARTIAL | Free/no signup/no fixed cap; well-tested typical groups are 6–24 on 1–6 courts, below 26-player upper case. [official source 1](https://racketsocial.app) |
+
+### ServeLeague
+
+Canonical: [ServeLeague](https://serveleague.com). **57.5 verified; 0 unresolved; 15/15 resolved.**
+
+Its drop-in reference emphasises rounds/tables, similar session scores and earlier finishing for lower-rated players. That does not establish the asynchronous mixed-strength doubles queue required here. Rich administration/competition documentation is stronger than its club-night allocation evidence. UK payment-method applicability and costs need confirmation.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 2 — VERIFIED FULL | Admin registers attendance; late players enter remaining rounds, early finish cancels their remaining games and adjusts schedule. [official source 4](https://serveleague.com/tutorials/reference/drop-in-leagues/) |
+| 2 | 1 — VERIFIED PARTIAL | First/next rounds generated after results; asynchronous four-court doubles completion not established. [official source 4](https://serveleague.com/tutorials/reference/drop-in-leagues/) |
+| 3 | 1 — VERIFIED PARTIAL | Similar session scores/ratings guide matchups; doubles-pair balancing edge cases not disclosed. [official source 3](https://serveleague.com/features/league-management/) [official source 4](https://serveleague.com/tutorials/reference/drop-in-leagues/) |
+| 4 | 1 — VERIFIED PARTIAL | Configured games/player; lower-rated players prioritised to finish early, not equal elapsed waiting. [official source 4](https://serveleague.com/tutorials/reference/drop-in-leagues/) |
+| 5 | 1 — VERIFIED PARTIAL | Repeat matchups avoided; partner-repeat treatment unspecified. [official source 4](https://serveleague.com/tutorials/reference/drop-in-leagues/) |
+| 6 | 1 — VERIFIED PARTIAL | Published session matching/prioritisation and ranking rules, no individual pick reasons. [official source 3](https://serveleague.com/features/league-management/) [official source 4](https://serveleague.com/tutorials/reference/drop-in-leagues/) |
+| 7 | 1 — VERIFIED PARTIAL | Early-finish cancellation and result-protest review; live manual doubles swaps not established. [official source 4](https://serveleague.com/tutorials/reference/drop-in-leagues/) [official source 6](https://serveleague.com/features/membership/) |
+| 8 | 1 — VERIFIED PARTIAL | Elo and separate singles/doubles stated; full team attribution formula unspecified. [official source 3](https://serveleague.com/features/league-management/) |
+| 9 | 2 — VERIFIED FULL | PIN-based score entry/validation, configurable sets and player match histories/statistics specified. [official source 3](https://serveleague.com/features/league-management/) |
+| 10 | 1 — VERIFIED PARTIAL | Mobile match/court views; wallboard/self-service kiosk controls not established. [official source 3](https://serveleague.com/features/league-management/) [official source 4](https://serveleague.com/tutorials/reference/drop-in-leagues/) |
+| 11 | 1 — VERIFIED PARTIAL | Attendance, records and club metrics; dedicated attendance report controls incomplete. [official source 3](https://serveleague.com/features/league-management/) [official source 6](https://serveleague.com/features/membership/) |
+| 12 | 1 — VERIFIED PARTIAL | Stripe Connect/refund/offline ledger/CSV and custom membership workflows documented; UK payment-method applicability not established. [official source 5](https://serveleague.com/features/payments/) [official source 6](https://serveleague.com/features/membership/) |
+| 13 | 2 — VERIFIED FULL | Six league formats and configurable ranking/scoring, graded teams and tournament workflows documented. [official source 3](https://serveleague.com/features/league-management/) |
+| 14 | 1 — VERIFIED PARTIAL | Browser/mobile access; offline/recovery not established. [official source 1](https://serveleague.com) [official source 3](https://serveleague.com/features/league-management/) |
+| 15 | 1 — VERIFIED PARTIAL | Casual drop-in free; Club US$39/month; Pro US$89/month/ten locations; UK methods, fees and final quote untested. [official source 2](https://serveleague.com/pricing/) |
+
+### Shuttl
+
+Canonical: [Shuttl](https://shuttl.app). **50 verified; 12 unresolved; 13/15 resolved.**
+
+The current two-total-session limit is material for weekly use; do not read it as two simultaneous sessions. Future paid expansion is not live. Fairness is an optimisation aim. Pair statistics do not demonstrate a variety-aware picker.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 1 — VERIFIED PARTIAL | Add from pool or join six-character code; late queue updates claimed, no credit rule. [official source 1](https://shuttl.app) |
+| 2 | 2 — VERIFIED FULL | At least four available for doubles; send preview to open court, next match builds as play continues. [official source 1](https://shuttl.app) |
+| 3 | 1 — VERIFIED PARTIAL | Skill-aware balanced games claimed; doubles objective/edge cases unspecified. [official source 1](https://shuttl.app) |
+| 4 | 1 — VERIFIED PARTIAL | FAQ prioritises rest time and match counts, but aims to avoid skips while balancing rather than guarantees fairness. [official source 1](https://shuttl.app) |
+| 5 | U — UNVERIFIED | Best-duo statistics do not establish repeat-aware allocation.  |
+| 6 | 1 — VERIFIED PARTIAL | Live next-match queue visible to everyone; no individual reasons. [official source 1](https://shuttl.app) |
+| 7 | 1 — VERIFIED PARTIAL | Switch manual mode and reorder racket-queue/team slots; mode interaction limits incomplete. [official source 1](https://shuttl.app) |
+| 8 | 1 — VERIFIED PARTIAL | Saved skill levels and win rates; adaptive skill-rating rule not established. [official source 1](https://shuttl.app) |
+| 9 | 1 — VERIFIED PARTIAL | Scores, match history and pair records; score validation/correction details unspecified. [official source 1](https://shuttl.app) |
+| 10 | 1 — VERIFIED PARTIAL | Live courts/queue on mobile screens; dedicated kiosk controls unspecified. [official source 1](https://shuttl.app) |
+| 11 | 1 — VERIFIED PARTIAL | Session history/player records; attendance report controls unspecified. [official source 1](https://shuttl.app) |
+| 12 | 1 — VERIFIED PARTIAL | Community player pool and host administration; no club-fee collection established. [official source 1](https://shuttl.app) |
+| 13 | U — UNVERIFIED | No competition workflow established.  |
+| 14 | 1 — VERIFIED PARTIAL | Mobile browser/realtime updates; offline/recovery not established. [official source 1](https://shuttl.app) |
+| 15 | 1 — VERIFIED PARTIAL | Free alpha: one community, two total sessions, 150 players, six auto/15 racket-queue courts; paid expansion TBD. [official source 1](https://shuttl.app) |
+
+### ShuttleFlow
+
+Canonical: [ShuttleFlow](https://shuttleflow.ph). **50 verified; 12 unresolved; 13/15 resolved.**
+
+A ranking-point system is not a continuously learned skill rating. Ranked games have verification, attendance, format and repetition constraints, including uncommon 31/35-point cases. Rank eligibility does not prove allocation variety. Fee calculations do not establish collection.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 1 — VERIFIED PARTIAL | Join request by code and queue-master approval; manual participant entry; late-credit rule unspecified. [official source 2](https://shuttleflow.ph/how-it-works) |
+| 2 | 2 — VERIFIED FULL | Suggest or manually set courts, finish matches updates live queue, close session saves records. [official source 2](https://shuttleflow.ph/how-it-works) |
+| 3 | 1 — VERIFIED PARTIAL | Four skill tiers and skill/recency/wait signals, not full opposing-pair optimisation. [official source 1](https://shuttleflow.ph) [official source 2](https://shuttleflow.ph/how-it-works) |
+| 4 | 1 — VERIFIED PARTIAL | Wait time considered but priority/rest exceptions unspecified. [official source 2](https://shuttleflow.ph/how-it-works) |
+| 5 | U — UNVERIFIED | Repeated-foursome ranking qualification is not evidence of avoiding repeated assignments.  |
+| 6 | 1 — VERIFIED PARTIAL | Public season point/qualification rules and live queue; no individual allocation reasons. [official source 2](https://shuttleflow.ph/how-it-works) |
+| 7 | 1 — VERIFIED PARTIAL | Queue-master manual selection/approval; temporary-rest and regeneration interactions incomplete. [official source 2](https://shuttleflow.ph/how-it-works) |
+| 8 | 1 — VERIFIED PARTIAL | Season points win/draw/loss 3/1/0, skill tiers locked for 45-day seasons; not adaptive opponent-adjusted ratings. [official source 2](https://shuttleflow.ph/how-it-works) |
+| 9 | 1 — VERIFIED PARTIAL | Score/history/dashboard; ranked scoring and eligibility constraints limit universality. [official source 2](https://shuttleflow.ph/how-it-works) |
+| 10 | 1 — VERIFIED PARTIAL | Read-only live phone/tablet/laptop grid; kiosk permissions not established. [official source 1](https://shuttleflow.ph) [official source 2](https://shuttleflow.ph/how-it-works) |
+| 11 | 1 — VERIFIED PARTIAL | Session history and fee/rank totals; attendance report controls incomplete. [official source 2](https://shuttleflow.ph/how-it-works) |
+| 12 | 1 — VERIFIED PARTIAL | Club roles/invitations and per-head/hour/fixed fee calculations; collection/reconciliation not established. [official source 2](https://shuttleflow.ph/how-it-works) |
+| 13 | U — UNVERIFIED | Season leaderboards are not tournament/fixture workflows.  |
+| 14 | 1 — VERIFIED PARTIAL | Browser/cloud/recovery language; offline operation not established. [official source 1](https://shuttleflow.ph) [official source 2](https://shuttleflow.ph/how-it-works) |
+| 15 | 1 — VERIFIED PARTIAL | Free stated; concrete player/court caps and future terms unspecified. [official source 1](https://shuttleflow.ph) |
+
+### ShuttleOps
+
+Canonical: [ShuttleOps](https://www.shuttleops.com). **50.5 verified; 11 unresolved; 13/15 resolved.**
+
+Pro’s 100-member allowance is the safer quoted plan for 26 attendees/a larger roster; Standard’s 25 counts members. Direct Debit has two separate fee components. Guests cannot use registered-player sign-in/payment/history. Rating mechanics and detailed allocation exceptions remain unresolved.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 1 — VERIFIED PARTIAL | Mark arriving attendees available; no late-player queue credit rule disclosed. [official source 5](https://www.shuttleops.com/guides/first-club-session) |
+| 2 | 2 — VERIFIED FULL | Finish game/optional score selects next waiting group; virtual court rotates waiting players across physical courts. [official source 5](https://www.shuttleops.com/guides/first-club-session) [official source 6](https://www.shuttleops.com/guides/badminton-pegboard) |
+| 3 | 1 — VERIFIED PARTIAL | Skill/availability-based balanced games claimed; doubles objective not disclosed. [official source 2](https://www.shuttleops.com/pegboard) [official source 3](https://www.shuttleops.com/features/managers) |
+| 4 | 1 — VERIFIED PARTIAL | Equal court time claimed; no wait accounting/priority exception rule. [official source 2](https://www.shuttleops.com/pegboard) [official source 3](https://www.shuttleops.com/features/managers) |
+| 5 | 1 — VERIFIED PARTIAL | Varied matchups and partner/opponent tracking; no avoidance bounds. [official source 2](https://www.shuttleops.com/pegboard) [official source 5](https://www.shuttleops.com/guides/first-club-session) |
+| 6 | 1 — VERIFIED PARTIAL | Visible waiting/physical courts and broad selection factors; no pick reasons. [official source 3](https://www.shuttleops.com/features/managers) [official source 5](https://www.shuttleops.com/guides/first-club-session) |
+| 7 | 1 — VERIFIED PARTIAL | Adjust games/availability; full live-swap/sit-out edge cases not described. [official source 5](https://www.shuttleops.com/guides/first-club-session) [official source 6](https://www.shuttleops.com/guides/badminton-pegboard) |
+| 8 | U — UNVERIFIED | Skill-based matching does not establish a result-updating rating system.  |
+| 9 | 1 — VERIFIED PARTIAL | Optional scores, game/wait times and partner/opponent history; point-entry/correction details incomplete. [official source 5](https://www.shuttleops.com/guides/first-club-session) |
+| 10 | 1 — VERIFIED PARTIAL | Single physical/waiting-court board; dedicated kiosk locks not established. [official source 5](https://www.shuttleops.com/guides/first-club-session) |
+| 11 | 1 — VERIFIED PARTIAL | Closed-session attendance/totals/times/partners/opponents; full report controls not described. [official source 5](https://www.shuttleops.com/guides/first-club-session) |
+| 12 | 1 — VERIFIED PARTIAL | Membership/session charging, failures, offline payments, balances/payouts; guest pay/history restricted to registered players, instalments unsupported. [official source 5](https://www.shuttleops.com/guides/first-club-session) |
+| 13 | U — UNVERIFIED | No competition workflow established.  |
+| 14 | 1 — VERIFIED PARTIAL | Browser platform/club accounts; offline/recovery not established. [official source 1](https://www.shuttleops.com) [official source 5](https://www.shuttleops.com/guides/first-club-session) |
+| 15 | 1 — VERIFIED PARTIAL | Free ten members; £4/month Standard 25, £8/month Pro 100; Direct Debit Stripe and platform each 1%, each minimum 20p. [official source 4](https://www.shuttleops.com/pricing) [official source 5](https://www.shuttleops.com/guides/first-club-session) |
+
+### ShuttlePilot
+
+Canonical: [ShuttlePilot](https://shuttlepilot.io). **59.5 verified; 4 unresolved; 14/15 resolved.**
+
+Historical sit-out equalisation is different from attendance-normalised waiting tonight. Strength preferences are soft. Partner/foursome avoidance does not specify individual opponent variety. Free beta and a readable no-sign-in demo entry do not establish production performance; the demo itself was not entered.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 2 — VERIFIED FULL | Tick arrivals; early departures leave future rounds but retain attendance and in-progress games. [official source 1](https://shuttlepilot.io) |
+| 2 | 2 — VERIFIED FULL | Regenerate after start preserves active games and fills only empty courts; manual courts can be held while others generated. [official source 1](https://shuttlepilot.io) |
+| 3 | 1 — VERIFIED PARTIAL | Pair-average Elo gap shown/recalculated; closeness and player preferences are not hard guarantees. [official source 1](https://shuttlepilot.io) |
+| 4 | 1 — VERIFIED PARTIAL | Sit-outs balance least historical sit-out count across sessions, not elapsed current-night waits. [official source 1](https://shuttlepilot.io) |
+| 5 | 1 — VERIFIED PARTIAL | Avoid repeated partners/foursomes; individual opponent-repeat avoidance not established. [official source 1](https://shuttlepilot.io) |
+| 6 | 1 — VERIFIED PARTIAL | Displays pair-strength Δ, not explanation of why particular four were chosen. [official source 1](https://shuttlepilot.io) |
+| 7 | 1 — VERIFIED PARTIAL | Drag swaps/manual court builds, but strength preferences are soft and can be violated in tight pools. [official source 1](https://shuttlepilot.io) |
+| 8 | 1 — VERIFIED PARTIAL | Elo after saved results; individual doubles attribution/update formula unspecified. [official source 1](https://shuttlepilot.io) |
+| 9 | 2 — VERIFIED FULL | Record up to three 11/15/21-point sets; own-match player entry, saved results/history and rating charts described. [official source 1](https://shuttlepilot.io) |
+| 10 | 1 — VERIFIED PARTIAL | Laptop planned/live court views and phones; kiosk permission flow not established. [official source 1](https://shuttlepilot.io) |
+| 11 | 1 — VERIFIED PARTIAL | CSV/Excel roster import, profiles and attendance retention; full attendance report controls incomplete. [official source 1](https://shuttlepilot.io) |
+| 12 | 1 — VERIFIED PARTIAL | Multi-club trainer/admin/player roles and roster; no fee collection established. [official source 1](https://shuttlepilot.io) |
+| 13 | U — UNVERIFIED | No competition workflow established.  |
+| 14 | 1 — VERIFIED PARTIAL | English/Danish browser and several logins; offline/recovery not established. [official source 1](https://shuttlepilot.io) [official source 2](https://shuttlepilot.io/login?demo=1) |
+| 15 | 1 — VERIFIED PARTIAL | Free beta, unlimited players/sessions/rounds; lasting tariff/runtime scale not established. [official source 1](https://shuttlepilot.io) |
+
+### ShuttleStats
+
+Canonical: [ShuttleStats](https://shuttlestats.app). **45.5 verified; 9 unresolved; 13/15 resolved.**
+
+Homepage and Learn content required full hydration. The app is described as live, while club onboarding is queued. Its claimed 82% predictive success is vendor-reported, not independently verified or a comparable balance test. Payment fee amount, native apps and override procedures are unresolved.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 1 — VERIFIED PARTIAL | Roster distinguishes not arrived/bench/sitting out; live late-credit rule unspecified. [official source 2](https://shuttlestats.app/learn) |
+| 2 | 1 — VERIFIED PARTIAL | Empty-court next-game sheet/Start control illustrated; full finish/rebuild exceptions unspecified. [official source 2](https://shuttlestats.app/learn) |
+| 3 | 1 — VERIFIED PARTIAL | Own pairing system claimed, but optimisation/edge-case method not disclosed. [official source 2](https://shuttlestats.app/learn) |
+| 4 | 1 — VERIFIED PARTIAL | Longest-off-first image text and fairness claims; late/rest accounting unspecified. [official source 2](https://shuttlestats.app/learn) |
+| 5 | 1 — VERIFIED PARTIAL | New pairing illustrated; repeat-aware opponent/partner rules not disclosed. [official source 2](https://shuttlestats.app/learn) |
+| 6 | 1 — VERIFIED PARTIAL | Slight-favourite preview and statuses; no individual choice explanation. [official source 2](https://shuttlestats.app/learn) |
+| 7 | U — UNVERIFIED | No manual allocation override procedure established.  |
+| 8 | 1 — VERIFIED PARTIAL | Proprietary rating; vendor claims 82% prediction over nearly 900 games, no formula/independent validation. [official source 2](https://shuttlestats.app/learn) |
+| 9 | 1 — VERIFIED PARTIAL | Live scoring, profiles/partnership/rivalry stats; score validation/history controls unspecified. [official source 2](https://shuttlestats.app/learn) |
+| 10 | 1 — VERIFIED PARTIAL | Four-court courtside tablet illustrations, not demonstrated kiosk permissions. [official source 2](https://shuttlestats.app/learn) |
+| 11 | 1 — VERIFIED PARTIAL | Session roster and player records; report filters/exports unspecified. [official source 2](https://shuttlestats.app/learn) |
+| 12 | 1 — VERIFIED PARTIAL | Own-club Stripe, prepayment, cancellation terms/waitlist/refunds and memberships/credits; transaction exception flow incomplete. [official source 2](https://shuttlestats.app/learn) |
+| 13 | U — UNVERIFIED | No competition workflow established.  |
+| 14 | 1 — VERIFIED PARTIAL | Browser/tablet toolkit live; native iPhone/Android apps are forthcoming, offline unspecified. [official source 2](https://shuttlestats.app/learn) |
+| 15 | 1 — VERIFIED PARTIAL | No subscription/setup fee, platform fee per payment agreed privately; onboarding queue. [official source 2](https://shuttlestats.app/learn) |
+
+### ShuttlSync
+
+Canonical: [ShuttlSync](https://shuttlsync.com). **62 verified; 4 unresolved; 14/15 resolved.**
+
+Pro fits exactly four courts. Late-arrival priority may differ from the club’s concept of a fair wait. Variety documentation emphasises partners. Rating explanations concern results, not selection decisions. Offline nights need online preparation; payments refer to the software subscription, not collecting members’ dues.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 2 — VERIFIED FULL | Add late arrivals to bench and mark early departures done while retaining night statistics. [official source 2](https://www.shuttlsync.com/features/fair-rotation) [official source 3](https://www.shuttlsync.com/features/live-sessions) |
+| 2 | 2 — VERIFIED FULL | Unequal finishes: bring fresh players, reshuffle same four, wait for other court or rotate together. [official source 2](https://www.shuttlsync.com/features/fair-rotation) |
+| 3 | 1 — VERIFIED PARTIAL | Fair participation then rating-based split; team objective and constrained cases not disclosed. [official source 2](https://www.shuttlsync.com/features/fair-rotation) [official source 5](https://www.shuttlsync.com/features/skill-ratings) |
+| 4 | 1 — VERIFIED PARTIAL | Late arrivals with no games get priority; games/rest counts rather than disclosed attendance-normalised waiting. [official source 2](https://www.shuttlsync.com/features/fair-rotation) |
+| 5 | 1 — VERIFIED PARTIAL | Partner variety and alternate rotation modes; opponent-repeat bounds not established. [official source 2](https://www.shuttlsync.com/features/fair-rotation) |
+| 6 | 1 — VERIFIED PARTIAL | Bench/court counts and rating explanations; no individual selection-reason panel. [official source 1](https://shuttlsync.com) [official source 2](https://www.shuttlsync.com/features/fair-rotation) [official source 5](https://www.shuttlsync.com/features/skill-ratings) |
+| 7 | 2 — VERIFIED FULL | Tap/drag bench, sides or courts, rebuild lineup, and automatic picks work around edits. [official source 2](https://www.shuttlsync.com/features/fair-rotation) [official source 3](https://www.shuttlsync.com/features/live-sessions) |
+| 8 | 1 — VERIFIED PARTIAL | Starts 1500; result/expectation/score-margin examples, but individual doubles attribution/formula incomplete. [official source 1](https://shuttlsync.com) [official source 5](https://www.shuttlsync.com/features/skill-ratings) |
+| 9 | 2 — VERIFIED FULL | Complete singles/doubles with winner and losing score, 11/21 formats, live profiles and persistent session recaps. [official source 1](https://shuttlsync.com) [official source 3](https://www.shuttlsync.com/features/live-sessions) |
+| 10 | 1 — VERIFIED PARTIAL | Live court tabs/phone sharing; full kiosk permission procedure not established. [official source 1](https://shuttlsync.com) [official source 3](https://www.shuttlsync.com/features/live-sessions) |
+| 11 | 1 — VERIFIED PARTIAL | Retained attendance/session recaps and partner/rival profiles; report export/filter controls unspecified. [official source 3](https://www.shuttlsync.com/features/live-sessions) [official source 4](https://www.shuttlsync.com/features/club-management) |
+| 12 | 1 — VERIFIED PARTIAL | Club roster/roles and software subscription; club-dues collection not established. [official source 4](https://www.shuttlsync.com/features/club-management) |
+| 13 | U — UNVERIFIED | Monthly rating movers/awards are not competition/fixture workflows.  |
+| 14 | 1 — VERIFIED PARTIAL | Prepare online, run club-open nights offline, sync later; cross-device conflict behaviour unspecified. [official source 1](https://shuttlsync.com) |
+| 15 | 1 — VERIFIED PARTIAL | Free unlimited players/sessions up to two live courts; £9.99/club/month Pro up to four; no headroom beyond four shown. [official source 1](https://shuttlsync.com) |
+
+### ShuttleVantage Pro
+
+Canonical: [ShuttleVantage Pro](https://shuttlevantagepro.com). **0 verified; 100 unresolved; 0/15 resolved.**
+
+Browser returned ERR_NAME_NOT_RESOLVED. This is a retrieval failure, not verified feature absence. No similarly named product was substituted. UNLOCATED is not asserted from DNS failure alone.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | U — UNVERIFIED | Canonical address unreachable; no readable product evidence.  |
+| 2 | U — UNVERIFIED | Canonical address unreachable; no readable product evidence.  |
+| 3 | U — UNVERIFIED | Canonical address unreachable; no readable product evidence.  |
+| 4 | U — UNVERIFIED | Canonical address unreachable; no readable product evidence.  |
+| 5 | U — UNVERIFIED | Canonical address unreachable; no readable product evidence.  |
+| 6 | U — UNVERIFIED | Canonical address unreachable; no readable product evidence.  |
+| 7 | U — UNVERIFIED | Canonical address unreachable; no readable product evidence.  |
+| 8 | U — UNVERIFIED | Canonical address unreachable; no readable product evidence.  |
+| 9 | U — UNVERIFIED | Canonical address unreachable; no readable product evidence.  |
+| 10 | U — UNVERIFIED | Canonical address unreachable; no readable product evidence.  |
+| 11 | U — UNVERIFIED | Canonical address unreachable; no readable product evidence.  |
+| 12 | U — UNVERIFIED | Canonical address unreachable; no readable product evidence.  |
+| 13 | U — UNVERIFIED | Canonical address unreachable; no readable product evidence.  |
+| 14 | U — UNVERIFIED | Canonical address unreachable; no readable product evidence.  |
+| 15 | U — UNVERIFIED | Canonical address unreachable; no readable product evidence.  |
+
+### SmashHQ
+
+Canonical: [SmashHQ](https://smashhq.app). **48 verified; 4 unresolved; 14/15 resolved.**
+
+Same-grade or random shuffling is only partial skill balancing. Game-count priority does not account for time present. Offline desktop descriptions conflict with coming-soon language. Free 20-player capacity is below the club’s upper turnout; online collection and paid prices need clarification.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 1 — VERIFIED PARTIAL | QR/member/guest presence; guest session dates; late credit unspecified. [official source 1](https://smashhq.app) [official source 2](https://smashhq.app/docs) |
+| 2 | 1 — VERIFIED PARTIAL | Timed auto-shuffle or manual shuffle, rather than fully described asynchronous finish-driven rotation. [official source 2](https://smashhq.app/docs) |
+| 3 | 1 — VERIFIED PARTIAL | Same-grade grouping when possible or random pairing; full opposing-pair balance not established. [official source 2](https://smashhq.app/docs) |
+| 4 | 1 — VERIFIED PARTIAL | Greedy fewest-games priority with random ties; not attendance-normalised elapsed wait. [official source 1](https://smashhq.app) |
+| 5 | 1 — VERIFIED PARTIAL | Partner/opponent repeats deprioritised, not prohibited. [official source 1](https://smashhq.app) |
+| 6 | 1 — VERIFIED PARTIAL | Published greedy signals, not individual choice reasons. [official source 1](https://smashhq.app) |
+| 7 | 1 — VERIFIED PARTIAL | Paired players and manual shuffles; active-court exception flow incomplete. [official source 2](https://smashhq.app/docs) |
+| 8 | 1 — VERIFIED PARTIAL | Manual skill grade plus win/streak rankings; adaptive skill rating not established. [official source 2](https://smashhq.app/docs) |
+| 9 | 1 — VERIFIED PARTIAL | Results/statistics/history listed; live point entry/correction procedure incomplete. [official source 1](https://smashhq.app) [official source 2](https://smashhq.app/docs) |
+| 10 | 1 — VERIFIED PARTIAL | Court dashboard/player portal; dedicated kiosk flow not established. [official source 1](https://smashhq.app) [official source 2](https://smashhq.app/docs) |
+| 11 | 1 — VERIFIED PARTIAL | Attendance and session statistics; report controls incomplete. [official source 2](https://smashhq.app/docs) |
+| 12 | 1 — VERIFIED PARTIAL | Cash/QR ledger, payment-proof approval/rejection, expenses/dues block; online processor claims not consistently established. [official source 1](https://smashhq.app) [official source 2](https://smashhq.app/docs) |
+| 13 | U — UNVERIFIED | Club-directory tournament counts do not establish a competition workflow.  |
+| 14 | 1 — VERIFIED PARTIAL | Homepage requires internet/web and lists desktop coming soon; FAQ/docs describe offline SQLite/license behaviour. [official source 1](https://smashhq.app) [official source 2](https://smashhq.app/docs) |
+| 15 | 1 — VERIFIED PARTIAL | Free 20 players cannot cover 26; paid tariff not established. [official source 1](https://smashhq.app) |
+
+### SportRevive
+
+Canonical: [SportRevive](https://sportrevive.com). **50 verified; 0 unresolved; 15/15 resolved.**
+
+A full-night fixture sheet is a different workflow from ongoing open-play allocation. Partner rotation/equal scheduled counts do not establish arrival-normalised fairness after edits. Scores/ratings settle after nightly submission. Printed fallback is not proof of offline digital operation.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 1 — VERIFIED PARTIAL | Tick attendees; add/skip/swap to adjust night, but automatic late-credit rule unspecified. [official source 1](https://sportrevive.com) [official source 2](https://sportrevive.com/badminton-fixture-generator) |
+| 2 | 1 — VERIFIED PARTIAL | Generates whole-night fixture sheet; add rounds/change sheet, not freed-court queue regeneration. [official source 1](https://sportrevive.com) [official source 2](https://sportrevive.com/badminton-fixture-generator) |
+| 3 | 1 — VERIFIED PARTIAL | Result-based ratings match pairs; full balancing objective/constraints unspecified. [official source 2](https://sportrevive.com/badminton-fixture-generator) |
+| 4 | 1 — VERIFIED PARTIAL | Games/player stay within one and awkward-number sit-outs rotate; late/early guarantee not established. [official source 2](https://sportrevive.com/badminton-fixture-generator) |
+| 5 | 1 — VERIFIED PARTIAL | Partners rotate within/across weeks; opponent-repeat mechanics unspecified. [official source 2](https://sportrevive.com/badminton-fixture-generator) |
+| 6 | 1 — VERIFIED PARTIAL | Printed/phone fixture and rating ladder; no individual pick reasons. [official source 1](https://sportrevive.com) [official source 2](https://sportrevive.com/badminton-fixture-generator) |
+| 7 | 1 — VERIFIED PARTIAL | Swap, skip and add rounds; active-court automatic reconciliation unspecified. [official source 1](https://sportrevive.com) |
+| 8 | 1 — VERIFIED PARTIAL | New players 1200, ratings after nightly submit; formula/doubles attribution unspecified. [official source 1](https://sportrevive.com) [official source 2](https://sportrevive.com/badminton-fixture-generator) |
+| 9 | 1 — VERIFIED PARTIAL | Player/admin score entry and nightly recap/history; submit-once/end-night update limits live workflow. [official source 1](https://sportrevive.com) [official source 2](https://sportrevive.com/badminton-fixture-generator) |
+| 10 | 1 — VERIFIED PARTIAL | Print or phones show multicourt fixtures; kiosk flow not established. [official source 1](https://sportrevive.com) [official source 2](https://sportrevive.com/badminton-fixture-generator) |
+| 11 | 1 — VERIFIED PARTIAL | Nightly recap and recorded games; attendance-report controls unspecified. [official source 1](https://sportrevive.com) |
+| 12 | 1 — VERIFIED PARTIAL | Private league/player administration, organiser account; no club-dues collection established. [official source 1](https://sportrevive.com) |
+| 13 | 1 — VERIFIED PARTIAL | Private league standings and fixtures; competition draw/entry exceptions unspecified. [official source 1](https://sportrevive.com) |
+| 14 | 1 — VERIFIED PARTIAL | Printed sheet is useful fallback, but digital offline persistence/recovery not established. [official source 1](https://sportrevive.com) [official source 2](https://sportrevive.com/badminton-fixture-generator) |
+| 15 | 1 — VERIFIED PARTIAL | Free/private, only organiser needs account; concrete scale limits unspecified. [official source 1](https://sportrevive.com) [official source 2](https://sportrevive.com/badminton-fixture-generator) |
+
+### SportyHQ
+
+Canonical: [SportyHQ](https://sportyhq.com). **36.5 verified; 36 unresolved; 11/15 resolved.**
+
+Strong documented membership/tournament system, but no live social doubles picker established. Its branded live scorer is currently squash-only. The unconfigured pricing calculator’s zero is not a full-suite free price. These sport facts remain separate from scoring.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | U — UNVERIFIED | Tournament registration is not evidence of live check-in/late admission.  |
+| 2 | 1 — VERIFIED PARTIAL | Tournament scheduling handles conflict/rest checks and calendar edits; not live next-four queue. [official source 2](https://sportyhq.com/features/tournament-management) |
+| 3 | U — UNVERIFIED | No skill-balanced social doubles picker established.  |
+| 4 | U — UNVERIFIED | Tournament rest checks are not sit-out/wait fairness for live club rotation.  |
+| 5 | U — UNVERIFIED | No repeat-aware social doubles allocation rule established.  |
+| 6 | 1 — VERIFIED PARTIAL | Published draws/control sheets and ranking factors; no club-night pick reasons. [official source 2](https://sportyhq.com/features/tournament-management) [official source 5](https://www.sportyhq.com/features/rankings-and-sanctioning) |
+| 7 | 1 — VERIFIED PARTIAL | Drag calendar/draw changes; not full club-night lineup/sit-out overrides. [official source 2](https://sportyhq.com/features/tournament-management) |
+| 8 | 1 — VERIFIED PARTIAL | Ratings consider results, strengths, confidence/history; own points systems allowed, doubles mechanics not disclosed. [official source 5](https://www.sportyhq.com/features/rankings-and-sanctioning) |
+| 9 | 1 — VERIFIED PARTIAL | Scores/results/stats; live ScoreSquash is squash-only with other sports future. [official source 2](https://sportyhq.com/features/tournament-management) |
+| 10 | 1 — VERIFIED PARTIAL | Court schedules/control sheets/PDF; self-service live club kiosk not established. [official source 2](https://sportyhq.com/features/tournament-management) |
+| 11 | 1 — VERIFIED PARTIAL | Member activity/demographics and event/result reports; club-night attendance reports not established. [official source 3](https://sportyhq.com/features/membership-management) |
+| 12 | 2 — VERIFIED FULL | Custom membership privileges/fields, fixed/recurring renewals, payment-triggered status and affiliation synchronisation specified. [official source 3](https://sportyhq.com/features/membership-management) |
+| 13 | 2 — VERIFIED FULL | Entries/eligibility/doubles changes, withdrawal refunds, multiple draw formats, conflict/rest scheduling and results specified. [official source 2](https://sportyhq.com/features/tournament-management) |
+| 14 | 1 — VERIFIED PARTIAL | Cloud/mobile/desktop access; offline/recovery not established. [official source 1](https://sportyhq.com) [official source 2](https://sportyhq.com/features/tournament-management) |
+| 15 | 1 — VERIFIED PARTIAL | Module/currency calculator: initial £0 has no paid modules selected; payment fees displayed 2.9% + US$0.30; full quote unresolved. [official source 4](https://sportyhq.com/pricing/facilities-and-clubs) |
+
+### UBR – Universal Badminton Rating
+
+Canonical: [UBR – Universal Badminton Rating](https://universalbadmintonrating.com). **37 verified; 26 unresolved; 11/15 resolved.**
+
+Structured rated mixers are documented, while flexible Open Play is explicitly coming soon. The system can increase ratings after narrow losses, unlike win-only rankings, but individual doubles attribution is not disclosed. Free player signup does not establish club-host pricing.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | U — UNVERIFIED | Open Play scan-in/drop-in is forthcoming; existing mixer late-admission rule not established.  |
+| 2 | 1 — VERIFIED PARTIAL | Rated mixers create round-by-round court assignments; asynchronous finish cases unspecified. [official source 3](https://www.universalbadmintonrating.com/home/events) |
+| 3 | 1 — VERIFIED PARTIAL | UBR-based balanced teams claimed without pair-selection objective/edge cases. [official source 3](https://www.universalbadmintonrating.com/home/events) |
+| 4 | U — UNVERIFIED | More play is a benefit, not a documented wait/sit-out fairness rule.  |
+| 5 | 1 — VERIFIED PARTIAL | Mixers vary partners/opponents across rounds; repeat-bound mechanics unspecified. [official source 3](https://www.universalbadmintonrating.com/home/events) |
+| 6 | 1 — VERIFIED PARTIAL | Expected-score examples explain rating, not reasons for individual court choices. [official source 2](https://www.universalbadmintonrating.com/home/ratings) |
+| 7 | U — UNVERIFIED | No live lineup/temporary-rest override flow established.  |
+| 8 | 1 — VERIFIED PARTIAL | Separate singles/doubles expectation-and-margin ratings, recent-result Tournament UBR; full attribution/update formula unspecified. [official source 2](https://www.universalbadmintonrating.com/home/ratings) |
+| 9 | 1 — VERIFIED PARTIAL | Permanent filterable score/lineup/history, charts/H2H; actual live entry/correction procedure incomplete. [official source 2](https://www.universalbadmintonrating.com/home/ratings) |
+| 10 | U — UNVERIFIED | Court assignments do not establish multicourt kiosk/display operation.  |
+| 11 | 1 — VERIFIED PARTIAL | Event-filtered histories and awards; club attendance-report controls not established. [official source 2](https://www.universalbadmintonrating.com/home/ratings) |
+| 12 | 1 — VERIFIED PARTIAL | Members/admins can host and invite; no club-fee collection established. [official source 3](https://www.universalbadmintonrating.com/home/events) |
+| 13 | 1 — VERIFIED PARTIAL | Member/club mixers and tournament rating; formal competition draw/entry workflows incomplete. [official source 2](https://www.universalbadmintonrating.com/home/ratings) [official source 3](https://www.universalbadmintonrating.com/home/events) |
+| 14 | 1 — VERIFIED PARTIAL | Browser player/host accounts; offline/recovery not established. [official source 1](https://universalbadmintonrating.com) [official source 3](https://www.universalbadmintonrating.com/home/events) |
+| 15 | 1 — VERIFIED PARTIAL | Player signup free; host software fees and operating limits not established. [official source 1](https://universalbadmintonrating.com) [official source 3](https://www.universalbadmintonrating.com/home/events) |
+
+### vsBadminton
+
+Canonical: [vsBadminton](https://www.vsbadminton.co.uk). **57 verified; 4 unresolved; 14/15 resolved.**
+
+Attendance-normalised overdue scoring is unusually relevant here, but it is still a soft objective. Start a new session each real night: resuming an old night distorts waiting. Manual court moves do not validate occupancy. It is not a live scoreboard; older history instructions conflict with newer retained-session behaviour.
+
+| C | Status | Evidence / qualification |
+|---|---|---|
+
+| 1 | 2 — VERIFIED FULL | Away/playing/rest states editable any time; late player treated as having average prior games relative to attendance. [official source 2](https://www.vsbadminton.co.uk/playing/) [official source 4](https://www.vsbadminton.co.uk/selection/) |
+| 2 | 2 — VERIFIED FULL | Free-court picks, configurable pick-ahead auto-assigns next freed court, and scheduled/live hall court changes. [official source 3](https://www.vsbadminton.co.uk/advanced/) [official source 8](https://www.vsbadminton.co.uk/hall/) |
+| 3 | 1 — VERIFIED PARTIAL | Manual initial hint plus learned results; balanced games remain one of competing objectives. [official source 2](https://www.vsbadminton.co.uk/playing/) [official source 4](https://www.vsbadminton.co.uk/selection/) |
+| 4 | 1 — VERIFIED PARTIAL | Attendance-normalised overdue score, but balance/variety can override its order; resumed prior-night sessions corrupt waits. [official source 4](https://www.vsbadminton.co.uk/selection/) [official source 6](https://www.vsbadminton.co.uk/sessions/) |
+| 5 | 1 — VERIFIED PARTIAL | Partner/opponent penalties; pick-ahead and training-partner restrictions can reduce mixing. [official source 3](https://www.vsbadminton.co.uk/advanced/) [official source 4](https://www.vsbadminton.co.uk/selection/) [official source 8](https://www.vsbadminton.co.uk/hall/) |
+| 6 | 1 — VERIFIED PARTIAL | Public overdue score/order and objectives; no complete per-pick reason/alternative panel. [official source 4](https://www.vsbadminton.co.uk/selection/) |
+| 7 | 1 — VERIFIED PARTIAL | Swap partners/players/delete/re-pick, but re-pick limited to latest and court move does not check occupancy. [official source 2](https://www.vsbadminton.co.uk/playing/) [official source 4](https://www.vsbadminton.co.uk/selection/) |
+| 8 | 1 — VERIFIED PARTIAL | Results eventually outweigh initial manual rating; exact update/doubles attribution not established. [official source 2](https://www.vsbadminton.co.uk/playing/) [official source 3](https://www.vsbadminton.co.uk/advanced/) |
+| 9 | 1 — VERIFIED PARTIAL | End-game results rather than live scoreboard; older summary guide restricts history, newer session retention differs. [official source 2](https://www.vsbadminton.co.uk/playing/) [official source 5](https://www.vsbadminton.co.uk/summaries/) [official source 6](https://www.vsbadminton.co.uk/sessions/) [official source 7](https://www.vsbadminton.co.uk/scoring/) |
+| 10 | 1 — VERIFIED PARTIAL | Shared phones and labelled courts/viewer permissions; no dedicated kiosk layout/locks. [official source 8](https://www.vsbadminton.co.uk/hall/) [official source 9](https://www.vsbadminton.co.uk/sharing/) |
+| 11 | 1 — VERIFIED PARTIAL | Result/player tables; longitudinal attendance reports not established. [official source 5](https://www.vsbadminton.co.uk/summaries/) [official source 6](https://www.vsbadminton.co.uk/sessions/) |
+| 12 | 1 — VERIFIED PARTIAL | Club/session roles and roster sharing; no fee collection established. [official source 9](https://www.vsbadminton.co.uk/sharing/) |
+| 13 | U — UNVERIFIED | Close tournament button resets games/ratings; not a documented competition draw/fixture workflow.  |
+| 14 | 1 — VERIFIED PARTIAL | Multiple phones/code or QR access, no account needed for temporary users; offline/recovery unspecified. [official source 9](https://www.vsbadminton.co.uk/sharing/) |
+| 15 | 1 — VERIFIED PARTIAL | Free and homepage typical 6–30 players/2–8 courts; current hard limits and history terms unspecified. [official source 1](https://www.vsbadminton.co.uk) |
+
+## J. Retrieval log
+
+All entries below were opened in the JavaScript-capable browser on the research date. **RENDERED/READABLE** denotes visible DOM/AX content actually read, not a plain fetch. Redirects and recovery notes are stated. Blank or shell-only auxiliary routes are not called absent; no HTTP 404 or non-product canonical landing was verified. There are therefore no verified UNLOCATED candidates. This is a log of read/attempted sources, not all links displayed or every page on each website.
+
+
+### Airchy WebOS
+
+Initial navigation timed out; fresh-tab retry rendered/read canonical page. Demo role/scenario selector read only.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://airchy.com/webos/](https://airchy.com/webos/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://airchywebos.airchy.com](https://airchywebos.airchy.com) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://airchywebos.airchy.com/demo](https://airchywebos.airchy.com/demo) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### BadBoard
+
+Canonical homepage and three linked operational/pricing pages rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://badboard.net](https://badboard.net) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://badboard.net/howItWorks.aspx](https://badboard.net/howItWorks.aspx) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://badboard.net/extraFeatures.aspx](https://badboard.net/extraFeatures.aspx) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://badboard.net/purchase.aspx](https://badboard.net/purchase.aspx) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### Badminton Peg System
+
+Canonical and the linked sources listed below rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://bps.graeyna.com](https://bps.graeyna.com) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://play.google.com/store/apps/details?id=com.bps.badmintonPegSystem](https://play.google.com/store/apps/details?id=com.bps.badmintonPegSystem) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### Badmatch
+
+Canonical and the linked sources listed below rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://badmatch.app](https://badmatch.app) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://play.google.com/store/apps/details?id=bad.match](https://play.google.com/store/apps/details?id=bad.match) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### Court Buddy
+
+Canonical and the linked sources listed below rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://court-buddy.com](https://court-buddy.com) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://court-buddy.com/clubs](https://court-buddy.com/clubs) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://court-buddy.com/guides](https://court-buddy.com/guides) | RENDER ATTEMPTED, UNREADABLE — blank body/AX state on repeated attempts; not verified absent |
+
+### Court Manager
+
+Canonical and the linked sources listed below rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://www.court-manager.com](https://www.court-manager.com) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### CourtMaster – Match Manager
+
+Canonical App Store address redirects to courtmaster-match-manager with same id6758101442; developer link followed. Japanese guide read. No substitute app.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://apps.apple.com/us/app/courtmaster/id6758101442](https://apps.apple.com/us/app/courtmaster/id6758101442) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://courtsync-a95f0.web.app/](https://courtsync-a95f0.web.app/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://courtsync-a95f0.web.app/guide.html](https://courtsync-a95f0.web.app/guide.html) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### CourtsFlow
+
+Pricing first appeared blank; later rendered DOM was read: post-trial tariff to be announced.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://courtsflow.com](https://courtsflow.com) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://courtsflow.com/how-it-works](https://courtsflow.com/how-it-works) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://courtsflow.com/features](https://courtsflow.com/features) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://courtsflow.com/pricing](https://courtsflow.com/pricing) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://courtsflow.com/about](https://courtsflow.com/about) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### Digital Pegboard
+
+Canonical and the linked sources listed below rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://play.google.com/store/apps/details?id=com.digitalpegboard.app](https://play.google.com/store/apps/details?id=com.digitalpegboard.app) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### eBadders
+
+Canonical and the linked sources listed below rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://ebadders.com](https://ebadders.com) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://ebadders.com/help/](https://ebadders.com/help/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://ebadders.com/help/session-manager/](https://ebadders.com/help/session-manager/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://ebadders.com/help/ranking/](https://ebadders.com/help/ranking/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://ebadders.com/help/club/](https://ebadders.com/help/club/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### ePegboard
+
+Canonical and the linked sources listed below rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://www.epegboard.com](https://www.epegboard.com) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.epegboard.com/features/club-nights](https://www.epegboard.com/features/club-nights) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.epegboard.com/features/club-management](https://www.epegboard.com/features/club-management) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.epegboard.com/features/competitions](https://www.epegboard.com/features/competitions) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.epegboard.com/pricing](https://www.epegboard.com/pricing) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://docs.epegboard.com/club-nights/the-picker/](https://docs.epegboard.com/club-nights/the-picker/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://docs.epegboard.com/ratings/overview/](https://docs.epegboard.com/ratings/overview/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://docs.epegboard.com/club-nights/sessions/](https://docs.epegboard.com/club-nights/sessions/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://docs.epegboard.com/club-nights/kiosk-mode/](https://docs.epegboard.com/club-nights/kiosk-mode/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://docs.epegboard.com/club-nights/payments/](https://docs.epegboard.com/club-nights/payments/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.epegboard.com/featuresdesktop](https://www.epegboard.com/featuresdesktop) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://docs.epegboard.com/tutorials/first-club-night/](https://docs.epegboard.com/tutorials/first-club-night/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://docs.epegboard.com/club-nights/special-requests/](https://docs.epegboard.com/club-nights/special-requests/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://docs.epegboard.com/club-nights/members/](https://docs.epegboard.com/club-nights/members/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://docs.epegboard.com/insights/attendance-over-time/](https://docs.epegboard.com/insights/attendance-over-time/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://docs.epegboard.com/insights/session-summary/](https://docs.epegboard.com/insights/session-summary/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://docs.epegboard.com/](https://docs.epegboard.com/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://docs.epegboard.com/getting-started/](https://docs.epegboard.com/getting-started/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### Ladderly
+
+Initial cookie-only/hydration views were transient; fully loaded home/FAQ/rating text and expanded relevant FAQ answers read. Pricing/how-it-works read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://ladderly.online](https://ladderly.online) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://ladderly.online/how-it-works](https://ladderly.online/how-it-works) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://ladderly.online/faq](https://ladderly.online/faq) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://ladderly.online/pricing](https://ladderly.online/pricing) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://ladderly.online/rating-explanation](https://ladderly.online/rating-explanation) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### Matchit
+
+Canonical App Store address redirects to matchit-organize-2vs2-games with same id6739728243; linked developer/support pages read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://apps.apple.com/us/app/matchit/id6739728243](https://apps.apple.com/us/app/matchit/id6739728243) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://gamematcher-ee521.web.app/](https://gamematcher-ee521.web.app/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://gamematcher-ee521.web.app/about.html](https://gamematcher-ee521.web.app/about.html) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### NextFour
+
+Canonical and the linked sources listed below rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://nextfour.app](https://nextfour.app) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://nextfour.app/support.html](https://nextfour.app/support.html) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### PaQueueKa
+
+Canonical and the linked sources listed below rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://paqueueka.info](https://paqueueka.info) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### Qcourt
+
+Canonical and the linked sources listed below rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://play.google.com/store/apps/details?id=com.taforyou.qcourt](https://play.google.com/store/apps/details?id=com.taforyou.qcourt) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://q-court.pages.dev/](https://q-court.pages.dev/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### QourtX
+
+Canonical and the linked sources listed below rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://qourtx.com](https://qourtx.com) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://qourtx.com/features](https://qourtx.com/features) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://qourtx.com/pricing](https://qourtx.com/pricing) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### Queue Master
+
+Rendered Home, Debug and News dialog read. Bulk-name entry rules and release-note descriptions inspected; no session mutations or swaps executed.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://queuemaster.site](https://queuemaster.site) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### Racket Arena
+
+Canonical and the linked sources listed below rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://racketarena.xyz](https://racketarena.xyz) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### Racket Social
+
+Rendered root and expanded competition/capacity/sync FAQ answers read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://racketsocial.app](https://racketsocial.app) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### ServeLeague
+
+Root rendered/read. Some later navigations returned loading/footer shells; pricing, league-management and drop-in reference recovered in a dedicated tab with loaded snapshots. Payments and membership fully rendered/read. Features/tutorials landing pages yielded only shells in attempts; no feature inferred from them.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://serveleague.com](https://serveleague.com) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://serveleague.com/pricing/](https://serveleague.com/pricing/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://serveleague.com/features/league-management/](https://serveleague.com/features/league-management/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://serveleague.com/tutorials/reference/drop-in-leagues/](https://serveleague.com/tutorials/reference/drop-in-leagues/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://serveleague.com/features/payments/](https://serveleague.com/features/payments/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://serveleague.com/features/membership/](https://serveleague.com/features/membership/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://serveleague.com/features/](https://serveleague.com/features/) | RENDER ATTEMPTED — loading/footer shell only on attempts; substantive route not read |
+| [https://serveleague.com/tutorials/](https://serveleague.com/tutorials/) | RENDER ATTEMPTED — loading/footer shell only on attempts; substantive route not read |
+
+### Shuttl
+
+Canonical and the linked sources listed below rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://shuttl.app](https://shuttl.app) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### ShuttleFlow
+
+Canonical and the linked sources listed below rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://shuttleflow.ph](https://shuttleflow.ph) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://shuttleflow.ph/how-it-works](https://shuttleflow.ph/how-it-works) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### ShuttleOps
+
+Canonical and the linked sources listed below rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://www.shuttleops.com](https://www.shuttleops.com) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.shuttleops.com/pegboard](https://www.shuttleops.com/pegboard) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.shuttleops.com/features/managers](https://www.shuttleops.com/features/managers) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.shuttleops.com/pricing](https://www.shuttleops.com/pricing) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.shuttleops.com/guides/first-club-session](https://www.shuttleops.com/guides/first-club-session) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.shuttleops.com/guides/badminton-pegboard](https://www.shuttleops.com/guides/badminton-pegboard) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### ShuttlePilot
+
+Canonical rendered/read. Demo URL rendered a login page with an explicit no-sign-in demo entry; demo button not executed.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://shuttlepilot.io](https://shuttlepilot.io) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://shuttlepilot.io/login?demo=1](https://shuttlepilot.io/login?demo=1) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### ShuttleStats
+
+Canonical first yielded a navigation shell; dedicated-tab full hydration rendered/read the session-directory homepage. Learn initially shell, later full DOM/AX and expanded rating/dropout FAQ read. Images/alt text are illustrations, not a tested admin board.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://shuttlestats.app](https://shuttlestats.app) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://shuttlestats.app/learn](https://shuttlestats.app/learn) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### ShuttlSync
+
+Canonical redirects to www.shuttlsync.com; root and linked feature pages rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://shuttlsync.com](https://shuttlsync.com) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.shuttlsync.com/features/fair-rotation](https://www.shuttlsync.com/features/fair-rotation) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.shuttlsync.com/features/live-sessions](https://www.shuttlsync.com/features/live-sessions) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.shuttlsync.com/features/club-management](https://www.shuttlsync.com/features/club-management) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.shuttlsync.com/features/skill-ratings](https://www.shuttlsync.com/features/skill-ratings) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### ShuttleVantage Pro
+
+Repeated/browser DNS error; no source readable. U throughout. No UNLOCATED inference, no search substitution.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://shuttlevantagepro.com](https://shuttlevantagepro.com) | BLOCKED/UNREACHABLE — browser ERR_NAME_NOT_RESOLVED; no rendered product |
+
+### SmashHQ
+
+Initial navigation was contaminated by stale previous error-page state; clearing/retrying recovered the canonical product and docs. Initial tool error is not evidence of a SmashHQ outage.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://smashhq.app](https://smashhq.app) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://smashhq.app/docs](https://smashhq.app/docs) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### SportRevive
+
+Initial stale error-page tool state recovered; canonical and linked badminton generator rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://sportrevive.com](https://sportrevive.com) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://sportrevive.com/badminton-fixture-generator](https://sportrevive.com/badminton-fixture-generator) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### SportyHQ
+
+Initial stale error-page tool state recovered; canonical and feature/pricing pages rendered/read. www rankings page was linked from product navigation.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://sportyhq.com](https://sportyhq.com) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://sportyhq.com/features/tournament-management](https://sportyhq.com/features/tournament-management) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://sportyhq.com/features/membership-management](https://sportyhq.com/features/membership-management) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://sportyhq.com/pricing/facilities-and-clubs](https://sportyhq.com/pricing/facilities-and-clubs) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.sportyhq.com/features/rankings-and-sanctioning](https://www.sportyhq.com/features/rankings-and-sanctioning) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### UBR – Universal Badminton Rating
+
+Initial stale error-page tool state recovered; canonical redirects to www and rendered/read. Linked ratings/events pages rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://universalbadmintonrating.com](https://universalbadmintonrating.com) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.universalbadmintonrating.com/home/ratings](https://www.universalbadmintonrating.com/home/ratings) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.universalbadmintonrating.com/home/events](https://www.universalbadmintonrating.com/home/events) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+
+### vsBadminton
+
+Initial stale error-page tool state recovered; canonical and eight linked help/update pages rendered/read.
+
+| URL actually read/attempted | Result |
+|---|---|
+
+| [https://www.vsbadminton.co.uk](https://www.vsbadminton.co.uk) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.vsbadminton.co.uk/playing/](https://www.vsbadminton.co.uk/playing/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.vsbadminton.co.uk/advanced/](https://www.vsbadminton.co.uk/advanced/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.vsbadminton.co.uk/selection/](https://www.vsbadminton.co.uk/selection/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.vsbadminton.co.uk/summaries/](https://www.vsbadminton.co.uk/summaries/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.vsbadminton.co.uk/sessions/](https://www.vsbadminton.co.uk/sessions/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.vsbadminton.co.uk/scoring/](https://www.vsbadminton.co.uk/scoring/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.vsbadminton.co.uk/hall/](https://www.vsbadminton.co.uk/hall/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
+| [https://www.vsbadminton.co.uk/sharing/](https://www.vsbadminton.co.uk/sharing/) | RENDERED/READABLE — JavaScript browser DOM/AX read |
