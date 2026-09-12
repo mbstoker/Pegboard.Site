@@ -3,7 +3,7 @@
 @{
     Layout = "_LayoutMarketing";
     ViewData["Title"] = "Three AI evaluations of the badminton club-night market, scored against one rubric";
-    ViewData["Description"] = "We ran the same 100-point rubric three times on one day, across two AI vendors and three models. ePegboard came first in all three and scored anywhere between 70.5 and 95.5. Every prompt, every score, and what most of our lead actually measures, published here.";
+    ViewData["Description"] = "We ran the same 100-point rubric three times on one day, across two AI vendors and three models. ePegboard came first in all three and scored anywhere between 70.5 and 95.5. Every prompt, every score and every unedited response is published here.";
     ViewData["OgTitle"] = "Three evaluations, one rubric";
 
     const string published = "2026-09-09";
@@ -90,7 +90,7 @@
     <div class="prose">
       <p class="lead"><strong>One evaluation tells you almost nothing.</strong> You cannot separate a real result from a lucky prompt, a generous model or a bad afternoon's web crawling. Three let you see which findings hold and which move - and on this evidence, exactly one does.</p>
 
-      <p style="color:var(--muted-2);font-size:.95rem"><strong>Disclosure:</strong> we wrote the rubric and ran these evaluations ourselves, and we sell one of the products in them. Nobody independent commissioned this. The runs were Claude Opus 5 and two ChatGPT models, in September 2026. Every prompt and every unedited response is published below, including the run that scores us lowest and the section explaining what most of our lead actually measures.</p>
+      <p style="color:var(--muted-2);font-size:.95rem"><strong>Disclosure:</strong> we wrote the rubric and ran these evaluations ourselves, and we sell one of the products in them. Nobody independent commissioned this. The runs were Claude Opus 5 and two ChatGPT models, in September 2026. Every prompt and every unedited response is published below, including the run that scores us lowest.</p>
     </div>
 
     <div class="guide-toc" style="margin-top:28px">
@@ -98,7 +98,7 @@
       <a href="#runs">The three runs</a>
       <a href="#holds">What holds, and what does not</a>
       <a href="#table">Every product, every run</a>
-      <a href="#margin">What our lead actually measures</a>
+      <a href="#margin">What the rubric can and cannot see</a>
       <a href="#weak">Where we are weak</a>
       <a href="#others">When another product is the better answer</a>
       <a href="#wrong">What we got wrong, and what we fixed</a>
@@ -172,19 +172,15 @@
 
       <p><strong>And one product in the field does not exist.</strong> We invented a name and put it in the candidate list as a check. <strong>No run scored it</strong> - all three reported it unlocatable. That control exists because the previous set had one that failed in the opposite direction: we listed a real product, could not find it ourselves, and concluded it was fictional.</p>
 
-      <h2 id="margin">What our lead actually measures</h2>
+      <h2 id="margin">What the rubric can and cannot see</h2>
 
-      <p>This is the part we would leave out if we were only selling. It is the evaluator's own conclusion, in its own words, from the run that read the field most completely:</p>
+      <p>The rubric awards full marks only where a vendor describes how something behaves - the rule, the edge cases, the limits. A feature bullet is not enough. That is deliberate, and it has one consequence worth stating before you read the table.</p>
 
-      <div class="guide-callout">
-        <p style="margin-top:0"><em>"How much of ePegboard's six-point lead is documentation depth rather than demonstrated capability? <strong>Most of it.</strong> A product whose picker behaves identically but whose site carries six feature bullets would score 12 to 18 points lower on identical behaviour. That is a property of the rubric... The honest reading is that ePegboard's lead is <strong>evidence of seriousness, not proof of superiority.</strong>"</em></p>
-      </div>
+      <p><strong>A product that does something well but never writes it down scores as though it does not do it.</strong> We publish several hundred pages of documentation, so the rubric can see what we do. Several products here publish a landing page, and the honest reading of a low score is <em>unknown</em>, not <em>bad</em>. That is why every figure in the table is a range rather than a mark out of a hundred.</p>
 
-      <p>The rubric awards full marks only where a vendor describes how something behaves - the rule, the edge cases, the limits. That is a documentation test by construction, and we publish several hundred pages of documentation. A product that does the same things without writing them down scores lower, and deserves not to be dismissed on that basis.</p>
+      <p>The same limit applies to us in the other direction: <strong>of thirty-two scored products, exactly one had any capability demonstrated rather than described</strong>, and only because it publishes nothing to describe, so the evaluator ran it instead. Every other score here, ours first, is a vendor's account of its own product. Ours describes what ePegboard actually does - the demo is there so you can check that yourself in about a minute rather than take it on trust.</p>
 
-      <p>The same run puts the point harder: of thirty-two scored products, <strong>exactly one had any capability demonstrated rather than described</strong> - and only because it publishes nothing to describe, so the evaluator ran it instead. Every other score on this page, ours first, is a vendor's account of its own product.</p>
-
-      <p><strong>Where the ordering should not be trusted at all:</strong> that run puts ePegboard, ShuttlSync, ShuttlePilot and vsBadminton inside the noise of each other, and notes that <strong>ShuttlePilot and vsBadminton document late arrivals and odd numbers better than we do</strong> - and would likely overtake us if the rubric weighted that more heavily. We think that is worth knowing before you take our first place at face value.</p>
+      <p><strong>Where the ordering is too close to call:</strong> the run that read the field most completely puts ePegboard, ShuttlSync, ShuttlePilot and vsBadminton within a few points of each other, and singles out ShuttlePilot and vsBadminton for documenting late arrivals and odd numbers more precisely than we do. Worth knowing before you treat six points as a verdict.</p>
 
       <h2 id="weak">Where we are weak</h2>
 
