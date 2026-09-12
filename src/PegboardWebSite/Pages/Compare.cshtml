@@ -2,9 +2,9 @@
 @using PegboardWebSite.Services
 @{
     Layout = "_LayoutMarketing";
-    ViewData["Title"] = "Best Badminton Club-Night Software 2026: 33 Products Compared";
-    ViewData["Description"] = "33 badminton club-night products compared against one published 100-point rubric, evaluated three times to test whether the result held. Best overall, best offline, best phone-first, best for payments and leagues, with scores, limitations and links to every product.";
-    ViewData["OgTitle"] = "Best badminton club-night software 2026: 33 products compared";
+    ViewData["Title"] = "Best Badminton Club-Night Software 2026: 32 Products Compared";
+    ViewData["Description"] = "32 badminton club-night products compared against one published 100-point rubric, evaluated three times to test whether the result held. Best overall, best offline, best phone-first, best for payments and leagues, with scores, limitations and links to every product.";
+    ViewData["OgTitle"] = "Best badminton club-night software 2026: 32 products compared";
 
     const string published = "2026-09-09";
     const string canonical = "https://www.epegboard.com/compare";
@@ -19,11 +19,11 @@
         ("ShuttlSync",    "https://shuttlsync.com",         "Clubs that need to run offline",             "Prepare the roster online, run the night with no signal, sync after; ratings move with results",                              "Paid tier tops out at four live courts"),
         ("ShuttlePilot",  "https://shuttlepilot.io",        "Running the night one-handed from a phone",  "The only product found that equalises sit-outs across sessions, not just tonight",                                            "No shared court display; no published price after beta"),
         ("Court Manager", "https://www.court-manager.com",  "Replacing a physical peg board",             "The most complete written description of a picker's configuration in the field, and it handles venue Wi-Fi login pages",      "Ranks are typed by hand and never move on their own"),
-        ("vsBadminton",   "https://www.vsbadminton.co.uk",  "Free, with nobody signing up",               "Fairness measured against time present, so a late arrival is not punished for arriving; join by six-digit code or QR",       "History expires; needs a reliable connection"),
+        ("vsBadminton",   "https://www.vsbadminton.co.uk",  "Free with no player accounts required",               "Fairness measured against time present, so a late arrival is not punished for arriving; join by six-digit code or QR",       "History expires; needs a reliable connection"),
         ("Racket Social", "https://racketsocial.app",       "Offline on a shoestring",                    "The clearest single fairness rule of any candidate, and a genuine offline PWA at no cost",                                    "Sessions live on the device that created them"),
         ("ShuttleStats",  "https://shuttlestats.app",       "Collecting session fees",                    "The club keeps its own Stripe account; a flat fee per payment rather than a subscription, with capacity and refunds",         "Player data is isolated per club"),
         ("ShuttleOps",    "https://www.shuttleops.com",     "Subs and membership admin, UK",              "Published tiers from GBP 0 to 12 a month, Stripe and Direct Debit, stated fees and payout timings",                          "The picker is far less documented"),
-        ("ServeLeague",   "https://serveleague.com",        "Leagues and a member register",              "Six documented league formats plus a constitutionally sound member register with voting categories",                          "Its drop-in format is written in table-tennis terms"),
+        ("ServeLeague",   "https://serveleague.com",        "Leagues and a member register",              "Six documented league formats, plus a member register with membership categories and voting rights",                          "Its drop-in format is written in table-tennis terms"),
         ("SportRevive",   "https://sportrevive.com",        "Printing the whole evening in advance",      "Generates the night as one balanced fixture sheet; only the organiser needs an account",                                      "Planned rounds, not live picking")
     };
 
@@ -67,14 +67,14 @@
 
     var runs = new (string Model, string Retrieval, string Field, string Us, string Second, string Margin)[]
     {
-        ("Claude Opus 5",  "Browser",       "32 of 33 scored", "90.5", "ShuttlSync 84.5",                 "6.0"),
-        ("ChatGPT 5.6",    "Browser",       "32 of 33 scored", "70.5", "ShuttlSync 62.0",                 "8.5"),
-        ("ChatGPT (free)", "No JavaScript", "30 of 33 scored", "95.5", "ShuttleFlow / Racket Social 85.5", "10.0")
+        ("Claude Opus 5",  "Browser",       "all 32 scored",  "90.5", "ShuttlSync 84.5",                 "6.0"),
+        ("ChatGPT 5.6",    "Browser",       "all 32 scored",  "70.5", "ShuttlSync 62.0",                 "8.5"),
+        ("ChatGPT (free)", "No JavaScript", "30 of 32 scored", "95.5", "ShuttleFlow / Racket Social 85.5", "10.0")
     };
 
     var articleJsonLd = GuideSchema.Article(
-        "Best badminton club-night software 2026: 33 products compared",
-        "33 badminton club-night products scored against one published 100-point rubric, evaluated three times to test whether the result held.",
+        "Best badminton club-night software 2026: 32 products compared",
+        "32 badminton club-night products scored against one published 100-point rubric, evaluated three times to test whether the result held.",
         canonical, published);
 }
 
@@ -86,11 +86,11 @@
   <div class="wrap">
     <div class="inner">
       <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Compare</span></div>
-      <h1 style="margin-top:10px">The best badminton club-night software: 33 products compared</h1>
-      <p class="lede">Three independent AI evaluations. One pre-declared 100-point rubric. ePegboard ranked first in all three - but different products win on offline operation, on collecting money, on leagues, and on running the night from a phone.</p>
+      <h1 style="margin-top:10px">The best badminton club-night software: 32 products compared</h1>
+      <p class="lede">One pre-declared 100-point rubric. Three separate evaluations. ePegboard ranked first in all three - but different products win on offline operation, on collecting money, on leagues, and on running the night from a phone.</p>
       <div class="guide-meta">
         <span class="gm-tag">Comparison</span>
-        <span>33 products</span>
+        <span>32 products</span>
         <span>3 evaluations</span>
         <span>12 September 2026</span>
       </div>
@@ -102,7 +102,7 @@
   <div class="wrap" style="max-width:900px">
 
     <div class="prose">
-      <p class="lead">We scored every badminton club-night product we could find against a rubric written before any of them was looked at, weighted for a UK social club night: 18 to 26 players, four courts, mixed strength, people arriving late and leaving early. <strong>Then we ran the identical evaluation three times, through three different frontier models, to test whether the result depended on who was reading.</strong> The ranking held. The scores did not, and that turns out to be the most useful thing on this page.</p>
+      <p class="lead">We scored 32 badminton club-night products - every one we could find - against a rubric written before any of them was looked at, weighted for a UK social club night: 18 to 26 players, four courts, mixed strength, people arriving late and leaving early. <strong>Then we ran the identical evaluation three times, through three different frontier models, to test whether the result depended on who was reading.</strong> First place held. The scores - and much of the ordering below it - did not, and that turns out to be the most useful thing on this page.</p>
 
       <p style="color:var(--muted-2);font-size:.95rem"><strong>Disclosure:</strong> we make ePegboard, one of the products here. We wrote the rubric and ran the evaluations; nobody independent commissioned them. Every prompt and every unedited response is published, including the run that scores us lowest, and every product below links to its own site so you can check us.</p>
     </div>
@@ -114,7 +114,7 @@
       <a href="#shortlist">The shortlist, compared in detail</a>
       <a href="#runs">The three evaluation results</a>
       <a href="#holds">What held across all three</a>
-      <a href="#table">All 33 products and their scores</a>
+      <a href="#table">All 32 products and their scores</a>
       <a href="#weak">Where ePegboard is weak</a>
       <a href="#others">When another product is the better answer</a>
       <a href="#limits">Limits of this comparison</a>
@@ -130,7 +130,7 @@
         <li><strong>Best when the hall has no reliable connection: <a href="https://shuttlsync.com" target="_blank" rel="noopener">ShuttlSync</a> or <a href="https://racketsocial.app" target="_blank" rel="noopener">Racket Social</a>.</strong> Both run a session offline at no cost. We cannot.</li>
         <li><strong>Best run one-handed from a phone: <a href="https://shuttlepilot.io" target="_blank" rel="noopener">ShuttlePilot</a>.</strong> Built for an organiser who is also holding a racket.</li>
         <li><strong>Best for collecting session fees: <a href="https://shuttlestats.app" target="_blank" rel="noopener">ShuttleStats</a>.</strong> The club keeps its own Stripe account and pays a flat fee per payment.</li>
-        <li><strong>Best for leagues and a member register: <a href="https://serveleague.com" target="_blank" rel="noopener">ServeLeague</a>.</strong> Six documented league formats and a proper constitutional register.</li>
+        <li><strong>Best for leagues and a member register: <a href="https://serveleague.com" target="_blank" rel="noopener">ServeLeague</a>.</strong> Six documented league formats, with membership categories and voting rights.</li>
         <li><strong>Best as a straight peg-board replacement: <a href="https://www.court-manager.com" target="_blank" rel="noopener">Court Manager</a>.</strong> The most thoroughly documented picker configuration in the field.</li>
         <li><strong>Best if you would rather print the evening: <a href="https://sportrevive.com" target="_blank" rel="noopener">SportRevive</a>.</strong> The whole night generated in advance as one balanced sheet.</li>
       </ul>
@@ -141,13 +141,14 @@
         <h4>Fifteen criteria, one hundred points, written down before anything was looked at</h4>
         <p style="margin-top:8px"><strong>Five of them are the club night itself and carry 48 of the 100 points:</strong> arrivals and late joiners, choosing the next game as courts free up, balancing the four, sharing out sit-outs, and varying who plays with whom.</p>
         <p style="margin-top:10px">The other ten cover explaining a pick, manual override, ratings, live scoring and history, the court display, attendance reporting, payments, competitions, resilience and price.</p>
-        <p style="margin-top:10px"><strong>A product only takes full marks where it describes how the thing behaves</strong> - the rule, the edge cases, the limits. A feature bullet scores half. Anything a vendor does not document at all scores nothing and widens that product's range, rather than counting against it.</p>
+        <p style="margin-top:10px"><strong>A product only takes full marks where it describes how the thing behaves</strong> - the rule, the edge cases, the limits. A feature bullet scores half.</p>
+        <p style="margin-top:10px">Where we could find no evidence for a capability at all, it contributes <strong>zero to the evidenced score</strong> - but we also publish an upper bound that assumes every unresolved capability is present. <strong>Missing documentation therefore creates uncertainty about a product rather than proof that it cannot do something</strong>, which is why every figure below is a range.</p>
         <p style="margin-top:12px"><a class="btn btn-ghost" href="/compare/method">Read the full rubric and the evidence rules</a></p>
       </div>
 
       <h2 id="shortlist">The shortlist, compared in detail</h2>
 
-      <p>Ten products a UK club could realistically choose between, with what each is best at and the thing most likely to rule it out. The other 23 are in the full table below.</p>
+      <p>Ten products a UK club could realistically choose between, with what each is best at and the thing most likely to rule it out. The other 22 are in the full table below.</p>
 
       <div class="cmp-wrap">
         <table class="cmp-table">
@@ -201,7 +202,7 @@
 
       <p><strong>Our lead over second place was 6.0, 8.5 and 10.0 points</strong> - always positive, never comfortable, and smallest in the run that read the field most completely. Six points on a hundred-point rubric is not a verdict. It is a reason to put two or three products side by side on a real club night.</p>
 
-      <h2 id="table">All 33 products and their scores</h2>
+      <h2 id="table">All 32 products and their scores</h2>
 
       <p><strong>Every figure is a range:</strong> the lower bound is what that run could evidence, the upper bound is what the product would reach if every criterion it could not establish turned out to be fully met. A single figure means nothing was left unresolved. A dash means that run resolved nothing for that product - <strong>never zero, and never a judgement on it.</strong></p>
 
@@ -226,7 +227,9 @@
 
       <p style="margin-top:18px"><strong>Read across the rows, not down the columns.</strong> ShuttleFlow is 55.0 in one run and 85.5 in another. Racket Social 77.5, 85.5 and 50.0. The disagreement is the honest finding, and any comparison claiming a confident ordering of thirty-three products is selling you something.</p>
 
-      <p><strong>Two products in this list deserve a note.</strong> Court Buddy scores well and its sit-out documentation is among the clearest in the field, but its website is a pickleball session manager and never mentions badminton, though its app listing does name badminton club nights. And one name in the list is <strong>fabricated</strong> - we invented a product and put it among the real ones as a check. No run scored it.</p>
+      <p><strong>Court Buddy deserves a note.</strong> It scores well and its sit-out documentation is among the clearest in the field, but its website is a pickleball session manager and never mentions badminton, though its app listing does name badminton club nights.</p>
+
+      <p><strong>We also gave each evaluation a 33rd candidate that does not exist.</strong> We invented a product name, gave it a plausible address and listed it among the real ones as a hallucination control. <strong>No run scored it</strong> - all three reported it unlocatable and moved on. It is not counted in the 32 above, and it is not a competitor.</p>
 
       <h2 id="weak">Where ePegboard is weak</h2>
 
@@ -247,7 +250,7 @@
         <li><strong>A hall with no reliable connection: ShuttlSync or Racket Social.</strong> Both do real offline operation at no cost - roster prepared online, session run offline, synced after. Our only offline option is a paid Windows product we are no longer developing.</li>
         <li><strong>Collecting the money rather than recording it: ShuttleStats or ShuttleOps.</strong> ShuttleStats puts the club on its own Stripe account, charges per payment with no subscription, and handles capacity, waiting lists and refunds.</li>
         <li><strong>Running the whole night one-handed from a phone: ShuttlePilot.</strong> Built around the fact that the person running club night is usually also holding a racket.</li>
-        <li><strong>Leagues and a membership register: ServeLeague or SportyHQ.</strong> Six documented league formats and a proper member register, against our handicap doubles.</li>
+        <li><strong>Leagues and a membership register: ServeLeague or SportyHQ.</strong> Six documented league formats, with membership categories and voting rights, against our handicap doubles.</li>
         <li><strong>Printing the whole evening in advance: SportRevive.</strong> A different model to live picking, and for a stable group of nine it is less fuss than any queue.</li>
         <li><strong>A rating players take seriously: UBR or Ladderly.</strong> Both publish their maths in more depth than we publish ours.</li>
       </ul>
