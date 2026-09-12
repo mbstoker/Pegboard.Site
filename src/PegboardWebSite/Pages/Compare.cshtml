@@ -2,56 +2,79 @@
 @using PegboardWebSite.Services
 @{
     Layout = "_LayoutMarketing";
-    ViewData["Title"] = "Three AI evaluations of 30 badminton club-night products, scored for a UK social club night";
-    ViewData["Description"] = "We ran the same 100-point rubric three times, on two different AI models with different ways of reading the web. ePegboard placed first in all three, scoring between 78.5 and 95.5. Every prompt, every score and everything we got wrong is published here.";
-    ViewData["OgTitle"] = "Three evaluations, thirty products, one rubric";
+    ViewData["Title"] = "Best Badminton Club Software 2026: 32 Club-Night Products Compared";
+    ViewData["Description"] = "Badminton club software compared: 32 products scored against one published 100-point rubric, evaluated three times to test whether the result held. Best overall, best offline, best phone-first, best for payments and leagues, with scores, limitations and links to every product.";
+    ViewData["OgTitle"] = "Best badminton club software 2026: 32 products compared";
 
     const string published = "2026-09-09";
     const string canonical = "https://www.epegboard.com/compare";
 
-    // Three runs of the same pre-declared rubric. Sources:
-    //   R1 - Marketing/CompetitorAnalysis/ai-comparison-2026-09-09/published-table.md (corrected run 3)
-    //   R2 - the Opus 5 High re-run, browser-rendered retrieval, 27 of 30 scored
-    //   R3 - the GPT-6 Astra re-run, output-gpt6-astra.md
-    // "-" means that run could not read the product's page. It NEVER means zero.
-    // Ordered by R2, the run that read the most of the field.
-    var rows = new (string Product, string R1, string R2, string R3)[]
+    // Shortlist: the products a UK club could realistically choose between, with the one thing
+    // each is best at and the limitation that would rule it out. Drawn from the three runs'
+    // own sections D, E and F. ePegboard does not win every column, deliberately - where a
+    // rival is better for a requirement, the rival is named.
+    var shortlist = new (string Product, string Url, string BestFor, string StandsOut, string Limit)[]
     {
-        ("ePegboard",              "95.5",       "85.5",       "78.5"),
-        ("ShuttlePilot",           "84.0-93.0",  "73.0-77.0",  "59.5-63.5"),
-        ("Court Buddy",            "-",          "61.0-66.0",  "-"),
-        ("Racket Social",          "79.0-88.0",  "59.0-64.0",  "47.5-52.5"),
-        ("QourtX",                 "87.5",       "55.5-60.5",  "47.5-52.5"),
-        ("ShuttleFlow",            "77.5-85.5",  "51.5-63.5",  "50.0"),
-        ("Ladderly",               "56.5-83.5",  "51.0-78.0",  "45.0-62.0"),
-        ("Qcourt",                 "41.0-80.0",  "49.0-61.0",  "42.0-58.0"),
-        ("ShuttleOps",             "-",          "48.5-65.5",  "-"),
-        ("Shuttl",                 "63.0-75.0",  "46.5-58.5",  "50.0-62.0"),
-        ("PaQueueKa",              "75.0-79.0",  "46.0-59.0",  "45.5-50.5"),
-        ("NextFour",               "57.0-74.0",  "46.0-65.0",  "40.5-59.5"),
-        ("CourtsFlow",             "-",          "40.5-70.5",  "-"),
-        ("Badminton Peg System",   "46.5-83.5",  "36.0-73.0",  "44.0-68.0"),
-        ("vsBadminton",            "71.0-88.0",  "32.5-71.5",  "61.5-65.5"),
-        ("UBR",                    "36.0-100.0", "31.0-74.0",  "33.0-67.0"),
-        ("Racket Arena",           "-",          "28.0-72.0",  "-"),
-        ("Queue Master",           "-",          "27.5-72.5",  "-"),
-        ("BadBoard",               "74.0-84.0",  "25.5-74.5",  "55.0-67.0"),
-        ("Matchit",                "-",          "23.5-76.5",  "28.5-71.5"),
-        ("CourtMaster",            "-",          "20.5-79.5",  "48.5-56.5"),
-        ("ServeLeague",            "21.0-100.0", "19.0-85.0",  "61.0"),
-        ("SportyHQ",               "-",          "19.0-89.0",  "-"),
-        ("Badmatch",               "17.0-88.0",  "18.0-82.0",  "25.0-75.0"),
-        ("Digital Pegboard",       "29.0-100.0", "15.5-84.5",  "12.5-87.5"),
-        ("eBadders",               "73.5-94.5",  "11.0-89.0",  "45.0-55.0"),
-        ("Airchy WebOS",           "38.5-68.5",  "11.0-89.0",  "26.5-73.5"),
-        ("SmashHQ",                "-",          "-",          "48.0-52.0"),
-        ("Court Manager",          "-",          "-",          "-"),
-        ("QSENPAI",                "-",          "-",          "-")
+        ("ePegboard",     "https://www.epegboard.com",      "Mixed-strength social club nights",         "Deepest documented picking: closeness, skill balance, wait fairness, partner variety and a per-pick explanation on the board", "Needs a connection; no card payments"),
+        ("ShuttlSync",    "https://shuttlsync.com",         "Clubs that need to run offline",             "Prepare the roster online, run the night with no signal, sync after; ratings move with results",                              "Paid tier tops out at four live courts"),
+        ("ShuttlePilot",  "https://shuttlepilot.io",        "Running the night one-handed from a phone",  "The only product found that equalises sit-outs across sessions, not just tonight",                                            "No shared court display; no published price after beta"),
+        ("Court Manager", "https://www.court-manager.com",  "Replacing a physical peg board",             "The most complete written description of a picker's configuration in the field, and it handles venue Wi-Fi login pages",      "Ranks are typed by hand and never move on their own"),
+        ("vsBadminton",   "https://www.vsbadminton.co.uk",  "Free with no player accounts required",               "Fairness measured against time present, so a late arrival is not punished for arriving; join by six-digit code or QR",       "History expires; needs a reliable connection"),
+        ("Racket Social", "https://racketsocial.app",       "Offline on a shoestring",                    "The clearest single fairness rule of any candidate, and a genuine offline PWA at no cost",                                    "Sessions live on the device that created them"),
+        ("ShuttleStats",  "https://shuttlestats.app",       "Collecting session fees",                    "The club keeps its own Stripe account; a flat fee per payment rather than a subscription, with capacity and refunds",         "Player data is isolated per club"),
+        ("ShuttleOps",    "https://www.shuttleops.com",     "Subs and membership admin, UK",              "Published tiers from GBP 0 to 12 a month, Stripe and Direct Debit, stated fees and payout timings",                          "The picker is far less documented"),
+        ("ServeLeague",   "https://serveleague.com",        "Leagues and a member register",              "Six documented league formats, plus a member register with membership categories and voting rights",                          "Its drop-in format is written in table-tennis terms"),
+        ("SportRevive",   "https://sportrevive.com",        "Printing the whole evening in advance",      "Generates the night as one balanced fixture sheet; only the organiser needs an account",                                      "Planned rounds, not live picking")
+    };
+
+    // Full field. PARSED from the three runs' own tables, never retyped. A dash means that run
+    // resolved no criteria for the product - it never means zero.
+    var rows = new (string Product, string Opus, string Free, string Sol)[]
+    {
+        ("ePegboard",              "90.5",        "95.5",        "70.5"),
+        ("ShuttlSync",             "84.5",        "73.0-82.0",   "62.0-66.0"),
+        ("ShuttlePilot",           "83.0-87.0",   "80.0-89.0",   "59.5-63.5"),
+        ("vsBadminton",            "83.0-87.0",   "76.0-89.0",   "57.0-61.0"),
+        ("Shuttl",                 "80.0-84.0",   "68.5-77.5",   "50.0-62.0"),
+        ("Court Manager",          "78.5-82.5",   "64.5-77.5",   "46.5-59.5"),
+        ("Racket Social",          "77.5-82.5",   "85.5-90.5",   "50.0"),
+        ("SmashHQ",                "69.5-78.5",   "71.0-80.0",   "48.0-52.0"),
+        ("Court Buddy",            "69.5-77.5",   "35.5-77.5",   "50.0"),
+        ("QourtX",                 "68.5-73.5",   "71.5-76.5",   "50.0"),
+        ("SportRevive",            "68.0",        "82.5-91.5",   "50.0"),
+        ("eBadders",               "67.0",        "7.5-100.0",   "48.0-52.0"),
+        ("ServeLeague",            "65.5-70.5",   "52.5-78.5",   "57.5"),
+        ("Badmatch",               "64.5-68.5",   "-",           "48.0-52.0"),
+        ("PaQueueKa",              "62.0-67.0",   "55.0-68.0",   "51.5-56.5"),
+        ("Ladderly",               "59.5-76.5",   "55.5-100.0",  "41.5-58.5"),
+        ("CourtsFlow",             "59.5-63.5",   "25.5-66.5",   "51.0-55.0"),
+        ("ShuttleFlow",            "55.0-59.0",   "85.5-89.5",   "50.0-62.0"),
+        ("BadBoard",               "55.0-67.0",   "74.5-82.5",   "57.0-61.0"),
+        ("ShuttleOps",             "52.5-61.5",   "35.5-64.5",   "50.5-61.5"),
+        ("UBR",                    "52.0-72.0",   "70.5-80.5",   "37.0-63.0"),
+        ("NextFour",               "50.0-69.0",   "53.5-70.5",   "46.5-65.5"),
+        ("ShuttleStats",           "49.0-66.0",   "5.5-100.0",   "45.5-54.5"),
+        ("Airchy WebOS",           "48.0-61.0",   "25.0-75.0",   "41.5-58.5"),
+        ("Queue Master",           "43.0-70.0",   "23.5-100.0",  "34.5-65.5"),
+        ("Qcourt",                 "42.5-62.5",   "65.0-77.0",   "42.0-58.0"),
+        ("Badminton Peg System",   "42.0-66.0",   "49.5-86.5",   "39.0-73.0"),
+        ("Racket Arena",           "30.0-70.0",   "-",           "30.5-69.5"),
+        ("SportyHQ",               "21.5-87.5",   "32.5-100.0",  "36.5-72.5"),
+        ("Matchit",                "21.0-79.0",   "37.5-74.5",   "23.5-76.5"),
+        ("CourtMaster",            "17.0-83.0",   "38.5-71.5",   "46.0-54.0"),
+        ("Digital Pegboard",       "12.5-87.5",   "23.5-76.5",   "12.5-87.5")
+    };
+
+    var runs = new (string Model, string Retrieval, string Field, string Us, string Second, string Margin)[]
+    {
+        ("Claude Opus 5",  "Browser",       "all 32 scored",  "90.5", "ShuttlSync 84.5",                 "6.0"),
+        ("ChatGPT 5.6",    "Browser",       "all 32 scored",  "70.5", "ShuttlSync 62.0",                 "8.5"),
+        ("ChatGPT (free)", "No JavaScript", "30 of 32 scored", "95.5", "ShuttleFlow / Racket Social 85.5", "10.0")
     };
 
     var articleJsonLd = GuideSchema.Article(
-        "Three AI evaluations of 30 badminton club-night products, scored for a UK social club night",
-        "The same 100-point rubric run three times on two AI models. ePegboard placed first in all three, scoring between 78.5 and 95.5.",
+        "Best badminton club software 2026: 32 club-night products compared",
+        "Badminton club software compared: 32 club-night products scored against one published 100-point rubric, evaluated three times to test whether the result held.",
         canonical, published);
 }
 
@@ -63,13 +86,13 @@
   <div class="wrap">
     <div class="inner">
       <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Compare</span></div>
-      <h1 style="margin-top:10px">Three evaluations, thirty products, one rubric</h1>
-      <p class="lede">We asked AI to evaluate the badminton club-night market against a rubric written before anything was scored, for one specific kind of club: a UK social night, 18 to 26 players, four courts, mixed strength, where the live night is the main problem. We ran it three times. <strong>ePegboard came first in all three, scoring 85.5 out of 100 in the run that read most of the field</strong> - and 95.5 and 78.5 in the other two, which is the more interesting half of the result.</p>
+      <h1 style="margin-top:10px">The best badminton club software: 32 club-night products compared</h1>
+      <p class="lede">One pre-declared 100-point rubric. Three separate evaluations. ePegboard ranked first in all three - but different products win on offline operation, on collecting money, on leagues, and on running the night from a phone.</p>
       <div class="guide-meta">
-        <span class="gm-tag">Evaluation</span>
-        <span>3 runs</span>
-        <span>30 products</span>
-        <span>9 September 2026</span>
+        <span class="gm-tag">Comparison</span>
+        <span>32 products</span>
+        <span>3 evaluations</span>
+        <span>12 September 2026</span>
       </div>
     </div>
   </div>
@@ -79,193 +102,201 @@
   <div class="wrap" style="max-width:900px">
 
     <div class="prose">
-      <p class="lead"><strong>We are publishing the disagreement, not just the wins.</strong> A single evaluation with a single number is worth very little - you cannot tell a real result from a lucky prompt. Three runs let you see which findings hold and which move, and the ones that move are the more useful half.</p>
+      <p class="lead">We scored 32 badminton club-night products identified in our market search against a rubric written before any of them was looked at, weighted for a UK social club night: 18 to 26 players, four courts, mixed strength, people arriving late and leaving early. <strong>Then we ran the identical evaluation three times, through three different AI models, to test whether the result depended on who was reading.</strong> First place held. The scores - and much of the ordering below it - did not, and that turns out to be the most useful thing on this page.</p>
 
-      <p style="color:var(--muted-2);font-size:.95rem"><strong>Disclosure, up front:</strong> we wrote the rubric and ran these evaluations ourselves, and we sell one of the products in them. Nobody independent commissioned this. That is a reason to check our working, which is why the working is here - every prompt, every score, and a section on what we got wrong. The runs were Claude Opus 5 and GPT-6 on 9 September 2026. No AI provider endorses ePegboard, and nobody should read this as one product being best for every club: the rubric was written for one club profile, and a different profile moves the answer.</p>
+      <p><strong>What this covers, and what it does not.</strong> These are products for <strong>running the club night</strong> - who plays next, on which court, with whom. If what your committee actually needs is membership records, subscriptions or court booking, that is a different category of badminton club management software, and the products that do it well are named below: ShuttleOps and ShuttleStats for subs and payments, ServeLeague and SportyHQ for membership and leagues. ePegboard does not collect money or run a booking system.</p>
+
+      <p style="color:var(--muted-2);font-size:.95rem"><strong>Disclosure:</strong> we make ePegboard, one of the products here. We wrote the rubric and ran the evaluations; nobody independent commissioned them. Every prompt and every unedited response is published, including the run that scores us lowest, and every product below links to its own site so you can check us.</p>
     </div>
 
     <div class="guide-toc" style="margin-top:28px">
-      <h4>On this page</h4>
-      <a href="#runs">The three runs</a>
-      <a href="#agree">What all three agree on</a>
-      <a href="#table">Every product, all three scores</a>
-      <a href="#unread">Products no run could read</a>
-      <a href="#tied">Where we are not ahead at all</a>
-      <a href="#weak">Where we are weak</a>
+      <h4>In this comparison</h4>
+      <a href="#glance">At a glance: the best option for each requirement</a>
+      <a href="#how">How we compared them</a>
+      <a href="#shortlist">The shortlist, compared in detail</a>
+      <a href="#runs">The three evaluation results</a>
+      <a href="#holds">What held across all three</a>
+      <a href="#table">All 32 products and their scores</a>
+      <a href="#weak">Where ePegboard is weak</a>
       <a href="#others">When another product is the better answer</a>
-      <a href="#wrong">What we got wrong</a>
-      <a href="#practice">Whether any of it holds up in practice</a>
+      <a href="#limits">Limits of this comparison</a>
+      <a href="#practice">Whether clubs actually stay</a>
     </div>
 
     <div class="prose" style="margin-top:34px">
 
-      <h2 id="runs">The three runs</h2>
+      <h2 id="glance">At a glance: the best option for each requirement</h2>
 
-      <p>Same rubric, same club profile, same thirty candidates. What changed was the model doing the reading and, crucially, <strong>how it read the web</strong>.</p>
+      <ul>
+        <li><strong>Best overall for a mixed-strength club night: <a href="https://www.epegboard.com">ePegboard</a>.</strong> First in all three evaluations. Free for clubs.</li>
+        <li><strong>Best when the hall has no reliable connection: <a href="https://shuttlsync.com" target="_blank" rel="noopener">ShuttlSync</a> or <a href="https://racketsocial.app" target="_blank" rel="noopener">Racket Social</a>.</strong> Both run a session offline at no cost. We cannot.</li>
+        <li><strong>Best run one-handed from a phone: <a href="https://shuttlepilot.io" target="_blank" rel="noopener">ShuttlePilot</a>.</strong> Built for an organiser who is also holding a racket.</li>
+        <li><strong>Best for collecting session fees: <a href="https://shuttlestats.app" target="_blank" rel="noopener">ShuttleStats</a>.</strong> The club keeps its own Stripe account and pays a flat fee per payment.</li>
+        <li><strong>Best for leagues and a member register: <a href="https://serveleague.com" target="_blank" rel="noopener">ServeLeague</a>.</strong> Six documented league formats, with membership categories and voting rights.</li>
+        <li><strong>Best as a straight peg-board replacement: <a href="https://www.court-manager.com" target="_blank" rel="noopener">Court Manager</a>.</strong> The most thoroughly documented picker configuration in the field.</li>
+        <li><strong>Best if you would rather print the evening: <a href="https://sportrevive.com" target="_blank" rel="noopener">SportRevive</a>.</strong> The whole night generated in advance as one balanced sheet.</li>
+      </ul>
 
-      <div class="cmp-wrap">
-        <table class="cmp-table">
-          <thead>
-            <tr><th>Run</th><th>How it read pages</th><th>Products scored</th><th>ePegboard</th><th>Second place</th><th>Our margin</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>First evaluation</td><td>Static fetch</td><td>19 of 30</td><td>95.5</td><td>QourtX, 87.5</td><td>8.0</td></tr>
-            <tr><td>Second model</td><td>Browser-rendered</td><td><strong>27 of 30</strong></td><td><strong>85.5</strong></td><td>ShuttlePilot, 73.0</td><td>12.5</td></tr>
-            <tr><td>Third, different vendor</td><td>Mixed</td><td>22 of 30</td><td>78.5</td><td>vsBadminton, 61.5</td><td>17.0</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p style="margin-top:18px"><strong>The first run's 95.5 is the least trustworthy number on this page, and it is ours.</strong> It read static HTML, so six products that build their pages in the browser returned a title and nothing else and could not be scored at all, and several more were blocked or rate-limited. Fixing that did not just add competitors - it also scored us harder. <strong>Take run 2 as the best current estimate:</strong> it read 27 of the 30, more than either of the others.</p>
+      <h2 id="how">How we compared them</h2>
 
       <div class="guide-callout">
-        <h4>Notice which direction the corrections went</h4>
-        <p style="margin-top:8px">Reading the web properly instead of fetching static HTML <strong>cost us ten points</strong>, from 95.5 to 85.5, and a second vendor then scored us lower again at 78.5. Our margin over second place grew each time, because harsher reading cost the rest of the field more than it cost us. If you want a reason to trust the first-place finding rather than the number attached to it, that is the honest one.</p>
-        <p style="margin-top:12px">One thing we have <em>not</em> corrected: run 1 scored our resilience criterion full marks while qualifying it in its own prose. Correcting that would take 95.5 to 93.5. We left it, because 95.5 is what two runs reached independently and swapping a converged figure for a chosen one is the failure this method exists to avoid. The reasoning is on the <a href="/compare/method">method page</a>.</p>
+        <h4>Fifteen criteria, one hundred points, written down before anything was looked at</h4>
+        <p style="margin-top:8px"><strong>Five of them are the club night itself and carry 48 of the 100 points:</strong> arrivals and late joiners, choosing the next game as courts free up, balancing the four, sharing out sit-outs, and varying who plays with whom.</p>
+        <p style="margin-top:10px">The other ten cover explaining a pick, manual override, ratings, live scoring and history, the court display, attendance reporting, payments, competitions, resilience and price.</p>
+        <p style="margin-top:10px"><strong>A product only takes full marks where it describes how the thing behaves</strong> - the rule, the edge cases, the limits. A feature bullet scores half.</p>
+        <p style="margin-top:10px">Where we could find no evidence for a capability at all, it contributes <strong>zero to the evidenced score</strong> - but we also publish an upper bound that assumes every unresolved capability is present. <strong>Missing documentation therefore creates uncertainty about a product rather than proof that it cannot do something</strong>, which is why every figure below is a range.</p>
+        <p style="margin-top:12px"><a class="btn btn-ghost" href="/compare/method">Read the full rubric and the evidence rules</a></p>
       </div>
 
-      <h2 id="agree">What all three agree on</h2>
+      <h2 id="shortlist">The shortlist, compared in detail</h2>
 
-      <p>Three things survive all three runs:</p>
-
-      <ol>
-        <li><strong>ePegboard first, every time</strong>, on two different models with three different ways of reading the web, and by a margin that widened as the method improved.</li>
-        <li><strong>ShuttlePilot is the other consistent product.</strong> Third, second and fourth. Only Racket Social also places in the top four more than once - fourth in run 1 and fourth again in run 2.</li>
-        <li><strong>Below the top two, the ranking is not real.</strong> Look at the table below before treating any position as a finding.</li>
-      </ol>
-
-      <p>And one thing they flatly disagree about: <strong>everything else</strong>. eBadders verified 73.5, then 11.0, then 45.0. ServeLeague 21.0, 19.0, 61.0. vsBadminton finished second in one run and fifteenth in another.</p>
-
-      <p>That is not a defect we are apologising for. It is the most useful thing here: <strong>the field below the leaders is unsettled, and any comparison claiming a confident ranking of thirty badminton products is overselling what the evidence can carry.</strong> A committee should shortlist two or three and trial them.</p>
-
-      <h2 id="table">Every product, all three scores</h2>
-
-      <p>Ordered by the run that read the most of the field. <strong>Every figure is a range</strong>, not a point score: the lower bound is what that run could evidence, the upper bound is what the product would score if every criterion it could not establish turned out to be fully met. A single figure means nothing was left unresolved. A dash means <strong>that run could not read the product's page</strong> - never zero, and never a judgement on the product.</p>
-
-      <p>Ranges rather than bare scores because the alternative misleads in one direction only. "eBadders 11.0" reads as a verdict; <strong>11.0-89.0</strong> is the truth, and the difference between them is 78 points of documentation that run could not retrieve.</p>
+      <p>Ten products a UK club could realistically choose between, with what each is best at and the thing most likely to rule it out. The other 22 are in the full table below.</p>
 
       <div class="cmp-wrap">
         <table class="cmp-table">
           <thead>
-            <tr><th>Product</th><th>Run 1</th><th>Run 2</th><th>Run 3</th></tr>
+            <tr><th>Product</th><th>Best for</th><th>What stands out</th><th>Main limitation</th></tr>
           </thead>
           <tbody>
-            @foreach (var r in rows)
+            @foreach (var s in shortlist)
             {
               <tr>
-                <td>@(r.Product == "ePegboard" ? Html.Raw("<strong>ePegboard</strong>") : Html.Raw(r.Product))</td>
-                <td>@r.R1</td>
-                <td>@r.R2</td>
-                <td>@r.R3</td>
+                <td><a href="@s.Url" target="_blank" rel="noopener">@s.Product</a></td>
+                <td>@s.BestFor</td>
+                <td>@s.StandsOut</td>
+                <td>@s.Limit</td>
               </tr>
             }
           </tbody>
         </table>
       </div>
 
-      <p style="margin-top:18px">Figures are out of 100 and are <strong>evidence subtotals, not capability measurements</strong>. A criterion the run could not establish from a product's documentation scores nothing rather than counting against it, so a product that documents less scores lower whatever it can actually do. Each run's full working is in its output on the <a href="/compare/method">method page</a>.</p>
+      <h2 id="runs">The three evaluation results</h2>
 
-      <p><strong>Court Buddy is a special case</strong> and we would rather flag it than let its third place stand unexplained. It scores well, and the score is honest - its documented sit-out fairness is among the clearest in the field. But its website is a pickleball session manager and never mentions badminton, and the run that scored it excluded it from its own recommendation on exactly those grounds. Its app-store listing does name badminton club nights, so it is not fair to say it has nothing to do with the sport. Read it as evidence that this class of product exists, not as a candidate for your club.</p>
+      <p>Same fifteen criteria, same weights, same club profile, same candidate list, same day. The only thing that changed between them was the model doing the reading.</p>
 
-      <h2 id="unread">Products no run could read</h2>
-
-      <p><strong>Court Manager</strong> and <strong>QSENPAI</strong> were not assessed by any of the three, and in Court Manager's case that is our fault. We have since put that right.</p>
-
-      <p><strong>We used the wrong address for Court Manager.</strong> All three runs were given <code>app.court-manager.com</code>, which is its admin dashboard and shows a login form. Its actual product site is <a href="https://www.court-manager.com/" target="_blank" rel="noopener">court-manager.com</a>, headlined "The 21st Century Peg Board". It is one of the closest products to ours in the whole field, and nothing about it was assessed, because we pointed the evaluation at the wrong page.</p>
-
-      <div class="guide-callout">
-        <h4>Court Manager, re-scored on the correct address: 72.5, with nothing left unresolved</h4>
-        <p style="margin-top:8px">We ran it again on 10 September against the same rubric, the same club profile and the same scoring rules. It scored <strong>72.5 out of 100 and resolved all fifteen criteria</strong> - level with ShuttlePilot, and one of very few products in the whole exercise with nothing unverified.</p>
-        <p style="margin-top:12px">It is <strong>strong in exactly the area this rubric weights most</strong>. Full marks for arrivals and late joiners, next-game allocation, sit-out fairness, partner variety, manual override and resilience - and the documentation earns them by describing rules rather than benefits: what the pick window does and what it defaults to, what happens when the number of players equals the number of courts, what happens to a court's players when it is reused, and the stated limit on its rule against repeating the same four.</p>
-        <p style="margin-top:12px"><strong>It beats us on resilience.</strong> It scores full marks where we score partial: the session runs on the device and keeps working without a connection, and its changelog records fixing the case where a venue's Wi-Fi login page interfered with offline operation. That is a documented answer to the objection we concede in our own weaknesses below.</p>
-        <p style="margin-top:12px">Where it is weaker: <strong>ranks are typed in by hand and never move on their own</strong>, and the rule for balancing a game from them is never stated; there is no per-pick explanation; scoring on a club night records the winner rather than the score; and while the iOS app costs £9.99 once, everything developed since 2023 lives in a hosted subscription whose price is published nowhere.</p>
-        <p style="margin-top:12px">One caveat we are passing on rather than resolving. The evaluation declined to mark down fairness and variety despite the vendor's own 2026 changelog recording three defects in them - since fixed and disclosed - and noted that a stricter reading would take the total to 63.5. Nine points turn on that judgement. A club trialling it should test those three things specifically: whether court time is even across a full night, whether the same four keep reappearing, and whether anyone drops off the board.</p>
-        <p style="margin-top:12px">As with every score here: <strong>documented, not demonstrated.</strong> No account was created and no software was run.</p>
+      <div class="cmp-wrap">
+        <table class="cmp-table">
+          <thead>
+            <tr><th>Model</th><th>Retrieval</th><th>Field</th><th>ePegboard</th><th>Second place</th><th>Margin</th></tr>
+          </thead>
+          <tbody>
+            @foreach (var r in runs)
+            {
+              <tr>
+                <td>@r.Model</td><td>@r.Retrieval</td><td>@r.Field</td>
+                <td><strong>@r.Us</strong></td><td>@r.Second</td><td>@r.Margin</td>
+              </tr>
+            }
+          </tbody>
+        </table>
       </div>
 
-      <p style="margin-top:18px">Its row in the table above still shows three dashes, and that is deliberate. Those three columns mean "this run, on 9 September", and this was a separate single-product run a day later. Putting 72.5 in one of them would misrepresent what the columns are.</p>
-
-      <p><strong>QSENPAI's address in our records returns a 404</strong> with nothing deployed at it. Indexed copy suggests the product existed and was withdrawn. That is a statement about the address we hold, not about the company.</p>
-
-      <p>Several others were read by one or two runs and not the third. Wherever a run could not read a page, the table shows a dash rather than a score, and the reasons are in each run's retrieval log on the <a href="/compare/method">method page</a>.</p>
-
-      <p>If you make one of these and want it assessed properly, <a href="/contact">tell us</a> and we will re-run it against the same rubric with a URL you choose, and publish what comes back.</p>
-
-      <h2 id="tied">Where we are not ahead at all</h2>
-
-      <p>The most useful finding for a club is not our first place. It is this.</p>
+      <h2 id="holds">What held across all three</h2>
 
       <div class="guide-callout">
-        <h4>On the club night itself, ePegboard and ShuttlePilot scored identically</h4>
-        <p style="margin-top:8px">The second run scored both products <strong>40 out of 40</strong> across the four criteria that carry the club's primary requirement - check-in and late joiners, next-game allocation, skill-balanced doubles, and sit-out fairness. That is 40 per cent of the rubric and the part a Tuesday night actually depends on.</p>
-        <p style="margin-top:12px">Our entire lead in that run - 12.5 points - sits in the other eleven criteria, and the run attributes roughly ten of those points to <strong>having published more documentation</strong>, not to doing anything better.</p>
+        <h4>The ranking was far more stable than the scores</h4>
+        <p style="margin-top:8px"><strong>ePegboard ranked first in all three evaluations, but its absolute score ranged from 70.5 to 95.5</strong> - from the same inputs, on the same day, with nothing changed but which model was reading.</p>
+        <p style="margin-top:10px">That is why we treat individual scores cautiously and put weight only on findings that repeat across all three runs. Anyone quoting a single number off a comparison like this, ours included, is quoting the evaluator rather than the product.</p>
       </div>
 
-      <p>Two honest consequences. ShuttlePilot's ceiling is above our score, and every lever it needs to overtake us is a publishing change rather than new capability. And our own gaps - free offline operation, real payment processing, published picker weights - are product decisions, which are harder to fix than a documentation page.</p>
+      <p><strong>Second place is not stable either.</strong> ShuttlSync takes it in two runs; ShuttleFlow and Racket Social tie for it in the third, where ShuttlSync drops to eighth. In the full table you will find products that move forty points between runs.</p>
 
-      <p>If the live night is your whole requirement and you want a light administrative layer, <strong>trial ShuttlePilot alongside us and judge it on the night.</strong> We would rather you did that than took a number off this page.</p>
+      <p><strong>Our lead over second place was 6.0, 8.5 and 10.0 points</strong> - always positive, never comfortable, and smallest in the run that read the field most completely. Six points on a hundred-point rubric is not a verdict. It is a reason to put two or three products side by side on a real club night.</p>
 
-      <h2 id="weak">Where we are weak</h2>
+      <h2 id="table">All 32 products and their scores</h2>
 
-      <p>Drawn from the runs' own assessments of the leader, not written by us. These are the criteria where we scored partial rather than full:</p>
+      <p><strong>Every figure is a range:</strong> the lower bound is what that run could evidence, the upper bound is what the product would reach if every criterion it could not establish turned out to be fully met. A single figure means nothing was left unresolved. A dash means that run resolved nothing for that product - <strong>never zero, and never a judgement on it.</strong></p>
+
+      <div class="cmp-wrap">
+        <table class="cmp-table">
+          <thead>
+            <tr><th>Product</th><th>Claude Opus 5</th><th>ChatGPT (free)</th><th>ChatGPT 5.6</th></tr>
+          </thead>
+          <tbody>
+            @foreach (var r in rows)
+            {
+              <tr>
+                <td>@(r.Product == "ePegboard" ? Html.Raw("<strong>ePegboard</strong>") : Html.Raw(r.Product))</td>
+                <td>@r.Opus</td>
+                <td>@r.Free</td>
+                <td>@r.Sol</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <p style="margin-top:18px"><strong>Read across the rows, not down the columns.</strong> ShuttleFlow is 55.0 in one run and 85.5 in another. Racket Social 77.5, 85.5 and 50.0. The disagreement is the honest finding, and any comparison claiming a confident ordering of thirty-two products is selling you something.</p>
+
+      <p><strong>Court Buddy deserves a note.</strong> It scores well and its sit-out documentation is among the clearest in the field, but its website is a pickleball session manager and never mentions badminton, though its app listing does name badminton club nights.</p>
+
+      <p><strong>We also gave each evaluation a 33rd candidate that does not exist.</strong> We invented a product name, gave it a plausible address and listed it among the real ones as a hallucination control. <strong>No run scored it</strong> - all three reported it unlocatable and moved on. It is not counted in the 32 above, and it is not a competitor.</p>
+
+      <div class="guide-callout">
+        <h4>If we have got something wrong about your product</h4>
+        <p style="margin-top:8px">This page makes scored, factual claims about 32 named products, and we will have made mistakes. We made four in our first attempt and corrected them publicly, including telling readers that a real competitor did not exist.</p>
+        <p style="margin-top:10px"><strong>If you make one of these products and something here is wrong, tell us and point us at the evidence.</strong> A link to the page that shows it is enough. We will correct factual errors quickly, re-run the rubric against a URL you choose if the scoring is what is wrong, and publish the outcome either way - including where it moves a competitor above us.</p>
+        <p style="margin-top:10px">We would rather be corrected by you than leave something inaccurate on a page about your business.</p>
+        <p style="margin-top:12px"><a class="btn btn-ghost" href="/contact">Tell us what we got wrong</a></p>
+      </div>
+
+      <h2 id="weak">Where ePegboard is weak</h2>
+
+      <p>Taken from the evaluations' own assessments of the leader:</p>
 
       <ul>
-        <li><strong>Offline operation is a separate paid product.</strong> The web app's behaviour when hall Wi-Fi drops is not documented. Fully offline running means the Windows desktop application at £60 a year. Racket Social and Badminton Peg System both do offline for nothing.</li>
-        <li><strong>The picker's signal weights are not published.</strong> We name eight signals; we do not publish their relative strengths. A club cannot tune the trade-off between a close game and a long wait, or answer a member who asks why waiting longest did not get them on court.</li>
-        <li><strong>Payments are a ledger, not a payment system.</strong> We record what was paid; the club still collects cash, cheque or transfer. ShuttleOps and QourtX both move real money through Stripe.</li>
-        <li><strong>Partner and opponent variety is a preference, not a guarantee.</strong> We avoid recent repeats as one signal among several, with no documented rule of the form "not the same four within N games". ShuttlePilot has the same limitation.</li>
-        <li><strong>Competitions are handicap doubles only.</strong> Singles and team formats are not built.</li>
-        <li><strong>Phone operation is discouraged</strong> - we recommend a tablet or laptop screen. ShuttlePilot and NextFour are designed for an organiser running the night one-handed from a phone.</li>
-        <li><strong>Every score is documented, not demonstrated.</strong> No run installed any software or watched a single game. That applies to us exactly as much as to everyone else, and it is the reason none of this replaces a trial.</li>
+        <li><strong>We do not have a current answer for offline.</strong> The web app needs a connection. Running fully offline means our separate Windows desktop product, and that product is no longer in development - major bug fixes only. If your hall genuinely cannot hold a connection, we are not the right choice today.</li>
+        <li><strong>Payments are a record, not a till.</strong> We log what was collected. Cash, cheque or transfer, entered afterwards, one attendee at a time. Your treasurer still does the collecting.</li>
+        <li><strong>We never write down what happens when somebody turns up late.</strong> They check in, join the queue, and their waiting time counts from that moment - but we do not say so anywhere. ShuttlePilot and vsBadminton both spell their handling out; we should spell ours out too.</li>
+        <li><strong>Competitions are summarised, not documented</strong>, and are handicap doubles only - singles and team formats are not built.</li>
+        <li><strong>We optimise for a tablet or laptop.</strong> It runs on a phone perfectly well, but a bigger screen gives the better experience. ShuttlePilot goes further and is designed for one-handed phone use.</li>
       </ul>
 
       <h2 id="others">When another product is the better answer</h2>
 
-      <p>Also the runs', not ours:</p>
-
       <ul>
-        <li><strong>ShuttlePilot</strong> - if the live four-court night is the whole job. It is the only product found that equalises sit-outs <em>across sessions</em> rather than only tonight, which matters if the same two or three people always seem to miss out.</li>
-        <li><strong>Racket Social</strong> - if the hall has no usable Wi-Fi and there is no budget. Offline-first and free, with match generation and result recording working with no signal, though sessions live in the browser of the device that created them.</li>
-        <li><strong>ShuttleOps</strong> - if collecting subs properly is the real problem. A UK company with published tiers, Stripe and Direct Debit, stated fees and payout timings.</li>
-        <li><strong>SportyHQ</strong> - if leagues, tournaments and governing-body links dominate. By far the deepest competition feature set found, though it documents no court-rotation capability, so it would need pairing with a club-night tool.</li>
-        <li><strong>Ladderly</strong> - if a published, inspectable rating standard is the priority. It documents TrueSkill in full.</li>
-        <li><strong>Badminton Peg System</strong> - if you want the pegboard digitised and nothing else. Free, offline after setup, no rating system.</li>
-        <li><strong>PaQueueKa</strong> or <strong>ShuttleFlow</strong> - if the club is in the Philippines. Both are built around local pricing and fee models.</li>
+        <li><strong>A hall with no reliable connection: ShuttlSync or Racket Social.</strong> Both do real offline operation at no cost - roster prepared online, session run offline, synced after. Our only offline option is a paid Windows product we are no longer developing.</li>
+        <li><strong>Collecting the money rather than recording it: ShuttleStats or ShuttleOps.</strong> ShuttleStats puts the club on its own Stripe account, charges per payment with no subscription, and handles capacity, waiting lists and refunds.</li>
+        <li><strong>Running the whole night one-handed from a phone: ShuttlePilot.</strong> Built around the fact that the person running club night is usually also holding a racket.</li>
+        <li><strong>Leagues and a membership register: ServeLeague or SportyHQ.</strong> Six documented league formats, with membership categories and voting rights, against our handicap doubles.</li>
+        <li><strong>Printing the whole evening in advance: SportRevive.</strong> A different model to live picking, and for a stable group of nine it is less fuss than any queue.</li>
+        <li><strong>A rating players take seriously: UBR or Ladderly.</strong> Both publish their maths in more depth than we publish ours.</li>
       </ul>
 
-      <h2 id="wrong">What we got wrong</h2>
+      <h2 id="limits">Limits of this comparison</h2>
 
-      <p>Publishing this required correcting our own material more than once, and the corrections are more informative than the scores.</p>
+      <p><strong>The rubric cannot see what a vendor does not write down.</strong> A product that does something well but never documents it scores as though it does not do it. Several products here publish a landing page, and the honest reading of a low score is <em>unknown</em>, not <em>bad</em>. That is why every figure is a range.</p>
 
-      <ol>
-        <li><strong>We told ourselves a real competitor did not exist.</strong> SmashHQ was in the candidate list from an old note with no address. Two of our searches found nothing, so we recorded it as non-existent - and treated an earlier run that <em>had</em> found it as a hallucination. The third run located it independently: <a href="https://smashhq.app" target="_blank" rel="noopener">smashhq.app</a>, a live badminton club product with court rotation, check-ins, payments and leaderboards. <strong>A search returning nothing is evidence about the search.</strong> This page carried a section headed "the product that does not exist" until the day it was published, and deleting it was the single most important edit made to it.</li>
-        <li><strong>We cut our own score.</strong> The first run gave us 97.5. Our competitions criterion was scored fully met because our documentation describes groups, round-robin and knockouts without saying that singles and team formats are not built. Corrected to partial: 95.5. The later runs cut it further, and we let them.</li>
-        <li><strong>The first run's failures were mostly ours, not the products'.</strong> Six products it recorded as unreadable simply build their pages in the browser - their sites were fine, our reader could not run JavaScript. Of the rest, one declined the request, two were rate-limited app-store listings, and one address in our own records was wrong.</li>
-        <li><strong>We pointed the whole exercise at the wrong page for Court Manager</strong> and then published that it has no product information. It has a full public site, and it is one of the closest products to ours in the field. Re-scored on the right address it reaches <strong>72.5 with every criterion resolved</strong>, and beats us on resilience. That is the cost of the mistake, stated in the same units as everything else here.</li>
-        <li><strong>Smaller defects in the first run:</strong> one product duplicated in its own table, its sort instruction ignored, and one of the thirty missing from the results entirely.</li>
-      </ol>
+      <p><strong>Nothing was demonstrated.</strong> Of thirty-two scored products, exactly one had any capability watched working rather than described - and only because it publishes nothing to describe, so the evaluator ran it instead. Every other score here, ours first, is a vendor's account of its own product. Ours describes what ePegboard actually does, and the demo is there so you can check that in about a minute rather than take it on trust.</p>
 
-      <h2 id="practice">Whether any of it holds up in practice</h2>
+      <div class="guide-callout">
+        <h4>We got the first version of this wrong</h4>
+        <p style="margin-top:8px">Our original evaluation missed three real competitors, failed to render six JavaScript sites and read another product at the wrong address - then recorded that product as publishing nothing. We corrected the candidate set and the retrieval method and reran all three evaluations from scratch. Nothing from the original attempt is reported here.</p>
+        <p style="margin-top:10px">The full account of what went wrong, and what each error cost, is on the <a href="/compare/method">method page</a>.</p>
+      </div>
 
-      <p>A documentation score measures what a product says about itself. The question underneath it is whether clubs keep using the thing after the first night, so here it is as a proportion rather than a headcount:</p>
+      <h2 id="practice">Whether clubs actually stay</h2>
+
+      <p>A documentation score measures what a product says about itself. The question underneath it is whether clubs run a second night:</p>
 
       <ul>
         <li><strong>Two in three</strong> clubs that ran a real first session with ePegboard this year ran another.</li>
         <li><strong>Getting on for half</strong> have run five or more.</li>
       </ul>
 
-      <p>Measured on 9 September 2026, across clubs whose first session was in 2026, excluding demo and template clubs. <strong>A "session" here means one in which a game was actually started</strong> - counting every session record that was merely created would give four in five and nearly two in three instead, and we would rather publish the figure that survives the stricter reading. We publish it as a ratio because a raw count of sessions in a week tells you the size of our user base and nothing about whether the software works.</p>
+      <p>Measured on 9 September 2026, across clubs whose first session was in 2026, excluding demo and template clubs. A "session" means one where a game was actually started - counting every session record merely created would give four in five and nearly two in three, and we would rather publish the figure that survives the stricter reading.</p>
 
       <div class="guide-callout" style="margin-top:26px">
         <h4>The test that beats all three of these</h4>
-        <p style="margin-top:8px">Run your own awkward night through it: a late arrival after three games, someone sitting out and rejoining, two courts finishing together, a pairing you want kept, a suggestion you override, and a wrong score that needs correcting. Then ask the organiser whether it took decisions out of their head or just moved them onto a screen.</p>
-        <p style="margin-top:14px">ePegboard is free for clubs. So is ShuttlePilot, at the time of writing. Try both.</p>
-        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Set up a free club</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">Try the instant demo</a></p>
+        <p style="margin-top:8px">Run your own awkward night: a late arrival after three games, someone sitting out and rejoining, two courts finishing together, a pairing you want kept, a suggestion you overrule, and a wrong score that needs correcting. Then ask the organiser whether it took decisions out of their head or just moved them onto a screen.</p>
+        <p style="margin-top:14px">ePegboard is free for clubs, and so are several of the products above. Try more than one.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">Try the instant demo</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Set up a free club</a></p>
       </div>
 
       <div style="margin-top:34px;padding-top:22px;border-top:1px solid var(--line)">
         <h4 style="margin:0 0 8px">Method and sources</h4>
-        <p style="color:var(--muted-2);font-size:.95rem;margin:0">All three runs took place on 9 September 2026 against the same pre-declared 100-point rubric, with weights unaltered. The criteria and weights, the evidence rules, each run's corrections and retrieval logs, and the raw outputs are on the <a href="/compare/method">method page</a>. Product pages were read on that date and products change; verify anything material with the supplier before deciding. For a shorter read on which tool suits which club, see <a href="/guides/best-badminton-club-night-software">our club-night software comparison</a>.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:0">All three evaluations used the same pre-declared 100-point rubric with weights unaltered. The criteria and weights, the prompt, the evidence rules, each run's corrections and retrieval logs and all three unedited responses are on the <a href="/compare/method">method page</a>. Product pages were read in September 2026 and products change; verify anything material with the supplier before deciding. If you are earlier in the process and still working out what matters, start with <a href="/guides/best-badminton-club-night-software">how to choose club-night software</a>.</p>
       </div>
 
     </div>

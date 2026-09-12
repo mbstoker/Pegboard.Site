@@ -1,0 +1,259 @@
+Run 5 - ChatGPT free tier, 12 September 2026. Unedited.
+It could not execute JavaScript and says so, and it ENDS PART-WAY THROUGH SECTION F.
+==========================================================================
+
+I counted 33 candidates.
+
+A methodological warning first: I could not literally execute arbitrary JavaScript in a full Chrome/Safari environment. Where the supplied URL rendered normally, I read it and its linked first-party documentation. Where the renderer returned a blank shell or an App Store/Google Play fetch failed, I checked only the same supplied product/domain through the search index. I did not substitute similarly named products. Those renderer limitations are called out in the retrieval log, and where I could not establish the product's capabilities I used U, not 0.
+
+I also applied your "marketing claim ≠ 2" rule quite aggressively.
+
+Rubric shorthand
+
+| # | Criterion | Weight |
+|---|---|---|
+| C1 | Arrival/check-in and late joiners | 6 |
+| C2 | Dynamic next-game/court allocation | 12 |
+| C3 | Skill-balanced doubles | 12 |
+| C4 | Waiting-time / sit-out fairness | 10 |
+| C5 | Partner/opponent variety | 8 |
+| C6 | Explainability / transparency | 8 |
+| C7 | Manual override / special cases | 5 |
+| C8 | Player rating system | 7 |
+| C9 | Live scoring, statistics, history | 5 |
+| C10 | Multi-court display / kiosk | 5 |
+| C11 | Attendance/session reporting | 5 |
+| C12 | Payments/member administration | 5 |
+| C13 | Competitions/tournaments/leagues | 4 |
+| C14 | Resilience/device accessibility | 4 |
+| C15 | Price/practical limits | 4 |
+
+S = verified weighted score. U criteria contribute 0 to S and their full weight goes into unresolved maximum.
+
+## A. Evidence table
+
+U means insufficient evidence, not "doesn't have the feature".
+
+| Candidate | C1 | C2 | C3 | C4 | C5 | C6 | C7 | C8 | C9 | C10 | C11 | C12 | C13 | C14 | C15 | S |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ePegboard | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 1 | 2 | 2 | 1 | 95.5 |
+| ShuttleFlow | 2 | 2 | 2 | 2 | 1 | 1 | 2 | 2 | 2 | 2 | 2 | 1 | U | 2 | 2 | 85.5 |
+| Racket Social | 1 | 2 | 2 | 2 | 2 | 1 | 2 | 2 | 2 | 1 | 2 | U | 2 | 2 | 2 | 85.5 |
+| SportRevive | 2 | 2 | 2 | 2 | 2 | 1 | 2 | 2 | 2 | 1 | 2 | U | U | 1 | 2 | 82.5 |
+| ShuttlePilot | 2 | 2 | 2 | 2 | 2 | 1 | 2 | 2 | 2 | 1 | 1 | U | U | 1 | 2 | 80.0 |
+| vsBadminton | 2 | 2 | 2 | 2 | 2 | 1 | 2 | 2 | 2 | 1 | 1 | U | U | 1 | U | 76.0 |
+| BadBoard | 2 | 2 | 2 | 2 | 2 | 1 | 2 | 2 | 2 | 2 | 1 | 2 | U | 1 | U | 74.5 |
+| ShuttlSync | 1 | 2 | 1 | 2 | 2 | 1 | 1 | 2 | 2 | 1 | 2 | U | U | 2 | 2 | 73.0 |
+| QourtX | 2 | 2 | 1 | 1 | 1 | 1 | U | 2 | 2 | 2 | 1 | 2 | 2 | 1 | 2 | 71.5 |
+| SmashHQ | 2 | 2 | 1 | 2 | 2 | 1 | U | 1 | 2 | 1 | 2 | 2 | U | 1 | 1 | 71.0 |
+| UBR | 1 | 2 | 2 | 2 | 2 | 1 | U | 2 | 2 | 1 | 1 | U | 1 | 1 | 1 | 70.5 |
+| Shuttl | 2 | 2 | 1 | 1 | 2 | 1 | 2 | 1 | 2 | 1 | 2 | U | U | 1 | 2 | 68.5 |
+| Qcourt | 1 | 2 | 1 | 2 | 1 | U | 2 | 1 | 2 | 2 | 2 | 1 | U | 1 | 1 | 65.0 |
+| Court Manager | 2 | 2 | 2 | 2 | 2 | 1 | 2 | 2 | 1 | 1 | 1 | U | U | 1 | U | 64.5 |
+| Ladderly | 2 | 2 | 2 | 1 | U | U | U | 2 | 2 | 1 | 1 | U | U | 1 | 2 | 55.5 |
+| PaQueueKa | 1 | 2 | 1 | 1 | 1 | U | U | 1 | 2 | 1 | 2 | 2 | 0 | 1 | 1 | 55.0 |
+| NextFour | 2 | 2 | 1 | 1 | 1 | U | 1 | 1 | 1 | 2 | 1 | U | U | 1 | 1 | 53.5 |
+| ServeLeague | 1 | 1 | 1 | U | U | U | 1 | 2 | 2 | 1 | 2 | 2 | 2 | 2 | 1 | 52.5 |
+| BPS | 1 | 2 | U | 1 | U | U | 2 | 1 | 2 | 2 | 1 | U | U | 2 | 2 | 49.5 |
+| CourtMaster | 1 | 1 | 1 | 1 | U | U | 1 | U | 2 | 1 | U | U | 2 | 1 | 1 | 38.5 |
+| Matchit | 1 | 1 | 2 | 1 | U | U | 1 | U | 1 | 1 | U | U | U | 1 | 2 | 37.5 |
+| Court Buddy | 1 | 1 | 1 | 2 | 2 | U | 1 | U | U | 1 | U | U | U | U | U | 35.5 |
+| ShuttleOps | 1 | 1 | 1 | 1 | U | U | U | 1 | 1 | 1 | 1 | 1 | U | U | 1 | 35.5 |
+| SportyHQ | U | U | U | U | U | U | 1 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | U | 32.5 |
+| CourtsFlow | U | 1 | 1 | 1 | U | U | U | 1 | 1 | 1 | U | U | U | 1 | 1 | 25.5 |
+| Airchy WebOS | 1 | 1 | U | 1 | U | U | U | 1 | 1 | U | 1 | 1 | U | U | U | 25.0 |
+| Digital Pegboard | 1 | 1 | U | 1 | U | U | U | U | 1 | 1 | 1 | U | U | 1 | U | 23.5 |
+| Queue Master | 1 | 1 | 1 | 1 | U | U | U | 1 | U | U | U | U | U | U | U | 23.5 |
+| eBadders | 1 | U | U | U | U | U | U | U | U | U | 1 | U | 1 | U | U | 7.5 |
+| ShuttleStats | 1 | U | U | U | U | U | U | U | U | U | 1 | U | U | U | U | 5.5 |
+| Badmatch | U | U | U | U | U | U | U | U | U | U | U | U | U | U | U | 0 |
+| Racket Arena | U | U | U | U | U | U | U | U | U | U | U | U | U | U | U | 0 |
+| ShuttleVantage Pro | U | U | U | U | U | U | U | U | U | U | U | U | U | U | U | 0 |
+
+### Important interpretation
+
+A 1 is not a weak product verdict. It means I found the capability, but the vendor's material did not establish enough operational detail for a 2.
+
+For example, ShuttleFlow says it can auto-suggest matches using skill, recency and wait time and supports manual assignment; that is considerably stronger evidence than a generic "smart matchmaking" bullet. — ShuttleFlow +1
+
+Likewise, ePegboard's picker documentation actually specifies the factors used—expected closeness, skill balance, wait fairness, gender balance, recent repeats, partner/opponent variety, queue fairness and avoiding immediate re-selection—and documents hard-rule controls. — ePegboard Docs
+
+## B. Weighted calculation
+
+### Ranking by verified score
+
+| Rank | Product | Verified | Unresolved maximum | Possible range | Resolved |
+|---|---|---|---|---|---|
+| 1 | ePegboard | 95.5 | 0 | 95.5–95.5 | 15/15 |
+| 2= | ShuttleFlow | 85.5 | 4 | 85.5–89.5 | 14/15 |
+| 2= | Racket Social | 85.5 | 5 | 85.5–90.5 | 14/15 |
+| 4 | SportRevive | 82.5 | 9 | 82.5–91.5 | 13/15 |
+| 5 | ShuttlePilot | 80.0 | 9 | 80.0–89.0 | 13/15 |
+| 6 | vsBadminton | 76.0 | 13 | 76.0–89.0 | 12/15 |
+| 7 | BadBoard | 74.5 | 8 | 74.5–82.5 | 13/15 |
+| 8 | ShuttlSync | 73.0 | 9 | 73.0–82.0 | 13/15 |
+| 9 | QourtX | 71.5 | 5 | 71.5–76.5 | 14/15 |
+| 10 | SmashHQ | 71.0 | 9 | 71.0–80.0 | 13/15 |
+| 11 | UBR | 70.5 | 10 | 70.5–80.5 | 13/15 |
+| 12 | Shuttl | 68.5 | 9 | 68.5–77.5 | 13/15 |
+| 13 | Qcourt | 65.0 | 12 | 65.0–77.0 | 13/15 |
+| 14 | Court Manager | 64.5 | 13 | 64.5–77.5 | 12/15 |
+| 15 | Ladderly | 55.5 | 44.5 | 55.5–100.0 | 10/15 |
+| 16 | PaQueueKa | 55.0 | 13 | 55.0–68.0 | 13/15 |
+| 17 | NextFour | 53.5 | 17 | 53.5–70.5 | 12/15 |
+| 18 | ServeLeague | 52.5 | 26 | 52.5–78.5 | 12/15 |
+| 19 | BPS | 49.5 | 37 | 49.5–86.5 | 10/15 |
+| 20 | CourtMaster | 38.5 | 33 | 38.5–71.5 | 10/15 |
+| 21 | Matchit | 37.5 | 37 | 37.5–74.5 | 9/15 |
+| 22= | Court Buddy | 35.5 | 42 | 35.5–77.5 | 7/15 |
+| 22= | ShuttleOps | 35.5 | 29 | 35.5–64.5 | 10/15 |
+| 24 | SportyHQ | 32.5 | 67.5 | 32.5–100 | 8/15 |
+| 25 | CourtsFlow | 25.5 | 41 | 25.5–66.5 | 8/15 |
+| 26 | Airchy WebOS | 25.0 | 50 | 25.0–75.0 | 7/15 |
+| 27= | Digital Pegboard | 23.5 | 53 | 23.5–76.5 | 7/15 |
+| 27= | Queue Master | 23.5 | 76.5 | 23.5–100 | 5/15 |
+| 29 | eBadders | 7.5 | 92.5 | 7.5–100 | 3/15 |
+| 30 | ShuttleStats | 5.5 | 94.5 | 5.5–100 | 2/15 |
+| 31= | Badmatch | 0 | 100 | 0–100 | 0/15 |
+| 31= | Racket Arena | 0 | 100 | 0–100 | 0/15 |
+| 31= | ShuttleVantage Pro | 0 | 100 | 0–100 | 0/15 |
+
+### Fifteen-term arithmetic — top ten
+
+**ePegboard**
+
+6+12+12+10+8+8+5+7+5+5+5+2.5+4+4+2 = 95.5
+
+**ShuttleFlow**
+
+6+12+12+10+4+4+5+7+5+5+5+2.5+0+4+4 = 85.5
+
+**Racket Social**
+
+3+12+12+10+8+4+5+7+5+2.5+5+0+4+4+4 = 85.5
+
+**SportRevive**
+
+6+12+12+10+8+4+5+7+5+2.5+5+0+0+2+4 = 82.5
+
+**ShuttlePilot**
+
+6+12+12+10+8+4+5+7+5+2.5+2.5+0+0+2+4 = 80.0
+
+**vsBadminton**
+
+6+12+12+10+8+4+5+7+5+2.5+2.5+0+0+2+0 = 76.0
+
+**BadBoard**
+
+6+12+12+10+8+4+5+7+5+5+2.5+5+0+2+0 = 74.5
+
+**ShuttlSync**
+
+3+12+6+10+8+4+2.5+7+5+2.5+5+0+0+4+4 = 73.0
+
+**QourtX**
+
+6+12+6+5+4+4+0+7+5+5+2.5+5+4+2+4 = 71.5
+
+**SmashHQ**
+
+6+12+6+10+8+4+0+3.5+5+2.5+5+5+0+2+2 = 71.0
+
+## C. Overall ranking — and how much the evidence can carry
+
+My practical shortlist is much shorter than the 33-product ranking suggests.
+
+**Tier 1 — credible club-night candidates**
+
+ePegboard — clear evidence leader
+ShuttleFlow
+Racket Social
+SportRevive
+ShuttlePilot
+
+**Tier 2 — potentially good, but with material limitations**
+
+vsBadminton
+BadBoard
+ShuttlSync
+QourtX
+SmashHQ
+UBR
+Shuttl
+Qcourt
+Court Manager
+
+**Tier 3 — interesting, but not sufficiently evidenced against this rubric**
+
+Ladderly, PaQueueKa, NextFour, ServeLeague, BPS, CourtMaster, Matchit, Court Buddy, ShuttleOps, SportyHQ, CourtsFlow, Airchy, Digital Pegboard, Queue Master.
+
+**Tier 4 — evidence failure**
+
+eBadders, ShuttleStats, Badmatch, Racket Arena, ShuttleVantage Pro.
+
+This is not a claim that Tier 4 products are bad. It means the supplied product/documentation did not let me establish the club-night capability to your standard.
+
+## D. Top three
+
+### 1. ePegboard — my recommendation
+
+This is the only candidate whose entire rubric is publicly resolved, and it is unusually specific about the actual club-night algorithm.
+
+The picker is documented as considering closeness, skill, waiting time, gender balance, repeat avoidance, partner/opponent variety, queue fairness and straight-back-on avoidance. It can also force inclusion of the longest-waiting player, restrict the queue considered, prevent immediate re-selection, lock a player, swap players and support sticky pairs. — ePegboard Docs
+
+It also explicitly handles arrivals, drop-ins and last-minute changes, gives the reason for a suggested game, records results/history, and has a shared-device kiosk mode. — ePegboard Docs +2
+
+The rating system is documented as team-doubles Elo, including score margin, new-player settling and team-result treatment. — ePegboard Docs
+
+It also covers attendance, reports, payments, competitions and league support. Crucially, its payment documentation admits that it is not a payment processor: it records cash/cheque/bank-transfer payments rather than taking card payments itself. — ePegboard Docs
+
+Pricing is unusually attractive: the club-night workflow is free, while the Windows offline application is £60/year after a 60-day trial. — ePegboard +1
+
+Why it wins: it is not merely feature-rich; the vendor has documented the decision rules behind the most important part of this evaluation.
+
+### 2=. ShuttleFlow
+
+ShuttleFlow is particularly strong for your exact live-night problem. It explicitly describes the difficult case of 20 players, four courts, latecomers and someone leaving early, and says it auto-suggests balanced matches using skill, recency and wait time. It supports manual assignment and synchronised live court grids across phones, tablets and laptops. — ShuttleFlow +1
+
+Its ranking rules are unusually explicit: points, seasons, skill tiers, skill locks, minimum-match conditions and anti-farming rules are published. — ShuttleFlow
+
+Why it isn't #1: the competition/tournament workflow was not sufficiently established, and its pairing explanation is less developed than ePegboard's.
+
+### 2=. Racket Social
+
+Racket Social is arguably the most interesting pure social-rotation product.
+
+It explicitly targets badminton doubles, skill-balanced courts, fair sit-outs, partner/opponent variety, OpenSkill/Elo, public live session views and offline operation. — Racket Social
+
+Its current changelog gives unusually useful implementation evidence: the algorithm was recalibrated around fairness, partner variety and opponent variety; it has an auto-rotate sitting-out option; skill-balanced matchmaking can factor ratings; and tournament mode supports round-robin singles and fixed-pair league doubles. — Racket Social
+
+Why it isn't #1: the current product is much less complete as a club administration platform—payments/member administration is not established—and its sessions historically lived primarily on the creating device, with Club mode still developing. — Racket Social
+
+## E. Material weaknesses of the winner
+
+ePegboard is not perfect.
+
+### D. Top three
+
+Payments are bookkeeping, not payment processing. It records who paid and what they owe; it does not take card/online payments. — ePegboard Docs
+
+The web experience depends on connectivity. The offline option is a separate Windows desktop app; new functionality lands on the web app first. — ePegboard
+
+The main shared display is a desk tablet/laptop. A larger court-facing display is optional rather than the core model. — ePegboard +1
+
+Large/multi-site clubs are a special case. The normal club-night product is free, but the pricing page says very large/multi-site clubs, leagues and one-off competitions should contact the vendor. — ePegboard
+
+The evidence is still vendor documentation. I did not independently operate a real 18–26-player session, so a documented algorithm is not the same thing as a demonstrated one.
+
+## F. When another product would be better
+
+**Choose Racket Social instead**
+
+For a club whose main requirement is simple social doubles rotation, with little interest in payments, membership administration or formal competitions. Its offline PWA, sit-out balancing and variety controls are excellent fits. — Racket Social +1
+
+**Choose ShuttleFlow instead**
+
+For a club where the live queue and changing attendance are overwhelmingly important, particularly if late arrivals/leavers and multi-device operation are frequent. Its documentation directly addresses those scenarios.
+
+*[Response ends here. Sections G, H, I and J were requested and not returned.]*

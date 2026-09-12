@@ -2,9 +2,9 @@
 @using PegboardWebSite.Services
 @{
     Layout = "_LayoutMarketing";
-    ViewData["Title"] = "Best badminton club-night software in 2026: which tool fits which club?";
-    ViewData["Description"] = "If choosing fair games eats your evening, start with ePegboard - free for clubs, and built around the moment a court finishes. Plus an honest look at seven alternatives, and the three things ePegboard does not do.";
-    ViewData["OgTitle"] = "Best badminton club-night software in 2026";
+    ViewData["Title"] = "How to Choose Badminton Club Software for Your Club Night";
+    ViewData["Description"] = "What actually matters when choosing badminton club software to run your club night: live picking versus planned rounds, what can outweigh queue order, offline running, payments and player accounts. Then see how 32 products score against those criteria.";
+    ViewData["OgTitle"] = "How to choose badminton club software";
 
     const string published = "2026-07-01";   // first publication - held deliberately; GuideSchema
                                              // ties dateModified to it (#396), so advancing it
@@ -14,17 +14,7 @@
     // The shortlist. Inclusion rule is stated on the page: adoptable by a UK club for a badminton
     // club night today, and publishing enough for these claims to be checked. Scores and ranges,
     // where quoted below, come from the evaluations published at /compare.
-    var shortlist = new (string Tool, string Fit, string Model, string Price)[]
-    {
-        ("ePegboard",     "Choosing the next four: close, fair and varied, with the reasoning shown", "Live picking as courts free up", "Free for clubs"),
-        ("ShuttlePilot",  "A phone-first console; sit-out fairness tracked across sessions, not just tonight",                "Live rounds",                    "Free in beta; no published price after it"),
-        ("Court Manager", "The closest peg-board replacement; works with no connection",                     "Live picking, offline-first",    "iOS app GBP 9.99 once; hosted price unpublished"),
-        ("ShuttlSync",    "Ratings that move with results, plus seasons and achievements",              "Live player shuffle",            "Free to 2 courts; GBP 9.99/mo to 4"),
-        ("ShuttleStats",  "Booking, capacity and member payments in one place",                  "Live matchmaking + court board", "No subscription; a flat fee per member payment"),
-        ("NextFour",      "The pegboard metaphor kept closest to a physical board, on phones",                         "Pegboard, skill-based or manual","Core nights free; some modes paid"),
-        ("QourtX",        "Membership and venue operations across racquet sports",                  "Live queue and court assignment","Free small tier; larger from GBP 5.99/mo"),
-        ("SportRevive",   "The whole evening generated up front, and printable",                            "Generated rounds, editable",     "Free")
-    };
+
 
     var faqPairs = new (string Q, string A)[]
     {
@@ -35,14 +25,14 @@
         ("Do players have to create accounts?",
          "Not with ePegboard. A club night runs entirely from a shared screen with no player sign-ups at all, which matters because compulsory onboarding is where a rollout usually stalls. Accounts only start to earn their place if you want players to see their own history and ratings between sessions, and that stays optional."),
         ("Should club-night software work offline?",
-         "Only if you cannot rely on a connection at the venue, counting mobile data or a hotspot as well as the hall's own Wi-Fi. Where you genuinely cannot, it matters a lot. Court Manager documents offline operation in unusual detail, including handling venue login pages that interfere with it, and ShuttlSync supports offline sessions. ePegboard's web app needs a connection; its Windows desktop version runs fully offline as a separate product. Test the actual failure mode before committing, not just whether the word offline appears on a page."),
+         "Only if you cannot rely on a connection at the venue, counting mobile data or a hotspot as well as the hall's own Wi-Fi. Where you genuinely cannot, it matters a lot. Court Manager documents offline operation in unusual detail, including handling venue login pages that interfere with it, and ShuttlSync supports offline sessions. ePegboard's web app needs a connection; its Windows desktop version runs fully offline but is a separate paid product that is no longer being developed, so we would not recommend choosing us on that basis. Test the actual failure mode before committing, not just whether the word offline appears on a page."),
         ("How do I run a fair club night without software at all?",
          "A peg board and a queue works, and for a small stable group it may be all you need. The problems that push clubs to software are the ones a board cannot see: who has sat out twice while someone else has played every game, who has partnered the same person four times, and whether tonight's games were close. If none of that is a live complaint at your club, you probably do not need this yet.")
     };
 
     var articleJsonLd = GuideSchema.Article(
-        "Best badminton club-night software in 2026: which tool fits which club?",
-        "Start with ePegboard - free for clubs, built around the moment a court finishes - plus an honest comparison of seven alternatives and the three things it does not do.",
+        "How to choose badminton club software for your club night",
+        "What actually matters when choosing badminton club software to run a club night, and where to see 32 products scored against those criteria.",
         canonical, published);
     var faqJsonLd = GuideSchema.Faq(faqPairs);
 }
@@ -56,12 +46,12 @@
   <div class="wrap">
     <div class="inner">
       <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Club-night software</span></div>
-      <h1 style="margin-top:10px">Best badminton club-night software in 2026: which tool fits which club?</h1>
-      <p class="lede">If you run a regular club night and choosing fair games takes too much of your attention, start by trying ePegboard. Here is what it does for your evening, and here are the circumstances where another product suits you better.</p>
+      <h1 style="margin-top:10px">How to choose badminton club software for your club night</h1>
+      <p class="lede">Before you compare products, work out which decisions your club actually needs the software to make. This is what matters when choosing badminton club software for a club night, in the order it matters - then see how 32 products score against exactly these criteria.</p>
       <div class="guide-meta">
-        <span class="gm-tag">Comparison</span>
-        <span>Club software</span>
-        <span>8 tools</span>
+        <span class="gm-tag">Buyer's guide</span>
+        <span>Badminton club software</span>
+        <span>What to look for</span>
         <span>9 min read</span>
       </div>
     </div>
@@ -85,7 +75,7 @@
       <a href="#evening">One Tuesday night</a>
       <a href="#what">What it changes about your evening</a>
       <a href="#evidence">Whether clubs actually stay</a>
-      <a href="#shortlist">The shortlist</a>
+      <a href="#shortlist">Where to see the products scored</a>
       <a href="#different">Live queue or planned rounds?</a>
       <a href="#alternatives">Three things ePegboard does not do</a>
       <a href="#others">Other tools worth comparing</a>
@@ -130,30 +120,15 @@
 
       <p>Separately, we commissioned AI evaluations of thirty club-night products against a rubric written before anything was scored. ePegboard came first in all three runs. We have <a href="/compare">published all of it</a> - the prompts, the scores, the products we could not assess, our own weaknesses, and the places a rival beats us.</p>
 
-      <h2 id="shortlist">The shortlist</h2>
+      <h2 id="shortlist">Where to see the products scored</h2>
 
-      <p>Eight products a UK club could adopt for a badminton club night today, that publish enough for these claims to be checked. There are more than eight in the market; these are the ones with real UK relevance and readable documentation.</p>
+      <p>Once you know which of the decisions above matter at your club, the next question is which products do them well. We scored <strong>32 badminton club-night products</strong> against a published 100-point rubric built on exactly these criteria, and ran the whole evaluation three times to test whether the result held.</p>
 
-      <div class="cmp-wrap">
-        <table class="cmp-table">
-          <thead>
-            <tr><th>Tool</th><th>What it leans towards</th><th>Session model</th><th>Current pricing signal</th></tr>
-          </thead>
-          <tbody>
-            @foreach (var t in shortlist)
-            {
-              <tr>
-                <td>@(t.Tool == "ePegboard" ? Html.Raw("<strong>ePegboard</strong>") : Html.Raw(t.Tool))</td>
-                <td>@t.Fit</td>
-                <td>@t.Model</td>
-                <td>@t.Price</td>
-              </tr>
-            }
-          </tbody>
-        </table>
+      <div class="guide-callout">
+        <h4>See how the current products compare against these criteria</h4>
+        <p style="margin-top:8px">Best overall, best offline, best phone-first, best for payments and best for leagues - with every score, every limitation and a link to each product's own site.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="/compare">See the 2026 comparison of 32 products</a></p>
       </div>
-
-      <p style="margin-top:18px">Prices were checked against each vendor's public pages and change without notice. Verify anything material before you commit.</p>
 
       <h2 id="different">Live queue or planned rounds?</h2>
 
@@ -171,7 +146,7 @@
 
       <ul>
         <li><strong>Collecting money: ShuttleStats.</strong> If chasing session fees drains more of your week than choosing games does, this is the closer fit. Members book and pay through Stripe with capacity, waitlists and refunds attached, and there is no subscription - the club pays a flat fee per member payment. <strong>ePegboard records what was paid; it does not collect it.</strong></li>
-        <li><strong>Running without a reliable internet connection: Court Manager or ShuttlSync.</strong> If your hall has no signal worth trusting and mobile data or a hotspot is not a dependable fallback, you need software that keeps running offline. Court Manager runs on the device and does exactly that, including handling venue login pages that interfere with it; ShuttlSync supports offline sessions. <strong>Our web app needs a connection.</strong> We do run fully offline, but only through a separate Windows product at GBP 60 a year, and that is a real answer to a different question.</li>
+        <li><strong>Running without a reliable internet connection: Court Manager or ShuttlSync.</strong> If your hall has no signal worth trusting and mobile data or a hotspot is not a dependable fallback, you need software that keeps running offline. Court Manager runs on the device and does exactly that, including handling venue login pages that interfere with it; ShuttlSync supports offline sessions. <strong>Our web app needs a connection.</strong> Our only fully offline option is a separate Windows product at GBP 60 a year, and we are no longer developing it - major bug fixes only. If you truly cannot rely on a connection, pick one of those two rather than us.</li>
         <li><strong>A planned evening rather than live picking: SportRevive.</strong> If your numbers are stable and you would rather hand out the whole night's rounds at 7pm, that is a different model and we do not offer it. See the section above on which one your club actually wants.</li>
       </ul>
 
@@ -194,7 +169,7 @@
       <ul>
         <li><strong>Competitions are handicap doubles.</strong> Singles and team formats are not built.</li>
         <li><strong>We publish the picker's signals but not their weights</strong>, so you cannot tune the balance between a close game and a long wait yourself.</li>
-        <li><strong>We suggest a tablet or laptop</strong> rather than running the night from a phone.</li>
+        <li><strong>We optimise for a tablet or laptop.</strong> It runs on a phone, but a bigger screen gives the better experience. ShuttlePilot is built specifically for running the night one-handed from a phone.</li>
       </ul>
 
       <h2 id="test">If you want to test it properly</h2>
