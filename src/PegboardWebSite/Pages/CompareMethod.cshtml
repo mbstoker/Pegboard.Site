@@ -3,12 +3,10 @@
 @{
     Layout = "_LayoutMarketing";
     ViewData["Title"] = "How the club-night software evaluation was scored: rubric, weights and every correction";
-    ViewData["Description"] = "The full method behind our three-run badminton club-night comparison: the fifteen criteria and their weights declared before scoring, the evidence rules, the corrections log including the one that cut our own score, the retrieval rules, the fabricated control, all three unedited outputs, and the full working behind our own club-retention figures.";
+    ViewData["Description"] = "The full method behind our three-run badminton club-night comparison: the fifteen criteria and their weights declared before scoring, the evidence rules, the corrections log including the one that cut our own score, the retrieval rules, the fabricated control, and all three unedited outputs.";
     ViewData["OgTitle"] = "The evaluation method, in full";
 
-    const string published = "2026-09-09";   // first publication - held deliberately; GuideSchema
-                                             // ties dateModified to it (#396), so advancing it
-                                             // would claim this page is new. Revised 2026-09-12.
+    const string published = "2026-09-09";
     const string canonical = "https://www.epegboard.com/compare/method";
 
     var criteria = new (int N, string Name, int Weight)[]
@@ -67,7 +65,7 @@
     <div class="inner">
       <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/compare">Compare</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Method</span></div>
       <h1 style="margin-top:10px">How it was scored</h1>
-      <p class="lede">The rubric was written before anything was looked at, and the same one was used for all three runs with its weights unaltered. This page is all of it: the fifteen criteria and their weights, the evidence rules, the scores the evaluator revised before reporting, what we corrected before these runs, the fabricated candidate we used as a control, all three raw outputs with nothing taken out, and the working behind the two figures we publish about whether clubs come back.</p>
+      <p class="lede">The rubric was written before anything was looked at, and the same one was used for all three runs with its weights unaltered. This page is all of it: the fifteen criteria and their weights, the evidence rules, the scores the evaluator revised before reporting, what we corrected before these runs, the fabricated candidate we used as a control, and all three raw outputs with nothing taken out.</p>
       <div class="guide-meta">
         <span class="gm-tag">Method</span>
         <span>3 runs</span>
@@ -93,7 +91,6 @@
       <a href="#retrieval">How pages were read</a>
       <a href="#raw">The prompt and the unedited outputs</a>
       <a href="#control">The product that does not exist</a>
-      <a href="#retention">Whether clubs stay: the working</a>
     </div>
 
     <div class="prose" style="margin-top:34px">
@@ -208,82 +205,6 @@
       <p>The candidate list includes a <strong>fabricated product</strong> - a product name we invented, given a plausible address, and listed among the real ones. <strong>No run scored it.</strong> All three reported it unlocatable and moved on.</p>
 
       <p>That control exists because our earlier attempt had one that failed in the opposite direction. We listed SmashHQ with no address, could not find it in two searches, and concluded it was fictional - then treated a run that <em>did</em> find it as having invented the evidence. It is a real company with a live product. A name we made up ourselves cannot produce that error: if a run scores it, the run is unreliable, and there is no second possibility.</p>
-
-      <h2 id="retention">Whether clubs stay: the working</h2>
-
-      <p>The comparison page ends with <a href="/compare#practice">two figures about whether clubs come back</a> after their first night. They are the only numbers on this site that are about us and cannot be checked by reading somebody else's documentation, so this is the method in full - including the corrections it has already needed.</p>
-
-      <p><strong>Proportions, not club counts.</strong> Every figure below is a ratio and the denominators are deliberately not published: the proportion is what tells you whether clubs stay, and a total tells a competitor how big we are. It is the one thing here you cannot check for yourself, and we would rather say so than pretend the omission is not there.</p>
-
-      <h3>What counts as a real session</h3>
-
-      <p>Not our judgement, and not a rule written for this page. <strong>The product itself decides</strong>, with one definition used everywhere it matters - club health, reporting, and this page. A session is real when it was started, ran <strong>at least three completed games</strong>, stayed active for <strong>at least thirty minutes</strong>, and averaged <strong>at least nine seconds per point</strong>.</p>
-
-      <p>The last of those is the one that earns its place. Duration and game count alone are fooled by a dry run: an organiser clicking a roster through twenty "games" in half an hour passes both tests without a shuttle being hit. Real badminton runs around thirteen to fourteen seconds a point whatever the scoring format, because a shorter game has fewer rallies rather than faster ones - a click-through runs at a second or two. Every genuine club session we have measured sits above twelve seconds, every simulation below seven, and the threshold sits in the gap between them. <strong>A poke-around, a demo and a dry run all fail it</strong>, which is the point: they were never clubs coming back.</p>
-
-      <h3>What counts as coming back</h3>
-
-      <p><strong>A real session on a different night.</strong> Two session records opened twenty minutes apart on one evening are one night, not a club returning. That sounds pedantic until you find it is the difference between an honest figure and a flattering one.</p>
-
-      <h3>What counts as a club</h3>
-
-      <ul>
-        <li><strong>Demo and template clubs are excluded</strong>, along with the records that are our own tests.</li>
-        <li><strong>Duplicate records are merged into one club.</strong> A few clubs hold more than one - one runs three separate nights and has a record for each - and counting those as three clubs that all came back would flatter every ratio here.</li>
-        <li><strong>Clubs whose first real night was in June 2026 or later.</strong></li>
-      </ul>
-
-      <h3>Only clubs that have had the chance</h3>
-
-      <p><strong>A club whose first night was last Tuesday cannot have run a second one yet</strong>, and counting it among the clubs that did not come back is a measurement error rather than a fact about us. A self-inflicted one, too: without this rule the figure gets worse the faster we sign clubs up, for a reason that has nothing to do with whether clubs stay.</p>
-
-      <p>So a club joins the denominator once it has had the opportunity - two weeks for a second night, six weeks for a fifth. Club nights are weekly: the median gap between one club's night and its next is <strong>seven days</strong>, and nine in ten gaps are eight days or fewer. Two weeks is one slot plus a week's grace; six weeks allows five nights with two of them missed.</p>
-
-      <p><strong>The clock runs one way only.</strong> Time is needed to call a club one that did not come back. It is not needed to call one that did - a club that has already run its second night has answered the question, whatever the calendar says. Applying the wait in both directions would throw away confirmed returns for nothing.</p>
-
-      <p><strong>And the rule has to survive being read on a different day.</strong> An earlier version of this section took the school holidays out of that clock, on the reasoning that a club on its summer break is not a club failing to come back. The reasoning was sound; the measure was not. It bunched every summer starter onto a single threshold, so the figure it produced would have fallen ten points three days after we published it. A number that expires in seventy-two hours is not a number. The clock is plain calendar weeks, and the seasonal argument - real as it is - is not one this measure can carry.</p>
-
-      <h3>The figures</h3>
-
-      <p>Two questions, not one, because they are not the same question. Whether a club comes back at all is mostly about the first night. Whether it keeps coming back is about the product.</p>
-
-      <p><strong>Four in five clubs came back for a second night.</strong> Two clubs have not been running long enough yet to say either way.</p>
-
-      <p><strong>Of the clubs that came back, more than four in five have gone on to run five or more nights</strong> - as it stands today, every one of them that has had the time.</p>
-
-      <h3>How much the answer depends on where the lines are drawn</h3>
-
-      <p>The published figures are the top row. The rest are the same data read differently, so you can see whether the lines were drawn to suit us.</p>
-
-      <div class="cmp-wrap">
-        <table class="cmp-table">
-          <thead><tr><th>Reading</th><th>Came back</th><th>Of those, five or more</th></tr></thead>
-          <tbody>
-            <tr><td><strong>As published</strong></td><td><strong>83%</strong></td><td><strong>100%</strong></td></tr>
-            <tr><td>Every club since June, including the ones that cannot yet have answered</td><td>78%</td><td>80%</td></tr>
-            <tr><td>Once every club's answer has landed, if not one of them ever plays again</td><td>78%</td><td>83%</td></tr>
-            <tr><td>Clubs whose first night was before the summer, which have had the longest to drift away</td><td>92%</td><td>100%</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p style="margin-top:18px">The third row is the one worth reading twice. It assumes every club currently mid-answer turns out to be a no - which will not happen - and the figures still land at 78% and 83%. That is the floor, not the forecast.</p>
-
-      <h3>What we published before this, and why it was wrong</h3>
-
-      <p>Three times, and each correction turned out to be fixing the previous one's fault rather than finding a new one.</p>
-
-      <ol>
-        <li><strong>Four in five, and nearly two in three</strong> - counting every session record created, including ones where nobody played. Withdrawn on 10 September.</li>
-        <li><strong>Two in three, and getting on for half.</strong> The footnote said a session meant one in which a game was actually started; the figure counted sessions that had merely been opened. It understated us <em>and</em> the stated method did not reproduce it, which is worse than either problem on its own.</li>
-        <li><strong>A pair of figures above ninety per cent</strong>, resting on a definition of "real session" written for the occasion and a clock that would have expired three days later. Caught in review and never published - which is where this version's definitions came from.</li>
-      </ol>
-
-      <p>The through-line in all three is the same: <strong>each one hand-rolled a rule the product already had.</strong> This version asks the product.</p>
-
-      <h3>What we will re-measure, and when</h3>
-
-      <p><strong>In mid-October</strong>, when the clubs that started over the summer have had a term's worth of nights and can fairly be asked the question. If their answer is materially worse than the clubs above, this section will say so and the figures on the comparison page will change. The figures come from a script that reads the product's own verdict on every session and refuses to run if that verdict is missing, so the October version cannot quietly go back to a rule of its own.</p>
 
       <div class="guide-callout" style="margin-top:26px">
         <h4>If you make one of these products</h4>
