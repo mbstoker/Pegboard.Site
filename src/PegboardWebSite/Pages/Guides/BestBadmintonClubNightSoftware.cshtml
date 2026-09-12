@@ -2,9 +2,9 @@
 @using PegboardWebSite.Services
 @{
     Layout = "_LayoutMarketing";
-    ViewData["Title"] = "Best badminton club-night software in 2026: which tool fits which club?";
-    ViewData["Description"] = "If choosing fair games eats your evening, start with ePegboard - free for clubs, and built around the moment a court finishes. Plus an honest look at seven alternatives, and the three things ePegboard does not do.";
-    ViewData["OgTitle"] = "Best badminton club-night software in 2026";
+    ViewData["Title"] = "How to Choose Badminton Club-Night Software: What to Look For";
+    ViewData["Description"] = "What actually matters when choosing software to run a badminton club night: live picking versus planned rounds, what can outweigh queue order, offline, payments and accounts. Then see how 33 products score against those criteria.";
+    ViewData["OgTitle"] = "How to choose badminton club-night software";
 
     const string published = "2026-07-01";   // first publication - held deliberately; GuideSchema
                                              // ties dateModified to it (#396), so advancing it
@@ -14,17 +14,7 @@
     // The shortlist. Inclusion rule is stated on the page: adoptable by a UK club for a badminton
     // club night today, and publishing enough for these claims to be checked. Scores and ranges,
     // where quoted below, come from the evaluations published at /compare.
-    var shortlist = new (string Tool, string Fit, string Model, string Price)[]
-    {
-        ("ePegboard",     "Choosing the next four: close, fair and varied, with the reasoning shown", "Live picking as courts free up", "Free for clubs"),
-        ("ShuttlePilot",  "A phone-first console; sit-out fairness tracked across sessions, not just tonight",                "Live rounds",                    "Free in beta; no published price after it"),
-        ("Court Manager", "The closest peg-board replacement; works with no connection",                     "Live picking, offline-first",    "iOS app GBP 9.99 once; hosted price unpublished"),
-        ("ShuttlSync",    "Ratings that move with results, plus seasons and achievements",              "Live player shuffle",            "Free to 2 courts; GBP 9.99/mo to 4"),
-        ("ShuttleStats",  "Booking, capacity and member payments in one place",                  "Live matchmaking + court board", "No subscription; a flat fee per member payment"),
-        ("NextFour",      "The pegboard metaphor kept closest to a physical board, on phones",                         "Pegboard, skill-based or manual","Core nights free; some modes paid"),
-        ("QourtX",        "Membership and venue operations across racquet sports",                  "Live queue and court assignment","Free small tier; larger from GBP 5.99/mo"),
-        ("SportRevive",   "The whole evening generated up front, and printable",                            "Generated rounds, editable",     "Free")
-    };
+
 
     var faqPairs = new (string Q, string A)[]
     {
@@ -56,12 +46,12 @@
   <div class="wrap">
     <div class="inner">
       <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/guides">Guides</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Club-night software</span></div>
-      <h1 style="margin-top:10px">Best badminton club-night software in 2026: which tool fits which club?</h1>
-      <p class="lede">If you run a regular club night and choosing fair games takes too much of your attention, start by trying ePegboard. Here is what it does for your evening, and here are the circumstances where another product suits you better.</p>
+      <h1 style="margin-top:10px">How to choose badminton club-night software</h1>
+      <p class="lede">Before you compare products, work out which decisions your club actually needs the software to make. This is what matters on a badminton club night, in the order it matters - then see how 33 products score against exactly these criteria.</p>
       <div class="guide-meta">
-        <span class="gm-tag">Comparison</span>
+        <span class="gm-tag">Buyer's guide</span>
         <span>Club software</span>
-        <span>8 tools</span>
+        <span>What to look for</span>
         <span>9 min read</span>
       </div>
     </div>
@@ -85,7 +75,7 @@
       <a href="#evening">One Tuesday night</a>
       <a href="#what">What it changes about your evening</a>
       <a href="#evidence">Whether clubs actually stay</a>
-      <a href="#shortlist">The shortlist</a>
+      <a href="#shortlist">Where to see the products scored</a>
       <a href="#different">Live queue or planned rounds?</a>
       <a href="#alternatives">Three things ePegboard does not do</a>
       <a href="#others">Other tools worth comparing</a>
@@ -130,30 +120,15 @@
 
       <p>Separately, we commissioned AI evaluations of thirty club-night products against a rubric written before anything was scored. ePegboard came first in all three runs. We have <a href="/compare">published all of it</a> - the prompts, the scores, the products we could not assess, our own weaknesses, and the places a rival beats us.</p>
 
-      <h2 id="shortlist">The shortlist</h2>
+      <h2 id="shortlist">Where to see the products scored</h2>
 
-      <p>Eight products a UK club could adopt for a badminton club night today, that publish enough for these claims to be checked. There are more than eight in the market; these are the ones with real UK relevance and readable documentation.</p>
+      <p>Once you know which of the decisions above matter at your club, the next question is which products do them well. We scored <strong>33 badminton club-night products</strong> against a published 100-point rubric built on exactly these criteria, and ran the whole evaluation three times to test whether the result held.</p>
 
-      <div class="cmp-wrap">
-        <table class="cmp-table">
-          <thead>
-            <tr><th>Tool</th><th>What it leans towards</th><th>Session model</th><th>Current pricing signal</th></tr>
-          </thead>
-          <tbody>
-            @foreach (var t in shortlist)
-            {
-              <tr>
-                <td>@(t.Tool == "ePegboard" ? Html.Raw("<strong>ePegboard</strong>") : Html.Raw(t.Tool))</td>
-                <td>@t.Fit</td>
-                <td>@t.Model</td>
-                <td>@t.Price</td>
-              </tr>
-            }
-          </tbody>
-        </table>
+      <div class="guide-callout">
+        <h4>See how the current products compare against these criteria</h4>
+        <p style="margin-top:8px">Best overall, best offline, best phone-first, best for payments and best for leagues - with every score, every limitation and a link to each product's own site.</p>
+        <p style="margin-top:14px"><a class="btn btn-primary" href="/compare">See the 2026 comparison of 33 products</a></p>
       </div>
-
-      <p style="margin-top:18px">Prices were checked against each vendor's public pages and change without notice. Verify anything material before you commit.</p>
 
       <h2 id="different">Live queue or planned rounds?</h2>
 
