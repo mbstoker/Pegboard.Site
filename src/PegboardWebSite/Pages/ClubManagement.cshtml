@@ -1,8 +1,12 @@
 @page "/features/club-management"
 @{
     Layout = "_LayoutMarketing";
-    ViewData["Title"] = "Badminton club management & admin";
-    ViewData["Description"] = "Manage your badminton club in one place: attendance trends, payment tracking, member records and one-click CSV reports - so you spend less time on the spreadsheet.";
+    // Title names the four things this page actually shows. It used to read "Badminton club
+    // management & admin", which was near-interchangeable with /badminton-club-management-software
+    // ("Badminton club management software") - two pages, one apparent intent, neither reaching
+    // page one. That page owns the category term; this one owns what the product does. (ado:1898)
+    ViewData["Title"] = "Badminton club attendance, payments and reports";
+    ViewData["Description"] = "Attendance trends, session payment tracking and member records for your badminton club, plus one-click CSV reports - so you spot who is drifting before they leave.";
 }
 
 <!-- HERO -->
