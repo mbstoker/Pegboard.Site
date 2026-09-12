@@ -3,10 +3,12 @@
 @{
     Layout = "_LayoutMarketing";
     ViewData["Title"] = "How the club-night software evaluation was scored: rubric, weights and every correction";
-    ViewData["Description"] = "The full method behind our three-run badminton club-night comparison: the fifteen criteria and their weights declared before scoring, the evidence rules, the corrections log including the one that cut our own score, the retrieval rules, the fabricated control, and all three unedited outputs.";
+    ViewData["Description"] = "The full method behind our three-run badminton club-night comparison: the fifteen criteria and their weights declared before scoring, the evidence rules, the corrections log including the one that cut our own score, the retrieval rules, the fabricated control, all three unedited outputs, and the full working behind our own club-retention figures.";
     ViewData["OgTitle"] = "The evaluation method, in full";
 
-    const string published = "2026-09-09";
+    const string published = "2026-09-09";   // first publication - held deliberately; GuideSchema
+                                             // ties dateModified to it (#396), so advancing it
+                                             // would claim this page is new. Revised 2026-09-12.
     const string canonical = "https://www.epegboard.com/compare/method";
 
     var criteria = new (int N, string Name, int Weight)[]
@@ -209,56 +211,45 @@
 
       <h2 id="retention">Whether clubs stay: the working</h2>
 
-      <p>The comparison page ends with <a href="/compare#practice">two figures about whether clubs come back</a> after their first night. They are the only numbers on this site that are about us and cannot be checked by reading somebody's documentation, so this is the method in full - including the correction it has already needed, and the one before that.</p>
+      <p>The comparison page ends with <a href="/compare#practice">two figures about whether clubs come back</a> after their first night. They are the only numbers on this site that are about us and cannot be checked by reading somebody else's documentation, so this is the method in full - including the corrections it has already needed.</p>
 
-      <h3>What counts as a session</h3>
+      <p><strong>Proportions, not club counts.</strong> Every figure below is a ratio and the denominators are deliberately not published: the proportion is what tells you whether clubs stay, and a total tells a competitor how big we are. It is the one thing here you cannot check for yourself, and we would rather say so than pretend the omission is not there.</p>
 
-      <p><strong>One in which a game was actually started.</strong> Not a session record created, and not a session opened on the night. Those are three different readings and the gap between them is not marginal: production holds <strong>2,234 sessions initialised against 1,647 in which a game began</strong>. Only the last of the three describes an evening of badminton actually being played.</p>
+      <h3>What counts as a real session</h3>
+
+      <p>Not our judgement, and not a rule written for this page. <strong>The product itself decides</strong>, with one definition used everywhere it matters - club health, reporting, and this page. A session is real when it was started, ran <strong>at least three completed games</strong>, stayed active for <strong>at least thirty minutes</strong>, and averaged <strong>at least nine seconds per point</strong>.</p>
+
+      <p>The last of those is the one that earns its place. Duration and game count alone are fooled by a dry run: an organiser clicking a roster through twenty "games" in half an hour passes both tests without a shuttle being hit. Real badminton runs around thirteen to fourteen seconds a point whatever the scoring format, because a shorter game has fewer rallies rather than faster ones - a click-through runs at a second or two. Every genuine club session we have measured sits above twelve seconds, every simulation below seven, and the threshold sits in the gap between them. <strong>A poke-around, a demo and a dry run all fail it</strong>, which is the point: they were never clubs coming back.</p>
+
+      <h3>What counts as coming back</h3>
+
+      <p><strong>A real session on a different night.</strong> Two session records opened twenty minutes apart on one evening are one night, not a club returning. That sounds pedantic until you find it is the difference between an honest figure and a flattering one.</p>
 
       <h3>What counts as a club</h3>
 
       <ul>
-        <li><strong>Demo and template clubs are excluded</strong>, along with four records that are our own tests.</li>
-        <li><strong>Duplicate records are merged into one club.</strong> Four clubs hold more than one - one runs three separate nights and has a record for each - and counting those as three clubs that all came back would flatter every ratio here.</li>
-        <li><strong>Only clubs whose first played session was in 2026</strong>, which sets aside five that were already running before it, one of them since 2011.</li>
+        <li><strong>Demo and template clubs are excluded</strong>, along with the records that are our own tests.</li>
+        <li><strong>Duplicate records are merged into one club.</strong> A few clubs hold more than one - one runs three separate nights and has a record for each - and counting those as three clubs that all came back would flatter every ratio here.</li>
+        <li><strong>Clubs whose first real night was in June 2026 or later.</strong></li>
       </ul>
-
-      <p>That leaves <strong>61 clubs</strong>.</p>
 
       <h3>Only clubs that have had the chance</h3>
 
-      <p>This is the rule that does the work, and the one we had wrong. <strong>A club whose first night was last Tuesday cannot have run a second one yet</strong>, and counting it among the clubs that did not come back is a measurement error rather than a hard truth about us. It is also self-inflicted: the faster we sign clubs up, the worse the figure gets, for a reason that has nothing to do with whether clubs stay.</p>
+      <p><strong>A club whose first night was last Tuesday cannot have run a second one yet</strong>, and counting it among the clubs that did not come back is a measurement error rather than a fact about us. A self-inflicted one, too: without this rule the figure gets worse the faster we sign clubs up, for a reason that has nothing to do with whether clubs stay.</p>
 
-      <p>So a club joins the denominator only once it has had the opportunity:</p>
+      <p>So a club joins the denominator once it has had the opportunity - two weeks for a second night, six weeks for a fifth. Club nights are weekly: the median gap between one club's night and its next is <strong>seven days</strong>, and nine in ten gaps are eight days or fewer. Two weeks is one slot plus a week's grace; six weeks allows five nights with two of them missed.</p>
 
-      <ul>
-        <li><strong>Ran another</strong> - at least two weeks of term time since its first night. Club nights are weekly: the median gap between one club's session and its next is <strong>7 days</strong>, and 228 of 250 gaps are eight days or fewer. Two weeks is one slot plus a week's grace.</li>
-        <li><strong>Ran five or more</strong> - at least six weeks of term time. Five nights needs four gaps; six weeks allows two of them to be missed.</li>
-      </ul>
+      <p><strong>The clock runs one way only.</strong> Time is needed to call a club one that did not come back. It is not needed to call one that did - a club that has already run its second night has answered the question, whatever the calendar says. Applying the wait in both directions would throw away confirmed returns for nothing.</p>
 
-      <p><strong>Term time, because the school holidays are not chances.</strong> Term-time and junior clubs stop for the summer and start again in September, and our own fleet shows it plainly - the share of existing clubs playing in a given week fell to 42% in the week of 17 August, and sessions per week have since jumped from the low thirties to 51 and 52. Four clubs returned in September after three weeks or more away, two of them after eight weeks, and one came back in August after eleven weeks off. Five clubs that are quiet today already have future nights scheduled in the app. Counting a club's summer as weeks in which it failed to come back reports a holiday as a loss. The weeks from 18 July to 31 August therefore do not count towards either threshold.</p>
+      <p><strong>And the rule has to survive being read on a different day.</strong> An earlier version of this section took the school holidays out of that clock, on the reasoning that a club on its summer break is not a club failing to come back. The reasoning was sound; the measure was not. It bunched every summer starter onto a single threshold, so the figure it produced would have fallen ten points three days after we published it. A number that expires in seventy-two hours is not a number. The clock is plain calendar weeks, and the seasonal argument - real as it is - is not one this measure can carry.</p>
 
-      <p>That is not true of every club: the one with the longest history here plays straight through the summer, averaging 6.0 sessions in July and 7.3 in August across fifteen years. Seasonality hits term-time clubs rather than the whole fleet - but a measure has to be fair to both, and this one errs towards not judging a club too early.</p>
+      <h3>The figures</h3>
 
-      <h3>The figures, by the month a club started</h3>
+      <p>Two questions, not one, because they are not the same question. Whether a club comes back at all is mostly about the first night. Whether it keeps coming back is about the product.</p>
 
-      <div class="cmp-wrap">
-        <table class="cmp-table">
-          <thead><tr><th>First real night</th><th>Clubs</th><th>Have had the chance to run another</th><th>Ran another</th><th>Have had the chance to run five</th><th>Ran five or more</th></tr></thead>
-          <tbody>
-            <tr><td>May 2026</td><td>10</td><td>10</td><td>10</td><td>10</td><td>5</td></tr>
-            <tr><td>June 2026</td><td>10</td><td>10</td><td>10</td><td>6</td><td>6</td></tr>
-            <tr><td>July 2026</td><td>15</td><td>5</td><td>3</td><td>0</td><td>too early to say</td></tr>
-            <tr><td>August 2026</td><td>14</td><td>0</td><td>too early to say</td><td>0</td><td>too early to say</td></tr>
-            <tr><td>September 2026</td><td>12</td><td>0</td><td>too early to say</td><td>0</td><td>too early to say</td></tr>
-            <tr><td><strong>All</strong></td><td><strong>61</strong></td><td><strong>25</strong></td><td><strong>23 (92%)</strong></td><td><strong>16</strong></td><td><strong>11 (69%)</strong></td></tr>
-          </tbody>
-        </table>
-      </div>
+      <p><strong>Four in five clubs came back for a second night.</strong> Two clubs have not been running long enough yet to say either way.</p>
 
-      <p style="margin-top:18px"><strong>Every club whose first real night came before the summer break ran another - twenty out of twenty.</strong> The two clubs in the eligible set that did not come back both started in early July, and both are one-off runs of two games and one game respectively: somebody trying the software, rather than a club night that was not repeated.</p>
-
-      <p>The "too early to say" rows are the point of the rule, not an omission. Thirty-six of the sixty-one clubs started too recently to have an answer yet, which is what a product growing this fast looks like when it is measured honestly.</p>
+      <p><strong>Of the clubs that came back, more than four in five have gone on to run five or more nights</strong> - as it stands today, every one of them that has had the time.</p>
 
       <h3>How much the answer depends on where the lines are drawn</h3>
 
@@ -266,34 +257,33 @@
 
       <div class="cmp-wrap">
         <table class="cmp-table">
-          <thead><tr><th>Reading</th><th>Ran another</th><th>Ran five or more</th></tr></thead>
+          <thead><tr><th>Reading</th><th>Came back</th><th>Of those, five or more</th></tr></thead>
           <tbody>
-            <tr><td><strong>As published</strong> - game started, chance rule, summer excluded</td><td><strong>23 of 25 (92%)</strong></td><td><strong>11 of 16 (69%)</strong></td></tr>
-            <tr><td>Stricter: every session counted must be a full club night of 8+ games</td><td>19 of 21 (90%)</td><td>8 of 13 (62%)</td></tr>
-            <tr><td>Chance rule on calendar weeks, with the summer counted as chances</td><td>37 of 47 (79%)</td><td>22 of 35 (63%)</td></tr>
-            <tr><td>No chance rule: every club that has ever played, however recently it joined</td><td>45 of 61 (74%)</td><td>29 of 61 (48%)</td></tr>
+            <tr><td><strong>As published</strong></td><td><strong>83%</strong></td><td><strong>100%</strong></td></tr>
+            <tr><td>Every club since June, including the ones that cannot yet have answered</td><td>78%</td><td>80%</td></tr>
+            <tr><td>Once every club's answer has landed, if not one of them ever plays again</td><td>78%</td><td>83%</td></tr>
+            <tr><td>Clubs whose first night was before the summer, which have had the longest to drift away</td><td>92%</td><td>100%</td></tr>
           </tbody>
         </table>
       </div>
 
-      <p style="margin-top:18px">Every reading of it lands between 74% and 92% for the first figure and between 48% and 69% for the second, and the two that hurt us most are the two that count clubs which have not yet had a chance to answer.</p>
+      <p style="margin-top:18px">The third row is the one worth reading twice. It assumes every club currently mid-answer turns out to be a no - which will not happen - and the figures still land at 78% and 83%. That is the floor, not the forecast.</p>
 
       <h3>What we published before this, and why it was wrong</h3>
 
-      <p>Twice, and both times in the same direction - the method was looser than the sentence describing it.</p>
+      <p>Three times, and each correction turned out to be fixing the previous one's fault rather than finding a new one.</p>
 
       <ol>
-        <li><strong>We published four in five and nearly two in three</strong> counting every session record created, including sessions where nobody played. Withdrawn on 10 September after a review re-derived it.</li>
-        <li><strong>We replaced it with two in three and getting on for half</strong>, and said in the footnote that a session meant one where a game was actually started. It did not: that pair of figures counts sessions that were <em>opened</em> (52 of 76 clubs, and 34 of 76). On the definition the footnote actually gave, the same day's data said 49 of 66 and 29 of 66 - <strong>74% and 44%</strong>. The number understated us and the stated method did not reproduce it, which is worse than either problem alone.</li>
+        <li><strong>Four in five, and nearly two in three</strong> - counting every session record created, including ones where nobody played. Withdrawn on 10 September.</li>
+        <li><strong>Two in three, and getting on for half.</strong> The footnote said a session meant one in which a game was actually started; the figure counted sessions that had merely been opened. It understated us <em>and</em> the stated method did not reproduce it, which is worse than either problem on its own.</li>
+        <li><strong>A pair of figures above ninety per cent</strong>, resting on a definition of "real session" written for the occasion and a clock that would have expired three days later. Caught in review and never published - which is where this version's definitions came from.</li>
       </ol>
 
-      <p>Neither version applied the chance rule at all. That is the substantive fix here; the definition mismatch is just the reason it got looked at again.</p>
+      <p>The through-line in all three is the same: <strong>each one hand-rolled a rule the product already had.</strong> This version asks the product.</p>
 
       <h3>What we will re-measure, and when</h3>
 
-      <p><strong>In mid-October</strong>, when the clubs that started in July and August have had a term's worth of nights and can fairly be asked the question. Those 29 clubs are close to half the total and their answer is currently unknown - if it is materially worse than the clubs above, this section will say so and the figures on the comparison page will change.</p>
-
-      <p>We are also deliberately <em>not</em> publishing a "clubs still active today" figure, although we have one, because measured in the first half of September it is dominated by clubs that are on a summer break and about to return. It would be a lower number that means less.</p>
+      <p><strong>In mid-October</strong>, when the clubs that started over the summer have had a term's worth of nights and can fairly be asked the question. If their answer is materially worse than the clubs above, this section will say so and the figures on the comparison page will change. The figures come from a script that reads the product's own verdict on every session and refuses to run if that verdict is missing, so the October version cannot quietly go back to a rule of its own.</p>
 
       <div class="guide-callout" style="margin-top:26px">
         <h4>If you make one of these products</h4>
