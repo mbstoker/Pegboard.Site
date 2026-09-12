@@ -3,7 +3,7 @@
 @{
     Layout = "_LayoutMarketing";
     ViewData["Title"] = "How the club-night software evaluation was scored: rubric, weights and every correction";
-    ViewData["Description"] = "The full method behind our six-run badminton club-night comparison: the fifteen criteria and their weights declared before scoring, the evidence rules, the corrections log including the one that cut our own score, the retrieval log, the fabricated control, and all six unedited outputs.";
+    ViewData["Description"] = "The full method behind our three-run badminton club-night comparison: the fifteen criteria and their weights declared before scoring, the evidence rules, the corrections log including the one that cut our own score, the retrieval rules, the fabricated control, and all three unedited outputs.";
     ViewData["OgTitle"] = "The evaluation method, in full";
 
     const string published = "2026-09-09";
@@ -28,56 +28,31 @@
         (15, "Price and practical limits", 4)
     };
 
-    // The evaluator's own revisions during its self-consistency pass. Ours is first
-    // deliberately - it is the one that matters for reading the rest.
+    // The corrections the best-evidenced run made to its own scores. Ours first, because a
+    // scoring pass that only ever finds fault with other people's products is not one.
     var revisions = new (string Product, string Criterion, string Change, string Why)[]
     {
-        ("ePegboard",     "12 Payments",      "full to partial",     "The documentation says plainly that payments are recorded, not processed. It is not a card machine, so a full score conflicted with its own prose."),
-        ("QourtX",        "5 Variety",        "full to partial",     "Partner rotation is documented; equivalent detail for opponent variety is not."),
-        ("QourtX",        "6 Explainability", "full to partial",     "Rating, fatigue and history are described, but not a user-facing explanation of why an individual match was chosen."),
-        ("QourtX",        "7 Manual override","full to partial",     "Preferences and configuration are documented; a comparable manual-override workflow is not."),
-        ("QourtX",        "14 Resilience",    "full to partial",     "Native mobile availability is documented; offline operation is not."),
-        ("ShuttlePilot",  "10 Kiosk",         "full to partial",     "Laptop multi-round visibility is documented; a kiosk or wallboard workflow is not."),
-        ("ShuttlePilot",  "12 Payments",      "full to partial",     "Roles and roster administration are documented; club payment administration is not."),
-        ("ShuttlePilot",  "14 Resilience",    "full to partial",     "Phone and browser operation is documented; offline resilience is not."),
-        ("Racket Social", "6 Explainability", "full to partial",     "The generated match and ratings are exposed, but not a detailed pick explanation."),
-        ("Racket Social", "12 Payments",      "full to unresolved",  "No adequate evidence either way."),
-        ("Racket Social", "13 Competitions",  "full to unresolved",  "Tournament functionality is described as beta or under overhaul rather than a completed workflow."),
-        ("PaQueueKa",     "13 Competitions",  "partial to absent",   "The site labels tournament management \"coming soon\", so this is verified absent as a current capability rather than merely undocumented."),
-        ("BadBoard",      "8 Ratings",        "full to partial",     "A 1-10 player grade is documented, which is not the same as a dynamic performance rating."),
-        ("BadBoard",      "10 Kiosk",         "full to partial",     "It requires a Windows laptop or PC."),
-        ("eBadders",      "6 Explainability", "full to unresolved",  "No documented selection-explanation mechanism was found."),
-        ("eBadders",      "10 Kiosk",         "full to unresolved",  "No sufficient evidence for multi-court display operation."),
-        ("eBadders",      "14 Resilience",    "full to unresolved",  "No adequate resilience or device-accessibility evidence."),
-        ("eBadders",      "15 Price",         "full to unresolved",  "Pricing and practical limits were not sufficiently documented in the retrieved material."),
-        ("vsBadminton",   "7 Manual override","full to partial",     "It can select games and has settings, but a comprehensive manual-override model is not documented."),
-        ("vsBadminton",   "15 Price",         "full to unresolved",  "No sufficiently clear current pricing evidence.")
+        ("ePegboard",     "1 Late joiners",   "full to partial", "Check-in and kiosk mechanics are documented thoroughly, but what happens to a game already in flight when someone signs in mid-session is implied by the queue model rather than stated as a rule. ShuttlePilot and vsBadminton state it explicitly."),
+        ("ePegboard",     "13 Competitions",  "full to partial", "The feature summary was read and the how-to pages noted but not opened. Scoring what was actually read, rather than the pages assumed, gives a partial."),
+        ("ePegboard",     "12 Payments",      "held at partial", "Not raised, because the vendor's own words qualify it: not a payment processor."),
+        ("ePegboard",     "14 Resilience",    "held at partial", "Not raised: offline running is available only through a paid Windows client."),
+        ("ShuttlSync",    "3 Skill balance",  "full to partial", "Skill-split sides are one of three selectable modes rather than the default behaviour of the fair rotation, and the report qualifies it in prose."),
+        ("BadBoard",      "7 Manual override","full to partial", "Override is documented for game-based mode only; timer mode is described as running unaided all evening with no override path stated."),
+        ("Court Manager", "6 Explainability", "partial to full", "Raised for parity: the waiting list publishes games played and time waited."),
+        ("Racket Social", "6 Explainability", "partial to full", "Raised for parity: a public read-only viewer shows court assignments, the sit-out queue and match history."),
+        ("Shuttl",        "6 Explainability", "partial to full", "Raised for parity: a visible match queue plus a published precedence - excessive waits first, then mixing, then skill balance."),
+        ("QourtX",        "6 Explainability", "partial to full", "Raised for parity: the wallboard shows playing, waiting and resting with wait-time estimates."),
+        ("NextFour",      "6 Explainability", "partial to full", "Raised for parity: every court at a glance - who is on, who is next, who has been waiting."),
+        ("Queue Master",  "6 Explainability", "partial to full", "Raised for parity: per-player games, wins and a running wait timer, sortable by shortest wait."),
+        ("UBR",           "3 Skill balance",  "partial to full", "Raised for parity: the same class of evidence as two products already scored full."),
+        ("Ladderly",      "4 Sit-out fairness","held at partial","Held while Shuttl was raised. Both name wait time as an input; only Shuttl publishes the precedence between waiting, mixing and balance, and precedence is what the criterion asks for.")
     };
 
-    var retrieval = new (string Product, string Result)[]
-    {
-        ("Airchy WebOS", "Read"), ("BadBoard", "Read"), ("Badminton Peg System", "Read"),
-        ("Badmatch", "Read, but very sparse"),
-        ("Court Buddy", "Title only - page built in the browser. Also a pickleball product"),
-        ("Court Manager", "The URL we used was its app dashboard, not its product site. Re-scored 10 September at court-manager.com: 72.5, 15 of 15 resolved"),
-        ("CourtMaster", "App Store page rate-limited the request (HTTP 429)"),
-        ("CourtsFlow", "Title only - page built in the browser. Run 2, reading through a browser, scored it 40.5"),
-        ("Digital Pegboard", "Read"),
-        ("eBadders", "Read"), ("ePegboard", "Read"), ("Ladderly", "Read"),
-        ("Matchit", "App Store page could not be retrieved"), ("NextFour", "Read"),
-        ("PaQueueKa", "Read"), ("Qcourt", "Read"), ("QourtX", "Read"),
-        ("QSENPAI", "HTTP 404 - the URL in our records is wrong"),
-        ("Queue Master", "Title only - page built in the browser"),
-        ("Racket Arena", "Title only - page built in the browser"), ("Racket Social", "Read"),
-        ("ServeLeague", "Read"), ("Shuttl", "Read"), ("ShuttleFlow", "Read"),
-        ("ShuttleOps", "Title only - page built in the browser"), ("ShuttlePilot", "Read"),
-        ("SmashHQ", "Not located by this run. It exists, at smashhq.app - a later run found it and this one did not"),
-        ("SportyHQ", "HTTP 403 - the request was declined"), ("UBR", "Read"), ("vsBadminton", "Read")
-    };
+
 
     var articleJsonLd = GuideSchema.Article(
         "How the club-night software evaluation was scored: rubric, weights and every correction",
-        "The full method behind our 30-product badminton club-night comparison, including the correction that cut our own score.",
+        "The full method behind our three-run, 33-product badminton club-night comparison, including the rule that cut our own score by five points.",
         canonical, published);
 }
 
@@ -90,11 +65,11 @@
     <div class="inner">
       <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <a href="/compare">Compare</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Method</span></div>
       <h1 style="margin-top:10px">How it was scored</h1>
-      <p class="lede">The rubric was written before anything was looked at, and the same one was used for all six runs with its weights unaltered. This page is all of it: the fifteen criteria and their weights, the evidence rules, the scores each evaluator revised while running, what we corrected afterwards, the fabricated candidate we used as a control, and all six raw outputs with nothing taken out.</p>
+      <p class="lede">The rubric was written before anything was looked at, and the same one was used for all three runs with its weights unaltered. This page is all of it: the fifteen criteria and their weights, the evidence rules, the scores the evaluator revised before reporting, what we corrected before these runs, the fabricated candidate we used as a control, and all three raw outputs with nothing taken out.</p>
       <div class="guide-meta">
         <span class="gm-tag">Method</span>
-        <span>6 runs</span>
-        <span>9 September 2026</span>
+        <span>3 runs</span>
+        <span>12 September 2026</span>
       </div>
     </div>
   </div>
@@ -111,10 +86,10 @@
       <h4>On this page</h4>
       <a href="#criteria">The fifteen criteria and their weights</a>
       <a href="#rules">The evidence rules</a>
-      <a href="#revisions">Scores the evaluator revised while running</a>
-      <a href="#ours">What we corrected afterwards</a>
-      <a href="#retrieval">Retrieval log</a>
-      <a href="#raw">The prompts and the unedited outputs</a>
+      <a href="#revisions">Scores the evaluator revised before reporting</a>
+      <a href="#ours">What we corrected before these runs</a>
+      <a href="#retrieval">How pages were read</a>
+      <a href="#raw">The prompt and the unedited outputs</a>
       <a href="#control">The product that does not exist</a>
     </div>
 
@@ -160,11 +135,15 @@
 
       <p>Documentation volume was explicitly not to be rewarded. It is worth saying that this rule only partly held: the evidential bar rewards documented capability, and a product that publishes a single landing page cannot demonstrate what it does. That is a real limitation of the method and it works in our favour, because we publish several hundred documentation pages.</p>
 
-      <h2 id="revisions">Scores the evaluator revised while running</h2>
+      <h2 id="revisions">Scores the evaluator revised before reporting</h2>
 
-      <p>Run 1's self-consistency pass, below, revised twenty scores downward. <strong>Ours is first because it is the one that matters for reading the rest:</strong> a scoring pass that only ever finds fault with other people's products is not a scoring pass.</p>
+      <p>Two of the rules exist to catch an evaluator flattering whoever documents best. Both fired on us.</p>
 
-      <p>Run 2 did the same thing harder and to us specifically: it cut our explainability score because we name eight picker signals without publishing their weights, and our resilience score because offline running needs the separate paid Windows product and the web app's behaviour on a dropped connection is undocumented. <strong>Its self-consistency and leader re-examination checks together cost us six points, taking us from 91.5 to 85.5</strong>, and they changed none of the top ten positions. Run 3 scored us lower again, at 78.5, chiefly by reading skill-balanced doubles as partial rather than full.</p>
+      <p><strong>The near-perfect-total rule cost us five points.</strong> The best-evidenced run first returned <strong>95.5 for ePegboard, with full marks on thirteen of fifteen criteria</strong> - and then, in its own words, treated that as "exactly the pattern the rule warns about: a rubric resolved entirely from one vendor's own material." It re-examined every one of those marks and cut two. <strong>95.5 became 90.5, and our lead over second place fell from 11.0 to 6.0.</strong></p>
+
+      <p>It also considered cutting a third and deliberately did not, because the same weakness applied to four rivals and downgrading only the leader would have been the unfair call. That reasoning is in the published output.</p>
+
+      <p><strong>Ours is listed first below</strong> because a scoring pass that only ever finds fault with other people's products is not a scoring pass. The parity rule then raised seven scores that had been written too harshly - six of them on explainability, where a line had to be drawn and then applied to everybody.</p>
 
       <div class="cmp-wrap">
         <table class="cmp-table">
@@ -185,73 +164,47 @@
 
       <p style="margin-top:18px">Read the "unresolved" rows as what they are: the evaluator could not establish the capability from that product's documentation. Several of those products may well have the feature.</p>
 
-      <h2 id="ours">What we corrected afterwards</h2>
+      <h2 id="ours">What we corrected before these runs</h2>
 
-      <p>The published run had defects of its own. We corrected four and disclosed one rather than adjusting it in our favour.</p>
+      <p>This is not our first attempt. An earlier set produced a defensible result on an indefensible set of inputs, and rather than publish the caveats we fixed the inputs and ran it again. Four things were wrong:</p>
 
       <ol>
-        <li><strong>Our score, 97.5 down to 95.5.</strong> The run scored our competitions criterion fully met. Our own documentation describes groups, round-robin, live standings and knockouts without stating that singles and team formats are not built, so an evaluator reading only our public pages could not score it correctly. Corrected to partial, two independent runs then agree at 95.5.</li>
-        <li><strong>A duplicated row.</strong> Airchy WebOS appeared twice in both tables. The run flagged the duplication itself, twice, and corrected it neither time.</li>
-        <li><strong>The sort order.</strong> The run ignored its own instruction to sort by score, placing a 38.5 above a 63.0.</li>
-        <li><strong>A missing product.</strong> Matchit is one of the thirty and appears in the retrieval log, but had no row in either score table.</li>
+        <li><strong>We told ourselves a real competitor did not exist.</strong> SmashHQ was in the candidate list from an old note with no address. Two of our searches found nothing, so we recorded it as fictional - and treated an earlier run that <em>had</em> found it as inventing evidence. It is a live product, and it scores in all three runs above.</li>
+        <li><strong>We aimed the whole exercise at the wrong page for Court Manager</strong> - its admin login rather than its product site - and then recorded that it published no product information. At the right address it places sixth, and the run calls its picker documentation the most complete configuration description of any candidate.</li>
+        <li><strong>Six sites we recorded as unreadable were working normally.</strong> They build their pages in the browser; our reader could not run JavaScript.</li>
+        <li><strong>Three real rivals were missing from the field</strong> - ShuttlSync, ShuttleStats and SportRevive - because research done for our own guide never reached the list we drew candidates from. ShuttlSync now places second in two of the three runs.</li>
       </ol>
 
-      <p><strong>Disclosed and not corrected:</strong> our resilience criterion is scored fully met while the evaluation's own weaknesses section qualifies the web-versus-offline trade-off. Correcting it would take us to 93.5. We left it because 95.5 is what two runs converge on independently once the one checkable error is removed, and swapping a converged figure for a chosen one is the failure this whole method exists to avoid. A future run should settle it.</p>
+      <p>The pattern in all four is the same: <strong>our tooling could not see something, and we recorded that as a fact about somebody else's product.</strong> Nothing from that earlier attempt is reported on this site. The prompt used here corrected every one of the four, and kept the rubric, the weights, the club profile and every scoring rule unchanged.</p>
 
-      <h2 id="retrieval">Retrieval log</h2>
+      <h2 id="retrieval">How pages were read</h2>
 
-      <p>Run 1's log, kept because it is the instructive one. Whether each product's page could actually be read. <strong>Ten could not be, and those ten were not scored</strong> - which with SmashHQ, supplied without an address and not located by that run, is why run 1 scored 19 of the 30. This log is the difference between "we could not check" and "it does not do this".</p>
+      <p>Whether each product's page could actually be read. This is the difference between "we could not check" and "it does not do this", and every run publishes it per candidate, naming the URLs it opened and whether each rendered, was blocked or was absent. They are in the outputs below.</p>
 
-      <p><strong>Run 2, reading pages through a browser, scored 27 of the 30.</strong> Only two defeated it: Court Manager, whose address serves an admin login form with no public product information, and QSENPAI, whose address returns a 404 with nothing deployed at it. Run 3 scored 22 and located SmashHQ, which neither of the others found.</p>
+      <p><strong>Two of the three runs read 32 of the 33 candidates.</strong> One name in the list is fabricated and resolves to nothing, so 32 is the ceiling.</p>
 
-      <p>We re-checked all ten by hand on 9 September 2026 rather than leaving them as a blank. <strong>Six return a page title and nothing else, because they build their pages in the browser</strong> - open them normally and they work fine. One declined the request with a 403, one app-store listing rate-limited us with a 429 and a second could not be retrieved, and one URL in our own records is simply wrong and returns a 404.</p>
+      <p><strong>The exception is the free-tier run, which reports honestly that it cannot execute JavaScript</strong> and fell back to a search index where a site returned a blank shell. It scored 30 of 33 - and it also produced <strong>the highest score for us of the three.</strong> Weakest retrieval, most flattering number. We are pointing that out about our own best result because it is the sort of thing a reader should be told rather than left to find.</p>
 
-      <p><strong>This was the biggest single weakness in the method, and it was systematically unfair to one kind of product.</strong> A modern single-page application is invisible to a reader that does not run JavaScript, no matter how good it is. CourtsFlow is the proof: run 1 could not read it at all, and run 2, reading the same site through a browser, scored it 40.5 and placed it mid-table. Nothing about the product changed between the two - only our reader.</p>
+      <p><strong>Why rendering matters this much.</strong> Several of these products build their pages in the browser and return only a page title to a plain fetch. A reader that does not run JavaScript sees an empty site and can easily record that as a product with no documentation - which is a false statement about a real business, and one we have made before. Requiring a real browser is the single biggest quality difference between this set of runs and our earlier attempt at it.</p>
 
-      <p><strong>The second set fixed it.</strong> Rendering was made a requirement, the wrong addresses were corrected and three missing rivals were added, and two of the three runs then scored 32 of 33 candidates. The exception is the free-tier run, which reports honestly that it could not execute JavaScript and fell back to a search index - <strong>and which also produced the highest score for us of any run in the second set.</strong> Weakest retrieval, most flattering number. That pairing has now happened twice.</p>
+      <h2 id="raw">The prompt and the unedited outputs</h2>
 
-      <div class="cmp-wrap">
-        <table class="cmp-table">
-          <thead><tr><th>Product</th><th>Result</th></tr></thead>
-          <tbody>
-            @foreach (var r in retrieval)
-            {
-              <tr><td>@r.Product</td><td>@r.Result</td></tr>
-            }
-          </tbody>
-        </table>
-      </div>
+      <p>Published as plain text, exactly as sent and returned, and not tidied. They contain the parts that do not suit us: the run that scores us 70.5, the run that cut our own score by five points before reporting, and the section concluding that most of our lead is documentation depth rather than demonstrated capability.</p>
 
-      <h2 id="raw">The prompts and the unedited outputs</h2>
-
-      <p>Published as plain text, exactly as sent and returned, and not tidied. They contain the parts that do not suit us: the 97.5 run 1 printed before we corrected it, the run that scores us 70.5, and the section in run 4 concluding that most of our lead is documentation depth rather than demonstrated capability.</p>
-
-      <p><strong>The second prompt keeps the rubric, the weights, the club profile and every scoring rule of the first, unchanged.</strong> Editing any of those would have made the two sets incomparable, which would have defeated the point of re-running. What changed was the field and how it was read.</p>
-
-      <h3 style="margin-top:22px">The second set - corrected inputs</h3>
       <ul>
-        <li><a href="/evidence/ai-comparison-2026-09-09/prompt-v4.txt">The second prompt, in full</a> - 33 candidates, corrected addresses, JavaScript rendering required</li>
-        <li><a href="/evidence/ai-comparison-2026-09-09/output-v4-opus.txt">Run 4, unedited</a> - Claude Opus 5, 32 of 33 scored. The most completely evidenced of the six</li>
-        <li><a href="/evidence/ai-comparison-2026-09-09/output-v4-free.txt">Run 5, unedited</a> - ChatGPT free tier. It could not execute JavaScript, says so itself, and ends part-way through its own report</li>
-        <li><a href="/evidence/ai-comparison-2026-09-09/output-v4-sol.txt">Run 6, unedited</a> - ChatGPT 5.6, 32 of 33 scored, and the harshest reader of the six</li>
+        <li><a href="/evidence/ai-comparison-2026-09-09/prompt-v4.txt">The prompt, in full</a> - 33 candidates, identical for all three runs, weights unaltered</li>
+        <li><a href="/evidence/ai-comparison-2026-09-09/output-v4-opus.txt">Claude Opus 5, unedited</a> - 32 of 33 scored, with per-candidate retrieval logs. The most completely evidenced of the three</li>
+        <li><a href="/evidence/ai-comparison-2026-09-09/output-v4-sol.txt">ChatGPT 5.6, unedited</a> - 32 of 33 scored, and the harshest reader of the three</li>
+        <li><a href="/evidence/ai-comparison-2026-09-09/output-v4-free.txt">ChatGPT free tier, unedited</a> - could not execute JavaScript, says so itself, and ends part-way through its own report</li>
       </ul>
 
-      <h3 style="margin-top:22px">The first set - superseded inputs, kept as history</h3>
-      <ul>
-        <li><a href="/evidence/ai-comparison-2026-09-09/prompt.txt">The first prompt, in full</a> - 30 candidates, one URL each</li>
-        <li><a href="/evidence/ai-comparison-2026-09-09/output.txt">Run 1, unedited</a> - static fetch, 19 of 30 scored</li>
-        <li><a href="/evidence/ai-comparison-2026-09-09/output-run2.txt">Run 2, unedited</a> - browser-rendered, 27 of 30 scored</li>
-        <li><a href="/evidence/ai-comparison-2026-09-09/output-run3.txt">Run 3, unedited</a> - a second vendor, 22 of 30 scored</li>
-        <li><a href="/evidence/ai-comparison-2026-09-09/court-manager-2026-09-10.txt">Court Manager, re-scored separately</a> - the correction that prompted the whole re-run</li>
-      </ul>
-
-      <p style="margin-top:18px"><strong>Two runs declared an interest of their own, unprompted.</strong> Both Claude runs noticed they were executing on a machine carrying an ePegboard project folder, said so at the top of their reports, and pointed the reader at the section quantifying how much of the leader's margin is documentation rather than capability. Neither read the folder. Both scored us lower than the runs that did not know.</p>
+      <p style="margin-top:18px"><strong>One run declared an interest of its own, unprompted.</strong> The Claude run noticed it was executing on a machine carrying an ePegboard project folder, said so at the top of its report, and pointed the reader at the section quantifying how much of the leader's margin is documentation rather than capability. It did not read the folder. It then cut our score by five points under its own near-perfect-total rule.</p>
 
       <h2 id="control">The product that does not exist</h2>
 
-      <p>The second set includes a <strong>fabricated candidate</strong> - a product name we invented, given a plausible address, and listed among the real ones. <strong>No run scored it.</strong> All three reported it unlocatable and moved on.</p>
+      <p>The candidate list includes a <strong>fabricated product</strong> - a product name we invented, given a plausible address, and listed among the real ones. <strong>No run scored it.</strong> All three reported it unlocatable and moved on.</p>
 
-      <p>That control exists because the first set had one that failed in the opposite direction. We listed SmashHQ with no address, could not find it in two searches, and concluded it was fictional - then treated a run that <em>did</em> find it as having invented the evidence. It is a real company with a live product. A name we made up ourselves cannot produce that error: if a run scores it, the run is unreliable, and there is no second possibility.</p>
+      <p>That control exists because our earlier attempt had one that failed in the opposite direction. We listed SmashHQ with no address, could not find it in two searches, and concluded it was fictional - then treated a run that <em>did</em> find it as having invented the evidence. It is a real company with a live product. A name we made up ourselves cannot produce that error: if a run scores it, the run is unreliable, and there is no second possibility.</p>
 
       <div class="guide-callout" style="margin-top:26px">
         <h4>If you make one of these products</h4>
