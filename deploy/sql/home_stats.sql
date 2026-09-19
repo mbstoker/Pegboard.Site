@@ -21,8 +21,16 @@ CREATE TABLE IF NOT EXISTS home_stats (
 
 -- Seed the current honest figures. ON CONFLICT DO NOTHING so re-running never
 -- clobbers a value the weekly bake has since updated.
--- Values refreshed 2026-07-31 (Option A: real clubs only, demo+template excluded,
+-- Values refreshed 2026-09-20 (Option A: real clubs only, demo+template excluded,
 -- migrated legacy history included). Raw totals; the site rounds DOWN for display.
 INSERT INTO home_stats (id, games_played, sessions_run, players_rated, source, updated_at_utc)
-VALUES (1, 36440, 1276, 2600, 'seed', now())
+VALUES (1, 44705, 1617, 4193, 'seed', now())
 ON CONFLICT (id) DO NOTHING;
+
+-- Refreshing a LIVE row is a separate statement: the INSERT above is a cold-start seed and
+-- DOES NOTHING where row 1 already exists. On an environment already carrying figures, run:
+--   UPDATE home_stats
+--      SET games_played = 44705, sessions_run = 1617, players_rated = 4193,
+--          source = 'manual-2026-09-20', fetched_at_utc = now(), updated_at_utc = now()
+--    WHERE id = 1;
+-- The site picks the new figures up on the next request; no redeploy.
