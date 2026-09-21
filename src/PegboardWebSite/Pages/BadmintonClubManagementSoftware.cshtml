@@ -24,6 +24,26 @@
   </div>
 </section>
 
+@* PRODUCT SHOT. This page carried the category term with no image on it at all - a visitor
+   landing from search could read what the software does but never see it, while every sibling
+   feature page leads with a screenshot. Existing assets, no new capture needed. *@
+<section style="padding:36px 0 0">
+  <div class="wrap">
+    <div class="shot">
+      <div class="bar show">
+        <span class="dots"><i></i><i></i><i></i></span>
+        <span class="url">play.epegboard.com</span>
+      </div>
+      @* height:auto because .shot img sets width:100% only - without it the height attribute
+         (there so the browser reserves the space and the page does not shift) wins and the
+         screenshot stretches. *@
+      <img src="/img/site-dashboard.png" asp-append-version="true" width="1350" height="700" style="height:auto"
+           alt="The ePegboard session board - four badminton courts in play showing the pairs on each, the queue of members waiting, and the next balanced game ready to send on">
+    </div>
+    <p style="text-align:center;margin-top:14px;color:var(--muted-2);font-size:.95rem">The live session board - every court, who is waiting, and the next game, on one screen.</p>
+  </div>
+</section>
+
 <!-- WHAT IT DOES: maps search language to features -->
 <section style="padding-top:54px">
   <div class="wrap">
@@ -35,6 +55,7 @@
     <div class="hub-grid">
 
       <a class="feat-card" href="/features/club-nights">
+        <div class="feat-thumb"><img src="/img/pick-explanation.png" asp-append-version="true" loading="lazy" width="896" height="204" alt="A pick explanation - the suggested game, chosen as the best of the candidates considered, with the reasons it was picked" style="object-fit:contain;object-position:center;padding:0 10px"></div>
         <div class="feat-body">
           <h4>Court scheduling &amp; game picking</h4>
           <p>Smart game selection keeps every court busy with balanced, varied games matched on player level, rest time and who has played whom - and shows why each game was picked.</p>
@@ -43,6 +64,7 @@
       </a>
 
       <a class="feat-card" href="/features/club-management">
+        <div class="feat-thumb"><img src="/img/attendance-trends.png" asp-append-version="true" loading="lazy" width="2380" height="1800" alt="Attendance trends - members grouped as active, lapsing, dormant and new, with a list of who to reach out to" style="object-position:top center"></div>
         <div class="feat-body">
           <h4>Club administration &amp; reports</h4>
           <p>Attendance trends, payment tracking, member records and one-click CSV exports - the admin handled, so you spend less time on the spreadsheet and more time playing.</p>
@@ -53,6 +75,7 @@
       </a>
 
       <a class="feat-card" href="/features/competitions">
+        <div class="feat-thumb"><img src="/img/standings-card.png" asp-append-version="true" loading="lazy" width="804" height="290" alt="Live competition standings - a group table with points, games won and point difference" style="object-fit:contain;object-position:center;background:#fff"></div>
         <div class="feat-body">
           <h4>Tournament &amp; competition software</h4>
           <p>Run handicap doubles tournaments without spreadsheets - balanced pairs, group stages, knockout rounds and live standings, with handicaps calculated automatically.</p>
@@ -61,6 +84,7 @@
       </a>
 
       <a class="feat-card" href="/features/league-team-support">
+        <div class="feat-thumb"><img src="/img/partnerships-card.png" asp-append-version="true" loading="lazy" width="763" height="381" alt="Partnership analytics - doubles pairs ranked by how they perform against expectation, each with a verdict and a confidence level" style="object-fit:contain;object-position:center;background:#fff"></div>
         <div class="feat-body">
           <h4>League team selection</h4>
           <p>Find the doubles partnerships that actually work from real club-night data, and pick league teams on evidence rather than hunches.</p>
