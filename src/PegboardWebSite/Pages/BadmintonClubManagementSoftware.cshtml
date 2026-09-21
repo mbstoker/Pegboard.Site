@@ -6,6 +6,9 @@
     // Its own share card rather than the site-wide fallback, because this is the page the
     // category search lands on and the one most likely to be pasted into a committee chat.
     // Regenerate with: node tools/og-cards/make-og-cards.mjs badminton-club-management-software
+    // A regenerated card at the SAME filename will not show up on anything that has already
+    // scraped this page - Facebook and LinkedIn cache OG images by URL more or less forever.
+    // Re-scrape it in their debuggers after a change, or give the new card a new filename.
     ViewData["OgImage"] = "/Images/og-badminton-club-management-software.png";
 }
 
@@ -42,9 +45,9 @@
          (there so the browser reserves the space and the page does not shift) wins and the
          screenshot stretches. *@
       <img src="/img/site-dashboard.png" asp-append-version="true" width="1350" height="700" style="height:auto"
-           alt="The ePegboard session board - four badminton courts in play showing the pairs on each, the queue of members waiting, and the next balanced game ready to send on">
+           alt="The ePegboard session board - three badminton courts in play, each showing its two pairs, its running time and the score; a fourth court free with a Pick and Start button; and below them the members waiting to be called on">
     </div>
-    <p style="text-align:center;margin-top:14px;color:var(--muted-2);font-size:.95rem">The live session board - every court, who is waiting, and the next game, on one screen.</p>
+    <p style="text-align:center;margin-top:14px;color:var(--muted-2);font-size:.95rem">The live session board - every court, the scores, and who is waiting, on one screen.</p>
   </div>
 </section>
 

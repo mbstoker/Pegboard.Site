@@ -15,12 +15,17 @@
     // absolutised here, because og:image must be fully qualified and only the layout knows
     // baseUrl. Without this a page that sets a path emits a relative og:image, which every
     // scraper drops silently - the share then falls back to nothing, not to the default card.
-    var ogImageSet = ViewData["OgImage"] as string;
-    var ogImage = string.IsNullOrWhiteSpace(ogImageSet)
-        ? $"{baseUrl}/Images/og-image.png"
-        : (ogImageSet.StartsWith("http", StringComparison.OrdinalIgnoreCase)
-            ? ogImageSet
-            : $"{baseUrl}/{ogImageSet.TrimStart('/')}");
+    //
+    // Uri resolution rather than string prefixing. A StartsWith("http") test mangles the
+    // protocol-relative form "//cdn/card.png" into "{baseUrl}/cdn/card.png" and mis-reads any
+    // filename that merely begins http; Uri gets "/path", "path", "//host/path" and a full URL
+    // all right, per RFC 3986. A value that will not resolve falls back to the default card,
+    // because a layout that throws takes down every page on the site.
+    var ogImageSet = (ViewData["OgImage"] as string)?.Trim();
+    var ogImage = !string.IsNullOrEmpty(ogImageSet)
+        && Uri.TryCreate(new Uri($"{baseUrl}/"), ogImageSet, out var ogImageUri)
+            ? ogImageUri.AbsoluteUri
+            : $"{baseUrl}/Images/og-image.png";
 
     // Sitewide Organization entity for search engines / AI crawlers. Per-page JSON-LD
     // (e.g. SoftwareApplication, FAQPage) is injected via the optional "Head" section.

@@ -30,7 +30,7 @@
 import { createRequire } from 'node:module';
 import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
-import { dirname, join, resolve } from 'node:path';
+import { dirname, extname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -50,8 +50,9 @@ const H = 630;
  * subline   - what it does, in one line. Must not outrun the product: no "payments" (we
  *             track them, we do not collect them) and no booking - see the comment in
  *             Pages/BadmintonClubManagementSoftware.cshtml and /compare.
- * shot      - one of OUR screenshots. cropTop keeps the informative part when the shot is
- *             taller than the panel, instead of squashing the whole frame into a letterbox.
+ * shot      - one of OUR screenshots. It is set to the panel's width and cropped by the
+ *             panel's overflow, so the TOP of the shot is what survives - check a new one
+ *             does not get cut through a row of names.
  */
 const CARDS = [
   {
@@ -117,9 +118,16 @@ function template({ headline, subline, shotUrl, markUrl }) {
 </div></body></html>`;
 }
 
+const MEDIA_TYPES = { '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp' };
+
 async function dataUri(file) {
+  // The media type comes from the extension, not a hard-coded image/png: a data: URL is NOT
+  // content-sniffed, so a jpg served as image/png decodes to nothing and the panel renders
+  // empty with the script still exiting 0.
+  const type = MEDIA_TYPES[extname(file).toLowerCase()];
+  if (!type) throw new Error(`${file}: unsupported image type. Known: ${Object.keys(MEDIA_TYPES).join(', ')}`);
   const bytes = await readFile(file);
-  return `data:image/png;base64,${bytes.toString('base64')}`;
+  return `data:${type};base64,${bytes.toString('base64')}`;
 }
 
 async function resolvePlaywright() {
@@ -141,10 +149,14 @@ async function resolvePlaywright() {
 
 async function main() {
   const wanted = process.argv.slice(2);
-  const cards = wanted.length ? CARDS.filter((c) => wanted.includes(c.slug)) : CARDS;
-  if (!cards.length) {
-    throw new Error(`no card matches ${wanted.join(', ')}. Known: ${CARDS.map((c) => c.slug).join(', ')}`);
+  // EVERY argument is validated, not just "did any of them match". Rejecting only the
+  // all-miss case means `make-og-cards.mjs good-slug typo-slug` rebuilds one card, says
+  // nothing about the other and exits 0, which reads as a full rebuild.
+  const unknown = wanted.filter((slug) => !CARDS.some((c) => c.slug === slug));
+  if (unknown.length) {
+    throw new Error(`unknown card(s): ${unknown.join(', ')}. Known: ${CARDS.map((c) => c.slug).join(', ')}`);
   }
+  const cards = wanted.length ? CARDS.filter((c) => wanted.includes(c.slug)) : CARDS;
 
   const { chromium } = await resolvePlaywright();
   const browser = await chromium.launch();
@@ -158,21 +170,47 @@ async function main() {
   // screenshot should have been, and no error anywhere.
   const markUrl = await dataUri(join(imagesDir, 'epegboard-figure-logo.png'));
 
-  for (const card of cards) {
-    const shotUrl = await dataUri(card.shot); // throws here if the shot has moved
-    await page.setContent(template({ ...card, shotUrl, markUrl }), { waitUntil: 'networkidle' });
-    await page.evaluate(() => document.fonts.ready);
+  try {
+    for (const card of cards) {
+      const shotUrl = await dataUri(card.shot); // throws here if the shot has moved
+      await page.setContent(template({ ...card, shotUrl, markUrl }), { waitUntil: 'networkidle' });
+      await page.evaluate(() => document.fonts.ready);
 
-    // If Google Fonts did not answer, the card silently falls back to a system face and
-    // stops being ours. Better to fail than to ship an off-brand card nobody re-checks.
-    const brandFont = await page.evaluate(() => document.fonts.check('800 54px "Plus Jakarta Sans"'));
-    if (!brandFont) throw new Error('Plus Jakarta Sans did not load - check network access to fonts.googleapis.com');
+      // A readable file is not a decodable image. A truncated or mislabelled PNG still
+      // inlines fine and still screenshots fine - as a blank panel, at exit code 0. Assert
+      // every image actually painted, which is the only thing that distinguishes the two.
+      const blank = await page.evaluate(() =>
+        [...document.images].filter((i) => !i.complete || i.naturalWidth === 0).length);
+      if (blank) throw new Error(`${card.slug}: ${blank} image(s) did not decode - the card would have a blank panel`);
 
-    await page.screenshot({ path: card.out, type: 'png' });
-    console.log(`${card.slug} -> ${card.out} (${W}x${H})`);
+      // If Google Fonts did not answer, the card silently falls back to a system face and
+      // stops being ours. Better to fail than to ship an off-brand card nobody re-checks.
+      //
+      // PRESENT **AND** LOADED - both halves are needed. document.fonts.check() returns TRUE
+      // when no matching FontFace exists at all, so a stylesheet that never arrived (no
+      // network, DNS block, proxy) sails straight through it. That is the broad failure this
+      // guard is for, and checking alone missed it: measured, a run with fonts.googleapis.com
+      // blocked gave {present: 0, check: true} and wrote a Segoe UI card with exit code 0.
+      // Blocking only the .woff2 gives {present: 12, check: false}. Requiring both catches both.
+      const font = await page.evaluate(() => ({
+        present: [...document.fonts].filter((f) => f.family === 'Plus Jakarta Sans').length,
+        loaded: document.fonts.check('800 54px "Plus Jakarta Sans"'),
+      }));
+      if (!font.present || !font.loaded) {
+        throw new Error(
+          `Plus Jakarta Sans did not load (faces present: ${font.present}, loaded: ${font.loaded}) - ` +
+          'check network access to fonts.googleapis.com. Refusing to write an off-brand card.'
+        );
+      }
+
+      await page.screenshot({ path: card.out, type: 'png' });
+      console.log(`${card.slug} -> ${card.out} (${W}x${H})`);
+    }
+  } finally {
+    // In a finally, not after the loop: every guard above throws, and process.exit(1) in
+    // the catch at the bottom would otherwise leave a Chromium process behind each time.
+    await browser.close();
   }
-
-  await browser.close();
 }
 
 main().catch((err) => {
