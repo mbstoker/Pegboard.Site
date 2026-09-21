@@ -23,20 +23,24 @@ public class HomeStats
 /// Seed / ultimate-fallback values. Used to (a) seed the store on first run and (b) render
 /// the page if the store is unreachable, so the stats never flicker to zero or blank.
 ///
-/// Refreshed 2026-07-31 from prod (pegboard.prod) on the "Option A" definition Mike chose:
+/// Refreshed 2026-09-20 from prod (pegboard.prod) on the "Option A" definition Mike chose:
 /// real clubs only (demo + template clubs EXCLUDED) across all-time, INCLUDING the migrated
-/// legacy history — i.e. all badminton run through Pegboard's lineage. (The previous 33k/1.1k/2k
-/// were the frozen day-one seed; the weekly bake never ran because the /api/stats endpoint it
-/// fetches from was never built — see HomeStatsFetcher.) Raw totals; StatsFormatter rounds DOWN,
-/// so these render 36,000+ / 1,200+ / 2,600+.
+/// legacy history — i.e. all badminton run through Pegboard's lineage. Raw totals;
+/// StatsFormatter rounds DOWN, so these render 44,000+ / 1,600+ / 4,100+.
+/// (Previous refreshes: 33k/1.1k/2k day-one seed, then 36440/1276/2600 on 2026-07-31.)
+///
+/// These are still refreshed BY HAND, seven weeks apart, because the weekly bake has never
+/// run: the /api/stats endpoint it fetches from was never built — see HomeStatsFetcher.
+/// Note this seed only applies to a cold store (ON CONFLICT DO NOTHING); the live figures
+/// come from the home_stats row, which a prod UPDATE must set separately.
 /// </summary>
 public static class HomeStatsDefaults
 {
     public static HomeStats Seed() => new()
     {
-        GamesPlayed = 36440,
-        SessionsRun = 1276,
-        PlayersRated = 2600,
+        GamesPlayed = 44705,
+        SessionsRun = 1617,
+        PlayersRated = 4193,
         Source = "seed",
         FetchedAtUtc = null
     };
