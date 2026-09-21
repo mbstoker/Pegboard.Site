@@ -13,7 +13,15 @@
     // Lowercase the path so casing variants (/Download vs /download) share one canonical —
     // otherwise each self-canonicalises to its own casing and Google clusters them as duplicates.
     var canonicalUrl = ViewData["CanonicalUrl"] as string ?? $"{baseUrl}{(Context.Request.Path.Value ?? "/").ToLowerInvariant()}";
-    var ogImage = ViewData["OgImage"] as string ?? $"{baseUrl}/Images/og-image.png";
+    // Same contract as _LayoutMarketing: a page may set OgImage as a site-relative path and
+    // it is absolutised here. Kept identical in both layouts so a page cannot depend on which
+    // one it happens to render under.
+    var ogImageSet = ViewData["OgImage"] as string;
+    var ogImage = string.IsNullOrWhiteSpace(ogImageSet)
+        ? $"{baseUrl}/Images/og-image.png"
+        : (ogImageSet.StartsWith("http", StringComparison.OrdinalIgnoreCase)
+            ? ogImageSet
+            : $"{baseUrl}/{ogImageSet.TrimStart('/')}");
 }
 <!DOCTYPE html>
 <html lang="en">

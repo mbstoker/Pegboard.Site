@@ -3,6 +3,10 @@
     Layout = "_LayoutMarketing";
     ViewData["Title"] = "Badminton club management software";
     ViewData["Description"] = "ePegboard is badminton club management and court scheduling software: smart game picking, fair balanced games, live player ratings, attendance and payments, handicap competitions and league-team selection. Free for clubs.";
+    // Its own share card rather than the site-wide fallback, because this is the page the
+    // category search lands on and the one most likely to be pasted into a committee chat.
+    // Regenerate with: node tools/og-cards/make-og-cards.mjs badminton-club-management-software
+    ViewData["OgImage"] = "/Images/og-badminton-club-management-software.png";
 }
 
 <!-- HERO -->
