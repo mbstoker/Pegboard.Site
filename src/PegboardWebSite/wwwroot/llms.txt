@@ -7,7 +7,7 @@
 - Platform: web app (any modern browser); optional Windows desktop app for venues with unreliable internet
 - Pricing: the web app is free for clubs - the full club-night workflow at no cost, no card needed. Optional community-supporter contributions help cover running costs but never gate features. Very large or multi-site clubs, leagues and one-off competitions can get in touch. The Windows desktop app is a separate paid product for offline venues.
 - Sign up: https://play.epegboard.com/signup
-- Made by: MBS Software Limited
+- Made by: Mike Stoker trading as ePegboard (sole trader, UK)
 
 ## How it works
 ePegboard is built on a single player rating system. Ratings reflect how players perform against expectation, not just who won, and update after every game. That rating powers smart game picking, handicap tournaments, partnership analytics and league-team selection. Every game pick is explained on screen, and court-time fairness is tracked across the night.
