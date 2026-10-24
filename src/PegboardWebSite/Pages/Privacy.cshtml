@@ -18,12 +18,12 @@
         <ul>
             <li>
                 <strong>What we store.</strong><br />
-                Member details (names, optional contact details, optional photos for in-app identification), session history, game results, payment tracking, and ratings. Stored on our servers, scoped per-club. Each club's data is isolated and accessible only via authenticated login by the club's authorised users.
+                Member details (names, optional contact details, optional photos for in-app identification), session history, game results, payment tracking, and ratings. Stored separately for each club. Each club's data is isolated and accessible only via authenticated login by the club's authorised users.
             </li>
 
             <li>
                 <strong>Where we store it.</strong><br />
-                On a server we rent from IONOS, in the UK or the EU. Encrypted in transit (HTTPS). Backed up daily; backups retained for 60 days.
+                On a server we rent from IONOS, in the UK or the EU. IONOS provides the server as our processor and acts only on our instructions. Encrypted in transit (HTTPS). Backed up daily; backups retained for 60 days.
             </li>
 
             <li>
@@ -33,7 +33,7 @@
                     <li><strong>IONOS</strong> delivers the web app's emails, such as session emails, invites and sign-in links. It processes the recipient's email address and what the email says, which can include a player's name and the club's name.</li>
                     <li><strong>Stripe</strong> takes payments, if your club takes payments online, and receives what it needs to do that (see <a href="#payments">Club payments</a>).</li>
                 </ul>
-                The web app runs on a server we rent from IONOS, in the UK or the EU. IONOS provides the server as our processor and acts only on our instructions. We do not share your club's data with anyone else.
+                IONOS also provides the server the web app runs on (see above). We do not share your club's data with anyone else, unless the law requires us to.
             </li>
 
             <li>
@@ -57,7 +57,7 @@
 
             <li>
                 <strong>How long payment records are kept.</strong><br />
-                Clubs must keep their accounts for six years, so payment records are kept for six years after the end of the club's financial year in which the last payment they relate to was made. Then the names and emails of people who paid by a link are removed; the amounts and dates stay.
+                Clubs must keep their accounts for six years, so payment records are kept for six years after the end of the club's financial year in which the last payment they relate to was made. Then the names and emails of people who paid by a link are removed. Members' payment records stay with their member record for as long as the club keeps it.
             </li>
 
             <li>
@@ -117,7 +117,7 @@
 
         <h3 class="mt-5">📍 Data storage summary</h3>
         <p>
-            <strong>Web app:</strong> data is hosted on our infrastructure, encrypted in transit, scoped per-club.<br />
+            <strong>Web app:</strong> data is held on the server we rent from IONOS, encrypted in transit, and kept separate for each club.<br />
             <strong>Desktop app:</strong> data is stored locally on your club's own computer or device; we do not host or have access to your session or member data.
         </p>
     </div>
