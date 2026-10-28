@@ -22,7 +22,8 @@ namespace PegboardWebSite.Services
 
         private string ConnectionString => _config.GetConnectionString("PegboardDb")!;
 
-        public void Insert(TrackedRequestModel request)
+        // Virtual so tests can record what would be written without a database.
+        public virtual void Insert(TrackedRequestModel request)
         {
             try
             {

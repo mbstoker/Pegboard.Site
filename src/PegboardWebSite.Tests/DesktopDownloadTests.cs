@@ -212,4 +212,43 @@ public sealed class DesktopDownloadTests : IClassFixture<TrackApiFactory>, IDisp
         Assert.Equal(4096, res.Content.Headers.ContentLength);
         Assert.Empty(await res.Content.ReadAsByteArrayAsync());
     }
+
+    // --- Download tracking: the daily download check uses HEAD, so HEAD must not count.
+
+    [Fact]
+    public async Task Head_records_no_download_and_get_records_one()
+    {
+        Publish("1.3.34");
+        var recorder = new RecordingTrackedRequests();
+        var client = _factory.WithWebHostBuilder(b => b.ConfigureTestServices(s =>
+            {
+                s.AddSingleton(new DesktopInstallerCatalog(_dir));
+                s.AddSingleton<TrackedRequestRepository>(recorder);
+            }))
+            .CreateClient(new WebApplicationFactoryClientOptions { AllowAutoRedirect = false });
+
+        var head = await client.SendAsync(new HttpRequestMessage(HttpMethod.Head, "/downloadfinal?id=check&v=1.3.34"));
+        Assert.Equal(HttpStatusCode.OK, head.StatusCode);
+        Assert.Empty(recorder.Inserted);
+
+        var get = await client.GetAsync("/downloadfinal?id=club-42&v=1.3.34");
+        Assert.Equal(HttpStatusCode.OK, get.StatusCode);
+        var row = Assert.Single(recorder.Inserted);
+        Assert.Equal("ePegboardSetup_1.3.34.msi", row.RequestedResource);
+        Assert.Equal("club-42", row.TrackingId);
+    }
+
+    /// <summary>Records inserts in memory instead of writing to PostgreSQL.</summary>
+    private sealed class RecordingTrackedRequests : TrackedRequestRepository
+    {
+        private readonly List<TrackedRequestModel> _inserted = new();
+
+        public RecordingTrackedRequests()
+            : base(new Microsoft.Extensions.Configuration.ConfigurationBuilder().Build(),
+                   Microsoft.Extensions.Logging.Abstractions.NullLogger<TrackedRequestRepository>.Instance) { }
+
+        public IReadOnlyList<TrackedRequestModel> Inserted { get { lock (_inserted) return _inserted.ToList(); } }
+
+        public override void Insert(TrackedRequestModel request) { lock (_inserted) _inserted.Add(request); }
+    }
 }
