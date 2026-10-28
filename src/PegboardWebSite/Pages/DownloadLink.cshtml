@@ -12,7 +12,21 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
 </head>
 <body class="container py-5">
+    @if (Model.VersionToUse == null)
+    {
+    <h1 class="mb-4">The desktop download is not available</h1>
+
+    <div class="alert alert-danger" data-testid="download-unavailable">@Model.Unavailable</div>
+
+    <div class="alert alert-info">
+        In the meantime, the web app at <a href="https://play.epegboard.com" target="_blank" rel="noopener">play.epegboard.com</a> runs in any browser on any device. Free for clubs.
+    </div>
+    }
+    else
+    {
     <h1 class="mb-4">Your desktop download is almost ready...</h1>
+
+    <p class="lead" data-testid="download-version">ePegboard for Windows, version @Model.VersionToUse</p>
 
     <div class="alert alert-info">
         <strong>Prefer no install?</strong> The web app at <a href="https://play.epegboard.com" target="_blank" rel="noopener">play.epegboard.com</a> runs in any browser on any device. Free for clubs.
@@ -33,8 +47,9 @@
 
     <form method="get" action="/downloadfinal">
         <input type="hidden" name="id" value="@Model.Id" />
-        <input type="hidden" name="version" value="@Model.VersionToUse" />
+        <input type="hidden" name="v" value="@Model.VersionToUse" />
         <button type="submit" class="btn btn-success btn-lg">Download Now</button>
     </form>
+    }
 </body>
 </html>

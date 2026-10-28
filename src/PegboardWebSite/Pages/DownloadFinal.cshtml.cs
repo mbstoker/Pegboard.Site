@@ -3,22 +3,31 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using PegboardWebSite.Services;
 using PegboardWebSite;
-using System.Runtime.CompilerServices; // Needed for Session extensions
 
+/// <summary>
+/// Serves the Windows installer. <c>v</c> is the version parameter, and it is the name the
+/// DownloadLink form posts (ado:2173: the form used to post <c>version</c>, which this handler
+/// never bound, so every request silently fell through to "latest").
+///
+/// No <c>v</c> = the latest installer present. A supplied <c>v</c> is served exactly or
+/// refused with a 404 that names the version; it never falls back to the latest.
+/// HEAD requests are answered (so the download check can verify the file without pulling
+/// it) but are not recorded as downloads.
+/// </summary>
 public class DownloadFinalModel : PageModel
 {
-    TrackedRequestRepository _requestRepository;
-    private readonly IWebHostEnvironment _env;
+    private readonly TrackedRequestRepository _requestRepository;
+    private readonly DesktopInstallerCatalog _catalog;
     private readonly ILogger _logger;
 
-    public DownloadFinalModel(IWebHostEnvironment env, TrackedRequestRepository requestRepository, ILogger<DownloadFinalModel> logger)
+    public DownloadFinalModel(DesktopInstallerCatalog catalog, TrackedRequestRepository requestRepository, ILogger<DownloadFinalModel> logger)
     {
-        _env = env;
+        _catalog = catalog;
         _requestRepository = requestRepository;
         _logger = logger;
     }
 
-    public async Task<IActionResult> OnGetAsync(string id, string? v)
+    public IActionResult OnGet(string? id, string? v)
     {
         string? trackingId = id;
         if (!string.IsNullOrEmpty(trackingId))
@@ -30,67 +39,29 @@ public class DownloadFinalModel : PageModel
             trackingId = HttpContext.Session.GetString("TrackingId");
         }
 
-        var version = string.IsNullOrEmpty(v) ? "latest" : v;
-        var filePath = GetFilePath(version);
-
-        if (filePath == null)
+        var lookup = _catalog.Find(v);
+        if (lookup.Status != InstallerLookupStatus.Found || lookup.Installer == null || !System.IO.File.Exists(lookup.Installer.FullPath))
         {
-            return NotFound("Requested version not found.");
+            _logger.LogWarning("Desktop download refused: {Status} (requested {Requested}, latest {Latest})",
+                lookup.Status, lookup.Requested ?? (string.IsNullOrEmpty(v) ? "latest" : "invalid"), lookup.Latest?.Version ?? "none");
+
+            var status = lookup.Status == InstallerLookupStatus.InvalidVersion
+                ? StatusCodes.Status400BadRequest
+                : StatusCodes.Status404NotFound;
+            var message = lookup.Status == InstallerLookupStatus.Found
+                ? new InstallerLookup(InstallerLookupStatus.NoneAvailable, null, null, null).Explanation
+                : lookup.Explanation;
+            return new ContentResult { StatusCode = status, Content = message, ContentType = "text/plain; charset=utf-8" };
         }
 
-        string fileName = Path.GetFileName(filePath);
+        var installer = lookup.Installer;
 
-        _requestRepository.Insert(new TrackedRequestModel() { RequestedResource = fileName, TrackingId = trackingId, Timestamp = DateTime.Now, SourceIP = RequestHelper.GetClientIp(HttpContext) });
-
-        if (!System.IO.File.Exists(filePath))
-            return NotFound("Requested version not found.");
-
-        LogFinalDownload(trackingId, version);
-
-        var contentType = "application/octet-stream";
-        return PhysicalFile(filePath, contentType, fileName);
-    }
-
-    private void LogFinalDownload(string? trackingId, string version)
-    {
-        var log = $"{DateTime.UtcNow:u} | File served | ID: {trackingId} | Version: {version}";
-        _logger.LogInformation(log);
-    }
-
-    private string GetFilePath(string version)
-    {
-        var dir = Path.Combine(_env.WebRootPath, "downloads");
-
-        string filePath;
-        if (version == "latest")
+        if (HttpMethods.IsGet(Request.Method))
         {
-            var files = Directory.GetFiles(dir, "ePegboardSetup_*.msi");
-            Version highest = null;
-            string latestFile = null;
-
-            foreach (var file in files)
-            {
-                var name = Path.GetFileNameWithoutExtension(file); // ePegboardSetup_1.3.0
-                var versionPart = name.Substring("ePegboardSetup_".Length);
-
-                if (Version.TryParse(versionPart, out Version parsedVersion))
-                {
-                    if (highest == null || parsedVersion > highest)
-                    {
-                        highest = parsedVersion;
-                        latestFile = Path.GetFileName(file);
-                    }
-                }
-            }
-
-            if (latestFile == null)
-                return null;
-
-            return Path.Combine(dir, latestFile);
+            _requestRepository.Insert(new TrackedRequestModel() { RequestedResource = installer.FileName, TrackingId = trackingId, Timestamp = DateTime.Now, SourceIP = RequestHelper.GetClientIp(HttpContext) });
+            _logger.LogInformation("{Time:u} | File served | ID: {TrackingId} | Version: {Version}", DateTime.UtcNow, trackingId, installer.Version);
         }
-        else
-        {
-            return Path.Combine(dir, $"ePegboardSetup_{version}.msi");
-        }
+
+        return PhysicalFile(installer.FullPath, DesktopInstallerCatalog.MsiContentType, installer.FileName);
     }
 }

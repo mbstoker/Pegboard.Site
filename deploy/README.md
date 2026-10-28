@@ -62,3 +62,26 @@ overwriting it on deploy is safe.
 - **URL Rewrite** module — required by every rewrite rule in `web.config`.
 - **ARR** with the proxy enabled — required only by the club reverse-proxy rules
   (the `/live` redirect needs Rewrite alone). See `enable-arr-club-proxy.ps1`.
+
+## The Windows desktop installer is not part of this deploy
+
+`/downloadlink` and `/downloadfinal` serve the desktop installer from
+`wwwroot\downloads` on the server (`C:\sites\pegboard.site\wwwroot\downloads` in
+production, `C:\sites\www.staging\wwwroot\downloads` on staging). The site offers
+the highest `ePegboardSetup_{version}.msi` present, serves an older one only when
+asked for it by number (`?v=1.3.34`), and says so when a version is not there. There
+is no version setting anywhere in this repository: the files are the record.
+
+- **Installers never go into this repository** (`.gitignore` refuses them) and are
+  not in the site publish. A site deploy overlays, so it leaves them in place.
+- **They are put there by the desktop repo's
+  [`Setup/publish-installer.ps1`](https://github.com/mbstoker/Pegboard/blob/Release/1.3.26/Setup/publish-installer.ps1)**,
+  which names the build `ePegboardSetup_{ProductVersion}.msi` from the MSI's own
+  version. Staging first, then production, as for a site deploy.
+- **The check** is `node .agents/skills/_shared/desktop-download-check.mjs` in the
+  [venture repository](https://github.com/mbstoker/PegboardRoot/blob/master/.agents/skills/_shared/desktop-download-check.mjs)
+  (`--base https://www.staging.epegboard.com` for staging). Run it after either a
+  site deploy or an installer publish. It sends no email.
+
+(ado:2173: the download 404'd from at least 2026-07-25 because no correctly named
+installer had ever been placed on the server.)

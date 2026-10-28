@@ -368,3 +368,7 @@ FodyWeavers.xsd
 !.env.example
 deploy/.env
 deploy/secrets.*
+
+# --- Desktop installers are published to the server, never committed (ado:2173) ---
+# They reach wwwroot/downloads through the desktop repo's Setup/publish-installer.ps1.
+src/PegboardWebSite/wwwroot/[Dd]ownloads/*.msi
