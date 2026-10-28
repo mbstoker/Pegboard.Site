@@ -22,6 +22,11 @@ public class Program
         builder.Services.AddTransient<TrackedRequestRepository>();
         builder.Services.AddTransient<EmailService>();
 
+        // Windows desktop installers present in wwwroot/downloads (ado:2173). The files are
+        // the only record of what can be served; see Services/DesktopInstallerCatalog.
+        builder.Services.AddSingleton(sp => new DesktopInstallerCatalog(
+            Path.Combine(sp.GetRequiredService<IWebHostEnvironment>().WebRootPath, "downloads")));
+
         // Homepage social-proof stats: weekly bake into a Postgres store, rendered from the
         // store (never a per-request call to the app). See Services/StatsRefreshService.
         builder.Services.AddTransient<HomeStatsRepository>();
