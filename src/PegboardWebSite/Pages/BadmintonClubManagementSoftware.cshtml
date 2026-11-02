@@ -1,8 +1,26 @@
 @page "/badminton-club-management-software"
+@using PegboardWebSite.Services
 @{
     Layout = "_LayoutMarketing";
-    ViewData["Title"] = "Badminton club management software";
-    ViewData["Description"] = "ePegboard is badminton club management and court scheduling software: smart game picking, fair balanced games, live player ratings, attendance and payments, handicap competitions and league-team selection. Free for clubs.";
+    // ado:1898. This URL used to pitch ePegboard as "badminton club management software", which
+    // it is not in the full sense - we do not run membership, collect subs or book courts. It is
+    // now the product-neutral CATEGORY page: what the field covers, which kind of tool does which
+    // job, and where a club-night tool sits. Keep the URL: it carries the site's largest share of
+    // search impressions. Never redirect it; if a page is ever consolidated it is the other one.
+    //
+    // Query split (decided on the 2026-09-12 query-filtered Search Console check, recorded in
+    // Marketing/PublicWebsite/search-performance.md):
+    //  - this page owns "badminton club management software / app" and the two court-management
+    //    terms, where it runs unopposed;
+    //  - "badminton club software" is the shortlist guide's (/guides/best-badminton-club-night-software,
+    //    the page Google already ranks best for it). This page links there and does not target it.
+    //  - /features/club-management is ePegboard's own attendance, payments and reports page.
+    //
+    // Sourcing rule is /compare/method: every claim about a named product below comes from that
+    // product's own site, linked, with the date it was read. Unverifiable claims are left out.
+    ViewData["Title"] = "Badminton club management software: what it covers and which tool does which job";
+    ViewData["Description"] = "Badminton club management software covers membership, subs, court booking, competitions and the club night itself. What each job needs, which kinds of product do it, and what to ask before your committee chooses.";
+    ViewData["OgTitle"] = "Badminton club management software: what it covers";
     // Its own share card rather than the site-wide fallback, because this is the page the
     // category search lands on and the one most likely to be pasted into a committee chat.
     // Regenerate with: node tools/og-cards/make-og-cards.mjs badminton-club-management-software
@@ -10,154 +28,212 @@
     // scraped this page - Facebook and LinkedIn cache OG images by URL more or less forever.
     // Re-scrape it in their debuggers after a change, or give the new card a new filename.
     ViewData["OgImage"] = "/Images/og-badminton-club-management-software.png";
+
+    const string published = "2026-11-02";   // first publication as the category page
+    const string checkedOn = "2 November 2026";
+    const string canonical = "https://www.epegboard.com/badminton-club-management-software";
+
+    // What each named product's own site says, read on checkedOn. One row per product, each
+    // claim traceable to the linked page. Not a ranking and not a score - that is /compare.
+    var products = new (string Name, string Url, string SourceLabel, string Covers, string Says)[]
+    {
+        ("ShuttleOps", "https://www.shuttleops.com/pricing", "shuttleops.com/pricing",
+         "Subs and session fees, attendance, club night",
+         "Badminton-specific. A free plan for up to 10 members; Standard at £4 a month takes session payments for up to 25; Pro at £8 a month takes payments for club memberships, monthly, for up to 100; Extra at £12 a month adds WhatsApp reminders. Its pricing page answers questions on Stripe and on Direct Debit fees."),
+        ("ShuttleStats", "https://shuttlestats.app/learn", "shuttlestats.app/learn",
+         "Session fees, places and refunds",
+         "Each club connects its own Stripe account and keeps the takings. No subscription or setup fee; a per-payment fee agreed with the club, charged only when a member pays. It manages session capacity and a waiting list, handles refunds on cancellation, and includes memberships and club credits."),
+        ("Spond Club", "https://help.spond.com/club/en/articles/177554-overview-payments-in-spond-club", "help.spond.com, payments in Spond Club",
+         "Membership fees and payment requests, multi-sport",
+         "Payment requests for membership fees, match fees and annual memberships. Sign-up forms can take payment as a single payment or a subscription, with instalments as an option. Card payments, processed by Stripe; reminders for outstanding payments."),
+        ("SportyHQ", "https://www.sportyhq.com/", "sportyhq.com",
+         "Membership, court booking, tournaments and leagues",
+         "Multi-sport, badminton among them. Manages memberships, court bookings, tournaments and leagues, including team leagues, box leagues and ladders, in the browser. Its club tools list member records, court access, bookings and payments."),
+        ("ServeLeague", "https://serveleague.com/", "serveleague.com",
+         "Membership register, leagues, court and room booking",
+         "Racquet sports including badminton. A member directory with membership types and payment status, online membership payment, leagues with Elo-based ratings across seasons, and facility booking of courts and rooms from an availability grid."),
+        ("ClubSpark", "https://www.clubspark.com/", "clubspark.com",
+         "Court booking and membership for venues that run their own courts",
+         "Court and pitch booking through the club's website or an app, registrations and memberships, payments, and court access and lighting control. Its home page names tennis, padel and pickleball among its racquet sports; badminton is not named there.")
+    };
+
+    var articleJsonLd = GuideSchema.Article(
+        "Badminton club management software: what it covers and which tool does which job",
+        "What badminton club management software covers - membership, subs, court booking, competitions and the club night - and which kinds of product do each job.",
+        canonical, published);
 }
 
-<!-- HERO -->
+@section Head {
+    <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
+}
+
 <section class="page-hero" style="padding:0">
   <div class="wrap">
     <div class="inner">
-      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Badminton club management software</span></div>
-      <h1 style="margin-top:10px">Badminton club management software</h1>
-      @* "all-in-one" and "handles ... payments" both overstated it, and /compare now links here
-         saying plainly that we do not collect money or run a booking system. Two pages, one claim.
-         The wider question of how far this page should claim the category is ado:1898's. *@
-      <p class="lede">ePegboard is badminton club management and court scheduling software. It runs fair club nights with automatically balanced games, tracks player ratings, records attendance and session payments, and runs handicap competitions and league teams - all in one place, in any browser.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary btn-lg" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up</a>
-        <a class="btn btn-ghost btn-lg" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
+      <div class="crumb"><a href="/">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg> <span>Club management software</span></div>
+      <h1 style="margin-top:10px">Badminton club management software: what it covers, and which tool does which job</h1>
+      <p class="lede">Club management software is not one product. It is five jobs - membership, money, courts, competitions and the club night itself - and choosing well starts with knowing which of them your club is actually shopping for. This page sets out what each job needs, which kinds of product do it, and what to ask before your committee commits.</p>
+      <div class="guide-meta">
+        <span class="gm-tag">Category guide</span>
+        <span>Membership, subs, courts, club nights</span>
+        <span>Products checked @checkedOn</span>
       </div>
-      <p class="trust"><span class="dot">&bull;</span> Free for clubs &nbsp; <span class="dot">&bull;</span> No card details &nbsp; <span class="dot">&bull;</span> No install</p>
     </div>
   </div>
 </section>
 
-@* PRODUCT SHOT. This page carried the category term with no image on it at all - a visitor
-   landing from search could read what the software does but never see it, while every sibling
-   feature page leads with a screenshot. Existing assets, no new capture needed. *@
-<section style="padding:36px 0 0">
-  <div class="wrap">
-    <div class="shot">
-      <div class="bar show">
-        <span class="dots"><i></i><i></i><i></i></span>
-        <span class="url">play.epegboard.com</span>
+<section style="padding-top:40px">
+  <div class="wrap" style="max-width:900px">
+
+    <div class="prose">
+      <p style="color:var(--muted-2);font-size:.95rem"><strong>Disclosure:</strong> we make ePegboard, which runs the club night. It does not run membership, collect subs or book courts, and this page says so where it matters. It names the products that do those jobs, from their own websites, and it does not rank anyone. The scored comparison of club-night products is <a href="/compare">a separate page</a>.</p>
+    </div>
+
+    <div class="guide-toc" style="margin-top:28px">
+      <h4>On this page</h4>
+      <a href="#jobs">The five jobs club management software does</a>
+      <a href="#courts">Court management software, and why a club rarely buys it</a>
+      <a href="#two-tools">One tool or two?</a>
+      <a href="#products">Which products do which job</a>
+      <a href="#epegboard">Where ePegboard fits, and where it does not</a>
+      <a href="#ask">What to ask before you choose</a>
+      <a href="#next">Where to go next</a>
+    </div>
+
+    <div class="prose" style="margin-top:34px">
+
+      <h2 id="jobs">The five jobs club management software does</h2>
+
+      <p>When a committee searches for badminton club management software, it usually means one of these jobs, and it is worth deciding which one before reading a single product page. Each is a different problem, and a product's own site will usually tell you which one it was built around.</p>
+
+      <h3>1. Membership</h3>
+      <p>A register of who belongs to the club: contact details, membership category, when they joined, when they are due to renew, and the consent and emergency-contact records a committee is expected to keep. Good membership software lets people join through a form, renews them on a date, and tells the secretary who has lapsed.</p>
+
+      <h3>2. Money</h3>
+      <p>Subs and session fees. This is the job most clubs are actually shopping for when they say "club management", because chasing payments is what eats a treasurer's week. The software either <strong>collects</strong> the money - card or Direct Debit, through a payment provider - or <strong>records</strong> money collected some other way. Those are different products. A collecting product earns from a transaction fee, so its price is that rate times your annual income, not the monthly figure on the pricing page. Our guide to <a href="/guides/collecting-club-subs">collecting club subs</a> works that out, and finds that how often you bill matters more than which method you use.</p>
+
+      <h3>3. Courts</h3>
+      <p>Who can play on which court, when. For a club that owns or runs its own courts, this is booking software: members reserve a slot, the system takes payment and may switch on the lights. For a club that hires a block of courts at a leisure centre or school, it mostly is not the club's problem at all - see <a href="#courts">the next section</a>.</p>
+
+      <h3>4. Competitions and leagues</h3>
+      <p>Internal tournaments, box leagues and ladders, and for clubs with league sides, the weekly work of finding out who is available and picking the team. The league itself - fixtures, results and the table - is normally run by the league's own organisers on their own site, and club software that touches it is doing the club's side of the job, not the league's.</p>
+
+      <h3>5. The club night</h3>
+      <p>Twenty people, four courts, and a court coming free every few minutes. Who plays next, with whom, and against whom, so the games are close and nobody sits out three times in a row. This is the job a peg board does, and it is the one a membership or booking platform is least likely to be built around, because it happens on a hall floor rather than in an office. Software built for it is usually called club-night software; we scored 32 of those products in <a href="/compare">a published comparison</a>.</p>
+
+      <h2 id="courts">Court management software, and why a club rarely buys it</h2>
+
+      <p>Search for badminton court management software and most of what comes back is built for <strong>venues</strong>: sports centres, racquet clubs with their own buildings, and operators selling court time to the public. It handles online booking, payment at the point of booking, membership discounts, and often door access and lighting.</p>
+
+      <p>That is the right tool if your club owns or manages its courts. Most badminton clubs do not. They hire a block of courts on a fixed evening from a leisure centre, school or community hall, and that booking lives in the venue's system, on the venue's terms. Buying court booking software of your own would not change it. What a hiring club actually manages is two things the venue's system does not: what the block costs and how well it is used - <a href="/guides/badminton-court-hire">what clubs pay for court hire, and what is negotiable</a> covers the first - and how the courts are shared out on the night, which is the club-night job above.</p>
+
+      <p>So before comparing court management systems, check which of these you are. If you hire, the court question is really a money question and a club-night question.</p>
+
+      <h2 id="two-tools">One tool or two?</h2>
+
+      <p>All-in-one platforms exist, and for some clubs one is the right answer. The usual trade-off is that a product built around membership, payments and bookings is designed for the office, and the club night on a hall floor gets the least attention. A product built for the club night is the reverse. Neither shape is wrong. It is a question of which job costs your club the most.</p>
+
+      <ul>
+        <li><strong>If the treasurer's chasing is the problem,</strong> start with a product that collects money, and judge it on its transaction rate and how it handles the member who never pays.</li>
+        <li><strong>If the club night is the problem</strong> - the same four playing together, the late arrival who never gets on, the organiser who never gets a game - start with club-night software, and keep the subs where they are.</li>
+        <li><strong>If you run your own courts,</strong> booking software is the core, and everything else hangs off it.</li>
+      </ul>
+
+      <p>Running one product for membership and money and another for the night works, as long as the two do not each hold a different list of who your members are. Ask both how they import and export a member list before you start.</p>
+
+      <h2 id="products">Which products do which job</h2>
+
+      <p>These are products whose own websites describe at least one of the jobs above. Each line says what that site says, read on @checkedOn, and links to the page it came from. It is not a ranking, it is not every product in the field, and products change - verify anything material with the supplier. Club-night products are not listed here; there are 32 of them, scored, on <a href="/compare">the comparison page</a>.</p>
+
+      <div class="cmp-wrap">
+        <table class="cmp-table">
+          <thead>
+            <tr><th>Product</th><th>Jobs it covers</th><th>What its own site says</th></tr>
+          </thead>
+          <tbody>
+            @foreach (var p in products)
+            {
+              <tr>
+                <td><a href="@p.Url" target="_blank" rel="noopener">@p.Name</a></td>
+                <td>@p.Covers</td>
+                <td>@p.Says <span style="color:var(--muted-2)">Source: <a href="@p.Url" target="_blank" rel="noopener">@p.SourceLabel</a>, read @checkedOn.</span></td>
+              </tr>
+            }
+          </tbody>
+        </table>
       </div>
-      @* height:auto because .shot img sets width:100% only - without it the height attribute
-         (there so the browser reserves the space and the page does not shift) wins and the
-         screenshot stretches. *@
-      <img src="/img/site-dashboard.png" asp-append-version="true" width="1350" height="700" style="height:auto"
-           alt="The ePegboard session board - three badminton courts in play, each showing its two pairs, its running time and the score; a fourth court free with a Pick and Start button; and below them the members waiting to be called on">
-    </div>
-    <p style="text-align:center;margin-top:14px;color:var(--muted-2);font-size:.95rem">The live session board - every court, the scores, and who is waiting, on one screen.</p>
-  </div>
-</section>
 
-<!-- WHAT IT DOES: maps search language to features -->
-<section style="padding-top:54px">
-  <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow">What it does</span>
-      <h2>Everything a badminton club needs to run</h2>
-      <p>One system for the four jobs clubs ask us for - on a single, trustworthy player rating.</p>
-    </div>
-    <div class="hub-grid">
+      <p style="margin-top:18px"><strong>By job, then:</strong></p>
+      <ul>
+        <li><strong>Membership register and renewals:</strong> SportyHQ, ServeLeague and Spond Club each describe one.</li>
+        <li><strong>Collecting subs and session fees:</strong> ShuttleOps and ShuttleStats are built for badminton clubs; Spond Club is multi-sport. ShuttleStats and Spond Club both name Stripe as the payment processor, and ShuttleOps's pricing page covers Stripe and Direct Debit.</li>
+        <li><strong>Court booking, for clubs that run their own courts:</strong> SportyHQ, ServeLeague and ClubSpark.</li>
+        <li><strong>Leagues, ladders and box leagues:</strong> SportyHQ and ServeLeague.</li>
+        <li><strong>The club night:</strong> see <a href="/compare">the 32-product comparison</a>, and <a href="/guides/best-badminton-club-night-software">how to choose badminton club software for your club night</a> for what to look for.</li>
+      </ul>
 
-      <a class="feat-card" href="/features/club-nights">
-        <div class="feat-thumb"><img src="/img/pick-explanation.png" asp-append-version="true" loading="lazy" width="896" height="204" alt="A pick explanation - the suggested game, chosen as the best of the candidates considered, with the reasons it was picked" style="object-fit:contain;object-position:center;padding:0 10px"></div>
-        <div class="feat-body">
-          <h4>Court scheduling &amp; game picking</h4>
-          <p>Smart game selection keeps every court busy with balanced, varied games matched on player level, rest time and who has played whom - and shows why each game was picked.</p>
-          <span class="feat-learn">Club night software <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-
-      <a class="feat-card" href="/features/club-management">
-        <div class="feat-thumb"><img src="/img/attendance-trends.png" asp-append-version="true" loading="lazy" width="2380" height="1800" alt="Attendance trends - members grouped as active, lapsing, dormant and new, with a list of who to reach out to" style="object-position:top center"></div>
-        <div class="feat-body">
-          <h4>Club administration &amp; reports</h4>
-          <p>Attendance trends, payment tracking, member records and one-click CSV exports - the admin handled, so you spend less time on the spreadsheet and more time playing.</p>
-          @* Anchor text follows that page's new title. "Club management" here pointed our own
-             strongest signal at the feature page for the term this page is trying to own. *@
-          <span class="feat-learn">Attendance &amp; payments <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-
-      <a class="feat-card" href="/features/competitions">
-        <div class="feat-thumb"><img src="/img/standings-card.png" asp-append-version="true" loading="lazy" width="804" height="290" alt="Live competition standings - a group table with points, games won and point difference" style="object-fit:contain;object-position:center;background:#fff"></div>
-        <div class="feat-body">
-          <h4>Tournament &amp; competition software</h4>
-          <p>Run handicap doubles tournaments without spreadsheets - balanced pairs, group stages, knockout rounds and live standings, with handicaps calculated automatically.</p>
-          <span class="feat-learn">Competitions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-
-      <a class="feat-card" href="/features/league-team-support">
-        <div class="feat-thumb"><img src="/img/partnerships-card.png" asp-append-version="true" loading="lazy" width="763" height="381" alt="Partnership analytics - doubles pairs ranked by how they perform against expectation, each with a verdict and a confidence level" style="object-fit:contain;object-position:center;background:#fff"></div>
-        <div class="feat-body">
-          <h4>League team selection</h4>
-          <p>Find the doubles partnerships that actually work from real club-night data, and pick league teams on evidence rather than hunches.</p>
-          <span class="feat-learn">League team support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- WHO IT IS FOR -->
-<section class="bg-soft">
-  <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow">Who it is for</span>
-      <h2>Built for badminton clubs of every size</h2>
-      <p>From a single weekly club night to busy multi-court clubs running leagues and tournaments. ePegboard works on a tablet or laptop at the desk, with no software to install and nothing to configure before your first session.</p>
-    </div>
-    <div class="stats">
-      <div class="stat"><div class="num">33,000+</div><div class="lbl">games played</div></div>
-      <div class="stat"><div class="num">1,100+</div><div class="lbl">club sessions run</div></div>
-      <div class="stat"><div class="num">2,000+</div><div class="lbl">players rated</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ENGINE THREAD -->
-<section style="padding:48px 0">
-  <div class="wrap">
-    <div class="engine-strip">
-      <div class="es-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v6h-6"/></svg></div>
-      <div class="es-txt">
-        <h3>One rating system, the whole platform</h3>
-        <p>Ratings reflect how players perform against expectation, not just who won, and update after every game. The same number powers game picking, tournament handicaps and team selection - so everything stays consistent and current.</p>
+      <div class="guide-callout">
+        <h4>If you make one of these products</h4>
+        <p style="margin-top:8px">If something here about your product is wrong or out of date, <a href="/contact">tell us and point us at the page that shows it</a>. We correct factual errors quickly, under the same rules as our <a href="/compare/method">comparison method</a>, and the date on each line shows when it was last read.</p>
       </div>
-      <a class="btn btn-ghost" style="background:#fff" href="/features">See all features</a>
-    </div>
-  </div>
-</section>
 
-<!-- THE FIELD. This page holds the category impressions and linked to no comparison at all. -->
-<section style="padding:0 0 48px">
-  <div class="wrap">
-    <div class="engine-strip">
-      <div class="es-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="4" width="3" height="14"/></svg></div>
-      <div class="es-txt">
-        <h3>How we compare against the rest of the field</h3>
-        <p>We scored 32 badminton club-night products against a published 100-point rubric, ran the evaluation three times, and published all of it - the scores, the limitations, our own weaknesses and the products that beat us in specific circumstances. We do not collect money or run a court booking system; the comparison names the products that do.</p>
+      <h2 id="epegboard">Where ePegboard fits, and where it does not</h2>
+
+      <p>ePegboard is club-night software. It is free for clubs. Every capability below links to the page in our customer documentation that describes it, so you can check it rather than take our word.</p>
+
+      <p><strong>What it does:</strong></p>
+      <ul>
+        <li><strong>Runs the club night</strong> - picks the next game when a court frees up, balanced on ratings and weighted for how long people have waited (<a href="https://docs.epegboard.com/club-nights/the-picker/" target="_blank" rel="noopener">the picker</a>).</li>
+        <li><strong>Keeps the member list the night runs from</strong>, with a join code so players can connect themselves and a membership type of Full, Trial or Guest that sets each person's session cost (<a href="https://docs.epegboard.com/club-nights/members/" target="_blank" rel="noopener">members</a>).</li>
+        <li><strong>Records attendance and session payments</strong>, and reports what was expected, paid and still owed across sessions (<a href="https://docs.epegboard.com/club-nights/payments/" target="_blank" rel="noopener">payments</a>).</li>
+        <li><strong>Runs handicap doubles competitions</strong> - balanced pairs, a group stage and a knockout (<a href="https://docs.epegboard.com/club-nights/competitions/" target="_blank" rel="noopener">competitions</a>).</li>
+        <li><strong>Handles a league captain's availability and team selection</strong>, leaving fixtures, results and the table to your league (<a href="https://docs.epegboard.com/league-teams/" target="_blank" rel="noopener">league teams</a>).</li>
+      </ul>
+
+      <p><strong>What it does not do</strong> - and what to look at instead:</p>
+      <ul>
+        <li><strong>Membership administration.</strong> It keeps your roster, but it takes no money, so it cannot sell or renew a membership, and it has no joining form with a fee. For that, look at the membership products above: SportyHQ, ServeLeague or Spond Club.</li>
+        <li><strong>Collecting subs.</strong> It records what was paid; it does not take card or online payments (<a href="https://docs.epegboard.com/club-nights/payments/" target="_blank" rel="noopener">payments</a>). To collect, look at ShuttleOps, ShuttleStats or Spond Club, or at the plain options in <a href="/guides/collecting-club-subs">collecting club subs</a>.</li>
+        <li><strong>Court booking.</strong> A session can show a capacity, but that is a signal, not a booking system - there is no reserving or holding a place (<a href="https://docs.epegboard.com/club-nights/scheduling/" target="_blank" rel="noopener">scheduling</a>). If you run your own courts, look at SportyHQ, ServeLeague or ClubSpark; if you hire, your bookings stay with the venue.</li>
+      </ul>
+
+      <p>The attendance, payment-record and reporting side of ePegboard has <a href="/features/club-management">its own page</a>, with screenshots of each report.</p>
+
+      <h2 id="ask">What to ask before you choose</h2>
+
+      <ol>
+        <li><strong>Which job is costing us the most?</strong> Answer this as a committee before anyone opens a pricing page. It decides which category you are shopping in.</li>
+        <li><strong>Does it collect money, or record it?</strong> If it collects, find the transaction rate and multiply it by your annual subs. That is the real price.</li>
+        <li><strong>Does every member need to install an app or create an account?</strong> Compulsory sign-up is where most rollouts stall. Find out what a member who never signs up can and cannot do.</li>
+        <li><strong>Can we get our data out?</strong> Export the member list and the payment history in a trial, not after a year.</li>
+        <li><strong>Who owns the courts?</strong> If it is the venue, court booking software is not the answer to your court problem.</li>
+        <li><strong>Does it run the actual evening?</strong> If the night is chaotic, a platform whose club-night feature is a sign-up list will not fix it.</li>
+      </ol>
+
+      <h2 id="next">Where to go next</h2>
+
+      <p>If the club night is your job, <a href="/guides/best-badminton-club-night-software">how to choose badminton club software for your club night</a> sets out what matters, and <a href="/compare">the comparison of 32 club-night products</a> has the scores, the limitations and the rubric behind them.</p>
+
+      <p>If it is the money, <a href="/guides/setting-club-subs">setting club subs</a> covers what to charge and <a href="/guides/collecting-club-subs">collecting club subs</a> covers getting paid. If it is the running of the club itself, start with <a href="/guides/badminton-club-committee-roles">which committee roles a club has to fill</a>, <a href="/guides/badminton-club-constitution">writing a club constitution</a> and <a href="/guides/badminton-club-insurance">what club insurance covers</a>. Starting from nothing? <a href="/guides/how-to-start-a-badminton-club">How to start a badminton club</a> puts all of it in order.</p>
+
+      <div style="margin-top:34px;padding-top:22px;border-top:1px solid var(--line)">
+        <h4 style="margin:0 0 8px">How this page was put together</h4>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:0">ePegboard builds club-night software, and you should read this knowing that. Claims about named products come only from each product's own website, read on @checkedOn, and each links to the page it came from; where we could not verify a claim on the product's own pages, we left it out. That follows the evidence rules on our <a href="/compare/method">comparison method page</a>. Claims about ePegboard come from our customer documentation at <a href="https://docs.epegboard.com" target="_blank" rel="noopener">docs.epegboard.com</a>.</p>
+        <p style="color:var(--muted-2);font-size:.95rem;margin:12px 0 0"><strong>Sources:</strong> <a href="https://www.shuttleops.com/pricing" target="_blank" rel="noopener">ShuttleOps pricing</a> &middot; <a href="https://shuttlestats.app/learn" target="_blank" rel="noopener">ShuttleStats, how it works</a> &middot; <a href="https://help.spond.com/club/en/articles/177554-overview-payments-in-spond-club" target="_blank" rel="noopener">Spond Club, overview of payments</a> &middot; <a href="https://www.sportyhq.com/" target="_blank" rel="noopener">SportyHQ</a> &middot; <a href="https://serveleague.com/" target="_blank" rel="noopener">ServeLeague</a> &middot; <a href="https://www.clubspark.com/" target="_blank" rel="noopener">ClubSpark</a>. All read @checkedOn.</p>
       </div>
-      <a class="btn btn-ghost" style="background:#fff" href="/compare">See the comparison</a>
+
     </div>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta">
   <div class="wrap">
-    <h2>Run your club on ePegboard, free</h2>
-    <p>No subscription. No card details. Just smarter club nights.</p>
+    <h2>If the club night is the job</h2>
+    <p>ePegboard is free for clubs. See it pick a night in about a minute, with nothing to set up.</p>
     <div class="cta-actions">
-      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up at play.epegboard.com</a>
-      <a class="btn btn-lg cta-demo" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a>
+      <a class="btn btn-ghost btn-lg" style="background:#fff" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">Try the instant demo</a>
+      <a class="btn btn-lg cta-demo" href="/compare">See the comparison</a>
     </div>
-    <p class="fine">Tablet or laptop-sized screens recommended for the best experience. Questions first? See the <a href="/faq">FAQ</a> or <a href="/Contact">get in touch</a>.</p>
+    <p class="fine">Questions first? See the <a href="/faq">FAQ</a> or <a href="/Contact">get in touch</a>.</p>
   </div>
 </section>
-
-<!-- FOOTER -->

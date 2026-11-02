@@ -14,10 +14,10 @@ ePegboard is built on a single player rating system. Ratings reflect how players
 
 ## Key pages
 - [Home](https://www.epegboard.com/): overview of badminton club management and court scheduling
-- [Badminton club management software](https://www.epegboard.com/badminton-club-management-software): the product by category, mapped to what clubs search for
+- [Badminton club management software](https://www.epegboard.com/badminton-club-management-software): product-neutral category guide - what the field covers (membership, subs, court booking, competitions, the club night), which named products do which job, and what ePegboard does not do
 - [Features](https://www.epegboard.com/features): all features in one place
 - [Club nights](https://www.epegboard.com/features/club-nights): smart game picking, fairness tracking, live ratings, audio announcements
-- [Club management](https://www.epegboard.com/features/club-management): attendance, payments, members, CSV reports
+- [Attendance, payments and reports](https://www.epegboard.com/features/club-management): ePegboard's attendance, payment records (records, not collection), members and CSV reports
 - [Competitions](https://www.epegboard.com/features/competitions): handicap doubles tournaments, group stages, knockouts, live standings
 - [League team support](https://www.epegboard.com/features/league-team-support): partnership analytics and team selection on real data
 - [Pricing](https://www.epegboard.com/pricing): plans and what is free
