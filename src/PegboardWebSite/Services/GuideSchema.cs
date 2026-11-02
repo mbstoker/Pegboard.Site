@@ -21,7 +21,13 @@ public static class GuideSchema
 {
     private const string Logo = "https://www.epegboard.com/Images/epegboard-text-logo.png";
 
-    public static string Article(string headline, string description, string canonicalUrl, string datePublished)
+    /// <param name="dateModified">
+    /// The date of the last substantive revision. Omit it and dateModified falls back to
+    /// datePublished, which is what every guide did before ado:2397. A revised guide passes
+    /// it, so the first-publication date stays true and the revision is still visible.
+    /// </param>
+    public static string Article(string headline, string description, string canonicalUrl, string datePublished,
+        string? dateModified = null)
     {
         var obj = new Dictionary<string, object>
         {
@@ -30,7 +36,7 @@ public static class GuideSchema
             ["headline"] = headline,
             ["description"] = description,
             ["datePublished"] = datePublished,
-            ["dateModified"] = datePublished,
+            ["dateModified"] = dateModified ?? datePublished,
             ["mainEntityOfPage"] = canonicalUrl,
             ["author"] = new Dictionary<string, object> { ["@type"] = "Organization", ["name"] = "ePegboard" },
             ["publisher"] = new Dictionary<string, object>

@@ -6,9 +6,9 @@
     ViewData["Description"] = "Winner-stays-on, round robin, queue rotation and balanced live picking solve different problems. Compare court-time fairness, flexibility, competition, admin and game quality before choosing how to run your badminton night.";
     ViewData["OgTitle"] = "Which badminton club-night format fits your club?";
 
-    const string published = "2026-07-05";   // first publication - held deliberately; GuideSchema
-                                             // ties dateModified to it (#396), so advancing it
-                                             // would claim this page is new. Revised 2026-08-26.
+    const string published = "2026-07-05";   // FIRST publication - never advance it.
+    const string modified = "2026-11-02";    // last substantive revision (ado:2397); keep the
+                                             // sitemap lastmod in step.
     const string canonical = "https://www.epegboard.com/guides/badminton-club-night-formats-compared";
 
     var faqPairs = new (string Q, string A)[]
@@ -28,13 +28,12 @@
     var articleJsonLd = GuideSchema.Article(
         "Badminton club night formats compared: what each system optimises",
         "Winner-stays-on, round robin, queue rotation and balanced live picking solve different problems. Compare court-time fairness, flexibility, competition, admin and game quality before choosing how to run your badminton night.",
-        canonical, published);
-    var faqJsonLd = GuideSchema.Faq(faqPairs);
+        canonical, published, modified);
+    // No FAQPage JSON-LD (Operating/articles.md item 19): the FAQ stays visible text only.
 }
 
 @section Head {
     <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
-    <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
 }
 
 <section class="page-hero" style="padding:0">
@@ -72,6 +71,17 @@
 
       <p>That is why arguments about the "best" format go nowhere. A competitive ladder wants winners to be rewarded. A social club may want the exact opposite: yesterday's result should have no effect on whether you get your fair share tonight. A tournament wants a complete fixture. A drop-in session wants to survive three late arrivals without redrawing anything.</p>
 
+      <div class="guide-callout">
+        <h4>Key points</h4>
+        <ul style="margin:10px 0 0">
+          <li>Each format rewards something different: a queue rewards waiting, winner-stays-on rewards winning, a round robin rewards completing the draw.</li>
+          <li>A queue copes best with people arriving and leaving, which is why most drop-in club nights start there.</li>
+          <li>Winner-stays-on gives better players more court time by design. That is fine in a session people chose for it, and a mismatch on a social night where everyone pays the same.</li>
+          <li>A round robin suits a known group and breaks when attendance changes.</li>
+          <li>Mixing formats in one night works if you say out loud when the rule changes.</li>
+        </ul>
+      </div>
+
       <h2 id="question">Start with the purpose of the session</h2>
       <p>Before choosing mechanics, decide what the night is trying to optimise.</p>
       <ul>
@@ -98,7 +108,7 @@
         <li>or use software to choose four while respecting waiting.</li>
       </ul>
 
-      <p>That distinction matters. A queue can be excellent at <em>when</em> somebody plays and poor at <em>who</em> they play with.</p>
+      <p>That distinction matters. A queue can be excellent at <em>when</em> somebody plays and poor at <em>who</em> they play with. Which of those five ways suits a club depends on where it wants judgement to sit, which <a href="/guides/managing-club-night-rotation">who should control the club-night rotation</a> compares.</p>
 
       <p><strong>Best for:</strong> ordinary drop-in club nights where attendance changes through the evening.</p>
       <p><strong>Main risk:</strong> hidden human bias in selecting partners, or mechanically taking the next four even when the resulting game is obviously poor.</p>
@@ -148,7 +158,7 @@
         <li>opponent variety.</li>
       </ul>
 
-      <p>The disadvantage is cognitive load. A good organiser can do this for ten players almost without thinking. At twenty-four players, four courts and a stream of late arrivals, remembering everybody's last three partners and cumulative wait becomes a real scheduling problem.</p>
+      <p>The disadvantage is cognitive load. A good organiser can do this for ten players almost without thinking. At twenty-four players, four courts and a stream of late arrivals, remembering everybody's last three partners and cumulative wait becomes a real scheduling problem. How much partner variety is worth chasing is covered in <a href="/guides/game-variety-stop-same-players">stopping the same players ending up together</a>.</p>
 
       <p>Software such as <a href="/features/club-nights">ePegboard</a> is useful here because it can keep those histories without turning the organiser into an accountant. But automation does not remove the policy choice: the club still needs to decide how strongly fairness, game balance and queue order should compete.</p>
 
@@ -177,6 +187,12 @@
             <tr><td><strong>Balanced live rotation</strong></td><td>Excellent</td><td>Configurable</td><td>Strong if ratings are useful</td><td>High by hand; low with software</td><td>Mixed social club</td></tr>
           </tbody>
         </table>
+      </div>
+
+      <div class="guide-callout">
+        <h4>Worked example: what winner-stays-on costs the rest of the room</h4>
+        <p style="margin-top:8px">12 players, 2 courts, 2 hours, games of about 12 minutes. That is 20 games and 80 playing places, so a queue gives everyone 6 or 7 games.</p>
+        <p style="margin-top:8px">Run one court as uncapped winner-stays-on and suppose one pair keeps winning. They play all 10 of that court's games, 20 places between them. The other ten players share the remaining 60 places: 6 games each. The pair gains about 3 games each, and the cost is spread thinly enough across the room that nobody notices it on the night. Cap winners at two games and the pair's share drops back towards everyone else's.</p>
       </div>
 
       <h2 id="choose">How to choose</h2>

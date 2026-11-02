@@ -6,10 +6,9 @@
     ViewData["Description"] = "A new badminton club works when court capacity, player numbers and session fees fit together. Here is how to test demand, choose a venue, set the fee, organise the club and run a first night people want to return to.";
     ViewData["OgTitle"] = "How to start a badminton club";
 
-    const string published = "2026-07-05";   // FIRST publication. Rewritten 2026-08-26 - do not
-                                             // advance this: GuideSchema hardcodes dateModified to
-                                             // datePublished (#396), so moving it claims the page
-                                             // is new. The update date is stated in the body.
+    const string published = "2026-07-05";   // FIRST publication - never advance it.
+    const string modified = "2026-11-02";    // last substantive revision (ado:2397); also stated
+                                             // in the body and the sitemap lastmod.
     const string canonical = "https://www.epegboard.com/guides/how-to-start-a-badminton-club";
 
     var faqPairs = new (string Q, string A)[]
@@ -29,13 +28,12 @@
     var articleJsonLd = GuideSchema.Article(
         "How to start a badminton club: from first court to sustainable club night",
         "A new badminton club works when court capacity, player numbers and session fees fit together. Here is how to test demand, choose a venue, set the fee, organise the club and run a first night people want to return to.",
-        canonical, published);
-    var faqJsonLd = GuideSchema.Faq(faqPairs);
+        canonical, published, modified);
+    // No FAQPage JSON-LD (Operating/articles.md item 19): the FAQ stays visible text only.
 }
 
 @section Head {
     <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
-    <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
 }
 
 <!-- HERO -->
@@ -248,7 +246,7 @@
 
       <p>This gets harder as soon as attendance grows. With eight players it is easy to remember who sat out. With twenty-two, three courts, two late arrivals and a player taking a break, the organiser is now solving a scheduling problem while trying to play badminton.</p>
 
-      <p>That is where <a href="/features/club-nights">ePegboard</a> fits naturally: it tracks who is waiting, spreads court time, builds balanced and varied games, and handles arrivals and sit-outs without asking one person to keep the whole night in their head. It is free for clubs and works in a browser. We are not the only option, and you should not take our word for that either: we scored <a href="/compare">32 badminton club-night products</a> against a published rubric and named the ones that beat us. The separate guide to <a href="/guides/how-to-run-a-badminton-club-night">running a badminton club night</a> goes much further into rotation once the club exists.</p>
+      <p>Decide how games will be picked before the first night, not during it. A pegboard queue, winner-stays-on and a round robin each reward something different, and <a href="/guides/badminton-club-night-formats-compared">club night formats compared</a> sets them side by side. Whichever you choose, the fairness rule underneath it is the same one: court time measured against time present, which <a href="/guides/badminton-club-night-rotation">what fair rotation means</a> works through with late arrivals and skips. The separate guide to <a href="/guides/how-to-run-a-badminton-club-night">running a badminton club night</a> goes further once the club exists.</p>
 
       <h2 id="grow">9. Grow when the existing night is full, not before</h2>
 
@@ -273,7 +271,7 @@
 
       <div class="guide-callout" style="margin-top:24px">
         <h4>Run the club night without becoming the full-time picker</h4>
-        <p>ePegboard handles waiting, rotation, balanced games and court-time fairness while you run the club and play in it. It is free for clubs and there is nothing to install.</p>
+        <p><a href="/features/club-nights">ePegboard</a> picks each game by weighing who has waited longest, how evenly the sides balance and who has just played together, and shows every player's court time against how long they have been there. You can run the club and play in it. It is free for clubs and works in a browser. It is not the only option: we scored <a href="/compare">32 badminton club-night products</a> against a published rubric and named the ones that beat us.</p>
         <p style="margin-top:14px"><a class="btn btn-primary" href="https://play.epegboard.com/signup" target="_blank" rel="noopener">Sign up free</a> &nbsp; <a class="btn btn-ghost" href="https://play.epegboard.com/instant-demo" target="_blank" rel="noopener">See it in action</a></p>
       </div>
 
@@ -287,7 +285,7 @@
       <h2 id="sources">Sources and scope</h2>
       <p>This guide is written primarily for people starting a community badminton club in England. The operating principles (venue, capacity, fees, player retention and rotation) travel well, but affiliation, insurance, safeguarding and governance requirements vary by country and by the type of organisation. Check the rules that apply where you are.</p>
       <p><strong>Sources:</strong> <a href="https://www.badmintonengland.co.uk/clubs/" target="_blank" rel="noopener">Badminton England: clubs and affiliation</a> &middot; <a href="https://www.badmintonengland.co.uk/membership/" target="_blank" rel="noopener">Badminton England: membership</a> &middot; <a href="https://www.badmintonengland.co.uk/clubs/a-sport-that-cares" target="_blank" rel="noopener">Badminton England: A Sport That Cares (the club minimum standards)</a> &middot; <a href="https://www.badmintonengland.co.uk/safeguarding/" target="_blank" rel="noopener">Badminton England: safeguarding</a> &middot; <a href="https://www.sportengland.org/funding-and-campaigns/code-sports-governance" target="_blank" rel="noopener">Sport England: Code for Sports Governance</a> &middot; <a href="https://www.sportengland.org/guidance-and-support/safeguarding" target="_blank" rel="noopener">Sport England safeguarding guidance</a>.</p>
-      <p style="color:var(--muted-2);font-size:.9rem">Updated 26 August 2026. The example session costs are illustrative rather than UK market averages.</p>
+      <p style="color:var(--muted-2);font-size:.9rem">Updated 2 November 2026. The example session costs are illustrative rather than UK market averages.</p>
 
     </div>
   </div>
