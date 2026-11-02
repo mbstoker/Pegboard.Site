@@ -18,7 +18,8 @@
     //
     // Sourcing rule is /compare/method: every claim about a named product below comes from that
     // product's own site, linked, with the date it was read. Unverifiable claims are left out.
-    ViewData["Title"] = "Badminton club management software: what it covers and which tool does which job";
+    // Kept short so it renders whole in results with " - ePegboard" (63 characters), head term first.
+    ViewData["Title"] = "Badminton club management software: what it covers";
     ViewData["Description"] = "Badminton club management software covers membership, subs, court booking, competitions and the club night itself. What each job needs, which kinds of product do it, and what to ask before your committee chooses.";
     ViewData["OgTitle"] = "Badminton club management software: what it covers";
     // Its own share card rather than the site-wide fallback, because this is the page the
@@ -50,7 +51,7 @@
          "Membership, court booking, tournaments and leagues",
          "Multi-sport, badminton among them. Manages memberships, court bookings, tournaments and leagues, including team leagues, box leagues and ladders, in the browser. Its club tools list member records, court access, bookings and payments."),
         ("ServeLeague", "https://serveleague.com/", "serveleague.com",
-         "Membership register, leagues, court and room booking",
+         "Member directory, leagues, court and room booking",
          "Racquet sports including badminton. A member directory with membership types and payment status, online membership payment, leagues with Elo-based ratings across seasons, and facility booking of courts and rooms from an availability grid."),
         ("ClubSpark", "https://www.clubspark.com/", "clubspark.com",
          "Court booking and membership for venues that run their own courts",
@@ -58,7 +59,7 @@
     };
 
     var articleJsonLd = GuideSchema.Article(
-        "Badminton club management software: what it covers and which tool does which job",
+        "Badminton club management software: what it covers",
         "What badminton club management software covers - membership, subs, court booking, competitions and the club night - and which kinds of product do each job.",
         canonical, published);
 }
@@ -110,7 +111,7 @@
       <p>A register of who belongs to the club: contact details, membership category, when they joined, when they are due to renew, and the consent and emergency-contact records a committee is expected to keep. Good membership software lets people join through a form, renews them on a date, and tells the secretary who has lapsed.</p>
 
       <h3>2. Money</h3>
-      <p>Subs and session fees. This is the job most clubs are actually shopping for when they say "club management", because chasing payments is what eats a treasurer's week. The software either <strong>collects</strong> the money - card or Direct Debit, through a payment provider - or <strong>records</strong> money collected some other way. Those are different products. A collecting product earns from a transaction fee, so its price is that rate times your annual income, not the monthly figure on the pricing page. Our guide to <a href="/guides/collecting-club-subs">collecting club subs</a> works that out, and finds that how often you bill matters more than which method you use.</p>
+      <p>Subs and session fees. This is the job most clubs are actually shopping for when they say "club management", because chasing payments is what eats a treasurer's week. The software either <strong>collects</strong> the money - card or Direct Debit, through a payment provider - or <strong>records</strong> money collected some other way. Those are different products. A collecting product's real cost over a year is three things added together: any subscription, times twelve if it is monthly; its percentage fee times the money you collect through it; and any fixed fee per payment times the number of payments your members make. The monthly figure on a pricing page is only the first of those, and billing members monthly rather than annually multiplies the third. Our guide to <a href="/guides/collecting-club-subs">collecting club subs</a> works that out, and finds that how often you bill matters more than which method you use.</p>
 
       <h3>3. Courts</h3>
       <p>Who can play on which court, when. For a club that owns or runs its own courts, this is booking software: members reserve a slot, the system takes payment and may switch on the lights. For a club that hires a block of courts at a leisure centre or school, it mostly is not the club's problem at all - see <a href="#courts">the next section</a>.</p>
@@ -163,9 +164,10 @@
         </table>
       </div>
 
-      <p style="margin-top:18px"><strong>By job, then:</strong></p>
+      <h3>The same products, by job</h3>
       <ul>
-        <li><strong>Membership register and renewals:</strong> SportyHQ, ServeLeague and Spond Club each describe one.</li>
+        <li><strong>Member records:</strong> SportyHQ lists member records among its club tools, and ServeLeague describes a member directory with membership types and payment status.</li>
+        <li><strong>Collecting membership fees:</strong> ServeLeague describes online membership payment, Spond Club describes payment requests for membership fees, and ShuttleOps's Pro plan takes payments for club memberships.</li>
         <li><strong>Collecting subs and session fees:</strong> ShuttleOps and ShuttleStats are built for badminton clubs; Spond Club is multi-sport. ShuttleStats and Spond Club both name Stripe as the payment processor, and ShuttleOps's pricing page covers Stripe and Direct Debit.</li>
         <li><strong>Court booking, for clubs that run their own courts:</strong> SportyHQ, ServeLeague and ClubSpark.</li>
         <li><strong>Leagues, ladders and box leagues:</strong> SportyHQ and ServeLeague.</li>
@@ -192,7 +194,7 @@
 
       <p><strong>What it does not do</strong> - and what to look at instead:</p>
       <ul>
-        <li><strong>Membership administration.</strong> It keeps your roster, but it takes no money, so it cannot sell or renew a membership, and it has no joining form with a fee. For that, look at the membership products above: SportyHQ, ServeLeague or Spond Club.</li>
+        <li><strong>Membership administration.</strong> It keeps your roster, but it takes no money, so it cannot sell or renew a membership, and it has no joining form with a fee. For member records with fees attached, look at SportyHQ or ServeLeague; to collect membership fees, ServeLeague, Spond Club or ShuttleOps.</li>
         <li><strong>Collecting subs.</strong> It records what was paid; it does not take card or online payments (<a href="https://docs.epegboard.com/club-nights/payments/" target="_blank" rel="noopener">payments</a>). To collect, look at ShuttleOps, ShuttleStats or Spond Club, or at the plain options in <a href="/guides/collecting-club-subs">collecting club subs</a>.</li>
         <li><strong>Court booking.</strong> A session can show a capacity, but that is a signal, not a booking system - there is no reserving or holding a place (<a href="https://docs.epegboard.com/club-nights/scheduling/" target="_blank" rel="noopener">scheduling</a>). If you run your own courts, look at SportyHQ, ServeLeague or ClubSpark; if you hire, your bookings stay with the venue.</li>
       </ul>
@@ -203,7 +205,7 @@
 
       <ol>
         <li><strong>Which job is costing us the most?</strong> Answer this as a committee before anyone opens a pricing page. It decides which category you are shopping in.</li>
-        <li><strong>Does it collect money, or record it?</strong> If it collects, find the transaction rate and multiply it by your annual subs. That is the real price.</li>
+        <li><strong>Does it collect money, or record it?</strong> If it collects, add up a year of it: the subscription, the percentage fee on everything you collect, and any fixed fee per payment times the number of payments. That total is the real price, not the monthly figure.</li>
         <li><strong>Does every member need to install an app or create an account?</strong> Compulsory sign-up is where most rollouts stall. Find out what a member who never signs up can and cannot do.</li>
         <li><strong>Can we get our data out?</strong> Export the member list and the payment history in a trial, not after a year.</li>
         <li><strong>Who owns the courts?</strong> If it is the venue, court booking software is not the answer to your court problem.</li>

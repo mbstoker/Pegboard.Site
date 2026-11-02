@@ -29,6 +29,25 @@ public sealed class ClubManagementCategoryTests : IClassFixture<TrackApiFactory>
     private static string Title(string html) =>
         WebUtility.HtmlDecode(Regex.Match(html, "<title>([^<]*)</title>").Groups[1].Value);
 
+    /// <summary>
+    /// The page's own content: everything inside &lt;main&gt;, so the layout's nav and footer
+    /// (whose footer links to the category page on every page) cannot satisfy a link assertion.
+    /// </summary>
+    private static string MainContent(string html)
+    {
+        var m = Regex.Match(html, "<main>(.*)</main>", RegexOptions.Singleline);
+        Assert.True(m.Success, "No <main> element in the rendered page");
+        return m.Groups[1].Value;
+    }
+
+    /// <summary>The "Where ePegboard fits" section, from its heading to the next h2.</summary>
+    private static string EpegboardSection(string html)
+    {
+        var m = Regex.Match(html, "<h2 id=\"epegboard\">(.*?)<h2 ", RegexOptions.Singleline);
+        Assert.True(m.Success, "No #epegboard section on the category page");
+        return m.Groups[1].Value;
+    }
+
     private static string H1(string html) =>
         Regex.Replace(Regex.Match(html, "<h1[^>]*>(.*?)</h1>", RegexOptions.Singleline).Groups[1].Value, "<[^>]+>", "");
 
@@ -50,6 +69,15 @@ public sealed class ClubManagementCategoryTests : IClassFixture<TrackApiFactory>
     }
 
     [Fact]
+    public async Task Category_title_fits_a_search_result_with_the_head_term_first()
+    {
+        var title = Title(await Client().GetStringAsync(Category));
+
+        Assert.StartsWith("Badminton club management software", title);
+        Assert.True(title.Length <= 65, $"Title is {title.Length} characters: '{title}'");
+    }
+
+    [Fact]
     public async Task Feature_page_title_is_not_a_variant_of_the_category_title()
     {
         var title = Title(await Client().GetStringAsync("/features/club-management"));
@@ -61,11 +89,11 @@ public sealed class ClubManagementCategoryTests : IClassFixture<TrackApiFactory>
     [Fact]
     public async Task Category_page_names_what_epegboard_does_not_do()
     {
-        var html = await Client().GetStringAsync(Category);
+        var section = EpegboardSection(await Client().GetStringAsync(Category));
 
-        Assert.Contains("Membership administration", html);
-        Assert.Contains("Collecting subs", html);
-        Assert.Contains("Court booking", html);
+        Assert.Contains("Membership administration", section);
+        Assert.Contains("Collecting subs", section);
+        Assert.Contains("Court booking", section);
     }
 
     [Theory]
@@ -93,9 +121,9 @@ public sealed class ClubManagementCategoryTests : IClassFixture<TrackApiFactory>
     [InlineData("/guides/how-to-start-a-badminton-club")]
     public async Task Pages_touching_club_administration_link_to_the_category_page(string source)
     {
-        var html = await Client().GetStringAsync(source);
+        var content = MainContent(await Client().GetStringAsync(source));
 
-        Assert.Contains($"href=\"{Category}\"", html);
+        Assert.Contains($"href=\"{Category}\"", content);
     }
 
     /// <summary>
