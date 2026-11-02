@@ -79,17 +79,41 @@ public sealed class DocsDeepLinkTests : IClassFixture<TrackApiFactory>
     /// search engines at a URL that is no longer a page, so no page may link to them.
     /// </summary>
     [Theory]
-    [InlineData("/features/club-management")]
-    [InlineData("/features/competitions")]
-    [InlineData("/guides/how-to-run-handicap-doubles-tournament")]
-    [InlineData("/guides/picking-league-teams-club-data")]
-    [InlineData("/badminton-club-management-software")]
+    [MemberData(nameof(PagesThatLinkTheDocs))]
     public async Task Pages_do_not_link_to_docs_pages_that_now_redirect(string source)
     {
         var html = await Client().GetStringAsync(source);
 
+        // No trailing slash required, so the slashless form of a retired URL is caught too.
         Assert.DoesNotMatch(
-            new Regex(@"docs\.epegboard\.com/(how-to/run-a-competition|insights/(attendance-over-time|session-summary|attendance-trends|member-engagement|match-quality|partnerships|payment-summary|court-utilisation|most-improved))/"),
+            new Regex(@"docs\.epegboard\.com/(how-to/run-a-competition|insights/(attendance-over-time|session-summary|attendance-trends|member-engagement|match-quality|partnerships|payment-summary|court-utilisation|most-improved))\b"),
             html);
     }
+
+    /// <summary>Every page that links into the docs: the 21 sources above, plus the category page.</summary>
+    public static TheoryData<string> PagesThatLinkTheDocs() => new()
+    {
+        "/features/club-nights",
+        "/features/club-management",
+        "/features/competitions",
+        "/for-players",
+        "/faq",
+        "/download",
+        "/featuresdesktop",
+        "/desktopreleasenotes",
+        "/guides/collecting-club-subs",
+        "/guides/setting-club-subs",
+        "/guides/paper-pegboard-to-app",
+        "/guides/first-badminton-club-night",
+        "/guides/how-to-run-a-badminton-club-night",
+        "/guides/game-variety-stop-same-players",
+        "/guides/mixed-ability-badminton-club-night",
+        "/guides/fair-court-time-busy-club-night",
+        "/guides/badminton-club-rating-systems",
+        "/guides/picking-league-teams-club-data",
+        "/guides/how-to-run-a-local-badminton-league",
+        "/guides/rolling-out-epegboard-to-your-club",
+        "/guides/how-to-run-handicap-doubles-tournament",
+        "/badminton-club-management-software",
+    };
 }
