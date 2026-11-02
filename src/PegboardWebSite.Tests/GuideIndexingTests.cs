@@ -43,6 +43,17 @@ public sealed class GuideIndexingTests : IClassFixture<TrackApiFactory>
         "/guides/picking-league-teams-club-data",
     };
 
+    /// <summary>Each revised guide with its first-publication date, which must never move.</summary>
+    public static TheoryData<string, string> RevisedGuidesFirstPublished() => new()
+    {
+        { "/guides/how-to-start-a-badminton-club", "2026-07-05" },
+        { "/guides/badminton-club-night-rotation", "2026-07-01" },
+        { "/guides/badminton-club-night-formats-compared", "2026-07-05" },
+        { "/guides/badminton-club-rating-systems", "2026-07-01" },
+        { "/guides/game-variety-stop-same-players", "2026-07-01" },
+        { "/guides/picking-league-teams-club-data", "2026-07-01" },
+    };
+
     [Theory]
     // badminton-club-night-rotation
     [InlineData("/guides/managing-club-night-rotation", "/guides/badminton-club-night-rotation")]
@@ -83,8 +94,8 @@ public sealed class GuideIndexingTests : IClassFixture<TrackApiFactory>
     /// dateModified must show the revision while datePublished keeps the first-publication date.
     /// </summary>
     [Theory]
-    [MemberData(nameof(RevisedGuides))]
-    public async Task Revised_guides_emit_one_Article_with_the_revision_date_and_no_FAQPage(string path)
+    [MemberData(nameof(RevisedGuidesFirstPublished))]
+    public async Task Revised_guides_emit_one_Article_with_the_revision_date_and_no_FAQPage(string path, string firstPublished)
     {
         var html = await Client().GetStringAsync(path);
 
@@ -96,9 +107,7 @@ public sealed class GuideIndexingTests : IClassFixture<TrackApiFactory>
         Assert.DoesNotContain("FAQPage", types);
         var article = Assert.Single(blocks, b => b.GetProperty("@type").GetString() == "Article");
         Assert.Equal(Revised, article.GetProperty("dateModified").GetString());
-        Assert.True(
-            string.CompareOrdinal(article.GetProperty("datePublished").GetString(), Revised) < 0,
-            "datePublished must stay the first-publication date, not move to the revision");
+        Assert.Equal(firstPublished, article.GetProperty("datePublished").GetString());
         Assert.Contains("<h2 id=\"faq\">", MainContent(html));
     }
 
@@ -162,11 +171,11 @@ public sealed class GuideIndexingTests : IClassFixture<TrackApiFactory>
     [Fact]
     public void The_leaked_citation_pattern_fires_on_the_marker_that_shipped()
     {
-        const string shipped = "uncertainty. citeturn999353search0turn999353search3</p>";
+        const string shipped = "uncertainty. \uE200cite\uE202turn999353search0\uE202turn999353search3\uE201</p>";
 
         Assert.Matches(LeakedCitation, shipped);
         Assert.DoesNotMatch(LeakedCitation, "Microsoft's TrueSkill similarly represents skill.</p>");
     }
 
-    private static readonly Regex LeakedCitation = new(@"[-]|\bturn\d+search\d+\b|\bciteturn");
+    private static readonly Regex LeakedCitation = new(@"[\uE000-\uF8FF]|\bturn\d+search\d+\b|\bciteturn");
 }

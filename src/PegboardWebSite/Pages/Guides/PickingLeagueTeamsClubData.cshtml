@@ -11,6 +11,10 @@
                                              // sitemap lastmod in step.
     const string canonical = "https://www.epegboard.com/guides/picking-league-teams-club-data";
 
+    // articles.md item 13 (own-data figure): n/a for this revision. A fleet-wide partnership
+    // figure needs an aggregated, anonymised pegboard-prod pull with its own method note and the
+    // 12b re-derivation at review; that belongs to a full /article pass, not an indexing fix
+    // (ado:2397). The worked selection is labelled illustrative and claims no data.
     // Boundary questions only (Operating/articles.md template row 13): adjacent to the page
     // question, deliberately outside it, one to three sentences each.
     var faqPairs = new (string Q, string A)[]
@@ -102,19 +106,20 @@
       </ul>
 
       <h2 id="enough">How many games make a pairing trustworthy?</h2>
-      <p>A pairing needs something like ten games together before its record means much. Three wins from three is a good evening, not evidence; across ten or more games the luck of the draw starts to even out. Below that, judge the pair on their individual standards and say that is what you are doing.</p>
-      <p>The same applies to a player who has recently joined. Their rating will move quickly for the first dozen or so games, so treat it as provisional until it settles.</p>
+      <p>Three wins from three is a good evening, not evidence. There is no exact threshold, and even ten games is a small sample that one lucky night can tilt. Ten is the floor ePegboard's own <a href="https://docs.epegboard.com/insights/reports/#partnerships" target="_blank" rel="noopener">partnerships report</a> uses before it gives a pair a verdict, and it is a sensible minimum for a captain too. Below that, judge the pair on their individual standards and say that is what you are doing. Above it, trust a pattern that holds across the season more than one that rests on a single good month.</p>
+      <p>The same applies to a player who has recently joined. On ePegboard a new player's rating moves quickly and carries a "settling" marker until they have <a href="https://docs.epegboard.com/ratings/overview/" target="_blank" rel="noopener">15 rated games</a>, so treat it as provisional until then.</p>
 
       <div class="guide-callout" id="example">
         <h4>A worked selection</h4>
         <p style="margin-top:8px"><em>An illustrative squad, not real players.</em> The first team plays three men's pairs; eight players are available. Club-night ratings: Amir 1720, Ben 1700, Chris 1660, Dev 1650, Ed 1630, Femi 1610, Gus 1600, Hal 1590.</p>
-        <p style="margin-top:8px">On ratings alone the team is Amir to Femi, paired one and two, three and four, five and six. The club-night record adds three facts:</p>
+        <p style="margin-top:8px">On ratings alone the team is Amir to Femi, paired one and two, three and four, five and six: Amir with Ben, Chris with Dev, Ed with Femi. The club-night record adds three facts about those pairs and one alternative:</p>
         <ul style="margin:8px 0 0">
           <li>Amir and Ben have 12 games together and win less often than their ratings predict.</li>
+          <li>Ed and Femi have 14 games together and have also fallen short of their prediction all season.</li>
           <li>Ed and Gus have 15 games together and have beaten their prediction all season.</li>
-          <li>Femi has partnered Hal only three times, so there is no pair record to go on.</li>
+          <li>Chris and Dev have only four games together, so there is no pair record to go on.</li>
         </ul>
-        <p style="margin-top:8px">Pick Amir with Dev, Ben with Chris, and Ed with Gus. Femi goes to the second team despite a higher rating than Gus, and the captain can say why in one sentence: Ed and Gus's fifteen games together.</p>
+        <p style="margin-top:8px">Split Amir and Ben across two pairs, Amir with Dev and Ben with Chris; the two pairs are rated within 10 points of each other (3,370 and 3,360). Pair Ed with Gus instead of Femi. Femi goes to the second team despite a 10-point higher rating than Gus, because Ed and Femi's 14 games together have under-performed while Ed and Gus's 15 have over-performed.</p>
       </div>
 
       <h2 id="limits">When should the data not decide?</h2>
@@ -123,6 +128,11 @@
 
       <h2 id="balance">Should you stack the first team?</h2>
       <p>You should not stack the first team by default, because each team plays in its own division and a weak lower team loses its matches whatever the first team does. Decide what each team needs to stay competitive in its division, then share players out. A team that is promoted on borrowed strength usually comes straight back down. Running the league side of this, divisions included, is covered in <a href="/guides/how-to-run-a-local-badminton-league">how to run a local badminton league</a>.</p>
+
+      <div class="guide-callout">
+        <h4>If you only do one thing</h4>
+        <p style="margin-top:8px">Before you finalise the sheet, check each pair's record together, not just each player's rating.</p>
+      </div>
 
       <div class="guide-callout">
         <h4>Selection evidence from the nights you already run</h4>
