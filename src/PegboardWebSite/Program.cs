@@ -91,6 +91,12 @@ public class Program
         // Route matching is case-insensitive, so this single registration catches every variant.
         app.MapGet("/home/download", () => Results.Redirect("/download", permanent: true));
 
+        // Legacy FAQ URL from the previous site (ado:2394). Google still serves /FAQs in search and it
+        // 404s; the page is now /faq. Case-insensitive like the download redirect above, so one
+        // registration covers /FAQs, /faqs and /FAQS. The IIS canonical host/scheme rules keep the
+        // path, so the http and apex variants arrive here as /FAQs too.
+        app.MapGet("/faqs", () => Results.Redirect("/faq", permanent: true));
+
         app.MapRazorPages();
 
         app.Run();
