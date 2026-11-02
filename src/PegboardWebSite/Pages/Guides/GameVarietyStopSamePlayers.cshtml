@@ -6,9 +6,9 @@
     ViewData["Description"] = "Repeated partnerships are not automatically bad. Learn why club-night groups cluster, how to distinguish useful familiarity from accidental exclusion, and how to increase partner and opponent variety without wrecking game balance.";
     ViewData["OgTitle"] = "How to stop badminton club nights becoming the same games";
 
-    const string published = "2026-07-01";   // first publication - held deliberately; GuideSchema
-                                             // ties dateModified to it (#396), so advancing it
-                                             // would claim this page is new. Revised 2026-08-26.
+    const string published = "2026-07-01";   // FIRST publication - never advance it.
+    const string modified = "2026-11-02";    // last substantive revision (ado:2397); keep the
+                                             // sitemap lastmod in step.
     const string canonical = "https://www.epegboard.com/guides/game-variety-stop-same-players";
 
     var faqPairs = new (string Q, string A)[]
@@ -28,13 +28,12 @@
     var articleJsonLd = GuideSchema.Article(
         "Badminton game variety: when repeated partners are a problem - and when they are not",
         "Repeated partnerships are not automatically bad. Learn why club-night groups cluster, how to distinguish useful familiarity from accidental exclusion, and how to increase partner and opponent variety without wrecking game balance.",
-        canonical, published);
-    var faqJsonLd = GuideSchema.Faq(faqPairs);
+        canonical, published, modified);
+    // No FAQPage JSON-LD (Operating/articles.md item 19): the FAQ stays visible text only.
 }
 
 @section Head {
     <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
-    <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
 }
 
 <section class="page-hero" style="padding:0">
@@ -73,6 +72,17 @@
 
       <p class="lead"><strong>Variety is valuable because a club night is a network, not because every combination must be unique.</strong> The aim is to stop repeated pairings becoming the default path through the evening while still allowing friendships, useful partnerships and good matches to exist.</p>
 
+      <div class="guide-callout">
+        <h4>Key points</h4>
+        <ul style="margin:10px 0 0">
+          <li>The target is accidental repetition: the same four reforming because the queue keeps sending them back together, not because anyone chose it.</li>
+          <li>Repeats cannot be avoided entirely. With 6 players, everyone's sixth game repeats a partner.</li>
+          <li>On an ordinary night, rank variety below fair court time and a playable game, and use it to choose between acceptable games.</li>
+          <li>Swap one player when a recent partnership reappears and the swap keeps the game even. Otherwise accept the repeat.</li>
+          <li>Mark intentional pairs, such as a league pair practising, so they are protected rather than broken up.</li>
+        </ul>
+      </div>
+
       <h2 id="not-enemy">Repetition is not the enemy</h2>
 
       <p>Badminton partnerships improve through familiarity. You learn which cross-court shuttle your partner will leave, who takes the middle under pressure and whether they are about to rotate behind you. Repeated play can therefore be useful badminton.</p>
@@ -104,7 +114,7 @@
 
       <p>The first cost is obvious: <strong>staleness</strong>. A club of twenty-five people can somehow feel like a club of six if your games keep recycling the same social neighbourhood.</p>
 
-      <p>The second is informational. Playing different people tells you more about a player's level. If Alice always partners Ben, their results reveal a lot about Alice-and-Ben and less about Alice independently. This matters if the club uses results for ratings or team selection.</p>
+      <p>The second is informational. Playing different people tells you more about a player's level. If Alice always partners Ben, their results reveal a lot about Alice-and-Ben and less about Alice independently. This matters if the club uses results for ratings or team selection, and <a href="/guides/badminton-club-rating-systems">how club rating systems handle doubles</a> explains why.</p>
 
       <p>The third is social access. A newcomer does not need to play everybody on night one, but they do need routes into the existing network. If every appropriate player is already part of an informal fixed four, the newcomer can be present in the hall without becoming part of the club.</p>
 

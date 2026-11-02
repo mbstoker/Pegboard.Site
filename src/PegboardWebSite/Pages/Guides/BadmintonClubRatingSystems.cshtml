@@ -6,9 +6,9 @@
     ViewData["Description"] = "Elo, Glicko, TrueSkill and club grades solve related but different problems. Learn expectation, uncertainty, doubles attribution and score-margin effects before using a badminton rating for game balancing, handicaps or selection.";
     ViewData["OgTitle"] = "How badminton club ratings actually work";
 
-    const string published = "2026-07-01";   // first publication - held deliberately; GuideSchema
-                                             // ties dateModified to it (#396), so advancing it
-                                             // would claim this page is new. Revised 2026-08-26.
+    const string published = "2026-07-01";   // FIRST publication - never advance it.
+    const string modified = "2026-11-02";    // last substantive revision (ado:2397); keep the
+                                             // sitemap lastmod in step.
     const string canonical = "https://www.epegboard.com/guides/badminton-club-rating-systems";
 
     var faqPairs = new (string Q, string A)[]
@@ -28,13 +28,12 @@
     var articleJsonLd = GuideSchema.Article(
         "Badminton club rating systems: what the number knows, and what it does not",
         "Elo, Glicko, TrueSkill and club grades solve related but different problems. Learn expectation, uncertainty, doubles attribution and score-margin effects before using a badminton rating for game balancing, handicaps or selection.",
-        canonical, published);
-    var faqJsonLd = GuideSchema.Faq(faqPairs);
+        canonical, published, modified);
+    // No FAQPage JSON-LD (Operating/articles.md item 19): the FAQ stays visible text only.
 }
 
 @section Head {
     <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
-    <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
 }
 
 <section class="page-hero" style="padding:0">
@@ -72,6 +71,17 @@
       <p class="lead"><strong>The useful thing about a rating is not that it produces a precise-looking number. It is that it turns previous results into a prediction.</strong> If two sides are rated almost equally, expect a close contest. If the gap is large, expect one side to win more often. The next result then tells the system whether those estimates need changing.</p>
 
       <p>That mechanism can improve club-night balancing enormously. It can also create false confidence if a club forgets that 1542 is an estimate, not a laboratory measurement.</p>
+
+      <div class="guide-callout">
+        <h4>Key points</h4>
+        <ul style="margin:10px 0 0">
+          <li>A rating turns past results into a prediction, and each result moves it in proportion to how surprising it was.</li>
+          <li>Classic Elo knows only win or loss. Counting the score margin is a design choice a club system adds, not something Elo says.</li>
+          <li>A player with four recorded games should move faster than one with four hundred. Glicko and TrueSkill make that uncertainty explicit.</li>
+          <li>A doubles result belongs to the pair, so varied partnerships are what let a system separate two players' strengths.</li>
+          <li>Use a club rating for balancing games first, as evidence for handicaps and selection second, and never as a diagnosis of someone's game.</li>
+        </ul>
+      </div>
 
       <h2 id="grade">Grades and ratings are not enemies</h2>
       <p>A/B/C grades survive because they are useful.</p>
@@ -111,7 +121,7 @@
       <h2 id="uncertainty">Why uncertainty matters</h2>
       <p>A player with four recorded games and a player with four hundred should not inspire the same confidence merely because both currently display 1500.</p>
 
-      <p>Glicko makes this explicit by adding a <strong>rating deviation</strong>: a measure of how uncertain the estimate is. Microsoft's TrueSkill similarly represents skill using both an average estimate and uncertainty. citeturn999353search0turn999353search3</p>
+      <p>Glicko makes this explicit by adding a <strong>rating deviation</strong>: a measure of how uncertain the estimate is. Microsoft's TrueSkill similarly represents skill using both an average estimate and uncertainty.</p>
 
       <p>The intuition is straightforward:</p>
       <ul>
@@ -130,7 +140,7 @@
 
       <p>That works, but it cannot directly answer a common human question: <em>which player caused the result?</em></p>
 
-      <p>If a strong player carries a developing partner to 21-19, the scoreboard contains only a team result. Without richer performance data, the model cannot see that one person intercepted everything at the net while the other struggled. TrueSkill was designed in part to infer individual skill from team results, but even Bayesian machinery is still inferring from the information available, not watching the rally. citeturn999353search3</p>
+      <p>If a strong player carries a developing partner to 21-19, the scoreboard contains only a team result. Without richer performance data, the model cannot see that one person intercepted everything at the net while the other struggled. TrueSkill was designed in part to infer individual skill from team results, but even Bayesian machinery is still inferring from the information available, not watching the rally.</p>
 
       <p>This is a reason to use lots of varied partnerships. When players repeatedly mix, individual strength becomes easier to distinguish statistically. Fixed pairs create less information about the two individuals separately.</p>
 
@@ -163,11 +173,11 @@
       <h2 id="uses">What clubs can safely use ratings for</h2>
       <p>Ratings are strongest when the decision resembles the thing the model measured.</p>
 
-      <p><strong>Balancing club games:</strong> excellent use. You are asking which combination of the available players is likely to create an even contest.</p>
+      <p><strong>Balancing club games:</strong> excellent use. You are asking which combination of the available players is likely to create an even contest. On a night with a wide spread of standards that is most of the job, and <a href="/guides/mixed-ability-badminton-club-night">running a mixed-ability club night</a> covers what else it takes.</p>
 
-      <p><strong>Handicap competitions:</strong> useful, but handicap conversion needs its own calibration. A 100-point rating gap does not magically tell you how many rally points to award unless you model that relationship.</p>
+      <p><strong>Handicap competitions:</strong> useful, but handicap conversion needs its own calibration. A 100-point rating gap does not magically tell you how many rally points to award unless you model that relationship. The <a href="/guides/how-to-run-handicap-doubles-tournament">handicap doubles tournament guide</a> works through that conversion.</p>
 
-      <p><strong>Team selection:</strong> useful evidence, not a complete captain. Availability, pair chemistry, singles versus doubles strength, tactical match-ups and reliability may matter too.</p>
+      <p><strong>Team selection:</strong> useful evidence, not a complete captain. Availability, pair chemistry, singles versus doubles strength, tactical match-ups and reliability may matter too. <a href="/guides/picking-league-teams-club-data">Picking league teams from club-night data</a> shows where the rating fits in a selection.</p>
 
       <p><strong>Player development:</strong> useful trend, poor diagnosis. A falling rating tells you results worsened; it cannot tell you whether the cause is backhand defence, fitness or three weeks of playing with an injury.</p>
 

@@ -6,9 +6,9 @@
     ViewData["Description"] = "Fair rotation is not simply first-in-first-out. Learn how to balance waiting time, court-time share, game quality, partner variety and late arrivals - and where pegboards, organisers and software each work best.";
     ViewData["OgTitle"] = "How to make badminton club-night rotation feel fair";
 
-    const string published = "2026-07-01";   // first publication - held deliberately; GuideSchema
-                                             // ties dateModified to it (#396), so advancing it
-                                             // would claim this page is new. Revised 2026-08-26.
+    const string published = "2026-07-01";   // FIRST publication - never advance it.
+    const string modified = "2026-11-02";    // last substantive revision (ado:2397); keep the
+                                             // sitemap lastmod in step.
     const string canonical = "https://www.epegboard.com/guides/badminton-club-night-rotation";
 
     var faqPairs = new (string Q, string A)[]
@@ -28,13 +28,12 @@
     var articleJsonLd = GuideSchema.Article(
         "Badminton club-night rotation: what fair actually means",
         "Fair rotation is not simply first-in-first-out. Learn how to balance waiting time, court-time share, game quality, partner variety and late arrivals - and where pegboards, organisers and software each work best.",
-        canonical, published);
-    var faqJsonLd = GuideSchema.Faq(faqPairs);
+        canonical, published, modified);
+    // No FAQPage JSON-LD (Operating/articles.md item 19): the FAQ stays visible text only.
 }
 
 @section Head {
     <script type="application/ld+json">@Html.Raw(articleJsonLd)</script>
-    <script type="application/ld+json">@Html.Raw(faqJsonLd)</script>
 }
 
 <section class="page-hero" style="padding:0">
@@ -72,6 +71,19 @@
       <p class="lead"><strong>The fairest player is not always the person whose peg is first.</strong> A good rotation gives comparable playing opportunity to people who have been available for comparable amounts of time, while still producing games worth playing.</p>
 
       <p>That sounds like a small distinction. It changes almost everything: how you treat late arrivals, how you recover from an unusually long game, whether somebody can play twice while another waits, and how much freedom you have to improve a dreadful four-player combination.</p>
+
+      <div class="guide-callout">
+        <h4>Key points</h4>
+        <ul style="margin:10px 0 0">
+          <li>Measure fairness as court time against time available. Equal game counts are the wrong target when people arrive and leave at different times.</li>
+          <li>Give a late arrival no credit for time before they came, and full credit for every minute they wait afterwards.</li>
+          <li>Splitting strength across the two sides costs nothing in queue fairness, so try it before skipping anyone.</li>
+          <li>If you do skip someone to make a game, publish the rule and give them the next suitable game.</li>
+          <li>Treat partner variety as a preference below fairness and game quality, never as a quota.</li>
+        </ul>
+      </div>
+
+      <p>This guide is about the rule itself: what a fair rotation is trying to achieve. Who applies the rule, whether that is a pegboard, an organiser, the players or an app, is a separate choice covered in <a href="/guides/managing-club-night-rotation">who should control the club-night rotation</a>.</p>
 
       <h2 id="fairness">Fairness is a rate, not a game count</h2>
       <p>Suppose Alice arrives at 7pm and has played four games by 8:30. Ben arrives at 8pm and has played two. They have the same rate of games per hour present. Giving Ben two immediate games merely to make the totals equal would make the night <em>less</em> fair to Alice.</p>
@@ -163,7 +175,7 @@
         <li>then improve partner and opponent variety within the options left.</li>
       </ol>
 
-      <p>That order prevents a clever rotation system from making somebody wait twenty-five minutes merely because every available partner has appeared in their history recently.</p>
+      <p>That order prevents a clever rotation system from making somebody wait twenty-five minutes merely because every available partner has appeared in their history recently. Why groups cluster in the first place, and when a repeat is worth breaking, is the subject of <a href="/guides/game-variety-stop-same-players">stopping the same players ending up together</a>.</p>
 
       <h2 id="manual">A practical manual system</h2>
       <p>If you are running a board by hand, you can get surprisingly far with a few explicit rules.</p>
@@ -202,7 +214,7 @@
         <p>@f.A</p>
       }
 
-      <p>For a comparison of the mechanics clubs use, see <a href="/guides/managing-club-night-rotation">four ways to manage club-night rotation</a>. For the capacity problem behind long queues, see <a href="/guides/fair-court-time-busy-club-night">fair court time on a busy badminton night</a>.</p>
+      <p>For a comparison of the mechanics clubs use, see <a href="/guides/managing-club-night-rotation">four ways to manage club-night rotation</a>. For the capacity problem behind long queues, see <a href="/guides/fair-court-time-busy-club-night">fair court time on a busy badminton night</a>. If a queue is the wrong format for your night altogether, <a href="/guides/badminton-club-night-formats-compared">club night formats compared</a> sets it against winner-stays-on and round robin.</p>
     </div>
   </div>
 </section>
