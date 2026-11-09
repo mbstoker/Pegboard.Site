@@ -44,11 +44,11 @@ A blocked submission still sees the normal thank-you and is logged with its rule
 |---|---|
 | `ConnectionStrings__PegboardDb` | Already set for the site; the survey uses the same database. |
 | `Survey__ExportKey` | Enables `GET /survey/{id}/export.csv` with header `X-Survey-Key`. Unset means the endpoint returns 404. Use a long random value of at least 32 characters, such as `[Convert]::ToBase64String([Security.Cryptography.RandomNumberGenerator]::GetBytes(32))`, and a different one per environment. |
-| `DataProtection__KeysPath` | A folder outside the site folder. It **must be a different folder for staging and production**, such as `C:\sites\keys\www-staging` and `C:\sites\keys\www-prod`. Both builds use the application name `PegboardWebSite`, so a shared folder would let a staging token pass on production. Without the setting, the site logs a startup warning, and an app-pool recycle can invalidate surveys in progress; those submissions are then blocked as tampered. |
+| `DataProtection__KeyDirectory` | Already provisioned per site on the VPS (`C:\sites\www.staging\keys`, `C:\sites\pegboard.site\keys`). The deploy overlay leaves the `keys` folder in place. It is the same setting name PegboardWeb uses. It **must be a different folder for staging and production**. Both builds use the application name `PegboardWebSite`, so a shared folder would let a staging token pass on production. Without the setting, the site logs a startup warning, and an app-pool recycle can invalidate surveys in progress; those submissions are then blocked as tampered. |
 
 ### Staging check
 
-Before production, also check that a survey survives an app-pool recycle. Start a survey on staging, answer a step or two, recycle the site's app pool, then carry on and submit. The submission must be stored (check the export). If it isn't, `DataProtection__KeysPath` isn't taking effect.
+Before production, also check that a survey survives an app-pool recycle. Start a survey on staging, answer a step or two, recycle the site's app pool, then carry on and submit. The submission must be stored (check the export). If it isn't, `DataProtection__KeyDirectory` isn't taking effect.
 
 ## Export
 
