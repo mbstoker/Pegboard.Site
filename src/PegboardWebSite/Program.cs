@@ -51,13 +51,14 @@ public class Program
 
         // The survey's step token and minimum-time stamp are Data Protection payloads. Without a
         // persisted key ring an app-pool recycle would invalidate surveys in progress, so the VPS
-        // sets DataProtection:KeysPath to a folder outside the site (see docs/survey.md).
+        // sets DataProtection:KeyDirectory per site (see docs/survey.md). KeyDirectory is the name the
+        // VPS already provisions for every site, the same one PegboardWeb reads.
         var dataProtection = builder.Services.AddDataProtection().SetApplicationName("PegboardWebSite");
-        var keysPath = builder.Configuration["DataProtection:KeysPath"];
+        var keysPath = builder.Configuration["DataProtection:KeyDirectory"];
         if (!string.IsNullOrWhiteSpace(keysPath))
             dataProtection.PersistKeysToFileSystem(new DirectoryInfo(keysPath));
         else
-            Log.Warning("DataProtection:KeysPath is not set. Surveys in progress may restart or be refused " +
+            Log.Warning("DataProtection:KeyDirectory is not set. Surveys in progress may restart or be refused " +
                         "after an app-pool recycle or redeploy. Set it per environment; see docs/survey.md.");
 
         builder.Services.AddRazorPages();
