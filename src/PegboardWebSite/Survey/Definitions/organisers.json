@@ -104,13 +104,7 @@
       "header": "Thinking about your main regular session over the past four weeks.",
       "questions": [
         { "id": "K1", "type": "single", "text": "Which shuttles do you mainly use?",
-          "options": [ "Feather", "Plastic", "Both", "Players bring their own" ] },
-        { "id": "K2", "type": "single", "text": "Where do the club's shuttles come from?",
-          "options": [ "A regular supplier", "Wherever is cheapest at the time", "The venue provides them", "A sponsor" ],
-          "showIf": { "question": "K1", "notEquals": "Players bring their own" } },
-        { "id": "K3", "type": "multi", "text": "Does the club offer players anything else?",
-          "options": [ "Rackets", "Restringing", "Clothing or kit", "A discount at a shop", "The club gets commission or a discount from this", "None of these" ],
-          "exclusiveOptions": [ "None of these" ] }
+          "options": [ "Feather", "Plastic", "Both", "Players bring their own" ] }
       ]
     },
     {
