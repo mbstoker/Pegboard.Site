@@ -1,0 +1,21 @@
+@* Plain survey layout (ado:2566, brief §8): no site navigation, no calls to action, no
+   analytics beacon. Only the privacy notice is linked. *@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/survey.css" asp-append-version="true" />
+</head>
+<body class="survey">
+    <main class="survey-main">
+        @RenderBody()
+    </main>
+    <footer class="survey-footer">
+        <a href="/survey/privacy">Privacy notice</a>
+    </footer>
+    <script src="~/js/survey.js" asp-append-version="true"></script>
+</body>
+</html>

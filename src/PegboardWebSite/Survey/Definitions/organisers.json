@@ -1,0 +1,172 @@
+{
+  "id": "organisers",
+  "version": 1,
+  "title": "Survey for badminton club organisers",
+  "opening": "I'm Mike Stoker, a badminton player in Milton Keynes and the developer of ePegboard. I'm asking organisers how they run their club sessions and what takes the most effort. Your answers will help me decide what to build and test. It takes about 8 minutes. Giving your club name is optional.",
+  "afterSubmission": "Thanks for taking part. If you'd like to try ePegboard features in development and give feedback, you can volunteer below. I'll use your email to invite you to testing and follow up on your feedback. You can leave the tester list at any time.",
+  "questionsPerStep": 4,
+  "minSecondsToComplete": 60,
+  "endPages": [],
+  "sections": [
+    {
+      "title": "About the club",
+      "header": null,
+      "questions": [
+        { "id": "S1", "type": "single", "text": "Which country is the club in?",
+          "options": [ "UK", "Ireland", "Australia", "New Zealand", "Other" ] },
+        { "id": "S2", "type": "single", "text": "Which best describes the club?",
+          "options": [ "Social club", "Club that enters league teams", "Pay-and-play or drop-in session", "Session run by a leisure centre or venue", "University or college club", "Other" ] },
+        { "id": "S3", "type": "single", "text": "Roughly how many players come on a typical night?",
+          "options": [ "Under 10", "10–19", "20–29", "30–49", "50 or more" ] },
+        { "id": "S4", "type": "single", "text": "How many courts do you usually have?",
+          "options": [ "1", "2", "3", "4", "5–6", "7 or more" ] }
+      ]
+    },
+    {
+      "title": "Running the night",
+      "header": "Thinking about your main regular session over the past four weeks.",
+      "questions": [
+        { "id": "N1", "type": "single", "text": "How are games mostly decided on a club night?",
+          "options": [ "The organiser or session runner picks", "Peg board or queue", "Players arrange their own games", "An app or software picks", "It varies" ] },
+        { "id": "N2", "type": "multi", "text": "Which formats do you use?",
+          "options": [ "Peg board or paddles", "Winner stays on", "Up-and-down courts (winners move up, losers move down)", "King or queen of the court", "Round robin", "Ladder", "In-house tournaments or knockouts", "Players arrange their own games", "Other" ] },
+        { "id": "N3", "type": "single", "text": "How do you use them?",
+          "options": [ "The same format all night", "We change format during the night", "We change format from week to week" ],
+          "showIf": { "question": "N2", "minCount": 2 } },
+        { "id": "N3c", "type": "single", "text": "Would you like to run a wider range of formats than you do now?",
+          "options": [ "Yes", "Maybe", "No, we're happy as we are" ] },
+        { "id": "N3d", "type": "multi", "text": "What stops you?",
+          "options": [ "It takes too long to set up on the night", "It's hard to keep track of who's playing whom", "Players prefer what we do now", "Not enough courts or players", "Not sure which formats would work", "Never really thought about it", "Other" ],
+          "showIf": { "question": "N3c", "anyOf": [ "Yes", "Maybe" ] } },
+        { "id": "N3b", "type": "single", "text": "How do games usually end?",
+          "options": [ "Played to a full score (for example 21)", "Played to a shorter score (for example 11 or 15)", "Timed rounds of under 10 minutes", "Timed rounds of 10 minutes or more", "It varies" ] },
+        { "id": "N4", "type": "single", "text": "How wide is the range of standards on a typical night?",
+          "options": [ "Everyone's at a similar level", "Some range", "Very mixed, from beginners to league players" ] },
+        { "id": "N5", "type": "single", "text": "Do you separate players by playing level?",
+          "options": [ "No, everyone mixes", "Yes, on different courts", "Yes, in different time slots", "Yes, in separate sessions", "Players sort themselves out by level" ] },
+        { "id": "N5b", "type": "multi", "text": "Why do you separate players by level?",
+          "options": [ "Stronger players want harder games", "Weaker players get better games", "Players asked for it", "It keeps games balanced", "League or team practice", "Other" ],
+          "showIf": { "question": "N5", "anyOf": [ "Yes, on different courts", "Yes, in different time slots", "Yes, in separate sessions" ] } },
+        { "id": "N6", "type": "single", "text": "How fair is the way games are picked, for the players?",
+          "options": [ "Very fair", "Mostly fair", "Mixed", "Mostly unfair", "Very unfair", "Don't know" ] }
+      ]
+    },
+    {
+      "title": "Booking and attendance",
+      "header": "Thinking about your main regular session over the past four weeks.",
+      "questions": [
+        { "id": "B1", "type": "single", "text": "Do players tell you in advance that they're coming?",
+          "options": [ "They have to book", "We ask, but it's optional", "No, they just turn up" ] },
+        { "id": "B2", "type": "single", "text": "When do players pay?",
+          "options": [ "When they book", "On the night", "Their membership covers it", "A mix", "Sessions are free" ] },
+        { "id": "B3", "type": "single", "text": "What happens if someone turns up without booking?",
+          "options": [ "They play as normal", "They play if there's room", "They pay more", "They're turned away", "It never happens" ],
+          "showIf": { "question": "B1", "equals": "They have to book" } },
+        { "id": "B4", "type": "single", "text": "Of your last four sessions, how many had someone book and then not turn up?",
+          "options": [ "0", "1", "2", "3", "4", "Don't know" ],
+          "showIf": { "question": "B1", "notEquals": "No, they just turn up" } }
+      ]
+    },
+    {
+      "title": "Filling sessions",
+      "header": "Thinking about your main regular session over the past four weeks.",
+      "questions": [
+        { "id": "F1a", "type": "single", "text": "Of your last four sessions, how many had more players than you could fit?",
+          "options": [ "0", "1", "2", "3", "4", "Don't know" ] },
+        { "id": "F1b", "type": "single", "text": "Of your last four sessions, how many had a booked court standing empty because too few players came?",
+          "options": [ "0", "1", "2", "3", "4", "Don't know" ] },
+        { "id": "F2", "type": "multi", "text": "Where do most new players hear about you?", "maxPicks": 3,
+          "options": [ "Word of mouth", "Facebook", "Club website", "Badminton England or a national listing", "The venue", "Meetup", "Another app or directory", "Other" ] },
+        { "id": "F3", "type": "single", "text": "Can people come as a guest or drop in?",
+          "options": [ "Yes, any time", "Yes, a few times before they need to join", "Members only" ] },
+        { "id": "F4", "type": "single", "text": "Do new players get a free or cheaper first session?",
+          "options": [ "First session free", "First few sessions free", "Reduced rate", "No" ] },
+        { "id": "F5", "type": "single", "text": "Is there a standard players need to be to come?",
+          "options": [ "No", "A minimum standard", "A maximum (for example, a beginners' session)", "Both, depending on the session" ] },
+        { "id": "F6", "type": "single", "text": "When a regular stops coming, what usually happens?",
+          "options": [ "We track attendance and get in touch", "We notice and get in touch", "We notice but don't usually follow up", "We often don't notice" ] }
+      ]
+    },
+    {
+      "title": "Payments and costs",
+      "header": "Thinking about your main regular session over the past four weeks.",
+      "questions": [
+        { "id": "C1", "type": "multi", "text": "How do players pay?",
+          "options": [ "Cash", "Bank transfer", "Card or online payment", "Through an app or booking system", "Membership fee only", "Sessions are free" ] },
+        { "id": "C2", "type": "number", "text": "Roughly what does a player pay per session?", "optional": true,
+          "hint": "In your local currency. Leave it blank if membership covers it." }
+      ]
+    },
+    {
+      "title": "Shuttles and extras",
+      "header": "Thinking about your main regular session over the past four weeks.",
+      "questions": [
+        { "id": "K1", "type": "single", "text": "Which shuttles do you mainly use?",
+          "options": [ "Feather", "Plastic", "Both", "Players bring their own" ] },
+        { "id": "K2", "type": "single", "text": "Where do the club's shuttles come from?",
+          "options": [ "A regular supplier", "Wherever is cheapest at the time", "The venue provides them", "A sponsor" ],
+          "showIf": { "question": "K1", "notEquals": "Players bring their own" } },
+        { "id": "K3", "type": "multi", "text": "Does the club offer players anything else?",
+          "options": [ "Rackets", "Restringing", "Clothing or kit", "A discount at a shop", "The club gets commission or a discount from this", "None of these" ],
+          "exclusiveOptions": [ "None of these" ] }
+      ]
+    },
+    {
+      "title": "Competitions",
+      "header": "Thinking about your main regular session over the past four weeks.",
+      "questions": [
+        { "id": "L1", "type": "multi", "text": "Does the club take part in competitions?",
+          "options": [ "We enter league teams", "We host external competitions or matches", "Neither" ],
+          "exclusiveOptions": [ "Neither" ] },
+        { "id": "L2", "type": "single", "text": "How are league teams picked?",
+          "options": [ "The captain picks", "A selection committee", "A club ranking or ladder", "Whoever's available", "A mix" ],
+          "showIf": { "question": "L1", "includes": "We enter league teams" } }
+      ]
+    },
+    {
+      "title": "Coaching",
+      "header": "Thinking about your main regular session over the past four weeks.",
+      "questions": [
+        { "id": "H1", "type": "single", "text": "Does the club run coaching?",
+          "options": [ "No", "Yes, led by volunteer members", "Yes, with a paid coach", "Yes, through an outside provider" ] }
+      ]
+    },
+    {
+      "title": "Software",
+      "header": "Thinking about your main regular session over the past four weeks.",
+      "questions": [
+        { "id": "T1", "type": "single", "text": "Does the club use, or has it used, software or apps to run things?",
+          "options": [ "Use it now", "Used it before but stopped", "Never" ] },
+        { "id": "T2", "type": "shortText", "text": "Which software, and what do you use it for?", "optional": true,
+          "showIf": { "question": "T1", "notEquals": "Never" } },
+        { "id": "T3", "type": "single", "text": "How did members react to it?",
+          "options": [ "Welcomed it", "Mixed", "Resisted it", "Didn't really notice" ],
+          "showIf": { "question": "T1", "notEquals": "Never" } },
+        { "id": "T4", "type": "single", "text": "How well does it work for the club?",
+          "options": [ "Very well", "Fairly well", "Not very well", "Badly" ],
+          "showIf": { "question": "T1", "equals": "Use it now" } },
+        { "id": "T5", "type": "text", "text": "Why did you stop?", "optional": true,
+          "showIf": { "question": "T1", "equals": "Used it before but stopped" } }
+      ]
+    },
+    {
+      "title": "Admin",
+      "header": "Thinking about your main regular session over the past four weeks.",
+      "questions": [
+        { "id": "A1", "type": "single", "text": "Outside the sessions themselves, roughly how many hours a week go on running the club?",
+          "options": [ "Under 1", "1–2", "3–5", "6–10", "More than 10" ] },
+        { "id": "A2", "type": "multi", "text": "Which of these take the most time?", "maxPicks": 3,
+          "options": [ "Bookings and attendance", "Collecting payment", "Picking games", "League admin", "Messages and announcements", "Finding new players", "Courts and the venue", "Coaching", "Shuttles and kit", "Other" ] },
+        { "id": "A3", "type": "text", "text": "If one part of running the club disappeared tomorrow, what would you want it to be?", "optional": true }
+      ]
+    },
+    {
+      "title": "Close",
+      "header": null,
+      "questions": [
+        { "id": "Z1", "type": "shortText", "text": "Club name", "optional": true,
+          "hint": "Only used to compare with players from the same club." }
+      ]
+    }
+  ]
+}

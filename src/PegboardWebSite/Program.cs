@@ -1,5 +1,8 @@
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.StaticFiles;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using PegboardWebSite.Services;
+using PegboardWebSite.Survey;
 using Serilog;
 
 namespace PegboardWebSite;
@@ -33,6 +36,26 @@ public class Program
         builder.Services.AddTransient<HomeStatsFetcher>();
         builder.Services.AddHttpClient();
         builder.Services.AddHostedService<StatsRefreshService>();
+
+        // Organiser and player surveys (ado:2566). Definitions are data under the content root;
+        // see docs/survey.md. Storage is the two site-owned tables in PegboardDb.
+        builder.Services.TryAddSingleton(TimeProvider.System);
+        builder.Services.AddSingleton(sp => SurveyCatalog.LoadFrom(
+            Path.Combine(sp.GetRequiredService<IWebHostEnvironment>().ContentRootPath, SurveyCatalog.DefinitionsFolder),
+            sp.GetRequiredService<ILoggerFactory>().CreateLogger<SurveyCatalog>()));
+        builder.Services.AddSingleton<SurveyTokens>();
+        builder.Services.AddSingleton<SurveyRateLimiter>();
+        builder.Services.AddSingleton<ISurveyStore, NpgsqlSurveyStore>();
+        builder.Services.AddSingleton<SurveySubmissionService>();
+        builder.Services.AddHostedService<SurveySchemaBootstrap>();
+
+        // The survey's step token and minimum-time stamp are Data Protection payloads. Without a
+        // persisted key ring an app-pool recycle would invalidate surveys in progress, so the VPS
+        // sets DataProtection:KeysPath to a folder outside the site (see docs/survey.md).
+        var dataProtection = builder.Services.AddDataProtection().SetApplicationName("PegboardWebSite");
+        var keysPath = builder.Configuration["DataProtection:KeysPath"];
+        if (!string.IsNullOrWhiteSpace(keysPath))
+            dataProtection.PersistKeysToFileSystem(new DirectoryInfo(keysPath));
 
         builder.Services.AddRazorPages();
 
@@ -96,6 +119,8 @@ public class Program
         // registration covers /FAQs, /faqs and /FAQS. The IIS canonical host/scheme rules keep the
         // path, so the http and apex variants arrive here as /FAQs too.
         app.MapGet("/faqs", () => Results.Redirect("/faq", permanent: true));
+
+        SurveyExport.Map(app);
 
         app.MapRazorPages();
 

@@ -1,0 +1,46 @@
+@page "/survey/{id}/thanks"
+@model PegboardWebSite.Pages.Surveys.ThanksModel
+@using PegboardWebSite.Pages.Surveys
+@{
+    Layout = "_SurveyLayout";
+    ViewData["Title"] = Model.Definition.Title;
+}
+
+<h1>@Model.Definition.Title</h1>
+
+@switch (Model.Mode)
+{
+    case ThanksModel.View.Added:
+        <p class="survey-done">Thanks. You're on the tester list. You can leave it at any time by emailing <a href="mailto:mike.stoker@epegboard.com">mike.stoker@epegboard.com</a>.</p>
+        break;
+
+    case ThanksModel.View.NothingSaved:
+        <p class="survey-done">Thanks for taking part. No email was entered, so nothing more was saved.</p>
+        break;
+
+    default:
+        <p class="survey-after">@Model.Definition.AfterSubmission</p>
+
+        @if (Model.Mode == ThanksModel.View.SaveFailed)
+        {
+            <div class="survey-alert" role="alert">Sorry, your email couldn't be saved just now. Please wait a minute and try again.</div>
+        }
+
+        <form method="post" class="survey-form" novalidate>
+            <input type="hidden" name="k" value="@Model.Ticket" />
+            <div class="survey-hp" aria-hidden="true">
+                <label for="hp_extra">Leave this empty</label>
+                <input type="text" id="hp_extra" name="@IndexModel.HoneypotField" tabindex="-1" autocomplete="off" />
+            </div>
+            <div class="survey-question">
+                <label class="q" for="email">Email address (optional)</label>
+                @if (Model.EmailError is not null)
+                {
+                    <p class="survey-error" role="alert">@Model.EmailError</p>
+                }
+                <input type="email" id="email" name="email" autocomplete="email" maxlength="254" value="@Model.Email" />
+            </div>
+            <button type="submit" class="survey-button">Volunteer to test</button>
+        </form>
+        break;
+}

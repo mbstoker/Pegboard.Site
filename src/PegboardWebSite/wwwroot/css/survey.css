@@ -1,0 +1,138 @@
+/* Survey pages (ado:2566). Self-contained: the survey layout loads no site CSS. */
+:root {
+    --s-text: #1f2328;
+    --s-muted: #59636e;
+    --s-bg: #ffffff;
+    --s-panel: #f6f8fa;
+    --s-line: #d0d7de;
+    --s-accent: #1a7f37;
+    --s-error: #b42318;
+}
+
+* { box-sizing: border-box; }
+
+body.survey {
+    margin: 0;
+    background: var(--s-bg);
+    color: var(--s-text);
+    font: 17px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.survey-main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 24px 16px 32px;
+}
+
+.survey-footer {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 16px 32px;
+    font-size: 15px;
+    color: var(--s-muted);
+}
+
+.survey-footer a, .survey-main a { color: inherit; }
+
+h1 { font-size: 1.4rem; line-height: 1.3; margin: 0 0 16px; }
+
+.survey-progress {
+    height: 8px;
+    background: var(--s-panel);
+    border: 1px solid var(--s-line);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.survey-progress > span {
+    display: block;
+    height: 100%;
+    background: var(--s-accent);
+}
+
+.survey-header {
+    font-style: italic;
+    color: var(--s-muted);
+    margin: 0 0 20px;
+}
+
+.survey-question {
+    border: 0;
+    margin: 0 0 28px;
+    padding: 0;
+    min-width: 0;
+}
+
+.survey-question legend, .survey-question > label.q {
+    font-weight: 600;
+    padding: 0;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.survey-hint { color: var(--s-muted); font-size: 15px; margin: -4px 0 8px; }
+
+.survey-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    border: 1px solid var(--s-line);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.survey-option input { margin-top: 4px; flex: none; width: 18px; height: 18px; }
+
+.survey-option.is-disabled { opacity: .5; cursor: default; }
+
+.survey-main input[type=text], .survey-main input[type=email], .survey-main textarea {
+    width: 100%;
+    font: inherit;
+    padding: 10px 12px;
+    border: 1px solid var(--s-line);
+    border-radius: 6px;
+}
+
+.survey-main textarea { min-height: 120px; }
+
+.survey-error { color: var(--s-error); font-weight: 600; margin: 0 0 8px; }
+
+.survey-alert {
+    border: 1px solid var(--s-error);
+    color: var(--s-error);
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+.survey-button {
+    font: inherit;
+    font-weight: 600;
+    background: var(--s-accent);
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    padding: 12px 24px;
+    min-height: 48px;
+    cursor: pointer;
+}
+
+.survey-button[disabled] { opacity: .6; }
+
+/* Honeypot: off-screen rather than display:none, which some bots skip. */
+.survey-hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --s-text: #e6edf3;
+        --s-muted: #9198a1;
+        --s-bg: #0d1117;
+        --s-panel: #161b22;
+        --s-line: #3d444d;
+        --s-accent: #2ea043;
+        --s-error: #f85149;
+    }
+}
