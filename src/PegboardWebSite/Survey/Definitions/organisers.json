@@ -91,7 +91,7 @@
     },
     {
       "title": "Payments and costs",
-      "header": "Thinking about your main regular session over the past four weeks.",
+      "header": null,
       "questions": [
         { "id": "C1", "type": "multi", "text": "How do players pay?",
           "options": [ "Cash", "Bank transfer", "Card or online payment", "Through an app or booking system", "Membership fee only", "Sessions are free" ] },
@@ -100,8 +100,8 @@
       ]
     },
     {
-      "title": "Shuttles and extras",
-      "header": "Thinking about your main regular session over the past four weeks.",
+      "title": "Shuttles",
+      "header": null,
       "questions": [
         { "id": "K1", "type": "single", "text": "Which shuttles do you mainly use?",
           "options": [ "Feather", "Plastic", "Both", "Players bring their own" ] }
@@ -109,7 +109,7 @@
     },
     {
       "title": "Competitions",
-      "header": "Thinking about your main regular session over the past four weeks.",
+      "header": null,
       "questions": [
         { "id": "L1", "type": "multi", "text": "Does the club take part in competitions?",
           "options": [ "We enter league teams", "We host external competitions or matches", "Neither" ],
@@ -121,15 +121,18 @@
     },
     {
       "title": "Coaching",
-      "header": "Thinking about your main regular session over the past four weeks.",
+      "header": null,
       "questions": [
-        { "id": "H1", "type": "single", "text": "Does the club run coaching?",
-          "options": [ "No", "Yes, led by volunteer members", "Yes, with a paid coach", "Yes, through an outside provider" ] }
+        { "id": "H1", "type": "single", "text": "Does the club ever run coaching?",
+          "options": [ "No", "Yes, regularly", "Yes, now and then (a few times a year or less)" ] },
+        { "id": "H1b", "type": "multi", "text": "Who delivers it?",
+          "options": [ "Volunteer members", "A paid coach", "An outside provider" ],
+          "showIf": { "question": "H1", "notEquals": "No" } }
       ]
     },
     {
       "title": "Software",
-      "header": "Thinking about your main regular session over the past four weeks.",
+      "header": null,
       "questions": [
         { "id": "T1", "type": "single", "text": "Does the club use, or has it used, software or apps to run things?",
           "options": [ "Use it now", "Used it before but stopped", "Never" ] },
@@ -147,7 +150,7 @@
     },
     {
       "title": "Admin",
-      "header": "Thinking about your main regular session over the past four weeks.",
+      "header": null,
       "questions": [
         { "id": "A1", "type": "single", "text": "Outside the sessions themselves, roughly how many hours a week go on running the club?",
           "options": [ "Under 1", "1–2", "3–5", "6–10", "More than 10" ] },

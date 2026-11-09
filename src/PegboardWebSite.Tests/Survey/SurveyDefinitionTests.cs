@@ -64,7 +64,7 @@ public sealed class SurveyDefinitionTests
             "C1", "C2",
             "K1",
             "L1", "L2",
-            "H1",
+            "H1", "H1b",
             "T1", "T2", "T3", "T4", "T5",
             "A1", "A2", "A3",
             "Z1",
@@ -100,7 +100,9 @@ public sealed class SurveyDefinitionTests
     }
 
     [Theory]
-    [InlineData("organisers", "Thinking about your main regular session over the past four weeks.", "N1", "A3")]
+    // Organisers: only the session sections (running the night, booking, filling sessions). Payments,
+    // shuttles, competitions, coaching, software and admin are not about the past four weeks.
+    [InlineData("organisers", "Thinking about your main regular session over the past four weeks.", "N1", "F6")]
     [InlineData("players", "Thinking about the session you play at most, over the past four weeks.", "R1", "S2")]
     public void Header_line_covers_the_session_questions(string id, string header, string first, string last)
     {
