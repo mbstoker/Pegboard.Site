@@ -13,12 +13,19 @@ public sealed record SurveyResponseRecord(
     Dictionary<string, List<string>> Answers,
     List<string> Path);
 
-/// <summary>A tester-list entry. Deliberately has no response id; see <see cref="NpgsqlSurveyStore"/>.</summary>
+/// <summary>
+/// A tester-list entry. Deliberately has no response id; see <see cref="NpgsqlSurveyStore"/>.
+/// <see cref="Id"/> is the tester ticket's id, which is generated on its own and has no
+/// relation to the response's run id.
+/// </summary>
 public sealed record SurveyTesterRecord(Guid Id, string Email, string SurveyId, DateTimeOffset CreatedUtc);
 
 /// <summary>
 /// Survey persistence. Saves throw on failure so the page can say so instead of thanking falsely.
 /// Saving a response whose id is already stored must succeed without storing a second row.
+/// Saving a tester whose id is already stored, or whose email (ignoring case) is already on that
+/// survey's list, must likewise succeed without storing anything. These are the guarantees;
+/// the in-memory checks in front of them are only a fast path.
 /// </summary>
 public interface ISurveyStore
 {
@@ -50,7 +57,7 @@ public sealed class NpgsqlSurveyStore : ISurveyStore
         "  email       TEXT        NOT NULL," +
         "  survey_id   TEXT        NOT NULL," +
         "  created_utc TIMESTAMPTZ NOT NULL);" +
-        "CREATE UNIQUE INDEX IF NOT EXISTS ux_survey_testers_email_survey ON survey_testers (email, survey_id);";
+        "CREATE UNIQUE INDEX IF NOT EXISTS ux_survey_testers_lower_email_survey ON survey_testers (lower(email), survey_id);";
 
     private readonly IConfiguration _config;
 
@@ -94,7 +101,10 @@ public sealed class NpgsqlSurveyStore : ISurveyStore
         await using var connection = Open();
         await using var cmd = new NpgsqlCommand(
             "INSERT INTO survey_testers (id, email, survey_id, created_utc) VALUES (@id, @email, @survey, @created) " +
-            "ON CONFLICT (email, survey_id) DO NOTHING", connection);
+            // No conflict target, so BOTH guarantees are no-ops rather than errors: the id is the
+            // tester ticket's id (one ticket, one row, however many concurrent or replayed posts),
+            // and lower(email) is unique per survey (an address already on the list stays one row).
+            "ON CONFLICT DO NOTHING", connection);
         cmd.Parameters.AddWithValue("@id", t.Id);
         cmd.Parameters.AddWithValue("@email", t.Email);
         cmd.Parameters.AddWithValue("@survey", t.SurveyId);

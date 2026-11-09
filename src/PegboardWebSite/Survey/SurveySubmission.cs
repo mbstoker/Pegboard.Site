@@ -123,7 +123,9 @@ public sealed class SurveySubmissionService
         var day = new DateTimeOffset(now.UtcDateTime.Date, TimeSpan.Zero);
         try
         {
-            await _store.SaveTesterAsync(new SurveyTesterRecord(Guid.NewGuid(), email, ticket.SurveyId, day), ct);
+            // The row id is the ticket id: the store's insert-if-absent makes one ticket one row
+            // durably, across concurrent posts and restarts. The in-memory set above is a fast path.
+            await _store.SaveTesterAsync(new SurveyTesterRecord(ticket.TicketId, email, ticket.SurveyId, day), ct);
             _usedTickets[ticket.TicketId] = now;
             return SubmitOutcome.Stored;
         }

@@ -36,11 +36,37 @@ public sealed class FakeSurveyStore : ISurveyStore
         return Task.CompletedTask;
     }
 
-    public Task SaveTesterAsync(SurveyTesterRecord tester, CancellationToken ct = default)
+    /// <summary>
+    /// When set, each tester save waits here until this many saves have arrived (or 5 seconds
+    /// pass), so concurrent requests are all past the in-memory checks before any row is written.
+    /// </summary>
+    public int? HoldTesterSavesUntil { get; set; }
+    private readonly TaskCompletionSource _testerGate = new(TaskCreationOptions.RunContinuationsAsynchronously);
+    private int _testerArrivals;
+    public int TesterSaveArrivals => Volatile.Read(ref _testerArrivals);
+
+    public async Task SaveTesterAsync(SurveyTesterRecord tester, CancellationToken ct = default)
+    {
+        if (HoldTesterSavesUntil is int hold)
+        {
+            if (Interlocked.Increment(ref _testerArrivals) >= hold) _testerGate.TrySetResult();
+            await Task.WhenAny(_testerGate.Task, Task.Delay(TimeSpan.FromSeconds(5), ct));
+        }
+        SaveTester(tester);
+    }
+
+    private void SaveTester(SurveyTesterRecord tester)
     {
         if (FailSaves) throw new InvalidOperationException("database down");
-        lock (Testers) Testers.Add(tester);
-        return Task.CompletedTask;
+        // Same contract as the Npgsql store: primary key on id and unique (lower(email), survey_id),
+        // both ON CONFLICT DO NOTHING.
+        lock (Testers)
+        {
+            var conflict = Testers.Any(t => t.Id == tester.Id
+                || (t.SurveyId == tester.SurveyId
+                    && string.Equals(t.Email, tester.Email, StringComparison.OrdinalIgnoreCase)));
+            if (!conflict) Testers.Add(tester);
+        }
     }
 
     public Task<IReadOnlyList<SurveyResponseRecord>> ListResponsesAsync(string surveyId, CancellationToken ct = default)

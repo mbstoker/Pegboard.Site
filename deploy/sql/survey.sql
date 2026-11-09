@@ -24,10 +24,12 @@ CREATE INDEX IF NOT EXISTS ix_survey_responses_survey ON survey_responses (surve
 
 -- People who volunteered to test after submitting. Nothing here refers to a response.
 CREATE TABLE IF NOT EXISTS survey_testers (
-    id          UUID        PRIMARY KEY,
+    id          UUID        PRIMARY KEY,       -- the tester ticket's id (unrelated to any response id): one ticket, one row
     email       TEXT        NOT NULL,          -- trimmed, lower-cased
     survey_id   TEXT        NOT NULL,          -- which survey's thank-you page it came from
     created_utc TIMESTAMPTZ NOT NULL           -- midnight UTC of the signup day
 );
 
-CREATE UNIQUE INDEX IF NOT EXISTS ux_survey_testers_email_survey ON survey_testers (email, survey_id);
+-- One row per address per survey, whatever its case. Inserts use ON CONFLICT DO NOTHING, so a
+-- repeat or concurrent signup is a silent no-op covered by both this index and the primary key.
+CREATE UNIQUE INDEX IF NOT EXISTS ux_survey_testers_lower_email_survey ON survey_testers (lower(email), survey_id);

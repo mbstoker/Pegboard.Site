@@ -567,6 +567,66 @@ public sealed class SurveyHttpTests
         Assert.Equal("first@example.com", Assert.Single(f.Store.Testers).Email);
     }
 
+    [Fact]
+    public async Task Concurrent_signups_with_one_ticket_and_different_emails_store_exactly_one_row()
+    {
+        using var f = new SurveyApiFactory();
+        var b = await AtThanks(f);
+        var antiforgery = b.Hidden("__RequestVerificationToken");
+        var ticket = b.Hidden("k");
+        // Hold every insert until at least two are in flight, so they all got past the in-memory
+        // checks: only the store's ticket-id key can keep this to one row.
+        f.Store.HoldTesterSavesUntil = 2;
+
+        var posts = Enumerable.Range(0, 12).Select(i => b.Client.PostAsync(b.Path, new FormUrlEncodedContent(new[]
+        {
+            new KeyValuePair<string, string>("__RequestVerificationToken", antiforgery),
+            new("k", ticket),
+            new("hp_extra", ""),
+            new("email", $"person{i}@example.com"),
+        })));
+        var responses = await Task.WhenAll(posts);
+
+        Assert.All(responses, r => Assert.Equal(HttpStatusCode.OK, r.StatusCode));
+        Assert.True(f.Store.TesterSaveArrivals >= 2, "the race did not happen: fewer than two inserts reached the store");
+        Assert.Single(f.Store.Testers);
+    }
+
+    [Fact]
+    public async Task A_ticket_replayed_after_the_services_are_recreated_stores_nothing_new()
+    {
+        // Same store (the database survives); fresh limiter and submission service (an app recycle
+        // clears both in-memory sets, while persisted Data Protection keys keep the ticket valid).
+        var store = new FakeSurveyStore();
+        var clock = new ManualClock();
+        var config = new Microsoft.Extensions.Configuration.ConfigurationBuilder().Build();
+        SurveySubmissionService Fresh() => new(store, new SurveyRateLimiter(clock, config), clock,
+            Microsoft.Extensions.Logging.Abstractions.NullLogger<SurveySubmissionService>.Instance);
+
+        var ticket = new TesterTicket { SurveyId = "players", TicketId = Guid.NewGuid(), IssuedUtcTicks = clock.Now.UtcTicks };
+        Assert.Equal(SubmitOutcome.Stored, await Fresh().AddTesterAsync(ticket, "first@example.com", "203.0.113.7"));
+        Assert.Equal(SubmitOutcome.Stored, await Fresh().AddTesterAsync(ticket, "second@example.com", "203.0.113.7"));
+        Assert.Equal(SubmitOutcome.Stored, await Fresh().AddTesterAsync(ticket, "first@example.com", "203.0.113.7"));
+
+        var row = Assert.Single(store.Testers);
+        Assert.Equal("first@example.com", row.Email);
+        Assert.Equal(ticket.TicketId, row.Id);
+    }
+
+    [Fact]
+    public async Task The_same_email_from_two_tickets_stores_one_row_and_both_see_the_thank_you()
+    {
+        using var f = new SurveyApiFactory();
+        var first = await AtThanks(f);
+        await Volunteer(first, "Same@Example.com");
+        var second = await AtThanks(f);
+        await Volunteer(second, "same@example.com");
+
+        Assert.Contains("You're on the tester list", first.Html);
+        Assert.Contains("You're on the tester list", second.Html);
+        Assert.Equal("same@example.com", Assert.Single(f.Store.Testers).Email);
+    }
+
     // --- Export.
 
     [Fact]

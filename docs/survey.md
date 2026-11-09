@@ -19,7 +19,7 @@ An invalid file is logged and left out, so its URL returns 404 and the rest of t
 The two tables live in `PegboardDb` ([deploy/sql/survey.sql](../deploy/sql/survey.sql); the site also creates them at startup).
 
 - **`survey_responses`** holds the survey id, the definition version the respondent answered, the submit time rounded down to the hour, `answers` (`{"S1": ["UK"], …}`) and `path` (the ids of the questions shown). It has no name, email or IP address. The row id is the run id, fixed when the opening page is shown. The insert is insert-if-absent, so a repeated final submit (a lost redirect, a double click, a retry) never stores a second row.
-- **`survey_testers`** holds the email, the survey id and the signup day. Nothing in it refers to a response. Ids are random UUIDs and the time is kept to the day, so a row can't be matched to a response by order or time.
+- **`survey_testers`** holds the email, the survey id and the signup day. Nothing in it refers to a response. The row id is the tester ticket's id, a random UUID generated separately from the run id, and the time is kept to the day, so a row can't be matched to a response by id, order or time. The insert is `ON CONFLICT DO NOTHING` against the primary key and a unique index on `(lower(email), survey_id)`. One thank-you page therefore adds at most one row, even with concurrent posts or a replay after a restart, and an address already on the list stays one row. Either conflict still shows the normal thank-you.
 
 If the database is unreachable, the respondent sees "couldn't be saved" and can retry. They are never given a false thank-you, and retrying the same submission never uses up another rate-limit permit.
 
