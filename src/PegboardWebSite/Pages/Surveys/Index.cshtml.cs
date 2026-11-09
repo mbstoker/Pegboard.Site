@@ -41,15 +41,34 @@ public class IndexModel : PageModel
     public IReadOnlyList<string> ValuesFor(string questionId) =>
         _values.TryGetValue(questionId, out var v) ? v : Array.Empty<string>();
 
+    /// <summary>How long a survey in progress stays valid. Older progress restarts the survey.</summary>
+    public static readonly TimeSpan StateLifetime = TimeSpan.FromHours(24);
+
+    public const string RestartChanged =
+        "This survey was updated while you were answering it, so it starts again from the beginning.";
+    public const string RestartExpired =
+        "It's been a while since you started, so the survey starts again from the beginning.";
+
+    /// <summary>Shown above the opening text when a survey in progress had to restart.</summary>
+    public string? RestartNotice { get; private set; }
+
     public IActionResult OnGet(string id)
     {
         var def = _catalog.Get(id);
         if (def is null) return NotFound();
+        return ShowOpening(def, null);
+    }
+
+    private IActionResult ShowOpening(SurveyDefinition def, string? notice)
+    {
         Definition = def;
         Mode = View.Opening;
+        RestartNotice = notice;
         StateToken = _tokens.Protect(new SurveyState
         {
             SurveyId = def.Id,
+            RunId = Guid.NewGuid(),
+            Version = def.Version,
             StartedUtcTicks = _submissions.Now.UtcTicks,
         });
         return Page();
@@ -66,6 +85,13 @@ public class IndexModel : PageModel
             return Blocked(def, BlockRules.MissingOrTamperedToken);
         if (!string.IsNullOrEmpty(Request.Form[HoneypotField]))
             return Blocked(def, BlockRules.Honeypot);
+
+        // Answers given to one version are never carried into another: start again, said plainly.
+        if (state.Version != def.Version)
+            return ShowOpening(def, RestartChanged);
+        var age = _submissions.Now - new DateTimeOffset(state.StartedUtcTicks, TimeSpan.Zero);
+        if (age > StateLifetime)
+            return ShowOpening(def, RestartExpired);
 
         int nextIndex;
         if (state.Current is null)
@@ -106,7 +132,8 @@ public class IndexModel : PageModel
         if (!next.IsEmpty)
             return ShowStep(def, state, next);
 
-        var outcome = await _submissions.SubmitAsync(def, state, RequestHelper.GetClientIp(HttpContext), HttpContext.RequestAborted);
+        var outcome = await _submissions.SubmitAsync(def, state,
+            SurveyRateLimiter.ClientKey(HttpContext.Connection.RemoteIpAddress), HttpContext.RequestAborted);
         switch (outcome)
         {
             case SubmitOutcome.Ended:
@@ -133,7 +160,12 @@ public class IndexModel : PageModel
 
     private IActionResult Thanks(SurveyDefinition def)
     {
-        var ticket = _tokens.Protect(new TesterTicket { SurveyId = def.Id, IssuedUtcTicks = _submissions.Now.UtcTicks });
+        var ticket = _tokens.Protect(new TesterTicket
+        {
+            SurveyId = def.Id,
+            TicketId = Guid.NewGuid(),
+            IssuedUtcTicks = _submissions.Now.UtcTicks,
+        });
         return Redirect($"/survey/{def.Id}/thanks?k={Uri.EscapeDataString(ticket)}");
     }
 

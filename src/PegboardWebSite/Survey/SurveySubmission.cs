@@ -1,3 +1,5 @@
+using System.Collections.Concurrent;
+
 namespace PegboardWebSite.Survey;
 
 public enum SubmitOutcome
@@ -21,15 +23,19 @@ public static class BlockRules
 
 /// <summary>
 /// The final-submit rules (ado:2566): minimum time from the protected opening timestamp,
-/// per-IP rate limit, end pages, dropping hidden answers, then the write. Honeypot and token
-/// checks happen on every step, in the page, through <see cref="LogBlocked"/>.
+/// per-network rate limit, end pages, dropping hidden answers, then the write. Honeypot and
+/// token checks happen on every step, in the page, through <see cref="LogBlocked"/>.
 /// </summary>
 public sealed class SurveySubmissionService
 {
+    private static readonly TimeSpan UsedTicketMemory = TimeSpan.FromHours(25);
+
     private readonly ISurveyStore _store;
     private readonly SurveyRateLimiter _limiter;
     private readonly TimeProvider _clock;
     private readonly ILogger<SurveySubmissionService> _logger;
+    private readonly ConcurrentDictionary<string, long> _blockedCounts = new(StringComparer.Ordinal);
+    private readonly ConcurrentDictionary<Guid, DateTimeOffset> _usedTickets = new();
 
     public SurveySubmissionService(ISurveyStore store, SurveyRateLimiter limiter, TimeProvider clock,
         ILogger<SurveySubmissionService> logger)
@@ -42,21 +48,34 @@ public sealed class SurveySubmissionService
 
     public DateTimeOffset Now => _clock.GetUtcNow();
 
-    /// <summary>Logs a blocked submission by rule. The client IP is never logged.</summary>
-    public void LogBlocked(string surveyId, string rule) =>
-        _logger.LogWarning("Survey {SurveyId} submission blocked by rule {Rule}; not stored.", surveyId, rule);
+    /// <summary>Blocked submissions per rule since the site started.</summary>
+    public IReadOnlyDictionary<string, long> BlockedCounts => _blockedCounts;
 
-    public async Task<SubmitOutcome> SubmitAsync(SurveyDefinition def, SurveyState state, string clientIp, CancellationToken ct = default)
+    /// <summary>Logs a blocked submission by rule, with the running count for that rule. The client address is never logged.</summary>
+    public void LogBlocked(string surveyId, string rule)
+    {
+        var count = _blockedCounts.AddOrUpdate(rule, 1, (_, n) => n + 1);
+        _logger.LogWarning("Survey {SurveyId} submission blocked by rule {Rule}; not stored. {Count} blocked by this rule since startup.",
+            surveyId, rule, count);
+    }
+
+    /// <summary>Submit time as stored: rounded down to the hour, so it can't pin down a respondent's visit.</summary>
+    public static DateTimeOffset StoredTime(DateTimeOffset now) =>
+        new(now.Year, now.Month, now.Day, now.Hour, 0, 0, TimeSpan.Zero);
+
+    public async Task<SubmitOutcome> SubmitAsync(SurveyDefinition def, SurveyState state, string clientKey, CancellationToken ct = default)
     {
         var now = _clock.GetUtcNow();
         var started = new DateTimeOffset(state.StartedUtcTicks, TimeSpan.Zero);
-        if (state.StartedUtcTicks <= 0 || now - started < TimeSpan.FromSeconds(def.MinSecondsToComplete))
+        if (state.StartedUtcTicks <= 0 || state.RunId == Guid.Empty
+            || now - started < TimeSpan.FromSeconds(def.MinSecondsToComplete))
         {
             LogBlocked(def.Id, BlockRules.TooFast);
             return SubmitOutcome.Blocked;
         }
 
-        if (!_limiter.TryAcquire("response:" + clientIp))
+        // Charged once per run: a retry of the same run (outage, lost redirect) is admitted free.
+        if (!_limiter.TryAdmit("response:" + clientKey, state.RunId))
         {
             LogBlocked(def.Id, BlockRules.RateLimit);
             return SubmitOutcome.Blocked;
@@ -66,7 +85,9 @@ public sealed class SurveySubmissionService
             return SubmitOutcome.Ended;
 
         var normalized = SurveyEngine.Normalize(def, state.Answers);
-        var record = new SurveyResponseRecord(Guid.NewGuid(), def.Id, def.Version, now, normalized.Answers, normalized.Path);
+        // The run id is the row id and the insert is insert-if-absent, so a repeat stores nothing new.
+        var record = new SurveyResponseRecord(state.RunId, def.Id, state.Version, StoredTime(now),
+            normalized.Answers, normalized.Path);
         try
         {
             await _store.SaveResponseAsync(record, ct);
@@ -80,27 +101,35 @@ public sealed class SurveySubmissionService
     }
 
     /// <summary>
-    /// Adds an email to the tester list. Blank stores nothing. The row carries the survey it
-    /// came from and the day, never a response id.
+    /// Adds an email to the tester list. The row carries the survey it came from and the day,
+    /// never a response id. One ticket stores at most one email; retries with the same ticket
+    /// after a failed save are not charged again.
     /// </summary>
-    public async Task<SubmitOutcome> AddTesterAsync(string surveyId, string email, string clientIp, CancellationToken ct = default)
+    public async Task<SubmitOutcome> AddTesterAsync(TesterTicket ticket, string email, string clientKey, CancellationToken ct = default)
     {
-        if (!_limiter.TryAcquire("tester:" + clientIp))
+        var now = _clock.GetUtcNow();
+        foreach (var (id, at) in _usedTickets)
+            if (now - at >= UsedTicketMemory) _usedTickets.TryRemove(id, out _);
+
+        if (_usedTickets.ContainsKey(ticket.TicketId))
+            return SubmitOutcome.Stored; // Already on the list from this page; nothing more to store.
+
+        if (!_limiter.TryAdmit("tester:" + clientKey, ticket.TicketId))
         {
-            LogBlocked(surveyId, BlockRules.RateLimit);
+            LogBlocked(ticket.SurveyId, BlockRules.RateLimit);
             return SubmitOutcome.Blocked;
         }
 
-        var now = _clock.GetUtcNow();
         var day = new DateTimeOffset(now.UtcDateTime.Date, TimeSpan.Zero);
         try
         {
-            await _store.SaveTesterAsync(new SurveyTesterRecord(Guid.NewGuid(), email, surveyId, day), ct);
+            await _store.SaveTesterAsync(new SurveyTesterRecord(Guid.NewGuid(), email, ticket.SurveyId, day), ct);
+            _usedTickets[ticket.TicketId] = now;
             return SubmitOutcome.Stored;
         }
         catch (Exception ex) when (ex is not OperationCanceledException)
         {
-            _logger.LogError(ex, "Survey {SurveyId} tester signup could not be saved.", surveyId);
+            _logger.LogError(ex, "Survey {SurveyId} tester signup could not be saved.", ticket.SurveyId);
             return SubmitOutcome.SaveFailed;
         }
     }

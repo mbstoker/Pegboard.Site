@@ -56,6 +56,9 @@ public class Program
         var keysPath = builder.Configuration["DataProtection:KeysPath"];
         if (!string.IsNullOrWhiteSpace(keysPath))
             dataProtection.PersistKeysToFileSystem(new DirectoryInfo(keysPath));
+        else
+            Log.Warning("DataProtection:KeysPath is not set. Surveys in progress may restart or be refused " +
+                        "after an app-pool recycle or redeploy. Set it per environment; see docs/survey.md.");
 
         builder.Services.AddRazorPages();
 

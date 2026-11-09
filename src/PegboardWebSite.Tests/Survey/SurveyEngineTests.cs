@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using PegboardWebSite.Survey;
 using Xunit;
 
@@ -235,6 +236,9 @@ public sealed class SurveyEngineTests
     [InlineData("5", "5")]
     [InlineData("4.50", "4.50")]
     [InlineData("£6", "6")]
+    [InlineData("€ 7.5", "7.5")]
+    [InlineData("4,50", "4.50")]
+    [InlineData("4,5", "4.5")]
     public void Number_accepts_a_price(string input, string stored) =>
         Assert.Equal(stored, Validate(Organisers, "C2", input).Accepted["C2"][0]);
 
@@ -242,8 +246,50 @@ public sealed class SurveyEngineTests
     [InlineData("five")]
     [InlineData("-3")]
     [InlineData("99999")]
-    public void Number_refuses_other_input(string input) =>
-        Assert.True(Validate(Organisers, "C2", input).Errors.ContainsKey("C2"));
+    [InlineData("1,000")]
+    [InlineData("1,000.50")]
+    [InlineData("4,5,0")]
+    [InlineData("4.")]
+    public void Number_refuses_other_input_with_a_friendly_message(string input) =>
+        Assert.Equal("Please enter a number, like 5 or 4.50.", Validate(Organisers, "C2", input).Errors["C2"]);
+
+    // --- Rate-limit keys: the client address is grouped, never stored.
+
+    [Theory]
+    [InlineData("203.0.113.7", "203.0.113.7")]
+    [InlineData("::ffff:203.0.113.7", "203.0.113.7")]
+    [InlineData("2001:db8:1:2:aaaa:bbbb:cccc:dddd", "2001:db8:1:2::/64")]
+    [InlineData("2001:db8:1:2::1", "2001:db8:1:2::/64")]
+    public void Limiter_key_is_the_address_or_its_IPv6_64(string address, string key) =>
+        Assert.Equal(key, SurveyRateLimiter.ClientKey(System.Net.IPAddress.Parse(address)));
+
+    [Fact]
+    public void Limiter_charges_a_permit_once_per_admission()
+    {
+        var clock = new ManualClock();
+        var config = new Microsoft.Extensions.Configuration.ConfigurationBuilder()
+            .AddInMemoryCollection(new Dictionary<string, string?> { ["Survey:RateLimit:PermitLimit"] = "2" }).Build();
+        var limiter = new SurveyRateLimiter(clock, config);
+        var run = Guid.NewGuid();
+        for (var i = 0; i < 5; i++) Assert.True(limiter.TryAdmit("k", run));
+        Assert.True(limiter.TryAdmit("k", Guid.NewGuid()));
+        Assert.False(limiter.TryAdmit("k", Guid.NewGuid()));
+        Assert.True(limiter.TryAdmit("k", run)); // already admitted, still free
+        clock.Advance(TimeSpan.FromMinutes(61));
+        Assert.True(limiter.TryAdmit("k", Guid.NewGuid()));
+    }
+
+    [Fact]
+    public void Limiter_default_is_forty_an_hour()
+    {
+        var config = new Microsoft.Extensions.Configuration.ConfigurationBuilder().Build();
+        Assert.Equal(40, new SurveyRateLimiter(new ManualClock(), config).PermitLimit);
+    }
+
+    [Fact]
+    public void Stored_submit_time_is_rounded_down_to_the_hour() =>
+        Assert.Equal(new DateTimeOffset(2026, 11, 9, 18, 0, 0, TimeSpan.Zero),
+            SurveySubmissionService.StoredTime(new DateTimeOffset(2026, 11, 9, 18, 59, 59, TimeSpan.Zero)));
 
     [Fact]
     public void Free_text_has_a_length_limit()

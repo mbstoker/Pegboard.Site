@@ -18,27 +18,37 @@ An invalid file is logged and left out, so its URL returns 404 and the rest of t
 
 The two tables live in `PegboardDb` ([deploy/sql/survey.sql](../deploy/sql/survey.sql); the site also creates them at startup).
 
-- **`survey_responses`** holds the survey id, definition version, submit time, `answers` (`{"S1": ["UK"], …}`) and `path` (the ids of the questions shown). It has no name, email or IP address.
+- **`survey_responses`** holds the survey id, the definition version the respondent answered, the submit time rounded down to the hour, `answers` (`{"S1": ["UK"], …}`) and `path` (the ids of the questions shown). It has no name, email or IP address. The row id is the run id, fixed when the opening page is shown. The insert is insert-if-absent, so a repeated final submit (a lost redirect, a double click, a retry) never stores a second row.
 - **`survey_testers`** holds the email, the survey id and the signup day. Nothing in it refers to a response. Ids are random UUIDs and the time is kept to the day, so a row can't be matched to a response by order or time.
 
-If the database is unreachable, the respondent sees "couldn't be saved" and can retry. They are never given a false thank-you.
+If the database is unreachable, the respondent sees "couldn't be saved" and can retry. They are never given a false thank-you, and retrying the same submission never uses up another rate-limit permit.
+
+A survey in progress restarts at the opening page, with a short notice, if its definition `version` has changed since it began or if it began more than 24 hours ago. Answers from one version are never mixed into another.
+
+### The tester list is unconfirmed
+
+Anyone can type any address into the tester form, so a `survey_testers` row is not consent and not proof that the address belongs to the person who typed it. The first message to a tester must be confirm-or-ignore: it asks them to confirm they want to test and says that ignoring it removes them. Contact only addresses that confirm, and delete those that don't.
 
 ## Abuse protection
 
-A blocked submission still sees the normal thank-you and is logged with its rule (`honeypot`, `missing-or-tampered-token`, `too-fast` or `rate-limit`). It is not stored, and the IP address is never logged.
+A blocked submission still sees the normal thank-you and is logged with its rule (`honeypot`, `missing-or-tampered-token`, `too-fast` or `rate-limit`), along with how many that rule has blocked since startup. It is not stored, and the IP address is never logged.
 
 - A hidden honeypot field is checked on every step and on the tester form.
-- Survey progress is carried in a Data Protection token holding the opening-page timestamp. A missing or altered token is blocked, as is a survey finished faster than `minSecondsToComplete`.
-- Each IP has an in-memory fixed-window limit (`Survey:RateLimit:PermitLimit` per `WindowMinutes`, default 10 per 60). It is counted separately for responses and tester signups.
-- The tester form needs a ticket issued with the thank-you page, valid for 24 hours.
+- Survey progress is carried in a Data Protection token holding the run id, the definition version and the opening-page timestamp. A missing or altered token is blocked, as is a survey finished faster than `minSecondsToComplete`.
+- Each client has an in-memory fixed-window limit (`Survey:RateLimit:PermitLimit` per `WindowMinutes`, default 40 per 60). It is counted separately for responses and tester signups. IPv4 addresses are counted individually and IPv6 addresses by their /64. A permit is charged once per survey run or tester ticket, so retries don't use more.
+- The tester form needs a ticket issued with the thank-you page, valid for 24 hours. A ticket adds at most one email.
 
 ## Configuration on the VPS
 
 | Setting | Purpose |
 |---|---|
 | `ConnectionStrings__PegboardDb` | Already set for the site; the survey uses the same database. |
-| `Survey__ExportKey` | Enables `GET /survey/{id}/export.csv` with header `X-Survey-Key`. Unset means the endpoint returns 404. |
-| `DataProtection__KeysPath` | A folder outside the site folder, such as `C:\sites\keys\www`. Without it, an app-pool recycle can invalidate surveys in progress, and those submissions are then blocked as tampered. |
+| `Survey__ExportKey` | Enables `GET /survey/{id}/export.csv` with header `X-Survey-Key`. Unset means the endpoint returns 404. Use a long random value of at least 32 characters, such as `[Convert]::ToBase64String([Security.Cryptography.RandomNumberGenerator]::GetBytes(32))`, and a different one per environment. |
+| `DataProtection__KeysPath` | A folder outside the site folder. It **must be a different folder for staging and production**, such as `C:\sites\keys\www-staging` and `C:\sites\keys\www-prod`. Both builds use the application name `PegboardWebSite`, so a shared folder would let a staging token pass on production. Without the setting, the site logs a startup warning, and an app-pool recycle can invalidate surveys in progress; those submissions are then blocked as tampered. |
+
+### Staging check
+
+Before production, also check that a survey survives an app-pool recycle. Start a survey on staging, answer a step or two, recycle the site's app pool, then carry on and submit. The submission must be stored (check the export). If it isn't, `DataProtection__KeysPath` isn't taking effect.
 
 ## Export
 

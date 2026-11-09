@@ -30,7 +30,9 @@ public sealed class FakeSurveyStore : ISurveyStore
     public Task SaveResponseAsync(SurveyResponseRecord response, CancellationToken ct = default)
     {
         if (FailSaves) throw new InvalidOperationException("database down");
-        lock (Responses) Responses.Add(response);
+        // Same contract as the Npgsql store's ON CONFLICT (id) DO NOTHING.
+        lock (Responses)
+            if (Responses.All(r => r.Id != response.Id)) Responses.Add(response);
         return Task.CompletedTask;
     }
 
@@ -161,8 +163,20 @@ public sealed class SurveyBrowser
             foreach (var v in answer(q) ?? Array.Empty<string>())
                 form.Add(new("q_" + q.Id, v));
         tweak?.Invoke(form);
+        LastForm = form;
 
         Last = await _client.PostAsync(Path, new FormUrlEncodedContent(form));
+        Html = await Last.Content.ReadAsStringAsync();
+        return Html;
+    }
+
+    /// <summary>The exact form fields last posted.</summary>
+    public List<KeyValuePair<string, string>> LastForm { get; private set; } = new();
+
+    /// <summary>Posts the last form again, byte for byte: a double click, a lost redirect or a retry.</summary>
+    public async Task<string> Replay()
+    {
+        Last = await _client.PostAsync(Path, new FormUrlEncodedContent(LastForm));
         Html = await Last.Content.ReadAsStringAsync();
         return Html;
     }

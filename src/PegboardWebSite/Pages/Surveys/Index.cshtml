@@ -23,6 +23,10 @@
 
     @if (Model.Mode == IndexModel.View.Opening)
     {
+        @if (Model.RestartNotice is not null)
+        {
+            <div class="survey-alert" role="status">@Model.RestartNotice</div>
+        }
         <p class="survey-opening">@Model.Definition.Opening</p>
         <button type="submit" class="survey-button">Start</button>
     }

@@ -16,7 +16,10 @@ public sealed record SurveyResponseRecord(
 /// <summary>A tester-list entry. Deliberately has no response id; see <see cref="NpgsqlSurveyStore"/>.</summary>
 public sealed record SurveyTesterRecord(Guid Id, string Email, string SurveyId, DateTimeOffset CreatedUtc);
 
-/// <summary>Survey persistence. Saves throw on failure so the page can say so instead of thanking falsely.</summary>
+/// <summary>
+/// Survey persistence. Saves throw on failure so the page can say so instead of thanking falsely.
+/// Saving a response whose id is already stored must succeed without storing a second row.
+/// </summary>
 public interface ISurveyStore
 {
     Task EnsureSchemaAsync(CancellationToken ct = default);
@@ -74,7 +77,9 @@ public sealed class NpgsqlSurveyStore : ISurveyStore
         await using var connection = Open();
         await using var cmd = new NpgsqlCommand(
             "INSERT INTO survey_responses (id, survey_id, definition_version, submitted_utc, answers, path) " +
-            "VALUES (@id, @survey, @version, @submitted, @answers, @path)", connection);
+            "VALUES (@id, @survey, @version, @submitted, @answers, @path) " +
+            // The id is the survey run's id: a repeated final submit is a no-op, not a second row.
+            "ON CONFLICT (id) DO NOTHING", connection);
         cmd.Parameters.AddWithValue("@id", r.Id);
         cmd.Parameters.AddWithValue("@survey", r.SurveyId);
         cmd.Parameters.AddWithValue("@version", r.DefinitionVersion);

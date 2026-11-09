@@ -99,9 +99,7 @@ public static class SurveyEngine
                 return null;
 
             case QuestionTypes.Number:
-                var text = raw[0].TrimStart('£', '€', '$').Replace(",", "");
-                if (raw.Count != 1 || !decimal.TryParse(text, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out var n)
-                    || n < 0 || n > NumberMax)
+                if (raw.Count != 1 || ParsePrice(raw[0]) is not decimal n || n > NumberMax)
                     return "Please enter a number, like 5 or 4.50.";
                 value = new List<string> { n.ToString(CultureInfo.InvariantCulture) };
                 return null;
@@ -115,6 +113,24 @@ public static class SurveyEngine
                 return null;
         }
         return "Unsupported question.";
+    }
+
+    private static readonly System.Text.RegularExpressions.Regex PriceShape =
+        new(@"^(\d+)(?:[.,](\d{1,2})|\.(\d+))?$", System.Text.RegularExpressions.RegexOptions.CultureInvariant);
+
+    /// <summary>
+    /// A non-negative price, with an optional leading currency symbol. A comma is a decimal
+    /// point only before one or two final digits ("4,50"); "1,000" is ambiguous, so it is
+    /// refused rather than guessed at.
+    /// </summary>
+    public static decimal? ParsePrice(string input)
+    {
+        var text = input.Trim().TrimStart('£', '€', '$').Trim();
+        var m = PriceShape.Match(text);
+        if (!m.Success) return null;
+        var fraction = m.Groups[2].Success ? m.Groups[2].Value : m.Groups[3].Success ? m.Groups[3].Value : null;
+        var normal = fraction is null ? m.Groups[1].Value : m.Groups[1].Value + "." + fraction;
+        return decimal.TryParse(normal, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out var n) ? n : null;
     }
 
     public static string Words(int n) => n switch

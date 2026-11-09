@@ -13,6 +13,17 @@ namespace PegboardWebSite.Survey;
 public sealed class SurveyState
 {
     public string SurveyId { get; set; } = "";
+
+    /// <summary>
+    /// Fixed when the opening page is rendered and used as the stored response's id, so
+    /// re-posting the final form (a lost redirect, a double click, a retry after an outage)
+    /// can never store a second row, and a retry is never charged a second rate-limit permit.
+    /// </summary>
+    public Guid RunId { get; set; }
+
+    /// <summary>The definition version this respondent started on. A different current version restarts the survey.</summary>
+    public int Version { get; set; }
+
     public long StartedUtcTicks { get; set; }
 
     /// <summary>Id of the first question on the step being shown; null while the opening text is shown.</summary>
@@ -25,6 +36,10 @@ public sealed class SurveyState
 public sealed class TesterTicket
 {
     public string SurveyId { get; set; } = "";
+
+    /// <summary>One ticket admits one tester signup: retries with it are not re-charged, and once it has stored an email it stores no more.</summary>
+    public Guid TicketId { get; set; }
+
     public long IssuedUtcTicks { get; set; }
 }
 

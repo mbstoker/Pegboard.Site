@@ -1,5 +1,6 @@
 using System.Net;
 using System.Text.Json;
+using Microsoft.Extensions.DependencyInjection;
 using PegboardWebSite.Survey;
 using Xunit;
 
@@ -95,7 +96,9 @@ public sealed class SurveyHttpTests
         var r = Assert.Single(f.Store.Responses);
         Assert.Equal(id, r.SurveyId);
         Assert.Equal(1, r.DefinitionVersion);
-        Assert.Equal(f.Clock.Now, r.SubmittedUtc);
+        // Rounded down to the hour: the clock reads 18:35, so 18:00.
+        Assert.Equal(new DateTimeOffset(2026, 11, 9, 18, 0, 0, TimeSpan.Zero), r.SubmittedUtc);
+        Assert.NotEqual(Guid.Empty, r.Id);
         Assert.Equal(shown, r.Path);
         Assert.All(r.Answers.Keys, k => Assert.Contains(k, r.Path));
     }
@@ -209,6 +212,121 @@ public sealed class SurveyHttpTests
         await b.Post(SurveyBrowser.FirstOption);
         Assert.True(RedirectedToThanks(b, "organisers"));
         Assert.Single(f.Store.Responses);
+    }
+
+    [Fact]
+    public async Task An_outage_longer_than_the_permit_limit_still_ends_with_the_response_stored()
+    {
+        using var f = new SurveyApiFactory(); // PermitLimit 3
+        f.Store.FailSaves = true;
+        var b = f.Browser();
+        await b.Complete("organisers");
+        Assert.Contains("couldn't be saved", b.Html);
+
+        // Retry well past the permit limit while the database is still down.
+        for (var i = 0; i < 6; i++)
+        {
+            await b.Post(SurveyBrowser.FirstOption);
+            Assert.Equal(HttpStatusCode.OK, b.Last!.StatusCode); // still the retry page, never a false thank-you
+            Assert.Contains("couldn't be saved", b.Html);
+        }
+
+        f.Store.FailSaves = false;
+        await b.Post(SurveyBrowser.FirstOption);
+        Assert.True(RedirectedToThanks(b, "organisers"));
+        Assert.Single(f.Store.Responses);
+    }
+
+    [Fact]
+    public async Task The_same_final_form_submitted_twice_stores_one_row()
+    {
+        using var f = new SurveyApiFactory();
+        var b = f.Browser();
+        await b.Complete("players", q => q.Id == "Y0" ? new[] { "35–49" } : null);
+        Assert.True(RedirectedToThanks(b, "players"));
+
+        await b.Replay();
+        Assert.True(RedirectedToThanks(b, "players"));
+        await b.Replay();
+
+        Assert.Single(f.Store.Responses);
+    }
+
+    [Fact]
+    public async Task Replaying_a_stored_run_does_not_use_up_rate_limit_permits()
+    {
+        using var f = new SurveyApiFactory(); // PermitLimit 3
+        var b = f.Browser();
+        await b.Complete("players", q => q.Id == "Y0" ? new[] { "35–49" } : null);
+        for (var i = 0; i < 5; i++) await b.Replay();
+
+        // Two further genuine runs still fit within the three permits.
+        await f.Browser().Complete("players", q => q.Id == "Y0" ? new[] { "35–49" } : null);
+        await f.Browser().Complete("players", q => q.Id == "Y0" ? new[] { "35–49" } : null);
+        Assert.Equal(3, f.Store.Responses.Count);
+    }
+
+    [Fact]
+    public async Task A_definition_change_between_steps_restarts_the_survey_and_stores_the_answered_version()
+    {
+        using var f = new SurveyApiFactory();
+        var b = f.Browser();
+        await b.Get("/survey/organisers");
+        await b.Post(_ => null);
+        f.Clock.Advance(TimeSpan.FromMinutes(5));
+        await b.Post(SurveyBrowser.FirstOption); // S1–S4 answered on version 1
+        Assert.Contains(b.Questions(), q => q.Id == "N1");
+
+        var def = f.Services.GetRequiredService<SurveyCatalog>().Get("organisers")!;
+        def.Version = 2;
+
+        await b.Post(SurveyBrowser.FirstOption);
+        Assert.Equal(HttpStatusCode.OK, b.Last!.StatusCode);
+        Assert.Contains("This survey was updated while you were answering it", b.Html);
+        Assert.Empty(b.Questions()); // back at the opening text
+        Assert.Contains("I&#x27;m asking organisers", b.Html);
+
+        // Completing from the restart stores version 2, with nothing carried over from version 1.
+        await b.Post(_ => null);
+        f.Clock.Advance(TimeSpan.FromMinutes(5));
+        while (b.Last!.StatusCode == HttpStatusCode.OK && b.Questions().Count > 0)
+            await b.Post(q => q.Id == "S1" ? new[] { "Ireland" } : SurveyBrowser.FirstOption(q));
+        var r = Assert.Single(f.Store.Responses);
+        Assert.Equal(2, r.DefinitionVersion);
+        Assert.Equal(new[] { "Ireland" }, r.Answers["S1"]);
+    }
+
+    [Fact]
+    public async Task Progress_older_than_a_day_restarts_the_survey()
+    {
+        using var f = new SurveyApiFactory();
+        var b = f.Browser();
+        await b.Get("/survey/organisers");
+        await b.Post(_ => null);
+        f.Clock.Advance(TimeSpan.FromHours(25));
+        await b.Post(SurveyBrowser.FirstOption);
+        Assert.Contains("It&#x27;s been a while since you started", b.Html);
+        Assert.Empty(b.Questions());
+        Assert.Empty(f.Store.Responses);
+    }
+
+    [Fact]
+    public async Task Blocked_submissions_are_counted_per_rule()
+    {
+        using var f = new SurveyApiFactory();
+        for (var i = 0; i < 2; i++)
+        {
+            var b = f.Browser();
+            await b.Get("/survey/organisers");
+            await b.Post(_ => null, form =>
+            {
+                form.RemoveAll(kv => kv.Key == "hp_extra");
+                form.Add(new("hp_extra", "x"));
+            });
+        }
+        var counts = f.Services.GetRequiredService<SurveySubmissionService>().BlockedCounts;
+        Assert.Equal(2, counts[BlockRules.Honeypot]);
+        Assert.False(counts.ContainsKey(BlockRules.RateLimit));
     }
 
     // --- Abuse rules: not stored, but the respondent still sees the thank-you.
@@ -414,6 +532,39 @@ public sealed class SurveyHttpTests
             form.Add(new("k", b.Hidden("k")));
         });
         Assert.Empty(f.Store.Testers);
+    }
+
+    [Fact]
+    public async Task A_tester_signup_retried_through_an_outage_is_stored_once_it_recovers()
+    {
+        using var f = new SurveyApiFactory(); // PermitLimit 3
+        var b = await AtThanks(f);
+        f.Store.FailSaves = true;
+        for (var i = 0; i < 6; i++)
+        {
+            await Volunteer(b, "tester@example.com");
+            Assert.Contains("couldn't be saved", b.Html);
+        }
+        f.Store.FailSaves = false;
+        await Volunteer(b, "tester@example.com");
+        Assert.Contains("You're on the tester list", b.Html);
+        Assert.Single(f.Store.Testers);
+    }
+
+    [Fact]
+    public async Task One_thank_you_page_adds_at_most_one_email()
+    {
+        using var f = new SurveyApiFactory();
+        var b = await AtThanks(f);
+        var thanksPage = b.Path;
+        foreach (var email in new[] { "first@example.com", "second@example.com", "third@example.com" })
+        {
+            await b.Get(thanksPage); // fresh antiforgery token; the same ticket each time
+            await Volunteer(b, email);
+            Assert.Equal(HttpStatusCode.OK, b.Last!.StatusCode);
+            Assert.Contains("You're on the tester list", b.Html);
+        }
+        Assert.Equal("first@example.com", Assert.Single(f.Store.Testers).Email);
     }
 
     // --- Export.

@@ -65,7 +65,8 @@ public class ThanksModel : PageModel
         var ticket = _tokens.UnprotectTicket(Ticket);
         var ticketAge = ticket is null ? TimeSpan.MaxValue
             : _submissions.Now - new DateTimeOffset(ticket.IssuedUtcTicks, TimeSpan.Zero);
-        if (ticket is null || ticket.SurveyId != def.Id || ticketAge < TimeSpan.Zero || ticketAge > TicketLifetime)
+        if (ticket is null || ticket.SurveyId != def.Id || ticket.TicketId == Guid.Empty
+            || ticketAge < TimeSpan.Zero || ticketAge > TicketLifetime)
         {
             _submissions.LogBlocked(def.Id, BlockRules.MissingOrTamperedToken);
             Mode = View.Added;
@@ -78,7 +79,8 @@ public class ThanksModel : PageModel
             return Page();
         }
 
-        var outcome = await _submissions.AddTesterAsync(def.Id, normalized, RequestHelper.GetClientIp(HttpContext), HttpContext.RequestAborted);
+        var outcome = await _submissions.AddTesterAsync(ticket, normalized,
+            SurveyRateLimiter.ClientKey(HttpContext.Connection.RemoteIpAddress), HttpContext.RequestAborted);
         Mode = outcome == SubmitOutcome.SaveFailed ? View.SaveFailed : View.Added;
         return Page();
     }

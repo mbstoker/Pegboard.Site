@@ -12,10 +12,10 @@
 
 -- One row per completed survey. No name, no email, no IP address.
 CREATE TABLE IF NOT EXISTS survey_responses (
-    id                 UUID        PRIMARY KEY,
+    id                 UUID        PRIMARY KEY, -- the survey run's id, fixed at the opening page; inserts are ON CONFLICT (id) DO NOTHING
     survey_id          TEXT        NOT NULL,   -- 'organisers' | 'players'
-    definition_version INTEGER     NOT NULL,   -- the definition's "version" when submitted
-    submitted_utc      TIMESTAMPTZ NOT NULL,
+    definition_version INTEGER     NOT NULL,   -- the version the respondent answered (a version change restarts the survey)
+    submitted_utc      TIMESTAMPTZ NOT NULL,   -- rounded down to the hour
     answers            JSONB       NOT NULL,   -- {"S1": ["UK"], "N2": ["Round robin", "Ladder"], ...}; hidden questions never present
     path               JSONB       NOT NULL    -- ids of the questions shown, in order
 );
