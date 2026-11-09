@@ -95,8 +95,9 @@ public sealed class SurveyHttpTests
         Assert.True(RedirectedToThanks(b, id), b.Html);
         var r = Assert.Single(f.Store.Responses);
         Assert.Equal(id, r.SurveyId);
-        // Players is at version 2 since Y6 was split into clubs (Y6) and sessions a week (Y6b).
-        Assert.Equal(id == "players" ? 2 : 1, r.DefinitionVersion);
+        // Both at version 2: players since Y6 was split (Y6/Y6b) and the fairness block reworked;
+        // organisers since F1a was split into long waits (F1a) and turning players away (F1c).
+        Assert.Equal(2, r.DefinitionVersion);
         // Rounded down to the hour: the clock reads 18:35, so 18:00.
         Assert.Equal(new DateTimeOffset(2026, 11, 9, 18, 0, 0, TimeSpan.Zero), r.SubmittedUtc);
         Assert.NotEqual(Guid.Empty, r.Id);
@@ -275,11 +276,12 @@ public sealed class SurveyHttpTests
         await b.Get("/survey/organisers");
         await b.Post(_ => null);
         f.Clock.Advance(TimeSpan.FromMinutes(5));
-        await b.Post(SurveyBrowser.FirstOption); // S1–S4 answered on version 1
+        await b.Post(SurveyBrowser.FirstOption); // S1–S4 answered on the current version
         Assert.Contains(b.Questions(), q => q.Id == "N1");
 
         var def = f.Services.GetRequiredService<SurveyCatalog>().Get("organisers")!;
-        def.Version = 2;
+        var answeredOn = def.Version;
+        def.Version = answeredOn + 1;
 
         await b.Post(SurveyBrowser.FirstOption);
         Assert.Equal(HttpStatusCode.OK, b.Last!.StatusCode);
@@ -287,13 +289,13 @@ public sealed class SurveyHttpTests
         Assert.Empty(b.Questions()); // back at the opening text
         Assert.Contains("I&#x27;m asking organisers", b.Html);
 
-        // Completing from the restart stores version 2, with nothing carried over from version 1.
+        // Completing from the restart stores the new version, with nothing carried over from the old one.
         await b.Post(_ => null);
         f.Clock.Advance(TimeSpan.FromMinutes(5));
         while (b.Last!.StatusCode == HttpStatusCode.OK && b.Questions().Count > 0)
             await b.Post(q => q.Id == "S1" ? new[] { "Ireland" } : SurveyBrowser.FirstOption(q));
         var r = Assert.Single(f.Store.Responses);
-        Assert.Equal(2, r.DefinitionVersion);
+        Assert.Equal(answeredOn + 1, r.DefinitionVersion);
         Assert.Equal(new[] { "Ireland" }, r.Answers["S1"]);
     }
 
