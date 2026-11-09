@@ -1,0 +1,120 @@
+@page "/survey/{id}"
+@model PegboardWebSite.Pages.Surveys.IndexModel
+@using PegboardWebSite.Survey
+@{
+    Layout = "_SurveyLayout";
+    ViewData["Title"] = Model.Definition.Title;
+}
+
+<h1>@Model.Definition.Title</h1>
+
+@if (Model.Mode == IndexModel.View.EndPage)
+{
+    <p class="survey-end">@Model.EndText</p>
+    return;
+}
+
+<form method="post" class="survey-form" novalidate>
+    <input type="hidden" name="@IndexModel.StateField" value="@Model.StateToken" />
+    <div class="survey-hp" aria-hidden="true">
+        <label for="hp_extra">Leave this empty</label>
+        <input type="text" id="hp_extra" name="@IndexModel.HoneypotField" tabindex="-1" autocomplete="off" />
+    </div>
+
+    @if (Model.Mode == IndexModel.View.Opening)
+    {
+        @if (Model.RestartNotice is not null)
+        {
+            <div class="survey-alert" role="status">@Model.RestartNotice</div>
+        }
+        <p class="survey-opening">@Model.Definition.Opening</p>
+        <button type="submit" class="survey-button">Start</button>
+    }
+    else
+    {
+        <div class="survey-progress" role="progressbar" aria-label="Progress"
+             aria-valuemin="0" aria-valuemax="100" aria-valuenow="@Model.ProgressPercent">
+            <span style="width: @(Model.ProgressPercent)%"></span>
+        </div>
+
+        @if (Model.SaveFailed)
+        {
+            <div class="survey-alert" role="alert">
+                Sorry, your answers couldn't be saved just now. Nothing is lost: please wait a minute and press Next again.
+            </div>
+        }
+
+        @if (!string.IsNullOrEmpty(Model.Header))
+        {
+            <p class="survey-header">@Model.Header</p>
+        }
+
+        @foreach (var q in Model.Questions)
+        {
+            var name = IndexModel.FieldPrefix + q.Id;
+            var values = Model.ValuesFor(q.Id);
+            Model.Errors.TryGetValue(q.Id, out var error);
+            var hintId = $"hint-{q.Id}";
+            var optionalText = q.Optional ? " (optional)" : "";
+
+            if (q.IsChoice)
+            {
+                var multi = q.Type == QuestionTypes.Multi;
+                <fieldset class="survey-question" id="question-@q.Id" data-question="@q.Id"
+                          data-max-picks="@(multi && q.MaxPicks is not null ? q.MaxPicks.ToString() : null)">
+                    <legend>@q.Text@optionalText</legend>
+                    @if (multi)
+                    {
+                        <p class="survey-hint">@(q.MaxPicks is int max ? $"Pick up to {SurveyEngine.Words(max)}." : "Tick all that apply.")</p>
+                    }
+                    @if (!string.IsNullOrEmpty(q.Hint))
+                    {
+                        <p class="survey-hint" id="@hintId">@q.Hint</p>
+                    }
+                    @if (error is not null)
+                    {
+                        <p class="survey-error" role="alert">@error</p>
+                    }
+                    @for (var i = 0; i < q.Options.Count; i++)
+                    {
+                        var option = q.Options[i];
+                        var inputId = $"{name}_{i}";
+                        <label class="survey-option" for="@inputId">
+                            <input type="@(multi ? "checkbox" : "radio")" id="@inputId" name="@name" value="@option"
+                                   checked="@values.Contains(option)" />
+                            <span>@option</span>
+                        </label>
+                    }
+                </fieldset>
+            }
+            else
+            {
+                <div class="survey-question" id="question-@q.Id" data-question="@q.Id">
+                    <label class="q" for="@name">@q.Text@optionalText</label>
+                    @if (!string.IsNullOrEmpty(q.Hint))
+                    {
+                        <p class="survey-hint" id="@hintId">@q.Hint</p>
+                    }
+                    @if (error is not null)
+                    {
+                        <p class="survey-error" role="alert">@error</p>
+                    }
+                    @if (q.Type == QuestionTypes.Text)
+                    {
+                        <textarea id="@name" name="@name" maxlength="@SurveyEngine.TextMax">@values.FirstOrDefault()</textarea>
+                    }
+                    else if (q.Type == QuestionTypes.Number)
+                    {
+                        <input type="text" id="@name" name="@name" inputmode="decimal" value="@values.FirstOrDefault()" />
+                    }
+                    else
+                    {
+                        <input type="text" id="@name" name="@name" maxlength="@SurveyEngine.ShortTextMax" value="@values.FirstOrDefault()" />
+                    }
+                </div>
+            }
+        }
+
+        <button type="submit" class="survey-button">Next</button>
+    }
+</form>

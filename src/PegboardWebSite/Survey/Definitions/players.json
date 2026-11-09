@@ -1,0 +1,134 @@
+{
+  "id": "players",
+  "version": 1,
+  "title": "Survey for badminton players",
+  "opening": "I'm Mike Stoker, a badminton player in Milton Keynes and the developer of ePegboard. I'm asking players what club nights are like for them: how games are picked, how fair it feels, and how you find places to play. Your answers will help me decide what to build and test. It takes about 6 minutes. Giving your club name is optional.",
+  "afterSubmission": "Thanks for taking part. If you'd like to try ePegboard features in development and give feedback, you can volunteer below. I'll use your email to invite you to testing and follow up on your feedback. You can leave the tester list at any time.",
+  "questionsPerStep": 4,
+  "minSecondsToComplete": 60,
+  "endPages": [
+    { "id": "under16",
+      "when": { "question": "Y0", "equals": "Under 16" },
+      "text": "Thanks for your interest. This survey is for players aged 16 and over." }
+  ],
+  "sections": [
+    {
+      "title": "About you",
+      "header": null,
+      "questions": [
+        { "id": "Y0", "type": "single", "text": "How old are you?",
+          "options": [ "Under 16", "16–24", "25–34", "35–49", "50–64", "65 or over" ] },
+        { "id": "Y1", "type": "single", "text": "Which country do you play in?",
+          "options": [ "UK", "Ireland", "Australia", "New Zealand", "Other" ] },
+        { "id": "Y2", "type": "single", "text": "How would you describe your level?",
+          "options": [ "Beginner", "Improver", "Intermediate", "Advanced", "League or county standard" ] },
+        { "id": "Y3", "type": "single", "text": "How do you describe your gender?", "optional": true,
+          "options": [ "Woman", "Man", "In another way", "Prefer not to say" ] },
+        { "id": "Y4", "type": "single", "text": "Which best describes the club or session you play at most?",
+          "options": [ "Social club", "Club that enters league teams", "Pay-and-play or drop-in session", "Session run by a leisure centre or venue", "University or college club", "Other" ] },
+        { "id": "Y5", "type": "single", "text": "How long have you played there?",
+          "options": [ "Less than 6 months", "6–12 months", "1–3 years", "3–10 years", "More than 10 years" ] },
+        { "id": "Y6", "type": "single", "text": "Do you play regularly at more than one club or session?",
+          "options": [ "No", "Yes, two", "Yes, three or more" ] }
+      ]
+    },
+    {
+      "title": "Position and range",
+      "header": "Thinking about the session you play at most, over the past four weeks.",
+      "questions": [
+        { "id": "R1", "type": "single", "text": "Compared with the others there, where would you put yourself?",
+          "options": [ "Near the bottom", "Below the middle", "About the middle", "Above the middle", "Near the top" ] },
+        { "id": "R2", "type": "single", "text": "How wide is the range of standards on a typical night?",
+          "options": [ "Everyone's at a similar level", "Some range", "Very mixed, from beginners to league players" ] }
+      ]
+    },
+    {
+      "title": "Fairness",
+      "header": "Thinking about the session you play at most, over the past four weeks.",
+      "questions": [
+        { "id": "G1", "type": "single", "text": "How are games mostly decided?",
+          "options": [ "The organiser or session runner picks", "Peg board or queue", "Players arrange their own games", "An app or software picks", "It varies", "Don't know" ] },
+        { "id": "G1b", "type": "single", "text": "How do games usually end?",
+          "options": [ "Played to a full score (for example 21)", "Played to a shorter score (for example 11 or 15)", "Timed rounds of under 10 minutes", "Timed rounds of 10 minutes or more", "It varies", "Don't know" ] },
+        { "id": "G1c", "type": "single", "text": "How do you feel about timed games?",
+          "options": [ "I prefer them", "They're fine", "Mixed", "I'd rather finish my games" ],
+          "showIf": { "question": "G1b", "anyOf": [ "Timed rounds of under 10 minutes", "Timed rounds of 10 minutes or more", "It varies" ] } },
+        { "id": "G2", "type": "single", "text": "How fair is the way games are picked, for the players?",
+          "options": [ "Very fair", "Mostly fair", "Mixed", "Mostly unfair", "Very unfair", "Don't know" ] },
+        { "id": "G3", "type": "single", "text": "How often did you sit out more than one game in a row?",
+          "options": [ "Never", "Once or twice", "Most weeks", "Every week" ] },
+        { "id": "G4", "type": "single", "text": "How often were your games one-sided?",
+          "options": [ "Rarely", "Sometimes", "Often", "Most of the time" ] },
+        { "id": "G5", "type": "single", "text": "How often were you put with or against players much stronger than you?",
+          "options": [ "Rarely", "Sometimes", "Often", "Most of the time" ] },
+        { "id": "G6", "type": "single", "text": "How often were you put with or against players much weaker than you?",
+          "options": [ "Rarely", "Sometimes", "Often", "Most of the time" ] }
+      ]
+    },
+    {
+      "title": "Level splitting",
+      "header": "Thinking about the session you play at most, over the past four weeks.",
+      "questions": [
+        { "id": "L1", "type": "single", "text": "Does your session separate players by playing level?",
+          "options": [ "No, everyone mixes", "Yes, on different courts", "Yes, in different time slots", "Yes, in separate sessions", "Players sort themselves out by level", "Don't know" ] },
+        { "id": "L2", "type": "single", "text": "Which would you prefer?",
+          "options": [ "Everyone mixed", "Mostly mixed, with some games at my level", "Mostly with players at my level", "Only with players at my level", "No preference" ] }
+      ]
+    },
+    {
+      "title": "Booking",
+      "header": "Thinking about the session you play at most, over the past four weeks.",
+      "questions": [
+        { "id": "B1", "type": "single", "text": "Do you have to book before you come?",
+          "options": [ "I have to book", "I'm asked to, but it's optional", "I just turn up", "Don't know" ] },
+        { "id": "B2", "type": "single", "text": "How do you feel about booking in advance?",
+          "options": [ "I prefer it", "I don't mind", "It's a hassle", "I'd rather just turn up" ] }
+      ]
+    },
+    {
+      "title": "Apps and software",
+      "header": "Thinking about the session you play at most, over the past four weeks.",
+      "questions": [
+        { "id": "S1", "type": "single", "text": "Has your club used an app or software on club nights?",
+          "options": [ "Uses one now", "Used one before", "Never", "Don't know" ] },
+        { "id": "S2", "type": "single", "text": "How did you find it?",
+          "options": [ "Liked it", "Mixed", "Didn't like it", "Didn't really notice" ],
+          "showIf": { "question": "S1", "anyOf": [ "Uses one now", "Used one before" ] } }
+      ]
+    },
+    {
+      "title": "Moving clubs",
+      "header": null,
+      "questions": [
+        { "id": "M1", "type": "single", "text": "In the past two years, have you joined, added or left a club or regular session?",
+          "options": [ "Joined or added one", "Left one", "Both", "No" ] },
+        { "id": "M2", "type": "multi", "text": "What was behind it?",
+          "options": [ "Moved house", "Better standard of play", "Fairer games", "More convenient time or place", "Cheaper", "Friends were there", "Not getting enough games", "The club changed or closed", "Other" ],
+          "showIf": { "question": "M1", "notEquals": "No" } }
+      ]
+    },
+    {
+      "title": "Finding places to play",
+      "header": null,
+      "questions": [
+        { "id": "D1", "type": "single", "text": "In the past two years, have you looked for somewhere new to play?",
+          "options": [ "Yes", "No" ] },
+        { "id": "D2", "type": "single", "text": "How easy was it?",
+          "options": [ "Easy", "OK", "Hard", "I gave up" ],
+          "showIf": { "question": "D1", "equals": "Yes" } },
+        { "id": "D3", "type": "multi", "text": "What did you wish you'd known before going?", "maxPicks": 3,
+          "options": [ "The standard of play", "Whether beginners are welcome", "The cost", "How busy it gets", "Whether I'd need to book", "How games are picked", "Whether it would be friendly", "Other" ],
+          "showIf": { "question": "D1", "equals": "Yes" } }
+      ]
+    },
+    {
+      "title": "Last word",
+      "header": null,
+      "questions": [
+        { "id": "X1", "type": "text", "text": "What one thing would make your club nights better?", "optional": true },
+        { "id": "Z1", "type": "shortText", "text": "Club or session name", "optional": true,
+          "hint": "Only used to compare with the organiser's answers for the same club." }
+      ]
+    }
+  ]
+}
