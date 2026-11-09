@@ -22,6 +22,7 @@ public sealed class SurveyRateLimiter
     private readonly TimeSpan _window;
     private readonly ConcurrentDictionary<string, Window> _windows = new(StringComparer.Ordinal);
     private readonly ConcurrentDictionary<Guid, DateTimeOffset> _admitted = new();
+    private readonly object _gate = new();
     private long _lastSweepTicks;
 
     private sealed class Window
@@ -50,11 +51,15 @@ public sealed class SurveyRateLimiter
     {
         var now = _clock.GetUtcNow();
         Sweep(now);
-        if (_admitted.ContainsKey(admissionId)) return true;
 
-        var w = _windows.GetOrAdd(key, _ => new Window { Start = now });
-        lock (w)
+        // Checking the id, charging the permit and recording the admission happen under one lock,
+        // so concurrent retries of the same run or ticket are charged exactly once (PR #27 review).
+        // Survey traffic is low, so a single gate costs nothing worth measuring.
+        lock (_gate)
         {
+            if (_admitted.ContainsKey(admissionId)) return true;
+
+            var w = _windows.GetOrAdd(key, _ => new Window { Start = now });
             if (now - w.Start >= _window)
             {
                 w.Start = now;
@@ -62,9 +67,9 @@ public sealed class SurveyRateLimiter
             }
             if (w.Count >= _permits) return false;
             w.Count++;
+            _admitted[admissionId] = now;
+            return true;
         }
-        _admitted[admissionId] = now;
-        return true;
     }
 
     /// <summary>

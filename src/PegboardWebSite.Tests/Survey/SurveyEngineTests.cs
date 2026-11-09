@@ -280,6 +280,30 @@ public sealed class SurveyEngineTests
     }
 
     [Fact]
+    public async Task Concurrent_retries_of_one_admission_consume_exactly_one_permit()
+    {
+        var clock = new ManualClock();
+        var config = new Microsoft.Extensions.Configuration.ConfigurationBuilder()
+            .AddInMemoryCollection(new Dictionary<string, string?> { ["Survey:RateLimit:PermitLimit"] = "3" }).Build();
+        for (var round = 0; round < 50; round++)
+        {
+            var limiter = new SurveyRateLimiter(clock, config);
+            var run = Guid.NewGuid();
+            using var start = new ManualResetEventSlim(false);
+            var racers = Enumerable.Range(0, 16)
+                .Select(_ => Task.Run(() => { start.Wait(); return limiter.TryAdmit("k", run); }))
+                .ToArray();
+            start.Set();
+            Assert.All(await Task.WhenAll(racers), Assert.True);
+
+            // One permit used by the racing run, so exactly two remain for new admissions.
+            Assert.True(limiter.TryAdmit("k", Guid.NewGuid()));
+            Assert.True(limiter.TryAdmit("k", Guid.NewGuid()));
+            Assert.False(limiter.TryAdmit("k", Guid.NewGuid()));
+        }
+    }
+
+    [Fact]
     public void Limiter_default_is_forty_an_hour()
     {
         var config = new Microsoft.Extensions.Configuration.ConfigurationBuilder().Build();
