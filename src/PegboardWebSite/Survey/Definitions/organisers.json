@@ -1,6 +1,6 @@
 {
   "id": "organisers",
-  "version": 1,
+  "version": 2,
   "title": "Survey for badminton club organisers",
   "opening": "I'm Mike Stoker, a badminton player in Milton Keynes and the developer of ePegboard. I'm asking organisers how they run their club sessions and what takes the most effort. Your answers will help me decide what to build and test. It takes about 8 minutes. Giving your club name is optional.",
   "afterSubmission": "Thanks for taking part. If you'd like to try ePegboard features in development and give feedback, you can volunteer below. I'll use your email to invite you to testing and follow up on your feedback. You can leave the tester list at any time.",
@@ -71,7 +71,9 @@
       "title": "Filling sessions",
       "header": "Thinking about your main regular session over the past four weeks.",
       "questions": [
-        { "id": "F1a", "type": "single", "text": "Of your last four sessions, how many had more players than you could fit?",
+        { "id": "F1a", "type": "single", "text": "Of your last four sessions, how many were so busy that players waited too long between games?",
+          "options": [ "0", "1", "2", "3", "4", "Don't know" ] },
+        { "id": "F1c", "type": "single", "text": "Of your last four sessions, how many had to turn players away because they were full?",
           "options": [ "0", "1", "2", "3", "4", "Don't know" ] },
         { "id": "F1b", "type": "single", "text": "Of your last four sessions, how many had a booked court standing empty because too few players came?",
           "options": [ "0", "1", "2", "3", "4", "Don't know" ] },

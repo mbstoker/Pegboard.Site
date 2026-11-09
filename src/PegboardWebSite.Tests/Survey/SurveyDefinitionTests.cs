@@ -60,7 +60,7 @@ public sealed class SurveyDefinitionTests
             "S1", "S2", "S3", "S4",
             "N1", "N2", "N3", "N3c", "N3d", "N3b", "N4", "N5", "N5b", "N6",
             "B1", "B2", "B3", "B4",
-            "F1a", "F1b", "F2", "F3", "F4", "F5", "F6",
+            "F1a", "F1c", "F1b", "F2", "F3", "F4", "F5", "F6",
             "C1", "C2",
             "K1", "K2", "K3",
             "L1", "L2",
