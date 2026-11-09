@@ -77,7 +77,7 @@ public sealed class SurveyDefinitionTests
     {
         var expected = new[]
         {
-            "Y0", "Y1", "Y2", "Y3", "Y4", "Y5", "Y6",
+            "Y0", "Y1", "Y2", "Y3", "Y4", "Y5", "Y6", "Y6b",
             "R1", "R2",
             "G1", "G1b", "G1c", "G2", "G3", "G4", "G5", "G6",
             "L1", "L2",
