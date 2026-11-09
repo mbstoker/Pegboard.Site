@@ -95,7 +95,8 @@ public sealed class SurveyHttpTests
         Assert.True(RedirectedToThanks(b, id), b.Html);
         var r = Assert.Single(f.Store.Responses);
         Assert.Equal(id, r.SurveyId);
-        Assert.Equal(1, r.DefinitionVersion);
+        // Players is at version 2 since Y6 was split into clubs (Y6) and sessions a week (Y6b).
+        Assert.Equal(id == "players" ? 2 : 1, r.DefinitionVersion);
         // Rounded down to the hour: the clock reads 18:35, so 18:00.
         Assert.Equal(new DateTimeOffset(2026, 11, 9, 18, 0, 0, TimeSpan.Zero), r.SubmittedUtc);
         Assert.NotEqual(Guid.Empty, r.Id);

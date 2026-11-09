@@ -77,9 +77,9 @@ public sealed class SurveyDefinitionTests
     {
         var expected = new[]
         {
-            "Y0", "Y1", "Y2", "Y3", "Y4", "Y5", "Y6",
+            "Y0", "Y1", "Y2", "Y3", "Y4", "Y5", "Y6", "Y6b",
             "R1", "R2",
-            "G1", "G1b", "G1c", "G2", "G3", "G4", "G5", "G6",
+            "G1", "G1b", "G1c", "G2", "G3", "G4", "G5", "G6", "G7", "G8",
             "L1", "L2",
             "B1", "B2",
             "S1", "S2",
@@ -124,7 +124,7 @@ public sealed class SurveyDefinitionTests
     {
         Assert.StartsWith("I'm Mike Stoker, a badminton player in Milton Keynes and the developer of ePegboard.", Load("organisers").Opening);
         Assert.Contains("It takes about 8 minutes.", Load("organisers").Opening);
-        Assert.Contains("It takes about 6 minutes.", Load("players").Opening);
+        Assert.Contains("It takes about 7 minutes.", Load("players").Opening);
     }
 
     // --- The validator's rejecting half: planted bad definitions must fail.
